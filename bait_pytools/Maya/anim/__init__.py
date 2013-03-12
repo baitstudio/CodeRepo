@@ -10,7 +10,7 @@ import tank
 import bait_pytools.Maya.utils as mu
 reload(mu)
 
-def SetupScene():
+def SetupAnimScene(filePath):
     
     #referencing latest rigs
     assets=mu.getLatestShotAssets('rig')
@@ -33,7 +33,7 @@ def SetupScene():
     #sets up plate
     
     #getting tank engine
-    filePath=cmds.file(q=True,sn=True)
+    #filePath=cmds.file(q=True,sn=True)
     dirPath=os.path.dirname(filePath)
     tk = tank.tank_from_path(dirPath)
     
@@ -86,7 +86,7 @@ def ExportCache():
         cachePath=cache_alembic.apply_fields(fields)
         
         nodes=assets[asset]
-        startFrame=cmds.playbackOptions(q=True,minTime=True)
-        endFrame=cmds.playbackOptions(q=True,maxTime=True)
+        startFrame=cmds.playbackOptions(q=True,animationStartTime=True)
+        endFrame=cmds.playbackOptions(q=True,animationEndTime=True)
         
         mu.alembicExport(startFrame, endFrame,cachePath, nodes)

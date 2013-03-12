@@ -9,29 +9,7 @@ import maya.mel as mel
 from shotgun_api3 import Shotgun
 import tank
 
-def getShotgunServer():
-    ''' Returns baitTools shotgun server. '''
-    
-    path='https://bait.shotgunstudio.com'
-    name='baitTools'   
-    key='58a765d77a0a9d3d778ab2e389ca132a3c79170a'
-    
-    return Shotgun(path,name,key)
-
-def getFileContext():
-    
-    #getting tank engine
-    filePath=cmds.file(q=True,sn=True)
-    dirPath=os.path.dirname(filePath)
-    tk = tank.tank_from_path(dirPath)
-    
-    #getting scene data
-    ctx=tk.context_from_path(filePath)
-    
-    #return
-    return ctx
-
-def getLatestShotFile(filetag):
+def getLatestShotFile(platform,filetag):
     ''' Gets latest files connected to opened file.
         
         filetag = string
@@ -40,9 +18,9 @@ def getLatestShotFile(filetag):
     '''
     
     #getting shot data
-    sg=getShotgunServer()
+    sg=platform.parent.shotgun
     
-    ctx=getFileContext()
+    ctx=platform.parent.context
     
     shot=sg.find_one('Shot', filters=[['id','is',ctx.entity['id']]])
     
@@ -66,7 +44,7 @@ def getLatestShotFile(filetag):
                 
                 return f
 
-def getLatestShotAssets(filetag):
+def getLatestShotAssets(platform,filetag,specific=None):
     ''' Gets latest assets connected to opened file.
         
         filetag = string
@@ -78,32 +56,58 @@ def getLatestShotAssets(filetag):
     result=[]
     
     #getting assets
-    sg=getShotgunServer()
+    sg=platform.parent.shotgun
     
-    ctx=getFileContext()
+    ctx=platform.parent.context
     
     assets=sg.find_one('Shot', filters=[['id','is',ctx.entity['id']]],fields=['assets'])['assets']
     
-    for asset in assets:
-        tankfiles=sg.find('TankPublishedFile', filters=[['entity','is',asset]],fields=['version_number','task','path'])
-        
-        publishFiles={}
-        for f in tankfiles:
+    if specific==None:
+    
+        for asset in assets:
+            tankfiles=sg.find('TankPublishedFile', filters=[['entity','is',asset]],fields=['version_number','task','path'])
             
-            data=sg.find_one('Task',filters=[['id','is',f['task']['id']]],fields=['sg_filetag'])
-            
-            if data['sg_filetag']==filetag:
-                publishFiles[f['version_number']]=f['id']
-        
-        if len(publishFiles)>0:
-            latestVersion=max(publishFiles, key=publishFiles.get)
-            latestId=publishFiles[latestVersion]
+            publishFiles={}
             for f in tankfiles:
-                if f['id']==latestId:
+                
+                data=sg.find_one('Task',filters=[['id','is',f['task']['id']]],fields=['sg_filetag'])
+                
+                if data['sg_filetag']==filetag:
+                    publishFiles[f['version_number']]=f['id']
+            
+            if len(publishFiles)>0:
+                latestVersion=max(publishFiles, key=publishFiles.get)
+                latestId=publishFiles[latestVersion]
+                for f in tankfiles:
+                    if f['id']==latestId:
+                        
+                        f['assetName']=asset['name']
+                        
+                        result.append(f)
+    else:
+        
+        for asset in assets:
+            if asset['name']==specific:
+                
+                tankfiles=sg.find('TankPublishedFile', filters=[['entity','is',asset]],fields=['version_number','task','path'])
+                
+                publishFiles={}
+                for f in tankfiles:
                     
-                    f['assetName']=asset['name']
+                    data=sg.find_one('Task',filters=[['id','is',f['task']['id']]],fields=['sg_filetag'])
                     
-                    result.append(f)
+                    if data['sg_filetag']==filetag:
+                        publishFiles[f['version_number']]=f['id']
+                
+                if len(publishFiles)>0:
+                    latestVersion=max(publishFiles, key=publishFiles.get)
+                    latestId=publishFiles[latestVersion]
+                    for f in tankfiles:
+                        if f['id']==latestId:
+                            
+                            f['assetName']=asset['name']
+                            
+                            result.append(f)
     
     #return
     return result
@@ -140,7 +144,7 @@ def imagePlane(cam,filePath):
     return imagePlane
 
 def alembicExport(startFrame,endFrame,filePath,nodes):
-    ''' Exports alembic file with meta data file (*.abcMeta) '''
+    ''' Exports alembic file '''
     
     # defining variables
     nodesString=''

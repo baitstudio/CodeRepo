@@ -12,7 +12,7 @@ grandpa = ['grandpa', 'test']
 clothes = ['shirt', 'pants']
 '''
 #Make Cloth
-def prepareClothSim(active, passive): 
+def prepareClothObjects(active, passive): 
  
     select(active)
     activeObj = ls(sl=True)   
@@ -20,12 +20,12 @@ def prepareClothSim(active, passive):
     select(passive)
     passiveObj = ls(sl=True)
     
-    for obj in activeObj:
+    for obj in passiveObj:
         select(obj)
         rigidObj = mel.eval('''makeCollideNCloth;''')
         PyNode(rigidObj[0]).getParent().rename("Passive_" + obj)
         
-    for obj in passiveObj:
+    for obj in activeObj:
         select(obj)
         clothObj = mel.eval('''createNCloth 0;''')
         PyNode(clothObj[0]).getParent().rename("Cloth_" + obj)
@@ -38,6 +38,10 @@ def prepareClothSim(active, passive):
 filename='Z:/Bait/grandpa/WORK/development/3D/cache/alembic/man_cartwheel.abc'
 nodes='grandpa'
 '''
+        
+def makeClothSimScene():
+    return
+         
         
 def abcImport(filename, nodes):
     cmds.AbcImport(filename, mode="import", ct=nodes, crt=True);
