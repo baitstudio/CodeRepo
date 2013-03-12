@@ -6,6 +6,7 @@ sys.path.append('Z:/_CORE/Shotgun/python-api')
 
 import maya.cmds as cmds
 import maya.mel as mel
+import pymel.core as pm
 from shotgun_api3 import Shotgun
 import tank
 
@@ -155,3 +156,21 @@ def alembicExport(startFrame,endFrame,filePath,nodes):
     
     # export alembic file
     cmds.AbcExport(j='-frameRange %s %s -stripNamespaces -uvWrite -wholeFrameGeo -worldSpace -writeVisibility %s-file %s' % (startFrame,endFrame,nodesString,filePath))
+    
+    
+def alembicImport(filePath, mode, parent=None, nodes=None):
+    ''' Imports Alembic File'''    
+    
+    if mode=='parent':
+        pm.AbcImport(filePath, mode="import", ftr=True, sts=True, rpr=parent) 
+         
+    elif mode=='merge':
+        nodesString=''
+                
+        for node in nodes:
+            nodesString+='-root '+node+' '
+        pm.AbcImport(filePath, mode="import", ct=nodesString, ftr=True, sts=True)
+        
+    else:
+        pm.AbcImport(filePath, mode="import", ftr=True, sts=True)
+    

@@ -11,40 +11,51 @@ import maya.cmds as cmds
 import bait_pytools.Maya.utils as mu
 reload(mu)
 
-def SetupSimScene(platform):
+def maya_light_setup(self):
     
-    #prepare all the paths and variables
-    clothFile = "Z:/work/00719_grandpa/assets/Props/Main_Outift/publish/mainOutfit.cloth.v001.ma"
-    abcFile = "Y:/RENDERS/00719_grandpa/000_dummy/0000/cache/grandpa.abc"
-    ncachePath = "Y:/RENDERS/00719_grandpa/000_dummy/0000/cache/nCache"
-    abcNodes = "shoes l_eye r_eye topTeeth bottomTeeth body"
+    tk=self.parent.tank      
+    ctx=self.parent.context
+    
+      
+    cache_alembic=tk.templates['cache_alembic']
+    fields=ctx.as_template_fields(cache_alembic)
+    abcFile = cache_alembic.apply_fields(fields)
+         
+    
+    pm.newFile(f=1, type='mayaAscii')
+    
+    #reference light setup scene
+    lightSetup=mu.getLatestShotAssets('light')
+    
+    for asset in lightSetup:
+        
+        mu.referenceAsset(asset['path']['local_path_windows'])
+    
+    #referencing latest camera file
+    camData=mu.getLatestShotFile('cam')
+    
+    if len(camData)<1:
+            camData=mu.getLatestShotFile(self, 'cam')
+            
+            camNodes=mu.referenceAsset(camData['path']['local_path_windows'])
+    else:
+            camNodes=mu.referenceAsset(camData['path']['local_path_windows'])
+            
+    for node in camNodes:       
+        if cmds.nodeType(node)=='camera':
+            cam=node
+    
     
     #loading alembic plugin
-    cmds.loadPlugin('AbcImport.mll')
+    pm.loadPlugin('AbcImport.mll')
     
-    #import all the necessary data
-    pm.newFile(f=1, type='mayaAscii')
-    pm.importFile(clothFile)
-    pm.AbcImport(abcFile, mode="import", ct=abcNodes, ftr=True, crt=True, sts=True)
+    #import all alembic files for given shot
+    shotAssets=mu.getLatestShotAssets(self,'rig',specific='Grandpa')
     
-    #query time data
-    startTime=cmds.playbackOptions(q=True,animationStartTime=True)
-    endTime=cmds.playbackOptions(q=True,animationEndTime=True)
-    
-    cmds.currentTime(startTime)
-    
-    #find all nCloth objects
-    clothObjects = pm.ls(type='nCloth')
-    
-    #create simulation cache for all nCloth nodes in the scene
-    print ('caching theses nCloth objects: ' + str(clothObjects))
-    cacheFiles = pm.cacheFile(cnd=clothObjects, st=startTime, et=endTime, dir=ncachePath, dtf=True, fm='OneFile', r=True, ws=True)
-    
-    #apply created cache to simulated objects
-    cacheShapes = pm.ls('outputCloth*')
-    i=0
-    for shape in cacheShapes:
-        switch = mel.eval('createHistorySwitch(\"' + str(shape) + '\",false)')
-        cacheNode = pm.cacheFile(f=cacheFiles[i], cnm=str(shape), ia='%s.inp[0]' % switch ,attachFile=True, dir=ncachePath)
-        pm.setAttr( '%s.playFromCache' % switch, 1 )
-        i += 1
+    mu.alembicImport(abcFile, 'root')
+            
+            
+            
+            
+            
+      
