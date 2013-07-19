@@ -30,7 +30,7 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFile,sceneFile,plug
     pluginData=open((os.path.dirname(__file__)+'/config/'+str(app)+'_plugin.txt'),'r')
     pluginData=pluginData.read()
     pluginData+='\n'
-
+    
     for arg in pluginArgs:
         pluginData+=arg+'\n'
     
@@ -39,7 +39,7 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFile,sceneFile,plug
     
     pluginData+='OutputFolder='+outputPath+'\n'
     pluginData+='OutputBaseName='+outputFile+'\n'
-
+    
     pluginFile=open((tempDir+'/plugin_info.job'),'w')
     pluginFile.write(pluginData)
     pluginFile.close()
@@ -58,7 +58,7 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFile,sceneFile,plug
     submitData+='Frames='+str(start)+'-'+str(end)+'\n'
     submitData+='OutputDirectory0='+outputPath+'\n'
     submitData+='OutputFilename0='+outputFile+'\n'
-    
+        
     submitFile=open((tempDir+'/submit_info.job'),'w')
     submitFile.write(submitData)
     submitFile.close()
@@ -86,14 +86,17 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFile,sceneFile,plug
     
     return jobid
 
-app='nuke'
-name='test'
+'''
+app='maya'
+name='maya_test'
 start=0
 end=10
-inputFilepath='N:/testing_deadline/test.nk'
-outputPath='N:/testing_deadline'
-outputFile='something.####.png'
+inputFilepath='N:/testing_deadline/New_Project/scenes/test.ma'
+sceneFile='N:/testing_deadline/New_Project/scenes/test.ma'
+outputPath='N:/testing_deadline/New_Project/images'
+outputFile='test.????.exr'
 pluginArgs=['']
 submitArgs=['Comment=testing deadline script']
 
-submit(app,name,start,end,inputFilepath,outputPath,outputFile,'',pluginArgs,submitArgs)
+submit(app,name,start,end,inputFilepath,outputPath,outputFile,sceneFile,pluginArgs,submitArgs)
+'''
