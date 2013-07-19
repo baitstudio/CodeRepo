@@ -1,0 +1,1 @@
+print 'Successfully imported python module \'Bait CodeRepo\''
