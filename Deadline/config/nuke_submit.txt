@@ -1,0 +1,11 @@
+Plugin=Nuke
+Pool=nuke
+Group=none
+Priority=30
+MachineLimit=0
+TaskTimeoutMinutes=0
+EnableAutoTimeout=False
+ConcurrentTasks=1
+LimitConcurrentTasksToNumberOfCpus=True
+OnJobComplete=Nothing
+ChunkSize=50

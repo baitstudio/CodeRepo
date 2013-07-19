@@ -1,6 +1,14 @@
+import maya.cmds as cmds
+import sgtk
+
+projectPath=cmds.workspace(q=True,fullName=True)
+tk = sgtk.sgtk_from_path(projectPath)
+ctx=tk.context_from_path(projectPath)
+
+sg=tk.shotgun
 
 
-def getLatestShotFile(platform,filetag):
+def getLatestShotFile(platform,filetag,testvar):
     ''' Gets latest files connected to opened file.
         
         filetag = string
@@ -16,7 +24,7 @@ def getLatestShotFile(platform,filetag):
     shot=sg.find_one('Shot', filters=[['id','is',ctx.entity['id']]])
     
     #getting tank data
-    tankfiles=sg.find('TankPublishedFile', filters=[['entity','is',shot]],fields=['version_number','task','path'])
+    tankfiles=sg.find('PublishedFile', filters=[['entity','is',shot]],fields=['version_number','task','path'])
     
     publishFiles={}
     for f in tankfiles:
@@ -56,7 +64,7 @@ def getLatestShotAssets(platform,filetag,specific=None):
     if specific==None:
     
         for asset in assets:
-            tankfiles=sg.find('TankPublishedFile', filters=[['entity','is',asset]],fields=['version_number','task','path'])
+            tankfiles=sg.find('PublishedFile', filters=[['entity','is',asset]],fields=['version_number','task','path'])
             
             publishFiles={}
             for f in tankfiles:
@@ -80,7 +88,7 @@ def getLatestShotAssets(platform,filetag,specific=None):
         for asset in assets:
             if asset['name']==specific:
                 
-                tankfiles=sg.find('TankPublishedFile', filters=[['entity','is',asset]],fields=['version_number','task','path'])
+                tankfiles=sg.find('PublishedFile', filters=[['entity','is',asset]],fields=['version_number','task','path'])
                 
                 publishFiles={}
                 for f in tankfiles:

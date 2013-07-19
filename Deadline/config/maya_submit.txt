@@ -1,0 +1,10 @@
+Plugin=MayaBatch
+Pool=maya
+Group=none
+Priority=30
+MachineLimit=0
+TaskTimeoutMinutes=0
+EnableAutoTimeout=False
+ConcurrentTasks=1
+OnJobComplete=Nothing
+ChunkSize=50

@@ -1,18 +1,23 @@
 import sys
 
 #tools path
-sys.path.append('Z:/_CORE/PythonRepo')
+sys.path.append('K:/CodeRepo')
 
 import maya.mel as mel
 import tank
 import pymel.core as pm
 import maya.cmds as cmds
 
-import bait_pytools.Maya.utils as mu
-reload(mu)
-
 def SetupSimScene(platform):
     
+    
+    
+    # get the current scene path and extract fields from it
+    # using the work template:
+    scene_path = os.path.abspath(cmds.file(query=True, sn=True))
+    fields = work_template.get_fields(scene_path)
+    publish_version = fields["version"]
+
     #prepare all the paths and variables
     clothFile = "Z:/work/00719_grandpa/assets/Props/Main_Outift/publish/mainOutfit.cloth.v001.ma"
     abcFile = "Y:/RENDERS/00719_grandpa/000_dummy/0000/cache/grandpa.abc"
@@ -28,10 +33,10 @@ def SetupSimScene(platform):
     pm.AbcImport(abcFile, mode="import", ct=abcNodes, ftr=True, crt=True, sts=True)
     
     #query time data
-    startTime=cmds.playbackOptions(q=True,animationStartTime=True)
-    endTime=cmds.playbackOptions(q=True,animationEndTime=True)
+    startTime=pm.playbackOptions(q=True,animationStartTime=True)
+    endTime=pm.playbackOptions(q=True,animationEndTime=True)
     
-    cmds.currentTime(startTime)
+    pm.currentTime(startTime)
     
     #find all nCloth objects
     clothObjects = pm.ls(type='nCloth')

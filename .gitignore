@@ -187,6 +187,7 @@ $RECYCLE.BIN/
 ## Python
 #############
 
+*.pyc
 *.py[co]
 
 # Packages

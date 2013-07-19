@@ -1,0 +1,7 @@
+Version=7.0
+Threads=0
+RamUse=0
+Build=64bit
+BatchMode=False
+NukeX=False
+ContinueOnError=False
