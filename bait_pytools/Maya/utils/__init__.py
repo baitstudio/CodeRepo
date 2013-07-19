@@ -4,11 +4,11 @@ import shutil
 
 #shotgun path
 sys.path.append('Z:/_CORE/Shotgun/python-api')
+sys.path.append('Z:/_CORE/Tank/tank/install/core/python')
 
 import maya.cmds as cmds
 import maya.mel as mel
 import pymel.core as pm
-from shotgun_api3 import Shotgun
 import tank
 
 def getLatestShotFile(platform,filetag):
@@ -148,6 +148,9 @@ def imagePlane(cam,filePath):
 def alembicExport(startFrame,endFrame,filePath,nodes,attributes=None):
     ''' Exports alembic file '''
     
+    #making sure plugin is loaded
+    pm.loadPlugin('AbcExport')
+    
     # defining variables
     nodesString=''
     
@@ -156,9 +159,10 @@ def alembicExport(startFrame,endFrame,filePath,nodes,attributes=None):
         nodesString+='-root '+node+' '
         
     attrstring = ''
-    if len(attributes)>0:
-        for attr in attributes:
-            attrstring+='-a '+ attr + ' '
+    if attributes!=None:
+        if len(attributes)>0:
+            for attr in attributes:
+                attrstring+='-a '+ attr + ' '
     
     # export alembic file
     pm.AbcExport(j='-frameRange %s %s %s-stripNamespaces -uvWrite -worldSpace -wholeFrameGeo -writeVisibility %s-file %s' % (startFrame,endFrame,attrstring,nodesString,filePath))
@@ -166,6 +170,9 @@ def alembicExport(startFrame,endFrame,filePath,nodes,attributes=None):
     
 def alembicImport(filePath, mode, parent=None, nodes=None):
     ''' Imports Alembic File'''    
+    
+    #making sure plugin is loaded
+    pm.loadPlugin('AbcImport')
     
     if mode=='parent':
         pm.AbcImport(filePath, mode="import", ftr=True, sts=True, rpr=parent) 
@@ -210,6 +217,8 @@ def ExportSceneCache(exportAttr=None):
         for node in nodes:               
             assetName=cmds.getAttr(node+'.asset')
             assets[assetName].append(node)
+
+    publish_arg_dic={}
         
     for asset in assets:
         
@@ -226,9 +235,50 @@ def ExportSceneCache(exportAttr=None):
         startFrame=cmds.playbackOptions(q=True,animationStartTime=True)
         endFrame=cmds.playbackOptions(q=True,animationEndTime=True)
         
-        alembicExport(startFrame,endFrame,cachePath,nodes,attributes=exportAttr)
-
+        alembicExport(startFrame,endFrame,cachePath,nodes,attributes=exportAttr)       
+        publish_arg_dic.update({asset : {'publish_path':cachePath, 'tank_type': 'Alembic Cache', 'publish_name': (asset + ' Alembic')}})
         
+    return publish_arg_dic
+
+'''
+def create_TankPublishedFile(platform,data,thumbnail=None):
+    
+    result=[]
+    
+    for item in data:
+        
+        args = {
+            "tk": platform.app.tank,
+            "context": platform.app.context,
+            "comment": 'Automatic generated tank ',
+            "path": item['publish_path'],
+            "name": item['publish_name'],
+            "version_number": 1,
+            "task": task,
+            "tank_type": item['tank_type']
+            }
+        
+        #thumbnail option
+        if thumbnail!=None:
+            
+            args["thumbnail_path": thumbnail]
+            
+        sg_data = tank.util.register_publish(**args)
+        result.append(sg_data)
+    
+    #return
+    return result
+
+exportOutput={u'main_outfit': {'publish_name': u'main_outfit Alembic',
+                               'publish_path': 'Y:\\renders\\00719_grandpa\\000_dummy\\002\\cache\\main_outfit.abc',
+                               'tank_type': 'Alembic Cache'},
+              u'grandpa': {'publish_name': u'grandpa Alembic',
+                           'publish_path': 'Y:\\renders\\00719_grandpa\\000_dummy\\002\\cache\\grandpa.abc',
+                           'tank_type': 'Alembic Cache'}}
+
+create_TankPublishedFile()
+'''
+
 def set_arnold_subd(level):
        
     nodes = pm.ls(sl=True)
@@ -391,6 +441,6 @@ def __exportPlayblast__(filePath,camera,width=640,height=360,exportType='movie',
         
         return result
     else:
-        cmds.warning('Requested camera cant be found!')
+        cmds.warning('Requested camera can't be found!')
         
         return None
