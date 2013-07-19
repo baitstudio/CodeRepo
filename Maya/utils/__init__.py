@@ -1,118 +1,9 @@
 import os
-import sys
 import shutil
-
-#shotgun path
-sys.path.append('Z:/_CORE/Shotgun/python-api')
-sys.path.append('Z:/_CORE/Tank/tank/install/core/python')
 
 import maya.cmds as cmds
 import maya.mel as mel
 import pymel.core as pm
-import tank
-
-def getLatestShotFile(platform,filetag):
-    ''' Gets latest files connected to opened file.
-        
-        filetag = string
-        
-        Returns latest TankPublishFile dictionary.
-    '''
-    
-    #getting shot data
-    sg=platform.parent.shotgun
-    
-    ctx=platform.parent.context
-    
-    shot=sg.find_one('Shot', filters=[['id','is',ctx.entity['id']]])
-    
-    #getting tank data
-    tankfiles=sg.find('TankPublishedFile', filters=[['entity','is',shot]],fields=['version_number','task','path'])
-    
-    publishFiles={}
-    for f in tankfiles:
-        
-        data=sg.find_one('Task',filters=[['id','is',f['task']['id']]],fields=['sg_filetag'])
-        
-        if data['sg_filetag']==filetag:
-            publishFiles[f['version_number']]=f['id']
-    
-    #return latest tank publish
-    if len(publishFiles)>0:
-        latestVersion=max(publishFiles, key=publishFiles.get)
-        latestId=publishFiles[latestVersion]
-        for f in tankfiles:
-            if f['id']==latestId:
-                
-                return f
-
-def getLatestShotAssets(platform,filetag,specific=None):
-    ''' Gets latest assets connected to opened file.
-        
-        filetag = string
-        
-        Returns list of TankPublishedFile dictionaries.
-    '''
-    
-    #return variable
-    result=[]
-    
-    #getting assets
-    sg=platform.parent.shotgun
-    
-    ctx=platform.parent.context
-    
-    assets=sg.find_one('Shot', filters=[['id','is',ctx.entity['id']]],fields=['assets'])['assets']
-    
-    if specific==None:
-    
-        for asset in assets:
-            tankfiles=sg.find('TankPublishedFile', filters=[['entity','is',asset]],fields=['version_number','task','path'])
-            
-            publishFiles={}
-            for f in tankfiles:
-                
-                data=sg.find_one('Task',filters=[['id','is',f['task']['id']]],fields=['sg_filetag'])
-                
-                if data['sg_filetag']==filetag:
-                    publishFiles[f['version_number']]=f['id']
-            
-            if len(publishFiles)>0:
-                latestVersion=max(publishFiles, key=publishFiles.get)
-                latestId=publishFiles[latestVersion]
-                for f in tankfiles:
-                    if f['id']==latestId:
-                        
-                        f['assetName']=asset['name']
-                        
-                        result.append(f)
-    else:
-        
-        for asset in assets:
-            if asset['name']==specific:
-                
-                tankfiles=sg.find('TankPublishedFile', filters=[['entity','is',asset]],fields=['version_number','task','path'])
-                
-                publishFiles={}
-                for f in tankfiles:
-                    
-                    data=sg.find_one('Task',filters=[['id','is',f['task']['id']]],fields=['sg_filetag'])
-                    
-                    if data['sg_filetag']==filetag:
-                        publishFiles[f['version_number']]=f['id']
-                
-                if len(publishFiles)>0:
-                    latestVersion=max(publishFiles, key=publishFiles.get)
-                    latestId=publishFiles[latestVersion]
-                    for f in tankfiles:
-                        if f['id']==latestId:
-                            
-                            f['assetName']=asset['name']
-                            
-                            result.append(f)
-    
-    #return
-    return result
 
 def referenceAsset(filePath):
     ''' References maya file in maya scene.
@@ -239,45 +130,6 @@ def ExportSceneCache(exportAttr=None):
         publish_arg_dic.update({asset : {'publish_path':cachePath, 'tank_type': 'Alembic Cache', 'publish_name': (asset + ' Alembic')}})
         
     return publish_arg_dic
-
-'''
-def create_TankPublishedFile(platform,data,thumbnail=None):
-    
-    result=[]
-    
-    for item in data:
-        
-        args = {
-            "tk": platform.app.tank,
-            "context": platform.app.context,
-            "comment": 'Automatic generated tank ',
-            "path": item['publish_path'],
-            "name": item['publish_name'],
-            "version_number": 1,
-            "task": task,
-            "tank_type": item['tank_type']
-            }
-        
-        #thumbnail option
-        if thumbnail!=None:
-            
-            args["thumbnail_path": thumbnail]
-            
-        sg_data = tank.util.register_publish(**args)
-        result.append(sg_data)
-    
-    #return
-    return result
-
-exportOutput={u'main_outfit': {'publish_name': u'main_outfit Alembic',
-                               'publish_path': 'Y:\\renders\\00719_grandpa\\000_dummy\\002\\cache\\main_outfit.abc',
-                               'tank_type': 'Alembic Cache'},
-              u'grandpa': {'publish_name': u'grandpa Alembic',
-                           'publish_path': 'Y:\\renders\\00719_grandpa\\000_dummy\\002\\cache\\grandpa.abc',
-                           'tank_type': 'Alembic Cache'}}
-
-create_TankPublishedFile()
-'''
 
 def set_arnold_subd(level):
        
@@ -441,6 +293,6 @@ def __exportPlayblast__(filePath,camera,width=640,height=360,exportType='movie',
         
         return result
     else:
-        cmds.warning('Requested camera can't be found!')
+        cmds.warning('Requested camera cant be found!')
         
         return None
