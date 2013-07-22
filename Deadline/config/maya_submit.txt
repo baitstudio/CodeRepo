@@ -1,6 +1,4 @@
 Plugin=MayaBatch
-Name=None
-Comment=None
 Pool=none
 MachineLimit=0
 Priority=50
@@ -8,8 +6,5 @@ OnJobComplete=Nothing
 TaskTimeoutMinutes=0
 MinRenderTimeMinutes=0
 ConcurrentTasks=1
-Department=None
 Group=none
-OutputFilename0=None
-Frames=1-10
 ChunkSize=1

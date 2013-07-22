@@ -5,3 +5,4 @@ Build=64bit
 BatchMode=False
 NukeX=False
 ContinueOnError=False
+LocalRendering=1

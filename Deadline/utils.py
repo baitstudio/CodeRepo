@@ -1,20 +1,16 @@
 '''
-todo:
-    ability to update/change predefined plugin/submit args
+usage:
 
-usage example:
-
-    app='redline'
-    name='temp'
+    app='maya'
+    name='maya_test'
     start=0
-    end=100
-    inputFilepath='C:/temp/A006_C005_01246Z.RDC/A006_C005_01246Z_002.R3D'
-    outputPath='C:/temp1'
-    outputFile='temp.R3D'
+    end=10
+    inputFilepath='N:/test/test.ma'
+    outputPath='N:/test'
     pluginArgs=['']
-    submitArgs=['Comment=something']
+    submitArgs=['Comment=testing deadline script']
     
-    submit(app,name,start,end,inputFilepath,outputPath,outputFile,sceneFile,pluginArgs,submitArgs)
+    submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs)
 '''
 
 import tempfile
@@ -22,7 +18,7 @@ import os
 import subprocess
 from config import config
 
-def submit(app,name,start,end,inputFilepath,outputPath,outputFile,sceneFile,pluginArgs,submitArgs):
+def submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs):
     #get temp directory
     tempDir=tempfile.gettempdir()
     
@@ -34,11 +30,7 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFile,sceneFile,plug
     for arg in pluginArgs:
         pluginData+=arg+'\n'
     
-    if inputFilepath!='':
-        pluginData+='SceneFile='+inputFilepath+'\n'
-    
-    pluginData+='OutputFolder='+outputPath+'\n'
-    pluginData+='OutputBaseName='+outputFile+'\n'
+    pluginData+='OutputFilePath='+outputPath+'/\n'
     
     pluginFile=open((tempDir+'/plugin_info.job'),'w')
     pluginFile.write(pluginData)
@@ -56,8 +48,6 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFile,sceneFile,plug
     
     submitData+='Name='+name+'\n'
     submitData+='Frames='+str(start)+'-'+str(end)+'\n'
-    submitData+='OutputDirectory0='+outputPath+'\n'
-    submitData+='OutputFilename0='+outputFile+'\n'
         
     submitFile=open((tempDir+'/submit_info.job'),'w')
     submitFile.write(submitData)
@@ -66,14 +56,7 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFile,sceneFile,plug
     submitFile=submitFile.replace('\\','/')
     
     #submitting to deadline
-    if sceneFile!='':
-        result=subprocess.Popen((config.deadlineCommand,submitFile,pluginFile,sceneFile),stdout=subprocess.PIPE)
-    else:
-        result=subprocess.Popen((config.deadlineCommand,submitFile,pluginFile),stdout=subprocess.PIPE)
-
-    #removing temp files
-    #os.remove(submitFile)
-    #os.remove(pluginFile)
+    result=subprocess.Popen((config.deadlineCommand,submitFile,pluginFile,inputFilepath),stdout=subprocess.PIPE)
     
     #return job id from deadline result
     result=result.communicate()[0]
@@ -85,18 +68,3 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFile,sceneFile,plug
             jobid=data.split('=')[1]
     
     return jobid
-
-'''
-app='maya'
-name='maya_test'
-start=0
-end=10
-inputFilepath='N:/testing_deadline/New_Project/scenes/test.ma'
-sceneFile='N:/testing_deadline/New_Project/scenes/test.ma'
-outputPath='N:/testing_deadline/New_Project/images'
-outputFile='test.????.exr'
-pluginArgs=['']
-submitArgs=['Comment=testing deadline script']
-
-submit(app,name,start,end,inputFilepath,outputPath,outputFile,sceneFile,pluginArgs,submitArgs)
-'''
