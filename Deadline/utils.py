@@ -1,24 +1,24 @@
-'''
-usage:
-
-    app='maya'
-    name='maya_test'
-    start=0
-    end=10
-    inputFilepath='N:/test/test.ma'
-    outputPath='N:/test'
-    pluginArgs=['']
-    submitArgs=['Comment=testing deadline script']
-    
-    submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs)
-'''
-
 import tempfile
 import os
 import subprocess
 from config import config
 
 def submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs):
+    '''
+    usage:
+    
+        app='maya'
+        name='maya_test'
+        start=0
+        end=10
+        inputFilepath='N:/test/test.ma'
+        outputPath='N:/test'
+        pluginArgs=['']
+        submitArgs=['Comment=testing deadline script']
+        
+        submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs)
+    '''
+    
     #get temp directory
     tempDir=tempfile.gettempdir()
     
