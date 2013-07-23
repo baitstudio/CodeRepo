@@ -3,7 +3,7 @@ import os
 import subprocess
 from config import config
 
-def submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs):
+def submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs,shotgunContext=None,shotgunFields=None):
     '''
     usage:
     
@@ -48,6 +48,21 @@ def submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs):
     
     submitData+='Name='+name+'\n'
     submitData+='Frames='+str(start)+'-'+str(end)+'\n'
+    
+    #shotgun submittal
+    if shotgunContext:
+        
+        submitData+='ExtraInfo0='+shotgunContext.task['name']+'\n'
+        submitData+='ExtraInfo1='+shotgunContext.project['name']+'\n'
+        submitData+='ExtraInfo2='+shotgunContext.entity['name']+'\n'
+        submitData+='ExtraInfo3='+shotgunFields['version']+'\n'
+        submitData+='ExtraInfo4=Version generated from Deadline\n'
+        submitData+='ExtraInfo5='+shotgunContext.user['name']+'\n'
+        
+        submitData+='ExtraInfoKeyValue0=TaskId='+shotgunContext.task['id']+'\n'
+        submitData+='ExtraInfoKeyValue1=ProjectId='+shotgunContext.project['id']+'\n'
+        submitData+='ExtraInfoKeyValue2=EntityId='+shotgunContext.entity['id']+'\n'
+        submitData+='ExtraInfoKeyValue3=EntityType='+shotgunContext.entity['type']+'\n'
         
     submitFile=open((tempDir+'/submit_info.job'),'w')
     submitFile.write(submitData)
@@ -68,3 +83,18 @@ def submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs):
             jobid=data.split('=')[1]
     
     return jobid
+
+'''
+app='maya'
+name='maya_test'
+start=0
+end=10
+inputFilepath='M:/00719_grandpa/episodes/000_dummy/0000/Light/work/deadline_testing.light.v001.ma'
+outputPath='M:/00719_grandpa/episodes/000_dummy/0000/Light/work/images'
+pluginArgs=['']
+submitArgs=['Comment=testing deadline script']
+shotgunFields=None
+shotgunContext=None
+
+submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs,shotgunContext=shotgunContext,shotgunFields=shotgunFields)
+'''
