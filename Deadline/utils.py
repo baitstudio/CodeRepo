@@ -1,9 +1,16 @@
+'''
+
+need to submit files outputpath
+
+'''
+
 import tempfile
 import os
 import subprocess
 from config import config
 
-def submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs,shotgunContext=None,shotgunFields=None):
+def submit(app,name,start,end,inputFilepath,outputPath,outputFiles,pluginArgs,submitArgs,
+           shotgunContext=None,shotgunFields=None,shotgunUser=None,mayaGUI=False):
     '''
     usage:
     
@@ -18,7 +25,6 @@ def submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs,sho
         
         submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs)
     '''
-    
     #get temp directory
     tempDir=tempfile.gettempdir()
     
@@ -49,20 +55,27 @@ def submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs,sho
     submitData+='Name='+name+'\n'
     submitData+='Frames='+str(start)+'-'+str(end)+'\n'
     
+    #generate output filename section
+    for outputfile in outputFiles:
+        
+        count=outputFiles.index(outputfile)
+        
+        submitData+='OutputFilename%s=%s\n' % (count,outputfile.replace('\\','/'))
+    
     #shotgun submittal
     if shotgunContext:
         
-        submitData+='ExtraInfo0='+shotgunContext.task['name']+'\n'
-        submitData+='ExtraInfo1='+shotgunContext.project['name']+'\n'
-        submitData+='ExtraInfo2='+shotgunContext.entity['name']+'\n'
-        submitData+='ExtraInfo3='+shotgunFields['version']+'\n'
+        submitData+='ExtraInfo0='+str(shotgunContext.task['name'])+'\n'
+        submitData+='ExtraInfo1='+str(shotgunContext.project['name'])+'\n'
+        submitData+='ExtraInfo2='+str(shotgunContext.entity['name'])+'\n'
+        submitData+='ExtraInfo3='+str(shotgunFields['version'])+'\n'
         submitData+='ExtraInfo4=Version generated from Deadline\n'
-        submitData+='ExtraInfo5='+shotgunContext.user['name']+'\n'
+        submitData+='ExtraInfo5='+str(shotgunUser['login'])+'\n'
         
-        submitData+='ExtraInfoKeyValue0=TaskId='+shotgunContext.task['id']+'\n'
-        submitData+='ExtraInfoKeyValue1=ProjectId='+shotgunContext.project['id']+'\n'
-        submitData+='ExtraInfoKeyValue2=EntityId='+shotgunContext.entity['id']+'\n'
-        submitData+='ExtraInfoKeyValue3=EntityType='+shotgunContext.entity['type']+'\n'
+        submitData+='ExtraInfoKeyValue0=TaskId='+str(shotgunContext.task['id'])+'\n'
+        submitData+='ExtraInfoKeyValue1=ProjectId='+str(shotgunContext.project['id'])+'\n'
+        submitData+='ExtraInfoKeyValue2=EntityId='+str(shotgunContext.entity['id'])+'\n'
+        submitData+='ExtraInfoKeyValue3=EntityType='+str(shotgunContext.entity['type'])+'\n'
         
     submitFile=open((tempDir+'/submit_info.job'),'w')
     submitFile.write(submitData)
@@ -71,8 +84,19 @@ def submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs,sho
     submitFile=submitFile.replace('\\','/')
     
     #submitting to deadline
-    result=subprocess.Popen((config.deadlineCommand,submitFile,pluginFile,inputFilepath),stdout=subprocess.PIPE)
-    
+    #special case for maya, cause subprocess doesnt work in maya
+    if mayaGUI:
+        
+        import maya.mel as mel
+        
+        cmd='call \\"'+config.deadlineCommand+'\\" \\"'+submitFile+'\\" \\"'+pluginFile+'\\" \\"'+inputFilepath+'\\"'
+        mel.eval('system("%s");' % cmd)
+        
+    else:
+        result=subprocess.Popen((config.deadlineCommand,submitFile,pluginFile,inputFilepath),
+                                stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                                stderr=subprocess.STDOUT,shell=False)
+    '''
     #return job id from deadline result
     result=result.communicate()[0]
     
@@ -83,6 +107,7 @@ def submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs,sho
             jobid=data.split('=')[1]
     
     return jobid
+    '''
 
 '''
 app='maya'

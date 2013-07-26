@@ -33,6 +33,7 @@ def imagePlane(cam,filePath):
     #enable image sequence
     cmds.setAttr(imagePlane+'.useFrameExtension',1)
     
+    cmds.setAttr(imagePlane+'.depth',200)
     #return
     return imagePlane
 
