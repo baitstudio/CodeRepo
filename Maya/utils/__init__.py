@@ -5,12 +5,12 @@ import maya.cmds as cmds
 import maya.mel as mel
 import pymel.core as pm
 
-def referenceAsset(filePath):
+def referenceAsset(filePath,namespace=None):
     ''' References maya file in maya scene.
         Takes namespace from file.
     '''
-    
-    namespace=os.path.basename(filePath).split('.')[0]
+    if not namespace:
+        namespace=os.path.basename(filePath).split('.')[0]
     
     return cmds.file(filePath,reference=True,namespace=namespace,
                      returnNewNodes=True)

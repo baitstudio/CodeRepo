@@ -9,10 +9,6 @@ sg=tk.shotgun
 
 def getLatestShotFile(tk,ctx,publishedType=None,filetag=None):
     
-    
-    #sg=tk.shotgun
-    #ctx=tk.context
-    
     #return variable
     result=[]
     
@@ -57,9 +53,6 @@ def getLatestShotFile(tk,ctx,publishedType=None,filetag=None):
                     result.append(f)
                 
     return result
-
-getLatestShotFile(tk, ctx, publishedType = 'Alembic Cache')
-
 
 def getLatestShotAssets(platform,filetag=None,specific=None):
     ''' Gets latest assets connected to opened file.
