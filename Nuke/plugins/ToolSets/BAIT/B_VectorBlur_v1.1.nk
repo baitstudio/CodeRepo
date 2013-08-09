@@ -1,0 +1,107 @@
+set cut_paste_input [stack 0]
+version 7.0 v6
+push $cut_paste_input
+Group {
+ name B_VectorBlur
+ tile_color 0xff3f00ff
+ selected true
+ xpos -90
+ ypos -49
+ addUserKnob {20 B_VectorBlur}
+ addUserKnob {6 mvinput l "External Motion Vector Pass" +STARTLINE}
+ mvinput true
+ addUserKnob {6 shuffleRGB l "Shuffle RGB to Forward" -STARTLINE}
+ shuffleRGB true
+ addUserKnob {26 ""}
+ addUserKnob {41 channels T VectorBlurCG.channels}
+ addUserKnob {41 uv l "uv channels" T VectorBlurCG.uv}
+ addUserKnob {41 constant l add T VectorBlurCG.constant}
+ addUserKnob {41 scale l multiply T VectorBlurCG.scale}
+ addUserKnob {41 offset T VectorBlurCG.offset}
+ addUserKnob {41 grow_bbox l "grow bbox" T VectorBlurCG.grow_bbox}
+ addUserKnob {41 method T VectorBlurCG.method}
+ addUserKnob {41 alpha T VectorBlurCG.alpha}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelInput l "" -STARTLINE T VectorBlurCG.maskChannelInput}
+ addUserKnob {41 inject -STARTLINE T VectorBlurCG.inject}
+ addUserKnob {41 invert_mask l invert -STARTLINE T VectorBlurCG.invert_mask}
+ addUserKnob {41 fringe -STARTLINE T VectorBlurCG.fringe}
+ addUserKnob {41 mix T VectorBlurCG.mix}
+}
+ Input {
+  inputs 0
+  name IN
+  xpos 357
+  ypos -95
+ }
+ Dot {
+  name Dot1
+  xpos 391
+  ypos -21
+ }
+set N1c37c370 [stack 0]
+ Dot {
+  name Dot2
+  xpos 391
+  ypos 25
+ }
+push $N1c37c370
+ Input {
+  inputs 0
+  name MV
+  xpos 501
+  ypos -95
+  number 1
+ }
+ Shuffle {
+  out forward
+  name Shuffle1
+  selected true
+  xpos 501
+  ypos -58
+  disable {{!parent.shuffleRGB}}
+ }
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  black red
+  white green
+  red2 black
+  green2 black
+  name ShuffleCopy4
+  xpos 501
+  ypos -24
+ }
+ Switch {
+  inputs 2
+  which {{!parent.mvinput}}
+  name SwitchMVInput
+  xpos 501
+  ypos 22
+ }
+set N1bfd4cd0 [stack 0]
+ VectorBlur {
+  constant {-0.5 -0.5}
+  scale 16
+  offset 0
+  method forward
+  alpha rgba.alpha
+  name VectorBlurCG
+  xpos 501
+  ypos 51
+ }
+ Output {
+  name Output1
+  xpos 501
+  ypos 119
+ }
+push $N1bfd4cd0
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 693
+  ypos 52
+ }
+end_group

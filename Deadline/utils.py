@@ -1,9 +1,3 @@
-'''
-
-need to submit files outputpath
-
-'''
-
 import tempfile
 import os
 import subprocess

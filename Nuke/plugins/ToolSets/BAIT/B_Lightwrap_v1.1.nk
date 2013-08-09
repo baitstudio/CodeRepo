@@ -1,0 +1,336 @@
+#! C:/Program Files/Nuke7.0v6/Nuke7.0.exe -nx
+version 7.0 v6
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="22" w="1680" h="1024" screen="0">
+        <splitter orientation="1">
+            <split size="1052"/>
+            <splitter orientation="1">
+                <split size="40"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="1008"/>
+                <splitter orientation="2">
+                    <split size="563"/>
+                    <dock id="" activePageId="Viewer.1">
+                        <page id="Viewer.1"/>
+                    </dock>
+                    <split size="396"/>
+                    <dock id="" activePageId="DAG.1">
+                        <page id="DAG.1"/>
+                        <page id="Curve Editor.1"/>
+                        <page id="DopeSheet.1"/>
+                    </dock>
+                </splitter>
+            </splitter>
+            <split size="608"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name C:/Users/bait/.nuke/ToolSets/B_Lightwrap_v1.1.nk
+}
+Group {
+ inputs 0
+ name B_Lightwrap
+ help "qp Gangsta Wrap v1.0beta\n\nBy Christian Lett\n\nLike Light Wrap, only more GANGSTA! Screens the hilights and multiplies the darks from a baclground over the edges of a keyed foreground element. Simples!"
+ tile_color 0xff3f00ff
+ selected true
+ xpos -737
+ ypos 272
+ addUserKnob {20 B_Lightwrap l "Bait Lightwrap"}
+ addUserKnob {41 format l Format T Constant1.format}
+ addUserKnob {7 hilight_threshold l "Hilight Threshold" t "Only values above this slider will be included in light wrap"}
+ hilight_threshold 0.435
+ addUserKnob {7 darks_threshold l "Darks Threshold" t "Only values below this slider will be included in dark wrap"}
+ darks_threshold 0.285
+ addUserKnob {41 size l "Background Blur" t "Amount to blur the background by pre-wrap" T Blur2.size}
+ addUserKnob {41 size_1 l "Wrap Size" t "The inward expansion of the wrap" T Blur1.size}
+ addUserKnob {6 wrap_only l "Generate Wrap Only" t "Generates the wrap on 50% grey - use HARD LIGHT (wrap into A) or OVERLAY (wrap into B) blend mode to merge with composite" +STARTLINE}
+ wrap_only true
+ addUserKnob {7 wrap_mix l Mix t "Opacity of wrap"}
+ wrap_mix 1
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode1
+  tile_color 0xaaaaaa00
+  label "EDGE MATTE"
+  note_font_size 26
+  xpos 311
+  ypos -484
+  bdwidth 167
+  bdheight 246
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode3
+  tile_color 0x7171c600
+  label DARKS
+  note_font_size 22
+  xpos 207
+  ypos -44
+  bdwidth 102
+  bdheight 223
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode2
+  tile_color 0xaaaaaa00
+  label HILIGHTS
+  note_font_size 22
+  xpos 384
+  ypos -221
+  bdwidth 102
+  bdheight 235
+ }
+ Input {
+  inputs 0
+  name FG
+  xpos 321
+  ypos -583
+ }
+set Ne5c4070 [stack 0]
+ Dot {
+  name Dot1
+  xpos 506
+  ypos -531
+ }
+set N1c53ff20 [stack 0]
+ Dot {
+  name Dot10
+  xpos 703
+  ypos -531
+ }
+ Dot {
+  name Dot11
+  xpos 709
+  ypos 498
+ }
+push $Ne5c4070
+ Shuffle {
+  red black
+  green black
+  blue black
+  name Shuffle1
+  xpos 321
+  ypos -416
+ }
+set N1c540970 [stack 0]
+push $N1c540970
+ Invert {
+  channels alpha
+  name Invert1
+  xpos 388
+  ypos -377
+ }
+ Blur {
+  channels alpha
+  size 15.2
+  name Blur1
+  xpos 388
+  ypos -324
+ }
+ Merge2 {
+  inputs 2
+  operation geometric
+  Achannels alpha
+  Bchannels alpha
+  output alpha
+  name Merge1
+  xpos 321
+  ypos -281
+ }
+ Dot {
+  name Dot3
+  xpos 355
+  ypos -119
+ }
+set N1c541730 [stack 0]
+ Input {
+  inputs 0
+  name BG
+  xpos 122
+  ypos -618
+  number 1
+ }
+ Shuffle {
+  alpha white
+  name Shuffle2
+  xpos 122
+  ypos -579
+  disable true
+ }
+set N1c6bc3b0 [stack 0]
+ Dot {
+  name Dot8
+  xpos 251
+  ypos -531
+ }
+ Dot {
+  name Dot4
+  xpos 251
+  ypos -253
+ }
+set N1c6bca90 [stack 0]
+ Grade {
+  black {{-parent.hilight_threshold}}
+  add {{-parent.hilight_threshold}}
+  name Grade1
+  label HILIGHT
+  xpos 394
+  ypos -176
+ }
+ Blur {
+  channels rgba
+  size 43
+  name Blur2
+  label BACKGROUND
+  xpos 394
+  ypos -124
+ }
+ set C1c6bd170 [stack 0]
+ Constant {
+  inputs 0
+  format {{{parent.Constant1.format}}}
+  name Constant2
+  xpos 31
+  ypos -159
+ }
+ Dot {
+  name Dot9
+  xpos 142
+  ypos -62
+ }
+ Merge2 {
+  inputs 2+1
+  operation screen
+  name Merge4
+  xpos 394
+  ypos -65
+ }
+ Clamp {
+  channels alpha
+  name Clamp1
+  xpos 394
+  ypos -31
+ }
+ Dot {
+  name Dot6
+  xpos 428
+  ypos 352
+ }
+push $N1c541730
+ Dot {
+  name Dot5
+  xpos 355
+  ypos 64
+ }
+push $N1c6bca90
+ Grade {
+  whitepoint {{parent.darks_threshold}}
+  white_clamp true
+  name Grade2
+  label DARKS
+  xpos 217
+  ypos 9
+ }
+clone $C1c6bd170 {
+  xpos 217
+  ypos 71
+  selected false
+ }
+ Constant {
+  inputs 0
+  color 1
+  name Constant1
+  xpos 31
+  ypos -38
+ }
+ Merge2 {
+  inputs 2+1
+  operation multiply
+  name Merge5
+  xpos 217
+  ypos 138
+ }
+push $N1c53ff20
+ Dot {
+  name Dot2
+  xpos 506
+  ypos 64
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color 0.5
+  format {{{parent.Constant1.format}}}
+  name Constant3
+  xpos 30
+  ypos 68
+ }
+push $N1c6bc3b0
+ Switch {
+  inputs 2
+  which {{parent.wrap_only}}
+  name Switch1
+  xpos 122
+  ypos 187
+ }
+ Dot {
+  name Dot7
+  xpos 156
+  ypos 243
+ }
+ Merge2 {
+  inputs 2
+  name Merge8
+  xpos 165
+  ypos 296
+  disable {{parent.wrap_only}}
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  mix {{parent.wrap_mix}}
+  name Merge7
+  xpos 217
+  ypos 358
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  mix {{parent.wrap_mix}}
+  name Merge9
+  xpos 217
+  ypos 438
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  selected true
+  xpos 217
+  ypos 493
+ }
+set N1c78ce00 [stack 0]
+ Output {
+  name Output1
+  xpos 217
+  ypos 529
+ }
+push $N1c78ce00
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 321
+  ypos -245
+ }
+end_group

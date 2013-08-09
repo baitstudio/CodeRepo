@@ -1,0 +1,144 @@
+set cut_paste_input [stack 0]
+version 7.0 v6
+push $cut_paste_input
+Group {
+ name B_GeoUVProject
+ tile_color 0xff3f00ff
+ selected true
+ xpos 180
+ ypos -123
+ addUserKnob {20 User l "Load Geo"}
+ addUserKnob {26 geo l "Pick Geometry"}
+ addUserKnob {41 file T ReadGeoProject.file}
+ addUserKnob {41 reload T ReadGeoProject.reload}
+ addUserKnob {41 fbx_take_name l "animation stack" T ReadGeoProject.fbx_take_name}
+ addUserKnob {41 fbx_node_name l "node name" T ReadGeoProject.fbx_node_name}
+ addUserKnob {41 all_objects l "all objects" T ReadGeoProject.all_objects}
+ addUserKnob {26 projSize l "Projection Size"}
+ addUserKnob {6 useprojFormat l "Use Project Format" +STARTLINE}
+ useprojFormat true
+ addUserKnob {41 format T ConstantSize.format}
+ addUserKnob {26 ""}
+ addUserKnob {6 hidebackplate l "Hide Backplate" +STARTLINE}
+}
+ Input {
+  inputs 0
+  name CAM
+  xpos 359
+  ypos -257
+  number 1
+ }
+ Input {
+  inputs 0
+  name IN
+  xpos 501
+  ypos -365
+ }
+ Switch {
+  which {{parent.hidebackplate}}
+  name SwitchInput
+  xpos 501
+  ypos -290
+ }
+ Project3D {
+  inputs 2
+  name Project3DtoGeo
+  xpos 501
+  ypos -257
+ }
+ ReadGeo2 {
+  version 5
+  name ReadGeoProject
+  selected true
+  xpos 501
+  ypos -219
+ }
+ set C157b5040 [stack 0]
+ Constant {
+  inputs 0
+  channels rgb
+  format "1920 1080 0 0 1920 1080 1 HD"
+  name ConstantSize
+  xpos 752
+  ypos -174
+ }
+ Switch {
+  which {{parent.parent.B_GeoUVProject.useprojFormat}}
+  name SwitchSize
+  xpos 632
+  ypos -150
+ }
+ ScanlineRender {
+  inputs 2
+  projection_mode uv
+  motion_vectors_type distance
+  name ScanlineRenderUV
+  xpos 501
+  ypos -150
+ }
+ Output {
+  name Output1
+  xpos 501
+  ypos -3
+ }
+end_group
+set N199df560 [stack 0]
+push $N199df560
+Group {
+ inputs 2
+ name B_GeoUVApply
+ tile_color 0xff3f00ff
+ selected true
+ xpos 180
+ ypos 160
+ addUserKnob {20 options l Options}
+ addUserKnob {26 outputFormat l "Output format"}
+ addUserKnob {6 useprojFormat l "Use Project Format" +STARTLINE}
+ useprojFormat true
+ addUserKnob {41 format T ConstantSizeOut.format}
+}
+ Input {
+  inputs 0
+  name CAM
+  xpos 358
+  ypos -145
+  number 2
+ }
+ Input {
+  inputs 0
+  name IN
+  xpos 501
+  ypos -252
+ }
+clone $C157b5040 {
+  xpos 501
+  ypos -192
+  selected true
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  format "1920 1080 0 0 1920 1080 1 HD"
+  name ConstantSizeOut
+  xpos 760
+  ypos -169
+ }
+ Switch {
+  which {{parent.useprojFormat}}
+  name SwitchSizeOut
+  xpos 644
+  ypos -145
+ }
+ ScanlineRender {
+  inputs 3
+  motion_vectors_type distance
+  name ScanlineRenderOut
+  xpos 501
+  ypos -145
+ }
+ Output {
+  name Output1
+  xpos 501
+  ypos -99
+ }
+end_group

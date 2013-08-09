@@ -1,4 +1,4 @@
-Plugin=MayaBatch
+Plugin=MayaCmd
 Pool=none
 MachineLimit=0
 Priority=50
@@ -7,4 +7,4 @@ TaskTimeoutMinutes=0
 MinRenderTimeMinutes=0
 ConcurrentTasks=1
 Group=none
-ChunkSize=1
+ChunkSize=5

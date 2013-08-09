@@ -1,0 +1,1 @@
+This folder is sourced through environment variable 'NUKE_PATH'.
