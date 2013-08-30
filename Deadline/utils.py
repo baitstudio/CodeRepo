@@ -32,6 +32,14 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFiles,pluginArgs,su
     
     pluginData+='OutputFilePath='+outputPath+'/\n'
     
+    #special case for arnold
+    if app=='arnold':
+        pluginData+='InputFile='+inputFilepath+'\n'
+        
+        pluginData+='OutputFile='+outputFiles[0].replace('\\','/').replace('?','')+'\n'
+    else:
+        pluginData+='SceneFile='+inputFilepath+'\n'
+    
     pluginFile=open((tempDir+'/plugin_info.job'),'w')
     pluginFile.write(pluginData)
     pluginFile.close()
@@ -83,11 +91,11 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFiles,pluginArgs,su
         
         import maya.mel as mel
         
-        cmd='call \\"'+config.deadlineCommand+'\\" \\"'+submitFile+'\\" \\"'+pluginFile+'\\" \\"'+inputFilepath+'\\"'
+        cmd='call \\"'+config.deadlineCommand+'\\" \\"'+submitFile+'\\" \\"'+pluginFile+'\\"'
         mel.eval('system("%s");' % cmd)
         
     else:
-        result=subprocess.Popen((config.deadlineCommand,submitFile,pluginFile,inputFilepath),
+        result=subprocess.Popen((config.deadlineCommand,submitFile,pluginFile),
                                 stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                 stderr=subprocess.STDOUT,shell=False)
     '''

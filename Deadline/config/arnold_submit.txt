@@ -1,0 +1,8 @@
+Plugin=Arnold
+Pool=arnold
+Priority=50
+OnJobComplete=Nothing
+Group=none
+MachineLimit=0
+LimitGroups=arnold
+ChunkSize=1

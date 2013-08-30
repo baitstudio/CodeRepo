@@ -1,0 +1,242 @@
+global proc shelf_Shotgun () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Shotgun File Manager" 
+        -enableBackground 0
+        -align "center" 
+        -label "File Manager" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "K:/CodeRepo/Maya/icons/manageworkfiles_1.png" 
+        -image1 "K:/CodeRepo/Maya/icons/manageworkfiles_1.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sgtk\ncommands = sgtk.platform.current_engine().commands\nsync_cmd = commands[\"Shotgun File Manager...\"][\"callback\"]\nsync_cmd()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Shotgun Save As..." 
+        -enableBackground 0
+        -align "center" 
+        -label "Save As" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "K:/CodeRepo/Maya/icons/saveas.png" 
+        -image1 "K:/CodeRepo/Maya/icons/saveas.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sgtk\ncommands = sgtk.platform.current_engine().commands\nsync_cmd = commands[\"Shotgun Save As...\"][\"callback\"]\nsync_cmd()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Publish" 
+        -enableBackground 0
+        -align "center" 
+        -label "Publish" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0 
+        -image "K:/CodeRepo/Maya/icons/publish_1.png" 
+        -image1 "K:/CodeRepo/Maya/icons/publish_1.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sgtk\ncommands = sgtk.platform.current_engine().commands\nsync_cmd = commands[\"Publish Shot...\"][\"callback\"]\nsync_cmd()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 37
+        -height 37
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Snapshot Scene" 
+        -enableBackground 0
+        -align "center" 
+        -label "Snapshot" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "K:/CodeRepo/Maya/icons/snapshot_34.png" 
+        -image1 "K:/CodeRepo/Maya/icons/snapshot_34.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sgtk\ncommands = sgtk.platform.current_engine().commands\nsync_cmd = commands[\"Snapshot...\"][\"callback\"]\nsync_cmd()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User Script" 
+        -enableBackground 0
+        -align "center" 
+        -label "User Script" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "K:/CodeRepo/Maya/icons/divider.png" 
+        -image1 "K:/CodeRepo/Maya/icons/divider.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "print(\"User defined macro\");" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Scene Breakdown" 
+        -enableBackground 0
+        -align "center" 
+        -label "User Script" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "K:/CodeRepo/Maya/icons/breakdown_1.png" 
+        -image1 "K:/CodeRepo/Maya/icons/breakdown_1.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sgtk\ncommands = sgtk.platform.current_engine().commands\nsync_cmd = commands[\"Scene Breakdown...\"][\"callback\"]\nsync_cmd()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Load Assets" 
+        -enableBackground 0
+        -align "center" 
+        -label "Assets" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "K:/CodeRepo/Maya/icons/load_assets.png" 
+        -image1 "K:/CodeRepo/Maya/icons/load_assets.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sgtk\ncommands = sgtk.platform.current_engine().commands\nsync_cmd = commands[\"Load Asset...\"][\"callback\"]\nsync_cmd()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Framerange" 
+        -enableBackground 0
+        -align "center" 
+        -label "Framerange" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "K:/CodeRepo/Maya/icons/framerange_1.png" 
+        -image1 "K:/CodeRepo/Maya/icons/framerange_1.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sgtk\ncommands = sgtk.platform.current_engine().commands\nsync_cmd = commands[\"Sync Frame Range with Shotgun\"][\"callback\"]\nsync_cmd()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Make Playblast" 
+        -enableBackground 0
+        -align "center" 
+        -label "Make Playblast" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "K:/CodeRepo/Maya/icons/playblast_1.png" 
+        -image1 "K:/CodeRepo/Maya/icons/playblast_1.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sgtk\nimport maya.mel as mel\nimport Maya.utils as mu\nreload(mu)\n\nscene_path = os.path.abspath(cmds.file(query=True, sn=True))\n#projectPath=cmds.workspace(q=True,fullName=True)\ntk = sgtk.sgtk_from_path(scene_path)\n\nwork_template=tk.templates['maya_shot_work']\nfields = work_template.get_fields(scene_path)\n\npanel = \"modelPanel4\"\ncam=cmds.modelEditor(panel, q=True,camera=True)\n\narea_temp=tk.templates['maya_shot_review']\npath=area_temp.apply_fields(fields)\n\nmu.__exportPlayblast__(path,cam,width=1920,height=1080,exportType='movie')" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 

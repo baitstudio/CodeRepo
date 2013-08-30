@@ -1,0 +1,3 @@
+Threads=0
+CommandLineOptions=-l C:\solidangle\mtoadeploy\2014\shaders
+Verbose=4

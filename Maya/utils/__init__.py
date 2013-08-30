@@ -7,7 +7,7 @@ import pymel.core as pm
 
 def referenceAsset(filePath,namespace=None):
     ''' References maya file in maya scene.
-        Takes namespace from file.
+        Takes namespace from file if not specified
     '''
     if not namespace:
         namespace=os.path.basename(filePath).split('.')[0]
@@ -65,19 +65,23 @@ def alembicImport(filePath, mode, parent=None, nodes=None):
     
     #making sure plugin is loaded
     pm.loadPlugin('AbcImport')
+    abcNodes=[]
     
     if mode=='parent':
-        pm.AbcImport(filePath, mode="import", ftr=True, sts=True, rpr=parent) 
+        abcNodes = pm.AbcImport(filePath, mode="import", ftr=True, sts=True, rpr=parent) 
          
     elif mode=='merge':
         nodesString=''
                 
         for node in nodes:
             nodesString+='-root '+node+' '
-        pm.AbcImport(filePath, mode="import", ct=nodesString, ftr=True, sts=True)
+        abcNodes = pm.AbcImport(filePath, mode="import", ct=nodesString, ftr=True, sts=True)
         
     else:
-        pm.AbcImport(filePath, mode="import", ftr=True, sts=True)
+        abcNodes = pm.AbcImport(filePath, mode="import", ftr=True, sts=True)
+
+    return abcNodes
+
 
 def ExportSceneCache(exportAttr=None):
     ''' Exports any nodes with an asset attribute.
@@ -167,6 +171,7 @@ def set_shadowcatchers(vis, selfshadow, opaque):
             ShadowCatcherSG = 'ShadowCatcher_matSG'
             pm.sets(ShadowCatcherSG, e=True, forceElement=mesh)
 
+
 def __exportPlayblast__(filePath,camera,width=640,height=360,exportType='movie',HUD=None):
     ''' Exports playblast to filePath
         
@@ -241,7 +246,7 @@ def __exportPlayblast__(filePath,camera,width=640,height=360,exportType='movie',
         #playblasting
         if exportType=='movie':
             
-            result=cmds.playblast(f=filePath,format='qt',forceOverwrite=True,offScreen=True,percent=100,
+            result=cmds.playblast(f=filePath,format='qt',forceOverwrite=True,showOrnaments=False,offScreen=True,percent=100,
                                    compression='H.264',quality=100,width=width,height=height,
                                    viewer=False)
         elif exportType=='still':
