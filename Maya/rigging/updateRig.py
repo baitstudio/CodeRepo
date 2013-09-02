@@ -2,6 +2,7 @@ import os
 
 import maya.cmds as cmds
 
+#getting the reference file info
 node=cmds.ls(selection=True)[0]
 
 referenceNode=cmds.referenceQuery( node, referenceNode=True,topReference=True)
@@ -10,12 +11,12 @@ filepath=cmds.referenceQuery( referenceNode, filename=True)
 filename=os.path.basename(filepath)
 fileprefix=os.path.basename(filepath).split('.v')[0]
 
-dir=os.path.dirname(filepath)
+dirPath=os.path.dirname(filepath)
 
-#get latest file in dir
+#get latest file in dirPath
 latestFile=''
 version=0
-for f in os.listdir(dir):
+for f in os.listdir(dirPath):
     
     if f.startswith(fileprefix):
         
@@ -24,9 +25,6 @@ for f in os.listdir(dir):
             
             latestFile=f
             version=v
-
-print filename
-print latestFile
 
 #saving file
 cmds.file(save=True)
@@ -47,5 +45,3 @@ f.close()
 
 #reloading the file
 cmds.file(currentFile,open=True)
-
-print 'done'
