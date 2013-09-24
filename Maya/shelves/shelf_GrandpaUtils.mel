@@ -1,0 +1,197 @@
+global proc shelf_GrandpaUtils () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Setup Ghosting" 
+        -enableBackground 0
+        -align "center" 
+        -label "import maya.cmds as cmds\nimport maya.mel as mel\n\nsel=cmds.ls(sel..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Ghost" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "ghost.png" 
+        -image1 "ghost.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\nimport maya.mel as mel\n\nsel=cmds.ls(selection=True)\n\n#selection error checking\nif len(sel)!=2:\n    \n    cmds.error('Please select the world controller and hip joint')\n\nif cmds.nodeType(sel[0])!='transform':\n    \n    cmds.error('First selected object is NOT a transform!')\n\nif cmds.nodeType(sel[1])!='joint':\n    \n    cmds.error('Second selected object is NOT a joint!')\n\n#setting ghosting\ncmds.select(sel[0])\nmel.eval('performSetOffsetObject;')\n\ncmds.select(sel[1])\nmel.eval('performSetHierarchyRoot;')\n\n#resetting selection\ncmds.select(sel)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 23
+        -height 23
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Hold Key" 
+        -enableBackground 0
+        -align "center" 
+        -label "import maya.cmds as cmds\n\nsel=cmds.ls(selection=True)\n\nposeDict=..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Hold Key" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "keyFullWeight.png" 
+        -image1 "keyFullWeight.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nsel=cmds.ls(selection=True)\n\nposeDict={}\nfor node in sel:\n    \n    nodeDict={}\n    \n    nodeDict['translation']=cmds.xform(node,q=True,ws=True,translation=True)\n    nodeDict['rotation']=cmds.xform(node,q=True,ws=True,rotation=True)\n    \n    poseDict[node]=nodeDict\n\ncmds.setKeyframe(sel)\n\nfor node in poseDict:\n\n    cmds.xform(node,ws=True,rotation=poseDict[node]['translation'])    \n    cmds.xform(node,ws=True,rotation=poseDict[node]['rotation'])" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Ghost Locator" 
+        -enableBackground 0
+        -align "center" 
+        -label "import maya.cmds as cmds\n\nimport Tapp.Maya.rigging.utils as mru\n..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Locator" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "locator.png" 
+        -image1 "locator.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sys\n\nimport maya.cmds as cmds\nimport maya.OpenMaya as om\n\nimport Tapp.Maya.rigging.utils as mru\n\nsel=cmds.ls(selection=True)\n\nif 0 >= len(sel) <= 2:\n    cmds.warning('Please select a clip or a locator and clip!')\nelse:\n    if len(sel)==1:\n        \n        node=sel[0]\n        if cmds.nodeType(node)=='clipGhostShape':\n            \n            loc=cmds.spaceLocator(n=node+'_loc')[0]\n            \n            mru.Snap(loc,node)\n            \n            grp=cmds.group(n=node+'_grp',empty=True)\n            \n            mru.Snap(grp,node)\n            \n            cmds.parentConstraint(loc,grp,mo=True)\n            \n            cmds.connectAttr(grp+'.translate',node+'.translate')\n            cmds.connectAttr(grp+'.rotate',node+'.rotate')\n            \n            cmds.select(cl=True)\n            \n            om.MGlobal.displayInfo('Success! %s controls the clip.' % loc)\n        \n        else:\n            cmds.warning('Please select a Ghost Clip!')\n    \n    if len(sel)==2:\n    \n        loc=''\n        clip=''\n        for node in sel:\n            \n            if cmds.nodeType(node)=='transform':\n                \n                loc=node\n            \n            if cmds.nodeType(node)=='clipGhostShape':\n                \n                clip=node\n        \n        if loc and clip:\n            \n            grp=cmds.group(n=node+'_grp',empty=True)\n            \n            mru.Snap(grp,clip)\n            \n            cmds.parentConstraint(loc,grp,mo=True)\n            \n            cmds.connectAttr(grp+'.translate',clip+'.translate')\n            cmds.connectAttr(grp+'.rotate',clip+'.rotate')\n            \n            cmds.select(cl=True)\n            \n            om.MGlobal.displayInfo('Success! %s controls the clip.' % loc)\n        \n        else:\n            cmds.warning('Please select a locator and a clip!')" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Character setup" 
+        -enableBackground 0
+        -align "center" 
+        -label "import maya.mel as mel\nimport maya.cmds as cmds\nimport maya.Open..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Setup" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "ghostOff.png" 
+        -image1 "ghostOff.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.mel as mel\nimport maya.cmds as cmds\nimport maya.OpenMaya as om\n\nsel=cmds.ls(selection=True)\ncmds.select(cl=True)\n\n#getting extra attributes\nextraAttrs=[]\nfor node in sel:\n    \n    if cmds.objExists(node+'.reachTranslation'):\n        extraAttrs.append(node+'.reachTranslation')\n        extraAttrs.append(node+'.reachRotation')\n        extraAttrs.append(node+'.pull')\n\ntry:\n    #getting namespace and nodes\n    ns=sel[0].split(':')[0]\n    \n    worldcnt=ns+':rig:world_Ctrl'\n    root=ns+':rig:skin:hip_jnt'\n    \n    extraChar=cmds.character(n='extraChar')\n    for attr in extraAttrs:\n        cmds.character( attr, add=extraChar)\n    \n    #character setup\n    charSet=cmds.character(sel)\n    charSet=cmds.rename(charSet,ns+':'+charSet)\n    \n    cmds.select(extraChar,charSet)\n    cmd='mergeCharacters;'\n    mel.eval(cmd)\n    \n    cmd='setCurrentCharacters( { \"%s\" } );' % charSet\n    mel.eval(cmd)\n    \n    #setting ghosting\n    cmds.select(worldcnt)\n    mel.eval('performSetOffsetObject;')\n    \n    cmds.select(root)\n    mel.eval('performSetHierarchyRoot;')\n    \n    #feedback\n    om.MGlobal.displayInfo('Character setup successfull!')\nexcept:\n    cmds.error('Character setup failed!')" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "BVH Transfer" 
+        -enableBackground 0
+        -align "center" 
+        -label "import maya.cmds as cmds\nimport maya.mel as mel\n\n#load plugin\ncm..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "BVH" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "ghostOff.png" 
+        -image1 "ghostOff.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sys\n\nimport maya.cmds as cmds\nimport maya.mel as mel\n\n#resetting the file\ntry:\n    cmds.file(newFile=True)\nexcept:\n    confirm=cmds.confirmDialog( title='Save File?', message='Unsaved changes!\\nDo you want to save?', button=['Yes','No'], defaultButton='Yes', cancelButton='No' )\n    \n    if confirm=='dismiss':\n        sys.exit()\n    if confirm=='Yes':\n        cmds.file(save=True)\n        cmds.file(newFile=True)\n    if confirm=='No':\n        cmds.file(new=True,force=True)\n\n#load plugin\ncmds.loadPlugin('fbxmaya.mll',quiet=True)\n\n#getting file path and name\nbasicFilter = \"Maya (*.ma)\"\nfilePath=cmds.fileDialog2(fileFilter=basicFilter, dialogStyle=1,\n                          fileMode=1,\n                          caption='Import Animation')\n\nif filePath!=None:\n\n    cmd='file -import -type \"mayaAscii\" -ra true -mergeNamespacesOnClash false -namespace \":\" -options \"v=0;\"  -pr \"M:/00719_grandpa/assets/Characters/Grandpa/publish/fbx_setup.mocap.v001.ma\";'\n    mel.eval(cmd)\n    \n    #replace reference\n    cmds.file(filePath,loadReference='bvh_setupRN')\n    \n    #setting timeline\n    lastKey=int(cmds.findKeyframe( 'mocap:RightUpLeg', which=\"last\" ))\n    firstKey=int(cmds.findKeyframe( 'mocap:RightUpLeg', which=\"first\" ))\n    \n    cmds.playbackOptions(min=firstKey)\n    cmds.playbackOptions(max=lastKey)\n    \n    cmds.playbackOptions(ast=firstKey)\n    cmds.playbackOptions(aet=lastKey)\n    \n    cmds.currentTime(int(lastKey)/2)\n    \n    #bake anim\n    mel.eval('HIKCharacterControlsTool;')\n    mel.eval('hikBakeToControlRig 0;')\n    \n    #remove mocap\n    cmds.file(filePath,removeReference=True)\n    \n    #final notification\n    confirm=cmds.confirmDialog( title='FINISHED', message='mocap transfered')" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Custom rig to HIK" 
+        -enableBackground 0
+        -align "center" 
+        -label "import sys\n\nimport maya.cmds as cmds\nimport maya.mel as mel\n\n#re..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Custom" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "ghostOff.png" 
+        -image1 "ghostOff.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sys\n\nimport maya.cmds as cmds\nimport maya.mel as mel\n\n#resetting the file\ntry:\n    cmds.file(newFile=True)\nexcept:\n    confirm=cmds.confirmDialog( title='Save File?', message='Unsaved changes!\\nDo you want to save?', button=['Yes','No'], defaultButton='Yes', cancelButton='No' )\n    \n    if confirm=='dismiss':\n        sys.exit()\n    if confirm=='Yes':\n        cmds.file(save=True)\n        cmds.file(newFile=True)\n    if confirm=='No':\n        cmds.file(new=True,force=True)\n\n#getting file path and name\nbasicFilter = \"Maya (*.ma)\"\nfilePath=cmds.fileDialog2(fileFilter=basicFilter, dialogStyle=1,\n                          fileMode=1,\n                          caption='Import Animation')\n\nif filePath!=None:\n    \n    cmd='file -import -type \"mayaAscii\" -ra true -mergeNamespacesOnClash false -namespace \":\" -options \"v=0;\"  -pr \"M:/00719_grandpa/assets/Characters/Grandpa/publish/fbx_setup.mocap.v001.ma\";'\n    mel.eval(cmd)\n\n    #replace reference\n    cmds.file(filePath,loadReference='crawling_look_back_mocap_v002RN')\n    \n    #setting timeline\n    lastKey=int(cmds.findKeyframe( 'old_rig:grandpa:l_leg1_endFk_cnt', which=\"last\" ))\n    firstKey=int(cmds.findKeyframe( 'old_rig:grandpa:l_leg1_endFk_cnt', which=\"first\" ))\n    \n    cmds.playbackOptions(min=firstKey)\n    cmds.playbackOptions(max=lastKey)\n    \n    cmds.playbackOptions(ast=firstKey)\n    cmds.playbackOptions(aet=lastKey)\n    \n    cmds.currentTime(int(lastKey)/2)\n    \n    #bake anim\n    mel.eval('HIKCharacterControlsTool;')\n    mel.eval('hikBakeToControlRig 0;')\n    \n    #remove mocap\n    cmds.file(filePath,removeReference=True)\n    \n    #final notification\n    confirm=cmds.confirmDialog( title='FINISHED', message='mocap transfered')" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Fbx transfer" 
+        -enableBackground 0
+        -align "center" 
+        -label "import sys\n\nimport maya.cmds as cmds\nimport maya.mel as mel\n\n#re..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "FBX" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "ghostOff.png" 
+        -image1 "ghostOff.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sys\n\nimport maya.cmds as cmds\nimport maya.mel as mel\n\n#resetting the file\ntry:\n    cmds.file(newFile=True)\nexcept:\n    confirm=cmds.confirmDialog( title='Save File?', message='Unsaved changes!\\nDo you want to save?', button=['Yes','No'], defaultButton='Yes', cancelButton='No' )\n    \n    if confirm=='dismiss':\n        sys.exit()\n    if confirm=='Yes':\n        cmds.file(save=True)\n        cmds.file(newFile=True)\n    if confirm=='No':\n        cmds.file(new=True,force=True)\n\n#getting file path and name\nbasicFilter = \"FBX (*.fbx)\"\nfilePath=cmds.fileDialog2(fileFilter=basicFilter, dialogStyle=1,\n                          fileMode=1,\n                          caption='Import Animation')\n\nif filePath!=None:\n    \n    cmd='file -import -type \"mayaAscii\" -ra true -mergeNamespacesOnClash false -namespace \":\" -options \"v=0;\"  -pr \"M:/00719_grandpa/assets/Characters/Grandpa/publish/fbx_setup.mocap.v001.ma\";'\n    mel.eval(cmd)\n    \n    #replace reference\n    cmds.file(filePath,loadReference='run_ARN')\n    \n    #setting timeline\n    lastKey=int(cmds.findKeyframe( 'mocap:l_footJA_JNT', which=\"last\" ))\n    firstKey=int(cmds.findKeyframe( 'mocap:l_footJA_JNT', which=\"first\" ))\n    \n    cmds.playbackOptions(min=firstKey)\n    cmds.playbackOptions(max=lastKey)\n    \n    cmds.playbackOptions(ast=firstKey)\n    cmds.playbackOptions(aet=lastKey)\n    \n    cmds.currentTime(int(lastKey)/2)\n    \n    #bake anim\n    mel.eval('HIKCharacterControlsTool;')\n    mel.eval('hikBakeToControlRig 0;')\n    \n    #remove mocap\n    cmds.file(filePath,removeReference=True)\n    \n    #final notification\n    confirm=cmds.confirmDialog( title='FINISHED', message='mocap transfered')" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 

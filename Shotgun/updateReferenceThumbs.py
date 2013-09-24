@@ -1,8 +1,9 @@
 print 'connecting to shotgun...'
 
 import shotgun_api3 as shotgun
+import config
 
-sg=shotgun.Shotgun('https://bait.shotgunstudio.com/', 'thumb_uploader', '2a31b48f3b39e7afc3da36d425aa8ef65ba26ec8')
+sg=shotgun.Shotgun(config.base_url, config.script_name, config.api_key)
 
 fields = ['sg_path_to_frames','image','code']
 project_id = 99

@@ -110,18 +110,17 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFiles,pluginArgs,su
     
     return jobid
     '''
-
 '''
 app='maya'
 name='maya_test'
-start=0
-end=10
-inputFilepath='M:/00719_grandpa/episodes/000_dummy/0000/Light/work/deadline_testing.light.v001.ma'
-outputPath='M:/00719_grandpa/episodes/000_dummy/0000/Light/work/images'
+start=7
+end=17
+inputFilepath='M:/00719_grandpa/episodes/gnp_498_travel/sh504/Light/publish/sh504.light.v001.ma'
+outputPath='N:/00719_grandpa/gnp_498_travel/cg/sh504/v001/ass/beauty'
 pluginArgs=['']
 submitArgs=['Comment=testing deadline script']
 shotgunFields=None
 shotgunContext=None
 
-submit(app,name,start,end,inputFilepath,outputPath,pluginArgs,submitArgs,shotgunContext=shotgunContext,shotgunFields=shotgunFields)
+submit(app,name,start,end,inputFilepath,outputPath,outputFiles,pluginArgs,submitArgs)
 '''

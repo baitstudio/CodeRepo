@@ -233,7 +233,7 @@ global proc shelf_Shotgun () {
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "import sgtk\nimport maya.mel as mel\nimport Maya.utils as mu\nreload(mu)\n\nscene_path = os.path.abspath(cmds.file(query=True, sn=True))\n#projectPath=cmds.workspace(q=True,fullName=True)\ntk = sgtk.sgtk_from_path(scene_path)\n\nwork_template=tk.templates['maya_shot_work']\nfields = work_template.get_fields(scene_path)\n\npanel = \"modelPanel4\"\ncam=cmds.modelEditor(panel, q=True,camera=True)\n\narea_temp=tk.templates['maya_shot_review']\npath=area_temp.apply_fields(fields)\n\nmu.__exportPlayblast__(path,cam,width=1920,height=1080,exportType='movie')" 
+        -command "import sgtk\nimport maya.mel as mel\nimport Maya.utils as mu\nreload(mu)\n\nscene_path = os.path.abspath(cmds.file(query=True, sn=True))\n#projectPath=cmds.workspace(q=True,fullName=True)\ntk = sgtk.sgtk_from_path(scene_path)\n\nwork_template=tk.templates['maya_shot_work']\nfields = work_template.get_fields(scene_path)\n\npanel = cmds.getPanel(wf=1)\ncam=cmds.modelEditor(panel, q=True,camera=True)\n\narea_temp=tk.templates['maya_shot_review']\npath=area_temp.apply_fields(fields)\n\nmu.__exportPlayblast__(path,cam,width=1920,height=1080,exportType='movie')" 
         -sourceType "python" 
         -commandRepeatable 1
         -flat 1

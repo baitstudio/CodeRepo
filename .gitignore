@@ -2,6 +2,8 @@
 ## Eclipse
 #################
 
+alembic_1.5_win_x64/
+
 *.pydevproject
 .project
 .metadata

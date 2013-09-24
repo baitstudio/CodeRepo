@@ -15,7 +15,7 @@ def referenceAsset(filePath,namespace=None):
     return cmds.file(filePath,reference=True,namespace=namespace,
                      returnNewNodes=True)
 
-def imagePlane(cam,filePath):
+def imagePlane(cam,filePath,fileType=None):
     ''' Sets up image plane in scene.
         
         Returns name of image plane.
@@ -30,10 +30,14 @@ def imagePlane(cam,filePath):
     #Connect the image to imagePlane
     cmds.setAttr( "%s.imageName" % imagePlane, filePath, type="string")
     
-    #enable image sequence
-    cmds.setAttr(imagePlane+'.useFrameExtension',1)
+    if fileType==None:
+        #enable image sequence
+        cmds.setAttr(imagePlane+'.useFrameExtension',1)
+    elif fileType=='movie':
+        cmds.setAttr(imagePlane+'.useFrameExtension',1)
+        cmds.setAttr(imagePlane+'.type',2)
     
-    cmds.setAttr(imagePlane+'.depth',200)
+    cmds.setAttr(imagePlane+'.depth',500)
     #return
     return imagePlane
 
@@ -194,7 +198,7 @@ def __exportPlayblast__(filePath,camera,width=640,height=360,exportType='movie',
     if result:
         
         #string $visPanels[] = `getPanel -vis`; < for fail safe of active panel
-        panel = "modelPanel4"
+        panel = cmds.getPanel(wf=1)
         prevcam=cmds.modelEditor(panel, q=True,camera=True)
         
         mel.eval("lookThroughModelPanel "+camera+" "+panel)
@@ -248,7 +252,7 @@ def __exportPlayblast__(filePath,camera,width=640,height=360,exportType='movie',
             
             result=cmds.playblast(f=filePath,format='qt',forceOverwrite=True,showOrnaments=False,offScreen=True,percent=100,
                                    compression='H.264',quality=100,width=width,height=height,
-                                   viewer=False)
+                                   viewer=True)
         elif exportType=='still':
             
             startTime=cmds.playbackOptions(q=True,minTime=True)
@@ -258,7 +262,7 @@ def __exportPlayblast__(filePath,camera,width=640,height=360,exportType='movie',
             
             result=cmds.playblast(f=filePath,format='iff',forceOverwrite=True,offScreen=True,percent=100,
                                    compression='png',quality=100,startTime=midTime,endTime=midTime,
-                                   width=width,height=height,viewer=False,showOrnaments=True)
+                                   width=width,height=height,viewer=False,showOrnaments=False)
             
             path=result.split('.')[0]
             ext=result.split('.')[-1]
@@ -276,7 +280,7 @@ def __exportPlayblast__(filePath,camera,width=640,height=360,exportType='movie',
             
             result=cmds.playblast(f=filePath,format='iff',forceOverwrite=True,offScreen=True,percent=100,
                                    compression='png',quality=100,startTime=startTime,endTime=endTime,
-                                   width=width,height=height,viewer=False,showOrnaments=True)
+                                   width=width,height=height,viewer=False,showOrnaments=False)
         
         #revert to settings
         cmds.currentTime(currentTime)

@@ -4,24 +4,6 @@
     <versionIndex valuetype="int">1</versionIndex>
     <cutUseHandles valuetype="bool">True</cutUseHandles>
     <shotgunShotCreateProperties valuetype="dict">
-        <task_template_map valuetype="list">
-            <SequenceItem valuetype="tuple">
-                <SequenceItem valuetype="str">Ready To Start</SequenceItem>
-                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
-            </SequenceItem>
-            <SequenceItem valuetype="tuple">
-                <SequenceItem valuetype="str">In Progress</SequenceItem>
-                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
-            </SequenceItem>
-            <SequenceItem valuetype="tuple">
-                <SequenceItem valuetype="str">On Hold</SequenceItem>
-                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
-            </SequenceItem>
-            <SequenceItem valuetype="tuple">
-                <SequenceItem valuetype="str">Final</SequenceItem>
-                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
-            </SequenceItem>
-        </task_template_map>
         <sg_status_hiero_tags valuetype="list">
             <SequenceItem valuetype="tuple">
                 <SequenceItem valuetype="str">Ready To Start</SequenceItem>
@@ -68,6 +50,24 @@
                 <SequenceItem valuetype="str">EXT</SequenceItem>
             </SequenceItem>
         </locations>
+        <task_template_map valuetype="list">
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">Ready To Start</SequenceItem>
+                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">In Progress</SequenceItem>
+                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">On Hold</SequenceItem>
+                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">Final</SequenceItem>
+                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
+            </SequenceItem>
+        </task_template_map>
     </shotgunShotCreateProperties>
     <versionPadding valuetype="int">3</versionPadding>
     <exportTemplate valuetype="list">
@@ -93,9 +93,9 @@
                         <burnIn_topMiddle valuetype="NoneType">None</burnIn_topMiddle>
                         <burnIn_padding valuetype="NoneType">None</burnIn_padding>
                         <burnIn_topRight valuetype="NoneType">None</burnIn_topRight>
-                        <burnIn_textSize valuetype="NoneType">None</burnIn_textSize>
-                        <burnIn_bottomLeft valuetype="NoneType">None</burnIn_bottomLeft>
                         <burnIn_bottomMiddle valuetype="NoneType">None</burnIn_bottomMiddle>
+                        <burnIn_bottomLeft valuetype="NoneType">None</burnIn_bottomLeft>
+                        <burnIn_textSize valuetype="NoneType">None</burnIn_textSize>
                         <burnIn_font valuetype="NoneType">None</burnIn_font>
                     </burninData>
                     <exr valuetype="dict">
@@ -105,9 +105,9 @@
                     <reformat valuetype="dict">
                         <pixelAspect valuetype="float">1.0</pixelAspect>
                         <name valuetype="str">NTSC 4:3</name>
-                        <to_type valuetype="str">None</to_type>
-                        <height valuetype="int">480</height>
                         <width valuetype="int">720</width>
+                        <height valuetype="int">480</height>
+                        <to_type valuetype="str">None</to_type>
                         <resize valuetype="unicode">width</resize>
                     </reformat>
                     <keepNukeScript valuetype="bool">False</keepNukeScript>
@@ -133,17 +133,17 @@
                         <burnIn_topMiddle valuetype="NoneType">None</burnIn_topMiddle>
                         <burnIn_padding valuetype="NoneType">None</burnIn_padding>
                         <burnIn_topRight valuetype="NoneType">None</burnIn_topRight>
-                        <burnIn_textSize valuetype="NoneType">None</burnIn_textSize>
-                        <burnIn_bottomLeft valuetype="NoneType">None</burnIn_bottomLeft>
                         <burnIn_bottomMiddle valuetype="NoneType">None</burnIn_bottomMiddle>
+                        <burnIn_bottomLeft valuetype="NoneType">None</burnIn_bottomLeft>
+                        <burnIn_textSize valuetype="NoneType">None</burnIn_textSize>
                         <burnIn_font valuetype="NoneType">None</burnIn_font>
                     </burninData>
                     <reformat valuetype="dict">
                         <pixelAspect valuetype="float">1.0</pixelAspect>
                         <name valuetype="str">half HD</name>
-                        <to_type valuetype="unicode">to format</to_type>
-                        <height valuetype="int">540</height>
                         <width valuetype="int">960</width>
+                        <height valuetype="int">540</height>
+                        <to_type valuetype="unicode">to format</to_type>
                         <resize valuetype="unicode">width</resize>
                     </reformat>
                     <keepNukeScript valuetype="bool">False</keepNukeScript>
@@ -169,17 +169,17 @@
                         <burnIn_topMiddle valuetype="NoneType">None</burnIn_topMiddle>
                         <burnIn_padding valuetype="NoneType">None</burnIn_padding>
                         <burnIn_topRight valuetype="NoneType">None</burnIn_topRight>
-                        <burnIn_textSize valuetype="NoneType">None</burnIn_textSize>
-                        <burnIn_bottomLeft valuetype="NoneType">None</burnIn_bottomLeft>
                         <burnIn_bottomMiddle valuetype="NoneType">None</burnIn_bottomMiddle>
+                        <burnIn_bottomLeft valuetype="NoneType">None</burnIn_bottomLeft>
+                        <burnIn_textSize valuetype="NoneType">None</burnIn_textSize>
                         <burnIn_font valuetype="NoneType">None</burnIn_font>
                     </burninData>
                     <reformat valuetype="dict">
                         <pixelAspect valuetype="float">1.0</pixelAspect>
                         <name valuetype="str">NTSC 4:3</name>
-                        <to_type valuetype="str">None</to_type>
-                        <height valuetype="int">480</height>
                         <width valuetype="int">720</width>
+                        <height valuetype="int">480</height>
+                        <to_type valuetype="str">None</to_type>
                         <resize valuetype="unicode">width</resize>
                     </reformat>
                     <keepNukeScript valuetype="bool">False</keepNukeScript>
