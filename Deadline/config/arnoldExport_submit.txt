@@ -1,4 +1,4 @@
-Plugin=MayaCmd
+Plugin=MayaBatch
 Pool=maya
 MachineLimit=0
 Priority=50
@@ -7,5 +7,5 @@ TaskTimeoutMinutes=0
 MinRenderTimeMinutes=0
 ConcurrentTasks=1
 Group=none
-ChunkSize=5
+ChunkSize=10
 EnvironmentKeyValue0=PYTHONPATH=K:/CodeRepo/Maya

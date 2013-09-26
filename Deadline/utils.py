@@ -92,15 +92,13 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFiles,pluginArgs,su
         import maya.mel as mel
         
         cmd='call \\"'+config.deadlineCommand+'\\" \\"'+submitFile+'\\" \\"'+pluginFile+'\\"'
-        mel.eval('system("%s");' % cmd)
-        
+        result=mel.eval('system("%s");' % cmd)
     else:
         result=subprocess.Popen((config.deadlineCommand,submitFile,pluginFile),
                                 stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                 stderr=subprocess.STDOUT,shell=False)
-    '''
-    #return job id from deadline result
-    result=result.communicate()[0]
+        
+        result=result.communicate()[0]
     
     #getting jobid from deadline submittal
     jobid=''
@@ -109,18 +107,17 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFiles,pluginArgs,su
             jobid=data.split('=')[1]
     
     return jobid
-    '''
+
 '''
-app='maya'
+app='arnoldExport'
 name='maya_test'
-start=7
-end=17
-inputFilepath='M:/00719_grandpa/episodes/gnp_498_travel/sh504/Light/publish/sh504.light.v001.ma'
-outputPath='N:/00719_grandpa/gnp_498_travel/cg/sh504/v001/ass/beauty'
+start=1
+end=113
+inputFilepath='C:/Users/toke.jepsen/Desktop/sh504.light.v002.ma'
+outputPath='C:/Users/toke.jepsen/Desktop/ass/'
+outputFiles=['C:/Users/toke.jepsen/Desktop/ass/beauty/sh504.light.v001.#####.ass']
 pluginArgs=['']
 submitArgs=['Comment=testing deadline script']
-shotgunFields=None
-shotgunContext=None
 
-submit(app,name,start,end,inputFilepath,outputPath,outputFiles,pluginArgs,submitArgs)
+print submit(app,name,start,end,inputFilepath,outputPath,outputFiles,pluginArgs,submitArgs,mayaGUI=True)
 '''
