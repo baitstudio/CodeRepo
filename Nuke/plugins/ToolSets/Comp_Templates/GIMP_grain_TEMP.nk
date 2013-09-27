@@ -1,0 +1,91 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_497_title/gnp497sh106/key_plates/gnp497sh106_key_plate.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ before bounce
+ last 25
+ after bounce
+ frame_mode offset
+ frame -19.000000
+ origlast 66
+ origset true
+ name Read4
+ selected true
+ xpos -835
+ ypos -283
+}
+set N179372b0 [stack 0]
+push $N179372b0
+Denoise2 {
+ serializeKnob "1.29914 -0.0407075 0.830373
+0.00996238 0.00828238 0.013291
+0.00996238 0.00828238 0.013291
+0.00619789 0.0044014 0.00632227
+0 0 0
+0.00346009 0.00274317 0.00450894
+0.00346009 0.00274317 0.00450894
+0.00230412 0.00168705 0.00268506
+0 0 0
+0.00151782 0.00127085 0.00200332
+0.00151782 0.00127085 0.00200332
+0.000910969 0.000764536 0.00136413
+0 0 0
+0.000554425 0.00056272 0.000939093
+0.000554425 0.00056272 0.000939093
+0.000316302 0.000339945 0.000619819
+0 0 0 0 0 0 0 0 0 
+10262637495110750816
+"
+ amount 1.24
+ analysisRegion {476 512 1716 920}
+ analysisFrame 106
+ needsAnalyzing false
+ needsProfile true
+ userMessage ""
+ name Denoise1
+ selected true
+ xpos -680
+ ypos -259
+}
+Merge2 {
+ inputs 2
+ operation difference
+ name Merge6
+ selected true
+ xpos -835
+ ypos -178
+}
+HueCorrect {
+ hue {sat {}
+   lum {}
+   red {}
+   green {}
+   blue {}
+   r_sup {curve 1.150980473 1.150980473 1.150980473 1.150980473 1.150980473 1.150980473 1.150980473 s0}
+   g_sup {curve 0.7681372166 0.7681372166 0.7681372166 0.7681372166 0.7681372166 0.7681372166 0.7681372166 s0}
+   b_sup {curve 0.4931373596 0.4931373596 0.4931373596 0.4931373596 0.4931373596 0.4931373596 0.4931373596 s0}
+   sat_thrsh {}}
+ name HueCorrect1
+ selected true
+ xpos -835
+ ypos -154
+}
+Transform {
+ translate {0 -520}
+ center {960 540}
+ name Transform2
+ selected true
+ xpos -1017
+ ypos -154
+}
+push $cut_paste_input
+Merge2 {
+ inputs 2
+ mix 0.63
+ name Merge7
+ selected true
+ xpos -1127
+ ypos -154
+}

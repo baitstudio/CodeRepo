@@ -7,8 +7,8 @@ import maya.cmds as cmds
 import tapp_maya
 
 #loading alembic
-cmds.evalDeferred('cmds.loadPlugin("AbcExport.mll",quiet=True)')
-cmds.evalDeferred('cmds.loadPlugin("AbcImport.mll",quiet=True)')
+cmds.loadPlugin("AbcExport.mll",quiet=True)
+cmds.loadPlugin("AbcImport.mll",quiet=True)
 
 shelfDir = "K:/CodeRepo/Maya/shelves/"
 user = os.environ.get( "USERNAME" )
