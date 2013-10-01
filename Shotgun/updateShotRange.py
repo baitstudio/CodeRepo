@@ -31,7 +31,7 @@ episode=sg.find_one("Scene",filters,fields)
 
 if episode!=None:
 
-    fields = ['sg_path_to_thumbs','code']
+    fields = ['sg_path_to_plate','code']
     filters = [['sg_scene','is',{'type':'Scene','id':episode['id']}]]
     shots=sg.find("Shot",filters,fields)
     
@@ -41,33 +41,35 @@ if episode!=None:
         
         count=shots.index(shot)+1
         
-        thumb_path=shot['sg_path_to_thumbs']
+        plate_path=shot['sg_path_to_plate']
         
         
-        if thumb_path!=None:
-            if os.path.exists(thumb_path):
+        if plate_path!=None:
+            if os.path.exists(plate_path):
             
-                thumbs=os.listdir(thumb_path)
+                plates=os.listdir(plate_path)
                 
-                sorted_thumbs=[]
-                for thumb in sorted(thumbs):
-                    sorted_thumbs.append(thumb)
+                sorted_plates=[]
+                for plate in sorted(plates):
+                    sorted_plates.append(plate)
                 
                 try:
-                    middle_thumb=sorted_thumbs[int(len(sorted_thumbs)/2)]
+                    startFrame=int(sorted_plates[0].split('.')[1])
+                    endFrame=int(sorted_plates[-1].split('.')[1])
+                    duration=len(sorted_plates)
                     
-                    middle_thumb_path=os.path.join(thumb_path,middle_thumb)
-                    
-                    sg.upload_thumbnail("Shot",shot['id'],middle_thumb_path)
-                    
+                    data={'sg_cut_in':startFrame,'sg_cut_out':endFrame,
+                          'sg_cut_duration':duration}
+                    sg.update("Shot", shot['id'], data)
+                
                     print 'Done "%s",%s of %s' % (shot['code'],str(count),str(total))
                 except:
                     
                     print 'FAILED "%s",%s of %s' % (shot['code'],str(count),str(total))
             else:
-                print 'Thumbs directory doesnt exist for %s' % shot
+                print 'Plates directory doesnt exist for %s' % shot
         else:
-            print 'Thumbs directory doesnt exist for %s' % shot
+            print 'Plates directory doesnt exist for %s' % shot
 else:
     print 'Could not find episode: "%s"' % episode_code
 
