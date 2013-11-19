@@ -1,0 +1,225 @@
+#! C:/Program Files/Nuke7.0v6/Nuke7.0.exe -nx
+version 7.0 v6
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="22" w="1680" h="1024" screen="0">
+        <splitter orientation="1">
+            <split size="1052"/>
+            <splitter orientation="1">
+                <split size="40"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="1008"/>
+                <splitter orientation="2">
+                    <split size="563"/>
+                    <dock id="" activePageId="Viewer.1">
+                        <page id="Viewer.1"/>
+                    </dock>
+                    <split size="396"/>
+                    <dock id="" activePageId="DAG.1">
+                        <page id="DAG.1"/>
+                        <page id="Curve Editor.1"/>
+                        <page id="DopeSheet.1"/>
+                    </dock>
+                </splitter>
+            </splitter>
+            <split size="608"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name "Z:/Assets/Software/Graphics Software/Nuke/Plugins and Menus/ToolSets/BAIT/B_MaterialID_v1.1.nk"
+}
+Group {
+ inputs 0
+ name B_MaterialID
+ tile_color 0xff3f00ff
+ gl_color 0xff
+ selected true
+ xpos 415
+ ypos -190
+ addUserKnob {20 B_materialID l "Bait Material ID"}
+ addUserKnob {4 MaterialIDColour l "Material ID Colour" M {Black White Red Green Blue Cyan Magenta Yellow "" "" "" ""}}
+ MaterialIDColour Red
+ addUserKnob {7 EdgeTweak l "Tweak Edge" t "Tweak the matte to remove aliasing on edges" R -1 1}
+ EdgeTweak -0.75
+ addUserKnob {4 Output M {rgb rgba alpha ""}}
+ Output alpha
+ addUserKnob {6 Invert t "Invert the output" +STARTLINE}
+ addUserKnob {7 Opacity t "Change the ouput opacity"}
+ Opacity 1
+}
+ Input {
+  inputs 0
+  name MATERIAL_ID
+  xpos 462
+  ypos -312
+ }
+set N1163e580 [stack 0]
+ Expression {
+  channel0 rgba
+  expr0 (r*g)-b
+  channel1 none
+  channel2 none
+  channel3 none
+  name Exp_Yellow
+  xpos 805
+  ypos -223
+ }
+push $N1163e580
+ Expression {
+  channel0 rgba
+  expr0 (r*b)-g
+  channel1 none
+  channel2 none
+  channel3 none
+  name Exp_Magenta
+  xpos 709
+  ypos -224
+ }
+push $N1163e580
+ Expression {
+  channel0 rgba
+  expr0 (g*b)-r
+  channel1 none
+  channel2 none
+  channel3 none
+  name Exp_Cyan
+  xpos 615
+  ypos -225
+ }
+push $N1163e580
+ Expression {
+  channel0 rgba
+  expr0 b-(r+g)
+  channel1 none
+  channel2 none
+  channel3 none
+  name Exp_Blue
+  xpos 517
+  ypos -224
+ }
+push $N1163e580
+ Expression {
+  channel0 rgba
+  expr0 g-(r+b)
+  channel1 none
+  channel2 none
+  channel3 none
+  name Exp_Green
+  xpos 412
+  ypos -222
+ }
+push $N1163e580
+ Expression {
+  channel0 rgba
+  expr0 r-(g+b)
+  channel1 none
+  channel2 none
+  channel3 none
+  name Exp_Red
+  xpos 319
+  ypos -221
+ }
+push $N1163e580
+ Expression {
+  channel0 rgba
+  expr0 r*g*b
+  channel1 none
+  channel2 none
+  channel3 none
+  name Exp_White
+  xpos 214
+  ypos -221
+ }
+push $N1163e580
+ Expression {
+  channel0 rgba
+  expr0 a-(r+g+b)
+  channel1 none
+  channel2 none
+  channel3 none
+  name Exp_Black
+  xpos 110
+  ypos -221
+ }
+ Switch {
+  inputs 8
+  which {{parent.MaterialIDColour}}
+  name Switch1
+  label COLOUR
+  xpos 462
+  ypos -143
+ }
+ Erode {
+  channels rgba
+  size {{parent.EdgeTweak}}
+  name Erode1
+  xpos 462
+  ypos -40
+ }
+ Constant {
+  inputs 0
+  name Constant1
+  xpos 292
+  ypos -105
+ }
+ Merge2 {
+  inputs 2
+  mix {{parent.Opacity}}
+  name Merge1
+  xpos 462
+  ypos 18
+ }
+ Invert {
+  channels rgba
+  name Invert1
+  xpos 462
+  ypos 69
+  disable {{!parent.Invert}}
+ }
+set N1bfde670 [stack 0]
+ Shuffle {
+  red black
+  green black
+  blue black
+  name Shuffle3
+  label ALPHA
+  xpos 548
+  ypos 125
+ }
+push $N1bfde670
+ Shuffle {
+  name Shuffle2
+  label RGBA
+  xpos 462
+  ypos 124
+ }
+push $N1bfde670
+ Shuffle {
+  alpha black
+  name Shuffle1
+  label RGB
+  xpos 377
+  ypos 123
+ }
+ Switch {
+  inputs 3
+  which {{parent.Output}}
+  name Switch2
+  label OUTPUT
+  xpos 462
+  ypos 208
+ }
+ Output {
+  name Output1
+  xpos 462
+  ypos 302
+ }
+end_group

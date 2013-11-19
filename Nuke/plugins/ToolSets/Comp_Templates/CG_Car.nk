@@ -34,7 +34,7 @@ define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
             </splitter>
         </splitter>
     </window>
-    <window x="1920" y="0" w="1943" h="1220" screen="0">
+    <window x="1920" y="0" w="1933" h="1220" screen="0">
         <splitter orientation="2">
             <split size="1186"/>
             <dock id="" activePageId="Viewer.1">
@@ -322,13 +322,13 @@ Dot {
  xpos -172
  ypos -198
 }
-set N1ce85af0 [stack 0]
+set N1cf659d0 [stack 0]
 Dot {
  name Dot9
  xpos -368
  ypos -198
 }
-set N1ce85e60 [stack 0]
+set N1cf65d40 [stack 0]
 Camera2 {
  inputs 0
  name Camera2
@@ -352,7 +352,7 @@ Scene {
  xpos -654
  ypos -157
 }
-push $N1ce85e60
+push $N1cf65d40
 add_layer {N N.X N.Y N.Z}
 ReLight {
  inputs 4
@@ -361,7 +361,7 @@ ReLight {
  xpos -402
  ypos -136
 }
-push $N1ce85af0
+push $N1cf659d0
 Merge2 {
  inputs 2
  operation screen
@@ -376,7 +376,7 @@ Dot {
  xpos -172
  ypos 128
 }
-set N1cf99fe0 [stack 0]
+set N1d06dec0 [stack 0]
 add_layer {AO AO.red AO.green AO.blue AO.alpha}
 Shuffle {
  in AO
@@ -397,7 +397,7 @@ Merge2 {
  xpos -349
  ypos 184
 }
-push $N1cf99fe0
+push $N1d06dec0
 Merge2 {
  inputs 2
  operation multiply
@@ -406,7 +406,7 @@ Merge2 {
  xpos -206
  ypos 184
 }
-set N1cf9ada0 [stack 0]
+set N1d06ec80 [stack 0]
 Read {
  inputs 0
  file L:/00719_grandpa/footage/episodes/499_generics/sh027/plates/sh027.#####.exr
@@ -485,7 +485,7 @@ Dot {
  xpos 444
  ypos -540
 }
-set N1cf9bed0 [stack 0]
+set N1d06fdb0 [stack 0]
 Dot {
  name Dot3
  xpos 643
@@ -509,7 +509,7 @@ Reformat {
  xpos 880
  ypos -478
 }
-set N1cf9c920 [stack 0]
+set N1d070800 [stack 0]
 Merge2 {
  inputs 2
  operation stencil
@@ -518,7 +518,7 @@ Merge2 {
  xpos 609
  ypos -478
 }
-push $N1cf9bed0
+push $N1d06fdb0
 Grade {
  inputs 1+1
  blackpoint {0.0457142815 0.0457142815 0.07999999821 -0.03799999878}
@@ -536,13 +536,13 @@ Dot {
  xpos 444
  ypos 29
 }
-set N1d0e3e80 [stack 0]
+set N1d1e1f90 [stack 0]
 Dot {
  name Dot8
  xpos 675
  ypos 29
 }
-push $N1cf9c920
+push $N1d070800
 Shuffle {
  in AO
  alpha red
@@ -572,7 +572,7 @@ Merge2 {
  xpos 641
  ypos 88
 }
-push $N1d0e3e80
+push $N1d1e1f90
 Grade {
  inputs 1+1
  white 1.1
@@ -588,12 +588,11 @@ Dot {
  xpos 444
  ypos 434
 }
-set N1d0e5320 [stack 0]
+set N1d1e3430 [stack 0]
 Blur {
  channels Object
  size 70
  name Blur8
- selected true
  xpos 90
  ypos 425
 }
@@ -604,12 +603,7 @@ Transform {
  xpos 90
  ypos 461
 }
-push $N1cf9ada0
-Premult {
- name Premult1
- xpos -206
- ypos 341
-}
+push $N1d06ec80
 Grade {
  inputs 1+1
  white 0.44
@@ -619,21 +613,308 @@ Grade {
  xpos -206
  ypos 461
 }
-Grain2 {
- name Grain2_2
- label "Kodak 5248"
+Group {
+ name Group4
  xpos -206
- ypos 577
- red_size 1.7
- green_size 1.9
- blue_size 2.6
- red_m 0.105
- green_m 0.06
- blue_m 0.135
- black {-0.02 0 -0.02}
- minimum {0 0 0}
+ ypos 583
+ addUserKnob {20 User}
+ addUserKnob {41 amount l red T DitherRed.amount}
+ addUserKnob {41 amount_1 l green T DitherGreen.amount}
+ addUserKnob {41 amount_2 l blue T DitherBlue.amount}
+ addUserKnob {26 ""}
+ addUserKnob {6 Csample l "422 sampling?" +STARTLINE}
+ addUserKnob {6 HDCamCorrection l "Source HDCam 1440?" t "use this if the source is HDCam which is 1440 pixels wide not 1920 (then stretched)\n\nnaughty sony!" -STARTLINE}
+ HDCamCorrection true
+ addUserKnob {3 redAspect l "red noise aspect" t "use this to create non-square pixel noise\n"}
+ redAspect 1
+ addUserKnob {7 blurRedSize l blur -STARTLINE R 0 5}
+ addUserKnob {3 greenAspect l "green noise aspect" t "use this to create non-square pixel noise\nprobably should be 1"}
+ greenAspect 1
+ addUserKnob {7 blurGreenSize l blur -STARTLINE R 0 5}
+ addUserKnob {3 blueAspect l "blue noise aspect" t "use this to create non-square pixel noise\n"}
+ blueAspect 1
+ addUserKnob {7 blurBlueSize l blur -STARTLINE R 0 5}
+ blurBlueSize 0.45
+ addUserKnob {6 usePremult l (un)premult +STARTLINE}
+ addUserKnob {6 useMask l "use mask" +STARTLINE}
+ addUserKnob {6 invertMask l invert -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {41 from0_1 l (un)premult T CopyPreMult.from0}
+ addUserKnob {41 from0 l mask T CopyMask.from0}
+ addUserKnob {26 ""}
+ addUserKnob {6 croptoFormat l "crop output" t "crops the dither to the incoming image size" +STARTLINE}
+ croptoFormat true
 }
-push $N1d0e5320
+ Input {
+  inputs 0
+  name RGB
+  xpos 190
+  ypos 13
+ }
+set N26058f30 [stack 0]
+push $N26058f30
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name CopyPreMult
+  xpos 190
+  ypos 65
+  disable {{!usePremult i}}
+ }
+ Unpremult {
+  name Unpremult1
+  xpos 190
+  ypos 134
+  disable {{!usePremult i}}
+ }
+set N26059610 [stack 0]
+ Multiply {
+  channels rgb
+  value 0
+  name Multiply1
+  xpos -37
+  ypos 134
+ }
+set N26059980 [stack 0]
+ Dither {
+  channels {-rgba.red rgba.green -rgba.blue}
+  amount 0.025
+  maskChannelInput -depth.Z
+  invert_mask {{invertMask i}}
+  unpremult -rgba.alpha
+  name DitherGreen
+  xpos 68
+  ypos 169
+ }
+ Transform {
+  scale {{greenAspect i} 1}
+  center {1024 778}
+  filter Impulse
+  name transformGreen
+  xpos 68
+  ypos 207
+ }
+ Transform {
+  scale {{1920/1440 i} 1}
+  center {960 540}
+  name HDCamAspectCorrect2
+  xpos 68
+  ypos 233
+  disable {{!HDCamCorrection i}}
+ }
+ Blur {
+  channels {-rgba.red rgba.green -rgba.blue}
+  size {{parent.blurGreenSize i}}
+  name BlurGreen
+  xpos 68
+  ypos 273
+  disable {{parent.blurGreenSize==0?1:0 i}}
+ }
+push $N26059610
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels rgb
+  also_merge all
+  name Merge3
+  xpos 190
+  ypos 310
+ }
+set N2605aab0 [stack 0]
+ Input {
+  inputs 0
+  name mask
+  xpos 415
+  ypos 7
+  number 1
+ }
+push $N26058f30
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 depth.Z
+  name CopyMask
+  xpos 308
+  ypos 102
+  disable {{!useMask i}}
+ }
+set N2605b190 [stack 0]
+ Invert {
+  name Invert1
+  xpos 399
+  ypos 184
+  disable {{!invertMask i x1 0}}
+ }
+push $N2605aab0
+push $N26059980
+ Dither {
+  channels {rgba.red -rgba.green -rgba.blue}
+  amount 0.016
+  maskChannelInput -depth.Z
+  invert_mask {{invertMask i}}
+  unpremult -rgba.alpha
+  name DitherRed
+  xpos -167
+  ypos 177
+ }
+ Transform {
+  scale {{redAspect i} 1}
+  center {1024 778}
+  filter Impulse
+  name transformRed
+  xpos -167
+  ypos 220
+ }
+ Transform {
+  scale {{1920/1440 i} 1}
+  center {960 540}
+  name HDCamAspectCorrect
+  xpos -167
+  ypos 261
+  disable {{!HDCamCorrection i}}
+ }
+ Blur {
+  channels {rgba.red -rgba.green -rgba.blue}
+  size {{parent.blurRedSize i}}
+  name BlurRed
+  xpos -167
+  ypos 287
+  disable {{parent.blurRedSize==0?1:0 i}}
+ }
+push $N26059610
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels rgb
+  also_merge all
+  name Merge1
+  xpos -98
+  ypos 338
+ }
+ ShuffleCopy {
+  inputs 2
+  green green
+  blue blue
+  name ShuffleRed
+  xpos 190
+  ypos 368
+ }
+push $N26059980
+ Dither {
+  channels {-rgba.red -rgba.green rgba.blue}
+  amount 0.06
+  maskChannelInput -depth.Z
+  invert_mask {{invertMask i}}
+  unpremult -rgba.alpha
+  name DitherBlue
+  xpos -37
+  ypos 168
+ }
+ Transform {
+  scale {{blueAspect i} 1}
+  center {1024 778}
+  filter Impulse
+  name transformBlue
+  xpos -37
+  ypos 216
+ }
+ Transform {
+  scale {{1920/1440 i} 1}
+  center {960 540}
+  name HDCamAspectCorrect1
+  xpos -32
+  ypos 246
+  disable {{!HDCamCorrection i}}
+ }
+ Blur {
+  channels {-rgba.red -rgba.green rgba.blue}
+  size {{parent.blurBlueSize i}}
+  name BlurBlue
+  xpos -37
+  ypos 286
+  disable {{parent.blurBlueSize==0?1:0 i}}
+ }
+push $N26059610
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels rgb
+  also_merge all
+  name Merge2
+  xpos 107
+  ypos 329
+ }
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  name ShuffleBlue
+  xpos 190
+  ypos 438
+ }
+ Premult {
+  name Premult1
+  xpos 190
+  ypos 596
+  disable {{!usePremult i}}
+ }
+set N25eff490 [stack 0]
+push $N2605b190
+ Keymix {
+  inputs 3
+  maskChannel depth.Z
+  name Keymix1
+  xpos 308
+  ypos 620
+ }
+push $N25eff490
+ Switch {
+  inputs 2
+  which {{useMask i}}
+  name Switch1
+  xpos 190
+  ypos 673
+ }
+push $N26058f30
+ Copy {
+  inputs 2
+  channels rgba
+  name Copy1
+  xpos 257
+  ypos 740
+ }
+set N25f5b480 [stack 0]
+ Viewer {
+  inputs 2
+  name Viewer1
+  xpos 31
+  ypos 438
+ }
+push $N25f5b480
+ Crop {
+  box {0 0 {RGB.width i} {RGB.height i}}
+  reformat true
+  crop false
+  name Crop1
+  selected true
+  xpos 257
+  ypos 828
+  disable {{!croptoFormat i}}
+ }
+ Output {
+  name Output1
+  xpos 257
+  ypos 910
+ }
+end_group
+Premult {
+ name Premult1
+ selected true
+ xpos 24
+ ypos 583
+}
+push $N1d1e3430
 Merge2 {
  inputs 2
  also_merge all

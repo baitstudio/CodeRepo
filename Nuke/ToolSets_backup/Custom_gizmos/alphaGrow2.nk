@@ -1,0 +1,116 @@
+#! C:/Program Files/Nuke6.0v2/Nuke6.0.exe -nx
+version 6.0 v2
+Gizmo {
+ addUserKnob {20 "" l User}
+ addUserKnob {7 erodeGrow l blur R 0 50}
+ addUserKnob {7 opsGamma l gamma R 1 4}
+ opsGamma 1
+ addUserKnob {7 opsGain l gain R 1 4}
+ opsGain 1.5
+ addUserKnob {41 size_1 l "post blur" T postBlur.size}
+ addUserKnob {41 alpha l premult T Premult1.alpha}
+ addUserKnob {41 invert T Premult1.invert}
+ addUserKnob {6 matteOnly l "matte only" t "check this to shuffle the alpha\ninto RGBA" +STARTLINE}
+ matteOnly true
+ addUserKnob {6 clampOn l clamp +STARTLINE}
+ clampOn true
+ addUserKnob {26 ""}
+ addUserKnob {4 gammaGain l "operation order" M {"gamma -> gain" "gain -> gamma"}}
+ addUserKnob {41 filter_1 l filter T outerBlur.filter}
+ addUserKnob {20 endGroup n -1}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -211
+  ypos -257
+ }
+ Clamp {
+  name Clamp2
+  xpos -211
+  ypos -180
+ }
+ Blur {
+  channels {-rgba.red -rgba.green -rgba.blue rgba.alpha}
+  size {{abs(erodeGrow) i}}
+  name outerBlur
+  xpos -223
+  ypos -88
+ }
+set N5b2dcc60 [stack 0]
+ Multiply {
+  channels alpha
+  value {{parent.opsGain i}}
+  name Multiply1
+  xpos -153
+  ypos 97
+ }
+ set C5b2dc9f0 [stack 0]
+ Gamma {
+  channels alpha
+  value {{parent.opsGamma i}}
+  name Gamma1
+  xpos -153
+  ypos 182
+ }
+ set C5b2e2420 [stack 0]
+push $N5b2dcc60
+clone $C5b2e2420 {
+  xpos -273
+  ypos 101
+  selected false
+ }
+clone $C5b2dc9f0 {
+  xpos -273
+  ypos 178
+  selected false
+ }
+ Switch {
+  inputs 2
+  which {{parent.gammaGain i}}
+  name Switch1
+  xpos -211
+  ypos 261
+ }
+ Clamp {
+  channels rgba
+  name Clamp1
+  xpos -211
+  ypos 401
+  disable {{!clampOn i}}
+ }
+ Blur {
+  channels alpha
+  name postBlur
+  selected true
+  xpos -211
+  ypos 485
+ }
+ Premult {
+  alpha -rgba.alpha
+  name Premult1
+  xpos -211
+  ypos 549
+ }
+ Invert {
+  channels alpha
+  name Invert1
+  xpos -211
+  ypos 593
+  disable {{!invert i}}
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle1
+  xpos -211
+  ypos 641
+  disable {{!matteOnly i}}
+ }
+ Output {
+  name Output1
+  xpos -211
+  ypos 708
+ }
+end_group

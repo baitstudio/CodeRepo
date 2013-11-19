@@ -1,0 +1,252 @@
+#! /Applications/Nuke5.1v2/Nuke5.1v2.app/Contents/MacOS/Nuke5.1v2 -nx
+version 5.1200
+Gizmo {
+ inputs 2
+ help "Very useful as a super unpremultiplier.  The input matte is used as the source edge to extend the input colour channels beyond their existing alpha.  It can also be used to do dilate/erode operations on an alpha. The effect can be extended by using multiple copies.  The result should probably be re-comped with the original using an edge matte through a KeyMix so that only the desired areas are used.  "
+ addUserKnob {20 Controls}
+ addUserKnob {41 in l channels T Shuffle1.in}
+ addUserKnob {41 from0 l "matte from" T Copy7.from0}
+ addUserKnob {41 out l output T ShuffleCopy2.out}
+ addUserKnob {41 size l "pre-blur vector" T Blur5.size}
+ addUserKnob {41 scale l "vector length" T VectorBlur2.scale}
+}
+ Input {
+  inputs 0
+  name Input
+  xpos 855
+  ypos -399
+ }
+set N1e1e740 [stack 0]
+ Shuffle {
+  in rgb
+  name Shuffle1
+  xpos 855
+  ypos -246
+ }
+set Ndfee5c0 [stack 0]
+ Input {
+  inputs 0
+  name matte
+  selected true
+  xpos 669
+  ypos -396
+  number 1
+ }
+push $Ndfee5c0
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 rgba.alpha
+  maskChannelMask rgba.red
+  name Copy7
+  xpos 669
+  ypos -252
+ }
+set Ndfcb140 [stack 0]
+ Dot {
+  name Dot3
+  xpos 590
+  ypos -242
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  alpha black
+  name Shuffle3
+  xpos 556
+  ypos -54
+ }
+ Group {
+  name Edge2Vec1
+  xpos 556
+  ypos -30
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos -172
+   ypos -315
+  }
+  Clamp {
+   channels rgb
+   name Clamp1
+   xpos -172
+   ypos -253
+  }
+set Ndfe98b0 [stack 0]
+  Position {
+   translate {0 1}
+   name Position2
+   xpos -64
+   ypos -103
+  }
+push $Ndfe98b0
+  Merge2 {
+   inputs 2
+   operation minus
+   name Merge2
+   xpos -103
+   ypos -28
+  }
+push $Ndfe98b0
+  Position {
+   translate {1 0}
+   name Position1
+   xpos -287
+   ypos -97
+  }
+push $Ndfe98b0
+  Merge2 {
+   inputs 2
+   operation minus
+   name Merge1
+   xpos -253
+   ypos -29
+  }
+  Copy {
+   inputs 2
+   from0 rgba.green
+   to0 rgba.green
+   name Copy3
+   xpos -179
+   ypos 27
+  }
+  Position {
+   translate {-0.5 -0.5}
+   name Position5
+   xpos -179
+   ypos 135
+  }
+  Grade {
+   channels {rgba.red rgba.green -rgba.blue}
+   multiply {{Input1.height*Grade1.height} {Input1.height*Grade1.height} {curve} {curve}}
+   black_clamp false
+   name Grade1
+   xpos -179
+   ypos 258
+   addUserKnob {20 User}
+   addUserKnob {7 height l Height}
+   height 1
+  }
+  Group {
+   name Normalise
+   selected true
+   xpos -179
+   ypos 322
+  }
+   Input {
+    inputs 0
+    name Input1
+    xpos -160
+    ypos -293
+   }
+set Ndffb050 [stack 0]
+push $Ndffb050
+push $Ndffb050
+   MergeExpression {
+    inputs 2
+    channel0 {rgba.red rgba.green rgba.blue -rgba.alpha}
+    expr0 "max(0, ( (Ar*Br)+(Ag*Bg)+(Ab*Bb) ) )"
+    channel1 none
+    channel2 {-rgba.red -rgba.green -rgba.blue}
+    channel3 {-rgba.alpha}
+    unpremult -rgba.alpha
+    name DotP_mergeX
+    selected true
+    xpos -242
+    ypos -196
+   }
+   Expression {
+    expr0 sqrt(r)
+    expr1 sqrt(g)
+    expr2 sqrt(b)
+    name sqrt
+    xpos -242
+    ypos -140
+   }
+   Merge2 {
+    inputs 2
+    operation divide
+    name Merge4
+    xpos -160
+    ypos -61
+   }
+   Output {
+    name Output1
+    xpos -160
+    ypos 1
+   }
+  end_group
+  Output {
+   name Output1
+   xpos -179
+   ypos 417
+  }
+ end_group
+ Blur {
+  channels rgb
+  size 3
+  name Blur5
+  xpos 556
+  ypos -4
+ }
+push $Ndfcb140
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  out forward
+  name ShuffleCopy1
+  label "rg to forward"
+  xpos 556
+  ypos 66
+ }
+ VectorBlur {
+  channels rgb
+  uv forward
+  scale 30
+  offset 0
+  alpha -rgba.alpha
+  maskChannelMask -rgba.alpha
+  maskChannelInput -rgba.alpha
+  name VectorBlur2
+  xpos 556
+  ypos 104
+ }
+ Dot {
+  name Dot4
+  xpos 590
+  ypos 205
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos 855
+  ypos 195
+ }
+push $N1e1e740
+ Dot {
+  name Dot1
+  xpos 1056
+  ypos -395
+ }
+ ShuffleCopy {
+  inputs 2
+  in2 none
+  red red
+  green green
+  blue blue
+  out rgb
+  name ShuffleCopy2
+  xpos 1022
+  ypos 201
+ }
+ Output {
+  name Output1
+  xpos 1022
+  ypos 484
+ }
+end_group

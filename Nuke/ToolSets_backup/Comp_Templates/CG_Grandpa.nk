@@ -1,0 +1,1082 @@
+#! C:/Program Files/Nuke7.0v8/Nuke7.0.exe -nx
+version 7.0 v8
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="0" w="1936" h="1160" screen="1">
+        <splitter orientation="1">
+            <split size="1214"/>
+            <splitter orientation="1">
+                <split size="46"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="1164"/>
+                <splitter orientation="2">
+                    <split size="0"/>
+                    <dock id=""/>
+                    <split size="1095"/>
+                    <dock id="" activePageId="DAG.1">
+                        <page id="DAG.1"/>
+                    </dock>
+                </splitter>
+            </splitter>
+            <split size="702"/>
+            <splitter orientation="2">
+                <split size="548"/>
+                <dock id="" activePageId="Properties.1">
+                    <page id="Properties.1"/>
+                </dock>
+                <split size="547"/>
+                <dock id="" activePageId="DopeSheet.1">
+                    <page id="Curve Editor.1"/>
+                    <page id="DopeSheet.1"/>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+    <window x="1920" y="0" w="1933" h="1220" screen="0">
+        <splitter orientation="2">
+            <split size="1186"/>
+            <dock id="" activePageId="Viewer.1">
+                <page id="Viewer.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name K:/CodeRepo/Nuke/plugins/ToolSets/Comp_Templates/CG_Grandpa.nk
+ fps 25
+ format "1920 1080 0 0 1920 1080 1 HD"
+ proxy_type scale
+ proxy_format "960 540 0 0 960 540 1 "
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode3
+ tile_color 0x71c67100
+ label "CG AO"
+ note_font_size 42
+ xpos -376
+ ypos -1562
+ bdwidth 692
+ bdheight 348
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode11
+ tile_color 0x8e8e3800
+ label "CG Beauty"
+ note_font_size 42
+ xpos -1252
+ ypos -2226
+ bdwidth 505
+ bdheight 442
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ tile_color 0x8c8e8aff
+ label Plate
+ note_font_size 42
+ xpos -384
+ ypos -2597
+ bdwidth 214
+ bdheight 219
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode6
+ tile_color 0xc63e3bff
+ label "Object matte"
+ note_font_size 42
+ xpos -380
+ ypos -2309
+ bdwidth 227
+ bdheight 214
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode2
+ tile_color 0x71bdc6ff
+ label "CG Shadow"
+ note_font_size 42
+ xpos -378
+ ypos -2022
+ bdwidth 666
+ bdheight 281
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode5
+ tile_color 0x7171c600
+ label "object shadow"
+ note_font_size 28
+ xpos -722
+ ypos -1013
+ bdwidth 214
+ bdheight 194
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode10
+ tile_color 0xc67d37ff
+ label AO
+ note_font_size 42
+ xpos -1291
+ ypos -1325
+ bdwidth 472
+ bdheight 255
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode4
+ tile_color 0x388e8e00
+ label REF
+ note_font_size 42
+ xpos 173
+ ypos -2711
+ bdwidth 1542
+ bdheight 387
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode9
+ tile_color 0x595b5aff
+ label RELight
+ note_font_size 42
+ xpos -1491
+ ypos -1735
+ bdwidth 805
+ bdheight 294
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh014/scale_refs/14_scale_ref.PNG
+ format "988 557 0 0 988 557 1 "
+ origset true
+ name Read3
+ xpos 183
+ ypos -2633
+}
+Reformat {
+ name Reformat2
+ xpos 183
+ ypos -2549
+}
+Read {
+ inputs 0
+ file C:/Users/cale.pugh/Downloads/Car_light_ref.png
+ format "988 559 0 0 988 559 1 "
+ origset true
+ name Read6
+ xpos 275
+ ypos -2632
+}
+Reformat {
+ name Reformat4
+ xpos 275
+ ypos -2548
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh078/scale_refs/sh078_scale_ref.PNG
+ format "991 558 0 0 991 558 1 "
+ origset true
+ name Read4
+ xpos 371
+ ypos -2632
+}
+Reformat {
+ name Reformat6
+ xpos 371
+ ypos -2548
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh069/scale_refs/sh069_scale_ref.PNG
+ format "989 560 0 0 989 560 1 "
+ origset true
+ name Read5
+ xpos 467
+ ypos -2632
+}
+Reformat {
+ name Reformat7
+ xpos 467
+ ypos -2548
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh034/scale_refs/sh034_scale_ref.JPG
+ format "986 554 0 0 986 554 1 "
+ origset true
+ name Read7
+ xpos 563
+ ypos -2632
+}
+Reformat {
+ name Reformat8
+ xpos 563
+ ypos -2548
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh089/scale_refs/89_scale_ref.PNG
+ format "993 557 0 0 993 557 1 "
+ origset true
+ name Read9
+ xpos 658
+ ypos -2631
+}
+Reformat {
+ name Reformat9
+ xpos 658
+ ypos -2547
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh026/scale_refs/26_scale_ref.PNG
+ format "988 559 0 0 988 559 1 "
+ origset true
+ name Read11
+ xpos 751
+ ypos -2631
+}
+Reformat {
+ name Reformat10
+ xpos 751
+ ypos -2547
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh028/scale_refs/28_scale_ref.PNG
+ format "988 559 0 0 988 559 1 "
+ origset true
+ name Read12
+ xpos 845
+ ypos -2630
+}
+Reformat {
+ name Reformat11
+ xpos 845
+ ypos -2546
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_408_roly/gnp408sh046/plates/gnp408sh046_clean.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 152
+ origlast 152
+ origset true
+ name Read20
+ xpos 989
+ ypos -2608
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_413_munchmould/gnp413sh001/plates/gnp413sh001.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 114
+ origlast 114
+ origset true
+ name Read21
+ xpos 1311
+ ypos -2608
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/reference/characters/grandpa/437_4_X1080_2C.Grp.01.jpg
+ format "1920 1080 0 0 1920 1080 1 HD"
+ origset true
+ name Read22
+ xpos 1407
+ ypos -2615
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_423_madeofmagic/gnp423sh001/plates/gnp423sh001.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 69
+ origlast 69
+ origset true
+ name Read23
+ xpos 1197
+ ypos -2611
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_414_aussie/gnp414sh001/plates/gnp414sh001.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 138
+ origlast 138
+ origset true
+ name Read24
+ xpos 1092
+ ypos -2614
+}
+Transform {
+ translate {-289 -396}
+ center {930 530}
+ name Transform6
+ xpos 1092
+ ypos -2530
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_414_aussie/gnp414sh002/plates/gnp414sh002.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 138
+ origlast 138
+ origset true
+ name Read1
+ xpos -344
+ ypos -2515
+}
+add_layer {Object Object.alpha}
+RotoPaint {
+ output {rgba.alpha none none Object.alpha}
+ cliptype none
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a fx x3f000000 fy x3f000000}
+    {curvegroup Bezier1 576 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {0 x40000000}
+        {x447d8000 x42140000}
+        {0 xc0000000}
+        {xc1177b80 xc0d9e390}
+        {x4483b697 x4231a5a6}
+        {x40896900 x4045a5a0}
+        {x3fc00000 xbf000000}
+        {x4485d878 x426d0f10}
+        {xbfc00000 x3f000000}
+        {xc010f200 xc0925ce0}
+        {x4483bf10 x4282b4b6}
+        {x4090f000 x41125a50}
+        {xc1670f80 x40496900}
+        {x44874e1f x428fb4b8}
+        {x41152c80 xc0ac3c70}
+        {xc2834b40 xc0e00000}
+        {x4497f786 x430c8f0f}
+        {x41a24080 x400a6b40}
+        {x43040000 x41800000}
+        {x449a2000 xc2580000}
+        {xc3040000 xc1800000}
+        {x42340000 xc20a0000}
+        {x4475a000 xc2860000}
+        {xc2340000 x420a0000}}}
+      {cc
+       {f 8192}
+       {px 1
+        {0 x40000000}
+        {0 0}
+        {0 xc0000000}
+        {xc1177b80 xc0d9e390}
+        {0 0}
+        {x40896900 x4045a5a0}
+        {x3fc00000 xbf000000}
+        {0 0}
+        {xbfc00000 x3f000000}
+        {xc010f200 xc0925ce0}
+        {0 0}
+        {x4090f000 x41125a50}
+        {xc160a100 x4020f900}
+        {x3fcc8c00 x40843800}
+        {x410f5f00 x40c07c80}
+        {xc2834b40 xc0e00000}
+        {xc0182c00 x4117f060}
+        {x41a24080 x400a6b40}
+        {x43040000 x41800000}
+        {0 0}
+        {xc3040000 xc1800000}
+        {x42340000 xc20a0000}
+        {0 0}
+        {xc2340000 x420a0000}}}}
+     {tx 1 x448bf2d3 x4221f4b5}
+     {a fx x3f000000 fy x3f000000 str 1 spx x44700000 spy x44070000 sb 1 tt x40800000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { addPoints str 1 ssx 1 ssy 1 sf 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {960 540}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ feather 0.5
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+ name RotoPaint1
+ xpos -344
+ ypos -2224
+}
+add_layer {ObjectMatte ObjectMatte.red ObjectMatte.green ChairMatte.blue ChairMatte.alpha}
+Shuffle {
+ in Object
+ out ObjectMatte
+ name Shuffle1
+ xpos -344
+ ypos -2188
+}
+Blur {
+ channels ObjectMatte
+ size 3.8
+ name Blur7
+ xpos -344
+ ypos -2164
+}
+Dot {
+ name Dot2
+ xpos -310
+ ypos -1894
+}
+set N1d4d46a0 [stack 0]
+Dot {
+ name Dot3
+ xpos -111
+ ypos -1894
+}
+Read {
+ inputs 0
+ file N:/00719_grandpa/gnp_414_aussie/cg/gnp414sh002/v001/setExtras_gnp414sh002.light.v001.#####.exr
+ format "960 540 0 0 960 540 1 "
+ last 138
+ origlast 138
+ origset true
+ name Read2
+ xpos 126
+ ypos -2084
+}
+Reformat {
+ name Reformat5
+ xpos 126
+ ypos -1977
+}
+set N1d4d50f0 [stack 0]
+Shuffle {
+ red alpha
+ green alpha
+ blue alpha
+ name Shuffle3
+ xpos 378
+ ypos -1977
+}
+Dilate {
+ size -2
+ name Dilate1
+ xpos 378
+ ypos -1953
+}
+Invert {
+ name Invert2
+ xpos 378
+ ypos -1838
+}
+set N1d4d5b40 [stack 0]
+push $N1d4d50f0
+Merge2 {
+ inputs 2
+ name Merge5
+ xpos 126
+ ypos -1832
+}
+set N1d4d5eb0 [stack 0]
+Shuffle {
+ green red
+ blue red
+ alpha red
+ name Shuffle5
+ xpos -7
+ ypos -1832
+}
+Merge2 {
+ inputs 2
+ operation max
+ Achannels ObjectMatte
+ name Merge1
+ xpos -145
+ ypos -1832
+}
+push $N1d4d46a0
+Grade {
+ inputs 1+1
+ blackpoint {0.0457142815 0.0457142815 0.07999999821 -0.03799999878}
+ whitepoint {2.150000095 2.650000095 3.450000048 1}
+ white 0.82
+ gamma 1.02
+ white_clamp true
+ invert_mask true
+ name Grade2
+ xpos -344
+ ypos -1832
+}
+Dot {
+ name Dot4
+ xpos -310
+ ypos -1325
+}
+set N1d4d6c70 [stack 0]
+Dot {
+ name Dot8
+ xpos -79
+ ypos -1325
+}
+push $N1d4d5b40
+Dot {
+ name Dot6
+ xpos 412
+ ypos -1356
+}
+push $N1d4d5eb0
+add_layer {shdw_ao_raw shdw_ao_raw.red shdw_ao_raw.green shdw_ao_raw.blue shdw_ao_raw.alpha}
+Shuffle {
+ in shdw_ao_raw
+ alpha red
+ name Shuffle2
+ xpos 126
+ ypos -1449
+}
+Merge2 {
+ inputs 2
+ name Merge8
+ xpos 126
+ ypos -1359
+}
+Invert {
+ name Invert1
+ xpos 126
+ ypos -1308
+}
+Grade {
+ channels all
+ white 1.94
+ gamma 0.51
+ white_clamp true
+ name Grade1
+ xpos 126
+ ypos -1272
+}
+Merge2 {
+ inputs 2
+ operation stencil
+ Achannels ObjectMatte
+ name Merge2
+ xpos -113
+ ypos -1266
+}
+push $N1d4d6c70
+Grade {
+ inputs 1+1
+ white 1.1
+ gamma 0.515
+ white_clamp true
+ mix 0.85
+ name Grade4
+ xpos -344
+ ypos -1266
+}
+Dot {
+ name Dot5
+ xpos -310
+ ypos -920
+}
+set N255aaf60 [stack 0]
+Blur {
+ channels Object
+ size 70
+ name Blur8
+ xpos -664
+ ypos -929
+}
+Transform {
+ translate {18 -37}
+ center {444 927}
+ name Transform2
+ xpos -664
+ ypos -893
+}
+Read {
+ inputs 0
+ file N:/00719_grandpa/gnp_414_aussie/cg/gnp414sh002/v001/beauty_gnp414sh002.light.v001.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ before black
+ last 138
+ origlast 138
+ origset true
+ name Read13
+ xpos -960
+ ypos -2089
+}
+Unpremult {
+ name Unpremult2
+ xpos -960
+ ypos -2005
+}
+SoftClip {
+ conversion "logarithmic compress"
+ softclip_min 0.6
+ softclip_max 1.522
+ name SoftClip3
+ xpos -960
+ ypos -1981
+}
+add_layer {ID_outfit ID_outfit.red ID_outfit.green ID_outfit.blue ID_outfit.alpha}
+Grade {
+ whitepoint 1.74
+ black_clamp false
+ maskChannelInput ID_outfit.red
+ mix 0.79
+ name Grade3
+ xpos -960
+ ypos -1957
+}
+Dot {
+ name Dot7
+ xpos -926
+ ypos -1552
+}
+set N255ac770 [stack 0]
+Dot {
+ name Dot9
+ xpos -1122
+ ypos -1552
+}
+set N255acae0 [stack 0]
+Camera2 {
+ inputs 0
+ name Camera2
+ xpos -1224
+ ypos -1595
+}
+Light2 {
+ inputs 0
+ intensity 8.6
+ translate {-2 2 0}
+ uniform_scale 3.3
+ depthmap_slope_bias 0.01
+ name Light2
+ xpos -1450
+ ypos -1633
+}
+Scene {
+ name Scene2
+ xpos -1450
+ ypos -1511
+}
+push $N255acae0
+add_layer {N N.X N.Y N.Z}
+ReLight {
+ inputs 4
+ normal N
+ name ReLight2
+ xpos -1156
+ ypos -1490
+}
+push $N255ac770
+Merge2 {
+ inputs 2
+ operation screen
+ Achannels rgb
+ also_merge all
+ name Merge4
+ xpos -960
+ ypos -1490
+}
+Dot {
+ name Dot10
+ xpos -926
+ ypos -1226
+}
+set N256e2a60 [stack 0]
+add_layer {AO AO.red AO.green AO.blue AO.alpha}
+Shuffle {
+ in AO
+ name Shuffle4
+ xpos -1125
+ ypos -1229
+}
+Unpremult {
+ name Unpremult1
+ xpos -1125
+ ypos -1171
+}
+push $N256e2a60
+Merge2 {
+ inputs 2
+ operation multiply
+ also_merge all
+ name Merge7
+ xpos -960
+ ypos -1171
+}
+Grade {
+ inputs 1+1
+ white 0.44
+ white_clamp true
+ maskChannelMask Object.alpha
+ name Grade6
+ xpos -960
+ ypos -893
+}
+Group {
+ name Group4
+ xpos -960
+ ypos -771
+ addUserKnob {20 User}
+ addUserKnob {41 amount l red T DitherRed.amount}
+ addUserKnob {41 amount_1 l green T DitherGreen.amount}
+ addUserKnob {41 amount_2 l blue T DitherBlue.amount}
+ addUserKnob {26 ""}
+ addUserKnob {6 Csample l "422 sampling?" +STARTLINE}
+ addUserKnob {6 HDCamCorrection l "Source HDCam 1440?" t "use this if the source is HDCam which is 1440 pixels wide not 1920 (then stretched)\n\nnaughty sony!" -STARTLINE}
+ HDCamCorrection true
+ addUserKnob {3 redAspect l "red noise aspect" t "use this to create non-square pixel noise\n"}
+ redAspect 1
+ addUserKnob {7 blurRedSize l blur -STARTLINE R 0 5}
+ addUserKnob {3 greenAspect l "green noise aspect" t "use this to create non-square pixel noise\nprobably should be 1"}
+ greenAspect 1
+ addUserKnob {7 blurGreenSize l blur -STARTLINE R 0 5}
+ addUserKnob {3 blueAspect l "blue noise aspect" t "use this to create non-square pixel noise\n"}
+ blueAspect 1
+ addUserKnob {7 blurBlueSize l blur -STARTLINE R 0 5}
+ blurBlueSize 0.45
+ addUserKnob {6 usePremult l (un)premult +STARTLINE}
+ addUserKnob {6 useMask l "use mask" +STARTLINE}
+ addUserKnob {6 invertMask l invert -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {41 from0_1 l (un)premult T CopyPreMult.from0}
+ addUserKnob {41 from0 l mask T CopyMask.from0}
+ addUserKnob {26 ""}
+ addUserKnob {6 croptoFormat l "crop output" t "crops the dither to the incoming image size" +STARTLINE}
+ croptoFormat true
+}
+ Input {
+  inputs 0
+  name RGB
+  xpos 190
+  ypos 13
+ }
+set N256e3b90 [stack 0]
+push $N256e3b90
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name CopyPreMult
+  xpos 190
+  ypos 65
+  disable {{!usePremult i}}
+ }
+ Unpremult {
+  name Unpremult1
+  xpos 190
+  ypos 134
+  disable {{!usePremult i}}
+ }
+set N256e4270 [stack 0]
+ Multiply {
+  channels rgb
+  value 0
+  name Multiply1
+  xpos -37
+  ypos 134
+ }
+set N256e45e0 [stack 0]
+ Dither {
+  channels {-rgba.red rgba.green -rgba.blue}
+  amount 0.0052
+  maskChannelInput -depth.Z
+  invert_mask {{invertMask i}}
+  unpremult -rgba.alpha
+  name DitherGreen
+  xpos 68
+  ypos 169
+ }
+ Transform {
+  scale {{greenAspect i} 1}
+  center {1024 778}
+  filter Impulse
+  name transformGreen
+  xpos 68
+  ypos 207
+ }
+ Transform {
+  scale {{1920/1440 i} 1}
+  center {960 540}
+  name HDCamAspectCorrect2
+  xpos 68
+  ypos 233
+  disable {{!HDCamCorrection i}}
+ }
+ Blur {
+  channels {-rgba.red rgba.green -rgba.blue}
+  size {{parent.blurGreenSize i}}
+  name BlurGreen
+  xpos 68
+  ypos 273
+  disable {{parent.blurGreenSize==0?1:0 i}}
+ }
+push $N256e4270
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels rgb
+  also_merge all
+  name Merge3
+  xpos 190
+  ypos 310
+ }
+set N256e5710 [stack 0]
+ Input {
+  inputs 0
+  name mask
+  xpos 415
+  ypos 7
+  number 1
+ }
+push $N256e3b90
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 depth.Z
+  name CopyMask
+  xpos 308
+  ypos 102
+  disable {{!useMask i}}
+ }
+set N256e5df0 [stack 0]
+ Invert {
+  name Invert1
+  xpos 399
+  ypos 184
+  disable {{!invertMask i x1 0}}
+ }
+push $N256e5710
+push $N256e45e0
+ Dither {
+  channels {rgba.red -rgba.green -rgba.blue}
+  amount 0.0029
+  maskChannelInput -depth.Z
+  invert_mask {{invertMask i}}
+  unpremult -rgba.alpha
+  name DitherRed
+  xpos -167
+  ypos 177
+ }
+ Transform {
+  scale {{redAspect i} 1}
+  center {1024 778}
+  filter Impulse
+  name transformRed
+  xpos -167
+  ypos 220
+ }
+ Transform {
+  scale {{1920/1440 i} 1}
+  center {960 540}
+  name HDCamAspectCorrect
+  xpos -167
+  ypos 261
+  disable {{!HDCamCorrection i}}
+ }
+ Blur {
+  channels {rgba.red -rgba.green -rgba.blue}
+  size {{parent.blurRedSize i}}
+  name BlurRed
+  xpos -167
+  ypos 287
+  disable {{parent.blurRedSize==0?1:0 i}}
+ }
+push $N256e4270
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels rgb
+  also_merge all
+  name Merge1
+  xpos -98
+  ypos 338
+ }
+ ShuffleCopy {
+  inputs 2
+  green green
+  blue blue
+  name ShuffleRed
+  xpos 190
+  ypos 368
+ }
+push $N256e45e0
+ Dither {
+  channels {-rgba.red -rgba.green rgba.blue}
+  amount 0.0078
+  maskChannelInput -depth.Z
+  invert_mask {{invertMask i}}
+  unpremult -rgba.alpha
+  name DitherBlue
+  xpos -37
+  ypos 168
+ }
+ Transform {
+  scale {{blueAspect i} 1}
+  center {1024 778}
+  filter Impulse
+  name transformBlue
+  xpos -37
+  ypos 216
+ }
+ Transform {
+  scale {{1920/1440 i} 1}
+  center {960 540}
+  name HDCamAspectCorrect1
+  xpos -32
+  ypos 246
+  disable {{!HDCamCorrection i}}
+ }
+ Blur {
+  channels {-rgba.red -rgba.green rgba.blue}
+  size {{parent.blurBlueSize i}}
+  name BlurBlue
+  xpos -37
+  ypos 286
+  disable {{parent.blurBlueSize==0?1:0 i}}
+ }
+push $N256e4270
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels rgb
+  also_merge all
+  name Merge2
+  xpos 107
+  ypos 329
+ }
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  name ShuffleBlue
+  xpos 190
+  ypos 438
+ }
+ Premult {
+  name Premult1
+  xpos 190
+  ypos 596
+  disable {{!usePremult i}}
+ }
+set N2579fcb0 [stack 0]
+push $N256e5df0
+ Keymix {
+  inputs 3
+  maskChannel depth.Z
+  name Keymix1
+  xpos 308
+  ypos 620
+ }
+push $N2579fcb0
+ Switch {
+  inputs 2
+  which {{useMask i}}
+  name Switch1
+  xpos 190
+  ypos 673
+ }
+push $N256e3b90
+ Copy {
+  inputs 2
+  channels rgba
+  name Copy1
+  xpos 257
+  ypos 740
+ }
+set N257a0390 [stack 0]
+ Viewer {
+  inputs 2
+  name Viewer1
+  xpos 31
+  ypos 438
+ }
+push $N257a0390
+ Crop {
+  box {0 0 {RGB.width i} {RGB.height i}}
+  reformat true
+  crop false
+  name Crop1
+  selected true
+  xpos 257
+  ypos 828
+  disable {{!croptoFormat i}}
+ }
+ Output {
+  name Output1
+  xpos 257
+  ypos 910
+ }
+end_group
+Premult {
+ name Premult1
+ xpos -730
+ ypos -771
+}
+push $N255aaf60
+Merge2 {
+ inputs 2
+ also_merge all
+ maskChannelInput Object.alpha
+ invert_mask true
+ name Merge3
+ xpos -344
+ ypos -777
+}
+Crop {
+ box {0 0 1920 1080}
+ name Crop2
+ xpos -344
+ ypos -665
+}
+Remove {
+ operation keep
+ channels rgb
+ name Remove1
+ xpos -344
+ ypos -641
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_404_dancing/gnp404sh007/scale_refs/gnp404sh007_scale_ref.#####.jpg
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 110
+ frame_mode offset
+ frame 19.000000
+ origlast 110
+ origset true
+ colorspace linear
+ name Read8
+ selected true
+ xpos 1530
+ ypos -2617
+}

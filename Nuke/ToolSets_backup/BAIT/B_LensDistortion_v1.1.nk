@@ -1,0 +1,202 @@
+#! C:/Program Files/Nuke7.0v6/Nuke7.0.exe -nx
+version 7.0 v6
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="22" w="1680" h="1024" screen="0">
+        <splitter orientation="1">
+            <split size="1052"/>
+            <splitter orientation="1">
+                <split size="40"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="1008"/>
+                <splitter orientation="2">
+                    <split size="563"/>
+                    <dock id="" activePageId="Viewer.1">
+                        <page id="Viewer.1"/>
+                    </dock>
+                    <split size="396"/>
+                    <dock id="" activePageId="DAG.1">
+                        <page id="DAG.1"/>
+                        <page id="Curve Editor.1"/>
+                        <page id="DopeSheet.1"/>
+                    </dock>
+                </splitter>
+            </splitter>
+            <split size="608"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name C:/Users/bait/.nuke/ToolSets/B_LensDistortion_v1.1.nk
+}
+Group {
+ inputs 0
+ name B_LensUnDistort
+ tile_color 0xff3f00ff
+ selected true
+ xpos 635
+ ypos -67
+ addUserKnob {20 tabLD l "Bait Lens Distortion"}
+ addUserKnob {41 interactKnob T LensDistortion1.interactKnob}
+ addUserKnob {41 serializeKnob T LensDistortion1.serializeKnob}
+ addUserKnob {41 serialiseKnob T LensDistortion1.serialiseKnob}
+ addUserKnob {41 outputType l "Output Type" T LensDistortion1.outputType}
+ addUserKnob {41 lensType l "Lens Type" T LensDistortion1.lensType}
+ addUserKnob {41 distortion1 l "Radial Distortion 1" T LensDistortion1.distortion1}
+ addUserKnob {41 distortion2 l "Radial Distortion 2" T LensDistortion1.distortion2}
+ addUserKnob {41 distortionCenter l "Distortion Center" T LensDistortion1.distortionCenter}
+ addUserKnob {41 anamorphicSqueeze l "Anamorphic Squeeze" T LensDistortion1.anamorphicSqueeze}
+ addUserKnob {41 asymmetricDistortion l "Asymmetric Distortion" T LensDistortion1.asymmetricDistortion}
+ addUserKnob {41 startFromCurrentLens l "Analyze from Current Lens" T LensDistortion1.startFromCurrentLens}
+ addUserKnob {41 invertDistortion l Undistort T LensDistortion1.invertDistortion}
+ addUserKnob {41 reset l Reset -STARTLINE T LensDistortion1.reset}
+ addUserKnob {41 filter T LensDistortion1.filter}
+ addUserKnob {41 distortionScaling l "Distortion Scaling" T LensDistortion1.distortionScaling}
+ addUserKnob {41 outputFormat l "Scale to Format" T LensDistortion1.outputFormat}
+ addUserKnob {20 "Card Parameters" n 2}
+ addUserKnob {41 cardScale l scale T LensDistortion1.cardScale}
+ addUserKnob {41 a l "a (r^3)" T LensDistortion1.a}
+ addUserKnob {41 b l "b (r^2)" T LensDistortion1.b}
+ addUserKnob {41 c l "c (r^1)" T LensDistortion1.c}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 tabIA l "B_Iamge Analysis"}
+ addUserKnob {41 ignore l Mask T LensDistortion1.ignore}
+ addUserKnob {41 analysisRange l "Analysis Range" T LensDistortion1.analysisRange}
+ addUserKnob {41 analysisStart l "Analysis Start" T LensDistortion1.analysisStart}
+ addUserKnob {41 analysisStop l "Analysis Stop" T LensDistortion1.analysisStop}
+ addUserKnob {41 cameraMotion l "Camera Motion" T LensDistortion1.cameraMotion}
+ addUserKnob {41 analyzeImage l "Analyze Sequence" T LensDistortion1.analyzeImage}
+ addUserKnob {41 showFeatures l "Feature Overlay" T LensDistortion1.showFeatures}
+ addUserKnob {20 tabGA l "B_Grid Analysis"}
+ addUserKnob {41 gridType l "Grid Type" T LensDistortion1.gridType}
+ addUserKnob {41 analyzeGrid l "Analyze Grid" T LensDistortion1.analyzeGrid}
+ addUserKnob {41 alignGrid l "Align Grid" -STARTLINE T LensDistortion1.alignGrid}
+ addUserKnob {41 showGrid l "Grid Overlay" T LensDistortion1.showGrid}
+ addUserKnob {20 tabLA l "B_Line Analysis"}
+ addUserKnob {41 drawingModeOn l "Drawing Mode On" T LensDistortion1.drawingModeOn}
+ addUserKnob {41 nCoefficients l "Distortion Terms" T LensDistortion1.nCoefficients}
+ addUserKnob {41 estimateCenter l "Estimate Center" T LensDistortion1.estimateCenter}
+ addUserKnob {41 analyzeLines l "Analyze Lines" T LensDistortion1.analyzeLines}
+ addUserKnob {41 deleteLastLine l "Delete Last Line" T LensDistortion1.deleteLastLine}
+ addUserKnob {41 deleteLastPoint l "Delete Last Point" -STARTLINE T LensDistortion1.deleteLastPoint}
+ addUserKnob {41 hideLines l "Hide Lines" T LensDistortion1.hideLines}
+ addUserKnob {41 clearAll l "Clear All" -STARTLINE T LensDistortion1.clearAll}
+}
+ Input {
+  inputs 0
+  name FOOTAGE
+  xpos -434
+  ypos -286
+ }
+set N118e85d0 [stack 0]
+ Crop {
+  box {{LensDistortion1.bbox.x} {LensDistortion1.bbox.y} {LensDistortion1.bbox.r} {LensDistortion1.bbox.t}}
+  reformat true
+  crop false
+  name Crop2
+  xpos -246
+  ypos -223
+  disable {{parent.LensDistortion1.disable}}
+ }
+set N118e8940 [stack 0]
+ LensDistortion {
+  serializeKnob ""
+  serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+  distortion1 {{parent.LensDistortion1.distortion1}}
+  distortion2 {{parent.LensDistortion1.distortion2}}
+  distortionCenter {{parent.LensDistortion1.distortionCenter} {parent.LensDistortion1.distortionCenter}}
+  invertDistortion {{parent.LensDistortion1.invertDistortion}}
+  name LensDistortion2
+  label UNDISTORT
+  xpos -246
+  ypos -180
+  disable {{parent.LensDistortion1.disable}}
+ }
+ Output {
+  name OUT01
+  xpos -246
+  ypos -46
+ }
+push $N118e8940
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos -128
+  ypos -122
+ }
+push $N118e85d0
+ LensDistortion {
+  serializeKnob ""
+  serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+  invertDistortion true
+  cardScale {1.14732492 1.14732492 1}
+  a -0.1240429431
+  b 0.03151165694
+  c -0.02366262861
+  analysisStart 1
+  analysisStop 1
+  alignmentCorrection {0.9997649789 -0.0001397690212 -2.287184202e-007 -0.0006597954198 0.9924505353 -4.72357533e-006 0.02338844538 0.2282411903 1}
+  name LensDistortion1
+  label CONTROL
+  selected true
+  xpos -434
+  ypos -177
+ }
+end_group
+Group {
+ name B_LensReDistort
+ tile_color 0xff3f00ff
+ xpos 635
+ ypos 21
+}
+ Input {
+  inputs 0
+  name REDISTORT
+  xpos -436
+  ypos -218
+ }
+ LensDistortion {
+  serializeKnob ""
+  serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+  distortion1 {{parent.parent.B_LensUnDistort.LensDistortion1.distortion1}}
+  distortion2 {{parent.parent.B_LensUnDistort.LensDistortion1.distortion2}}
+  distortionCenter {{parent.parent.B_LensUnDistort.LensDistortion1.distortionCenter} {parent.parent.B_LensUnDistort.LensDistortion1.distortionCenter}}
+  name LensDistortion5
+  label REDISTORT
+  selected true
+  xpos -436
+  ypos -179
+  disable {{parent.LensDistortion1.disable}}
+ }
+ Crop {
+  box {{-parent.parent.B_LensUnDistort.Crop2.box.x} {-parent.parent.B_LensUnDistort.Crop2.box.y} {parent.parent.B_LensUnDistort.Crop2.box.r} {parent.parent.B_LensUnDistort.Crop2.box.t}}
+  reformat true
+  crop false
+  name Crop3
+  xpos -436
+  ypos -133
+  disable {{parent.LensDistortion1.disable}}
+ }
+set N1c2d2040 [stack 0]
+ Output {
+  name Output1
+  xpos -436
+  ypos -83
+ }
+push $N1c2d2040
+push $N1c2d2040
+ Viewer {
+  inputs 2
+  input_process false
+  name Viewer1
+  xpos -313
+  ypos -133
+ }
+end_group

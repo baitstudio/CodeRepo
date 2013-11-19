@@ -1,0 +1,194 @@
+#! C:/Program Files/Nuke7.0v8/Nuke7.0.exe -nx
+version 7.0 v8
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="1920" y="0" w="1936" h="1200" screen="1">
+        <splitter orientation="1">
+            <split size="72"/>
+            <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                <page id="Toolbar.1"/>
+            </dock>
+            <split size="1844"/>
+            <splitter orientation="2">
+                <split size="1139"/>
+                <dock id="" activePageId="DAG.1">
+                    <page id="DAG.1"/>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+    <window x="0" y="0" w="1920" h="1192" screen="0">
+        <splitter orientation="2">
+            <split size="1026"/>
+            <dock id="" activePageId="Viewer.1">
+                <page id="Viewer.1"/>
+            </dock>
+            <split size="128"/>
+            <dock id="" activePageId="DopeSheet.1">
+                <page id="DopeSheet.1"/>
+                <page id="Curve Editor.1"/>
+                <page id="Script Editor.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name K:/CodeRepo/Nuke/plugins/ToolSets/Custom_gizmos/alphaErode3.nk
+}
+Group {
+ inputs 0
+ name Group1
+ selected true
+ xpos -462
+ ypos -161
+ addUserKnob {20 "" l User}
+ addUserKnob {41 from0 l source T Copy1.from0}
+ addUserKnob {26 ""}
+ addUserKnob {7 erodeGrow l blur R 0 50}
+ addUserKnob {7 opsGamma l gamma R 1 4}
+ opsGamma 1
+ addUserKnob {7 opsGain l gain R 1 4}
+ opsGain 1.5
+ addUserKnob {41 size_1 l "post blur" T postBlur.size}
+ addUserKnob {41 alpha l premult T Premult1.alpha}
+ addUserKnob {41 invert T Premult1.invert}
+ addUserKnob {6 matteOnly l "matte only" t "check this to shuffle the alpha\ninto RGBA" +STARTLINE}
+ matteOnly true
+ addUserKnob {6 clampOn l clamp +STARTLINE}
+ clampOn true
+ addUserKnob {26 ""}
+ addUserKnob {4 gammaGain l "operation order" M {"gamma -> gain" "gain -> gamma"}}
+ addUserKnob {41 filter_1 l filter T outerBlur.filter}
+ addUserKnob {20 endGroup n -1}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -211
+  ypos -366
+ }
+set N24b6d030 [stack 0]
+push $N24b6d030
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  selected true
+  xpos -211
+  ypos -284
+ }
+ Clamp {
+  channels alpha
+  name Clamp2
+  xpos -211
+  ypos -180
+ }
+set N24b6d710 [stack 0]
+push $N24b6d710
+push $N24b6d710
+ Blur {
+  channels {-rgba.red -rgba.green -rgba.blue rgba.alpha}
+  size {{abs(erodeGrow) i}}
+  name outerBlur
+  xpos -18
+  ypos -180
+ }
+ Merge2 {
+  inputs 2
+  operation out
+  Achannels {-rgba.red -rgba.green -rgba.blue rgba.alpha}
+  Bchannels {-rgba.red -rgba.green -rgba.blue rgba.alpha}
+  output {-rgba.red -rgba.green -rgba.blue rgba.alpha}
+  name Merge4
+  xpos -18
+  ypos -76
+ }
+set N24b6ddf0 [stack 0]
+ Multiply {
+  channels alpha
+  value {{parent.opsGain i}}
+  name Multiply1
+  xpos 41
+  ypos 40
+ }
+ set C24b6e160 [stack 0]
+ Gamma {
+  channels alpha
+  value {{parent.opsGamma i}}
+  name Gamma1
+  xpos 41
+  ypos 125
+ }
+ set C24b6e4d0 [stack 0]
+push $N24b6ddf0
+clone $C24b6e4d0 {
+  xpos -79
+  ypos 44
+  selected false
+ }
+clone $C24b6e160 {
+  xpos -79
+  ypos 121
+  selected false
+ }
+ Switch {
+  inputs 2
+  which {{parent.gammaGain i}}
+  name Switch1
+  xpos -10
+  ypos 288
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  Achannels alpha
+  Bchannels alpha
+  output alpha
+  name Merge1
+  xpos -211
+  ypos 278
+ }
+ Clamp {
+  channels rgba
+  name Clamp1
+  xpos -211
+  ypos 382
+  disable {{!clampOn i}}
+ }
+ Blur {
+  channels alpha
+  name postBlur
+  xpos -211
+  ypos 465
+ }
+ Premult {
+  alpha -rgba.alpha
+  name Premult1
+  xpos -211
+  ypos 530
+ }
+ Invert {
+  channels alpha
+  name Invert1
+  xpos -211
+  ypos 581
+  disable {{!invert i}}
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle1
+  xpos -211
+  ypos 655
+  disable {{!matteOnly i}}
+ }
+ Output {
+  name Output1
+  xpos -211
+  ypos 708
+ }
+end_group

@@ -1,0 +1,40 @@
+#! C:/Program Files/Nuke6.3v1/Nuke6.3.exe -nx
+version 6.3 v1
+Gizmo {
+ help "ChromaBlur is designed to get rid of keying artifacts with chroma subsampled footage. In contrast to other blur nodes, it only affects the color difference channels of the image, not its luminance."
+ note_font Verdana
+ mapsize {0.15 0.15}
+ addUserKnob {20 ChromaBlur}
+ addUserKnob {41 Blur T Blur1.size}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 133
+  ypos 14
+ }
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace1
+  xpos 133
+  ypos 54
+ }
+ Blur {
+  channels {-rgba.red rgba.green rgba.blue}
+  size {0 0}
+  name Blur1
+  xpos 133
+  ypos 80
+ }
+ Colorspace {
+  colorspace_in YCbCr
+  name Colorspace2
+  xpos 133
+  ypos 118
+ }
+ Output {
+  name Output1
+  xpos 133
+  ypos 218
+ }
+end_group

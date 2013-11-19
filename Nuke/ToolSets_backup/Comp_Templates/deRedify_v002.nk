@@ -1,0 +1,55 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+HueCorrect {
+hue {sat {}
+  lum {}
+  red {curve 1 1 1 1.016176462 1.016176462 1.204901934 1}
+  green {}
+  blue {}
+  r_sup {}
+  g_sup {}
+  b_sup {curve -0.369607687 s0 1.105887771 0.1696079969 0.5254901648 0.9962266684 -0.5421566963 -0.369607687 s0}
+  sat_thrsh {}}
+invert_mask true
+mix 0.95
+name HueCorrect2
+selected true
+xpos -8118
+ypos 1679
+}
+Dot {
+name Dot68
+selected true
+xpos -8084
+ypos 1786
+}
+set N3b4fbb60 [stack 0]
+Keyer {
+operation "red keyer"
+range {0.1824448878 0.9115931416 1 1}
+name Keyer8
+selected true
+xpos -8004
+ypos 1786
+}
+set N3b4f9a30 [stack 0]
+push $N3b4f9a30
+push $N3b4fbb60
+HueShift {
+inputs 1+1
+hue_rotation -8
+name HueShift2
+selected true
+xpos -8118
+ypos 1897
+}
+Saturation {
+inputs 1+1
+saturation 0.93
+mode Average
+name Saturation3
+selected true
+xpos -8118
+ypos 1943
+}

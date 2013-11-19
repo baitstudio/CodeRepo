@@ -1,0 +1,127 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+NoOp {
+ name In1
+ selected true
+ xpos -648
+ ypos 99
+ addUserKnob {20 User}
+}
+Crop {
+ box {0 0 {width i} {height i}}
+ name Crop1
+ selected true
+ xpos -663
+ ypos 140
+}
+Position {
+ translate {{parent.Control1.LXScroll i} {parent.Control1.LYScroll i}}
+ name Position1
+ selected true
+ xpos -663
+ ypos 166
+}
+set N23f68ba0 [stack 0]
+push $N23f68ba0
+Dot {
+ name Dot1
+ selected true
+ xpos -334
+ ypos 170
+}
+Position {
+ translate {{"(parent.Control1.LXScroll <= 0)? width : -width" i} {"(parent.Control1.LYScroll <= 0)? height : - height" i}}
+ name Position2
+ selected true
+ xpos -368
+ ypos 224
+}
+push 0
+push $N23f68ba0
+Dot {
+ name Dot2
+ selected true
+ xpos -534
+ ypos 170
+}
+Position {
+ translate {{"(parent.Control1.LXScroll <= 0)? width : -width"} 0}
+ name Position3
+ selected true
+ xpos -568
+ ypos 224
+}
+push $N23f68ba0
+Dot {
+ name Dot3
+ selected true
+ xpos -434
+ ypos 170
+}
+Position {
+ translate {0 {"(parent.Control1.LYScroll <= 0)? height : - height" i}}
+ name Position4
+ selected true
+ xpos -468
+ ypos 224
+}
+Merge2 {
+ inputs 4+1
+ operation screen
+ name Merge1
+ selected true
+ xpos -663
+ ypos 286
+}
+Crop {
+ box {0 0 {width} {height}}
+ name Crop2
+ selected true
+ xpos -663
+ ypos 319
+ disable {{1-parent.Control1.crop x1 0}}
+}
+Output {
+ name Output1
+ selected true
+ xpos -663
+ ypos 373
+}
+Group {
+ inputs 0
+ name extractEpisodeShot
+ selected true
+ xpos -790
+ ypos 163
+ addUserKnob {20 User}
+ addUserKnob {3 episode l Episode}
+ episode {{"\[python -execlocal import\\ os\\nimport\\ nuke\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[0\\])]"}}
+ addUserKnob {3 shot l Shot}
+ shot {{"\[python -execlocal import\\ nuke\\nimport\\ os\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\])]"}}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 0
+ }
+ Output {
+  name Output1
+  xpos 0
+  ypos 300
+ }
+end_group
+NoOp {
+ name Control1
+ selected true
+ xpos -790
+ ypos 224
+ addUserKnob {20 User}
+ addUserKnob {12 Scroll}
+ Scroll {{"parent.extractEpisodeShot.episode + (100 * parent.extractEpisodeShot.shot)"} 0}
+ addUserKnob {6 crop +STARTLINE}
+ addUserKnob {7 LXScroll}
+ LXScroll {{"(Scroll.x <0)? -(-Scroll.x)%width : Scroll.x%width"}}
+ addUserKnob {7 LYScroll}
+ LYScroll {{"(Scroll.y <0)? -(-Scroll.y)%height : Scroll.y%height"}}
+}

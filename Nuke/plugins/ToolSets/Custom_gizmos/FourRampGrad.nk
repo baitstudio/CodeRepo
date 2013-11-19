@@ -1,0 +1,53 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+Group {
+inputs 0
+name Grad1
+selected true
+xpos 8126
+ypos -7448
+addUserKnob {20 User}
+addUserKnob {41 format T Constant2.format}
+addUserKnob {41 LLColor T Expression2.LLColor}
+addUserKnob {41 LRColor T Expression2.LRColor}
+addUserKnob {41 URColor T Expression2.URColor}
+addUserKnob {41 ULColor T Expression2.ULColor}
+}
+Constant {
+inputs 0
+channels rgb
+name Constant2
+xpos -469
+ypos -253
+}
+Expression {
+temp_name0 LLCorner
+temp_expr0 (1-x/width)*(1-y/height)
+temp_name1 LRCorner
+temp_expr1 (x/width)*(1-y/height)
+temp_name2 URCorner
+temp_expr2 (x/width)*(y/height)
+temp_name3 ULCorner
+temp_expr3 (1-x/width)*(y/height)
+expr0 LLColor.r*LLCorner+LRColor.r*LRCorner+URColor.r*URCorner+ULColor.r*ULCorner
+expr1 LLColor.g*LLCorner+LRColor.g*LRCorner+URColor.g*URCorner+ULColor.g*ULCorner
+expr2 LLColor.b*LLCorner+LRColor.b*LRCorner+URColor.b*URCorner+ULColor.b*ULCorner
+name Expression2
+xpos -469
+ypos -174
+addUserKnob {20 User}
+addUserKnob {18 LLColor}
+LLColor {1 0 0}
+addUserKnob {18 LRColor}
+LRColor {0 1 0}
+addUserKnob {18 URColor}
+URColor {0 0 1}
+addUserKnob {18 ULColor}
+ULColor {0 0 0}
+}
+Output {
+name Output1
+xpos -469
+ypos -74
+}
+end_group

@@ -1,0 +1,70 @@
+#! C:/Program Files/Nuke7.0v8/Nuke7.0.exe -nx
+version 7.0 v8
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="0" w="1936" h="1040" screen="0">
+        <splitter orientation="1">
+            <split size="1214"/>
+            <splitter orientation="1">
+                <split size="46"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="1164"/>
+                <splitter orientation="2">
+                    <split size="0"/>
+                    <dock id=""/>
+                    <split size="975"/>
+                    <dock id="" activePageId="DAG.1">
+                        <page id="DAG.1"/>
+                        <page id="Curve Editor.1"/>
+                        <page id="DopeSheet.1"/>
+                        <page id="DAG.2"/>
+                    </dock>
+                </splitter>
+            </splitter>
+            <split size="702"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+            </dock>
+        </splitter>
+    </window>
+    <window x="1920" y="0" w="1952" h="1100" screen="1">
+        <splitter orientation="2">
+            <split size="1066"/>
+            <dock id="" activePageId="Viewer.1">
+                <page id="Viewer.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name K:/CodeRepo/Nuke/plugins/ToolSets/Custom_gizmos/extractEpisodeShot.nk
+ format "2048 1556 0 0 2048 1556 1 2K_Super_35(full-ap)"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+}
+Group {
+ inputs 0
+ name extractEpisodeShot
+ xpos -54
+ ypos -186
+ addUserKnob {20 User}
+ addUserKnob {3 episode l Episode}
+ episode {{"\[python -execlocal import\\ os\\nimport\\ nuke\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[0\\])]"}}
+ addUserKnob {3 shot l Shot}
+ shot {{"\[python -execlocal import\\ nuke\\nimport\\ os\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\])]"}}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 0
+ }
+ Output {
+  name Output1
+  xpos 0
+  ypos 300
+ }
+end_group

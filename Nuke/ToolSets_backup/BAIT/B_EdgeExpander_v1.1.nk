@@ -1,0 +1,826 @@
+#! C:/Program Files/Nuke7.0v6/Nuke7.0.exe -nx
+version 7.0 v6
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="-8" y="-8" w="1936" h="1176" screen="0">
+        <splitter orientation="1">
+            <split size="1214"/>
+            <splitter orientation="1">
+                <split size="46"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="1164"/>
+                <splitter orientation="2">
+                    <split size="652"/>
+                    <dock id="" activePageId="Viewer.1">
+                        <page id="Viewer.1"/>
+                    </dock>
+                    <split size="459"/>
+                    <dock id="" activePageId="DAG.1">
+                        <page id="DAG.1"/>
+                        <page id="Curve Editor.1"/>
+                        <page id="DopeSheet.1"/>
+                        <page id="DAG.2"/>
+                    </dock>
+                </splitter>
+            </splitter>
+            <split size="702"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name C:/Users/bait/.nuke/ToolSets/B_EdgeExpander_v1.1.nk
+}
+Group {
+ inputs 0
+ name B_EdgeExpander
+ tile_color 0xff3f00ff
+ xpos 38
+ ypos -199
+ addUserKnob {20 B_EdgeExpander l "Bait Edge Expander"}
+ addUserKnob {4 outputMode l "Output Modes" M {"Final Result" "Erode Preview" "Extend Preview" "Edge Preview"}}
+ addUserKnob {26 ""}
+ addUserKnob {41 size l "Erode size" T Erode1.size}
+ addUserKnob {41 blur l "Erode blur" T Erode1.blur}
+ addUserKnob {26 ""}
+ addUserKnob {41 which l "Extend steps" T Switch1.which}
+ addUserKnob {26 ""}
+ addUserKnob {41 softinneregde l "Soften Inner Edge" T BlurIE.size}
+ addUserKnob {41 threshold l Threshold T EdgeDetect1.threshold}
+ addUserKnob {41 size_1 l "Blur inner edge" T BlurEdgeDetect.size}
+ addUserKnob {7 grainmix l "Add Grain"}
+ grainmix 1
+ addUserKnob {26 ""}
+ addUserKnob {7 mixamount l "Overall Mix"}
+ mixamount 1
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode11
+  tile_color 0x999999ff
+  label "Edge Expand"
+  note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font_size 20
+  xpos -654
+  ypos -433
+  bdwidth 324
+  bdheight 2335
+ }
+ Input {
+  inputs 0
+  name ALPHA
+  xpos -830
+  ypos -296
+  number 1
+ }
+ Input {
+  inputs 0
+  name FG
+  xpos -634
+  ypos -526
+ }
+ PostageStamp {
+  name PostageStamp1
+  xpos -634
+  ypos -374
+  postage_stamp true
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos -634
+  ypos -302
+ }
+set N11693a20 [stack 0]
+ Erode {
+  channels alpha
+  size 3.5
+  blur 0.365
+  name Erode1
+  tile_color 0xffffff
+  xpos -634
+  ypos -229
+ }
+set N11693d90 [stack 0]
+ Dot {
+  name Dot15
+  xpos -490
+  ypos -220
+ }
+set N11694100 [stack 0]
+ Dot {
+  name Dot1
+  xpos 246
+  ypos -220
+ }
+ EdgeDetectWrapper {
+  channels alpha
+  threshold 0.78
+  blursize 1
+  name EdgeDetect1
+  xpos 212
+  ypos 666
+ }
+ Blur {
+  channels alpha
+  size 6.4
+  name BlurEdgeDetect
+  xpos 212
+  ypos 712
+ }
+set N11694b50 [stack 0]
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle1
+  xpos 84
+  ypos 718
+ }
+push $N11693d90
+ Premult {
+  name Premult38
+  xpos -634
+  ypos -169
+ }
+set N11695230 [stack 0]
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur4
+  xpos -634
+  ypos -122
+ }
+ Unpremult {
+  channels rgba
+  name Unpremult2
+  xpos -634
+  ypos -86
+ }
+push $N11694100
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge4
+  xpos -524
+  ypos -86
+ }
+set N1c32c4e0 [stack 0]
+ Premult {
+  name Premult46
+  xpos -636
+  ypos -53
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur6
+  xpos -636
+  ypos -29
+ }
+ Unpremult {
+  name Unpremult3
+  xpos -636
+  ypos 15
+ }
+push $N1c32c4e0
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge6
+  xpos -524
+  ypos 15
+ }
+set N1c32d2a0 [stack 0]
+ Premult {
+  name Premult57
+  xpos -634
+  ypos 43
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur7
+  xpos -634
+  ypos 67
+ }
+ Unpremult {
+  name Unpremult4
+  xpos -634
+  ypos 108
+ }
+push $N1c32d2a0
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge7
+  xpos -524
+  ypos 108
+ }
+set N1c32e060 [stack 0]
+ Premult {
+  name Premult58
+  xpos -633
+  ypos 143
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur5
+  xpos -633
+  ypos 167
+ }
+ Unpremult {
+  name Unpremult5
+  xpos -633
+  ypos 208
+ }
+push $N1c32e060
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge8
+  xpos -524
+  ypos 208
+ }
+set N1c32ee20 [stack 0]
+ Premult {
+  name Premult1
+  xpos -636
+  ypos 247
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur1
+  xpos -636
+  ypos 271
+ }
+ Unpremult {
+  name Unpremult1
+  xpos -636
+  ypos 315
+ }
+push $N1c32ee20
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge1
+  xpos -523
+  ypos 315
+ }
+set N1c3ffee0 [stack 0]
+ Premult {
+  name Premult2
+  xpos -634
+  ypos 343
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur2
+  xpos -634
+  ypos 367
+ }
+ Unpremult {
+  name Unpremult6
+  xpos -634
+  ypos 408
+ }
+push $N1c3ffee0
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge2
+  xpos -524
+  ypos 408
+ }
+set N1c400ca0 [stack 0]
+ Premult {
+  name Premult3
+  xpos -633
+  ypos 443
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur3
+  xpos -633
+  ypos 467
+ }
+ Unpremult {
+  name Unpremult7
+  xpos -633
+  ypos 508
+ }
+push $N1c400ca0
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge3
+  xpos -522
+  ypos 508
+ }
+set N1c401a60 [stack 0]
+ Premult {
+  name Premult4
+  xpos -635
+  ypos 548
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur8
+  xpos -635
+  ypos 572
+ }
+ Unpremult {
+  name Unpremult8
+  xpos -635
+  ypos 616
+ }
+push $N1c401a60
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge5
+  xpos -522
+  ypos 616
+ }
+set N1c402820 [stack 0]
+ Premult {
+  name Premult5
+  xpos -633
+  ypos 644
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur9
+  xpos -633
+  ypos 668
+ }
+ Unpremult {
+  name Unpremult9
+  xpos -633
+  ypos 709
+ }
+push $N1c402820
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge9
+  xpos -523
+  ypos 709
+ }
+set N1c4035e0 [stack 0]
+ Premult {
+  name Premult6
+  xpos -632
+  ypos 744
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur10
+  xpos -632
+  ypos 768
+ }
+ Unpremult {
+  name Unpremult10
+  xpos -632
+  ypos 809
+ }
+push $N1c4035e0
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge10
+  xpos -522
+  ypos 809
+ }
+set N1c4eac40 [stack 0]
+ Premult {
+  name Premult8
+  xpos -635
+  ypos 857
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur12
+  xpos -635
+  ypos 881
+ }
+ Unpremult {
+  name Unpremult12
+  xpos -635
+  ypos 925
+ }
+push $N1c4eac40
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge12
+  xpos -522
+  ypos 925
+ }
+set N1c4eb690 [stack 0]
+ Premult {
+  name Premult9
+  xpos -633
+  ypos 953
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur13
+  xpos -633
+  ypos 977
+ }
+ Unpremult {
+  name Unpremult13
+  xpos -633
+  ypos 1018
+ }
+push $N1c4eb690
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge13
+  xpos -522
+  ypos 1018
+ }
+set N1c4ec7c0 [stack 0]
+ Premult {
+  name Premult10
+  xpos -632
+  ypos 1053
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur14
+  xpos -632
+  ypos 1077
+ }
+ Unpremult {
+  name Unpremult14
+  xpos -632
+  ypos 1118
+ }
+push $N1c4ec7c0
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge14
+  xpos -522
+  ypos 1118
+ }
+set N1c4ed580 [stack 0]
+ Premult {
+  name Premult11
+  xpos -635
+  ypos 1157
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur15
+  xpos -635
+  ypos 1181
+ }
+ Unpremult {
+  name Unpremult15
+  xpos -635
+  ypos 1225
+ }
+push $N1c4ed580
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge15
+  xpos -522
+  ypos 1225
+ }
+set N1c5cf980 [stack 0]
+ Premult {
+  name Premult12
+  xpos -633
+  ypos 1253
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur16
+  xpos -633
+  ypos 1277
+ }
+ Unpremult {
+  name Unpremult16
+  xpos -633
+  ypos 1318
+ }
+push $N1c5cf980
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge16
+  xpos -522
+  ypos 1318
+ }
+set N1c5d0740 [stack 0]
+ Premult {
+  name Premult13
+  xpos -632
+  ypos 1353
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur17
+  xpos -632
+  ypos 1377
+ }
+ Unpremult {
+  name Unpremult17
+  xpos -632
+  ypos 1418
+ }
+push $N1c5d0740
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge17
+  xpos -522
+  ypos 1418
+ }
+set N1c5d1500 [stack 0]
+ Premult {
+  name Premult14
+  xpos -634
+  ypos 1458
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur18
+  xpos -634
+  ypos 1482
+ }
+ Unpremult {
+  name Unpremult18
+  xpos -634
+  ypos 1526
+ }
+push $N1c5d1500
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge18
+  xpos -521
+  ypos 1526
+ }
+set N1c5d22c0 [stack 0]
+ Premult {
+  name Premult15
+  xpos -632
+  ypos 1554
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur19
+  xpos -632
+  ypos 1578
+ }
+ Unpremult {
+  name Unpremult19
+  xpos -632
+  ypos 1619
+ }
+push $N1c5d22c0
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge19
+  xpos -521
+  ypos 1619
+ }
+set N1c5d3080 [stack 0]
+ Premult {
+  name Premult16
+  xpos -631
+  ypos 1654
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur20
+  xpos -631
+  ypos 1678
+ }
+ Unpremult {
+  name Unpremult20
+  xpos -631
+  ypos 1719
+ }
+push $N1c5d3080
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge20
+  xpos -521
+  ypos 1719
+ }
+set N1c69ce50 [stack 0]
+ Premult {
+  name Premult7
+  xpos -631
+  ypos 1777
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur11
+  xpos -631
+  ypos 1801
+ }
+ Unpremult {
+  name Unpremult11
+  xpos -631
+  ypos 1842
+ }
+push $N1c69ce50
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge11
+  xpos -521
+  ypos 1842
+ }
+push $N1c69ce50
+push $N1c5d3080
+push $N1c5d22c0
+push $N1c5d1500
+push $N1c5d0740
+push $N1c5cf980
+push $N1c4ed580
+push $N1c4ec7c0
+push $N1c4eb690
+push $N1c4eac40
+push $N1c4035e0
+push $N1c402820
+push $N1c401a60
+push $N1c400ca0
+push $N1c3ffee0
+push $N1c32ee20
+push $N1c32e060
+push $N1c32d2a0
+push $N1c32c4e0
+push $N11693a20
+ Premult {
+  name Premult17
+  xpos -505
+  ypos -296
+ }
+set N1c69df80 [stack 0]
+ Switch {
+  inputs 21
+  which 12.5
+  name Switch1
+  tile_color 0xffffff
+  xpos -91
+  ypos 806
+ }
+set N1badb560 [stack 0]
+push $N11695230
+ Dot {
+  name Dot5
+  xpos -838
+  ypos -166
+ }
+ Dot {
+  name Dot6
+  xpos -838
+  ypos 2002
+ }
+push $N1c69df80
+ Dot {
+  name Dot3
+  xpos 497
+  ypos -293
+ }
+set N1c69e9d0 [stack 0]
+ Dot {
+  name Dot4
+  xpos 620
+  ypos -293
+ }
+set N1c69ed40 [stack 0]
+ Dot {
+  name Dot2
+  xpos 730
+  ypos -293
+ }
+push $N1c69ed40
+ Input {
+  inputs 0
+  name MASK
+  xpos 411
+  ypos 717
+  number 2
+ }
+ Input {
+  inputs 0
+  name GRAIN
+  xpos 302
+  ypos 718
+  number 3
+ }
+push $N11694b50
+push $N1badb560
+ Blur {
+  inputs 1+1
+  size 21
+  name BlurIE
+  xpos 212
+  ypos 800
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  maskChannelInput rgba.alpha
+  invert_mask true
+  mix {{parent.grainmix}}
+  name grainMix
+  xpos 344
+  ypos 800
+ }
+push $N1c69e9d0
+ Merge2 {
+  inputs 2+1
+  operation copy
+  invert_mask true
+  name Merge21
+  xpos 463
+  ypos 806
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos 573
+  ypos 800
+ }
+ Keymix {
+  inputs 2
+  maskChannel none
+  invertMask true
+  mix {{1-parent.mixamount}}
+  name Keymix1
+  xpos 696
+  ypos 800
+ }
+ Switch {
+  inputs 4
+  which {{parent.outputMode}}
+  name Switch2
+  xpos 696
+  ypos 1999
+ }
+ Output {
+  name Output1
+  xpos 696
+  ypos 2597
+ }
+end_group

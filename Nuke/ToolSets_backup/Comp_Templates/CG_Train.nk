@@ -1,0 +1,1394 @@
+#! C:/Program Files/Nuke7.0v8/Nuke7.0.exe -nx
+version 7.0 v8
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="0" w="1936" h="1160" screen="1">
+        <splitter orientation="1">
+            <split size="1214"/>
+            <splitter orientation="1">
+                <split size="46"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="1164"/>
+                <splitter orientation="2">
+                    <split size="0"/>
+                    <dock id=""/>
+                    <split size="1095"/>
+                    <dock id="" activePageId="DAG.1">
+                        <page id="DAG.1"/>
+                    </dock>
+                </splitter>
+            </splitter>
+            <split size="702"/>
+            <splitter orientation="2">
+                <split size="548"/>
+                <dock id="" activePageId="Properties.1">
+                    <page id="Properties.1"/>
+                </dock>
+                <split size="547"/>
+                <dock id="" activePageId="DopeSheet.1">
+                    <page id="Curve Editor.1"/>
+                    <page id="DopeSheet.1"/>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+    <window x="1920" y="0" w="1943" h="1220" screen="0">
+        <splitter orientation="2">
+            <split size="1186"/>
+            <dock id="" activePageId="Viewer.1">
+                <page id="Viewer.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name K:/CodeRepo/Nuke/plugins/ToolSets/Comp_Templates/CG_Train.nk
+ frame 55
+ last_frame 169
+ lock_range true
+ fps 25
+ format "1920 1080 0 0 1920 1080 1 HD"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode6
+ tile_color 0xc63e3bff
+ label "Object matte"
+ note_font_size 42
+ xpos -1839
+ ypos -1099
+ bdwidth 227
+ bdheight 214
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode16
+ tile_color 0xaaaaaa00
+ label SMOKE
+ note_font_size 42
+ xpos -1839
+ ypos 1074
+ bdwidth 1235
+ bdheight 851
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode3
+ tile_color 0x71c67100
+ label "CG AO"
+ note_font_size 42
+ xpos -1861
+ ypos -153
+ bdwidth 692
+ bdheight 348
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode11
+ tile_color 0x8e8e3800
+ label "CG Beauty"
+ note_font_size 42
+ xpos -2729
+ ypos -681
+ bdwidth 505
+ bdheight 442
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode12
+ tile_color 0x71bdc6ff
+ label "CG Shadow"
+ note_font_size 42
+ xpos -1863
+ ypos -613
+ bdwidth 666
+ bdheight 281
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode13
+ tile_color 0xc67d37ff
+ label AO
+ note_font_size 42
+ xpos -2776
+ ypos 300
+ bdwidth 472
+ bdheight 255
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode15
+ tile_color 0x7171c600
+ label "object shadow"
+ note_font_size 28
+ xpos -2207
+ ypos 633
+ bdwidth 214
+ bdheight 194
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode10
+ tile_color 0x388e8e00
+ label REF
+ note_font_size 42
+ xpos -1278
+ ypos -1124
+ bdwidth 1052
+ bdheight 313
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode14
+ tile_color 0x595b5aff
+ label RELight
+ note_font_size 42
+ xpos -2937
+ ypos -81
+ bdwidth 805
+ bdheight 294
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh014/scale_refs/14_scale_ref.PNG
+ format "988 557 0 0 988 557 1 "
+ origset true
+ name Read12
+ xpos -1174
+ ypos -993
+}
+Reformat {
+ name Reformat7
+ xpos -1174
+ ypos -909
+}
+Read {
+ inputs 0
+ file C:/Users/cale.pugh/Downloads/Car_light_ref.png
+ format "988 559 0 0 988 559 1 "
+ origset true
+ name Read13
+ xpos -1082
+ ypos -992
+}
+Reformat {
+ name Reformat8
+ xpos -1082
+ ypos -908
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh078/scale_refs/sh078_scale_ref.PNG
+ format "991 558 0 0 991 558 1 "
+ origset true
+ name Read14
+ xpos -986
+ ypos -992
+}
+Reformat {
+ name Reformat9
+ xpos -986
+ ypos -908
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh069/scale_refs/sh069_scale_ref.PNG
+ format "989 560 0 0 989 560 1 "
+ origset true
+ name Read15
+ xpos -890
+ ypos -992
+}
+Reformat {
+ name Reformat10
+ xpos -890
+ ypos -908
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh034/scale_refs/sh034_scale_ref.JPG
+ format "986 554 0 0 986 554 1 "
+ origset true
+ name Read16
+ xpos -794
+ ypos -992
+}
+Reformat {
+ name Reformat11
+ xpos -794
+ ypos -908
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh089/scale_refs/89_scale_ref.PNG
+ format "993 557 0 0 993 557 1 "
+ origset true
+ name Read17
+ xpos -699
+ ypos -991
+}
+Reformat {
+ name Reformat12
+ xpos -699
+ ypos -907
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh026/scale_refs/26_scale_ref.PNG
+ format "988 559 0 0 988 559 1 "
+ origset true
+ name Read18
+ xpos -606
+ ypos -991
+}
+Reformat {
+ name Reformat13
+ xpos -606
+ ypos -907
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh028/scale_refs/28_scale_ref.PNG
+ format "988 559 0 0 988 559 1 "
+ origset true
+ name Read19
+ xpos -512
+ ypos -990
+}
+Reformat {
+ name Reformat14
+ xpos -512
+ ypos -906
+}
+Transform {
+ translate {374 128}
+ center {960 540}
+ name Transform1
+ xpos -512
+ ypos -882
+}
+Read {
+ inputs 0
+ file N:/00719_grandpa/499_generics/cg/sh029/v006/beauty_sh029.light.v006.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ first 4
+ last 157
+ after black
+ origfirst 4
+ origlast 157
+ origset true
+ name Read5
+ xpos -2445
+ ypos -627
+}
+set N263723d0 [stack 0]
+RotoPaint {
+ inputs 0
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {p
+        {xc328197b x43025a5b}
+        {xc529b802 x449f1cce}
+        {x4328197b xc3025a5a}
+        {xc2dc1eb0 x420c2040}
+        {xc4ac299f x4447a663}
+        {x42dc1eb0 xc20c2030}
+        {xc3aa0ccc xc2dc6668}
+        {x42beffea x43b8bfff}
+        {x42dbc0c4 x420e68e0}
+        {xc240b420 xc31d0d98}
+        {x44812cc8 x4480e32f}
+        {x4240b420 x431d0d98}
+        {x43243962 x40840b00}
+        {x429f665f x44e1fffe}
+        {xc3243962 xc0840b00}}}
+      {cc
+       {f 8192}
+       {p
+        {xc328197b x43025a5b}
+        {xc4acbb03 x4341ffe8}
+        {x4328197b xc3025a5a}
+        {xc2dc1eb0 x420c203c}
+        {xc311fadc xc3d5cace}
+        {x42dc1eb0 xc20c2038}
+        {xc3aa0cbe xc2dc66a8}
+        {x42a51732 xc3a5c62b}
+        {x42dbc0d0 x420e68d8}
+        {xc240b420 xc31d0d98}
+        {x43af4ee6 xc235dfc0}
+        {x4240b420 x431d0d98}
+        {x43243962 x40840b00}
+        {xc195e320 x43b3442c}
+        {xc3243962 xc0840b00}}}}
+     {tx x42860000
+   {{x43220000 -}}
+   {{x44748000 -}}}
+     {a str 1 spx x44700000 spy x44070000 sb 1 ltn x42860000 ltm x42860000 tt x40800000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { addPoints str 1 ssx 1 ssy 1 sf 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_autokey false
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_center {960 540}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 67
+ lifetime_end 67
+ view {}
+ motionblur_on true
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+ name RotoPaint1
+ xpos -1368
+ ypos 1252
+}
+Read {
+ inputs 0
+ file N:/00719_grandpa/499_generics/cg/sh029/v005/sh029.####.tga
+ format "1920 1080 0 0 1920 1080 1 HD"
+ before black
+ last 169
+ after black
+ origlast 169
+ origset true
+ colorspace rec709
+ name Read1
+ xpos -1258
+ ypos 1115
+}
+set N1cb272b0 [stack 0]
+Grade {
+ whitepoint 1.32
+ name Grade4
+ xpos -1258
+ ypos 1211
+}
+Grade {
+ inputs 1+1
+ whitepoint 1.74
+ white 1.16
+ gamma 0.7
+ white_clamp true
+ unpremult rgba.alpha
+ mix 0.5
+ name Grade14
+ xpos -1258
+ ypos 1246
+}
+set N1cb27990 [stack 0]
+Dot {
+ name Dot14
+ xpos -890
+ ypos 1255
+}
+set N1cb27d00 [stack 0]
+Shuffle {
+ alpha red
+ name Shuffle7
+ xpos -847
+ ypos 1252
+}
+Invert {
+ channels alpha
+ name Invert3
+ xpos -847
+ ypos 1276
+}
+Grade {
+ channels alpha
+ gamma 0.28
+ name Grade15
+ xpos -847
+ ypos 1312
+}
+push $N1cb27d00
+Dot {
+ name Dot19
+ xpos -890
+ ypos 1384
+}
+Merge2 {
+ inputs 2
+ operation mask
+ name Merge24
+ xpos -847
+ ypos 1381
+}
+Glow2 {
+ channels rgba
+ tint {0.6132048965 0.525269866 1 0}
+ brightness 3.86
+ size 6
+ name Glow2
+ xpos -847
+ ypos 1483
+}
+Saturation {
+ saturation 0.83
+ name Saturation2
+ xpos -847
+ ypos 1507
+}
+Dot {
+ name Dot22
+ xpos -813
+ ypos 1863
+}
+push $N1cb27990
+Dot {
+ name Dot5
+ xpos -1040
+ ypos 1315
+}
+Expression {
+ expr0 "abs(sin((6* g)))"
+ expr1 "b/abs(cos(12* r)-1)"
+ expr2 abs(tan(sin(6*g)))
+ name Expression1
+ xpos -1074
+ ypos 1415
+}
+Shuffle {
+ alpha blue
+ name Shuffle8
+ xpos -1074
+ ypos 1454
+}
+Blur {
+ size 45
+ name Blur4
+ xpos -1074
+ ypos 1478
+}
+push $N1cb27990
+Unpremult {
+ name Unpremult1
+ xpos -1258
+ ypos 1312
+}
+Grade {
+ blackpoint 0.0005
+ gamma {1.149999976 1.25999999 1.399999976 1.149999976}
+ white_clamp true
+ maskChannelInput rgba.alpha
+ name Grade10
+ xpos -1258
+ ypos 1347
+}
+Constant {
+ inputs 0
+ channels rgb
+ name Constant1
+ xpos -1413
+ ypos 1374
+}
+Merge2 {
+ inputs 2
+ operation screen
+ name Merge1
+ xpos -1258
+ ypos 1398
+}
+Grade {
+ inputs 1+1
+ gamma {1.313473463 1.520282745 1.700000048 3.700000048}
+ white_clamp true
+ invert_mask true
+ name Grade11
+ xpos -1258
+ ypos 1484
+}
+Dot {
+ name Dot7
+ xpos -1224
+ ypos 1563
+}
+set N1cca0010 [stack 0]
+Blur {
+ size 33
+ name Blur6
+ xpos -1114
+ ypos 1554
+}
+Emboss {
+ channels rgb
+ Angle 281
+ Width 10
+ maskedgedetect rgba.alpha
+ name Emboss1
+ xpos -1114
+ ypos 1590
+}
+Grade {
+ blackpoint {0.1625763029 0.2099999934 0.1727557033 0.1550000012}
+ whitepoint 0.63
+ white_clamp true
+ maskChannelInput rgba.alpha
+ name Grade13
+ xpos -1114
+ ypos 1626
+}
+push $N1cca0010
+Merge2 {
+ inputs 2
+ operation overlay
+ name Merge2
+ xpos -1258
+ ypos 1632
+}
+Saturation {
+ saturation 0.73
+ name Saturation3
+ xpos -1258
+ ypos 1680
+}
+Dot {
+ name Dot8
+ xpos -1224
+ ypos 1754
+}
+Premult {
+ name Premult2
+ xpos -1542
+ ypos 1751
+}
+Read {
+ inputs 0
+ file N:/00719_grandpa/499_generics/cg/sh029/v004/masterLayer_sh029.light.v001.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 169
+ after black
+ origlast 169
+ origset true
+ name Read4
+ xpos -1692
+ ypos 1316
+}
+push $N1cb272b0
+Dot {
+ name Dot1
+ xpos -1529
+ ypos 1154
+}
+Transform {
+ translate {{curve x101 -4 x112 -6 x128 0 x138 -13 x149 -2 x159 4} {curve x101 980 x112 850 x128 530 x138 2 x149 -974 x159 -1122}}
+ scale {1 -1}
+ center {1618 468}
+ name Transform9
+ xpos -1563
+ ypos 1484
+}
+Blur {
+ size 8
+ name Blur15
+ xpos -1563
+ ypos 1508
+}
+Merge2 {
+ inputs 2
+ operation mask
+ name Merge6
+ xpos -1692
+ ypos 1514
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh029/plates/sh029.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 169
+ origlast 169
+ origset true
+ name Read10
+ xpos -1829
+ ypos -1186
+}
+add_layer {Object Object.alpha}
+RotoPaint {
+ output {rgba.alpha none none Object.alpha}
+ cliptype none
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a fx x3f000000 fy x3f000000}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px x41600000
+        {0 xbf800000}
+        {x43b90000 x43d0e000}
+        {0 1}
+        {1 xc1100000}
+        {x43de4000 x43ff0000}
+        {xbf800000 x41100000}
+        {x419c0000 xc1bc0000}
+        {x43d80000 x4406c000}
+        {xc19c0000 x41bc0000}
+        {x40599980 xc1500000}
+        {x43c6cccd x4414c000}
+        {xc0599980 x41500000}
+        {x40a00000 xc1500000}
+        {x43bfe666 x4420999a}
+        {xc0a00000 x41500000}
+        {x41133340 xc20c0000}
+        {x43b3cccd x4432c000}
+        {xc1133340 x420c0000}
+        {x3fcccd00 xc0a00000}
+        {x43aa0000 x44440ccd}
+        {xbfcccd00 x40a00000}
+        {x40199980 xc1866680}
+        {x43a50000 x44512666}
+        {xc0199980 x41866680}
+        {x40733300 xc19ccce0}
+        {x439b3333 x4465e666}
+        {xc0733300 x419ccce0}
+        {x3f4cce00 xc0933300}
+        {x43944ccd x4476c000}
+        {xbf4cce00 x40933300}
+        {xbfcccd00 xc0266600}
+        {x43938000 x447b599a}
+        {x3f137600 x3f6f9c00}
+        {x4244724c xc15fb280}
+        {x43a61000 x4489ec00}
+        {xc2ae9e7a x41c6d740}
+        {x429eb852 x429ae140}
+        {xc29c4000 x4489e000}
+        {xc2f80000 xc2f20000}
+        {xc32a0000 x40c00000}
+        {x41f00000 xc27c0000}
+        {x432a0000 xc0c00000}
+        {x3f000000 xc0000000}
+        {x438d8000 1}
+        {xbf000000 x40000000}
+        {x41940000 xc22a0000}
+        {x437e0000 x42e80000}
+        {x40900000 x41200000}
+        {xbf000000 xc0d00000}
+        {x43868000 x43180000}
+        {x3f000000 x40d00000}
+        {xc0200000 xc0a00000}
+        {x43860000 x43328000}
+        {x40200000 x40a00000}
+        {0 xc1380000}
+        {x4389c000 x43438000}
+        {0 x41380000}
+        {xc0800000 xc0e00000}
+        {x438d4000 x43690000}
+        {x40800000 x40e00000}
+        {x40200000 xc1100000}
+        {x4390c000 x43810000}
+        {x40800000 x41080000}
+        {xc0400000 xc0b00000}
+        {x439ac000 x43924000}
+        {x40400000 x40b00000}
+        {xc0000000 xc0400000}
+        {x43a28000 x43a54000}
+        {x40000000 x40400000}
+        {xc0400000 xc1400000}
+        {x43ab4000 x43b7c000}
+        {x40b00000 x41180000}
+        {0 xc0000000}
+        {x43b24000 x43c6c000}
+        {0 x40000000}}}     idem}
+     {tx x41600000 x43950d55 x43edd111}
+     {a str 1 spx x44700000 spy x44070000 sb 1 ltn x41600000 ltm x41600000 tt x40800000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { addPoints str 1 ssx 1 ssy 1 sf 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1024 778}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 14
+ lifetime_end 14
+ view {}
+ feather 0.5
+ motionblur_on true
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+ name RotoPaint4
+ xpos -1829
+ ypos -1019
+}
+add_layer {ObjectMatte ObjectMatte.red ObjectMatte.green ChairMatte.blue ChairMatte.alpha}
+Shuffle {
+ in Object
+ out ObjectMatte
+ name Shuffle5
+ xpos -1829
+ ypos -983
+}
+Blur {
+ channels ObjectMatte
+ size 3.8
+ name Blur11
+ xpos -1829
+ ypos -959
+}
+Dot {
+ name Dot9
+ xpos -1795
+ ypos -485
+}
+set N261064b0 [stack 0]
+Dot {
+ name Dot10
+ xpos -1596
+ ypos -485
+}
+RotoPaint {
+ inputs 0
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {p
+        {xc0400000 1}
+        {x43b80000 x43cf8000}
+        {x40400000 xbf800000}
+        {xc0400000 xc0800000}
+        {x43ca8000 x43d40000}
+        {x40400000 x40800000}
+        {}
+        {x43de8000 x43cf8000}
+        {}
+        {xc0800000}
+        {x43e7638e x43cf71c7}
+        {x40800000}
+        {xc1200000 xc0400000}
+        {x440a5c71 x43c6c25f}
+        {x41200000 x40400000}
+        {xc1100000 1}
+        {x4414b425 x43ca638e}
+        {x41100000 xbf800000}
+        {xc0000000 1}
+        {x446d1000 x43a67000}
+        {x3f6b8000 xbeeb8800}
+        {xc2e58580 x41b79ff0}
+        {x4491e173 x438d47d9}
+        {x4306b828 xc1d78f30}
+        {0 x3f8a3d00}
+        {x44b513db x435e7426}
+        {0 xbe75c000}
+        {xc1468280 x40069400}
+        {x44b79000 x435e8000}
+        {x42b5f7b0 xc176b9b0}
+        {0 xbf614800}
+        {x44f1a2c1 x430ae1bb}
+        {0 1}
+        {x40800000 x40000000}
+        {x44f7a000 xc3c80000}
+        {xc0800000 xc0000000}
+        {xc0000000 xc0000000}
+        {x41700000 xc3868000}
+        {x40000000 x40000000}
+        {xc2100000 xc22c0000}
+        {x43340000 x43500000}
+        {x42100000 x422c0000}}}
+      {cc
+       {f 8192}
+       {p
+        {xc0400000 1}
+        {}
+        {x40400000 xbf800000}
+        {xc0400000 xc0800000}
+        {}
+        {x40400000 x40800000}
+        {}
+        {}
+        {}
+        {xc0800000}
+        {}
+        {x40800000}
+        {xc1200000 xc0400000}
+        {}
+        {x41200000 x40400000}
+        {xc1100000 1}
+        {xbe912800 xc0235480}
+        {x41100000 xbf800000}
+        {xc0000000 1}
+        {xc0600600 xc0dffe80}
+        {x3f6b8000 xbeeb8800}
+        {xc2e58580 x41b79ff0}
+        {xbf53e000 xc08c8340}
+        {x4306b828 xc1d78f30}
+        {0 x3f8a3d00}
+        {xbf8c7400 xc094e3a0}
+        {0 xbe75c400}
+        {xc145c680 x40095a40}
+        {xbf95b000 xc09710c0}
+        {x42b54b50 xc17bd020}
+        {0 xbf614800}
+        {xc09d1900 xc105d160}
+        {0 1}
+        {x40800000 x40000000}
+        {}
+        {xc0800000 xc0000000}
+        {xc0000000 xc0000000}
+        {}
+        {x40000000 x40000000}
+        {xc2100000 xc22c0000}
+        {}
+        {x42100000 x422c0000}}}}
+     {t x44423555 x4361eaab
+      {{x41f00000 0}}     0 0
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 0}}     0 1 1
+      {{x41f00000 1}}     0 0
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 1}}
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 1}}
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 1}}
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 0}}
+      {{x41f00000 1}}}
+     {a str 1 spx x44700000 spy x44070000 sb 1 ltn x41f00000 ltm x41f00000 tt x40800000}}}}}}
+ toolbox {addPoints {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { addPoints str 1 ssx 1 ssy 1 sf 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_autokey false
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_center {960 540}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 30
+ lifetime_end 30
+ view {}
+ motionblur_on true
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+ name RotoPaint3
+ xpos -1498
+ ypos -468
+}
+Read {
+ inputs 0
+ file N:/00719_grandpa/499_generics/cg/sh029/v006/shadows_sh029.light.v006.#####.exr
+ format "960 540 0 0 960 540 1 "
+ first 4
+ before black
+ last 157
+ after black
+ origfirst 4
+ origlast 157
+ origset true
+ name Read2
+ xpos -1359
+ ypos -569
+}
+Reformat {
+ name Reformat19
+ xpos -1359
+ ypos -423
+}
+set N26107270 [stack 0]
+Merge2 {
+ inputs 2
+ operation stencil
+ name Merge3
+ xpos -1498
+ ypos -423
+}
+Merge2 {
+ inputs 2
+ operation stencil
+ Achannels ObjectMatte
+ name Merge12
+ xpos -1630
+ ypos -423
+}
+push $N261064b0
+Grade {
+ inputs 1+1
+ blackpoint {0.0457142815 0.0457142815 0.07999999821 -0.03799999878}
+ whitepoint {2.150000095 2.650000095 3.450000048 1}
+ white 0.82
+ gamma 1.02
+ white_clamp true
+ mix 0.595
+ name Grade16
+ xpos -1829
+ ypos -423
+}
+Dot {
+ name Dot15
+ xpos -1795
+ ypos 84
+}
+set N26108030 [stack 0]
+Dot {
+ name Dot16
+ xpos -1564
+ ypos 84
+}
+push $N26107270
+add_layer {AO AO.red AO.green AO.blue AO.alpha}
+Shuffle {
+ in AO
+ alpha red
+ name Shuffle10
+ xpos -1359
+ ypos 77
+}
+Invert {
+ name Invert4
+ xpos -1359
+ ypos 101
+}
+Grade {
+ channels all
+ white 1.94
+ gamma 0.51
+ white_clamp true
+ name Grade17
+ xpos -1359
+ ypos 137
+}
+Merge2 {
+ inputs 2
+ operation stencil
+ Achannels ObjectMatte
+ name Merge13
+ xpos -1598
+ ypos 143
+}
+push $N26108030
+Grade {
+ inputs 1+1
+ white 1.1
+ gamma 0.515
+ white_clamp true
+ mix 0.85
+ name Grade19
+ xpos -1829
+ ypos 143
+}
+Dot {
+ name Dot17
+ xpos -1795
+ ypos 726
+}
+set N26371610 [stack 0]
+Blur {
+ channels Object
+ size 70
+ name Blur8
+ xpos -2149
+ ypos 717
+}
+Transform {
+ translate {18 -37}
+ center {444 927}
+ name Transform2
+ xpos -2149
+ ypos 753
+}
+RotoPaint {
+ inputs 0
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Bezier1 576 bezier
+     {{cc
+       {f 8192}
+       {p
+        {xc328197b x43025a5b}
+        {xc3b46670 x4344999e}
+        {x4328197b xc3025a5a}
+        {xc302cbe3 xc2644a80}
+        {x43bcfff7 x43fc332c}
+        {x424da1c8 x425cc090}
+        {xc3907594 xc399ef42}
+        {x446f9117 x445c8989}
+        {x4375bba4 x4382ecee}
+        {x42838f60 xc1a59980}
+        {x44493fff x44cef998}
+        {xc30f0000 x42340000}
+        {x437dea38 x41546a00}
+        {xc1f99a30 x44e56663}
+        {xc496e666 xc27bffe0}}}
+      {cc
+       {f 8192}
+       {p
+        {xc328197b x43025a5b}
+        {xc3375808 xc3d53341}
+        {x4328197b xc3025a5a}
+        {xc2c289a8 xc2d0d7b0}
+        {x439a5e75 xc34f8484}
+        {x424da1b0 x425cc080}
+        {xc3d8da28 xc3d86f90}
+        {x4467e25f x42aff2d0}
+        {x43b87008 x43b8158c}
+        {x42838f60 xc1a59980}
+        {x447b996c xc2716b20}
+        {xc30f0000 x42340000}
+        {x437dea30 x41546b80}
+        {xc195e320 x43b3442c}
+        {xc496e638 xc27c7940}}}}
+     {tx x42860000 x43220000 x44748000}
+     {a str 1 spx x44700000 spy x44070000 sb 1 ltn x42860000 ltm x42860000 tt x40800000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { addPoints str 1 ssx 1 ssy 1 sf 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_autokey false
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {960 540}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 67
+ lifetime_end 67
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+ name RotoPaint6
+ xpos -2640
+ ypos -443
+}
+push $N263723d0
+Unpremult {
+ name Unpremult3
+ xpos -2445
+ ypos -529
+}
+SoftClip {
+ conversion "logarithmic compress"
+ softclip_min 0.6
+ softclip_max 1.522
+ name SoftClip2
+ xpos -2445
+ ypos -487
+}
+Grade {
+ inputs 1+1
+ white 1.16
+ gamma 0.7
+ white_clamp true
+ mix 0.175
+ name Grade23
+ xpos -2445
+ ypos -443
+}
+HueCorrect {
+ hue {sat {curve 1 1 1 1 x4.249632835 0.75373137 x5 1 x6 1}
+   lum {}
+   red {}
+   green {curve 1 1 1 1 x4.310294151 0.9507462978 x5 1 x6 1}
+   blue {curve 1 1 1 1 x4.043382168 1.147761226 x5 1 x6 1}
+   r_sup {}
+   g_sup {}
+   b_sup {}
+   sat_thrsh {}}
+ name HueCorrect1
+ xpos -2445
+ ypos -419
+}
+Grade {
+ blackpoint {-0.001988179749 -0.002000000095 -0.001976359403 0}
+ whitepoint {1.019999981 1.149999976 1.399999976 1}
+ name Grade1
+ xpos -2445
+ ypos -395
+}
+add_layer {ID_outfit ID_outfit.red ID_outfit.green ID_outfit.blue ID_outfit.alpha}
+Grade {
+ gamma 1.2
+ maskChannelInput ID_outfit.alpha
+ name Grade2
+ xpos -2445
+ ypos -351
+}
+add_layer {ID_grandpa ID_grandpa.red ID_grandpa.green ID_grandpa.blue ID_grandpa.alpha}
+Grade {
+ gamma 1.2
+ maskChannelInput ID_grandpa.alpha
+ name Grade3
+ xpos -2445
+ ypos -315
+}
+Dot {
+ name Dot18
+ xpos -2411
+ ypos 83
+}
+set N26373f50 [stack 0]
+Dot {
+ name Dot20
+ xpos -2592
+ ypos 83
+}
+set N263742c0 [stack 0]
+Camera2 {
+ inputs 0
+ name Camera2
+ xpos -2719
+ ypos 43
+}
+Light2 {
+ inputs 0
+ intensity 8.6
+ translate {447 168 200}
+ uniform_scale 3.3
+ depthmap_slope_bias 0.01
+ name Light3
+ xpos -2872
+ ypos 17
+}
+push 0
+Scene {
+ inputs 2
+ name Scene2
+ xpos -2872
+ ypos 114
+}
+push $N263742c0
+add_layer {N N.X N.Y N.Z}
+ReLight {
+ inputs 4
+ normal N
+ name ReLight2
+ xpos -2626
+ ypos 135
+}
+push $N26373f50
+Merge2 {
+ inputs 2
+ operation screen
+ Achannels rgb
+ also_merge all
+ invert_mask true
+ name Merge14
+ xpos -2445
+ ypos 135
+}
+Dot {
+ name Dot21
+ xpos -2411
+ ypos 399
+}
+set N264e22c0 [stack 0]
+Shuffle {
+ in AO
+ name Shuffle11
+ xpos -2588
+ ypos 396
+}
+Constant {
+ inputs 0
+ color 1
+ name Constant2
+ xpos -2698
+ ypos 431
+}
+Merge2 {
+ inputs 2
+ name Merge15
+ xpos -2588
+ ypos 455
+}
+push $N264e22c0
+Merge2 {
+ inputs 2
+ operation multiply
+ also_merge all
+ name Merge16
+ xpos -2445
+ ypos 455
+}
+Premult {
+ name Premult3
+ xpos -2445
+ ypos 584
+}
+Grade {
+ inputs 1+1
+ white 0.44
+ white_clamp true
+ maskChannelMask Object.alpha
+ name Grade22
+ xpos -2445
+ ypos 753
+}
+Grain2 {
+ name Grain2_2
+ label "Kodak 5248"
+ xpos -2445
+ ypos 869
+ red_size 1.7
+ green_size 1.9
+ blue_size 2.6
+ red_m 0.105
+ green_m 0.06
+ blue_m 0.135
+ black {-0.02 0 -0.02}
+ minimum {0 0 0}
+}
+push $N26371610
+Merge2 {
+ inputs 2
+ also_merge all
+ maskChannelInput Object.alpha
+ invert_mask true
+ name Merge20
+ xpos -1829
+ ypos 869
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ screen_alpha true
+ also_merge all
+ maskChannelMask Object.alpha
+ maskChannelInput Object.alpha
+ invert_mask true
+ mix 0.395
+ name Merge30
+ xpos -1829
+ ypos 1508
+}
+Merge2 {
+ inputs 2
+ maskChannelInput Object.alpha
+ invert_mask true
+ name Merge21
+ xpos -1829
+ ypos 1745
+}
+Merge2 {
+ inputs 2
+ operation screen
+ maskChannelInput Object.alpha
+ invert_mask true
+ mix 0.405
+ name Merge23
+ xpos -1829
+ ypos 1854
+}
+Reformat {
+ name Reformat3
+ xpos -1829
+ ypos 2250
+}
+Viewer {
+ inputs 2
+ frame 55
+ frame_range 1-70
+ fps 25
+ viewerProcess rec709
+ input_process false
+ translate {0.2155999988 0.1265999973}
+ rotate 360
+ name Viewer1
+ selected true
+ xpos -1848
+ ypos 2351
+}

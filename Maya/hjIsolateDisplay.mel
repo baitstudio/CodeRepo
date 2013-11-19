@@ -1,0 +1,175 @@
+/*
+'=========================================================================
+'
+' MELScript Source File -- Created with Mapy
+'
+' NAME: hjIsolateDisplay
+
+' VERSION: 0.2
+
+' AUTHOR:  oglop, han jiang , the man who really hates max
+
+
+' DATE  : 10/15/2007
+' EMAIL : oglop@ustc.edu
+		oglops@gmail.com
+		
+	The scripts assign a hotkey `(the key beside ESC) to Isolate Display menu.
+	long live Master Ma . Long live Core Team!!! Long live lina the dark lord!!
+	
+	
+	USAGE:
+	
+		hjIsolateDisplay(0);// installs hotkey, you acn assign hotkeys by yourself, mine is `
+		
+		hjIsolateDisplay(1);// switch isolate display status, but i have assigned hotkey ` to this.
+	
+	
+TODO:
+
+
+X	isolate even when vertex edge, or face is selected
+
+
+	
+*/
+
+
+
+proc hjInstallIsolateDisplayHotkey()
+{
+	runTimeCommand
+	-annotation ""
+	-category "User"
+	-command ("hjIsolateDisplay(1);")
+	hjIsolateDisplayRunTimeCmd;
+
+
+	nameCommand
+	-annotation "hjIsolateDisplayNameCommand"
+	-command ("hjIsolateDisplayRunTimeCmd")
+	hjIsolateDisplayNameCommand;
+	
+	
+	hotkey -keyShortcut "`" -name ("hjIsolateDisplayNameCommand");	
+	
+	
+}	
+
+global proc hjIsolateDisplay (int $mode)
+{
+
+	// mode 0 install hotkey
+	// mode 1 switch
+	
+	switch($mode){
+		
+		
+	case 1:
+
+		string $sel[]=`ls -sl`;
+
+		string $objs[];
+		// not implemented yet, 
+		string $vtx[],$face[],$edge[];
+
+		string $vtxObj[],$faceObj[],$edgeObj[];
+
+		int $i;
+		for($s in $sel){
+			if(`gmatch $s "*.*"`){
+				string $obj=`match "^[^\.]*" $s`;
+				$objs[$i++]=$obj;
+				
+				if(`gmatch $s "*.vtx*"`){
+					$vtxObj[size($vtxObj)]=$obj;
+				}
+				// you could use "*.e\\[*" here
+				else if (`gmatch $s "*.e*"`){
+					$edgeObj[size($edgeObj)]=$obj;
+				}
+				else if (`gmatch $s "*.f*"`){
+					$faceObj[size($faceObj)]=$obj;
+				}
+
+			}
+			else
+				$objs[$i++]=$s;
+		}
+
+		$objs=stringArrayRemoveDuplicates($objs);
+
+		select -r $objs;
+
+		//hjDebug($objs);
+		
+		string $allPanels[]=`getPanel -vis`;
+		
+		string $mps[];
+		
+		string $mp;
+		
+		for($p in $allPanels){
+			if (`startsWith $p "modelPanel"`){
+				$mps[size($mps)]=$p;
+			}
+		}
+	
+		string $panel=`getPanel -wf`;
+		
+		
+		if (size($mps)>1) {
+			if(!`startsWith $panel "modelPanel"`)
+				error("select a model panel first");
+			else
+				$mp=$panel;
+		}
+		else
+			$mp=$mps[0];
+	
+		
+		//string $panel=`getPanel -wf`;
+		
+		int $state = `isolateSelect -q -state $mp`;
+
+		
+		// automatically add new objects eg. fix clusters 
+		isoSelectAutoAddNewObjs $mp 1;
+
+
+		enableIsolateSelect $mp (!$state);
+		isolateSelect -state (!$state) $mp;
+
+
+		// change sel mode
+		//doMenuComponentSelection("satineSenateGownA:senateRobeHood_simMesh", "vertex");
+		
+
+		
+		
+		select -r $sel;
+		
+		//hjDebug($vtxObj);
+		for($vo in $vtxObj){
+			doMenuComponentSelection($vo, "vertex");
+		}
+
+		for($fo in $faceObj){
+			doMenuComponentSelection($fo, "facet");
+		}
+
+		for($eo in $edgeObj){
+			doMenuComponentSelection($eo, "edge");
+		}
+	break;
+		
+		
+	case 0:
+		hjInstallIsolateDisplayHotkey();
+		break;
+		
+	}
+
+}
+
+hjIsolateDisplay(0);

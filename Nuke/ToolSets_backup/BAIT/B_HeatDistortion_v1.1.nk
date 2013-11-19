@@ -1,0 +1,223 @@
+#! C:/Program Files/Nuke7.0v6/Nuke7.0.exe -nx
+version 7.0 v6
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="22" w="1680" h="1024" screen="0">
+        <splitter orientation="1">
+            <split size="1052"/>
+            <splitter orientation="1">
+                <split size="40"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="1008"/>
+                <splitter orientation="2">
+                    <split size="563"/>
+                    <dock id="" activePageId="Viewer.1">
+                        <page id="Viewer.1"/>
+                    </dock>
+                    <split size="396"/>
+                    <dock id="" activePageId="DAG.1">
+                        <page id="DAG.1"/>
+                        <page id="Curve Editor.1"/>
+                        <page id="DopeSheet.1"/>
+                    </dock>
+                </splitter>
+            </splitter>
+            <split size="608"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name C:/Users/bait/.nuke/ToolSets/B_HeatDistortion_v1.1.nk
+}
+Group {
+ inputs 0
+ name B_HeatDistortion
+ selected true
+ xpos 489
+ ypos -157
+ addUserKnob {20 B_heatDistortion l "Bait Heat Distortion"}
+ addUserKnob {7 intensity l Intensity R 0 100}
+ intensity 18.5
+ addUserKnob {7 speed l Speed}
+ speed 0.2
+ addUserKnob {41 size l x/ysize T NoiseMain.size}
+ addUserKnob {41 size_1 l "Post Blur" T BlurNoise.size}
+ addUserKnob {6 shownoise l "Show Noise" +STARTLINE}
+ addUserKnob {41 translate T NoiseMain.translate}
+ addUserKnob {41 rotate T NoiseMain.rotate}
+ addUserKnob {41 scale T NoiseMain.scale}
+ addUserKnob {26 ""}
+ addUserKnob {41 octaves T NoiseMain.octaves}
+ addUserKnob {41 nyquist l "clip at Nyquist limit" T NoiseMain.nyquist}
+ addUserKnob {41 lacunarity T NoiseMain.lacunarity}
+ addUserKnob {41 gain T NoiseMain.gain}
+ addUserKnob {41 gamma T NoiseMain.gamma}
+ addUserKnob {26 ""}
+ addUserKnob {41 uv_offset l "UV offset" T IDistort1.uv_offset}
+ addUserKnob {41 uv_scale l "UV scale" T IDistort1.uv_scale}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant1
+  xpos -28
+  ypos -26
+ }
+set N116ef240 [stack 0]
+ Noise {
+  opacity {{parent.NoiseMain.opacity}}
+  size {{parent.NoiseMain.size}}
+  zoffset {{parent.NoiseMain.zoffset}}
+  octaves {{parent.NoiseMain.octaves}}
+  nyquist {{parent.NoiseMain.nyquist}}
+  lacunarity {{parent.NoiseMain.lacunarity}}
+  gain {{parent.NoiseMain.gain}}
+  gamma {{parent.NoiseMain.gamma}}
+  translate {{"intensity *-1"} 0}
+  center {960 540}
+  color {{parent.NoiseMain.color}}
+  name NoiseU
+  tile_color 0xff0000ff
+  xpos -261
+  ypos 252
+  hide_input true
+ }
+push $N116ef240
+ Noise {
+  size 185
+  zoffset {{"(frame *speed)/10"}}
+  octaves 5
+  lacunarity 1.92
+  gain 0.86
+  gamma 0.67
+  center {960 540}
+  name NoiseMain
+  xpos -28
+  ypos 128
+ }
+set N116f0000 [stack 0]
+ Dot {
+  name Dot2
+  xpos -96
+  ypos 131
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos -130
+  ypos 252
+ }
+set N116f0a50 [stack 0]
+ Dot {
+  name Dot3
+  xpos -96
+  ypos 330
+ }
+push $N116f0000
+ Dot {
+  name Dot1
+  xpos 114
+  ypos 131
+ }
+push $N116ef240
+ Noise {
+  opacity {{parent.NoiseMain.opacity}}
+  size {{parent.NoiseMain.size}}
+  zoffset {{parent.NoiseMain.zoffset}}
+  octaves {{parent.NoiseMain.octaves}}
+  nyquist {{parent.NoiseMain.nyquist}}
+  lacunarity {{parent.NoiseMain.lacunarity}}
+  gain {{parent.NoiseMain.gain}}
+  gamma {{parent.NoiseMain.gamma}}
+  translate {0 {intensity}}
+  center {960 540}
+  color {{parent.NoiseMain.color}}
+  name NoiseV
+  tile_color 0xff00ff
+  xpos 203
+  ypos 258
+  hide_input true
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge2
+  xpos 80
+  ypos 258
+ }
+ ShuffleCopy {
+  inputs 2
+  red red
+  blue black
+  alpha black
+  name ShuffleCopy1
+  xpos 80
+  ypos 327
+ }
+ Blur {
+  size 3
+  name BlurNoise
+  xpos 80
+  ypos 351
+ }
+set N1c1b4b40 [stack 0]
+ Dot {
+  name Dot4
+  xpos 114
+  ypos 452
+ }
+push $N1c1b4b40
+ Input {
+  inputs 0
+  name IN
+  xpos 313
+  ypos 74
+  number 3
+ }
+add_layer {distort distort.u distort.v}
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 distort.u
+  from1 rgba.green
+  to1 distort.v
+  name Copy1
+  xpos 313
+  ypos 345
+ }
+ IDistort {
+  uv distort
+  uv_scale 56.5
+  name IDistort1
+  xpos 313
+  ypos 413
+ }
+ Switch {
+  inputs 2
+  which {{shownoise}}
+  name shownoise
+  xpos 313
+  ypos 449
+ }
+ Output {
+  name Output1
+  xpos 313
+  ypos 486
+ }
+push $N116f0a50
+ Viewer {
+  frame 34
+  input_process false
+  name Viewer1
+  xpos 56
+  ypos 522
+ }
+end_group

@@ -4,7 +4,7 @@ import subprocess
 from config import config
 
 def submit(app,name,start,end,inputFilepath,outputPath,outputFiles,pluginArgs,submitArgs,
-           shotgunContext=None,shotgunFields=None,shotgunUser=None,mayaGUI=False):
+           shotgunContext=None,shotgunFields=None,shotgunUser=None,mayaGUI=False,limit=None,priority=None):
     '''
     usage:
     
@@ -78,7 +78,37 @@ def submit(app,name,start,end,inputFilepath,outputPath,outputFiles,pluginArgs,su
         submitData+='ExtraInfoKeyValue1=ProjectId='+str(shotgunContext.project['id'])+'\n'
         submitData+='ExtraInfoKeyValue2=EntityId='+str(shotgunContext.entity['id'])+'\n'
         submitData+='ExtraInfoKeyValue3=EntityType='+str(shotgunContext.entity['type'])+'\n'
+    
+    #limit group editing
+    if limit:
         
+        submitLines=submitData.split('\n')
+        
+        for line in submitLines:
+        
+            if 'LimitGroups' in line:
+        
+                del(submitLines[submitLines.index(line)])
+        
+        submitLines.append('LimitGroups=%s' % limit)
+        
+        submitData='\n'.join(submitLines)
+    
+    #priority editing
+    if priority:
+        
+        submitLines=submitData.split('\n')
+        
+        for line in submitLines:
+        
+            if 'Priority' in line:
+        
+                del(submitLines[submitLines.index(line)])
+        
+        submitLines.append('Priority=%s' % str(priority))
+        
+        submitData='\n'.join(submitLines)
+    
     submitFile=open((tempDir+'/submit_info.job'),'w')
     submitFile.write(submitData)
     submitFile.close()

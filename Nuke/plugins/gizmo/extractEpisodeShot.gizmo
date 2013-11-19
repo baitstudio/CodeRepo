@@ -1,0 +1,20 @@
+#! C:/Program Files/Nuke7.0v8/Nuke7.0.exe -nx
+version 7.0 v8
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {3 episode l Episode}
+ episode {{"\[python -execlocal import\\ os\\nimport\\ nuke\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[0\\])]"}}
+ addUserKnob {3 shot l Shot}
+ shot {{"\[python -execlocal import\\ nuke\\nimport\\ os\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\])]"}}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 0
+ }
+ Output {
+  name Output1
+  xpos 0
+  ypos 300
+ }
+end_group

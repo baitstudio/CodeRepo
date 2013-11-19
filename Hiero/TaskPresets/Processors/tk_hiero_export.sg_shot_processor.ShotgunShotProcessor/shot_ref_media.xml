@@ -1,0 +1,117 @@
+<root presetname="shot_ref_media" tasktype="hiero.exporters.FnShotProcessor.ShotProcessor">
+    <startFrameIndex valuetype="int">1</startFrameIndex>
+    <exportRoot valuetype="str">L:/00719_grandpa/</exportRoot>
+    <versionIndex valuetype="int">1</versionIndex>
+    <cutUseHandles valuetype="bool">True</cutUseHandles>
+    <shotgunShotCreateProperties valuetype="dict">
+        <task_template_map valuetype="list">
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">Ready To Start</SequenceItem>
+                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">In Progress</SequenceItem>
+                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">On Hold</SequenceItem>
+                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">Final</SequenceItem>
+                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
+            </SequenceItem>
+        </task_template_map>
+        <sg_status_hiero_tags valuetype="list">
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">Ready To Start</SequenceItem>
+                <SequenceItem valuetype="str">rdy</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">In Progress</SequenceItem>
+                <SequenceItem valuetype="str">ip</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">On Hold</SequenceItem>
+                <SequenceItem valuetype="str">hld</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">Final</SequenceItem>
+                <SequenceItem valuetype="str">fin</SequenceItem>
+            </SequenceItem>
+        </sg_status_hiero_tags>
+        <assets valuetype="list">
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">Sitting Room</SequenceItem>
+                <SequenceItem valuetype="str">Sitting Room</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">Main Outfit</SequenceItem>
+                <SequenceItem valuetype="str">Main Outfit</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">Plane</SequenceItem>
+                <SequenceItem valuetype="str">Plane</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">Car</SequenceItem>
+                <SequenceItem valuetype="str">Car</SequenceItem>
+            </SequenceItem>
+        </assets>
+    </shotgunShotCreateProperties>
+    <versionPadding valuetype="int">3</versionPadding>
+    <exportTemplate valuetype="list">
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">footage/episodes/{project}/{shot}/edit_reference/{shot}edit_ref.#####.{ext}</SequenceItem>
+            <SequenceItem valuetype="hiero.exporters.FnTranscodeExporter.TranscodePreset">
+                <root presetname="hiero.exporters.FnTranscodeExporter.TranscodeExporter" tasktype="hiero.exporters.FnTranscodeExporter.TranscodeExporter">
+                    <colourspace valuetype="unicode">default</colourspace>
+                    <file_type valuetype="unicode">jpeg</file_type>
+                    <mov valuetype="dict">
+                        <codec valuetype="str">avc1&#x09;H.264</codec>
+                        <quality valuetype="int">2</quality>
+                        <keyframerate valuetype="int">1</keyframerate>
+                        <settingsString valuetype="str">H.264, Normal Quality</settingsString>
+                        <settings valuetype="str">0000000000000000000000000000019a7365616e0000000100000001000000000000018676696465000000010000000e00000000000000227370746c0000000100000000000000006176633100000000001800000200000000207470726c0000000100000000000000000000020000190000000000010000002464726174000000010000000000000000005dc000000000530000010000000100000000156d70736f00000001000000000000000000000000186d66726100000001000000000000000000000000000000187073667200000001000000000000000000000000000000156266726100000001000000000000000001000000166d70657300000001000000000000000000000000002868617264000000010000000000000000000000000000000000000000000000000000000000000016656e647300000001000000000000000000000000001663666c67000000010000000000000000004400000018636d66720000000100000000000000006170706c00000014636c75740000000100000000000000000000001c766572730000000100000000000000000003001c00010000</settings>
+                    </mov>
+                    <jpeg valuetype="dict" />
+                    <channels valuetype="str">all</channels>
+                    <burninDataEnabled valuetype="bool">False</burninDataEnabled>
+                    <additionalNodesEnabled valuetype="bool">False</additionalNodesEnabled>
+                    <additionalNodesData valuetype="list" />
+                    <dpx valuetype="dict" />
+                    <burninData valuetype="dict">
+                        <burnIn_bottomRight valuetype="NoneType">None</burnIn_bottomRight>
+                        <burnIn_topLeft valuetype="unicode" />
+                        <burnIn_topMiddle valuetype="unicode" />
+                        <burnIn_padding valuetype="NoneType">None</burnIn_padding>
+                        <burnIn_topRight valuetype="NoneType">None</burnIn_topRight>
+                        <burnIn_textSize valuetype="float">20.0</burnIn_textSize>
+                        <burnIn_bottomLeft valuetype="unicode" />
+                        <burnIn_bottomMiddle valuetype="unicode">{project}</burnIn_bottomMiddle>
+                        <burnIn_font valuetype="NoneType">None</burnIn_font>
+                    </burninData>
+                    <reformat valuetype="dict">
+                        <pixelAspect valuetype="float">1.0</pixelAspect>
+                        <name valuetype="str">NTSC 4:3</name>
+                        <to_type valuetype="str">None</to_type>
+                        <height valuetype="int">480</height>
+                        <width valuetype="int">720</width>
+                        <resize valuetype="unicode">width</resize>
+                    </reformat>
+                    <keepNukeScript valuetype="bool">False</keepNukeScript>
+                    <method valuetype="unicode">None</method>
+                </root>
+            </SequenceItem>
+        </SequenceItem>
+    </exportTemplate>
+    <excludeTags valuetype="list" />
+    <includeTags valuetype="list">
+        <SequenceItem valuetype="str">Red</SequenceItem>
+        <SequenceItem valuetype="str">Blue Screen</SequenceItem>
+    </includeTags>
+    <includeRetimes valuetype="bool">False</includeRetimes>
+    <startFrameSource valuetype="str">Custom</startFrameSource>
+    <cutLength valuetype="bool">True</cutLength>
+    <cutHandles valuetype="int">12</cutHandles>
+</root>

@@ -1,0 +1,201 @@
+set cut_paste_input [stack 0]
+version 7.0 v6
+push 0
+push 0
+push 0
+push 0
+push $cut_paste_input
+Group {
+ inputs 5
+ name B_Relight
+ tile_color 0xff3f00ff
+ selected true
+ xpos -138
+ ypos -317
+ addUserKnob {20 passSelect l "Pass Selection"}
+ addUserKnob {6 positionSelect l "Use Seperate Position Pass" +STARTLINE}
+ addUserKnob {41 posPass l "Position Pass" T ShufflePos.in}
+ addUserKnob {6 normalSelect l "Use Seperate Normal Pass" +STARTLINE}
+ addUserKnob {41 normPass l "Normals Pass" T ShuffleNorm.in}
+ addUserKnob {6 generatePointCloud l "Generate Point Cloud" +STARTLINE}
+ generatePointCloud true
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {6 lightOnly l "Output Light Only" +STARTLINE}
+ addUserKnob {41 mix T Merge1.mix}
+}
+ Input {
+  inputs 0
+  name NORM
+  xpos 256
+  ypos -259
+  number 4
+ }
+ Input {
+  inputs 0
+  name POS
+  xpos 256
+  ypos -334
+  number 3
+ }
+ Input {
+  inputs 0
+  name IN
+  xpos 129
+  ypos -484
+ }
+ Dot {
+  name Dot1
+  xpos 163
+  ypos -413
+ }
+set N13408a10 [stack 0]
+add_layer {position position.x position.y position.z}
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  out position
+  name ShuffleCopy1
+  xpos 129
+  ypos -334
+  disable {{!parent.positionSelect}}
+ }
+ Shuffle {
+  in none
+  out position
+  name ShufflePos
+  xpos 129
+  ypos -310
+  disable {{parent.positionSelect}}
+ }
+add_layer {normal normal.x normal.y normal.z}
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  out normal
+  name ShuffleCopy2
+  xpos 129
+  ypos -259
+  disable {{!parent.normalSelect}}
+ }
+ Shuffle {
+  in none
+  out normal
+  name ShuffleNorm
+  xpos 129
+  ypos -235
+  disable {{parent.normalSelect}}
+ }
+ NoOp {
+  name PassesIn
+  xpos 129
+  ypos -200
+ }
+set N16755020 [stack 0]
+ Dot {
+  name Dot3
+  xpos 265
+  ypos -197
+ }
+ Dot {
+  name Dot2
+  xpos 265
+  ypos 39
+ }
+ Input {
+  inputs 0
+  name CAMERA
+  xpos -5
+  ypos -307
+  number 1
+ }
+ NoOp {
+  name CameraIn
+  xpos -5
+  ypos -129
+ }
+set N16755390 [stack 0]
+push $N16755390
+push $N16755020
+ PositionToPoints2 {
+  display textured
+  render_mode textured
+  P_channel position
+  N_channel normal
+  detail 0.49
+  pointSize 2
+  name PositionToPoints
+  xpos -114
+  ypos -200
+  disable {{!parent.generaePointCloud}}
+ }
+ Input {
+  inputs 0
+  name LIGHTS
+  xpos -259
+  ypos 36
+  number 2
+ }
+ Scene {
+  inputs 3
+  name SceneRelight
+  xpos -104
+  ypos 15
+ }
+push $N16755020
+ ReLight {
+  inputs 4
+  normal normal
+  position position
+  name ReLight
+  xpos 129
+  ypos 36
+ }
+set N16755de0 [stack 0]
+ Dot {
+  name Dot6
+  xpos 71
+  ypos 216
+ }
+push $N16755de0
+push $N13408a10
+ Dot {
+  name Dot4
+  xpos 398
+  ypos -413
+ }
+ Dot {
+  name Dot5
+  xpos 398
+  ypos 136
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge1
+  xpos 129
+  ypos 138
+ }
+ Switch {
+  inputs 2
+  which {{parent.lightOnly}}
+  name Switch1
+  xpos 129
+  ypos 213
+ }
+ Output {
+  name Output1
+  xpos 129
+  ypos 290
+ }
+push $N16755de0
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 256
+  ypos -310
+ }
+end_group

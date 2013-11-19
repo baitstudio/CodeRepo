@@ -16,3 +16,5 @@ localShelves = "C:/Users/" + user + "/Documents/maya/2014-x64/prefs/shelves/"
 shelves = os.listdir(shelfDir)
 for shelf in shelves:     
     shutil.copyfile(shelfDir + shelf, localShelves + shelf) 
+		
+import initShotgun

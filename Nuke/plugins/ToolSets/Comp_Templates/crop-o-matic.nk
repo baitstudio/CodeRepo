@@ -1,0 +1,18 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+Crop {
+ box {0 0 1920 1080}
+ name Crop2
+ selected true
+ xpos 1746
+ ypos 155
+}
+Remove {
+ operation keep
+ channels rgb
+ name Remove1
+ selected true
+ xpos 1746
+ ypos 179
+}

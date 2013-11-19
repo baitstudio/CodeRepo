@@ -1,0 +1,2506 @@
+set cut_paste_input [stack 0]
+version 7.0 v6
+BackdropNode {
+ inputs 0
+ name BackdropNode5
+ tile_color 0x283042ff
+ label CLEANUP
+ note_font_size 42
+ selected true
+ xpos -11128
+ ypos -3490
+ bdwidth 347
+ bdheight 272
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode16
+ tile_color 0x283042ff
+ label REDISTORT
+ note_font_size 26
+ selected true
+ xpos -10950
+ ypos -3187
+ bdwidth 177
+ bdheight 171
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode24
+ tile_color 0x374c37ff
+ label DEGRAIN
+ note_font_size 42
+ selected true
+ xpos -12115
+ ypos -2815
+ bdwidth 256
+ bdheight 216
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode25
+ tile_color 0x374c37ff
+ label "EDGE CORRECT"
+ note_font_size 42
+ selected true
+ xpos -11628
+ ypos -2012
+ bdwidth 400
+ bdheight 146
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode4
+ tile_color 0x374c37ff
+ label CLEANUP
+ note_font_size 42
+ selected true
+ xpos -12029
+ ypos -3441
+ bdwidth 487
+ bdheight 301
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode8
+ tile_color 0x374c37ff
+ label "SURPRESS , CC"
+ note_font_size 42
+ selected true
+ xpos -11579
+ ypos -2440
+ bdwidth 339
+ bdheight 307
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode21
+ tile_color 0x374c37ff
+ label "REGRAIN, COPY ALPHA"
+ note_font_size 26
+ selected true
+ xpos -11755
+ ypos -1818
+ bdwidth 329
+ bdheight 210
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode7
+ tile_color 0x374c37ff
+ label KEY
+ note_font_size 42
+ selected true
+ xpos -12367
+ ypos -2432
+ bdwidth 324
+ bdheight 470
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode19
+ tile_color 0x374c37ff
+ label "KEY PREVIEW"
+ note_font_size 26
+ selected true
+ xpos -11394
+ ypos -1724
+ bdwidth 261
+ bdheight 284
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode22
+ tile_color 0x374c37ff
+ label LIGHTWRAP
+ note_font_size 26
+ selected true
+ xpos -11121
+ ypos -1724
+ bdwidth 174
+ bdheight 283
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode12
+ tile_color 0x283042ff
+ label UNDISTORT
+ note_font_size 26
+ selected true
+ xpos -10950
+ ypos -3854
+ bdwidth 182
+ bdheight 186
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode18
+ tile_color 0x283042ff
+ label TRACKING
+ note_font_size 42
+ selected true
+ xpos -10751
+ ypos -3625
+ bdwidth 307
+ bdheight 368
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode9
+ tile_color 0x283042ff
+ label CC
+ note_font_size 42
+ selected true
+ xpos -10949
+ ypos -2980
+ bdwidth 399
+ bdheight 449
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode17
+ tile_color 0x374c37ff
+ label TRACKING
+ note_font_size 42
+ selected true
+ xpos -11523
+ ypos -3605
+ bdwidth 271
+ bdheight 370
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode15
+ tile_color 0x374c37ff
+ label REDISTORT
+ note_font_size 26
+ selected true
+ xpos -11879
+ ypos -3038
+ bdwidth 177
+ bdheight 171
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode14
+ tile_color 0x374c37ff
+ label UNDISTORT
+ note_font_size 26
+ selected true
+ xpos -11870
+ ypos -3807
+ bdwidth 182
+ bdheight 186
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode6
+ tile_color 0x513f2cff
+ label CLEANUP
+ note_font_size 26
+ selected true
+ xpos -12932
+ ypos -3802
+ bdwidth 201
+ bdheight 205
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode10
+ tile_color 0x513f2cff
+ label CC
+ note_font_size 42
+ selected true
+ xpos -12928
+ ypos -2436
+ bdwidth 393
+ bdheight 453
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode13
+ tile_color 0x513f2cff
+ label TRACKING
+ note_font_size 42
+ selected true
+ xpos -12428
+ ypos -3621
+ bdwidth 267
+ bdheight 370
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode11
+ tile_color 0x513f2cff
+ label REDISTORT
+ note_font_size 26
+ selected true
+ xpos -12943
+ ypos -3055
+ bdwidth 226
+ bdheight 204
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode20
+ tile_color 0x513f2cff
+ label CLEANUP
+ note_font_size 42
+ selected true
+ xpos -12954
+ ypos -3427
+ bdwidth 462
+ bdheight 266
+}
+push $cut_paste_input
+PostageStamp {
+ name PostageStamp3
+ label "FOOTAGE BACK"
+ selected true
+ xpos -10909
+ ypos -4054
+ hide_input true
+ postage_stamp true
+}
+Group {
+ name B_LensUnDistort1
+ tile_color 0xff3f00ff
+ selected true
+ xpos -10909
+ ypos -3777
+ disable true
+ addUserKnob {20 tabLD l B_LensDistortion}
+ addUserKnob {41 interactKnob T LensDistortion1.interactKnob}
+ addUserKnob {41 serializeKnob T LensDistortion1.serializeKnob}
+ addUserKnob {41 serialiseKnob T LensDistortion1.serialiseKnob}
+ addUserKnob {41 outputType l "Output Type" T LensDistortion1.outputType}
+ addUserKnob {41 lensType l "Lens Type" T LensDistortion1.lensType}
+ addUserKnob {41 distortion1 l "Radial Distortion 1" T LensDistortion1.distortion1}
+ addUserKnob {41 distortion2 l "Radial Distortion 2" T LensDistortion1.distortion2}
+ addUserKnob {41 distortionCenter l "Distortion Center" T LensDistortion1.distortionCenter}
+ addUserKnob {41 anamorphicSqueeze l "Anamorphic Squeeze" T LensDistortion1.anamorphicSqueeze}
+ addUserKnob {41 asymmetricDistortion l "Asymmetric Distortion" T LensDistortion1.asymmetricDistortion}
+ addUserKnob {41 startFromCurrentLens l "Analyze from Current Lens" T LensDistortion1.startFromCurrentLens}
+ addUserKnob {41 invertDistortion l Undistort T LensDistortion1.invertDistortion}
+ addUserKnob {41 reset l Reset -STARTLINE T LensDistortion1.reset}
+ addUserKnob {41 filter T LensDistortion1.filter}
+ addUserKnob {41 distortionScaling l "Distortion Scaling" T LensDistortion1.distortionScaling}
+ addUserKnob {41 outputFormat l "Scale to Format" T LensDistortion1.outputFormat}
+ addUserKnob {20 "Card Parameters" n 2}
+ addUserKnob {41 cardScale l scale T LensDistortion1.cardScale}
+ addUserKnob {41 a l "a (r^3)" T LensDistortion1.a}
+ addUserKnob {41 b l "b (r^2)" T LensDistortion1.b}
+ addUserKnob {41 c l "c (r^1)" T LensDistortion1.c}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 tabIA l "B_Iamge Analysis"}
+ addUserKnob {41 ignore l Mask T LensDistortion1.ignore}
+ addUserKnob {41 analysisRange l "Analysis Range" T LensDistortion1.analysisRange}
+ addUserKnob {41 analysisStart l "Analysis Start" T LensDistortion1.analysisStart}
+ addUserKnob {41 analysisStop l "Analysis Stop" T LensDistortion1.analysisStop}
+ addUserKnob {41 cameraMotion l "Camera Motion" T LensDistortion1.cameraMotion}
+ addUserKnob {41 analyzeImage l "Analyze Sequence" T LensDistortion1.analyzeImage}
+ addUserKnob {41 showFeatures l "Feature Overlay" T LensDistortion1.showFeatures}
+ addUserKnob {20 tabGA l "B_Grid Analysis"}
+ addUserKnob {41 gridType l "Grid Type" T LensDistortion1.gridType}
+ addUserKnob {41 analyzeGrid l "Analyze Grid" T LensDistortion1.analyzeGrid}
+ addUserKnob {41 alignGrid l "Align Grid" -STARTLINE T LensDistortion1.alignGrid}
+ addUserKnob {41 showGrid l "Grid Overlay" T LensDistortion1.showGrid}
+ addUserKnob {20 tabLA l "B_Line Analysis"}
+ addUserKnob {41 drawingModeOn l "Drawing Mode On" T LensDistortion1.drawingModeOn}
+ addUserKnob {41 nCoefficients l "Distortion Terms" T LensDistortion1.nCoefficients}
+ addUserKnob {41 estimateCenter l "Estimate Center" T LensDistortion1.estimateCenter}
+ addUserKnob {41 analyzeLines l "Analyze Lines" T LensDistortion1.analyzeLines}
+ addUserKnob {41 deleteLastLine l "Delete Last Line" T LensDistortion1.deleteLastLine}
+ addUserKnob {41 deleteLastPoint l "Delete Last Point" -STARTLINE T LensDistortion1.deleteLastPoint}
+ addUserKnob {41 hideLines l "Hide Lines" T LensDistortion1.hideLines}
+ addUserKnob {41 clearAll l "Clear All" -STARTLINE T LensDistortion1.clearAll}
+}
+ Input {
+  inputs 0
+  name FOOTAGE
+  xpos -434
+  ypos -286
+ }
+set N1baef530 [stack 0]
+ Crop {
+  box {{LensDistortion1.bbox.x} {LensDistortion1.bbox.y} {LensDistortion1.bbox.r} {LensDistortion1.bbox.t}}
+  reformat true
+  crop false
+  name Crop2
+  xpos -246
+  ypos -223
+  disable {{parent.LensDistortion1.disable}}
+ }
+set N1baef8a0 [stack 0]
+ LensDistortion {
+  serializeKnob ""
+  serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+  distortion1 {{parent.LensDistortion1.distortion1}}
+  distortion2 {{parent.LensDistortion1.distortion2}}
+  distortionCenter {{parent.LensDistortion1.distortionCenter} {parent.LensDistortion1.distortionCenter}}
+  invertDistortion {{parent.LensDistortion1.invertDistortion}}
+  name LensDistortion2
+  label UNDISTORT
+  xpos -246
+  ypos -180
+  disable {{parent.LensDistortion1.disable}}
+ }
+ Output {
+  name OUT01
+  xpos -246
+  ypos -46
+ }
+push $N1baef8a0
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos -128
+  ypos -122
+ }
+push $N1baef530
+ LensDistortion {
+  serializeKnob ""
+  serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+  invertDistortion true
+  cardScale {1.14732492 1.14732492 1}
+  a -0.1240429431
+  b 0.03151165694
+  c -0.02366262861
+  analysisStart 1
+  analysisStop 1
+  alignmentCorrection {0.9997649789 -0.0001397690212 -2.287184202e-007 -0.0006597954198 0.9924505353 -4.72357533e-006 0.02338844538 0.2282411903 1}
+  name LensDistortion1
+  label CONTROL
+  selected true
+  xpos -434
+  ypos -177
+ }
+end_group
+set N190589c0 [stack 0]
+Write {
+ name WriteUndistorted1
+ selected true
+ xpos -10635
+ ypos -3777
+ disable {{"!\$gui" x28 0}}
+}
+Tracker4 {
+ center {960 540}
+ name Tracker2
+ selected true
+ xpos -10635
+ ypos -3546
+}
+push $cut_paste_input
+PostageStamp {
+ name PostageStamp2
+ label "FOOTAGE KEY"
+ selected true
+ xpos -11838
+ ypos -4043
+ hide_input true
+ postage_stamp true
+}
+Group {
+ name B_LensUnDistort
+ tile_color 0xff3f00ff
+ selected true
+ xpos -11838
+ ypos -3742
+ disable true
+ addUserKnob {20 tabLD l B_LensDistortion}
+ addUserKnob {41 interactKnob T LensDistortion1.interactKnob}
+ addUserKnob {41 serializeKnob T LensDistortion1.serializeKnob}
+ addUserKnob {41 serialiseKnob T LensDistortion1.serialiseKnob}
+ addUserKnob {41 outputType l "Output Type" T LensDistortion1.outputType}
+ addUserKnob {41 lensType l "Lens Type" T LensDistortion1.lensType}
+ addUserKnob {41 distortion1 l "Radial Distortion 1" T LensDistortion1.distortion1}
+ addUserKnob {41 distortion2 l "Radial Distortion 2" T LensDistortion1.distortion2}
+ addUserKnob {41 distortionCenter l "Distortion Center" T LensDistortion1.distortionCenter}
+ addUserKnob {41 anamorphicSqueeze l "Anamorphic Squeeze" T LensDistortion1.anamorphicSqueeze}
+ addUserKnob {41 asymmetricDistortion l "Asymmetric Distortion" T LensDistortion1.asymmetricDistortion}
+ addUserKnob {41 startFromCurrentLens l "Analyze from Current Lens" T LensDistortion1.startFromCurrentLens}
+ addUserKnob {41 invertDistortion l Undistort T LensDistortion1.invertDistortion}
+ addUserKnob {41 reset l Reset -STARTLINE T LensDistortion1.reset}
+ addUserKnob {41 filter T LensDistortion1.filter}
+ addUserKnob {41 distortionScaling l "Distortion Scaling" T LensDistortion1.distortionScaling}
+ addUserKnob {41 outputFormat l "Scale to Format" T LensDistortion1.outputFormat}
+ addUserKnob {20 "Card Parameters" n 2}
+ addUserKnob {41 cardScale l scale T LensDistortion1.cardScale}
+ addUserKnob {41 a l "a (r^3)" T LensDistortion1.a}
+ addUserKnob {41 b l "b (r^2)" T LensDistortion1.b}
+ addUserKnob {41 c l "c (r^1)" T LensDistortion1.c}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 tabIA l "B_Iamge Analysis"}
+ addUserKnob {41 ignore l Mask T LensDistortion1.ignore}
+ addUserKnob {41 analysisRange l "Analysis Range" T LensDistortion1.analysisRange}
+ addUserKnob {41 analysisStart l "Analysis Start" T LensDistortion1.analysisStart}
+ addUserKnob {41 analysisStop l "Analysis Stop" T LensDistortion1.analysisStop}
+ addUserKnob {41 cameraMotion l "Camera Motion" T LensDistortion1.cameraMotion}
+ addUserKnob {41 analyzeImage l "Analyze Sequence" T LensDistortion1.analyzeImage}
+ addUserKnob {41 showFeatures l "Feature Overlay" T LensDistortion1.showFeatures}
+ addUserKnob {20 tabGA l "B_Grid Analysis"}
+ addUserKnob {41 gridType l "Grid Type" T LensDistortion1.gridType}
+ addUserKnob {41 analyzeGrid l "Analyze Grid" T LensDistortion1.analyzeGrid}
+ addUserKnob {41 alignGrid l "Align Grid" -STARTLINE T LensDistortion1.alignGrid}
+ addUserKnob {41 showGrid l "Grid Overlay" T LensDistortion1.showGrid}
+ addUserKnob {20 tabLA l "B_Line Analysis"}
+ addUserKnob {41 drawingModeOn l "Drawing Mode On" T LensDistortion1.drawingModeOn}
+ addUserKnob {41 nCoefficients l "Distortion Terms" T LensDistortion1.nCoefficients}
+ addUserKnob {41 estimateCenter l "Estimate Center" T LensDistortion1.estimateCenter}
+ addUserKnob {41 analyzeLines l "Analyze Lines" T LensDistortion1.analyzeLines}
+ addUserKnob {41 deleteLastLine l "Delete Last Line" T LensDistortion1.deleteLastLine}
+ addUserKnob {41 deleteLastPoint l "Delete Last Point" -STARTLINE T LensDistortion1.deleteLastPoint}
+ addUserKnob {41 hideLines l "Hide Lines" T LensDistortion1.hideLines}
+ addUserKnob {41 clearAll l "Clear All" -STARTLINE T LensDistortion1.clearAll}
+}
+ Input {
+  inputs 0
+  name FOOTAGE
+  xpos -434
+  ypos -286
+ }
+set N1baf21e0 [stack 0]
+ Crop {
+  box {{LensDistortion1.bbox.x} {LensDistortion1.bbox.y} {LensDistortion1.bbox.r} {LensDistortion1.bbox.t}}
+  reformat true
+  crop false
+  name Crop2
+  xpos -246
+  ypos -223
+  disable {{parent.LensDistortion1.disable}}
+ }
+set N1baf2550 [stack 0]
+ LensDistortion {
+  serializeKnob ""
+  serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+  distortion1 {{parent.LensDistortion1.distortion1}}
+  distortion2 {{parent.LensDistortion1.distortion2}}
+  distortionCenter {{parent.LensDistortion1.distortionCenter} {parent.LensDistortion1.distortionCenter}}
+  invertDistortion {{parent.LensDistortion1.invertDistortion}}
+  name LensDistortion2
+  label UNDISTORT
+  xpos -246
+  ypos -180
+  disable {{parent.LensDistortion1.disable}}
+ }
+ Output {
+  name OUT01
+  xpos -246
+  ypos -46
+ }
+push $N1baf2550
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos -128
+  ypos -122
+ }
+push $N1baf21e0
+ LensDistortion {
+  serializeKnob ""
+  serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+  invertDistortion true
+  cardScale {1.14732492 1.14732492 1}
+  a -0.1240429431
+  b 0.03151165694
+  c -0.02366262861
+  analysisStart 1
+  analysisStop 1
+  alignmentCorrection {0.9997649789 -0.0001397690212 -2.287184202e-007 -0.0006597954198 0.9924505353 -4.72357533e-006 0.02338844538 0.2282411903 1}
+  name LensDistortion1
+  label CONTROL
+  selected true
+  xpos -434
+  ypos -177
+ }
+end_group
+set N190591a0 [stack 0]
+Write {
+ name WriteUndistorted
+ selected true
+ xpos -11450
+ ypos -3742
+ disable {{"!\$gui" x28 0}}
+}
+Tracker4 {
+ center {960 540}
+ name Tracker1
+ selected true
+ xpos -11450
+ ypos -3488
+}
+push $N190591a0
+Group {
+ name B_LensReDistort
+ tile_color 0xff3f00ff
+ selected true
+ xpos -11838
+ ypos -2956
+ disable {{parent.B_LensUnDistort.disable}}
+}
+ Input {
+  inputs 0
+  name REDISTORT
+  xpos -436
+  ypos -218
+ }
+ LensDistortion {
+  serializeKnob ""
+  serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+  distortion1 {{parent.parent.B_LensUnDistort.LensDistortion1.distortion1}}
+  distortion2 {{parent.parent.B_LensUnDistort.LensDistortion1.distortion2}}
+  distortionCenter {{parent.parent.B_LensUnDistort.LensDistortion1.distortionCenter} {parent.parent.B_LensUnDistort.LensDistortion1.distortionCenter}}
+  name LensDistortion5
+  label REDISTORT
+  selected true
+  xpos -436
+  ypos -179
+  disable {{parent.LensDistortion1.disable}}
+ }
+ Crop {
+  box {{-parent.parent.B_LensUnDistort.Crop2.box.x} {-parent.parent.B_LensUnDistort.Crop2.box.y} {parent.parent.B_LensUnDistort.Crop2.box.r} {parent.parent.B_LensUnDistort.Crop2.box.t}}
+  reformat true
+  crop false
+  name Crop3
+  xpos -436
+  ypos -133
+  disable {{parent.LensDistortion1.disable}}
+ }
+set N1bcd91d0 [stack 0]
+ Output {
+  name Output1
+  xpos -436
+  ypos -83
+ }
+push $N1bcd91d0
+push $N1bcd91d0
+ Viewer {
+  inputs 2
+  input_process false
+  name Viewer1
+  xpos -313
+  ypos -133
+ }
+end_group
+set N19058db0 [stack 0]
+Dot {
+ name Dot2
+ selected true
+ xpos -12017
+ ypos -2953
+}
+push $N19058db0
+Dot {
+ name Dot18
+ selected true
+ xpos -11804
+ ypos -2708
+}
+set N1bcd9c20 [stack 0]
+Denoise2 {
+ inputs 2
+ serializeKnob "1.6139 0.581615 0.526678
+0.00852557 0.0145763 0.0102383
+0.00852557 0.0145763 0.0102383
+0.00299363 0.00443114 0.0032991
+0 0 0
+0.00324926 0.00690401 0.0047432
+0.00324926 0.00690401 0.0047432
+0.00177718 0.00340729 0.00237609
+0 0 0
+0.00140718 0.00310023 0.00216773
+0.00140718 0.00310023 0.00216773
+0.000750425 0.00199304 0.00129069
+0 0 0
+0.000522612 0.0014382 0.000911346
+0.000522612 0.0014382 0.000911346
+0.000309235 0.000854733 0.00053768
+0 0 0 0 0 0 0 0 0 
+12121310948681660303
+"
+ rolloff 21
+ "Noise Analysis" 1
+ lockNoiseAnalysis true
+ analysisRegion {21.20000076 38 213.3999939 153.8000031}
+ analysisFrame 26
+ "Tune Frequencies" 1
+ "Tune Channels" 1
+ needsAnalyzing false
+ needsProfile true
+ userMessage ""
+ profileCurve {profile {curve x0.1000000015 1 x0.1333521456 1 x0.1778279394 1 x0.2371373773 1 x0.3162277639 1 x0.4216965139 1 x0.5623413324 1 x0.7498942018 1 x1 1}}
+ name Denoise1
+ selected true
+ xpos -12051
+ ypos -2717
+}
+set N1bcd9f90 [stack 0]
+Dot {
+ name Dot3
+ selected true
+ xpos -12323
+ ypos -2706
+}
+Keyer {
+ input {-rgba.red rgba.green -rgba.blue}
+ invert true
+ operation "luminance key"
+ range {0.1345673089 0.1955506174 1 1}
+ name Keyer1
+ selected true
+ xpos -12352
+ ypos -2343
+}
+Dot {
+ name Dot16
+ selected true
+ xpos -12323
+ ypos -1919
+}
+set N30230790 [stack 0]
+Dot {
+ name Dot1
+ selected true
+ xpos -12323
+ ypos -1656
+}
+push $N1bcd9c20
+Denoise2 {
+ serializeKnob "1.6139 0.581615 0.526678
+0.00852557 0.0145763 0.0102383
+0.00852557 0.0145763 0.0102383
+0.00299363 0.00443114 0.0032991
+0 0 0
+0.00324926 0.00690401 0.0047432
+0.00324926 0.00690401 0.0047432
+0.00177718 0.00340729 0.00237609
+0 0 0
+0.00140718 0.00310023 0.00216773
+0.00140718 0.00310023 0.00216773
+0.000750425 0.00199304 0.00129069
+0 0 0
+0.000522612 0.0014382 0.000911346
+0.000522612 0.0014382 0.000911346
+0.000309235 0.000854733 0.00053768
+0 0 0 0 0 0 0 0 0 
+12121310948681660303
+"
+ output Noise
+ amount {{parent.Denoise1.amount}}
+ rolloff {{parent.Denoise1.rolloff}}
+ smoothness {{parent.Denoise1.smoothness}}
+ sharpen {{parent.Denoise1.sharpen}}
+ lumablend {{parent.Denoise1.lumablend}}
+ chromablend {{parent.Denoise1.chromablend}}
+ "Noise Analysis" 1
+ lockNoiseAnalysis {{parent.Denoise1.lockNoiseAnalysis}}
+ analysisRegion {{parent.Denoise1.analysisRegion.x} {parent.Denoise1.analysisRegion.y} {parent.Denoise1.analysisRegion.r} {parent.Denoise1.analysisRegion.t}}
+ analysisFrame 26
+ "Tune Frequencies" 1
+ processHigh {{parent.Denoise1.processHigh}}
+ highAmount {{parent.Denoise1.highAmount}}
+ processMedium {{parent.Denoise1.processMedium}}
+ mediumAmount {{parent.Denoise1.mediumAmount}}
+ processLow {{parent.Denoise1.processLow}}
+ lowAmount {{parent.Denoise1.lowAmount}}
+ processVeryLow {{parent.Denoise1.processVeryLow}}
+ veryLowAmount {{parent.Denoise1.veryLowAmount}}
+ "Tune Channels" 1
+ lumaAmount {{parent.Denoise1.lumaAmount}}
+ chromaAmount {{parent.Denoise1.chromaAmount}}
+ needsAnalyzing false
+ needsProfile true
+ userMessage ""
+ profileCurve {profile {curve x0.1000000015 1 x0.1333521456 1 x0.1778279394 1 x0.2371373773 1 x0.3162277639 1 x0.4216965139 1 x0.5623413324 1 x0.7498942018 1 x1 1}}
+ name Denoise2
+ selected true
+ xpos -11679
+ ypos -2717
+}
+Dot {
+ name Dot21
+ selected true
+ xpos -11645
+ ypos -1732
+}
+RotoPaint {
+ inputs 0
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Bezier2 512 bezier
+     {{cc
+       {f 8192}
+       {px x41d00000
+        {x40f00000 xc1a00000}
+        {x43868000 x435b0000}
+        {xc0f00000 x41a00000}
+        {xc2080000 xc2200000}
+        {x43938000 x43b34000}
+        {x42080000 x42200000}
+        {xc2020000 xc1b80000}
+        {x43c9c000 x43e7c000}
+        {x42020000 x41b80000}
+        {xc1700000 xc18c0000}
+        {x43e74000 x44116000}
+        {x41700000 x418c0000}
+        {xc1a80000 x41e80000}
+        {x43ff0000 x4417e000}
+        {x41a80000 xc1e80000}
+        {x41700000 x41a80000}
+        {x44066000 x44060000}
+        {xc1700000 xc1a80000}
+        {x418c0000 x421a0000}
+        {x43e68000 x43ce4000}
+        {xc18c0000 xc21a0000}
+        {x41500000 x41f00000}
+        {x43d18000 x438fc000}
+        {xc1500000 xc1f00000}
+        {x41f80000 x41080000}
+        {x43b54000 x434e0000}
+        {xc1f80000 xc1080000}}}     idem}
+     {tx x41d00000 x43ceaaab x43cc0000}
+     {a opc x3e116873 str 1 spx x44700000 spy x44070000 sb 1 ltn x41d00000 ltm x41d00000 tt x40800000}}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px x41d00000
+        {x429d0000 x428a0000}
+        {x444d2cce x44806666}
+        {xc29d0000 xc28a0000}
+        {xc1c00000 x43020000}
+        {x4430accb x445a4ccd}
+        {x41c00000 xc3020000}
+        {xc2b90000 x41380000}
+        {x447bc3ff x4414b801}
+        {x42b90000 xc1380000}
+        {xc2300000 xc2fe0000}
+        {x449ac000 x44399fff}
+        {x42300000 x42fe0000}
+        {x42100000 xc2380000}
+        {x44a6d000 x445ae000}
+        {xc2100000 x42380000}
+        {x41880000 xc1500000}
+        {x44a05000 x446ee000}
+        {xc1880000 x41500000}}}     idem}
+     {tx x41d00000 x44983000 x444caaab}
+     {a fx x42c80000 fy x42c80000 str 1 spx x44700000 spy x44070000 sb 1 ltn x41d00000 ltm x41d00000 tt x40800000}}}}}}
+ toolbox {selectAll {
+  { selectAll bs 112 str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush bs 112 str 1 ssx 1 ssy 1 sf 1 sb 1 ltn 30 ltm 30 tt 16 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_size 112
+ toolbar_brush_hardness 0.200000003
+ toolbar_lifetime_type single
+ toolbar_lifetime_start 26
+ toolbar_lifetime_end 26
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {960 540}
+ colorOverlay {0 0 0 0}
+ lifetime_start 30
+ lifetime_end 30
+ view {}
+ motionblur_on true
+ motionblur_shutter_offset_type centred
+ brush_size 112
+ brush_spacing 0.05000000075
+ brush_hardness 0.200000003
+ source_black_outside true
+ createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+ name RotoPaint2
+ selected true
+ xpos -11378
+ ypos -1922
+}
+push $N30230790
+push $N1bcd9f90
+Dot {
+ name Dot15
+ selected true
+ xpos -12017
+ ypos -2537
+}
+Dot {
+ name Dot4
+ selected true
+ xpos -11507
+ ypos -2537
+}
+push $N190589c0
+Group {
+ name B_LensReDistort1
+ tile_color 0xff3f00ff
+ selected true
+ xpos -10909
+ ypos -3098
+ disable {{parent.B_LensUnDistort1.disable}}
+}
+ Input {
+  inputs 0
+  name REDISTORT
+  xpos -436
+  ypos -218
+ }
+ LensDistortion {
+  serializeKnob ""
+  serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+  distortion1 {{parent.parent.B_LensUnDistort1.LensDistortion1.distortion1}}
+  distortion2 {{parent.parent.B_LensUnDistort1.LensDistortion1.distortion2}}
+  distortionCenter {{parent.parent.B_LensUnDistort1.LensDistortion1.distortionCenter} {parent.parent.B_LensUnDistort1.LensDistortion1.distortionCenter}}
+  name LensDistortion5
+  label REDISTORT
+  selected true
+  xpos -436
+  ypos -179
+  disable {{parent.LensDistortion1.disable}}
+ }
+ Crop {
+  box {{-parent.parent.B_LensUnDistort1.Crop2.box.x} {-parent.parent.B_LensUnDistort1.Crop2.box.y} {parent.parent.B_LensUnDistort1.Crop2.box.r} {parent.parent.B_LensUnDistort1.Crop2.box.t}}
+  reformat true
+  crop false
+  name Crop3
+  xpos -436
+  ypos -133
+  disable {{parent.LensDistortion1.disable}}
+ }
+set N30232d60 [stack 0]
+ Output {
+  name Output1
+  xpos -436
+  ypos -83
+ }
+push $N30232d60
+push $N30232d60
+ Viewer {
+  inputs 2
+  input_process false
+  name Viewer1
+  xpos -313
+  ypos -133
+ }
+end_group
+Dot {
+ name Dot14
+ selected true
+ xpos -10875
+ ypos -2323
+}
+set N30233440 [stack 0]
+Group {
+ inputs 2
+ name B_Suppress1
+ tile_color 0xff3f00ff
+ selected true
+ xpos -11541
+ ypos -2326
+ addUserKnob {20 suppress l "Key Suppression" t "Key Suppression and Background colour."}
+ addUserKnob {4 outputModeSuppress l "Output Mode" M {"Final Result" "Suppression Matte" Background "Background Matte"}}
+ addUserKnob {26 fgsupress l "Foreground Suppress"}
+ addUserKnob {41 channels T Suppress.channels}
+ addUserKnob {41 hue l "" +STARTLINE T Suppress.hue}
+ addUserKnob {41 mixOverall l "Overall Mix" T Suppress.mix}
+ addUserKnob {41 mixMinus l "Suppress Mix" T spill1.mix}
+ addUserKnob {7 luminanceIn l "Luminance In" t "Add luminance back into image"}
+ luminanceIn 0.5
+ addUserKnob {26 ""}
+ addUserKnob {26 bgtools l "Background Tools"}
+ addUserKnob {41 size l "Blur Background" T BlurBG.size}
+ addUserKnob {41 filter -STARTLINE T BlurBG.filter}
+ addUserKnob {7 applyBG l "Apply Background" t "Adjust the amount of background colour to use" R 0 10}
+ applyBG 1
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode24
+  tile_color 0x283042ff
+  label "SPILL APPLY"
+  note_font_size 42
+  xpos 460
+  ypos -602
+  bdwidth 354
+  bdheight 481
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode25
+  tile_color 0x374c37ff
+  label "SPILL SUPPRESS"
+  note_font_size 42
+  xpos -134
+  ypos -602
+  bdwidth 581
+  bdheight 287
+ }
+ Input {
+  inputs 0
+  name BACK
+  xpos 598
+  ypos -799
+ }
+ Blur {
+  size 100
+  filter box
+  name BlurBG
+  tile_color 0xff00ff
+  xpos 598
+  ypos -441
+ }
+set N303c7280 [stack 0]
+ Input {
+  inputs 0
+  name FG
+  xpos 79
+  ypos -805
+  number 1
+ }
+ Dot {
+  name Dot14
+  xpos 113
+  ypos -521
+ }
+set N303c7960 [stack 0]
+ Input {
+  inputs 0
+  name MASK
+  xpos -49
+  ypos -806
+  number 2
+ }
+push $N303c7960
+ HueCorrect {
+  inputs 1+1
+  invert_mask true
+  name Suppress
+  tile_color 0xff00ff
+  xpos -49
+  ypos -524
+ }
+ Dot {
+  name Dot17
+  xpos -15
+  ypos -448
+ }
+set N303c83b0 [stack 0]
+ Merge2 {
+  inputs 2
+  operation minus
+  Achannels rgb
+  Bchannels rgb
+  output rgb
+  name spill1
+  selected true
+  xpos 79
+  ypos -451
+ }
+ Saturation {
+  saturation 0
+  mode Maximum
+  name Saturation3
+  xpos 79
+  ypos -382
+ }
+set N303c8a90 [stack 0]
+push $N303c7960
+ Dot {
+  name Dot15
+  xpos 236
+  ypos -521
+ }
+add_layer {despill despill.luma}
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 despill.luma
+  name despillChannel1
+  xpos 202
+  ypos -388
+ }
+ Shuffle {
+  in despill
+  name ShuffleDespill1
+  xpos 473
+  ypos -382
+ }
+ Multiply {
+  channels rgb
+  value {{parent.applyBG}}
+  name MultiplyDespill
+  tile_color 0x1fff00ff
+  xpos 473
+  ypos -329
+ }
+ Dot {
+  name Dot37
+  xpos 507
+  ypos -273
+ }
+set N303c9bc0 [stack 0]
+ Merge2 {
+  inputs 2
+  operation multiply
+  name despillBackground1
+  xpos 598
+  ypos -276
+ }
+set N303c9f30 [stack 0]
+push $N303c7280
+ Dot {
+  name Dot2
+  xpos 777
+  ypos -432
+ }
+push $N303c9bc0
+ Dot {
+  name Dot1
+  xpos 507
+  ypos -61
+ }
+push $N303c9f30
+push $N303c8a90
+push $N303c83b0
+ Merge2 {
+  inputs 2
+  operation plus
+  mix {{parent.luminanceIn}}
+  name LuminanceIN
+  tile_color 0xff00ff
+  xpos -49
+  ypos -382
+ }
+ Dot {
+  name Dot16
+  xpos -15
+  ypos -172
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name backgroundApply1
+  xpos 598
+  ypos -175
+ }
+ Switch {
+  inputs 4
+  which {{parent.outputModeSuppress}}
+  name viewSwitchSuppression
+  xpos 743
+  ypos -64
+ }
+ Output {
+  name Output1
+  xpos 743
+  ypos 70
+ }
+push $N303c83b0
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 397
+  ypos 60
+ }
+end_group
+Group {
+ inputs 3
+ name B_EdgeExpander1
+ tile_color 0xff3f00ff
+ selected true
+ xpos -11541
+ ypos -1922
+ addUserKnob {20 User}
+ addUserKnob {4 outputMode l "Output Modes" M {"Final Result" "Erode Preview" "Extend Preview" "Edge Preview"}}
+ addUserKnob {26 ""}
+ addUserKnob {41 size l "Erode size" T Erode1.size}
+ addUserKnob {41 blur l "Erode blur" T Erode1.blur}
+ addUserKnob {26 ""}
+ addUserKnob {41 which l "Extend steps" T Switch1.which}
+ addUserKnob {26 ""}
+ addUserKnob {41 softinneregde l "Soften Inner Edge" T BlurIE.size}
+ addUserKnob {41 threshold l Threshold T EdgeDetect1.threshold}
+ addUserKnob {41 size_1 l "Blur inner edge" T BlurEdgeDetect.size}
+ addUserKnob {7 grainmix l "Add Grain"}
+ grainmix 1
+ addUserKnob {26 ""}
+ addUserKnob {7 mixamount l "Overall Mix"}
+ mixamount 1
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode11
+  tile_color 0x999999ff
+  label "Edge Expand"
+  note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font_size 20
+  xpos -654
+  ypos -433
+  bdwidth 324
+  bdheight 2335
+ }
+ Input {
+  inputs 0
+  name ALPHA
+  xpos -830
+  ypos -296
+  number 1
+ }
+ Input {
+  inputs 0
+  name FG
+  xpos -634
+  ypos -526
+ }
+ PostageStamp {
+  name PostageStamp1
+  xpos -634
+  ypos -374
+  postage_stamp true
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos -634
+  ypos -302
+ }
+set N304b6010 [stack 0]
+ Erode {
+  channels alpha
+  size 3.5
+  blur 0.365
+  name Erode1
+  tile_color 0xffffff
+  xpos -634
+  ypos -229
+ }
+set N304b6380 [stack 0]
+ Dot {
+  name Dot15
+  xpos -490
+  ypos -220
+ }
+set N304b66f0 [stack 0]
+ Dot {
+  name Dot1
+  xpos 246
+  ypos -220
+ }
+ EdgeDetectWrapper {
+  channels alpha
+  threshold 0.78
+  blursize 1
+  name EdgeDetect1
+  xpos 212
+  ypos 666
+ }
+ Blur {
+  channels alpha
+  size 6.4
+  name BlurEdgeDetect
+  xpos 212
+  ypos 712
+ }
+set N304b7140 [stack 0]
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle1
+  xpos 84
+  ypos 718
+ }
+push $N304b6380
+ Premult {
+  name Premult38
+  xpos -634
+  ypos -169
+ }
+set N304b7820 [stack 0]
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur4
+  xpos -634
+  ypos -122
+ }
+ Unpremult {
+  channels rgba
+  name Unpremult2
+  xpos -634
+  ypos -86
+ }
+push $N304b66f0
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge4
+  xpos -524
+  ypos -86
+ }
+set N304b8270 [stack 0]
+ Premult {
+  name Premult46
+  xpos -636
+  ypos -53
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur6
+  xpos -636
+  ypos -29
+ }
+ Unpremult {
+  name Unpremult3
+  xpos -636
+  ypos 15
+ }
+push $N304b8270
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge6
+  xpos -524
+  ypos 15
+ }
+set N30579600 [stack 0]
+ Premult {
+  name Premult57
+  xpos -634
+  ypos 43
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur7
+  xpos -634
+  ypos 67
+ }
+ Unpremult {
+  name Unpremult4
+  xpos -634
+  ypos 108
+ }
+push $N30579600
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge7
+  xpos -524
+  ypos 108
+ }
+set N3057a3c0 [stack 0]
+ Premult {
+  name Premult58
+  xpos -633
+  ypos 143
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur5
+  xpos -633
+  ypos 167
+ }
+ Unpremult {
+  name Unpremult5
+  xpos -633
+  ypos 208
+ }
+push $N3057a3c0
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge8
+  xpos -524
+  ypos 208
+ }
+set N3057b180 [stack 0]
+ Premult {
+  name Premult1
+  xpos -636
+  ypos 247
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur1
+  xpos -636
+  ypos 271
+ }
+ Unpremult {
+  name Unpremult1
+  xpos -636
+  ypos 315
+ }
+push $N3057b180
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge1
+  xpos -523
+  ypos 315
+ }
+set N3057bf40 [stack 0]
+ Premult {
+  name Premult2
+  xpos -634
+  ypos 343
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur2
+  xpos -634
+  ypos 367
+ }
+ Unpremult {
+  name Unpremult6
+  xpos -634
+  ypos 408
+ }
+push $N3057bf40
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge2
+  xpos -524
+  ypos 408
+ }
+set N3064cb40 [stack 0]
+ Premult {
+  name Premult3
+  xpos -633
+  ypos 443
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur3
+  xpos -633
+  ypos 467
+ }
+ Unpremult {
+  name Unpremult7
+  xpos -633
+  ypos 508
+ }
+push $N3064cb40
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge3
+  xpos -522
+  ypos 508
+ }
+set N3064d900 [stack 0]
+ Premult {
+  name Premult4
+  xpos -635
+  ypos 548
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur8
+  xpos -635
+  ypos 572
+ }
+ Unpremult {
+  name Unpremult8
+  xpos -635
+  ypos 616
+ }
+push $N3064d900
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge5
+  xpos -522
+  ypos 616
+ }
+set N3064e6c0 [stack 0]
+ Premult {
+  name Premult5
+  xpos -633
+  ypos 644
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur9
+  xpos -633
+  ypos 668
+ }
+ Unpremult {
+  name Unpremult9
+  xpos -633
+  ypos 709
+ }
+push $N3064e6c0
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge9
+  xpos -523
+  ypos 709
+ }
+set N3064f480 [stack 0]
+ Premult {
+  name Premult6
+  xpos -632
+  ypos 744
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur10
+  xpos -632
+  ypos 768
+ }
+ Unpremult {
+  name Unpremult10
+  xpos -632
+  ypos 809
+ }
+push $N3064f480
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge10
+  xpos -522
+  ypos 809
+ }
+set N30650240 [stack 0]
+ Premult {
+  name Premult8
+  xpos -635
+  ypos 857
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur12
+  xpos -635
+  ypos 881
+ }
+ Unpremult {
+  name Unpremult12
+  xpos -635
+  ypos 925
+ }
+push $N30650240
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge12
+  xpos -522
+  ypos 925
+ }
+set N30724530 [stack 0]
+ Premult {
+  name Premult9
+  xpos -633
+  ypos 953
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur13
+  xpos -633
+  ypos 977
+ }
+ Unpremult {
+  name Unpremult13
+  xpos -633
+  ypos 1018
+ }
+push $N30724530
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge13
+  xpos -522
+  ypos 1018
+ }
+set N30725660 [stack 0]
+ Premult {
+  name Premult10
+  xpos -632
+  ypos 1053
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur14
+  xpos -632
+  ypos 1077
+ }
+ Unpremult {
+  name Unpremult14
+  xpos -632
+  ypos 1118
+ }
+push $N30725660
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge14
+  xpos -522
+  ypos 1118
+ }
+set N30726420 [stack 0]
+ Premult {
+  name Premult11
+  xpos -635
+  ypos 1157
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur15
+  xpos -635
+  ypos 1181
+ }
+ Unpremult {
+  name Unpremult15
+  xpos -635
+  ypos 1225
+ }
+push $N30726420
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge15
+  xpos -522
+  ypos 1225
+ }
+set N307271e0 [stack 0]
+ Premult {
+  name Premult12
+  xpos -633
+  ypos 1253
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur16
+  xpos -633
+  ypos 1277
+ }
+ Unpremult {
+  name Unpremult16
+  xpos -633
+  ypos 1318
+ }
+push $N307271e0
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge16
+  xpos -522
+  ypos 1318
+ }
+set N307c8090 [stack 0]
+ Premult {
+  name Premult13
+  xpos -632
+  ypos 1353
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur17
+  xpos -632
+  ypos 1377
+ }
+ Unpremult {
+  name Unpremult17
+  xpos -632
+  ypos 1418
+ }
+push $N307c8090
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge17
+  xpos -522
+  ypos 1418
+ }
+set N307c8e50 [stack 0]
+ Premult {
+  name Premult14
+  xpos -634
+  ypos 1458
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur18
+  xpos -634
+  ypos 1482
+ }
+ Unpremult {
+  name Unpremult18
+  xpos -634
+  ypos 1526
+ }
+push $N307c8e50
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge18
+  xpos -521
+  ypos 1526
+ }
+set N307c9c10 [stack 0]
+ Premult {
+  name Premult15
+  xpos -632
+  ypos 1554
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur19
+  xpos -632
+  ypos 1578
+ }
+ Unpremult {
+  name Unpremult19
+  xpos -632
+  ypos 1619
+ }
+push $N307c9c10
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge19
+  xpos -521
+  ypos 1619
+ }
+set N307ca9d0 [stack 0]
+ Premult {
+  name Premult16
+  xpos -631
+  ypos 1654
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur20
+  xpos -631
+  ypos 1678
+ }
+ Unpremult {
+  name Unpremult20
+  xpos -631
+  ypos 1719
+ }
+push $N307ca9d0
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge20
+  xpos -521
+  ypos 1719
+ }
+set N307cb790 [stack 0]
+ Premult {
+  name Premult7
+  xpos -631
+  ypos 1777
+ }
+ Blur {
+  size 1
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Blur11
+  xpos -631
+  ypos 1801
+ }
+ Unpremult {
+  name Unpremult11
+  xpos -631
+  ypos 1842
+ }
+push $N307cb790
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge11
+  xpos -521
+  ypos 1842
+ }
+push $N307cb790
+push $N307ca9d0
+push $N307c9c10
+push $N307c8e50
+push $N307c8090
+push $N307271e0
+push $N30726420
+push $N30725660
+push $N30724530
+push $N30650240
+push $N3064f480
+push $N3064e6c0
+push $N3064d900
+push $N3064cb40
+push $N3057bf40
+push $N3057b180
+push $N3057a3c0
+push $N30579600
+push $N304b8270
+push $N304b6010
+ Premult {
+  name Premult17
+  xpos -505
+  ypos -296
+ }
+set N3089b2e0 [stack 0]
+ Switch {
+  inputs 21
+  which 12.5
+  name Switch1
+  tile_color 0xffffff
+  xpos -91
+  ypos 806
+ }
+set N1b941660 [stack 0]
+push $N304b7820
+ Dot {
+  name Dot5
+  xpos -838
+  ypos -166
+ }
+ Dot {
+  name Dot6
+  xpos -838
+  ypos 2002
+ }
+push $N3089b2e0
+ Dot {
+  name Dot3
+  xpos 497
+  ypos -293
+ }
+set N3089bd30 [stack 0]
+ Dot {
+  name Dot4
+  xpos 620
+  ypos -293
+ }
+set N3089c0a0 [stack 0]
+ Dot {
+  name Dot2
+  xpos 730
+  ypos -293
+ }
+push $N3089c0a0
+ Input {
+  inputs 0
+  name MASK
+  xpos 411
+  ypos 717
+  number 2
+ }
+ Input {
+  inputs 0
+  name GRAIN
+  xpos 302
+  ypos 718
+  number 3
+ }
+push $N304b7140
+push $N1b941660
+ Blur {
+  inputs 1+1
+  size 21
+  name BlurIE
+  xpos 212
+  ypos 800
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  maskChannelInput rgba.alpha
+  invert_mask true
+  mix {{parent.grainmix}}
+  name grainMix
+  xpos 344
+  ypos 800
+ }
+push $N3089bd30
+ Merge2 {
+  inputs 2+1
+  operation copy
+  invert_mask true
+  name Merge21
+  xpos 463
+  ypos 806
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos 573
+  ypos 800
+ }
+ Keymix {
+  inputs 2
+  maskChannel none
+  invertMask true
+  mix {{1-parent.mixamount}}
+  name Keymix1
+  xpos 696
+  ypos 800
+ }
+ Switch {
+  inputs 4
+  which {{parent.outputMode}}
+  name Switch2
+  xpos 696
+  ypos 1999
+ }
+ Output {
+  name Output1
+  xpos 696
+  ypos 2597
+ }
+end_group
+Merge2 {
+ inputs 2
+ operation plus
+ name MergeGRAIN
+ selected true
+ xpos -11541
+ ypos -1735
+}
+Copy {
+ inputs 2
+ from0 rgba.alpha
+ to0 rgba.alpha
+ name CopyALPHA
+ selected true
+ xpos -11541
+ ypos -1665
+}
+set N309d7490 [stack 0]
+Premult {
+ name Premult2
+ selected true
+ xpos -11354
+ ypos -1659
+}
+CheckerBoard2 {
+ inputs 0
+ name CheckerBoard1
+ selected true
+ xpos -11230
+ ypos -1618
+}
+Merge2 {
+ inputs 2
+ name Merge3
+ selected true
+ xpos -11354
+ ypos -1594
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp1
+ label "ELEMENT FORE"
+ selected true
+ xpos -12914
+ ypos -4032
+ hide_input true
+ postage_stamp true
+}
+Group {
+ name B_LensUnDistort2
+ tile_color 0xff3f00ff
+ selected true
+ xpos -12914
+ ypos -3703
+ disable true
+ addUserKnob {20 tabLD l B_LensDistortion}
+ addUserKnob {41 interactKnob T LensDistortion1.interactKnob}
+ addUserKnob {41 serializeKnob T LensDistortion1.serializeKnob}
+ addUserKnob {41 serialiseKnob T LensDistortion1.serialiseKnob}
+ addUserKnob {41 outputType l "Output Type" T LensDistortion1.outputType}
+ addUserKnob {41 lensType l "Lens Type" T LensDistortion1.lensType}
+ addUserKnob {41 distortion1 l "Radial Distortion 1" T LensDistortion1.distortion1}
+ addUserKnob {41 distortion2 l "Radial Distortion 2" T LensDistortion1.distortion2}
+ addUserKnob {41 distortionCenter l "Distortion Center" T LensDistortion1.distortionCenter}
+ addUserKnob {41 anamorphicSqueeze l "Anamorphic Squeeze" T LensDistortion1.anamorphicSqueeze}
+ addUserKnob {41 asymmetricDistortion l "Asymmetric Distortion" T LensDistortion1.asymmetricDistortion}
+ addUserKnob {41 startFromCurrentLens l "Analyze from Current Lens" T LensDistortion1.startFromCurrentLens}
+ addUserKnob {41 invertDistortion l Undistort T LensDistortion1.invertDistortion}
+ addUserKnob {41 reset l Reset -STARTLINE T LensDistortion1.reset}
+ addUserKnob {41 filter T LensDistortion1.filter}
+ addUserKnob {41 distortionScaling l "Distortion Scaling" T LensDistortion1.distortionScaling}
+ addUserKnob {41 outputFormat l "Scale to Format" T LensDistortion1.outputFormat}
+ addUserKnob {20 "Card Parameters" n 2}
+ addUserKnob {41 cardScale l scale T LensDistortion1.cardScale}
+ addUserKnob {41 a l "a (r^3)" T LensDistortion1.a}
+ addUserKnob {41 b l "b (r^2)" T LensDistortion1.b}
+ addUserKnob {41 c l "c (r^1)" T LensDistortion1.c}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 tabIA l "B_Iamge Analysis"}
+ addUserKnob {41 ignore l Mask T LensDistortion1.ignore}
+ addUserKnob {41 analysisRange l "Analysis Range" T LensDistortion1.analysisRange}
+ addUserKnob {41 analysisStart l "Analysis Start" T LensDistortion1.analysisStart}
+ addUserKnob {41 analysisStop l "Analysis Stop" T LensDistortion1.analysisStop}
+ addUserKnob {41 cameraMotion l "Camera Motion" T LensDistortion1.cameraMotion}
+ addUserKnob {41 analyzeImage l "Analyze Sequence" T LensDistortion1.analyzeImage}
+ addUserKnob {41 showFeatures l "Feature Overlay" T LensDistortion1.showFeatures}
+ addUserKnob {20 tabGA l "B_Grid Analysis"}
+ addUserKnob {41 gridType l "Grid Type" T LensDistortion1.gridType}
+ addUserKnob {41 analyzeGrid l "Analyze Grid" T LensDistortion1.analyzeGrid}
+ addUserKnob {41 alignGrid l "Align Grid" -STARTLINE T LensDistortion1.alignGrid}
+ addUserKnob {41 showGrid l "Grid Overlay" T LensDistortion1.showGrid}
+ addUserKnob {20 tabLA l "B_Line Analysis"}
+ addUserKnob {41 drawingModeOn l "Drawing Mode On" T LensDistortion1.drawingModeOn}
+ addUserKnob {41 nCoefficients l "Distortion Terms" T LensDistortion1.nCoefficients}
+ addUserKnob {41 estimateCenter l "Estimate Center" T LensDistortion1.estimateCenter}
+ addUserKnob {41 analyzeLines l "Analyze Lines" T LensDistortion1.analyzeLines}
+ addUserKnob {41 deleteLastLine l "Delete Last Line" T LensDistortion1.deleteLastLine}
+ addUserKnob {41 deleteLastPoint l "Delete Last Point" -STARTLINE T LensDistortion1.deleteLastPoint}
+ addUserKnob {41 hideLines l "Hide Lines" T LensDistortion1.hideLines}
+ addUserKnob {41 clearAll l "Clear All" -STARTLINE T LensDistortion1.clearAll}
+}
+ Input {
+  inputs 0
+  name FOOTAGE
+  xpos -434
+  ypos -286
+ }
+set N309d85c0 [stack 0]
+ Crop {
+  box {{LensDistortion1.bbox.x} {LensDistortion1.bbox.y} {LensDistortion1.bbox.r} {LensDistortion1.bbox.t}}
+  reformat true
+  crop false
+  name Crop2
+  xpos -246
+  ypos -223
+  disable {{parent.LensDistortion1.disable}}
+ }
+set N309d8ca0 [stack 0]
+ LensDistortion {
+  serializeKnob ""
+  serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+  distortion1 {{parent.LensDistortion1.distortion1}}
+  distortion2 {{parent.LensDistortion1.distortion2}}
+  distortionCenter {{parent.LensDistortion1.distortionCenter} {parent.LensDistortion1.distortionCenter}}
+  invertDistortion {{parent.LensDistortion1.invertDistortion}}
+  name LensDistortion2
+  label UNDISTORT
+  xpos -246
+  ypos -180
+  disable {{parent.LensDistortion1.disable}}
+ }
+ Output {
+  name OUT01
+  xpos -246
+  ypos -46
+ }
+push $N309d8ca0
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos -128
+  ypos -122
+ }
+push $N309d85c0
+ LensDistortion {
+  serializeKnob ""
+  serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+  invertDistortion true
+  cardScale {1.14732492 1.14732492 1}
+  a -0.1240429431
+  b 0.03151165694
+  c -0.02366262861
+  analysisStart 1
+  analysisStop 1
+  alignmentCorrection {0.9997649789 -0.0001397690212 -2.287184202e-007 -0.0006597954198 0.9924505353 -4.72357533e-006 0.02338844538 0.2282411903 1}
+  name LensDistortion1
+  label CONTROL
+  selected true
+  xpos -434
+  ypos -177
+ }
+end_group
+set N1905a160 [stack 0]
+Group {
+ name B_LensReDistort2
+ tile_color 0xff3f00ff
+ selected true
+ xpos -12914
+ ypos -2930
+ disable {{parent.B_LensUnDistort2.disable}}
+}
+ Input {
+  inputs 0
+  name REDISTORT
+  xpos -436
+  ypos -218
+ }
+ LensDistortion {
+  serializeKnob ""
+  serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+  distortion1 {{parent.parent.B_LensUnDistort2.LensDistortion1.distortion1}}
+  distortion2 {{parent.parent.B_LensUnDistort2.LensDistortion1.distortion2}}
+  distortionCenter {{parent.parent.B_LensUnDistort2.LensDistortion1.distortionCenter} {parent.parent.B_LensUnDistort2.LensDistortion1.distortionCenter}}
+  name LensDistortion5
+  label REDISTORT
+  selected true
+  xpos -436
+  ypos -179
+  disable {{parent.LensDistortion1.disable}}
+ }
+ Crop {
+  box {{-parent.parent.B_LensUnDistort2.Crop2.box.x} {-parent.parent.B_LensUnDistort2.Crop2.box.y} {parent.parent.B_LensUnDistort2.Crop2.box.r} {parent.parent.B_LensUnDistort2.Crop2.box.t}}
+  reformat true
+  crop false
+  name Crop3
+  xpos -436
+  ypos -133
+  disable {{parent.LensDistortion1.disable}}
+ }
+set N30a89920 [stack 0]
+ Output {
+  name Output1
+  xpos -436
+  ypos -83
+ }
+push $N30a89920
+push $N30a89920
+ Viewer {
+  inputs 2
+  input_process false
+  name Viewer1
+  xpos -313
+  ypos -133
+ }
+end_group
+ColorCorrect {
+ name ColorCorrect3
+ selected true
+ xpos -12914
+ ypos -2350
+}
+Dot {
+ name Dot5
+ selected true
+ xpos -12880
+ ypos -1291
+}
+push $N30233440
+Dot {
+ name Dot12
+ selected true
+ xpos -10875
+ ypos -1668
+}
+set N30a8a6e0 [stack 0]
+Dot {
+ name Dot13
+ selected true
+ xpos -11068
+ ypos -1668
+}
+push $N309d7490
+Premult {
+ name Premult1
+ selected true
+ xpos -11541
+ ypos -1555
+}
+set N30a8adc0 [stack 0]
+Group {
+ inputs 2
+ name B_Lightwrap1
+ help "qp Gangsta Wrap v1.0beta\n\nBy Christian Lett\n\nLike Light Wrap, only more GANGSTA! Screens the hilights and multiplies the darks from a baclground over the edges of a keyed foreground element. Simples!"
+ tile_color 0xff3f00ff
+ selected true
+ xpos -11102
+ ypos -1555
+ addUserKnob {20 User}
+ addUserKnob {41 format l Format T Constant1.format}
+ addUserKnob {7 hilight_threshold l "Hilight Threshold" t "Only values above this slider will be included in light wrap"}
+ hilight_threshold 0.435
+ addUserKnob {7 darks_threshold l "Darks Threshold" t "Only values below this slider will be included in dark wrap"}
+ darks_threshold 0.285
+ addUserKnob {41 size l "Background Blur" t "Amount to blur the background by pre-wrap" T Blur2.size}
+ addUserKnob {41 size_1 l "Wrap Size" t "The inward expansion of the wrap" T Blur1.size}
+ addUserKnob {6 wrap_only l "Generate Wrap Only" t "Generates the wrap on 50% grey - use HARD LIGHT (wrap into A) or OVERLAY (wrap into B) blend mode to merge with composite" +STARTLINE}
+ wrap_only true
+ addUserKnob {7 wrap_mix l Mix t "Opacity of wrap"}
+ wrap_mix 1
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode1
+  tile_color 0xaaaaaa00
+  label "EDGE MATTE"
+  note_font_size 26
+  xpos 311
+  ypos -484
+  bdwidth 167
+  bdheight 246
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode3
+  tile_color 0x7171c600
+  label DARKS
+  note_font_size 22
+  xpos 207
+  ypos -44
+  bdwidth 102
+  bdheight 223
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode2
+  tile_color 0xaaaaaa00
+  label HILIGHTS
+  note_font_size 22
+  xpos 384
+  ypos -221
+  bdwidth 102
+  bdheight 235
+ }
+ Input {
+  inputs 0
+  name FG
+  xpos 321
+  ypos -583
+ }
+set N30a8bb80 [stack 0]
+ Dot {
+  name Dot1
+  xpos 506
+  ypos -531
+ }
+set N30a8bef0 [stack 0]
+ Dot {
+  name Dot10
+  xpos 703
+  ypos -531
+ }
+ Dot {
+  name Dot11
+  xpos 709
+  ypos 498
+ }
+push $N30a8bb80
+ Shuffle {
+  red black
+  green black
+  blue black
+  name Shuffle1
+  xpos 321
+  ypos -416
+ }
+set N30a8c940 [stack 0]
+push $N30a8c940
+ Invert {
+  channels alpha
+  name Invert1
+  xpos 388
+  ypos -377
+ }
+ Blur {
+  channels alpha
+  size 15.2
+  name Blur1
+  xpos 388
+  ypos -324
+ }
+ Merge2 {
+  inputs 2
+  operation geometric
+  Achannels alpha
+  Bchannels alpha
+  output alpha
+  name Merge1
+  xpos 321
+  ypos -281
+ }
+ Dot {
+  name Dot3
+  xpos 355
+  ypos -119
+ }
+set N30b3c120 [stack 0]
+ Input {
+  inputs 0
+  name BG
+  xpos 122
+  ypos -618
+  number 1
+ }
+ Shuffle {
+  alpha white
+  name Shuffle2
+  xpos 122
+  ypos -579
+  disable true
+ }
+set N30b3c800 [stack 0]
+ Dot {
+  name Dot8
+  xpos 251
+  ypos -531
+ }
+ Dot {
+  name Dot4
+  xpos 251
+  ypos -253
+ }
+set N30b3cee0 [stack 0]
+ Grade {
+  black {{-parent.hilight_threshold}}
+  add {{-parent.hilight_threshold}}
+  name Grade1
+  label HILIGHT
+  xpos 394
+  ypos -176
+ }
+ Blur {
+  channels rgba
+  size 43
+  name Blur2
+  label BACKGROUND
+  xpos 394
+  ypos -124
+ }
+ set C30b3d5c0 [stack 0]
+ Constant {
+  inputs 0
+  format {{{parent.Constant1.format}}}
+  name Constant2
+  xpos 31
+  ypos -159
+ }
+ Dot {
+  name Dot9
+  xpos 142
+  ypos -62
+ }
+ Merge2 {
+  inputs 2+1
+  operation screen
+  name Merge4
+  xpos 394
+  ypos -65
+ }
+ Clamp {
+  channels alpha
+  name Clamp1
+  xpos 394
+  ypos -31
+ }
+ Dot {
+  name Dot6
+  xpos 428
+  ypos 352
+ }
+push $N30b3c120
+ Dot {
+  name Dot5
+  xpos 355
+  ypos 64
+ }
+push $N30b3cee0
+ Grade {
+  whitepoint {{parent.darks_threshold}}
+  white_clamp true
+  name Grade2
+  label DARKS
+  xpos 217
+  ypos 9
+ }
+clone $C30b3d5c0 {
+  xpos 217
+  ypos 71
+  selected false
+ }
+ Constant {
+  inputs 0
+  color 1
+  name Constant1
+  xpos 31
+  ypos -38
+ }
+ Merge2 {
+  inputs 2+1
+  operation multiply
+  name Merge5
+  xpos 217
+  ypos 138
+ }
+push $N30a8bef0
+ Dot {
+  name Dot2
+  xpos 506
+  ypos 64
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color 0.5
+  format {{{parent.Constant1.format}}}
+  name Constant3
+  xpos 30
+  ypos 68
+ }
+push $N30b3c800
+ Switch {
+  inputs 2
+  which {{parent.wrap_only}}
+  name Switch1
+  xpos 122
+  ypos 187
+ }
+ Dot {
+  name Dot7
+  xpos 156
+  ypos 243
+ }
+ Merge2 {
+  inputs 2
+  name Merge8
+  xpos 165
+  ypos 296
+  disable {{parent.wrap_only}}
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  mix {{parent.wrap_mix}}
+  name Merge7
+  xpos 217
+  ypos 358
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  mix {{parent.wrap_mix}}
+  name Merge9
+  xpos 217
+  ypos 438
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  selected true
+  xpos 217
+  ypos 493
+ }
+set N30bf5650 [stack 0]
+ Output {
+  name Output1
+  xpos 217
+  ypos 529
+ }
+push $N30bf5650
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 321
+  ypos -245
+ }
+end_group
+Dot {
+ name Dot17
+ selected true
+ xpos -11068
+ ypos -1405
+}
+push $N30a8adc0
+Dot {
+ name Dot20
+ selected true
+ xpos -11507
+ ypos -1483
+}
+push $N30a8a6e0
+Merge2 {
+ inputs 2
+ name MergeFGBG
+ selected true
+ xpos -10909
+ ypos -1486
+}
+Merge2 {
+ inputs 2
+ operation hard-light
+ name MergeLW
+ selected true
+ xpos -10909
+ ypos -1408
+}
+Merge2 {
+ inputs 2
+ name MergeFGELEMENT
+ selected true
+ xpos -10909
+ ypos -1294
+}
+push $N1905a160
+Write {
+ name WriteUndistorted2
+ selected true
+ xpos -12345
+ ypos -3703
+ disable {{"!\$gui" x28 0}}
+}
+Tracker4 {
+ center {960 540}
+ name Tracker3
+ selected true
+ xpos -12345
+ ypos -3544
+}

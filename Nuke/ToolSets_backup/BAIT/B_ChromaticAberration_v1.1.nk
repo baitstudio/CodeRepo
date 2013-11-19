@@ -1,0 +1,167 @@
+#! C:/Program Files/Nuke7.0v6/Nuke7.0.exe -nx
+version 7.0 v6
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="22" w="1680" h="1024" screen="0">
+        <splitter orientation="1">
+            <split size="1052"/>
+            <splitter orientation="1">
+                <split size="40"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="1008"/>
+                <splitter orientation="2">
+                    <split size="563"/>
+                    <dock id="" activePageId="Viewer.1">
+                        <page id="Viewer.1"/>
+                    </dock>
+                    <split size="396"/>
+                    <dock id="" activePageId="DAG.1">
+                        <page id="DAG.1"/>
+                        <page id="Curve Editor.1"/>
+                        <page id="DopeSheet.1"/>
+                    </dock>
+                </splitter>
+            </splitter>
+            <split size="608"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name C:/Users/bait/.nuke/ToolSets/B_ChromaticAberration_v1.1.nk
+ format "1920 1080 0 0 1920 1080 1 HD"
+}
+Group {
+ inputs 0
+ name B_ChromaticAberration
+ tile_color 0xff3f00ff
+ selected true
+ xpos 314
+ ypos -62
+ addUserKnob {20 B_ChromaticAberration l "Bait Chromatic Aberration"}
+ addUserKnob {4 rgbchoose l "Choose Channel" M {Red Green Blue}}
+ rgbchoose Green
+ addUserKnob {7 blur l "Blur Amount" R 0 15}
+ addUserKnob {7 aberrationX l "Amount X" t "Lower to match lens\nHigher to compensate" R 0.99 1.01}
+ aberrationX 1
+ addUserKnob {7 aberrationY l "Amount Y" t "Lower to match lens\nHigher to compensate" R 0.99 1.01}
+ aberrationY 1
+ addUserKnob {12 centre l "Frame Centre"}
+ centre {960 540}
+}
+ Input {
+  inputs 0
+  name BLURMASK
+  xpos 670
+  ypos -146
+  number 1
+ }
+ Input {
+  inputs 0
+  name IN
+  xpos 496
+  ypos -475
+ }
+ Dot {
+  name Dot10
+  xpos 530
+  ypos -405
+ }
+set N11751ef0 [stack 0]
+ Shuffle {
+  red black
+  green black
+  name blue
+  xpos 587
+  ypos -360
+ }
+ Transform {
+  scale {{parent.aberrationX} {parent.aberrationY}}
+  center {{parent.centre} {parent.centre}}
+  name TransformGreen1
+  xpos 587
+  ypos -313
+  disable {{parent.rgbchoose!=2}}
+ }
+ Dot {
+  name Dot2
+  xpos 621
+  ypos -182
+ }
+push $N11751ef0
+ Shuffle {
+  green black
+  blue black
+  name red
+  xpos 386
+  ypos -357
+ }
+ Transform {
+  scale {{parent.aberrationX} {parent.aberrationY}}
+  center {{parent.centre} {parent.centre}}
+  name TransformGreen2
+  xpos 386
+  ypos -312
+  disable {{parent.rgbchoose!=0}}
+ }
+ Dot {
+  name Dot1
+  xpos 420
+  ypos -254
+ }
+push $N11751ef0
+ Shuffle {
+  red black
+  blue black
+  alpha black
+  name green
+  xpos 496
+  ypos -356
+ }
+ Transform {
+  scale {{parent.aberrationX} {parent.aberrationY}}
+  center {{parent.centre} {parent.centre}}
+  name TransformGreen
+  xpos 496
+  ypos -313
+  disable {{parent.rgbchoose!=1}}
+ }
+ ShuffleCopy {
+  inputs 2
+  red red
+  name ShuffleRed
+  xpos 496
+  ypos -257
+ }
+ ShuffleCopy {
+  inputs 2
+  blue blue
+  name ShuffleBlue
+  xpos 496
+  ypos -185
+ }
+ DirBlurWrapper {
+  inputs 1+1
+  BlurLayer rgba
+  BlurCenter {{parent.centre} {parent.centre}}
+  BlurLength {{parent.blur}}
+  BlurAngle 0
+  target {0 540}
+  Samples 5
+  name LensBlur
+  selected true
+  xpos 496
+  ypos -93
+ }
+ Output {
+  name OUT
+  xpos 496
+  ypos -6
+ }
+end_group

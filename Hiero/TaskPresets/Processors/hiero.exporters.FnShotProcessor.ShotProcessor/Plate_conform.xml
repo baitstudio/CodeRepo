@@ -1,27 +1,9 @@
-<root presetname="Plate_conform" tasktype="hiero.exporters.FnShotProcessor.ShotProcessor">
+<root presetname="Plate_conform" tasktype="tk_hiero_export.sg_shot_processor.ShotgunShotProcessor">
     <startFrameIndex valuetype="int">1</startFrameIndex>
     <exportRoot valuetype="str">L:/00719_grandpa/</exportRoot>
     <versionIndex valuetype="int">1</versionIndex>
     <cutUseHandles valuetype="bool">True</cutUseHandles>
     <shotgunShotCreateProperties valuetype="dict">
-        <task_template_map valuetype="list">
-            <SequenceItem valuetype="tuple">
-                <SequenceItem valuetype="str">Ready To Start</SequenceItem>
-                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
-            </SequenceItem>
-            <SequenceItem valuetype="tuple">
-                <SequenceItem valuetype="str">In Progress</SequenceItem>
-                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
-            </SequenceItem>
-            <SequenceItem valuetype="tuple">
-                <SequenceItem valuetype="str">On Hold</SequenceItem>
-                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
-            </SequenceItem>
-            <SequenceItem valuetype="tuple">
-                <SequenceItem valuetype="str">Final</SequenceItem>
-                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
-            </SequenceItem>
-        </task_template_map>
         <sg_status_hiero_tags valuetype="list">
             <SequenceItem valuetype="tuple">
                 <SequenceItem valuetype="str">Ready To Start</SequenceItem>
@@ -58,6 +40,34 @@
                 <SequenceItem valuetype="str">Car</SequenceItem>
             </SequenceItem>
         </assets>
+        <locations valuetype="list">
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">INT</SequenceItem>
+                <SequenceItem valuetype="str">INT</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">EXT</SequenceItem>
+                <SequenceItem valuetype="str">EXT</SequenceItem>
+            </SequenceItem>
+        </locations>
+        <task_template_map valuetype="list">
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">Ready To Start</SequenceItem>
+                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">In Progress</SequenceItem>
+                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">On Hold</SequenceItem>
+                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
+            </SequenceItem>
+            <SequenceItem valuetype="tuple">
+                <SequenceItem valuetype="str">Final</SequenceItem>
+                <SequenceItem valuetype="str">Basic shot template</SequenceItem>
+            </SequenceItem>
+        </task_template_map>
     </shotgunShotCreateProperties>
     <versionPadding valuetype="int">3</versionPadding>
     <exportTemplate valuetype="list">
