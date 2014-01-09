@@ -37,6 +37,10 @@ def init_sgtk(studio_root, default_work_area_path):
         if len(sys.argv) > 0 and sys.argv[0].endswith(".nk") and os.path.exists(sys.argv[0]):
             # file path was passed through the command line
             work_area_path = sys.argv[0] 
+        
+        if len(sys.argv) > 0 and sys.argv[0].endswith(".py") and os.path.exists(sys.argv[1]):
+            # file path was passed through the command line
+            work_area_path = sys.argv[1] 
 
         import sgtk
         tk = sgtk.Sgtk(default_work_area_path)

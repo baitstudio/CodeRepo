@@ -1,0 +1,3640 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+BackdropNode {
+inputs 0
+name BackdropNode2
+tile_color 0xaaaaaa00
+label "Clean Plate"
+note_font_size 42
+selected true
+xpos 12618
+ypos 3598
+bdwidth 595
+bdheight 631
+}
+BackdropNode {
+inputs 0
+name BackdropNode3
+tile_color 0x388e8e00
+label "WILL REQUIRE ATTENTION BETWEEN SHOTS - \nAS WILL EVERYTHING BUT THESE IN PARTICULAR"
+note_font_size 42
+selected true
+xpos 8766
+ypos 3503
+bdwidth 1035
+bdheight 870
+}
+BackdropNode {
+inputs 0
+name BackdropNode4
+tile_color 0x6565ffff
+label SPILL_SUPRESS
+note_font_size 55
+selected true
+xpos 11670
+ypos 3320
+bdwidth 412
+bdheight 270
+}
+BackdropNode {
+inputs 0
+name BackdropNode5
+tile_color 0xc63e3bff
+label "Object matte"
+note_font_size 42
+selected true
+xpos 14469
+ypos 3096
+bdwidth 227
+bdheight 214
+}
+BackdropNode {
+inputs 0
+name BackdropNode7
+tile_color 0x8e388e00
+label "\nBeach 2D BACKPLATE"
+note_font_size 42
+selected true
+xpos 15074
+ypos 959
+bdwidth 1726
+bdheight 1874
+}
+Read {
+inputs 0
+file L:/00719_grandpa/footage/episodes/gnp_419_greator/gnp419sh102/plates/gnp419sh102.#####.exr
+format "1920 1080 0 0 1920 1080 1 HD"
+last 91
+origlast 91
+origset true
+name Read4
+selected true
+xpos 11838
+ypos 2996
+}
+Dot {
+name Dot26
+label "ORIGINAL PLATE\n"
+note_font_size 45
+selected true
+xpos 11872
+ypos 3152
+}
+set N187be070 [stack 0]
+Dot {
+name Dot28
+selected true
+xpos 11581
+ypos 3152
+}
+Shuffle {
+red black
+green black
+blue black
+alpha black
+name Shuffle2
+selected true
+xpos 11547
+ypos 3417
+}
+Roto {
+output alpha
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Bezier2 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {xc2140000 xc0c00000}
+        {xc2640000 x4400c000}
+        {x42140000 x40c00000}
+        {xc1c80000 x42820000}
+        {x43a48000 x43f30000}
+        {x41c80000 xc2820000}
+        {x41300000 x41b00000}
+        {x43a48000 x43918000}
+        {xc1300000 xc1b00000}
+        {x41e00000 x41000000}
+        {x43170000 x43750000}
+        {xc1e00000 xc1000000}
+        {0 0}
+        {xc2920000 x436b0000}
+        {0 0}}}     idem}
+     {tx 1 x4307cccd x43b13333}
+     {a str 1 sb 1 tt x40800000}}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {x41900000 xc0c00000}
+        {x44ef8000 x43f9ffff}
+        {xc1900000 x40c00000}
+        {x42380000 xc0000000}
+        {x44aa0000 x4413ffff}
+        {xc2380000 x40000000}
+        {x41600000 x42400000}
+        {x4491c000 x4413ffff}
+        {xc1600000 xc2400000}
+        {xc1900000 x41600000}
+        {x44974000 x43b30000}
+        {x41900000 xc1600000}
+        {xc3080000 x42100000}
+        {x44b08000 x43900000}
+        {x43080000 xc2100000}
+        {xc1f00000 0}
+        {x44f18000 x43520000}
+        {x41f00000 0}
+        {0 0}
+        {x44fec000 x43990000}
+        {0 0}}}     idem}
+     {tx 1 x44c82492 x43c5b6db}
+     {a str 1 spx x44700000 spy x44070000 sb 1 tt x40800000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_ripple true
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {320 240}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+view {}
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto7
+selected true
+xpos 11547
+ypos 3441
+}
+Blur {
+size 10
+name Blur2
+selected true
+xpos 11547
+ypos 3477
+}
+Read {
+inputs 0
+file L:/00719_grandpa/footage/episodes/gnp_419_greator/gnp419sh102/plates_denoised/gnp419sh102_denoised.#####.exr
+format "1920 1080 0 0 1920 1080 1 HD"
+last 91
+origlast 91
+origset true
+name Read5
+selected true
+xpos 11873
+ypos 2507
+}
+Dot {
+name Dot29
+label "DENOISED PLATE\n"
+note_font_size 45
+selected true
+xpos 11907
+ypos 2636
+}
+set N187bf510 [stack 0]
+Dot {
+name Dot30
+selected true
+xpos 11907
+ypos 2843
+}
+set N187bf880 [stack 0]
+Dot {
+name Dot31
+label "\n<ALPHA_WORK"
+selected true
+xpos 10653
+ypos 2843
+}
+set N187bfbf0 [stack 0]
+Dot {
+name Dot32
+selected true
+xpos 10653
+ypos 4495
+}
+set N187bff60 [stack 0]
+Keyer {
+invert true
+operation "blue keyer"
+range {0.1411012909 0.1796554923 1 1}
+name Keyer6
+selected true
+xpos 10368
+ypos 4486
+}
+push 0
+push $N187bff60
+Dot {
+name Dot34
+selected true
+xpos 10653
+ypos 4580
+}
+set N187c0640 [stack 0]
+Keyer {
+operation "red keyer"
+range {0.02396995542 0.06061094076 1 1}
+name Keyer7
+selected true
+xpos 10505
+ypos 4571
+}
+push $N187c0640
+Keyer {
+operation "green keyer"
+range {0.09276198822 0.1547643588 1 1}
+name Keyer8
+selected true
+xpos 10619
+ypos 4671
+}
+Merge2 {
+inputs 3+1
+operation max
+name Merge16
+selected true
+xpos 10505
+ypos 4677
+}
+set N187c1090 [stack 0]
+Dot {
+name Dot35
+selected true
+xpos 10539
+ypos 4731
+}
+push $N187bfbf0
+Dot {
+name Dot36
+selected true
+xpos 9745
+ypos 2843
+}
+set N187c1770 [stack 0]
+Dot {
+name Dot37
+selected true
+xpos 9745
+ypos 4283
+}
+set N187c1ae0 [stack 0]
+Dot {
+name Dot38
+selected true
+xpos 9890
+ypos 4283
+}
+set N187c1e50 [stack 0]
+Keyer {
+operation "red keyer"
+range {0.02167023113 0.03066943235 1 1}
+name Keyer9
+selected true
+xpos 9856
+ypos 4356
+}
+push $N187c1e50
+Keyer {
+operation bluescreen
+range {0.8441598598 0.9107165864 1 1}
+name Keyer10
+selected true
+xpos 10013
+ypos 4274
+}
+Merge2 {
+inputs 2
+operation max
+name Merge17
+selected true
+xpos 10013
+ypos 4362
+}
+Grade {
+channels alpha
+blackpoint 0.065
+whitepoint 0.35
+name Grade5
+selected true
+xpos 10013
+ypos 4386
+}
+set N187c2c10 [stack 0]
+Dot {
+name Dot39
+selected true
+xpos 10785
+ypos 4395
+}
+Merge2 {
+inputs 2
+operation max
+name Merge20
+selected true
+xpos 10751
+ypos 4728
+}
+FilterErode {
+size 4
+name FilterErode7
+selected true
+xpos 10751
+ypos 4752
+}
+Dilate {
+size 5.5
+name Dilate2
+selected true
+xpos 10892
+ypos 4752
+}
+Clamp {
+name Clamp3
+selected true
+xpos 10892
+ypos 4800
+}
+FilterErode {
+size 10
+name FilterErode8
+selected true
+xpos 10892
+ypos 4856
+}
+push $N187c1090
+Blur {
+size 1.6
+name Blur3
+selected true
+xpos 10288
+ypos 4671
+}
+Roto {
+inputs 0
+output alpha
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44800000 x44428000}
+    {a}
+    {curvegroup Ellipse10 576 bezier
+     {{cc
+       {f 8192}
+       {p
+        {{{x42b60000 xc0c6d300}}
+      {{x42b60000 0}}}
+        {{{x42b60000 x4496863a}}
+      {{x42b60000 x4410d1c7}}}
+        {{{x42b60000 x40c6d300}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 xc0a7e500}}}
+        {{{x42b60000 x44980000}}
+      {{x42b60000 x4413c000}}}
+        {{{x42b60000 0}}
+      {{x42b60000 x40a7e500}}}
+        {{{x42b60000 x40c6d300}}
+      {{x42b60000 0}}}
+        {{{x42b60000 x44969800}}
+      {{x42b60000 x44162000}}}
+        {{{x42b60000 xc0c6d300}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 x40a7e500}}}
+        {{{x42b60000 x44953000}}
+      {{x42b60000 x4413c000}}}
+        {{{x42b60000 0}}
+      {{x42b60000 xc0a7e500}}}}}
+      {cc
+       {f 8192}
+       {p
+        {{{x42b60000 xc0c6d300}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 0}}}
+        {{{x42b60000 x40c6d300}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 xc0a7e500}}}
+        {{{x42b60000 0}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 x40a7e500}}}
+        {{{x42b60000 x40c6d300}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 0}}}
+        {{{x42b60000 xc0c6d300}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 x40a7e500}}}
+        {{{x42b60000 0}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 xc0a7e500}}}}}}
+     {tx x42b60000 x44969800 x4413c000}
+     {a str 1 spx x44800000 spy x44428000 sb 1 ltn x42b60000 ltm x42b60000 tt x40e00000}}
+    {curvegroup Ellipse9 512 bezier
+     {{cc
+       {f 8192}
+       {p
+        {{{x42b60000 xc0d41400}}
+      {{x42b60000 0}}}
+        {{{x42b60000 x44a51000}}
+      {{x42b60000 x438b4000}}}
+        {{{x42b60000 x40d41400}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 xc0e5c000}}}
+        {{{x42b60000 x44a69000}}
+      {{x42b60000 x4391c000}}}
+        {{{x42b60000 0}}
+      {{x42b60000 x40e5c000}}}
+        {{{x42b60000 x40d41400}}
+      {{x42b60000 0}}}
+        {{{x42b60000 x44a51000}}
+      {{x42b60000 x43984000}}}
+        {{{x42b60000 xc0d41400}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 x40e5c000}}}
+        {{{x42b60000 x44a39000}}
+      {{x42b60000 x4391c000}}}
+        {{{x42b60000 0}}
+      {{x42b60000 xc0e5c000}}}}}
+      {cc
+       {f 8192}
+       {p
+        {{{x42b60000 xc0d41400}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 0}}}
+        {{{x42b60000 x40d41400}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 xc0e5c000}}}
+        {{{x42b60000 0}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 x40e5c000}}}
+        {{{x42b60000 x40d41400}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 0}}}
+        {{{x42b60000 xc0d41400}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 x40e5c000}}}
+        {{{x42b60000 0}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 xc0e5c000}}}}}}
+     {tx x42b60000 x44a51000 x4391c000}
+     {a str 1 spx x44800000 spy x44428000 sb 1 ltn x42b60000 ltm x42b60000 tt x40e00000}}
+    {curvegroup Ellipse8 512 bezier
+     {{cc
+       {f 8192}
+       {p
+        {{{x42b60000 xc0b99100}}
+      {{x42b60000 0}}}
+        {{{x42b60000 x449d0000}}
+      {{x42b60000 x43dfc000}}}
+        {{{x42b60000 x40b99100}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 xc0f76c80}}}
+        {{{x42b60000 x449e5000}}
+      {{x42b60000 x43e6c000}}}
+        {{{x42b60000 0}}
+      {{x42b60000 x40f76c80}}}
+        {{{x42b60000 x40b99100}}
+      {{x42b60000 0}}}
+        {{{x42b60000 x449d0000}}
+      {{x42b60000 x43edc000}}}
+        {{{x42b60000 xc0b99100}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 x40f76c80}}}
+        {{{x42b60000 x449bb000}}
+      {{x42b60000 x43e6c000}}}
+        {{{x42b60000 0}}
+      {{x42b60000 xc0f76c80}}}}}
+      {cc
+       {f 8192}
+       {p
+        {{{x42b60000 xc0b99100}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 0}}}
+        {{{x42b60000 x40b99100}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 xc0f76c80}}}
+        {{{x42b60000 0}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 x40f76c80}}}
+        {{{x42b60000 x40b99100}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 0}}}
+        {{{x42b60000 xc0b99100}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 x40f76c80}}}
+        {{{x42b60000 0}}
+      {{x42b60000 0}}}
+        {{{x42b60000 0}}
+      {{x42b60000 xc0f76c80}}}}}}
+     {tx x42b60000 x449d0000 x43e6c000}
+     {a str 1 spx x44800000 spy x44428000 sb 1 ltn x42b60000 ltm x42b60000 tt x40e00000}}
+    {curvegroup Ellipse7 512 bezier
+     {{cc
+       {f 8192}
+       {p
+        {{{1 xc0dcea00}
+       {x42b60000}}
+      {{1 0}
+       {x42b60000}}}
+        {{{1 x44c59000}
+       {x42b60000 x44c5d71d}}
+      {{1 x44106000}
+       {x42b60000 x440f8aab}}}
+        {{{1 x40dcea00}
+       {x42b60000}}
+      {{1 0}
+       {x42b60000}}}
+        {{{1 0}
+       {x42b60000}}
+      {{1 xc0dcea00}
+       {x42b60000}}}
+        {{{1 x44c72000}
+       {x42b60000 x44c7671d}}
+      {{1 x44138000}
+       {x42b60000 x4412aaab}}}
+        {{{1 0}
+       {x42b60000}}
+      {{1 x40dcea00}
+       {x42b60000}}}
+        {{{1 x40dcea00}
+       {x42b60000}}
+      {{1 0}
+       {x42b60000}}}
+        {{{1 x44c59000}
+       {x42b60000 x44c5d71d}}
+      {{1 x4416a000}
+       {x42b60000 x4415caab}}}
+        {{{1 xc0dcea00}
+       {x42b60000}}
+      {{1 0}
+       {x42b60000}}}
+        {{{1 0}
+       {x42b60000}}
+      {{1 x40dcea00}
+       {x42b60000}}}
+        {{{1 x44c40000}
+       {x42b60000 x44c4471d}}
+      {{1 x44138000}
+       {x42b60000 x4412aaab}}}
+        {{{1 0}
+       {x42b60000}}
+      {{1 xc0dcea00}
+       {x42b60000}}}}}
+      {cc
+       {f 8192}
+       {p
+        {{{1 xc0dcea00}
+       {x42b60000}}
+      {{1 0}
+       {x42b60000}}}
+        {{{1 0}
+       {x42b60000}}
+      {{1 0}
+       {x42b60000}}}
+        {{{1 x40dcea00}
+       {x42b60000}}
+      {{1 0}
+       {x42b60000}}}
+        {{{1 0}
+       {x42b60000}}
+      {{1 xc0dcea00}
+       {x42b60000}}}
+        {{{1 0}
+       {x42b60000}}
+      {{1 0}
+       {x42b60000}}}
+        {{{1 0}
+       {x42b60000}}
+      {{1 x40dcea00}
+       {x42b60000}}}
+        {{{1 x40dcea00}
+       {x42b60000}}
+      {{1 0}
+       {x42b60000}}}
+        {{{1 0}
+       {x42b60000}}
+      {{1 0}
+       {x42b60000}}}
+        {{{1 xc0dcea00}
+       {x42b60000}}
+      {{1 0}
+       {x42b60000}}}
+        {{{1 0}
+       {x42b60000}}
+      {{1 x40dcea00}
+       {x42b60000}}}
+        {{{1 0}
+       {x42b60000}}
+      {{1 0}
+       {x42b60000}}}
+        {{{1 0}
+       {x42b60000}}
+      {{1 xc0dcea00}
+       {x42b60000}}}}}}
+     {tx 1 x44c59000 x44138000}
+     {a str 1 spx x44800000 spy x44428000 sb 1 tt x40e00000}}
+    {curvegroup Ellipse6 512 bezier
+     {{cc
+       {f 8192}
+       {px
+        {1 x42b60000}
+        {{xc0e22e00}
+      {0}}
+        {{x44d04400 x44d07957}
+      {x43d9c148 x43d624d4}}
+        {{x40e22e00}
+      {0}}
+        {{0}
+      {xc0ba7ec0}}
+        {{x44d1dd8a x44d212e1}
+      {x43df0800 x43db6b8c}}
+        {{0}
+      {x40ba7f00}}
+        {{x40e22e00}
+      {0}}
+        {{x44d04400 x44d07957}
+      {x43e44eb9 x43e0b245}}
+        {{xc0e22e00}
+      {0}}
+        {{0}
+      {x40ba7f00}}
+        {{x44ceaa77 x44cedfce}
+      {x43df0800 x43db6b8c}}
+        {{0}
+      {xc0ba7ec0}}}}
+      {cc
+       {f 8192}
+       {px
+        {1 x42b60000}
+        {{xc0e22e00}
+      {0}}
+        {{0}
+      {0}}
+        {{x40e22e00}
+      {0}}
+        {{0}
+      {xc0ba7ec0}}
+        {{0}
+      {0}}
+        {{0}
+      {x40ba7f00}}
+        {{x40e22e00}
+      {0}}
+        {{0}
+      {0}}
+        {{xc0e22e00}
+      {0}}
+        {{0}
+      {x40ba7f00}}
+        {{0}
+      {0}}
+        {{0}
+      {xc0ba7ec0}}}}}
+     {tx 1 x44d00800 x43dee000}
+     {a str 1 spx x44800000 spy x44428000 sb 1 tt x40e00000}}
+    {curvegroup Ellipse5 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {xc0bfba00 0}
+        {x44bd5d99 x43dd18cb}
+        {x40bfb900 0}
+        {0 xc0b90440}
+        {x44beb8bf x43e254cd}
+        {0 x40b90440}
+        {x40bfb900 0}
+        {x44bd5d99 x43e790ce}
+        {xc0bfba00 0}
+        {0 x40b90440}
+        {x44bc0272 x43e254cd}
+        {0 xc0b90440}}}
+      {cc
+       {f 8192}
+       {px 1
+        {xc0bfba00 0}
+        {0 0}
+        {x40bfb900 0}
+        {0 xc0b90440}
+        {0 0}
+        {0 x40b90440}
+        {x40bfb900 0}
+        {0 0}
+        {xc0bfba00 0}
+        {0 x40b90440}
+        {0 0}
+        {0 xc0b90440}}}}
+     {tx 1 x44bd999a x43e2cccd}
+     {a str 1 spx x44800000 spy x44428000 sb 1 tt x40e00000}}
+    {curvegroup Ellipse4 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {xc0d5f000 0}
+        {x449d955a x4434bc15}
+        {x40d5ee00 0}
+        {0 xc0b39d00}
+        {x449f18b6 x44374685}
+        {0 x40b39d00}
+        {x40d5ee00 0}
+        {x449d955a x4439d0f7}
+        {xc0d5f000 0}
+        {0 x40b39d00}
+        {x449c11fc x44374685}
+        {0 xc0b39d00}}}
+      {cc
+       {f 8192}
+       {px 1
+        {xc0d5f000 0}
+        {0 0}
+        {x40d5ee00 0}
+        {0 xc0b39d00}
+        {0 0}
+        {0 x40b39d00}
+        {x40d5ee00 0}
+        {0 0}
+        {xc0d5f000 0}
+        {0 x40b39d00}
+        {0 0}
+        {0 xc0b39d00}}}}
+     {tx 1 x449ce99a x4438d333}
+     {a str 1 spx x44800000 spy x44428000 sb 1 tt x40e00000}}
+    {curvegroup Ellipse3 512 bezier
+     {{cc
+       {f 8192}
+       {px
+        {1 x42b60000}
+        {{{xc0a9aa00 -}
+       {xc0c6ad00 -}}
+      {{0 -}}}
+        {{{x44a5399a 0 1 xbbca4444 1}
+       {x44a527d3 xbbca4444 1 0 1}}
+      {{x4411599a 0 1 xbd7cd6c1 1}
+       {x440fa642 xbd7cd6c1 1 0 1}}}
+        {{{x40a9aa00 -}
+       {x40c6ad00 -}}
+      {{0 -}}}
+        {{{0 -}}
+      {{xc0a0d300 -}
+       {xc0b6db80 -}}}
+        {{{x44a66cce 0 1 xbbca4444 1}
+       {x44a68f8f xbbca4444 1 0 1}}
+      {{x4413a000 0 1 xbd7cd6c1 1}
+       {x44123c72 xbd7cd6c1 1 0 1}}}
+        {{{0 -}}
+      {{x40a0d300 -}
+       {x40b6db80 -}}}
+        {{{x40a9aa00 -}
+       {x40c6ad00 -}}
+      {{0 -}}}
+        {{{x44a5399a 0 1 xbbca4444 1}
+       {x44a527d3 xbbca4444 1 0 1}}
+      {{x4415e666 0 1 xbd7cd6c1 1}
+       {x4414d2a2 xbd7cd6c1 1 0 1}}}
+        {{{xc0a9aa00 -}
+       {xc0c6ad00 -}}
+      {{0 -}}}
+        {{{0 -}}
+      {{x40a0d300 -}
+       {x40b6db80 -}}}
+        {{{x44a40666 0 1 xbbca4444 1}
+       {x44a3c017 xbbca4444 1 0 1}}
+      {{x4413a000 0 1 xbd7cd6c1 1}
+       {x44123c72 xbd7cd6c1 1 0 1}}}
+        {{{0 -}}
+      {{xc0a0d300 -}
+       {xc0b6db80 -}}}}}
+      {cc
+       {f 8192}
+       {px
+        {1 x42b60000}
+        {{{xc0a9aa00 -}
+       {xc0c6ad00 -}}
+      {{0 -}}}
+        {{{0 -}}
+      {{0 -}}}
+        {{{x40a9aa00 -}
+       {x40c6ad00 -}}
+      {{0 -}}}
+        {{{0 -}}
+      {{xc0a0d300 -}
+       {xc0b6db80 -}}}
+        {{{0 -}}
+      {{0 -}}}
+        {{{0 -}}
+      {{x40a0d300 -}
+       {x40b6db80 -}}}
+        {{{x40a9aa00 -}
+       {x40c6ad00 -}}
+      {{0 -}}}
+        {{{0 -}}
+      {{0 -}}}
+        {{{xc0a9aa00 -}
+       {xc0c6ad00 -}}
+      {{0 -}}}
+        {{{0 -}}
+      {{x40a0d300 -}
+       {x40b6db80 -}}}
+        {{{0 -}}
+      {{0 -}}}
+        {{{0 -}}
+      {{xc0a0d300 -}
+       {xc0b6db80 -}}}}}}
+     {tx 1 x44a5399a x4413a000}
+     {a str 1 spx x44800000 spy x44428000 sb 1 tt x40e00000}}
+    {curvegroup Ellipse2 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {xc131c500 0}
+        {x44c54d91 x43806e3a}
+        {x4131c500 0}
+        {0 xc13616c0}
+        {x44c7d153 x438abbd4}
+        {0 x413616a0}
+        {x4131c500 0}
+        {x44c54d91 x4395096d}
+        {xc131c500 0}
+        {0 x413616a0}
+        {x44c2c9ce x438abbd4}
+        {0 xc13616c0}}}
+      {cc
+       {f 8192}
+       {px 1
+        {xc131c500 0}
+        {0 0}
+        {x4131c500 0}
+        {0 xc13616c0}
+        {0 0}
+        {0 x413616a0}
+        {x4131c500 0}
+        {0 0}
+        {xc131c500 0}
+        {0 x413616a0}
+        {0 0}
+        {0 xc13616c0}}}}
+     {tx 1 x44c50800 x43882000}
+     {a str 1 spx x44800000 spy x44428000 sb 1 tt x40e00000}}
+    {curvegroup Ellipse1 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {xc1001280 0}
+        {x44b61919 x440f7959}
+        {x41001300 0}
+        {0 xc0e0a700}
+        {x44b7e8e4 x4412a6e4}
+        {0 x40e0a700}
+        {x41001300 0}
+        {x44b61919 x4415d46f}
+        {xc1001280 0}
+        {0 x40e0a700}
+        {x44b4494e x4412a6e4}
+        {0 xc0e0a700}}}
+      {cc
+       {f 8192}
+       {px 1
+        {xc1001280 0}
+        {0 0}
+        {x41001300 0}
+        {0 xc0e0a700}
+        {0 0}
+        {0 x40e0a700}
+        {x41001300 0}
+        {0 0}
+        {xc1001280 0}
+        {0 x40e0a700}
+        {0 0}
+        {0 xc0e0a700}}}}
+     {tx 1 x44b60ccc x44121333}
+     {a str 1 spx x44800000 spy x44428000 sb 1 tt x40e00000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 7 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {1024 778}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 91
+lifetime_end 91
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto8
+selected true
+xpos 10178
+ypos 4533
+}
+Transform {
+translate {{curve x1 0 -4.010986328 -8.093139648 -11.76025391 -14.76928711 -17.42590332 -19.54370117 -21.72521973 -23.63867188 -25.45666504 -27.22106934 -28.10046387 -30.09960938 -31.35205078 -32.66894531 -33.82702637 -34.85290527 -35.74694824 -36.61328125 -37.29370117 -37.83703613 -38.85522461 -40.49121094 -41.96789551 -43.70324707 -45.62768555 -47.57543945 -49.54125977 -51.12097168 -52.13000488 -53.13696289 -54.2421875 -55.3605957 -56.46154785 -57.6036377 -58.73901367 -59.80651855 -60.86608887 -61.91833496 -62.90686035 -63.95239258 -65.19812012 -66.44970703 -67.54443359 -68.50878906 -69.42150879 -70.09716797 -70.3828125 -70.72924805 -71.26928711 -72.21362305 -73.18249512 -74.16992188 -75.08789063 -75.94775391 -76.58813477 -76.77075195 -77.3737793 -78.11572266 -78.67407227 -79.28063965 -79.87304688 -80.57641602 -80.87011719 -80.95031738 -80.99731445 -80.98632813 -80.99145508 -80.97680664 -81.00561523 -81.04663086 -81.07055664 -81.11987305 -81.07592773 -81.01098633 -80.99633789 -80.95336914 -80.90686035 -80.83984375 -80.75952148 -80.75097656 -80.66699219 -80.61694336 -80.52539063 -80.48083496 -80.44165039 -80.34729004 -80.28356934 -80.19555664 -80.05859375 -79.94677734} {curve x1 0 0.07739257813 0.1744995117 0.2021484375 0.3035888672 0.3936767578 0.4725341797 0.5260009766 0.514831543 0.4870605469 0.4677734375 0.4208374023 0.4185180664 0.3815917969 0.4292602539 0.5088500977 0.5993652344 0.6399536133 0.7459716797 0.8751220703 1.364318848 1.650390625 1.860229492 2.321533203 2.751708984 3.076049805 3.285949707 3.555358887 3.904296875 4.224487305 4.71270752 4.95715332 5.217102051 5.546691895 5.780273438 6.205505371 6.400939941 6.802978516 7.026855469 7.349365234 7.621459961 7.796081543 7.946655273 8.003662109 8.127075195 8.209411621 8.242858887 8.223510742 8.123779297 8.080627441 7.948974609 7.749633789 7.532653809 7.270507813 7.050415039 6.613891602 6.129699707 5.271118164 4.373413086 3.50793457 2.691650391 1.745361328 0.8485107422 -0.07055664063 -0.630065918 -1.07409668 -1.796630859 -2.084838867 -2.90838623 -3.350585938 -3.962158203 -4.832885742 -5.401489258 -6.180358887 -6.856872559 -7.216369629 -8.051513672 -8.386779785 -8.850646973 -9.653625488 -9.91619873 -10.37939453 -10.86364746 -11.53869629 -11.96252441 -12.58239746 -13.18804932 -13.50402832 -14.07049561 -14.71124268 -15.40179443}}
+scale {1 1}
+center {{curve x1 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371} {curve x1 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045}}
+name Transform_MatchMove3
+selected true
+xpos 10178
+ypos 4611
+}
+Merge2 {
+inputs 2
+operation stencil
+name Merge21
+selected true
+xpos 10178
+ypos 4677
+}
+push $cut_paste_input
+Roto {
+output alpha
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Rectangle1 576 bezier
+     {{cc
+       {f 8192}
+       {p
+        {{{1 0}}
+      {{1 xc2a00000}}}
+        {{{1 x44e1c000}}
+      {{1 x43480000}}}
+        {{{1 xc3020000}}
+      {{1 0}}}
+        {{{1 x43020000}}
+      {{1 0}}}
+        {{{1 x44b10000}}
+      {{1 x43480000}}}
+        {{{1 0}}
+      {{1 xc2a00000}}}
+        {{{1 0}}
+      {{1 x42a00000}}}
+        {{{1 x44b10000}}
+      {{1 xc2200000}}}
+        {{{1 x43020000}}
+      {{1 0}}}
+        {{{1 xc3020000}}
+      {{1 0}}}
+        {{{1 x44e1c000}}
+      {{1 xc2200000}}}
+        {{{1 0}}
+      {{1 x42a00000}}}}}
+      {cc
+       {f 8192}
+       {p
+        {{{1 0}}
+      {{1 xc2a00000}}}
+        {{{1 0}}
+      {{1 0}}}
+        {{{1 xc3020000}}
+      {{1 0}}}
+        {{{1 x43020000}}
+      {{1 0}}}
+        {{{1 0}}
+      {{1 0}}}
+        {{{1 0}}
+      {{1 xc2a00000}}}
+        {{{1 0}}
+      {{1 x42a00000}}}
+        {{{1 0}}
+      {{1 0}}}
+        {{{1 x43020000}}
+      {{1 0}}}
+        {{{1 xc3020000}}
+      {{1 0}}}
+        {{{1 0}}
+      {{1 0}}}
+        {{{1 0}}
+      {{1 x42a00000}}}}}}
+     {tx 1 x44c96000 x42a00000}
+     {a str 1 spx x44700000 spy x44070000 sb 1 tt x41000000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 8 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto9
+selected true
+xpos 9848
+ypos 4532
+}
+Transform {
+translate {{curve x1 0 -4.010986328 -8.093139648 -11.76025391 -14.76928711 -17.42590332 -19.54370117 -21.72521973 -23.63867188 -25.45666504 -27.22106934 -28.10046387 -30.09960938 -31.35205078 -32.66894531 -33.82702637 -34.85290527 -35.74694824 -36.61328125 -37.29370117 -37.83703613 -38.85522461 -40.49121094 -41.96789551 -43.70324707 -45.62768555 -47.57543945 -49.54125977 -51.12097168 -52.13000488 -53.13696289 -54.2421875 -55.3605957 -56.46154785 -57.6036377 -58.73901367 -59.80651855 -60.86608887 -61.91833496 -62.90686035 -63.95239258 -65.19812012 -66.44970703 -67.54443359 -68.50878906 -69.42150879 -70.09716797 -70.3828125 -70.72924805 -71.26928711 -72.21362305 -73.18249512 -74.16992188 -75.08789063 -75.94775391 -76.58813477 -76.77075195 -77.3737793 -78.11572266 -78.67407227 -79.28063965 -79.87304688 -80.57641602 -80.87011719 -80.95031738 -80.99731445 -80.98632813 -80.99145508 -80.97680664 -81.00561523 -81.04663086 -81.07055664 -81.11987305 -81.07592773 -81.01098633 -80.99633789 -80.95336914 -80.90686035 -80.83984375 -80.75952148 -80.75097656 -80.66699219 -80.61694336 -80.52539063 -80.48083496 -80.44165039 -80.34729004 -80.28356934 -80.19555664 -80.05859375 -79.94677734} {curve x1 0 0.07739257813 0.1744995117 0.2021484375 0.3035888672 0.3936767578 0.4725341797 0.5260009766 0.514831543 0.4870605469 0.4677734375 0.4208374023 0.4185180664 0.3815917969 0.4292602539 0.5088500977 0.5993652344 0.6399536133 0.7459716797 0.8751220703 1.364318848 1.650390625 1.860229492 2.321533203 2.751708984 3.076049805 3.285949707 3.555358887 3.904296875 4.224487305 4.71270752 4.95715332 5.217102051 5.546691895 5.780273438 6.205505371 6.400939941 6.802978516 7.026855469 7.349365234 7.621459961 7.796081543 7.946655273 8.003662109 8.127075195 8.209411621 8.242858887 8.223510742 8.123779297 8.080627441 7.948974609 7.749633789 7.532653809 7.270507813 7.050415039 6.613891602 6.129699707 5.271118164 4.373413086 3.50793457 2.691650391 1.745361328 0.8485107422 -0.07055664063 -0.630065918 -1.07409668 -1.796630859 -2.084838867 -2.90838623 -3.350585938 -3.962158203 -4.832885742 -5.401489258 -6.180358887 -6.856872559 -7.216369629 -8.051513672 -8.386779785 -8.850646973 -9.653625488 -9.91619873 -10.37939453 -10.86364746 -11.53869629 -11.96252441 -12.58239746 -13.18804932 -13.50402832 -14.07049561 -14.71124268 -15.40179443}}
+scale {1 1}
+center {{curve x1 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371} {curve x1 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045}}
+name Transform_MatchMove4
+selected true
+xpos 9848
+ypos 4583
+}
+push $N187c2c10
+Invert {
+name Invert4
+selected true
+xpos 10013
+ypos 4449
+}
+FilterErode {
+size 4
+name FilterErode9
+selected true
+xpos 10013
+ypos 4485
+}
+Merge2 {
+inputs 2
+operation stencil
+name Merge22
+selected true
+xpos 10013
+ypos 4583
+}
+Merge2 {
+inputs 2
+operation max
+name Merge23
+selected true
+xpos 10013
+ypos 4677
+}
+push $N187c1770
+Dot {
+name Dot40
+selected true
+xpos 8993
+ypos 2843
+}
+Dot {
+name Dot41
+selected true
+xpos 8993
+ypos 3896
+}
+set N2eaef350 [stack 0]
+Dot {
+name Dot42
+selected true
+xpos 8376
+ypos 3896
+}
+Dot {
+name Dot43
+selected true
+xpos 8376
+ypos 4122
+}
+set N2eaefa30 [stack 0]
+Keyer {
+operation bluescreen
+range {0.8441598598 0.9204308279 1 1}
+name Keyer11
+selected true
+xpos 8494
+ypos 4235
+}
+push 0
+push $N2eaefa30
+Keyer {
+operation "red keyer"
+range {0.03432837744 0.05217861836 1 1}
+name Keyer12
+selected true
+xpos 8163
+ypos 4250
+}
+push $N2eaefa30
+Keyer {
+operation "green keyer"
+range {0.102270092 0.1088665 1 1}
+name Keyer13
+selected true
+xpos 8342
+ypos 4242
+}
+Merge2 {
+inputs 3+1
+operation max
+name Merge31
+selected true
+xpos 8342
+ypos 4360
+}
+Dilate {
+size 0.5
+name Dilate3
+selected true
+xpos 8342
+ypos 4395
+}
+FilterErode {
+size 4
+name FilterErode10
+selected true
+xpos 8632
+ypos 4395
+}
+push $N2eaef350
+OFXuk.co.thefoundry.keylight.keylight_v201 {
+show "Final Result"
+unPreMultiply false
+screenColour {0.005149841309 0.03228759766 0.4196777344}
+screenGain 1.13
+screenBalance 0.16
+alphaBias {0.5 0.5 0.5}
+despillBias {0.5 0.5 0.5}
+gangBiases true
+preBlur 0
+"Screen Matte" 0
+screenClipMin 0
+screenClipMax 1
+screenClipRollback 0
+screenGrowShrink 0
+screenSoftness 0
+screenDespotBlack 0
+screenDespotWhite 0
+screenReplaceMethod "Soft Colour"
+screenReplaceColour {0.5 0.5 0.5}
+Tuning 1
+midPoint 0.53
+lowGain 0.91
+midGain 1
+highGain 0.87
+"Inside Mask" 0
+sourceAlphaHandling Ignore
+insideReplaceMethod "Soft Colour"
+insideReplaceColour {0.5 0.5 0.5}
+Crops 0
+SourceXMethod Colour
+SourceYMethod Colour
+SourceEdgeColour 0
+SourceCropL 0
+SourceCropR 1
+SourceCropB 0
+SourceCropT 1
+balanceSet true
+insideComponent None
+outsideComponent None
+cacheBreaker true
+name Keylight1
+selected true
+xpos 8959
+ypos 3933
+}
+Grade {
+channels alpha
+white 1.58
+name Grade6
+selected true
+xpos 8961
+ypos 3982
+}
+Dot {
+name Dot44
+selected true
+xpos 8995
+ypos 4018
+}
+set N2eaf1920 [stack 0]
+Merge2 {
+inputs 2
+operation max
+name Merge24
+selected true
+xpos 8959
+ypos 4401
+}
+Dot {
+name Dot45
+selected true
+xpos 8993
+ypos 4964
+}
+push $N2eaf1920
+Dot {
+name Dot46
+selected true
+xpos 8810
+ypos 4018
+}
+Multiply {
+channels alpha
+value 4
+name Multiply2
+selected true
+xpos 8776
+ypos 4206
+}
+FilterErode {
+size 4.5
+filter gaussian
+name FilterErode11
+selected true
+xpos 8776
+ypos 4262
+}
+push $N2eaf1920
+Dot {
+name Dot50
+selected true
+xpos 9134
+ypos 4018
+}
+Merge2 {
+inputs 2
+operation max
+name Merge25
+selected true
+xpos 9100
+ypos 4268
+}
+FilterErode {
+size -4.5
+filter gaussian
+name FilterErode12
+selected true
+xpos 9100
+ypos 4333
+}
+Invert {
+name Invert5
+selected true
+xpos 9100
+ypos 4860
+}
+push $N2eaef350
+IBKColourV3 {
+name IBKColourV3_1
+selected true
+xpos 9418
+ypos 3893
+Size 11.5
+erode 1.04
+multi 2.38
+}
+push $N187c1ae0
+IBKGizmoV3 {
+inputs 2
+name IBKGizmoV3_2
+xpos 9418
+ypos 4280
+colour {0.002026246162 0.02786380239 0.6845481396}
+red_weight 0.785
+}
+Grade {
+channels rgba
+blackpoint 0.02
+name Grade7
+selected true
+xpos 9418
+ypos 4304
+}
+Merge2 {
+inputs 2
+operation stencil
+name Merge26
+selected true
+xpos 9418
+ypos 4866
+disable true
+}
+Merge2 {
+inputs 2
+operation max
+name Merge27
+selected true
+xpos 9418
+ypos 4961
+}
+Merge2 {
+inputs 2
+operation stencil
+name Merge28
+selected true
+xpos 10013
+ypos 4961
+}
+Grade {
+inputs 1+1
+channels alpha
+white 1.78
+name Grade8
+selected true
+xpos 10892
+ypos 4955
+}
+Clamp {
+name Clamp4
+selected true
+xpos 11291
+ypos 4955
+}
+EdgeBlur {
+size 2
+name EdgeBlur1
+selected true
+xpos 11385
+ypos 4955
+}
+Crop {
+box {0 0 1920 1080}
+name Crop3
+selected true
+xpos 11481
+ypos 4961
+}
+Dot {
+name Dot51
+selected true
+xpos 11581
+ypos 4964
+}
+set N88ed86a0 [stack 0]
+Dot {
+name Dot52
+selected true
+xpos 11581
+ypos 4778
+}
+set N88ed8a10 [stack 0]
+Group {
+name edge_from_alpha2
+selected true
+xpos 11547
+ypos 3548
+addUserKnob {20 "" l Settings}
+addUserKnob {41 from0 l "control channel" T Copy2.from0}
+addUserKnob {41 output T ChannelMerge4.output}
+addUserKnob {41 blackpoint T Grade1.blackpoint}
+addUserKnob {41 whitepoint T Grade1.whitepoint}
+addUserKnob {26 "" l "edge size"}
+addUserKnob {41 size l inside T ErodeInside.size}
+addUserKnob {14 ErodeOutside_size l outside R 0 100}
+ErodeOutside_size 36.5
+addUserKnob {26 "" l "edge blur"}
+addUserKnob {41 size_3 l inside T BlurInside.size}
+addUserKnob {41 size_1 l outside T BlurOutside.size}
+}
+Input {
+inputs 0
+name Input1
+xpos -448
+ypos 6
+}
+AddChannels {
+channels {rgba.red -rgba.green -rgba.blue rgba.alpha}
+name AddChannels1
+xpos -448
+ypos 30
+}
+set N88ed90f0 [stack 0]
+Dot {
+name Dot3
+xpos -414
+ypos 416
+}
+push $N88ed90f0
+push $N88ed90f0
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.red
+name Copy2
+xpos -193
+ypos 30
+}
+Clamp {
+channels {rgba.red -rgba.green -rgba.blue}
+name Clamp1
+xpos -193
+ypos 94
+}
+Grade {
+channels {rgba.red -rgba.green -rgba.blue}
+black_clamp false
+name Grade1
+xpos -193
+ypos 146
+}
+set N88ed9eb0 [stack 0]
+Erode {
+channels {none none none rgba.red}
+size 33
+name ErodeInside
+xpos -126
+ypos 198
+}
+Blur {
+channels {rgba.red -rgba.green -rgba.blue}
+size 59
+name BlurInside
+xpos -126
+ypos 250
+}
+push $N88ed9eb0
+Erode {
+channels {none none none rgba.red}
+size {{-parent.ErodeOutside_size.w} {-parent.ErodeOutside_size.h}}
+name ErodeOutside
+xpos -264
+ypos 199
+}
+Blur {
+channels {rgba.red -rgba.green -rgba.blue}
+size 10
+name BlurOutside
+xpos -264
+ypos 251
+}
+ChannelMerge {
+inputs 2
+A rgba.red
+operation stencil
+B rgba.red
+name ChannelMerge4
+selected true
+xpos -191
+ypos 308
+}
+Copy {
+inputs 2
+from0 rgba.red
+to0 rgba.red
+name Copy1
+xpos -191
+ypos 407
+}
+Output {
+name Output1
+xpos -191
+ypos 526
+}
+end_group
+Merge2 {
+inputs 2
+name Merge33
+selected true
+xpos 11547
+ypos 3524
+}
+push $N187be070
+Dot {
+name Dot53
+selected true
+xpos 12133
+ypos 3152
+}
+push $N187bf510
+Tracker4 {
+add_tracks true
+tracks { { 1 31 4 } 
+{ { 5 1 20 enable e } 
+{ 3 1 75 name name } 
+{ 2 1 58 track_x track_x } 
+{ 2 1 58 track_y track_y } 
+{ 2 1 63 offset_x offset_x } 
+{ 2 1 63 offset_y offset_y } 
+{ 4 1 27 T T } 
+{ 4 1 27 R R } 
+{ 4 1 27 S S } 
+{ 2 0 45 error error } 
+{ 1 1 0 error_min error_min } 
+{ 1 1 0 error_max error_max } 
+{ 1 1 0 pattern_x pattern_x } 
+{ 1 1 0 pattern_y pattern_y } 
+{ 1 1 0 pattern_r pattern_r } 
+{ 1 1 0 pattern_t pattern_t } 
+{ 1 1 0 search_x search_x } 
+{ 1 1 0 search_y search_y } 
+{ 1 1 0 search_r search_r } 
+{ 1 1 0 search_t search_t } 
+{ 2 1 0 key_track key_track } 
+{ 2 1 0 key_search_x key_search_x } 
+{ 2 1 0 key_search_y key_search_y } 
+{ 2 1 0 key_search_r key_search_r } 
+{ 2 1 0 key_search_t key_search_t } 
+{ 2 1 0 key_track_x key_track_x } 
+{ 2 1 0 key_track_y key_track_y } 
+{ 2 1 0 key_track_r key_track_r } 
+{ 2 1 0 key_track_t key_track_t } 
+{ 2 1 0 key_centre_offset_x key_centre_offset_x } 
+{ 2 1 0 key_centre_offset_y key_centre_offset_y } 
+} 
+{ 
+ { {curve K x1 1} "track 1" {curve x1 1518 1513.796631 1509.884521 1505.943848 1503.102417 1500.330078 1498.241699 1496.125488 1494.215576 1492.460693 1490.538208 1489.710693 1487.714966 1486.363525 1485.103516 1483.954956 1482.921753 1481.946411 1481.234619 1480.416626 1480.11145 1478.791016 1477.388184 1476.138428 1474.317139 1472.48877 1470.597046 1468.755127 1467.065552 1466.135498 1465.114746 1464.103271 1462.963867 1461.935425 1460.905396 1459.69812 1458.71106 1457.679199 1456.670044 1455.697021 1454.680786 1453.582031 1452.374512 1451.213745 1450.221191 1449.447754 1448.506836 1448.305176 1448.235474 1447.349243 1446.547119 1445.638672 1444.650879 1443.713867 1442.795898 1442.126343 1441.915283 1441.52002 1440.638672 1440.128418 1439.35498 1438.812744 1438.346313 1437.762695 1437.735107 1437.667114 1437.713867 1437.684204 1437.779541 1437.701172 1437.670898 1437.648804 1437.661255 1437.684204 1437.726074 1437.746582 1437.808594 1437.802246 1437.851318 1437.963745 1437.977661 1438.130981 1438.174805 1438.241577 1438.314819 1438.307617 1438.44873 1438.484253 1438.625488 1438.718018 1438.848267} {curve x1 742.4000244 742.5878296 742.6592407 742.7147217 742.746582 742.8708496 742.9713745 743.0059814 743.027771 743.0731201 742.9558105 742.930542 742.9317017 742.9107056 742.979126 743.06604 743.1404419 743.2316284 743.276123 743.5245972 743.7501831 744.0755615 744.262146 744.5800171 744.9613037 745.1997681 745.4069824 745.5969238 745.9033813 746.3189087 746.5843506 746.857605 747.0615234 747.2536621 747.4995728 747.7809448 748.130127 748.2963867 748.5640259 748.8238525 749.0635376 749.2214355 749.3157349 749.3839722 749.5771484 749.6477051 749.5957642 749.5233765 749.421875 749.4210205 749.2807007 749.1165161 748.8837891 748.6600952 748.3687134 747.8540039 747.5493774 746.6845093 745.6206055 744.9914551 744.1329346 743.2503662 742.2370605 741.5263672 740.6503296 740.4833374 739.4514771 739.3945313 738.649353 738.0333252 737.262146 736.4642944 736.0029297 735.2620239 734.6470947 734.1379395 733.4336548 733.3077393 732.7115479 731.7830811 731.7194824 730.8164063 730.5894775 730.0223389 729.4592896 728.7033081 728.4567261 727.8283691 727.4041748 726.8344727 725.9900513} {curve K x1 0} {curve K x1 0} 1 0 0 {curve x1 0 3.427977255e-006 4.407419348e-006 6.002423927e-006 6.876134223e-006 8.120413009e-006 8.534618101e-006 9.921214157e-006 1.222310722e-005 1.683110294e-005 1.872277059e-005 2.222729824e-005 2.183649014e-005 2.054927823e-005 1.999233478e-005 1.751028492e-005 1.928579092e-005 2.243774541e-005 2.573167313e-005 2.215469545e-005 1.480174922e-005 1.307299244e-005 1.029739261e-005 1.250057769e-005 1.083287324e-005 9.74882506e-006 1.00639471e-005 7.484430608e-006 9.33995067e-006 1.119712185e-005 1.27201623e-005 1.112117672e-005 1.090826755e-005 1.099291725e-005 1.157167592e-005 1.528555388e-005 1.629534677e-005 1.615971044e-005 1.240900296e-005 1.463627498e-005 1.407454907e-005 1.665457222e-005 1.317864827e-005 1.418780544e-005 1.843225219e-005 2.318264857e-005 1.872212603e-005 1.761587484e-005 1.956338976e-005 1.907546973e-005 1.621581263e-005 1.297427243e-005 1.329295196e-005 1.345268175e-005 1.477245257e-005 1.914160958e-005 1.345632338e-005 1.58243432e-005 1.556538847e-005 1.655852437e-005 1.633617509e-005 1.893100477e-005 1.431618018e-005 2.115377241e-005 2.278360649e-005 1.905364436e-005 1.570887103e-005 1.22455989e-005 1.288667367e-005 1.189687943e-005 1.016423029e-005 1.167468628e-005 1.060129024e-005 1.247306332e-005 1.271609265e-005 1.553211621e-005 1.249275183e-005 1.7128605e-005 1.923756401e-005 1.923985597e-005 1.986282899e-005 1.228230949e-005 1.273591256e-005 1.411915004e-005 1.55925278e-005 1.283315821e-005 1.170126922e-005 1.091535208e-005 1.464581829e-005 1.629332118e-005 2.125511837e-005} 0 2.57317e-005 -10.4 -9.59998 10.4 9.59998 -21 -21 21 21 {curve} {curve x1 1487} {curve x1 711} {curve x1 1548} {curve x1 772} {curve x1 1508} {curve x1 732} {curve x1 1527} {curve x1 751} {curve x1 9.5} {curve x1 9.900024414}  } 
+ { {curve K x91 1} "track 2" {curve x1 1323.59314 1319.639282 1315.828613 1312.269775 1309.329224 1306.5979 1304.597534 1302.510376 1300.540039 1298.567017 1297.238892 1296.172485 1294.204956 1293.023315 1291.751709 1290.594116 1289.561523 1288.738892 1287.743774 1287.147583 1286.355103 1285.438965 1283.49353 1281.736084 1279.858032 1277.813477 1275.775879 1273.819214 1272.016113 1270.911987 1269.828979 1268.615723 1267.387695 1266.161499 1264.765869 1263.503662 1262.3125 1261.13562 1260.016846 1258.902344 1257.748535 1256.500488 1255.137573 1254.000244 1252.969482 1252.071045 1251.22583 1250.934204 1250.60791 1250.164307 1249.134766 1248.206665 1247.24939 1246.358276 1245.600098 1244.733643 1244.515625 1244.335449 1243.471436 1242.869019 1242.301514 1241.642212 1240.932007 1240.600708 1240.724487 1240.619263 1240.586304 1240.629395 1240.613403 1240.603271 1240.545288 1240.565063 1240.45166 1240.571289 1240.620117 1240.610474 1240.65625 1240.698975 1240.751831 1240.812256 1240.817871 1240.845947 1240.885742 1240.963989 1241.045532 1241.131958 1241.175293 1241.271851 1241.30127 1241.512939 1241.599976} {curve x1 918.2321167 918.2502441 918.3178101 918.3556519 918.5482788 918.6344604 918.7214355 918.6958618 918.6712646 918.6248169 918.6877441 918.6621094 918.696228 918.5321655 918.5834961 918.6599121 918.732605 918.7598877 918.9660034 918.9574585 919.8155518 920.2769775 920.4558716 921.2036743 921.8103638 922.5093994 922.9307251 923.0089111 923.5884399 924.1305542 924.6068115 925.0814209 925.4332886 926.2438354 926.423645 926.9840088 927.0812988 928.0759277 928.1902466 928.8995361 929.0267944 929.2994995 929.5059204 929.5567627 929.7147217 929.8544922 929.9957275 929.9881592 929.8937378 929.9083252 929.7261963 929.5354004 929.3000488 928.9978638 928.8198853 928.3267822 927.7886963 926.930481 926.0916138 925.1816406 924.4403687 923.4771118 922.6572266 921.4562988 921.0622559 920.644104 920.1121826 919.4089355 918.5702515 918.2029419 917.9498901 917.0247803 916.2282715 915.4278564 914.5490112 914.4840088 913.4348755 913.2333984 912.6896362 912.0529175 911.3988647 911.3433838 910.7814331 909.7576294 909.8596191 908.9319458 908.3034668 908.2014771 907.3283081 906.7510986 906} {curve K x91 0} {curve K x91 0} 1 0 0 {curve x1 1.833352089e-005 1.563351225e-005 1.657922092e-005 1.205089987e-005 1.185914716e-005 1.311195629e-005 1.198803891e-005 1.062583815e-005 1.046335917e-005 1.344584821e-005 1.15800162e-005 1.251163516e-005 9.817745398e-006 7.86709685e-006 9.404057327e-006 9.356489686e-006 8.884121112e-006 6.900455095e-006 9.742284054e-006 1.344838204e-005 1.39773517e-005 1.108890077e-005 9.609020016e-006 8.74346e-006 7.840784852e-006 5.550063379e-006 1.001760063e-005 1.080471663e-005 1.693158983e-005 1.466995056e-005 1.547556055e-005 1.370809282e-005 1.299825629e-005 9.675001278e-006 9.567268668e-006 1.040944403e-005 8.142360472e-006 7.458811711e-006 1.024792496e-005 5.499622674e-006 8.839500275e-006 6.45927252e-006 7.503579235e-006 5.973429922e-006 6.355034484e-006 5.147296464e-006 4.588227496e-006 6.388871227e-006 7.402062001e-006 7.879968159e-006 8.304525e-006 6.606360094e-006 9.632796846e-006 1.126245438e-005 1.101879198e-005 8.018270951e-006 6.441210697e-006 5.07862351e-006 6.638711271e-006 9.982958783e-006 1.390731593e-005 1.425634589e-005 1.292291433e-005 9.107873865e-006 7.557174085e-006 8.433092002e-006 9.270676333e-006 1.13765642e-005 8.894718635e-006 9.860567874e-006 1.260323111e-005 1.526264974e-005 1.825624469e-005 2.140920045e-005 2.196941576e-005 1.848378439e-005 1.851019641e-005 1.671663666e-005 1.235168863e-005 1.152288276e-005 7.189722891e-006 6.173534129e-006 6.571209466e-006 9.083174558e-006 9.400580587e-006 1.202785353e-005 8.93110903e-006 1.156665868e-005 8.280187181e-006 2.570932337e-006 0} 0 2.19694e-005 -9.40002 -10.2 9.40002 10.2 -21 -21 21 21 {curve} {curve x91 1212} {curve x91 875} {curve x91 1271} {curve x91 936} {curve x91 1233} {curve x91 896} {curve x91 1250} {curve x91 915} {curve x91 8.099975586} {curve x91 9.5}  } 
+ { {curve K x1 1} "track 3" {curve x1 1660.300049 1656.398438 1651.923462 1648.033569 1645.013672 1642.244263 1640.034912 1637.818359 1635.779419 1633.981567 1631.992554 1631.145264 1628.97937 1627.882324 1626.351196 1625.176025 1624.127319 1623.234131 1622.32666 1621.818726 1621.294189 1620.544067 1618.82373 1617.815308 1616.382324 1614.533691 1612.687866 1610.577881 1609.547729 1608.462402 1607.629028 1606.64917 1605.685791 1604.716187 1603.747314 1602.852783 1601.960571 1601.038818 1600.039551 1599.234985 1598.359253 1596.944214 1595.809937 1594.819458 1593.953491 1592.915649 1592.7323 1592.291504 1591.83667 1591.336792 1590.411499 1589.334229 1588.311035 1587.33374 1586.411377 1585.773682 1585.731323 1584.725342 1584.103149 1583.706909 1582.992188 1582.291992 1581.612183 1581.479736 1581.253418 1581.203369 1581.241699 1581.166382 1581.162842 1581.116333 1581.087769 1581.033691 1581.022583 1580.987549 1581.124512 1581.167358 1581.175781 1581.292603 1581.373535 1581.436523 1581.451538 1581.481201 1581.573364 1581.649048 1581.669189 1581.699707 1581.781616 1581.877075 1581.97998 1582.128418 1582.286133} {curve x1 740.2000122 740.2711792 740.3599854 740.34021 740.4276123 740.4976807 740.5192261 740.5719604 740.5408325 740.515564 740.524353 740.3970337 740.359314 740.4258423 740.4648438 740.4710693 740.5709839 740.6509399 740.7666626 740.8310547 741.151123 741.4130859 741.6902466 742.0447998 742.4053345 742.600769 742.7820435 743.0335083 743.3682861 743.5273438 744.0574951 744.2008667 744.4260254 744.6498413 744.7655029 745.2907104 745.4389038 745.5702515 745.8711548 746.0304565 746.3320923 746.5352783 746.7425537 746.7617798 746.8067017 746.8399658 746.8488159 746.8161621 746.7841797 746.6537476 746.5907593 746.3529663 746.0960083 745.8222046 745.4953003 745.2142334 744.890625 743.8696899 743.0492554 742.112793 741.2692871 740.2751465 739.364624 738.5172119 737.9373779 737.2713623 736.84198 736.4096069 735.5354004 735.4088135 734.6080322 733.7735596 733.0106812 732.6177979 731.7330933 731.2452393 730.3236694 730.178894 729.5722046 728.9290161 728.9256592 727.9694214 727.7575684 726.8598633 726.6157837 725.9521484 725.2323608 725.0469971 724.4119873 723.8516235 723.0813599} {curve K x1 0} {curve K x1 0} 1 0 0 {curve x1 0 1.906765716e-006 5.198067552e-006 7.985353806e-006 6.056560524e-006 5.0997369e-006 6.232923392e-006 8.843271567e-006 1.092904011e-005 1.311311113e-005 1.166918647e-005 1.333705876e-005 1.579078629e-005 1.269598758e-005 1.926288269e-005 1.774902e-005 1.851426663e-005 1.889981842e-005 1.886812602e-005 1.717910103e-005 1.425995817e-005 1.444955162e-005 1.133491644e-005 1.215758566e-005 7.842052115e-006 8.787242782e-006 6.641077601e-006 6.300806628e-006 6.452082329e-006 7.735758694e-006 5.577044124e-006 6.743940463e-006 6.284506038e-006 6.430673073e-006 7.127745163e-006 8.641055477e-006 8.84363451e-006 1.050102688e-005 8.520548101e-006 1.067659372e-005 9.286394436e-006 6.292593179e-006 8.051113182e-006 8.620060083e-006 1.089030559e-005 1.32719236e-005 1.249883003e-005 1.642996959e-005 1.440373278e-005 1.542470028e-005 1.715102384e-005 1.453150639e-005 1.166967826e-005 1.202060656e-005 1.367012103e-005 1.113810142e-005 1.103567833e-005 1.40140364e-005 1.509583283e-005 1.256997724e-005 1.595749158e-005 1.151359294e-005 1.445961687e-005 1.265703034e-005 1.269662498e-005 1.269689103e-005 1.22522564e-005 9.658135305e-006 1.131374772e-005 1.086494071e-005 1.189374647e-005 7.729706629e-006 8.200159317e-006 6.92396242e-006 7.617961708e-006 7.468906629e-006 9.533618877e-006 9.208647666e-006 1.087337318e-005 9.145114576e-006 1.132285677e-005 1.124957742e-005 1.509120562e-005 1.091567611e-005 1.113047053e-005 1.050510135e-005 1.225566905e-005 1.348855807e-005 1.493014095e-005 1.739072873e-005 1.751435279e-005} 0 1.92629e-005 -10.6 -10.1 10.6 10.1 -21 -21 21 21 {curve} {curve x1 1628} {curve x1 709} {curve x1 1691} {curve x1 770} {curve x1 1649} {curve x1 730} {curve x1 1670} {curve x1 749} {curve x1 10.80004883} {curve x1 9.700012207}  } 
+ { {curve K x91 1} "track 4" {curve x1 1390.127686 1386.142822 1382.012329 1378.733521 1375.499268 1373.14563 1370.972412 1368.666382 1366.931641 1365.185669 1363.367676 1362.591309 1360.723877 1359.344116 1358.139038 1356.988159 1355.998901 1355.114258 1354.262939 1353.463989 1352.912476 1351.826904 1350.351318 1348.460083 1346.651001 1344.674805 1342.658936 1340.704224 1338.908203 1337.991821 1336.900879 1335.684814 1334.541748 1333.362183 1332.187866 1331.01062 1329.811401 1328.703613 1327.621704 1326.55957 1325.423584 1324.202026 1322.900635 1321.810303 1320.842163 1319.900757 1319.168213 1318.959717 1318.424927 1318.093628 1317.07373 1316.111694 1315.130615 1314.26355 1313.422729 1313.034912 1312.776367 1311.945068 1311.345337 1310.620728 1310.250488 1309.782104 1308.825073 1308.697998 1308.507202 1308.542725 1308.53418 1308.575562 1308.55835 1308.578125 1308.530884 1308.491943 1308.406982 1308.474365 1308.506958 1308.511841 1308.567261 1308.600098 1308.685547 1308.770874 1308.770264 1308.895752 1308.920044 1309.065186 1309.068848 1309.115845 1309.226563 1309.253906 1309.332764 1309.427734 1309.5} {curve x1 741.0462646 741.0786743 741.2394409 741.2763062 741.3699951 741.4502563 741.5563965 741.7084351 741.6980591 741.6130981 741.581604 741.5719604 741.5651855 741.5361938 741.5681763 741.7167969 741.831665 741.7958374 741.8535767 742.065918 742.6188354 742.7142334 742.9110107 743.3358154 743.7081299 743.8726196 743.9026489 744.4604492 744.6355591 744.7996826 745.4806519 745.5671997 745.8259888 745.9176636 746.3109131 746.6447754 746.8317261 747.1477051 747.3602295 747.5218506 747.9418335 748.0065918 748.1009521 748.1907959 748.2880859 748.3737793 748.4093628 748.4449463 748.2736206 748.2178345 748.0767822 747.8721924 747.729187 747.4803467 747.3961792 746.9389038 746.168396 745.4781494 744.6105347 743.6243286 742.8025513 741.8570557 741.0136719 740.0961304 739.708252 739.1832275 738.2862549 738.3259888 737.4900513 736.8309326 736.2097778 735.2841797 735.0306396 733.8493652 733.5217896 733.1456909 732.4803467 731.6113892 731.5023804 730.4990234 730.1696777 730.2318115 729.2955322 729.0836182 728.0938721 727.9614868 727.133606 726.7856445 726.4519653 725.5961304 725.2000122} {curve K x91 0} {curve K x91 0} 1 0 0 {curve x1 2.26082269e-005 2.314125507e-005 2.104457308e-005 1.675273062e-005 1.178315713e-005 1.138917919e-005 1.355954158e-005 1.730165646e-005 1.236118588e-005 1.103633427e-005 8.258405042e-006 6.358872044e-006 9.966936439e-006 1.105065386e-005 1.082261419e-005 1.154513078e-005 9.677039522e-006 9.950146944e-006 9.553528758e-006 9.904681411e-006 9.775757094e-006 7.841303342e-006 1.137627773e-005 7.963251701e-006 8.068555319e-006 9.397387532e-006 1.135487018e-005 1.172693985e-005 1.264590035e-005 1.608884553e-005 2.507453227e-005 2.423835672e-005 1.782143404e-005 1.414223804e-005 1.044299903e-005 9.075410713e-006 1.058268707e-005 1.208506628e-005 1.144483822e-005 9.756722015e-006 1.073136002e-005 9.953693728e-006 9.914679419e-006 1.163956929e-005 9.272891679e-006 9.049500621e-006 6.917806869e-006 8.048770693e-006 5.29646359e-006 6.72795724e-006 7.865531764e-006 1.021410988e-005 9.031913278e-006 7.337275865e-006 1.258770273e-005 1.268016939e-005 1.350316024e-005 1.235970698e-005 1.226856774e-005 1.332119751e-005 1.333800424e-005 1.310053778e-005 1.228060898e-005 1.235823698e-005 1.32396026e-005 1.317968613e-005 1.031105274e-005 1.356673479e-005 1.070476061e-005 1.411466166e-005 1.227850519e-005 1.977354521e-005 1.79001295e-005 2.159084494e-005 1.517116842e-005 2.004452064e-005 2.005426046e-005 2.177464593e-005 1.73710285e-005 1.293964124e-005 9.203261046e-006 1.029471087e-005 1.41267418e-005 1.470186312e-005 1.312794583e-005 1.123676806e-005 9.279068809e-006 9.545002958e-006 5.05798726e-006 2.626377483e-006 0} 0 2.50745e-005 -9.5 -10.5 9.5 10.5 -21 -21 21 21 {curve} {curve x91 1279} {curve x91 693} {curve x91 1340} {curve x91 754} {curve x91 1300} {curve x91 714} {curve x91 1319} {curve x91 733} {curve x91 9} {curve x91 10.70001221}  } 
+} 
+}
+
+cornerPinOptions "Transform (match-move, baked)"
+translate {{curve x1 0 -4.010986328 -8.093139648 -11.76025391 -14.76928711 -17.42590332 -19.54370117 -21.72521973 -23.63867188 -25.45666504 -27.22106934 -28.10046387 -30.09960938 -31.35205078 -32.66894531 -33.82702637 -34.85290527 -35.74694824 -36.61328125 -37.29370117 -37.83703613 -38.85522461 -40.49121094 -41.96789551 -43.70324707 -45.62768555 -47.57543945 -49.54125977 -51.12097168 -52.13000488 -53.13696289 -54.2421875 -55.3605957 -56.46154785 -57.6036377 -58.73901367 -59.80651855 -60.86608887 -61.91833496 -62.90686035 -63.95239258 -65.19812012 -66.44970703 -67.54443359 -68.50878906 -69.42150879 -70.09716797 -70.3828125 -70.72924805 -71.26928711 -72.21362305 -73.18249512 -74.16992188 -75.08789063 -75.94775391 -76.58813477 -76.77075195 -77.3737793 -78.11572266 -78.67407227 -79.28063965 -79.87304688 -80.57641602 -80.87011719 -80.95031738 -80.99731445 -80.98632813 -80.99145508 -80.97680664 -81.00561523 -81.04663086 -81.07055664 -81.11987305 -81.07592773 -81.01098633 -80.99633789 -80.95336914 -80.90686035 -80.83984375 -80.75952148 -80.75097656 -80.66699219 -80.61694336 -80.52539063 -80.48083496 -80.44165039 -80.34729004 -80.28356934 -80.19555664 -80.05859375 -79.94677734} {curve x1 0 0.07739257813 0.1744995117 0.2021484375 0.3035888672 0.3936767578 0.4725341797 0.5260009766 0.514831543 0.4870605469 0.4677734375 0.4208374023 0.4185180664 0.3815917969 0.4292602539 0.5088500977 0.5993652344 0.6399536133 0.7459716797 0.8751220703 1.364318848 1.650390625 1.860229492 2.321533203 2.751708984 3.076049805 3.285949707 3.555358887 3.904296875 4.224487305 4.71270752 4.95715332 5.217102051 5.546691895 5.780273438 6.205505371 6.400939941 6.802978516 7.026855469 7.349365234 7.621459961 7.796081543 7.946655273 8.003662109 8.127075195 8.209411621 8.242858887 8.223510742 8.123779297 8.080627441 7.948974609 7.749633789 7.532653809 7.270507813 7.050415039 6.613891602 6.129699707 5.271118164 4.373413086 3.50793457 2.691650391 1.745361328 0.8485107422 -0.07055664063 -0.630065918 -1.07409668 -1.796630859 -2.084838867 -2.90838623 -3.350585938 -3.962158203 -4.832885742 -5.401489258 -6.180358887 -6.856872559 -7.216369629 -8.051513672 -8.386779785 -8.850646973 -9.653625488 -9.91619873 -10.37939453 -10.86364746 -11.53869629 -11.96252441 -12.58239746 -13.18804932 -13.50402832 -14.07049561 -14.71124268 -15.40179443}}
+center {{curve x1 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371} {curve x1 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045}}
+selected_tracks 0,1,2,3
+name Tracker2
+selected true
+xpos 11677
+ypos 2633
+}
+push $N88ed86a0
+Roto {
+inputs 0
+output alpha
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44800000 x44428000}
+    {a}
+    {curvegroup Bezier1 576 bezier
+     {{cc
+       {f 8192}
+       {px
+        {1 x40000000 x41400000 x41b80000 x41e00000 x42080000 x42140000 x42200000 x42380000 x42500000 x42640000 x42740000 x427c0000 x42820000 x428a0000 x42960000 x42a00000 x42aa0000 x42b60000}
+        {{{xc0200000 -}}
+	 {{xbf800000 -}}}
+        {{{x4491c000 0 1 xc07fdd46 1}
+	  {x44914792 xc052d974 1 xc052d974 1}
+	  {x448d3854 xc01206c3 1 xc01206c3 1}
+	  {x448b4a4b xc00c3b80 1 xc00c3b80 1}
+	  {x4488d678 xc058508c 1 xc058508c 1}
+	  {x4486a490 -}
+	  {x4486b5b5 x3e73d555 1 x3e73d555 1}
+	  {x4486d248 x3e84138e 1 x3e84138e 1}
+	  {x44870000 -}
+	  {x44856756 xc002d0e9 1 xc002d0e9 1}
+	  {x44843083 -}
+	  {x44861384 x40935a80 1 x40935a80 1}
+	  {x4487a4a2 x40d4d180 1 x40d4d180 1}
+	  {x448966ca x40dce980 1 x40dce980 1}
+	  {x448cd21b x40acd000 1 x40acd000 1}
+	  {x449026ea x408ee200 1 x408ee200 1}
+	  {x4492f5d1 x40b0db33 1 x40b0db33 1}
+	  {x44970f7a x40e3d5ba 1 x40e3d5ba 1}
+	  {x449cc000 x40fa36a3 1 0 1}}
+	 {{xc2240000 0 1 xbf51fdc3 1}
+	  {xc22722af xbf3607ba 1 xbf3607ba 1}
+	  {xc2434954 xbf0dc2ab 1 xbf0dc2ab 1}
+	  {xc255a68f xbf03fe94 1 xbf03fe94 1}
+	  {xc26448f9 xbf363691 1 xbf363691 1}
+	  {xc274f7f0 xbee8c900 1 xbee8c900 1}
+	  {xc276c982 xbdceeb55 1 xbdceeb55 1}
+	  {xc27764b2 xbdac6eab 1 xbdac6eab 1}
+	  {xc279d174 xbe9b3080 1 xbe9b3080 1}
+	  {xc287f1bd xbf52ae17 1 xbf52ae17 1}
+	  {xc28f03b0 -}
+	  {xc28ebc46 x3d2b0d55 1 x3d2b0d55 1}
+	  {xc28e8366 x3d61c400 1 x3d61c400 1}
+	  {xc28e4b64 x3d20aeab 1 x3d20aeab 1}
+	  {xc28e0ae3 -}
+	  {xc291d7d8 xbe9bb974 1 xbe9bb974 1}
+	  {xc294bbdb -}
+	  {xc29403d2 x3dfe7e2f 1 x3dfe7e2f 1}
+	  {xc2920000 x3e424974 1 0 1}}}
+        {{{x40200000 -}}
+	 {{1 -}}}
+        {{{xbfc00000 -}}
+	 {{xc1400000 -}}}
+        {{{x448b8000 0 1 xc07fdd46 1}
+	  {x448b0792 xc052d974 1 xc052d974 1}
+	  {x4486f854 xc01206c3 1 xc01206c3 1}
+	  {x44850a4b xc00c3b80 1 xc00c3b80 1}
+	  {x44829678 xc058508c 1 xc058508c 1}
+	  {x44806490 -}
+	  {x448075b5 x3e73d555 1 x3e73d555 1}
+	  {x44809248 x3e84138e 1 x3e84138e 1}
+	  {x4480c000 -}
+	  {x447e4eac xc002d0e9 1 xc002d0e9 1}
+	  {x447be106 -}
+	  {x447fa709 x40935a80 1 x40935a80 1}
+	  {x448164a2 x40d4d160 1 x40d4d160 1}
+	  {x448326ca x40dce980 1 x40dce980 1}
+	  {x4486921b x40acd000 1 x40acd000 1}
+	  {x4489e6ea x408ee200 1 x408ee200 1}
+	  {x448cb5d1 x40b0db33 1 x40b0db33 1}
+	  {x4490cf7a x40e3d5ba 1 x40e3d5ba 1}
+	  {x44968000 x40fa36a3 1 0 1}}
+	 {{x42ad0000 0 1 xbf51fd63 1}
+	  {x42ab6ea9 xbf3607ba 1 xbf3607ba 1}
+	  {x429d5b56 xbf0dc2b1 1 xbf0dc2b1 1}
+	  {x42942cb8 xbf03fea8 1 xbf03fea8 1}
+	  {x428cdb81 xbf3636a3 1 xbf3636a3 1}
+	  {x42848406 xbee8c800 1 xbee8c800 1}
+	  {x42839b3e xbdceeaab 1 xbdceeaab 1}
+	  {x42834da6 xbdac6e39 1 xbdac6e39 1}
+	  {x42821746 xbe9b3000 1 xbe9b3000 1}
+	  {x426e1c89 xbf52adfa 1 xbf52adfa 1}
+	  {x425ff8a5 -}
+	  {x42608778 x3d2b0b55 1 x3d2b0b55 1}
+	  {x4260f936 x3d61c100 1 x3d61c100 1}
+	  {x42616939 x3d20ad55 1 x3d20ad55 1}
+	  {x4261ea3a -}
+	  {x425a504f xbe9bb997 1 xbe9bb997 1}
+	  {x42548847 -}
+	  {x4255f859 x3dfe7eba 1 x3dfe7eba 1}
+	  {x425a0000 x3e424a12 1 0 1}}}
+        {{{x3fc00000 -}}
+	 {{x41400000 -}}}
+        {{{xc0a00000 -}}
+	 {{xc0f00000 -}}}
+        {{{x4492e000 0 1 xc0907380 1}
+	  {x4492573e xc072be00 1 xc072be00 1}
+	  {x448da8eb xc0304262 1 xc0304262 1}
+	  {x448b1c85 xc02787e0 1 xc02787e0 1}
+	  {x44886cac xc06a42e9 1 xc06a42e9 1}
+	  {x44861415 -}
+	  {x44861997 x3d9ca000 1 x3d9ca000 1}
+	  {x448622c4 x3da9b1c7 1 x3da9b1c7 1}
+	  {x44863174 -}
+	  {x4484b256 xbff5468c 1 xbff5468c 1}
+	  {x44838ef2 -}
+	  {x4485895f x409a8b2b 1 x409a8b2b 1}
+	  {x44872e35 x40df7f40 1 x40df7f40 1}
+	  {x4489075c x40e90555 1 x40e90555 1}
+	  {x448ca455 x40ba141a 1 x40ba141a 1}
+	  {x44904c25 x409d52ba 1 x409d52ba 1}
+	  {x449366e3 x40c03ccd 1 x40c03ccd 1}
+	  {x4497ce85 x40f3bcd1 1 x40f3bcd1 1}
+	  {x449de000 x4105402c 1 0 1}}
+	 {{x43828000 0 1 xbf3ab618 1}
+	  {x4382272c xbf1f8bd1 1 xbf1f8bd1 1}
+	  {x437e24fe xbef0d5e8 1 xbef0d5e8 1}
+	  {x437a6d92 xbee63320 1 xbee63320 1}
+	  {x4376f365 xbf29518c 1 xbf29518c 1}
+	  {x43732711 xbea8ee00 1 xbea8ee00 1}
+	  {x4372d29a xbd962955 1 xbd962955 1}
+	  {x4372b672 xbd7a471c 1 xbd7a471c 1}
+	  {x437245d2 xbe614000 1 xbe614000 1}
+	  {x436cc171 xbf5b42a3 1 xbf5b42a3 1}
+	  {x4368d9f5 xbd931800 1 xbd931800 1}
+	  {x4368c171 xbc9a7555 1 xbc9a7555 1}
+	  {x4368bcff xbc1cf000 1 xbc1cf000 1}
+	  {x4368b7a2 xbcc69555 1 xbcc69555 1}
+	  {x436897c3 xbdbf3a00 1 xbdbf3a00 1}
+	  {x43662ca6 xbebf9d74 1 xbebf9d74 1}
+	  {x436479e1 -}
+	  {x43649d26 x3d4315d1 1 x3d4315d1 1}
+	  {x43650000 x3d94ee8c 1 0 1}}}
+        {{{x40a00000 -}}
+	 {{x40f00000 -}}}
+        {{{x40800000 0 1 xbf651b18 1}
+	  {x40474dfe xbf5e21e7 1 xbf5e21e7 1}
+	  {xc0b16e9d xbf5416db 1 xbf5416db 1}
+	  {xc1648a80 xbf3a8a84 1 xbf3a8a84 1}
+	  {xc189a0e9 xbf09c129 1 xbf09c129 1}
+	  {xc1a19fa6 xbeedb1ce 1 xbeedb1ce 1}
+	  {xc1ab0dea xbeac3a80 1 xbeac3a80 1}
+	  {xc1b1c522 xbe427300 1 xbe427300 1}
+	  {xc1b8ba00 -}
+	  {xc1b0e7f7 x3e656223 1 x3e656223 1}
+	  {xc1a50391 x3eba7955 1 x3eba7955 1}
+	  {xc196aee7 x3ef26475 1 x3ef26475 1}
+	  {xc18e4a26 x3f0b00f0 1 x3f0b00f0 1}
+	  {xc1854ec9 x3f156f75 1 x3f156f75 1}
+	  {xc1648a80 x3f315362 1 x3f315362 1}
+	  {xc11bc975 x3f4a81ec 1 x3f4a81ec 1}
+	  {xc0b2a25b x3f57b1ef 1 x3f57b1ef 1}
+	  {xbfa7d1fd x3f5f01b7 1 x3f5f01b7 1}
+	  {x40800000 x3f646823 1 0 1}}
+	 {{xc1480000 0 1 x3dbeaa23 1}
+	  {xc146868a x3db8dcba 1 x3db8dcba 1}
+	  {xc1381d08 x3db0810c 1 x3db0810c 1}
+	  {xc129915e x3d9b3e10 1 x3d9b3e10 1}
+	  {xc124b546 x3d654874 1 x3d654874 1}
+	  {xc11fb741 x3d45d01c 1 x3d45d01c 1}
+	  {xc11dc0f5 x3d0f54d5 1 x3d0f54d5 1}
+	  {xc11c5b44 x3ca1d2e4 1 x3ca1d2e4 1}
+	  {xc11ae8c0 -}
+	  {xc11c8948 xbcbee574 1 xbcbee574 1}
+	  {xc11f02ae xbd1b2fc7 1 xbd1b2fc7 1}
+	  {xc121fdf6 xbd49b92b 1 xbd49b92b 1}
+	  {xc123bd05 xbd675cc0 1 xbd675cc0 1}
+	  {xc1259b69 xbd78b980 1 xbd78b980 1}
+	  {xc129915e xbd9392c0 1 xbd9392c0 1}
+	  {xc13122e0 xbda887af 1 xbda887af 1}
+	  {xc1380d07 xbdb38140 1 xbdb38140 1}
+	  {xc13f28f9 xbdb996f4 1 xbdb996f4 1}
+	  {xc1480000 xbdbe1566 1 0 1}}}
+        {{{x449e2000 0 1 xc0916c69 1}
+	  {x449d9648 xc0749e5d 1 xc0749e5d 1}
+	  {x4498de99 xc03209b7 1 xc03209b7 1}
+	  {x449648e2 xc0292300 1 xc0292300 1}
+	  {x44939581 xc06b5117 1 xc06b5117 1}
+	  {x44913aa4 -}
+	  {x44913f76 x3d892aab 1 x3d892aab 1}
+	  {x44914780 x3d949c72 1 x3d949c72 1}
+	  {x4491545c -}
+	  {x448fd6bf xbff4505d 1 xbff4505d 1}
+	  {x448eb47f -}
+	  {x4490b04c x409af755 1 x409af755 1}
+	  {x4492564b x40e02040 1 x40e02040 1}
+	  {x449430cd x40e9bbd5 1 x40e9bbd5 1}
+	  {x4497d0b2 x40badc00 1 x40badc00 1}
+	  {x449b7d65 x409e2c46 1 x409e2c46 1}
+	  {x449e9c99 x40c12466 1 x40c12466 1}
+	  {x44a308d1 x40f4ac46 1 x40f4ac46 1}
+	  {x44a92000 x4105bace 1 0 1}}
+	 {{x43a20000 0 1 x3f13f65d 1}
+	  {x43a24d20 x3f26d346 1 x3f26d346 1}
+	  {x43a5958a x3f41fd86 1 x3f41fd86 1}
+	  {x43aa4206 x3f2cfe60 1 x3f2cfe60 1}
+	  {x43aafd7d x3e622d17 1 x3e622d17 1}
+	  {x43ab7904 x3ea1b639 1 x3ea1b639 1}
+	  {x43ac6957 x3f2c8100 1 x3f2c8100 1}
+	  {x43ad7e87 x3f0e1639 1 x3f0e1639 1}
+	  {x43aee8bb -}
+	  {x43ac79fd xbf80ebba 1 xbf80ebba 1}
+	  {x43a95e9a xbf878d1c 1 xbf878d1c 1}
+	  {x43a7b607 xbf5048ab 1 xbf5048ab 1}
+	  {x43a6edc0 xbf4d1e80 1 xbf4d1e80 1}
+	  {x43a61bca xbf6d57ab 1 xbf6d57ab 1}
+	  {x43a425b9 xbfb5bc80 1 xbfb5bc80 1}
+	  {x439f026d xbfe5b38c 1 xbfe5b38c 1}
+	  {x439a4702 xbfdd5db3 1 xbfdd5db3 1}
+	  {x43965cc4 xbfc0a317 1 xbfc0a317 1}
+	  {x43920000 xbfb6df74 1 0 1}}}
+        {{{xc0800000 0 1 x3f083052 1}
+	  {xc05e4c5a x3f040b24 1 x3f040b24 1}
+	  {x3fd63d48 x3efc25a4 1 x3efc25a4 1}
+	  {x40dbcb3a x3eddc602 1 x3eddc602 1}
+	  {x4109aaaa x3ea3c5c3 1 x3ea3c5c3 1}
+	  {x41263198 x3e8d4b52 1 x3e8d4b52 1}
+	  {x413167d9 x3e4cc1f5 1 x3e4cc1f5 1}
+	  {x413963c7 x3de72cd5 1 x3de72cd5 1}
+	  {x4141a900 -}
+	  {x41385cd6 xbe085a8c 1 xbe085a8c 1}
+	  {x412a3970 xbe5db18e 1 xbe5db18e 1}
+	  {x41192fde xbe901635 1 xbe901635 1}
+	  {x410f3546 xbea541f0 1 xbea541f0 1}
+	  {x410487a0 xbeb1a8db 1 xbeb1a8db 1}
+	  {x40dbcb3a xbed2d150 1 xbed2d150 1}
+	  {x40854c6e xbef0c16b 1 xbef0c16b 1}
+	  {x3fd91903 xbf003787 1 xbf003787 1}
+	  {xbf57c7d8 xbf04902f 1 xbf04902f 1}
+	  {xc0800000 xbf07c5f2 1 0 1}}
+	 {{x41480000 0 1 xbe7b2c66 1}
+	  {x41441d80 xbe738734 1 xbe738734 1}
+	  {x411e24c3 xbe688483 1 xbe688483 1}
+	  {x40efa40a xbe4c8234 1 xbe4c8234 1}
+	  {x40d6086c xbe1705e0 1 xbe1705e0 1}
+	  {x40bbba05 xbe024b6b 1 xbe024b6b 1}
+	  {x40b16336 xbdbcd14b 1 xbdbcd14b 1}
+	  {x40aa0666 xbd552dab 1 xbd552dab 1}
+	  {x40a26600 -}
+	  {x40aaf8df x3d7b7a3a 1 x3d7b7a3a 1}
+	  {x40b80281 x3dcc6f5c 1 x3dcc6f5c 1}
+	  {x40c7b888 x3e04dea5 1 x3e04dea5 1}
+	  {x40d0ec40 x3e186470 1 x3e186470 1}
+	  {x40dac516 x3e23d435 1 x3e23d435 1}
+	  {x40efa40a x3e4267da 1 x3e4267da 1}
+	  {x410bc2c5 x3e5e0351 1 x3e5e0351 1}
+	  {x411dfa97 x3e6c7880 1 x3e6c7880 1}
+	  {x4130b599 x3e747c91 1 x3e747c91 1}
+	  {x41480000 x3e7a6828 1 0 1}}}
+        {{{xc0200000 -}}
+	 {{1 -}}}
+        {{{x44b7e000 0 1 xc000915d 1}
+	  {x44b7a8db xbf93768c 1 xbf93768c 1}
+	  {x44b64a7a -}
+	  {x44b7053e -}
+	  {x44b5a0bd xc0160aba 1 xc0160aba 1}
+	  {x44b3cc03 -}
+	  {x44b3edc3 x3eeffd55 1 x3eeffd55 1}
+	  {x44b42602 x3f01fd55 1 x3f01fd55 1}
+	  {x44b48000 -}
+	  {x44b12747 xc0891ee9 1 xc0891ee9 1}
+	  {x44ae9bac -}
+	  {x44af6ad0 x3ff81155 1 x3ff81155 1}
+	  {x44b00fc6 x4023b580 1 x4023b580 1}
+	  {x44b0b23b x3fe908ab 1 x3fe908ab 1}
+	  {x44b16d53 -}
+	  {x44b05739 xbfb20ae9 1 xbfb20ae9 1}
+	  {x44af83b5 -}
+	  {x44aff020 x3f95ecba 1 x3f95ecba 1}
+	  {x44b12000 x3fe4e9a3 1 0 1}}
+	 {{x43af8000 0 1 xbe97d6ba 1}
+	  {x43af5f70 xbe2e2517 1 xbe2e2517 1}
+	  {x43ae908d -}
+	  {x43af4a36 -}
+	  {x43aea5d6 xbe8a5c00 1 xbe8a5c00 1}
+	  {x43adcdb9 -}
+	  {x43ae3726 x3ebb6cab 1 x3ebb6cab 1}
+	  {x43aee6dc x3ecb0b8e 1 x3ecb0b8e 1}
+	  {x43b00000 -}
+	  {x43ae6e06 xbf00acba 1 xbf00acba 1}
+	  {x43ad3c4a -}
+	  {x43adba1e x3e96b0ab 1 x3e96b0ab 1}
+	  {x43ae1e53 x3ec6e400 1 x3ec6e400 1}
+	  {x43ae8102 x3e8d8eab 1 x3e8d8eab 1}
+	  {x43aef2a9 -}
+	  {x43aeac7e xbdb3b000 1 xbdb3b000 1}
+	  {x43ae7720 -}
+	  {x43af0018 x3ebd6917 1 x3ebd6917 1}
+	  {x43b08001 x3f109a3a 1 0 1}}}
+        {{{x40200000 -}}
+	 {{xbf800000 -}}}
+        {{{xc0900000 -}}
+	 {{x40a00000 -}}}
+        {{{x44ca1000 0 1 xc1d1e103 1}
+	  {x44c7b4a0 xc08317e9 1 xc08317e9 1}
+	  {x44c46df9 -}
+	  {x44c503cb -}
+	  {x44c42de0 xbf472ba3 1 xbf472ba3 1}
+	  {x44c3f1ef xbe9f0aab 1 xbe9f0aab 1}
+	  {x44c3d46a xbf2e5155 1 xbf2e5155 1}
+	  {x44c36f32 -}
+	  {x44c42174 -}
+	  {x44c3c072 xbf845d17 1 xbf845d17 1}
+	  {x44c2b574 -}
+	  {x44c60b9b -}
+	  {x44c3691a xc128a060 1 xc128a060 1}
+	  {x44c0c698 xbfe6ac00 1 xbfe6ac00 1}
+	  {x44c079b4 -}
+	  {x44c1f508 x3fac0ee9 1 x3fac0ee9 1}
+	  {x44c252dd x3fae099a 1 x3fae099a 1}
+	  {x44c3a820 x402f9c8c 1 x402f9c8c 1}
+	  {x44c618ba x40607eba 1 0 1}}
+	 {{x43800000 0 1 x416c4d20 1}
+	  {x4384ec46 -}
+	  {x43844e08 -}
+	  {x43893966 -}
+	  {x4386aaf6 -}
+	  {x438905ab x3f2e58e4 1 x3f2e58e4 1}
+	  {x4389bb86 -}
+	  {x4387f161 -}
+	  {x438c1746 x3f840880 1 x3f840880 1}
+	  {x438e21c7 x3f57605d 1 x3f57605d 1}
+	  {x4390b7d8 x3f5bb600 1 x3f5bb600 1}
+	  {x4391fe7a -}
+	  {x4391ee25 -}
+	  {x4393a71b x405bae95 1 x405bae95 1}
+	  {x439c3a54 x3f662c00 1 x3f662c00 1}
+	  {x439d2080 x3f37ae2f 1 x3f37ae2f 1}
+	  {x43a02c92 x3f6a7c66 1 x3f6a7c66 1}
+	  {x43a1b4ee x3f66f8ba 1 x3f66f8ba 1}
+	  {x43a522ea x3fa1c0d2 1 0 1}}}
+        {{{x40900000 -}}
+	 {{xc0a00000 -}}}
+        {{{x3fc00000 0 1 x3c1d8de3 1}
+	  {x3fc13b1c x3c1d8e3a 1 x3c1d8e3a 1}
+	  {x3fcd8a39 x3c1d8e3d 1 x3c1d8e3d 1}
+	  {x3fdb1472 x3c1d8d40 1 x3c1d8d40 1}
+	  {x3fe13be1 x3c1d8e3a 1 x3c1d8e3a 1}
+	  {x3fe89eab x3c1da3c7 1 x3c1da3c7 1}
+	  {x3fec5165 x3c1dc4d5 1 x3c1dc4d5 1}
+	  {x3ff003e5 x3c1d7a64 1 x3c1d7a64 1}
+	  {x3ff76400 x3c1c2b60 1 x3c1c2b60 1}
+	  {x3ffea7f6 x3c1d8e2f 1 x3c1d8e2f 1}
+	  {x4002771c x3c3075c7 1 x3c3075c7 1}
+	  {x4005881f x3c465380 1 x3c465380 1}
+	  {x40071d11 x3c3ce200 1 x3c3ce200 1}
+	  {x40087ba7 x3be99200 1 x3be99200 1}
+	  {x4009d9c7 -}
+	  {x3fda260b xbd936243 1 xbd936243 1}
+	  {x3fae6000 -}
+	  {x3fd02407 x3dbac5d1 1 x3dbac5d1 1}
+	  {x40176400 x3e0e967e 1 0 1}}
+	 {{x 15
+	   {x40f00000 -}}
+	  {x40f3e28f x3c9f2e8c 1 x3c9f2e8c 1}
+	  {x40f6d700 -}
+	  {x40f50a8f xbc9f2e8c 1 xbc9f2e8c 1}
+	  {x40f00000 xbcf30c7a 1 0 1}}}
+        {{{x44d39000 0 1 xc22a86d1 1}
+	  {x44cfca48 xc0a8bae9 1 xc0a8bae9 1}
+	  {x44cc4ff8 xbfe63618 1 xbfe63618 1}
+	  {x44cb11ac xbf8a2d40 1 xbf8a2d40 1}
+	  {x44ca2743 xbfd03517 1 xbfd03517 1}
+	  {x44c8d51a xbfca54e4 1 xbfca54e4 1}
+	  {x44c86004 xbfd91000 1 xbfd91000 1}
+	  {x44c78f82 xbf8229c7 1 xbf8229c7 1}
+	  {x44c73b26 xbf61b000 1 xbf61b000 1}
+	  {x44c63cfa xbfe8fba3 1 xbfe8fba3 1}
+	  {x44c4ba72 -}
+	  {x44c7c46f -}
+	  {x44c51046 xc12d0a20 1 xc12d0a20 1}
+	  {x44c25c1e xc02ddc00 1 xc02ddc00 1}
+	  {x44c1e836 -}
+	  {x44c2e846 x3ac00000 1 x3ac00000 1}
+	  {x44c2e85a x3ac00000 1 x3ac00000 1}
+	  {x44c41db3 x40198ba3 1 x40198ba3 1}
+	  {x44c634da x403ecdae 1 0 1}}
+	 {{x42aa0000 0 1 xbe9e9f3a 1}
+	  {x42a96888 xbe89298c 1 xbe89298c 1}
+	  {x42a41b37 xbe54830c 1 xbe54830c 1}
+	  {x42a0b128 xbeee612f 1 xbeee612f 1}
+	  {x428effcc xbf8aa186 1 xbf8aa186 1}
+	  {x4288dd65 xbf252380 1 xbf252380 1}
+	  {x4283634d xbfbaf8e5 1 xbfbaf8e5 1}
+	  {x426eac1f -}
+	  {x42791742 -}
+	  {x4274ed3f xbe4276ba 1 xbe4276ba 1}
+	  {x4270bc28 xbe7dd600 1 xbe7dd600 1}
+	  {x426c00b9 xbf161bf5 1 xbf161bf5 1}
+	  {x4262a989 xbdd2c900 1 xbdd2c900 1}
+	  {x42626346 -}
+	  {x428ed021 -}
+	  {x4286e648 -}
+	  {x4288b0aa -}
+	  {x42851344 -}
+	  {x42868b9e x3e3c2d00 1 0 1}}}
+        {{{xbfc00000 0 1 xbc1d8de3 1}
+	  {xbfc13b1c xbc1d8e3a 1 xbc1d8e3a 1}
+	  {xbfcd8a39 xbc1d8e3d 1 xbc1d8e3d 1}
+	  {xbfdb1472 xbc1d8eb8 1 xbc1d8eb8 1}
+	  {xbfe13c10 xbc1d8e3a 1 xbc1d8e3a 1}
+	  {xbfe89eab xbc1d8364 1 xbc1d8364 1}
+	  {xbfec4f4d xbc1d72c0 1 xbc1d72c0 1}
+	  {xbff0000c xbc1d982b 1 xbc1d982b 1}
+	  {xbff76400 xbc1e40ab 1 xbc1e40ab 1}
+	  {xbffed61c xbc1d8e2f 1 xbc1d8e2f 1}
+	  {xc002771c xbc140bab 1 xbc140bab 1}
+	  {xc0049f77 xbc090bd5 1 xbc090bd5 1}
+	  {xc005ad63 xbc0dcc00 1 xbc0dcc00 1}
+	  {xc006d6a7 xbc3210ab 1 xbc3210ab 1}
+	  {xc009d9c7 xbc9d2766 1 xbc9d2766 1}
+	  {xc0131dbb xbca5eb51 1 xbca5eb51 1}
+	  {xc0181c00 -}
+	  {xc017eb9e x3a85d174 1 x3a85d174 1}
+	  {xc0176400 x3acc5346 1 0 1}}
+	 {{x 15
+	   {xc0f00000 -}}
+	  {xc12e2b0f xbf0ab769 1 xbf0ab769 1}
+	  {xc1575e18 -}
+	  {xc13e4a29 x3f0ab769 1 x3f0ab769 1}
+	  {xc0f00000 x3f53ccf0 1 0 1}}}
+        {{{x40200000 0 1 x3c834a06 1}
+	  {x40210694 x3c8349f4 1 x3c8349f4 1}
+	  {x402b485b x3c8349f4 1 x3c8349f4 1}
+	  {x403690b6 x3c8349f8 1 x3c8349f8 1}
+	  {x403bb19a x3c8349f4 1 x3c8349f4 1}
+	  {x4041d911 x3c8349e4 1 x3c8349e4 1}
+	  {x4044eccc x3c8349eb 1 x3c8349eb 1}
+	  {x40480088 x3c834a00 1 x3c834a00 1}
+	  {x404e2800 x3c834a00 1 x3c834a00 1}
+	  {x40544f78 x3c8349f4 1 x3c8349f4 1}
+	  {x4059705b x3c8349e4 1 x3c8349e4 1}
+	  {x405d8aaa x3c8349eb 1 x3c8349eb 1}
+	  {x405f97d2 x3c834a00 1 x3c834a00 1}
+	  {x4061a4fa x3c834a00 1 x3c834a00 1}
+	  {x4065bf4a x3c8349f3 1 x3c8349f3 1}
+	  {x406be6c1 x3c8349f4 1 x3c8349f4 1}
+	  {x407107a5 x3c834a00 1 x3c834a00 1}
+	  {x40762889 x3c8349f4 1 x3c8349f4 1}
+	  {x407c5000 x3c8349e6 1 0 1}}
+	 {{x40400000 -}}}
+        {{{x44d22000 0 1 xc22b22b6 1}
+	  {x44ce5c72 xc0987ea3 1 xc0987ea3 1}
+	  {x44cb928f xbfa5736e 1 xbfa5736e 1}
+	  {x44caf7d4 xbf359900 1 xbf359900 1}
+	  {x44ca275d xbfa7dae9 1 xbfa7dae9 1}
+	  {x44c92a3a xbf9ca872 1 xbf9ca872 1}
+	  {x44c8c6e2 xbfb9caab 1 xbfb9caab 1}
+	  {x44c8138a xbf4a3800 1 xbf4a3800 1}
+	  {x44c7e0fc xbf4a3800 1 xbf4a3800 1}
+	  {x44c6d97a xbfeef574 1 xbfeef574 1}
+	  {x44c54fd9 -}
+	  {x44c82b2e -}
+	  {x44c564eb xc13190c0 1 xc13190c0 1}
+	  {x44c29ea8 xc0595c00 1 xc0595c00 1}
+	  {x44c20dc0 -}
+	  {x44c2c6c9 -}
+	  {x44c290d6 -}
+	  {x44c3afb0 x4009fda3 1 x4009fda3 1}
+	  {x44c587c9 x40270dae 1 0 1}}
+	 {{xc1a80000 0 1 xbe79f0a8 1}
+	  {xc1a9d976 xbe524faf 1 xbe524faf 1}
+	  {xc1ba12d9 xbe193d1e 1 xbe193d1e 1}
+	  {xc1c2fd7d xbe9ba274 1 xbe9ba274 1}
+	  {xc2040b94 xbf879b9c 1 xbf879b9c 1}
+	  {xc2101c3c xbf1d5a72 1 xbf1d5a72 1}
+	  {xc21a2c4c xbfb3bc15 1 xbfb3bc15 1}
+	  {xc231cf80 -}
+	  {xc225d17c -}
+	  {xc2297e23 xbe285246 1 xbe285246 1}
+	  {xc22d0d05 xbe680800 1 xbe680800 1}
+	  {xc231a66b xbf149935 1 xbf149935 1}
+	  {xc23afb62 xbdd8f600 1 xbdd8f600 1}
+	  {xc23b43b4 -}
+	  {xc1fff586 -}
+	  {xc20fb5ff -}
+	  {xc20bfae8 -}
+	  {xc212fbed -}
+	  {xc2100008 x3e3ef940 1 0 1}}}
+        {{{xc0200000 0 1 xbc834f6e 1}
+	  {xc021069f xbc834fa3 1 xbc834fa3 1}
+	  {xc02b48d8 xbc834fa5 1 xbc834fa5 1}
+	  {xc03691b0 xbc834fa0 1 xbc834fa0 1}
+	  {xc03bb2cc xbc834fa3 1 xbc834fa3 1}
+	  {xc041da88 xbc834fab 1 xbc834fab 1}
+	  {xc044ee66 xbc834fab 1 xbc834fab 1}
+	  {xc0480244 xbc834fab 1 xbc834fab 1}
+	  {xc04e2a00 xbc834fab 1 xbc834fab 1}
+	  {xc05451bc xbc834fa3 1 xbc834fa3 1}
+	  {xc05972d8 xbc834f9c 1 xbc834f9c 1}
+	  {xc05d8d55 xbc834fab 1 xbc834fab 1}
+	  {xc05f9a94 xbc834fc0 1 xbc834fc0 1}
+	  {xc061a7d3 xbc834fab 1 xbc834fab 1}
+	  {xc065c250 xbc834fa6 1 xbc834fa6 1}
+	  {xc06bea0c xbc834fa3 1 xbc834fa3 1}
+	  {xc0710b28 xbc834f9a 1 xbc834f9a 1}
+	  {xc0762c44 xbc834fa3 1 xbc834fa3 1}
+	  {xc07c5400 xbc834fae 1 0 1}}
+	 {{xc0400000 -}}}}}     idem}
+     {tx 1 x44ac48e4 x434f8e39}
+     {a str 1 spx x44800000 spy x44428000 sb 1 tt x40800000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {1024 778}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto10
+selected true
+xpos 11711
+ypos 3635
+}
+Roto {
+inputs 0
+output alpha
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44800000 x44428000}
+    {a}
+    {curvegroup Rectangle1 576 bezier
+     {{cc
+       {f 8192}
+       {px
+        {1 x40800000 x40e00000 x41200000 x41600000 x41b80000 x41e00000 x42080000 x42200000 x42380000 x42680000 x428a0000 x42a00000 x42b60000}
+        {{{0 -}}
+	 {{xc25d5554 -}}}
+        {{{x44673bbe 0 1 xbfea752a 1}
+	  {x4465dc47 xbfea03ab 1 xbfea03ab 1}
+	  {x44647db3 xbfe97c00 1 xbfe97c00 1}
+	  {x44631fd3 xbfe88e00 1 xbfe88e00 1}
+	  {x44614fc2 xbfe57a9e 1 xbfe57a9e 1}
+	  {x445d4c36 xbfd98800 1 xbfd98800 1}
+	  {x445b5d0a xbfbc6f74 1 xbfbc6f74 1}
+	  {x44593fd1 xbfb1dfab 1 xbfb1dfab 1}
+	  {x445731cc xbfab5855 1 xbfab5855 1}
+	  {x44553bbf xbf9f9aab 1 xbf9f9aab 1}
+	  {x4451955c xbf99126f 1 xbf99126f 1}
+	  {x444e5b6b xbf99e25d 1 xbf99e25d 1}
+	  {x444af8a2 xc0055197 1 xc0055197 1}
+	  {x4442e668 xc057194c 1 0 1}}
+	 {{x43dcbbbc 0 1 xbcd49556 1}
+	  {x43dcb133 xbcf91555 1 xbcf91555 1}
+	  {x43dca462 xbd126555 1 xbd126555 1}
+	  {x43dc95c0 xbd38b249 1 xbd38b249 1}
+	  {x43dc7bfb xbd9bb276 1 xbd9bb276 1}
+	  {x43dc173f xbe48e6db 1 xbe48e6db 1}
+	  {x43db1c67 xbefa48ba 1 xbefa48ba 1}
+	  {x43d966f7 xbf0cbb00 1 xbf0cbb00 1}
+	  {x43d7d005 xbed585ab 1 xbed585ab 1}
+	  {x43d6e666 -}
+	  {x43d7cb1d x3e155e9c 1 x3e155e9c 1}
+	  {x43d893d6 -}
+	  {x43d2e5a3 xbe8ace2f 1 xbe8ace2f 1}
+	  {x43d26666 x31e8ba2f 1 0 1}}}
+        {{{x42b80000 -}}
+	 {{0 -}}}
+        {{{xc2b80000 -}}
+	 {{0 -}}}
+        {{{x44961ddf 0 1 xbfea7456 1}
+	  {x44956e24 xbfea0355 1 xbfea0355 1}
+	  {x4494beda xbfe97c00 1 xbfe97c00 1}
+	  {x44940fea xbfe88db7 1 xbfe88db7 1}
+	  {x449327e2 xbfe57a76 1 xbfe57a76 1}
+	  {x4491261c xbfd98800 1 xbfd98800 1}
+	  {x44902e86 xbfbc6fa3 1 xbfbc6fa3 1}
+	  {x448f1fe9 xbfb1e000 1 xbfb1e000 1}
+	  {x448e18e6 xbfab5855 1 xbfab5855 1}
+	  {x448d1de0 xbf9f9aab 1 xbf9f9aab 1}
+	  {x448b4aae xbf99126f 1 xbf99126f 1}
+	  {x4489adb6 xbf99e22f 1 xbf99e22f 1}
+	  {x4487fc52 xc00551a3 1 xc00551a3 1}
+	  {x4483f334 xc057198c 1 0 1}}
+	 {{x43dcbbbc 0 1 xbcd49556 1}
+	  {x43dcb133 xbcf91555 1 xbcf91555 1}
+	  {x43dca462 xbd126555 1 xbd126555 1}
+	  {x43dc95c0 xbd38b249 1 xbd38b249 1}
+	  {x43dc7bfb xbd9bb276 1 xbd9bb276 1}
+	  {x43dc173f xbe48e6db 1 xbe48e6db 1}
+	  {x43db1c67 xbefa48ba 1 xbefa48ba 1}
+	  {x43d966f7 xbf0cbb00 1 xbf0cbb00 1}
+	  {x43d7d005 xbed585ab 1 xbed585ab 1}
+	  {x43d6e666 -}
+	  {x43d7cb1d x3e155e9c 1 x3e155e9c 1}
+	  {x43d893d6 -}
+	  {x43d2e5a3 xbe8ace2f 1 xbe8ace2f 1}
+	  {x43d26666 x31e8ba2f 1 0 1}}}
+        {{{0 -}}
+	 {{xc25d5554 -}}}
+        {{{0 -}}
+	 {{x425d5554 -}}}
+        {{{x4495eaab 0 1 xc1d11c40 1}
+	  {x448e2e83 xc119a300 1 xc119a300 1}
+	  {x448cfb3d xc03678ab 1 xc03678ab 1}
+	  {x448c0b19 xbfa87200 1 xbfa87200 1}
+	  {x448bd2f3 xbfa87200 1 xbfa87200 1}
+	  {x4489bfb5 xc06ac792 1 xc06ac792 1}
+	  {x4485677e xc08f3417 1 xc08f3417 1}
+	  {x44839878 -}
+	  {x4483bf49 x3ecde800 1 x3ecde800 1}
+	  {x448432e6 -}
+	  {x4482793c -}
+	  {x44897a82 -}
+	  {x4487c91e xc00551a3 1 xc00551a3 1}
+	  {x4483c000 xc057198c 1 0 1}}
+	 {{x42ed5554 0 1 x3fa585db 1}
+	  {x42f3e7b6 x3f331995 1 x3f331995 1}
+	  {x42f5ba87 -}
+	  {x42f4d58f xbe4d2c92 1 xbe4d2c92 1}
+	  {x42f2ec6b xbe10953b 1 xbe10953b 1}
+	  {x42f129c5 -}
+	  {x430ce2f0 x4091bcd9 1 x4091bcd9 1}
+	  {x432aadcd x3f14a800 1 x3f14a800 1}
+	  {x432bd71d x3e804a00 1 x3e804a00 1}
+	  {x432daf89 x3f07d81c 1 x3f07d81c 1}
+	  {x4335644f -}
+	  {x42dcb5bd xc0464cbd 1 xc0464cbd 1}
+	  {x42c5fcf2 xbe8acda3 1 xbe8acda3 1}
+	  {x42c40000 x30ba2e8c 1 0 1}}}
+        {{{xc2b80000 -}}
+	 {{0 -}}}
+        {{{x42b80000 -}}
+	 {{0 -}}}
+        {{{x4466d556 0 1 xbfea752a 1}
+	  {x446575df xbfea03ab 1 xbfea03ab 1}
+	  {x4464174b xbfe97c00 1 xbfe97c00 1}
+	  {x4462b96b xbfe88e00 1 xbfe88e00 1}
+	  {x4460e95a xbfe57a9e 1 xbfe57a9e 1}
+	  {x445ce5ce xbfd98800 1 xbfd98800 1}
+	  {x445af6a2 xbfbc6f74 1 xbfbc6f74 1}
+	  {x4458d969 xbfb1dfab 1 xbfb1dfab 1}
+	  {x4456cb64 xbfab5855 1 xbfab5855 1}
+	  {x4454d557 xbf9f9aab 1 xbf9f9aab 1}
+	  {x44512ef4 xbf99126f 1 xbf99126f 1}
+	  {x444df503 xbf99e25d 1 xbf99e25d 1}
+	  {x444a923a xc0055197 1 xc0055197 1}
+	  {x44428000 xc057194c 1 0 1}}
+	 {{x42ed5554 0 1 xbcd49eaa 1}
+	  {x42ed2b2f xbcf912ab 1 xbcf912ab 1}
+	  {x42ecf7ed xbd126555 1 xbd126555 1}
+	  {x42ecbd63 xbd38b36e 1 xbd38b36e 1}
+	  {x42ec5650 xbd9bb2c5 1 xbd9bb2c5 1}
+	  {x42eac35e xbe48e725 1 xbe48e725 1}
+	  {x42e6d7fe xbefa48d1 1 xbefa48d1 1}
+	  {x42e0023d xbf0cbb0b 1 xbf0cbb0b 1}
+	  {x42d9a675 xbed58555 1 xbed58555 1}
+	  {x42d5fffd -}
+	  {x42d992d7 x3e155e9c 1 x3e155e9c 1}
+	  {x42dcb5bd -}
+	  {x42c5fcf2 xbe8acda3 1 xbe8acda3 1}
+	  {x42c40000 x30ba2e8c 1 0 1}}}
+        {{{0 -}}
+	 {{x425d5554 -}}}}}     idem}
+     {tx x42b60000 x44650000 x43350000}
+     {a str 1 spx x44800000 spy x44428000 sb 1 ltn x42b60000 ltm x42b60000 tt x41000000 fx xc2000000 fy xc2000000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 8 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {1024 778}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 91
+lifetime_end 91
+feather -32
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto11
+selected true
+xpos 12199
+ypos 3531
+}
+set N88edc7f0 [stack 0]
+push $N187be070
+Dot {
+name Dot54
+selected true
+xpos 11868
+ypos 3457
+}
+set N88edcb60 [stack 0]
+HueCorrect {
+inputs 1+1
+hue {sat {}
+  lum {}
+  red {curve 1 1 1 1.016176462 1.016176462 1.204901934 1}
+  green {}
+  blue {}
+  r_sup {}
+  g_sup {}
+  b_sup {curve -0.482031703 s0 1.105887771 0.1696079969 0.4130661488 0.5548192263 -0.6545807123 -0.482031703 s0}
+  sat_thrsh {}}
+invert_mask true
+mix 0.95
+name red_bias_hue_correct1
+selected true
+xpos 12012
+ypos 3454
+}
+push $N88edc7f0
+push $N88edcb60
+HueCorrect {
+inputs 1+1
+hue {sat {}
+  lum {}
+  red {}
+  green {}
+  blue {}
+  r_sup {}
+  g_sup {}
+  b_sup {curve 1 1 1 1 0.1102942228 0.1102942228 1}
+  sat_thrsh {}}
+invert_mask true
+name HueCorrect1
+selected true
+xpos 11834
+ypos 3537
+}
+Keymix {
+inputs 3
+name Keymix2
+selected true
+xpos 11834
+ypos 3635
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy2
+selected true
+xpos 11834
+ypos 4955
+}
+Premult {
+name Premult1
+selected true
+xpos 11834
+ypos 5101
+}
+push $N88ed8a10
+Invert {
+name Invert6
+selected true
+xpos 13058
+ypos 4769
+}
+FilterErode {
+size 23
+filter gaussian
+mix 0.405
+name FilterErode13
+selected true
+xpos 13219
+ypos 4769
+}
+Dot {
+name Dot55
+selected true
+xpos 13957
+ypos 4778
+}
+Dot {
+name Dot56
+selected true
+xpos 13957
+ypos 4102
+}
+set N88edea50 [stack 0]
+Constant {
+inputs 0
+channels rgb
+color {0.002193871653 0.03598822653 0.8404622674 1}
+name Constant2
+selected true
+xpos 12684
+ypos 3822
+}
+AddChannels {
+channels alpha
+color 1
+name AddChannels2
+selected true
+xpos 12684
+ypos 3936
+}
+push $N187bf880
+Dot {
+name Dot57
+selected true
+xpos 12957
+ypos 2843
+}
+Dot {
+name Dot58
+selected true
+xpos 12957
+ypos 3673
+}
+set N88edf810 [stack 0]
+Merge2 {
+inputs 2
+name Merge34
+selected true
+xpos 12923
+ypos 3942
+}
+set N88edfb80 [stack 0]
+Dot {
+name Dot59
+selected true
+xpos 12957
+ypos 4115
+}
+push $N88edf810
+Dot {
+name Dot60
+selected true
+xpos 13510
+ypos 3673
+}
+set N88ee0260 [stack 0]
+Merge2 {
+inputs 2
+operation from
+name Merge35
+selected true
+xpos 13476
+ypos 4112
+}
+Clamp {
+name Clamp7
+selected true
+xpos 13476
+ypos 4136
+}
+Saturation {
+saturation 0.57
+name Saturation1
+selected true
+xpos 13476
+ypos 4183
+}
+Grade {
+blackpoint 0.002
+whitepoint 0.56
+white_clamp true
+name Grade9
+selected true
+xpos 13608
+ypos 4183
+}
+Merge2 {
+inputs 2
+operation stencil
+name Merge36
+selected true
+xpos 14091
+ypos 4183
+}
+push $N88edea50
+push $N88edfb80
+push $N88ee0260
+Dot {
+name Dot61
+selected true
+xpos 13689
+ypos 3673
+}
+Merge2 {
+inputs 2
+operation minus
+name Merge38
+selected true
+xpos 13655
+ypos 3942
+}
+Clamp {
+name Clamp8
+selected true
+xpos 13655
+ypos 3966
+}
+Saturation {
+saturation 0
+name Saturation2
+selected true
+xpos 13655
+ypos 4024
+}
+Merge2 {
+inputs 2
+operation stencil
+name Merge39
+selected true
+xpos 14086
+ypos 4024
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/grassClump4.tif
+format "1920 1080 0 0 1920 1080 1 HD"
+origset true
+name Read34
+selected true
+xpos 14757
+ypos 1636
+}
+Unpremult {
+name Unpremult8
+selected true
+xpos 14757
+ypos 1720
+}
+Grade {
+blackpoint -0.035
+whitepoint 0.86
+white {2.099999905 0.6000000238 1 1}
+gamma 0.84
+name Grade20
+selected true
+xpos 14757
+ypos 1744
+}
+Saturation {
+saturation 0.6
+name Saturation6
+selected true
+xpos 14757
+ypos 1768
+}
+Premult {
+name Premult10
+selected true
+xpos 14757
+ypos 1792
+}
+Blur {
+size 7
+name Blur19
+selected true
+xpos 14757
+ypos 1816
+}
+set N88ee3960 [stack 0]
+Transform {
+translate {-401 142}
+rotate 7.41562054
+scale 0.25
+center {2048 256}
+name Transform17
+selected true
+xpos 14815
+ypos 1947
+}
+push $N88ee3960
+Transform {
+translate {-866 140}
+scale {0.25 0.2}
+center {2048 256}
+name Transform15
+selected true
+xpos 14685
+ypos 1949
+}
+push 0
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/grassClump2.tif
+format "1920 1080 0 0 1920 1080 1 HD"
+origset true
+name Read38
+selected true
+xpos 14244
+ypos 1636
+}
+Unpremult {
+name Unpremult7
+selected true
+xpos 14244
+ypos 1720
+}
+Grade {
+blackpoint -0.02
+whitepoint 0.89
+white {1 0.6000000238 1 1}
+multiply 2.85
+gamma 0.84
+name Grade18
+selected true
+xpos 14244
+ypos 1744
+}
+Saturation {
+name Saturation5
+selected true
+xpos 14244
+ypos 1768
+}
+Premult {
+name Premult9
+selected true
+xpos 14244
+ypos 1792
+}
+Blur {
+size 15
+name Blur18
+selected true
+xpos 14244
+ypos 1816
+}
+set N88ee54e0 [stack 0]
+Transform {
+translate {-1109 108}
+rotate 13.41711642
+scale {-0.249 0.249}
+skewY -0.2110017091
+center {2048 256}
+name Transform16
+selected true
+xpos 14209
+ypos 1972
+}
+push $N88ee54e0
+Transform {
+translate {-45 702}
+rotate -6.581934374
+scale {-0.2 0.2}
+center {2048 256}
+name Transform14
+selected true
+xpos 14318
+ypos 1975
+}
+Merge2 {
+inputs 4+1
+name Merge40
+selected true
+xpos 14525
+ypos 2178
+}
+Transform {
+translate {311 -320}
+scale 1.209
+center {1024 778}
+name Transform1
+selected true
+xpos 14525
+ypos 2255
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/BG_left_noClouds_v006.exr
+format "3180 1674 0 0 3180 1674 1 "
+origset true
+offset_negative_display_window false
+name Read9
+selected true
+xpos 16354
+ypos 1686
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Meadow/publish/meadowStill_cloudsB_v005.tif
+format "5498 3010 0 0 5498 3010 1 "
+origset true
+version 1
+name Read10
+selected true
+xpos 15777
+ypos 1069
+}
+Reformat {
+format "3145 1674 0 0 3145 1674 1 "
+name Reformat1
+selected true
+xpos 15777
+ypos 1179
+}
+NoOp {
+name In2
+selected true
+xpos 15776
+ypos 1240
+addUserKnob {20 User}
+}
+Crop {
+box {0 0 {width} {height}}
+name Crop8
+selected true
+xpos 15776
+ypos 1264
+disable true
+}
+Position {
+translate {{parent.Control2.LXScroll} {parent.Control2.LYScroll}}
+name Position5
+selected true
+xpos 15776
+ypos 1290
+}
+set N88ee7740 [stack 0]
+push $N88ee7740
+Dot {
+name Dot66
+selected true
+xpos 16105
+ypos 1294
+}
+Position {
+translate {{"(parent.Control2.LXScroll <= 0)? width : -width"} {"(parent.Control2.LYScroll <= 0)? height : - height"}}
+name Position6
+selected true
+xpos 16071
+ypos 1348
+}
+push 0
+push $N88ee7740
+Dot {
+name Dot67
+selected true
+xpos 15905
+ypos 1294
+}
+Position {
+translate {{"(parent.Control2.LXScroll <= 0)? width : -width"} 0}
+name Position7
+selected true
+xpos 15871
+ypos 1348
+}
+push $N88ee7740
+Dot {
+name Dot62
+selected true
+xpos 16005
+ypos 1294
+}
+Position {
+translate {0 {"(parent.Control2.LYScroll <= 0)? height : - height"}}
+name Position8
+selected true
+xpos 15971
+ypos 1348
+}
+Merge2 {
+inputs 4+1
+operation screen
+name Merge41
+selected true
+xpos 15781
+ypos 1405
+}
+Crop {
+box {0 0 {width} {height}}
+reformat true
+crop false
+name Crop9
+selected true
+xpos 15781
+ypos 1445
+disable {{1-parent.Control2.crop x1 0}}
+}
+Output {
+name Output2
+selected true
+xpos 15781
+ypos 1469
+}
+Group {
+inputs 0
+name Grad2
+selected true
+xpos 15614
+ypos 1493
+addUserKnob {20 User}
+addUserKnob {41 format T Constant2.format}
+addUserKnob {41 LLColor T Expression2.LLColor}
+addUserKnob {41 LRColor T Expression2.LRColor}
+addUserKnob {41 URColor T Expression2.URColor}
+addUserKnob {41 ULColor T Expression2.ULColor}
+}
+Constant {
+inputs 0
+channels rgb
+format "3145 1674 0 0 3145 1674 1 "
+name Constant2
+xpos -469
+ypos -253
+}
+Expression {
+temp_name0 LLCorner
+temp_expr0 (1-x/width)*(1-y/height)
+temp_name1 LRCorner
+temp_expr1 (x/width)*(1-y/height)
+temp_name2 URCorner
+temp_expr2 (x/width)*(y/height)
+temp_name3 ULCorner
+temp_expr3 (1-x/width)*(y/height)
+expr0 LLColor.r*LLCorner+LRColor.r*LRCorner+URColor.r*URCorner+ULColor.r*ULCorner
+expr1 LLColor.g*LLCorner+LRColor.g*LRCorner+URColor.g*URCorner+ULColor.g*ULCorner
+expr2 LLColor.b*LLCorner+LRColor.b*LRCorner+URColor.b*URCorner+ULColor.b*ULCorner
+name Expression2
+xpos -469
+ypos -174
+addUserKnob {20 User}
+addUserKnob {18 LLColor}
+LLColor {0.2349999994 0.4702807665 1}
+addUserKnob {18 LRColor}
+LRColor {0.2300000042 0.5376220345 0.6675982475}
+addUserKnob {18 URColor}
+URColor {0.02769457176 0.1257930845 0.9996898174}
+addUserKnob {18 ULColor}
+ULColor {0.02788343281 0.1260046065 0.9996906519}
+}
+Output {
+name Output1
+xpos -469
+ypos -74
+}
+end_group
+Merge2 {
+inputs 2
+name Merge42
+selected true
+xpos 15781
+ypos 1493
+}
+Shuffle {
+alpha white
+name Shuffle4
+selected true
+xpos 15781
+ypos 1517
+}
+Dot {
+name Dot63
+selected true
+xpos 15815
+ypos 1582
+}
+set N89422d60 [stack 0]
+Dot {
+name Dot64
+selected true
+xpos 16250
+ypos 1582
+}
+Merge2 {
+inputs 2
+name Merge43
+selected true
+xpos 16216
+ypos 1716
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/BG_mid_noClouds_v006.exr
+format "3180 1674 0 0 3180 1674 1 "
+origset true
+offset_negative_display_window false
+name Read14
+selected true
+xpos 15921
+ypos 1678
+}
+push $N89422d60
+Merge2 {
+inputs 2
+name Merge44
+selected true
+xpos 15781
+ypos 1708
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/BG_right_noClouds_v006.exr
+format "3145 1674 0 0 3145 1674 1 "
+origset true
+offset_negative_display_window false
+name Read15
+selected true
+xpos 15283
+ypos 1676
+}
+push $N89422d60
+Dot {
+name Dot65
+selected true
+xpos 15448
+ypos 1582
+}
+Merge2 {
+inputs 2
+name Merge45
+selected true
+xpos 15414
+ypos 1706
+}
+Transform {
+translate {-1072 0}
+center {960 540}
+name Transform2
+selected true
+xpos 15414
+ypos 1779
+}
+Switch {
+inputs 3
+which 1
+name Switch2
+selected true
+xpos 15818
+ypos 2461
+}
+Transform {
+translate {409 -147}
+scale 1.12
+center {1572.5 837}
+name Transform3
+selected true
+xpos 15818
+ypos 2485
+}
+Merge2 {
+inputs 2
+name Merge46
+selected true
+xpos 14525
+ypos 2485
+}
+Transform {
+translate {{curve x1 0 -4.010986328 -8.093139648 -11.76025391 -14.76928711 -17.42590332 -19.54370117 -21.72521973 -23.63867188 -25.45666504 -27.22106934 -28.10046387 -30.09960938 -31.35205078 -32.66894531 -33.82702637 -34.85290527 -35.74694824 -36.61328125 -37.29370117 -37.83703613 -38.85522461 -40.49121094 -41.96789551 -43.70324707 -45.62768555 -47.57543945 -49.54125977 -51.12097168 -52.13000488 -53.13696289 -54.2421875 -55.3605957 -56.46154785 -57.6036377 -58.73901367 -59.80651855 -60.86608887 -61.91833496 -62.90686035 -63.95239258 -65.19812012 -66.44970703 -67.54443359 -68.50878906 -69.42150879 -70.09716797 -70.3828125 -70.72924805 -71.26928711 -72.21362305 -73.18249512 -74.16992188 -75.08789063 -75.94775391 -76.58813477 -76.77075195 -77.3737793 -78.11572266 -78.67407227 -79.28063965 -79.87304688 -80.57641602 -80.87011719 -80.95031738 -80.99731445 -80.98632813 -80.99145508 -80.97680664 -81.00561523 -81.04663086 -81.07055664 -81.11987305 -81.07592773 -81.01098633 -80.99633789 -80.95336914 -80.90686035 -80.83984375 -80.75952148 -80.75097656 -80.66699219 -80.61694336 -80.52539063 -80.48083496 -80.44165039 -80.34729004 -80.28356934 -80.19555664 -80.05859375 -79.94677734} {curve x1 0 0.07739257813 0.1744995117 0.2021484375 0.3035888672 0.3936767578 0.4725341797 0.5260009766 0.514831543 0.4870605469 0.4677734375 0.4208374023 0.4185180664 0.3815917969 0.4292602539 0.5088500977 0.5993652344 0.6399536133 0.7459716797 0.8751220703 1.364318848 1.650390625 1.860229492 2.321533203 2.751708984 3.076049805 3.285949707 3.555358887 3.904296875 4.224487305 4.71270752 4.95715332 5.217102051 5.546691895 5.780273438 6.205505371 6.400939941 6.802978516 7.026855469 7.349365234 7.621459961 7.796081543 7.946655273 8.003662109 8.127075195 8.209411621 8.242858887 8.223510742 8.123779297 8.080627441 7.948974609 7.749633789 7.532653809 7.270507813 7.050415039 6.613891602 6.129699707 5.271118164 4.373413086 3.50793457 2.691650391 1.745361328 0.8485107422 -0.07055664063 -0.630065918 -1.07409668 -1.796630859 -2.084838867 -2.90838623 -3.350585938 -3.962158203 -4.832885742 -5.401489258 -6.180358887 -6.856872559 -7.216369629 -8.051513672 -8.386779785 -8.850646973 -9.653625488 -9.91619873 -10.37939453 -10.86364746 -11.53869629 -11.96252441 -12.58239746 -13.18804932 -13.50402832 -14.07049561 -14.71124268 -15.40179443}}
+scale {1 1}
+center {{curve x1 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371 1473.005371} {curve x1 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045 785.4696045}}
+name Transform_MatchMove6
+selected true
+xpos 14525
+ypos 2540
+}
+Crop {
+box {0 0 1920 1080}
+reformat true
+crop false
+name Crop10
+selected true
+xpos 14525
+ypos 2581
+}
+Defocus {
+defocus 2
+name Defocus3
+selected true
+xpos 14525
+ypos 2652
+}
+add_layer {Object Object.alpha}
+RotoPaint {
+output {rgba.alpha none none Object.alpha}
+cliptype none
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a fx x3f000000 fy x3f000000}}}}}
+toolbox {addPoints {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { addPoints str 1 ssx 1 ssy 1 sf 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_autokey false
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 7
+lifetime_end 7
+view {}
+feather 0.5
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name RotoPaint1
+selected true
+xpos 14525
+ypos 3161
+}
+add_layer {ObjectMatte ObjectMatte.red ObjectMatte.green ChairMatte.blue ChairMatte.alpha}
+Shuffle {
+in Object
+out ObjectMatte
+name Shuffle6
+selected true
+xpos 14525
+ypos 3197
+}
+Blur {
+channels ObjectMatte
+size 3.8
+name Blur4
+selected true
+xpos 14525
+ypos 3221
+disable true
+}
+Group {
+name Group1
+selected true
+xpos 14525
+ypos 3373
+addUserKnob {20 User}
+addUserKnob {41 amount l red T DitherRed.amount}
+addUserKnob {41 amount_1 l green T DitherGreen.amount}
+addUserKnob {41 amount_2 l blue T DitherBlue.amount}
+addUserKnob {26 ""}
+addUserKnob {6 Csample l "422 sampling?" +STARTLINE}
+addUserKnob {6 HDCamCorrection l "Source HDCam 1440?" t "use this if the source is HDCam which is 1440 pixels wide not 1920 (then stretched)\n\nnaughty sony!" -STARTLINE}
+HDCamCorrection true
+addUserKnob {3 redAspect l "red noise aspect" t "use this to create non-square pixel noise\n"}
+redAspect 1
+addUserKnob {7 blurRedSize l blur -STARTLINE R 0 5}
+addUserKnob {3 greenAspect l "green noise aspect" t "use this to create non-square pixel noise\nprobably should be 1"}
+greenAspect 1
+addUserKnob {7 blurGreenSize l blur -STARTLINE R 0 5}
+addUserKnob {3 blueAspect l "blue noise aspect" t "use this to create non-square pixel noise\n"}
+blueAspect 1
+addUserKnob {7 blurBlueSize l blur -STARTLINE R 0 5}
+blurBlueSize 0.45
+addUserKnob {6 usePremult l (un)premult +STARTLINE}
+addUserKnob {6 useMask l "use mask" +STARTLINE}
+addUserKnob {6 invertMask l invert -STARTLINE}
+addUserKnob {26 ""}
+addUserKnob {41 from0_1 l (un)premult T CopyPreMult.from0}
+addUserKnob {41 from0 l mask T CopyMask.from0}
+addUserKnob {26 ""}
+addUserKnob {6 croptoFormat l "crop output" t "crops the dither to the incoming image size" +STARTLINE}
+croptoFormat true
+}
+Input {
+inputs 0
+name RGB
+xpos 190
+ypos 13
+}
+set N894267d0 [stack 0]
+push $N894267d0
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name CopyPreMult
+xpos 190
+ypos 65
+disable {{!usePremult i}}
+}
+Unpremult {
+name Unpremult1
+xpos 190
+ypos 134
+disable {{!usePremult i}}
+}
+set N89426eb0 [stack 0]
+Multiply {
+channels rgb
+value 0
+name Multiply1
+xpos -37
+ypos 134
+}
+set N89427220 [stack 0]
+Dither {
+channels {-rgba.red rgba.green -rgba.blue}
+amount 0.032
+maskChannelInput -depth.Z
+invert_mask {{invertMask i}}
+unpremult -rgba.alpha
+name DitherGreen
+xpos 68
+ypos 169
+}
+Transform {
+scale {{greenAspect i} 1}
+center {1024 778}
+filter Impulse
+name transformGreen
+xpos 68
+ypos 207
+}
+Transform {
+scale {{1920/1440 i} 1}
+center {960 540}
+name HDCamAspectCorrect2
+xpos 68
+ypos 233
+disable {{!HDCamCorrection i}}
+}
+Blur {
+channels {-rgba.red rgba.green -rgba.blue}
+size {{parent.blurGreenSize i}}
+name BlurGreen
+xpos 68
+ypos 273
+disable {{parent.blurGreenSize==0?1:0 i}}
+}
+push $N89426eb0
+Merge2 {
+inputs 2
+operation plus
+Achannels rgb
+also_merge all
+name Merge3
+xpos 190
+ypos 310
+}
+set N89428350 [stack 0]
+Input {
+inputs 0
+name mask
+xpos 415
+ypos 7
+number 1
+}
+push $N894267d0
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 depth.Z
+name CopyMask
+xpos 308
+ypos 102
+disable {{!useMask i}}
+}
+set N89428a30 [stack 0]
+Invert {
+name Invert1
+xpos 399
+ypos 184
+disable {{!invertMask i x1 0}}
+}
+push $N89428350
+push $N89427220
+Dither {
+channels {rgba.red -rgba.green -rgba.blue}
+amount 0.017
+maskChannelInput -depth.Z
+invert_mask {{invertMask i}}
+unpremult -rgba.alpha
+name DitherRed
+xpos -167
+ypos 177
+}
+Transform {
+scale {{redAspect i} 1}
+center {1024 778}
+filter Impulse
+name transformRed
+xpos -167
+ypos 220
+}
+Transform {
+scale {{1920/1440 i} 1}
+center {960 540}
+name HDCamAspectCorrect
+xpos -167
+ypos 261
+disable {{!HDCamCorrection i}}
+}
+Blur {
+channels {rgba.red -rgba.green -rgba.blue}
+size {{parent.blurRedSize i}}
+name BlurRed
+xpos -167
+ypos 287
+disable {{parent.blurRedSize==0?1:0 i}}
+}
+push $N89426eb0
+Merge2 {
+inputs 2
+operation plus
+Achannels rgb
+also_merge all
+name Merge1
+xpos -98
+ypos 338
+}
+ShuffleCopy {
+inputs 2
+green green
+blue blue
+name ShuffleRed
+xpos 190
+ypos 368
+}
+push $N89427220
+Dither {
+channels {-rgba.red -rgba.green rgba.blue}
+amount 0.06
+maskChannelInput -depth.Z
+invert_mask {{invertMask i}}
+unpremult -rgba.alpha
+name DitherBlue
+xpos -37
+ypos 168
+}
+Transform {
+scale {{blueAspect i} 1}
+center {1024 778}
+filter Impulse
+name transformBlue
+xpos -37
+ypos 216
+}
+Transform {
+scale {{1920/1440 i} 1}
+center {960 540}
+name HDCamAspectCorrect1
+xpos -32
+ypos 246
+disable {{!HDCamCorrection i}}
+}
+Blur {
+channels {-rgba.red -rgba.green rgba.blue}
+size {{parent.blurBlueSize i}}
+name BlurBlue
+xpos -37
+ypos 286
+disable {{parent.blurBlueSize==0?1:0 i}}
+}
+push $N89426eb0
+Merge2 {
+inputs 2
+operation plus
+Achannels rgb
+also_merge all
+name Merge2
+xpos 107
+ypos 329
+}
+ShuffleCopy {
+inputs 2
+red red
+green green
+name ShuffleBlue
+xpos 190
+ypos 438
+}
+Premult {
+name Premult1
+xpos 190
+ypos 596
+disable {{!usePremult i}}
+}
+set N8942ba50 [stack 0]
+push $N89428a30
+Keymix {
+inputs 3
+maskChannel depth.Z
+name Keymix1
+xpos 308
+ypos 620
+}
+push $N8942ba50
+Switch {
+inputs 2
+which {{useMask i}}
+name Switch1
+xpos 190
+ypos 673
+}
+push $N894267d0
+Copy {
+inputs 2
+channels rgba
+name Copy1
+xpos 257
+ypos 740
+}
+set N8942c130 [stack 0]
+Viewer {
+inputs 2
+name Viewer1
+xpos 31
+ypos 438
+}
+push $N8942c130
+Crop {
+box {0 0 {RGB.width i} {RGB.height i}}
+reformat true
+crop false
+name Crop1
+selected true
+xpos 257
+ypos 828
+disable {{!croptoFormat i}}
+}
+Output {
+name Output1
+xpos 257
+ypos 910
+}
+end_group
+Merge2 {
+inputs 2
+operation from
+maskChannelInput Object.alpha
+invert_mask true
+name Merge47
+selected true
+xpos 14547
+ypos 4018
+}
+Merge2 {
+inputs 2
+operation screen
+maskChannelInput Object.alpha
+invert_mask true
+name Merge48
+selected true
+xpos 14547
+ypos 4177
+}
+Dot {
+name Dot74
+selected true
+xpos 14581
+ypos 5165
+}
+Merge2 {
+inputs 2
+name Merge49
+selected true
+xpos 11834
+ypos 5162
+}
+Crop {
+box {0 0 1920 1080}
+reformat true
+crop false
+name Crop11
+selected true
+xpos 11834
+ypos 5240
+}
+Remove {
+operation keep
+channels rgb
+name Remove2
+selected true
+xpos 11834
+ypos 5305
+}
+push $cut_paste_input
+Group {
+name extractEpisodeShot1
+selected true
+xpos 15649
+ypos 1300
+addUserKnob {20 User}
+addUserKnob {3 episode l Episode}
+episode {{"\[python -execlocal import\\ os\\nimport\\ nuke\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[0\\])]"}}
+addUserKnob {3 shot l Shot}
+shot {{"\[python -execlocal import\\ nuke\\nimport\\ os\\n\\nshotString=nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\]\\nintConvert=\\\[ord(char)\\ -\\ 96\\ for\\ char\\ in\\ shotString.lower()\\]\\nshotInt=None\\nfor\\ index\\ in\\ intConvert:\\n\\ \\ \\ \\ if\\ index>0:\\n\\ \\ \\ \\ \\ \\ \\ \\ shotInt=int(shotString\\\[0:intConvert.index(index)\\])+index\\n\\nret=None\\nif\\ shotInt:\\n\\ \\ \\ \\ ret=shotInt\\nelse:\\n\\ \\ \\ \\ ret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\])]"}}
+}
+Input {
+inputs 0
+name Input1
+xpos 0
+}
+Output {
+name Output1
+xpos 0
+ypos 300
+}
+end_group
+NoOp {
+name Control2
+selected true
+xpos 15649
+ypos 1377
+addUserKnob {20 User}
+addUserKnob {12 Scroll}
+Scroll {{"parent.extractEpisodeShot1.episode + (100 * parent.extractEpisodeShot1.shot)"} 50}
+addUserKnob {6 crop +STARTLINE}
+crop true
+addUserKnob {7 LXScroll}
+LXScroll {{"(Scroll.x <0)? -(-Scroll.x)%width : Scroll.x%width"}}
+addUserKnob {7 LYScroll}
+LYScroll {{"(Scroll.y <0)? -(-Scroll.y)%height : Scroll.y%height"}}
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/grassClump1.tif
+format "1920 1080 0 0 1920 1080 1 HD"
+origset true
+name Read17
+selected true
+xpos 16683
+ypos 1552
+}
+push $cut_paste_input
+Roto {
+output alpha
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Rectangle1 576 bezier
+     {{cc
+       {f 8192}
+       {px
+        {1 x41980000 x42200000 x425c0000 x428c0000 x42c20000}
+        {{{x 3
+        {0 -}}      0
+       {x 2
+        {0 -}}}
+      {{x 3
+        {xc2f80000 -}}      xc2f80000
+       {x 2
+        {xc2f80000 -}}}}
+        {{{x44c584c0 0 1 xbe7b0b49 1}
+       {x44c4ebef xbe9c7762 1 xbe9c7762 1}
+       {x44c4075d xbe3a72d3 1 xbe3a72d3 1}      x44c3ec18
+       {x44c3c2c8 xbd4d5794 1 xbd4d5794 1}
+       {x44c3abec xbc6f89bc 1 0 1}}
+      {{x42eb708c 0 1 x3f65bec0 1}
+       {x43007d37 -}
+       {x42fcb14a -}      x42ff8cb8
+       {x42fcb14e x364ccccd 1 x364ccccd 1}
+       {x42ff8cb9 x3da288c1 1 0 1}}}
+        {{{x 3
+        {x42e40000 -}}      x42e40000
+       {x 2
+        {x42e40000 -}}}
+      {{x 3
+        {0 -}}      0
+       {x 2
+        {0 -}}}}
+        {{{x 3
+        {xc2e40000 -}}      xc2e40000
+       {x 2
+        {xc2e40000 -}}}
+      {{x 3
+        {0 -}}      0
+       {x 2
+        {0 -}}}}
+        {{{x44f044c0 0 1 xbe7b0b49 1}
+       {x44efabef xbe9c7762 1 xbe9c7762 1}
+       {x44eec75d xbe3a72d3 1 xbe3a72d3 1}      x44eeac18
+       {x44ee82c8 xbd4d5794 1 xbd4d5794 1}
+       {x44ee6bec xbc6f89bc 1 0 1}}
+      {{x42eb708c 0 1 x3f65bec0 1}
+       {x43007d37 -}
+       {x42fcb14a -}      x42ff8cb8
+       {x42fcb14e x364ccccd 1 x364ccccd 1}
+       {x42ff8cb9 x3da288c1 1 0 1}}}
+        {{{x 3
+        {0 -}}      0
+       {x 2
+        {0 -}}}
+      {{x 3
+        {xc2f80000 -}}      xc2f80000
+       {x 2
+        {xc2f80000 -}}}}
+        {{{x 3
+        {0 -}}      0
+       {x 2
+        {0 -}}}
+      {{x 3
+        {x42f80000 -}}      x42f80000
+       {x 2
+        {x42f80000 -}}}}
+        {{{x44f044c0 0 1 xbe7b0b49 1}
+       {x44efabef xbe9c7762 1 xbe9c7762 1}
+       {x44eec75d xbe3a72d3 1 xbe3a72d3 1}      x44eeac18
+       {x44ee82c8 xbd4d5794 1 xbd4d5794 1}
+       {x44ee6bec xbc6f89bc 1 0 1}}
+      {{xc37e47bb 0 1 x3f65bed5 1}
+       {xc37382c9 -}
+       {xc375a75b -}      xc37439a4
+       {xc375a759 x364ccccd 1 x364ccccd 1}
+       {xc37439a4 x3da28889 1 0 1}}}
+        {{{x 3
+        {xc2e40000 -}}      xc2e40000
+       {x 2
+        {xc2e40000 -}}}
+      {{x 3
+        {0 -}}      0
+       {x 2
+        {0 -}}}}
+        {{{x 3
+        {x42e40000 -}}      x42e40000
+       {x 2
+        {x42e40000 -}}}
+      {{x 3
+        {0 -}}      0
+       {x 2
+        {0 -}}}}
+        {{{x44c584c0 0 1 xbe7b0b49 1}
+       {x44c4ebef xbe9c7762 1 xbe9c7762 1}
+       {x44c4075d xbe3a72d3 1 xbe3a72d3 1}      x44c3ec18
+       {x44c3c2c8 xbd4d5794 1 xbd4d5794 1}
+       {x44c3abec xbc6f89bc 1 0 1}}
+      {{xc37e47bb 0 1 x3f65bed5 1}
+       {xc37382c9 -}
+       {xc375a75b -}      xc37439a4
+       {xc375a759 x364ccccd 1 x364ccccd 1}
+       {xc37439a4 x3da28889 1 0 1}}}
+        {{{x 3
+        {0 -}}      0
+       {x 2
+        {0 -}}}
+      {{x 3
+        {x42f80000 -}}      x42f80000
+       {x 2
+        {x42f80000 -}}}}}}     idem}
+     {tx x42920000 x44d4e000 x42400000}
+     {a str 1 spx x44700000 spy x44070000 sb 1 ltn x42920000 ltm x42920000 tt x41000000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 8 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 73
+lifetime_end 73
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto12
+selected true
+xpos 12334
+ypos 3402
+}

@@ -19,7 +19,6 @@ define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
                         <page id="DAG.1"/>
                         <page id="Curve Editor.1"/>
                         <page id="DopeSheet.1"/>
-                        <page id="DAG.2"/>
                     </dock>
                 </splitter>
             </splitter>
@@ -55,7 +54,7 @@ Group {
  addUserKnob {3 episode l Episode}
  episode {{"\[python -execlocal import\\ os\\nimport\\ nuke\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[0\\])]"}}
  addUserKnob {3 shot l Shot}
- shot {{"\[python -execlocal import\\ nuke\\nimport\\ os\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\])]"}}
+ shot {{"\[python -execlocal import\\ nuke\\nimport\\ os\\n\\nshotString=nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\]\\nintConvert=\\\[ord(char)\\ -\\ 96\\ for\\ char\\ in\\ shotString.lower()\\]\\nshotInt=None\\nfor\\ index\\ in\\ intConvert:\\n\\ \\ \\ \\ if\\ index>0:\\n\\ \\ \\ \\ \\ \\ \\ \\ shotInt=int(shotString\\\[0:intConvert.index(index)\\])+index\\n\\nret=None\\nif\\ shotInt:\\n\\ \\ \\ \\ ret=shotInt\\nelse:\\n\\ \\ \\ \\ ret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\])]"}}
 }
  Input {
   inputs 0

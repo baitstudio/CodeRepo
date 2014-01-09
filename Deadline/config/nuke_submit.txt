@@ -1,6 +1,5 @@
 Plugin=Nuke
-Pool=nuke
-Group=none
+Group=nuke
 Priority=50
 MachineLimit=0
 TaskTimeoutMinutes=0

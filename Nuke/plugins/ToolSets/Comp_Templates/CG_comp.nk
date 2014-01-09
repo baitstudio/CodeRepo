@@ -1,0 +1,477 @@
+#! C:/Program Files/Nuke7.0v8/Nuke7.0.exe -nx
+version 7.0 v8
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="-8" y="-8" w="1936" h="1056" screen="0">
+        <splitter orientation="1">
+            <split size="1214"/>
+            <splitter orientation="1">
+                <split size="46"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="1164"/>
+                <splitter orientation="2">
+                    <split size="0"/>
+                    <dock id=""/>
+                    <split size="991"/>
+                    <dock id="" activePageId="DAG.1">
+                        <page id="DAG.1"/>
+                        <page id="Curve Editor.1"/>
+                        <page id="DopeSheet.1"/>
+                    </dock>
+                </splitter>
+            </splitter>
+            <split size="702"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+            </dock>
+        </splitter>
+    </window>
+    <window x="1920" y="0" w="1936" h="1096" screen="1">
+        <splitter orientation="2">
+            <split size="1062"/>
+            <dock id="" activePageId="Viewer.1">
+                <page id="Viewer.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name K:/CodeRepo/Nuke/plugins/ToolSets/Comp_Templates/CG_comp.nk
+ frame 55
+ last_frame 81
+ lock_range true
+ format "1920 1080 0 0 1920 1080 1 HD"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ tile_color 0x8c8e8aff
+ label Plate
+ note_font_size 42
+ xpos -433
+ ypos -146
+ bdwidth 214
+ bdheight 219
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode11
+ tile_color 0x8e8e3800
+ label "CG Beauty"
+ note_font_size 42
+ xpos -1841
+ ypos 611
+ bdwidth 505
+ bdheight 442
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode4
+ tile_color 0x388e8e00
+ label REF
+ note_font_size 42
+ xpos 500
+ ypos -656
+ bdwidth 1542
+ bdheight 387
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode6
+ tile_color 0xc63e3bff
+ label "Object matte"
+ note_font_size 42
+ xpos -127
+ ypos 166
+ bdwidth 405
+ bdheight 425
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode2
+ tile_color 0x71bdc6ff
+ label "CG Shadow"
+ note_font_size 42
+ xpos -1061
+ ypos 698
+ bdwidth 954
+ bdheight 446
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh014/scale_refs/14_scale_ref.PNG
+ format "988 557 0 0 988 557 1 "
+ origset true
+ name Read3
+ xpos 510
+ ypos -578
+}
+Reformat {
+ name Reformat2
+ xpos 510
+ ypos -494
+}
+Read {
+ inputs 0
+ file C:/Users/cale.pugh/Downloads/Car_light_ref.png
+ format "988 559 0 0 988 559 1 "
+ origset true
+ name Read6
+ xpos 602
+ ypos -577
+}
+Reformat {
+ name Reformat4
+ xpos 602
+ ypos -493
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh078/scale_refs/sh078_scale_ref.PNG
+ format "991 558 0 0 991 558 1 "
+ origset true
+ name Read4
+ xpos 698
+ ypos -577
+}
+Reformat {
+ name Reformat6
+ xpos 698
+ ypos -493
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh069/scale_refs/sh069_scale_ref.PNG
+ format "989 560 0 0 989 560 1 "
+ origset true
+ name Read5
+ xpos 794
+ ypos -577
+}
+Reformat {
+ name Reformat7
+ xpos 794
+ ypos -493
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh034/scale_refs/sh034_scale_ref.JPG
+ format "986 554 0 0 986 554 1 "
+ origset true
+ name Read7
+ xpos 890
+ ypos -577
+}
+Reformat {
+ name Reformat8
+ xpos 890
+ ypos -493
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh089/scale_refs/89_scale_ref.PNG
+ format "993 557 0 0 993 557 1 "
+ origset true
+ name Read9
+ xpos 985
+ ypos -576
+}
+Reformat {
+ name Reformat9
+ xpos 985
+ ypos -492
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh026/scale_refs/26_scale_ref.PNG
+ format "988 559 0 0 988 559 1 "
+ origset true
+ name Read11
+ xpos 1078
+ ypos -576
+}
+Reformat {
+ name Reformat10
+ xpos 1078
+ ypos -492
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/499_generics/sh028/scale_refs/28_scale_ref.PNG
+ format "988 559 0 0 988 559 1 "
+ origset true
+ name Read12
+ xpos 1172
+ ypos -575
+}
+Reformat {
+ name Reformat11
+ xpos 1172
+ ypos -491
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_413_munchmould/gnp413sh001/plates/gnp413sh001.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 114
+ origlast 114
+ origset true
+ name Read21
+ xpos 1837
+ ypos -550
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/reference/characters/grandpa/437_4_X1080_2C.Grp.01.jpg
+ format "1920 1080 0 0 1920 1080 1 HD"
+ origset true
+ name Read22
+ xpos 1933
+ ypos -557
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_423_madeofmagic/gnp423sh001/plates/gnp423sh001.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 69
+ origlast 69
+ origset true
+ name Read23
+ xpos 1723
+ ypos -553
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_414_aussie/gnp414sh001/plates/gnp414sh001.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 138
+ origlast 138
+ origset true
+ name Read24
+ xpos 1618
+ ypos -556
+}
+Transform {
+ translate {-289 -396}
+ center {930 530}
+ name Transform6
+ xpos 1618
+ ypos -472
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_404_dancing/gnp404sh007/scale_refs/gnp404sh007_scale_ref.#####.jpg
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 110
+ frame_mode offset
+ frame 19.000000
+ origlast 110
+ origset true
+ colorspace linear
+ name Read8
+ xpos 1366
+ ypos -572
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_408_roly/gnp408sh046/plates/gnp408sh046_clean.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 152
+ origlast 152
+ origset true
+ name Read20
+ xpos 1515
+ ypos -550
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_406_bump/gnp406sh004/scale_refs/gnp406sh004_scale_ref.#####.jpg
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 63
+ frame_mode offset
+ frame 21.000000
+ origlast 63
+ origset true
+ name Read10
+ xpos 1267
+ ypos -573
+}
+Read {
+ inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_445_spanglyjangly/gnp445sh055/plates/gnp445sh055.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 81
+ origlast 81
+ origset true
+ name Read1
+ xpos -393
+ ypos -64
+}
+Dot {
+ name Dot1
+ xpos -359
+ ypos 518
+}
+set N2672f150 [stack 0]
+Merge2 {
+ operation mask
+ name Merge2
+ xpos -27
+ ypos 515
+}
+Dot {
+ name Dot2
+ xpos 7
+ ypos 1317
+}
+Read {
+ inputs 0
+ file N:/00719_grandpa/gnp_445_spanglyjangly/cg/gnp445sh055/v001/beauty_gnp445sh055.light.v001.#####.exr
+ format "1920 1080 0 0 1920 1080 1 HD"
+ before black
+ last 69
+ origlast 69
+ origset true
+ name Read13
+ xpos -1549
+ ypos 644
+}
+Unpremult {
+ name Unpremult2
+ xpos -1549
+ ypos 728
+}
+Premult {
+ name Premult1
+ xpos -1549
+ ypos 1210
+}
+Grain2 {
+ name Grain2_1
+ label "Kodak 5248"
+ xpos -1362
+ ypos 1204
+ red_size {4.62 2.31}
+ green_size {4.2 2.03}
+ blue_size {3.5 1.75}
+ red_m 0.155
+ green_m 0.14
+ blue_m 1
+ black {0 0 0}
+ minimum {0 0 0}
+}
+Read {
+ inputs 0
+ file N:/00719_grandpa/gnp_445_spanglyjangly/cg/gnp445sh055/v001/setExtras_gnp445sh055.light.v001.#####.exr
+ format "960 540 0 0 960 540 1 "
+ last 69
+ origlast 69
+ origset true
+ name Read2
+ xpos -1026
+ ypos 781
+}
+Reformat {
+ name Reformat5
+ xpos -1026
+ ypos 865
+}
+set N26c11870 [stack 0]
+add_layer {shdw_ao_raw shdw_ao_raw.red shdw_ao_raw.green shdw_ao_raw.blue shdw_ao_raw.alpha}
+Shuffle {
+ in shdw_ao_raw
+ name Shuffle1
+ xpos -885
+ ypos 1007
+}
+Constant {
+ inputs 0
+ channels rgb
+ color 1
+ name Constant1
+ xpos -754
+ ypos 900
+}
+set N26c11f50 [stack 0]
+Merge2 {
+ inputs 2
+ name Merge1
+ xpos -754
+ ypos 1007
+}
+push $N26c11870
+add_layer {shdw_shadow_raw shdw_shadow_raw.red shdw_shadow_raw.green shdw_shadow_raw.blue shdw_shadow_raw.alpha}
+Shuffle {
+ in shdw_shadow_raw
+ name Shuffle2
+ xpos -871
+ ypos 865
+}
+push $N26c11f50
+Merge2 {
+ inputs 2
+ name Merge5
+ xpos -754
+ ypos 865
+}
+push $N2672f150
+Grade {
+ inputs 1+1
+ white 0.34
+ maskChannelMask rgba.red
+ invert_mask true
+ name shadow_grade
+ xpos -393
+ ypos 865
+}
+Grade {
+ inputs 1+1
+ white 0.215
+ maskChannelMask rgba.blue
+ invert_mask true
+ name ao_grade
+ xpos -393
+ ypos 1007
+}
+Merge2 {
+ inputs 2
+ also_merge all
+ invert_mask true
+ name Merge3
+ xpos -393
+ ypos 1210
+}
+Merge2 {
+ inputs 2
+ name Merge4
+ xpos -393
+ ypos 1314
+}
+Crop {
+ box {0 0 1920 1080}
+ name Crop2
+ xpos -393
+ ypos 1412
+}
+Remove {
+ operation keep
+ channels rgb
+ name Remove1
+ xpos -393
+ ypos 1436
+}
+Viewer {
+ frame 55
+ fps 25
+ input_process false
+ translate {-0.7540000081 -0.03999999911}
+ name Viewer1
+ xpos -393
+ ypos 1588
+}

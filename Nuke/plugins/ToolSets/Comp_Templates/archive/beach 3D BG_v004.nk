@@ -1,426 +1,283 @@
-#! C:/Program Files/Nuke7.0v8/Nuke7.0.exe -nx
+set cut_paste_input [stack 0]
 version 7.0 v8
-define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
-<layout version="1.0">
-    <window x="1920" y="0" w="1936" h="1080" screen="1">
-        <splitter orientation="1">
-            <split size="1214"/>
-            <splitter orientation="1">
-                <split size="46"/>
-                <dock id="" hideTitles="1" activePageId="Toolbar.1">
-                    <page id="Toolbar.1"/>
-                </dock>
-                <split size="1164"/>
-                <splitter orientation="2">
-                    <split size="81"/>
-                    <dock id=""/>
-                    <split size="934"/>
-                    <dock id="" activePageId="DAG.1">
-                        <page id="DAG.1"/>
-                        <page id="Curve Editor.1"/>
-                        <page id="DopeSheet.1"/>
-                    </dock>
-                </splitter>
-            </splitter>
-            <split size="702"/>
-            <dock id="" activePageId="Properties.1">
-                <page id="Properties.1"/>
-            </dock>
-        </splitter>
-    </window>
-    <window x="73" y="0" w="1813" h="1156" screen="0">
-        <splitter orientation="2">
-            <split size="1122"/>
-            <dock id="" activePageId="Viewer.1">
-                <page id="Viewer.1"/>
-            </dock>
-        </splitter>
-    </window>
-</layout>
-}
-Root {
- inputs 0
- name K:/CodeRepo/Nuke/plugins/ToolSets/Comp_Templates/cloudAutoMotivator_v001.nk
- fps 25
- format "1920 1080 0 0 1920 1080 1 HD"
- proxy_type scale
- proxy_format "960 540 0 0 960 540 1 "
+BackdropNode {
+inputs 0
+name BackdropNode3
+tile_color 0xaaaaaa00
+label "Foreground\n"
+note_font_size 42
+selected true
+xpos 1048
+ypos -4814
+bdwidth 931
+bdheight 1188
 }
 BackdropNode {
- inputs 0
- name BackdropNode3
- tile_color 0xaaaaaa00
- label "Foreground\n"
- note_font_size 42
- xpos 92
- ypos 307
- bdwidth 931
- bdheight 1188
+inputs 0
+name BackdropNode13
+tile_color 0x7171c600
+label "mid\n"
+note_font_size 42
+selected true
+xpos -133
+ypos -3680
+bdwidth 1018
+bdheight 579
 }
 BackdropNode {
- inputs 0
- name BackdropNode13
- tile_color 0x7171c600
- label "mid\n"
- note_font_size 42
- xpos -1089
- ypos 1441
- bdwidth 1018
- bdheight 579
-}
-BackdropNode {
- inputs 0
- name BackdropNode20
- tile_color 0x8e388e00
- label "Far\n"
- note_font_size 42
- xpos 1409
- ypos 535
- bdwidth 1527
- bdheight 1135
-}
-Constant {
- inputs 0
- channels rgb
- name Constant1
- xpos -638
- ypos -89
-}
-Ramp {
- p1 {1908 72}
- name Ramp1
- xpos -638
- ypos -17
-}
-NoOp {
- name In1
- xpos -648
- ypos 99
- addUserKnob {20 User}
-}
-Crop {
- box {0 0 {width i} {height i}}
- name Crop1
- xpos -663
- ypos 140
-}
-Position {
- translate {{parent.Control1.LXScroll i} {parent.Control1.LYScroll i}}
- name Position1
- xpos -663
- ypos 166
-}
-set N23f68ba0 [stack 0]
-push $N23f68ba0
-Dot {
- name Dot1
- xpos -334
- ypos 170
-}
-Position {
- translate {{"(parent.Control1.LXScroll <= 0)? width : -width" i} {"(parent.Control1.LYScroll <= 0)? height : - height" i}}
- name Position2
- xpos -368
- ypos 224
-}
-push 0
-push $N23f68ba0
-Dot {
- name Dot2
- xpos -534
- ypos 170
-}
-Position {
- translate {{"(parent.Control1.LXScroll <= 0)? width : -width"} 0}
- name Position3
- xpos -568
- ypos 224
-}
-push $N23f68ba0
-Dot {
- name Dot3
- xpos -434
- ypos 170
-}
-Position {
- translate {0 {"(parent.Control1.LYScroll <= 0)? height : - height" i}}
- name Position4
- xpos -468
- ypos 224
-}
-Merge2 {
- inputs 4+1
- operation screen
- name Merge1
- xpos -663
- ypos 286
-}
-Crop {
- box {0 0 {width} {height}}
- name Crop2
- xpos -663
- ypos 319
- disable {{1-parent.Control1.crop x1 0}}
-}
-Output {
- name Output1
- xpos -663
- ypos 373
-}
-Group {
- inputs 0
- name extractEpisodeShot
- xpos -790
- ypos 163
- addUserKnob {20 User}
- addUserKnob {3 episode l Episode}
- episode {{"\[python -execlocal import\\ os\\nimport\\ nuke\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[0\\])]"}}
- addUserKnob {3 shot l Shot}
- shot {{"\[python -execlocal import\\ nuke\\nimport\\ os\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\])]"}}
-}
- Input {
-  inputs 0
-  name Input1
-  xpos 0
- }
- Output {
-  name Output1
-  xpos 0
-  ypos 300
- }
-end_group
-NoOp {
- name Control1
- xpos -790
- ypos 224
- addUserKnob {20 User}
- addUserKnob {12 Scroll}
- Scroll {{"parent.extractEpisodeShot.episode + (100 * parent.extractEpisodeShot.shot)"} 0}
- addUserKnob {6 crop +STARTLINE}
- addUserKnob {7 LXScroll}
- LXScroll {{"(Scroll.x <0)? -(-Scroll.x)%width : Scroll.x%width"}}
- addUserKnob {7 LYScroll}
- LYScroll {{"(Scroll.y <0)? -(-Scroll.y)%height : Scroll.y%height"}}
+inputs 0
+name BackdropNode20
+tile_color 0x8e388e00
+label "Far\n"
+note_font_size 42
+selected true
+xpos 2365
+ypos -4586
+bdwidth 1527
+bdheight 1135
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_020/work/Sand_dunes_020.psd
- format "19763 5151 0 0 19763 5151 1 "
- origset true
- name Read26
- xpos -312
- ypos 1184
- disable true
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_020/work/Sand_dunes_020.psd
+format "19763 5151 0 0 19763 5151 1 "
+origset true
+name Read26
+selected true
+xpos 644
+ypos -3937
+disable true
 }
 Dilate {
- channels alpha
- size -5
- name Dilate4
- xpos -312
- ypos 1268
- disable true
+channels alpha
+size -5
+name Dilate4
+selected true
+xpos 644
+ypos -3853
+disable true
 }
 Blur {
- channels alpha
- size 5
- name Blur10
- xpos -312
- ypos 1304
- disable true
+channels alpha
+size 5
+name Blur10
+selected true
+xpos 644
+ypos -3817
+disable true
 }
 Premult {
- name Premult8
- xpos -312
- ypos 1340
- disable true
+name Premult8
+selected true
+xpos 644
+ypos -3781
+disable true
 }
-set N241b89b0 [stack 0]
+set N1ec89ec0 [stack 0]
 Reformat {
- type scale
- scale 0.15
- name Reformat15
- xpos -211
- ypos 1365
+type scale
+scale 0.15
+name Reformat15
+selected true
+xpos 745
+ypos -3756
 }
 Write {
- channels rgba
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_020/work/Sand_dunes_020_lores2.tga
- file_type targa
- checkHashOnRead false
- version 3
- name Write12
- xpos -211
- ypos 1389
- disable true
+channels rgba
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_020/work/Sand_dunes_020_lores2.tga
+file_type targa
+checkHashOnRead false
+version 3
+name Write12
+selected true
+xpos 745
+ypos -3732
+disable true
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_214/work/Sand_dunes_214.png
- format "24383 5429 0 0 24383 5429 1 "
- origset true
- name Read40
- xpos 356
- ypos 460
- disable true
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_214/work/Sand_dunes_214.png
+format "24383 5429 0 0 24383 5429 1 "
+origset true
+name Read40
+selected true
+xpos 1312
+ypos -4661
+disable true
 }
 Reformat {
- type scale
- scale 0.15
- name Reformat16
- xpos 356
- ypos 544
- disable true
+type scale
+scale 0.15
+name Reformat16
+selected true
+xpos 1312
+ypos -4577
+disable true
 }
 Write {
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_214/work/Sand_dunes_214_lores.png
- file_type png
- checkHashOnRead false
- version 1
- name Write13
- xpos 356
- ypos 568
- disable true
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_214/work/Sand_dunes_214_lores.png
+file_type png
+checkHashOnRead false
+version 1
+name Write13
+selected true
+xpos 1312
+ypos -4553
+disable true
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_213/work/Sand_dunes_213_lores.tga
- format "2583 548 0 0 2583 548 1 "
- origset true
- name Read39
- xpos 121
- ypos 593
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_213/work/Sand_dunes_213_lores.tga
+format "2583 548 0 0 2583 548 1 "
+origset true
+name Read39
+selected true
+xpos 1077
+ypos -4528
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_150/work/Sand_dunes_150.png
- format "21610 5498 0 0 21610 5498 1 "
- origset true
- version 3
- name Read4
- xpos -955
- ypos 1279
- disable true
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_150/work/Sand_dunes_150.png
+format "21610 5498 0 0 21610 5498 1 "
+origset true
+version 3
+name Read4
+selected true
+xpos 1
+ypos -3842
+disable true
 }
 Reformat {
- type scale
- scale 0.15
- name Reformat19
- xpos -955
- ypos 1363
- disable true
+type scale
+scale 0.15
+name Reformat19
+selected true
+xpos 1
+ypos -3758
+disable true
 }
 Write {
- channels rgba
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_150/work/Sand_dunes_150_lores.png
- file_type png
- checkHashOnRead false
- version 2
- name Write15
- xpos -955
- ypos 1387
- disable true
+channels rgba
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_150/work/Sand_dunes_150_lores.png
+file_type png
+checkHashOnRead false
+version 2
+name Write15
+selected true
+xpos 1
+ypos -3734
+disable true
 }
-push $N241b89b0
+push $N1ec89ec0
 Reformat {
- type scale
- scale 0.2
- name Reformat9
- xpos -389
- ypos 1374
- disable true
+type scale
+scale 0.2
+name Reformat9
+selected true
+xpos 567
+ypos -3747
+disable true
 }
 Write {
- channels rgba
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_020/work/Sand_dunes_020_lores.tga
- file_type targa
- checkHashOnRead false
- version 1
- name Write7
- xpos -389
- ypos 1398
- disable true
+channels rgba
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_020/work/Sand_dunes_020_lores.tga
+file_type targa
+checkHashOnRead false
+version 1
+name Write7
+selected true
+xpos 567
+ypos -3723
+disable true
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_130/work/Sand_dunes_130.png
- format "21610 5498 0 0 21610 5498 1 "
- origset true
- version 3
- name Read8
- xpos -631
- ypos 1283
- disable true
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_130/work/Sand_dunes_130.png
+format "21610 5498 0 0 21610 5498 1 "
+origset true
+version 3
+name Read8
+selected true
+xpos 325
+ypos -3838
+disable true
 }
 Reformat {
- type scale
- scale 0.15
- name Reformat20
- xpos -631
- ypos 1367
- disable true
+type scale
+scale 0.15
+name Reformat20
+selected true
+xpos 325
+ypos -3754
+disable true
 }
 Write {
- channels rgba
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_130/work/Sand_dunes_130_lores.png
- file_type png
- checkHashOnRead false
- version 3
- name Write16
- xpos -631
- ypos 1391
- disable true
+channels rgba
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_130/work/Sand_dunes_130_lores.png
+file_type png
+checkHashOnRead false
+version 3
+name Write16
+selected true
+xpos 325
+ypos -3730
+disable true
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_130/work/Sand_dunes_130.png
- format "21610 5498 0 0 21610 5498 1 "
- origset true
- version 3
- name Read14
- xpos 2013
- ypos 1038
- disable true
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_130/work/Sand_dunes_130.png
+format "21610 5498 0 0 21610 5498 1 "
+origset true
+version 3
+name Read14
+selected true
+xpos 2969
+ypos -4083
+disable true
 }
 Reformat {
- type scale
- scale 0.15
- name Reformat21
- xpos 2013
- ypos 1122
- disable true
+type scale
+scale 0.15
+name Reformat21
+selected true
+xpos 2969
+ypos -3999
+disable true
 }
 Write {
- channels rgba
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_130/work/Sand_dunes_130_lores.png
- file_type png
- checkHashOnRead false
- version 3
- name Write17
- xpos 2013
- ypos 1146
- disable true
+channels rgba
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_130/work/Sand_dunes_130_lores.png
+file_type png
+checkHashOnRead false
+version 3
+name Write17
+selected true
+xpos 2969
+ypos -3975
+disable true
 }
 Read {
- inputs 0
- file L:/00719_grandpa/reference/environments/southwold/7426238414_9f08d2df38_o.jpg
- format "4000 1466 0 0 4000 1466 1 "
- origset true
- name Read15
- xpos 2425
- ypos 766
+inputs 0
+file L:/00719_grandpa/reference/environments/southwold/7426238414_9f08d2df38_o.jpg
+format "4000 1466 0 0 4000 1466 1 "
+origset true
+name Read15
+selected true
+xpos 3381
+ypos -4355
 }
-set N243d9a80 [stack 0]
+set N1ee57fe0 [stack 0]
 Shuffle {
- alpha white
- name Shuffle1
- xpos 2425
- ypos 856
+alpha white
+name Shuffle1
+selected true
+xpos 3381
+ypos -4265
 }
 RotoPaint {
- output alpha
- cliptype none
- replace true
- curves {{{v x3f99999a}
+output alpha
+cliptype none
+replace true
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -3277,7 +3134,7 @@ RotoPaint {
         {xbfc00000 0}}}     idem}
      {tx 1 x44fd4e7d x4455b200}
      {a str 1 spx x44700000 spy x44070000 sb 1 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -3295,38 +3152,41 @@ RotoPaint {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- view {}
- motionblur_on true
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name RotoPaint8
- xpos 2425
- ypos 884
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+view {}
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name RotoPaint8
+selected true
+xpos 3381
+ypos -4237
 }
 Premult {
- name Premult29
- xpos 2425
- ypos 920
+name Premult29
+selected true
+xpos 3381
+ypos -4201
 }
-push $N243d9a80
+push $N1ee57fe0
 Shuffle {
- red black
- green black
- blue black
- alpha black
- name Shuffle44
- xpos 2315
- ypos 796
+red black
+green black
+blue black
+alpha black
+name Shuffle44
+selected true
+xpos 3271
+ypos -4325
 }
 Roto {
- output alpha
- curves {{{v x3f99999a}
+output alpha
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -3360,7 +3220,7 @@ Roto {
         {xc0c66700 x41299980}}}     idem}
      {tx 1 x44c04ccd x4456e667}
      {a str 1 spx x44700000 spy x44070000 sb 1 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -3378,171 +3238,189 @@ Roto {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name Roto10
- xpos 2315
- ypos 938
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto10
+selected true
+xpos 3271
+ypos -4183
 }
 Merge2 {
- inputs 2
- operation in
- name Merge34
- xpos 2425
- ypos 944
+inputs 2
+operation in
+name Merge34
+selected true
+xpos 3381
+ypos -4177
 }
-set N2445d300 [stack 0]
+set N1ee59480 [stack 0]
 Grade {
- blackpoint {-0.1000000015 -0.06499999762 -0.03500000015 0}
- whitepoint {0.5400000215 0.5799999833 0.6600000262 1}
- name Grade9
- xpos 2511
- ypos 988
+blackpoint {-0.1000000015 -0.06499999762 -0.03500000015 0}
+whitepoint {0.5400000215 0.5799999833 0.6600000262 1}
+name Grade9
+selected true
+xpos 3467
+ypos -4133
 }
-push $N2445d300
+push $N1ee59480
 Crop {
- box {1422 777.5 1661 1004}
- reformat true
- crop false
- name Crop3
- xpos 2403
- ypos 986
+box {1422 777.5 1661 1004}
+reformat true
+crop false
+name Crop3
+selected true
+xpos 3359
+ypos -4135
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_030/work/Sand_dunes_030.png
- format "19520 5432 0 0 19520 5432 1 "
- origset true
- version 3
- name Read5
- xpos 1842
- ypos 615
- disable true
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_030/work/Sand_dunes_030.png
+format "19520 5432 0 0 19520 5432 1 "
+origset true
+version 3
+name Read5
+selected true
+xpos 2798
+ypos -4506
+disable true
 }
 Reformat {
- type scale
- scale 0.15
- name Reformat22
- xpos 1842
- ypos 699
- disable true
+type scale
+scale 0.15
+name Reformat22
+selected true
+xpos 2798
+ypos -4422
+disable true
 }
 Write {
- channels rgba
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_030/work/Sand_dunes_030_lores.png
- file_type png
- checkHashOnRead false
- version 4
- name Write18
- xpos 1842
- ypos 723
- disable true
+channels rgba
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_030/work/Sand_dunes_030_lores.png
+file_type png
+checkHashOnRead false
+version 4
+name Write18
+selected true
+xpos 2798
+ypos -4398
+disable true
 }
 Camera2 {
- inputs 0
- translate {0 0.5 0}
- rotate {5 0 0}
- focal 25
- haperture 32
- vaperture 18
- name Camera1
- xpos 1777
- ypos 1364
+inputs 0
+translate {0 0.5 0}
+rotate {5 0 0}
+focal 25
+haperture 32
+vaperture 18
+name Camera1
+selected true
+xpos 2733
+ypos -3757
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_195/work/Sand_dunes_195_lores.tga
- format "2009 527 0 0 2009 527 1 "
- origset true
- name Read6
- xpos 1546
- ypos 1196
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_195/work/Sand_dunes_195_lores.tga
+format "2009 527 0 0 2009 527 1 "
+origset true
+name Read6
+selected true
+xpos 2502
+ypos -3925
 }
-set N43aced20 [stack 0]
+set N2a506300 [stack 0]
 Project3D {
- inputs 2
- name Project3D1
- xpos 1767
- ypos 1446
+inputs 2
+name Project3D1
+selected true
+xpos 2723
+ypos -3675
 }
+push $cut_paste_input
 ReadGeo2 {
- inputs 0
- file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
- version 3
- cast_shadow false
- receive_shadow false
- uniform_scale 0.01
- name ReadGeo2
- xpos 1670
- ypos 1464
+file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
+version 3
+cast_shadow false
+receive_shadow false
+uniform_scale 0.01
+name ReadGeo2
+selected true
+xpos 2626
+ypos -3657
 }
-set N43acf770 [stack 0]
+set N2a5069e0 [stack 0]
 ApplyMaterial {
- inputs 2
- name ApplyMaterial1
- xpos 1767
- ypos 1470
+inputs 2
+name ApplyMaterial1
+selected true
+xpos 2723
+ypos -3651
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_150/work/Sand_dunes_150_lores.png
- format "3242 825 0 0 3242 825 1 "
- origset true
- version 1
- name Read9
- xpos -947
- ypos 1536
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_150/work/Sand_dunes_150_lores.png
+format "3242 825 0 0 3242 825 1 "
+origset true
+version 1
+name Read9
+selected true
+xpos 9
+ypos -3585
 }
-set N43acfe50 [stack 0]
+set N2a5070c0 [stack 0]
 Shuffle {
- red white
- green white
- blue white
- alpha white
- name Shuffle46
- xpos -1057
- ypos 1566
+red white
+green white
+blue white
+alpha white
+name Shuffle46
+selected true
+xpos -101
+ypos -3555
 }
 Transform {
- scale 0.95
- center {1621 412.5}
- name Transform29
- xpos -1057
- ypos 1590
+scale 0.95
+center {1621 412.5}
+name Transform29
+selected true
+xpos -101
+ypos -3531
 }
 Blur {
- size 50
- name Blur26
- xpos -1057
- ypos 1614
+size 50
+name Blur26
+selected true
+xpos -101
+ypos -3507
 }
-push $N43acfe50
+push $N2a5070c0
 Merge2 {
- inputs 2
- operation multiply
- name Merge5
- xpos -947
- ypos 1631
+inputs 2
+operation multiply
+name Merge5
+selected true
+xpos 9
+ypos -3490
 }
-push $N43acfe50
+push $N2a5070c0
 Shuffle {
- red black
- green black
- blue black
- alpha black
- name Shuffle54
- xpos -851
- ypos 1566
+red black
+green black
+blue black
+alpha black
+name Shuffle54
+selected true
+xpos 105
+ypos -3555
 }
 Roto {
- output alpha
- curves {{{v x3f99999a}
+output alpha
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -3573,7 +3451,7 @@ Roto {
         {0 0}}}     idem}
      {tx x40000000 x43ccd555 x44214000}
      {a str 1 spx x44700000 spy x44070000 sb 1 ltn x40000000 ltm x40000000 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -3591,160 +3469,177 @@ Roto {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- lifetime_start 2
- lifetime_end 2
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name Roto28
- xpos -851
- ypos 1677
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 2
+lifetime_end 2
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto28
+selected true
+xpos 105
+ypos -3444
 }
 Blur {
- size 10
- name Blur32
- xpos -851
- ypos 1713
+size 10
+name Blur32
+selected true
+xpos 105
+ypos -3408
 }
 Merge2 {
- inputs 2
- operation out
- name Merge106
- xpos -947
- ypos 1719
+inputs 2
+operation out
+name Merge106
+selected true
+xpos 9
+ypos -3402
 }
 Blur {
- channels alpha
- size 3
- name Blur12
- xpos -947
- ypos 1779
- disable true
+channels alpha
+size 3
+name Blur12
+selected true
+xpos 9
+ypos -3342
+disable true
 }
-set N43b6c450 [stack 0]
+set N2a508fb0 [stack 0]
 HueKeyer {
- lut {amount {curve x0.388235271 0 x0.706985414 0 x1.247794151 1 x1.507720709 1 x1.665441275 0 x6 0 s0}
-   sat_thrsh {}}
- invert false
- name HueKeyer3
- xpos -819
- ypos 1779
+lut {amount {curve x0.388235271 0 x0.706985414 0 x1.247794151 1 x1.507720709 1 x1.665441275 0 x6 0 s0}
+  sat_thrsh {}}
+invert false
+name HueKeyer3
+selected true
+xpos 137
+ypos -3342
 }
-push $N43b6c450
+push $N2a508fb0
 ColorCorrect {
- inputs 1+1
- saturation 0.42
- gain 1.24
- name ColorCorrect1
- xpos -947
- ypos 1822
+inputs 1+1
+saturation 0.42
+gain 1.24
+name ColorCorrect1
+selected true
+xpos 9
+ypos -3299
 }
 Grade {
- blackpoint -0.02
- maskChannelInput rgba.alpha
- name hazer1
- xpos -947
- ypos 1846
+blackpoint -0.02
+maskChannelInput rgba.alpha
+name hazer1
+selected true
+xpos 9
+ypos -3275
 }
 Premult {
- name Premult1
- xpos -947
- ypos 1882
+name Premult1
+selected true
+xpos 9
+ypos -3239
 }
-set N43c38720 [stack 0]
+set N2a618e10 [stack 0]
 UVTile2 {
- translate {0.05 0.57}
- scale {0.1 0.1}
- name UVTile2
- xpos -991
- ypos 1892
- disable true
+translate {0.05 0.57}
+scale {0.1 0.1}
+name UVTile2
+selected true
+xpos -35
+ypos -3229
+disable true
 }
 ReadGeo2 {
- inputs 0
- file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
- version 3
- cast_shadow false
- receive_shadow false
- uniform_scale 0.01
- name ReadGeo3
- xpos -1079
- ypos 1917
- disable true
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
+version 3
+cast_shadow false
+receive_shadow false
+uniform_scale 0.01
+name ReadGeo3
+selected true
+xpos -123
+ypos -3204
+disable true
 }
 ApplyMaterial {
- inputs 2
- name ApplyMaterial3
- xpos -975
- ypos 1933
- disable true
+inputs 2
+name ApplyMaterial3
+selected true
+xpos -19
+ypos -3188
+disable true
 }
 TransformGeo {
- display textured
- render_mode textured
- translate {0 -0.55 0}
- scaling {0.55 0.51 0.55}
- uniform_scale 0.71
- name TransformGeo1
- xpos -975
- ypos 1982
- disable true
+display textured
+render_mode textured
+translate {0 -0.55 0}
+scaling {0.55 0.51 0.55}
+uniform_scale 0.71
+name TransformGeo1
+selected true
+xpos -19
+ypos -3139
+disable true
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_240/work/Sand_dunes_240_lores.tif
- format "2059 517 0 0 2059 517 1 "
- origset true
- name Read24
- xpos 605
- ypos 328
- disable true
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_240/work/Sand_dunes_240_lores.tif
+format "2059 517 0 0 2059 517 1 "
+origset true
+name Read24
+selected true
+xpos 1561
+ypos -4793
+disable true
 }
 Reformat {
- type scale
- scale 0.15
- name Reformat18
- xpos 605
- ypos 404
- disable true
+type scale
+scale 0.15
+name Reformat18
+selected true
+xpos 1561
+ypos -4717
+disable true
 }
 Write {
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_214/work/Sand_dunes_214_lores.png
- file_type png
- checkHashOnRead false
- version 1
- name Write14
- xpos 605
- ypos 428
- disable true
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_214/work/Sand_dunes_214_lores.png
+file_type png
+checkHashOnRead false
+version 1
+name Write14
+selected true
+xpos 1561
+ypos -4693
+disable true
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/1109418.jpg
- format "500 375 0 0 500 375 1 "
- origset true
- name Read48
- xpos 2744
- ypos 1107
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/1109418.jpg
+format "500 375 0 0 500 375 1 "
+origset true
+name Read48
+selected true
+xpos 3700
+ypos -4014
 }
-set N43cf57d0 [stack 0]
+set N2a61a990 [stack 0]
 Shuffle {
- red black
- green black
- blue black
- alpha black
- name Shuffle53
- xpos 2640
- ypos 1137
+red black
+green black
+blue black
+alpha black
+name Shuffle53
+selected true
+xpos 3596
+ypos -3984
 }
 Roto {
- output alpha
- curves {{{v x3f99999a}
+output alpha
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -3787,7 +3682,7 @@ Roto {
         {0 0}}}     idem}
      {t x435a0b85 x4337cb85}
      {a str 1 spx x437a0000 spy x433b8000 sb 1 ltn x40000000 ltm x40000000 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -3805,157 +3700,175 @@ Roto {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {250 187.5}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- lifetime_start 2
- lifetime_end 2
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name Roto27
- xpos 2640
- ypos 1181
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {250 187.5}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 2
+lifetime_end 2
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto27
+selected true
+xpos 3596
+ypos -3940
 }
-push $N43cf57d0
+push $N2a61a990
 Keyer {
- operation "luminance key"
- range {0.3456730891 0.5419623242 1 1}
- name Keyer3
- xpos 2846
- ypos 1193
+operation "luminance key"
+range {0.3456730891 0.5419623242 1 1}
+name Keyer3
+selected true
+xpos 3802
+ypos -3928
 }
 Merge2 {
- inputs 2
- operation max
- name Merge105
- xpos 2843
- ypos 1255
+inputs 2
+operation max
+name Merge105
+selected true
+xpos 3799
+ypos -3866
 }
-push $N43cf57d0
+push $N2a61a990
 Copy {
- inputs 2
- from0 rgba.alpha
- to0 rgba.alpha
- name Copy10
- xpos 2719
- ypos 1288
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy10
+selected true
+xpos 3675
+ypos -3833
 }
 Grade {
- blackpoint -0.02
- whitepoint 1.18
- maskChannelInput rgba.alpha
- name Grade13
- xpos 2719
- ypos 1360
+blackpoint -0.02
+whitepoint 1.18
+maskChannelInput rgba.alpha
+name Grade13
+selected true
+xpos 3675
+ypos -3761
 }
 Premult {
- name Premult32
- xpos 2698
- ypos 1420
+name Premult32
+selected true
+xpos 3654
+ypos -3701
 }
-set N43cf6fe0 [stack 0]
+set N2a61c1a0 [stack 0]
 UVTile2 {
- translate {0.1 0.63}
- scale {0.03 0.08}
- name UVTile3
- xpos 2698
- ypos 1550
+translate {0.1 0.63}
+scale {0.03 0.08}
+name UVTile3
+selected true
+xpos 3654
+ypos -3571
 }
 ReadGeo2 {
- inputs 0
- file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
- version 4
- read_texture_w_coord true
- cast_shadow false
- receive_shadow false
- uniform_scale 0.01
- name ReadGeo15
- xpos 2581
- ypos 1568
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
+version 4
+read_texture_w_coord true
+cast_shadow false
+receive_shadow false
+uniform_scale 0.01
+name ReadGeo15
+selected true
+xpos 3537
+ypos -3553
 }
 ApplyMaterial {
- inputs 2
- name ApplyMaterial18
- xpos 2698
- ypos 1574
+inputs 2
+name ApplyMaterial18
+selected true
+xpos 3654
+ypos -3547
 }
 TransformGeo {
- display textured
- render_mode textured
- translate {0 -1.7 0}
- rotate {0 7 0}
- scaling {0.55 0.48 0.55}
- uniform_scale 2
- name TransformGeo6
- xpos 2698
- ypos 1632
+display textured
+render_mode textured
+translate {0 -1.7 0}
+rotate {0 7 0}
+scaling {0.55 0.48 0.55}
+uniform_scale 2
+name TransformGeo6
+selected true
+xpos 3654
+ypos -3489
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/SouthwoldLighthouseHouses.jpg
- format "928 1302 0 0 928 1302 1 "
- origset true
- name Read47
- xpos 2454
- ypos 1029
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/SouthwoldLighthouseHouses.jpg
+format "928 1302 0 0 928 1302 1 "
+origset true
+name Read47
+selected true
+xpos 3410
+ypos -4092
 }
-set N43df66a0 [stack 0]
+set N2bcbc2b0 [stack 0]
 Keyer {
- operation bluescreen
- range {0.8689237646 0.9406075604 1 1}
- name Keyer2
- xpos 2462
- ypos 1134
+operation bluescreen
+range {0.8689237646 0.9406075604 1 1}
+name Keyer2
+selected true
+xpos 3418
+ypos -3987
 }
 Grade {
- channels alpha
- whitepoint 0.2
- name Grade10
- xpos 2462
- ypos 1170
+channels alpha
+whitepoint 0.2
+name Grade10
+selected true
+xpos 3418
+ypos -3951
 }
 Dilate {
- size -1
- name Dilate16
- xpos 2462
- ypos 1206
- disable true
+size -1
+name Dilate16
+selected true
+xpos 3418
+ypos -3915
+disable true
 }
 Dilate {
- size 1
- name Dilate17
- xpos 2462
- ypos 1242
- disable true
+size 1
+name Dilate17
+selected true
+xpos 3418
+ypos -3879
+disable true
 }
 Dilate {
- size 4
- name Dilate14
- xpos 2462
- ypos 1278
+size 4
+name Dilate14
+selected true
+xpos 3418
+ypos -3843
 }
 Dilate {
- size -3
- name Dilate15
- xpos 2462
- ypos 1314
+size -3
+name Dilate15
+selected true
+xpos 3418
+ypos -3807
 }
-push $N43df66a0
+push $N2bcbc2b0
 Shuffle {
- red black
- green black
- blue black
- alpha black
- name Shuffle45
- xpos 2316
- ypos 1059
+red black
+green black
+blue black
+alpha black
+name Shuffle45
+selected true
+xpos 3272
+ypos -4062
 }
 Roto {
- output alpha
- curves {{{v x3f99999a}
+output alpha
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -3995,7 +3908,7 @@ Roto {
         {x40800000 x40c00000}}}     idem}
      {tx 1 x43f2f8e4 x43d60e39}
      {a str 1 spx x43e80000 spy x4422c000 sb 1 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -4013,156 +3926,168 @@ Roto {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {464 651}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- view {}
- motionblur_on true
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name Roto25
- xpos 2305
- ypos 1333
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {464 651}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+view {}
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto25
+selected true
+xpos 3261
+ypos -3788
 }
 Merge2 {
- inputs 2
- operation out
- name Merge39
- xpos 2462
- ypos 1350
+inputs 2
+operation out
+name Merge39
+selected true
+xpos 3418
+ypos -3771
 }
 Dilate {
- channels alpha
- size -1
- name Dilate1
- xpos 2462
- ypos 1374
+channels alpha
+size -1
+name Dilate1
+selected true
+xpos 3418
+ypos -3747
 }
-push $N43df66a0
+push $N2bcbc2b0
 Copy {
- inputs 2
- from0 rgba.alpha
- to0 rgba.alpha
- name Copy9
- xpos 2375
- ypos 1404
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy9
+selected true
+xpos 3331
+ypos -3717
 }
-set N43df8c70 [stack 0]
+set N2c456600 [stack 0]
 Blur {
- channels alpha
- size 3
- name Blur25
- xpos 2261
- ypos 1443
+channels alpha
+size 3
+name Blur25
+selected true
+xpos 3217
+ypos -3678
 }
 Group {
- inputs 0
- name Grad1
- xpos 856
- ypos 1725
- addUserKnob {20 User}
- addUserKnob {41 format T Constant2.format}
- addUserKnob {41 LLColor T Expression2.LLColor}
- addUserKnob {41 LRColor T Expression2.LRColor}
- addUserKnob {41 URColor T Expression2.URColor}
- addUserKnob {41 ULColor T Expression2.ULColor}
+inputs 0
+name Grad1
+selected true
+xpos 1812
+ypos -3396
+addUserKnob {20 User}
+addUserKnob {41 format T Constant2.format}
+addUserKnob {41 LLColor T Expression2.LLColor}
+addUserKnob {41 LRColor T Expression2.LRColor}
+addUserKnob {41 URColor T Expression2.URColor}
+addUserKnob {41 ULColor T Expression2.ULColor}
 }
- Constant {
-  inputs 0
-  channels rgb
-  name Constant2
-  xpos -469
-  ypos -253
- }
- Expression {
-  temp_name0 LLCorner
-  temp_expr0 (1-x/width)*(1-y/height)
-  temp_name1 LRCorner
-  temp_expr1 (x/width)*(1-y/height)
-  temp_name2 URCorner
-  temp_expr2 (x/width)*(y/height)
-  temp_name3 ULCorner
-  temp_expr3 (1-x/width)*(y/height)
-  expr0 LLColor.r*LLCorner+LRColor.r*LRCorner+URColor.r*URCorner+ULColor.r*ULCorner
-  expr1 LLColor.g*LLCorner+LRColor.g*LRCorner+URColor.g*URCorner+ULColor.g*ULCorner
-  expr2 LLColor.b*LLCorner+LRColor.b*LRCorner+URColor.b*URCorner+ULColor.b*ULCorner
-  name Expression2
-  xpos -469
-  ypos -174
-  addUserKnob {20 User}
-  addUserKnob {18 LLColor}
-  LLColor {1 0 0}
-  addUserKnob {18 LRColor}
-  LRColor {0 1 0}
-  addUserKnob {18 URColor}
-  URColor {0 0 1}
-  addUserKnob {18 ULColor}
-  ULColor {0 0 0}
- }
- Output {
-  name Output1
-  xpos -469
-  ypos -74
- }
+Constant {
+inputs 0
+channels rgb
+name Constant2
+xpos -469
+ypos -253
+}
+Expression {
+temp_name0 LLCorner
+temp_expr0 (1-x/width)*(1-y/height)
+temp_name1 LRCorner
+temp_expr1 (x/width)*(1-y/height)
+temp_name2 URCorner
+temp_expr2 (x/width)*(y/height)
+temp_name3 ULCorner
+temp_expr3 (1-x/width)*(y/height)
+expr0 LLColor.r*LLCorner+LRColor.r*LRCorner+URColor.r*URCorner+ULColor.r*ULCorner
+expr1 LLColor.g*LLCorner+LRColor.g*LRCorner+URColor.g*URCorner+ULColor.g*ULCorner
+expr2 LLColor.b*LLCorner+LRColor.b*LRCorner+URColor.b*URCorner+ULColor.b*ULCorner
+name Expression2
+xpos -469
+ypos -174
+addUserKnob {20 User}
+addUserKnob {18 LLColor}
+LLColor {1 0 0}
+addUserKnob {18 LRColor}
+LRColor {0 1 0}
+addUserKnob {18 URColor}
+URColor {0 0 1}
+addUserKnob {18 ULColor}
+ULColor {0 0 0}
+}
+Output {
+name Output1
+xpos -469
+ypos -74
+}
 end_group
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_130/work/Sand_dunes_130_lores.png
- format "3110 778 0 0 3110 778 1 "
- origset true
- version 2
- name Read7
- xpos -606
- ypos 1478
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_130/work/Sand_dunes_130_lores.png
+format "3110 778 0 0 3110 778 1 "
+origset true
+version 2
+name Read7
+selected true
+xpos 350
+ypos -3643
 }
-set N43f6b480 [stack 0]
+set N2c457730 [stack 0]
 Shuffle {
- red white
- green white
- blue white
- alpha white
- name Shuffle47
- xpos -728
- ypos 1554
+red white
+green white
+blue white
+alpha white
+name Shuffle47
+selected true
+xpos 228
+ypos -3567
 }
 Transform {
- scale 0.95
- center {1621 412.5}
- name Transform32
- xpos -728
- ypos 1578
+scale 0.95
+center {1621 412.5}
+name Transform32
+selected true
+xpos 228
+ypos -3543
 }
 Blur {
- size 50
- name Blur27
- xpos -728
- ypos 1602
+size 50
+name Blur27
+selected true
+xpos 228
+ypos -3519
 }
-push $N43f6b480
+push $N2c457730
 Merge2 {
- inputs 2
- operation multiply
- name Merge99
- xpos -606
- ypos 1608
+inputs 2
+operation multiply
+name Merge99
+selected true
+xpos 350
+ypos -3513
 }
-push $N43f6b480
+push $N2c457730
 Shuffle {
- red black
- green black
- blue black
- alpha black
- name Shuffle55
- xpos -503
- ypos 1508
+red black
+green black
+blue black
+alpha black
+name Shuffle55
+selected true
+xpos 453
+ypos -3613
 }
-set N43f6c5b0 [stack 0]
+set N2c4137c0 [stack 0]
 Roto {
- output alpha
- curves {{{v x3f99999a}
+output alpha
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -4190,7 +4115,7 @@ Roto {
         {0 0}}}     idem}
      {tx x40000000 x43130000 x44252666}
      {a str 1 spx x44700000 spy x44070000 sb 1 ltn x40000000 ltm x40000000 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -4208,37 +4133,40 @@ Roto {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- lifetime_start 2
- lifetime_end 2
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name Roto29
- xpos -460
- ypos 1570
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 2
+lifetime_end 2
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto29
+selected true
+xpos 496
+ypos -3551
 }
 Blur {
- size 15
- name Blur33
- xpos -460
- ypos 1606
+size 15
+name Blur33
+selected true
+xpos 496
+ypos -3515
 }
 Merge2 {
- inputs 2
- operation out
- name Merge107
- xpos -606
- ypos 1632
+inputs 2
+operation out
+name Merge107
+selected true
+xpos 350
+ypos -3489
 }
-push $N43f6c5b0
+push $N2c4137c0
 Roto {
- output alpha
- curves {{{v x3f99999a}
+output alpha
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -4266,7 +4194,7 @@ Roto {
         {xc36e0000 x43700000}}}     idem}
      {tx x40000000 x4539eccd x4419cccd}
      {a str 1 spx x44700000 spy x44070000 sb 1 ltn x40000000 ltm x40000000 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -4284,124 +4212,137 @@ Roto {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- lifetime_start 2
- lifetime_end 2
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name Roto30
- xpos -518
- ypos 1652
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 2
+lifetime_end 2
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto30
+selected true
+xpos 438
+ypos -3469
 }
 Blur {
- size 15
- name Blur34
- xpos -518
- ypos 1688
+size 15
+name Blur34
+selected true
+xpos 438
+ypos -3433
 }
 Merge2 {
- inputs 2
- operation out
- name Merge108
- xpos -606
- ypos 1694
+inputs 2
+operation out
+name Merge108
+selected true
+xpos 350
+ypos -3427
 }
 Blur {
- channels alpha
- size 3
- name Blur11
- xpos -606
- ypos 1766
+channels alpha
+size 3
+name Blur11
+selected true
+xpos 350
+ypos -3355
 }
-set N43f6ddc0 [stack 0]
+set N2c414fd0 [stack 0]
 HueKeyer {
- lut {amount {curve x0.388235271 0 x0.706985414 0 x1.247794151 1 x1.507720709 1 x1.665441275 0 x6 0 s0}
-   sat_thrsh {}}
- invert false
- name HueKeyer8
- xpos -484
- ypos 1782
- disable true
+lut {amount {curve x0.388235271 0 x0.706985414 0 x1.247794151 1 x1.507720709 1 x1.665441275 0 x6 0 s0}
+  sat_thrsh {}}
+invert false
+name HueKeyer8
+selected true
+xpos 472
+ypos -3339
+disable true
 }
-push $N43f6ddc0
+push $N2c414fd0
 ColorCorrect {
- inputs 1+1
- saturation 0.42
- gain 1.24
- name ColorCorrect4
- xpos -600
- ypos 1817
- disable true
+inputs 1+1
+saturation 0.42
+gain 1.24
+name ColorCorrect4
+selected true
+xpos 356
+ypos -3304
+disable true
 }
 Grade {
- blackpoint -0.04
- maskChannelInput rgba.alpha
- name hazer2
- xpos -600
- ypos 1841
+blackpoint -0.04
+maskChannelInput rgba.alpha
+name hazer2
+selected true
+xpos 356
+ypos -3280
 }
 Premult {
- name Premult26
- xpos -600
- ypos 1872
+name Premult26
+selected true
+xpos 356
+ypos -3249
 }
-set N4416b3e0 [stack 0]
+set N2c415d90 [stack 0]
 UVTile2 {
- translate {0.04 0.59}
- scale {0.08 0.06}
- name UVTile11
- xpos -611
- ypos 1913
- disable true
+translate {0.04 0.59}
+scale {0.08 0.06}
+name UVTile11
+selected true
+xpos 345
+ypos -3208
+disable true
 }
+push $cut_paste_input
 ReadGeo2 {
- inputs 0
- file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
- version 4
- read_texture_w_coord true
- cast_shadow false
- receive_shadow false
- uniform_scale 0.01
- name ReadGeo10
- xpos -706
- ypos 1942
- disable true
+file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
+version 4
+read_texture_w_coord true
+cast_shadow false
+receive_shadow false
+uniform_scale 0.01
+name ReadGeo10
+selected true
+xpos 250
+ypos -3179
+disable true
 }
 ApplyMaterial {
- inputs 2
- name ApplyMaterial13
- xpos -606
- ypos 1942
- disable true
+inputs 2
+name ApplyMaterial13
+selected true
+xpos 350
+ypos -3179
+disable true
 }
 TransformGeo {
- display textured
- render_mode textured
- translate {0 -0.55 0}
- rotate {0 -21 0}
- scaling {0.55 0.55 0.55}
- uniform_scale 0.69
- name TransformGeo3
- xpos -606
- ypos 1972
- disable true
+display textured
+render_mode textured
+translate {0 -0.55 0}
+rotate {0 -21 0}
+scaling {0.55 0.55 0.55}
+uniform_scale 0.69
+name TransformGeo3
+selected true
+xpos 350
+ypos -3149
+disable true
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_240/work/Sand_dunes_240_lores.tif
- format "2059 517 0 0 2059 517 1 "
- origset true
- name Read13
- xpos 604
- ypos 475
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_240/work/Sand_dunes_240_lores.tif
+format "2059 517 0 0 2059 517 1 "
+origset true
+name Read13
+selected true
+xpos 1560
+ypos -4646
 }
 RotoPaint {
- curves {{{v x3f99999a}
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -4939,7 +4880,7 @@ RotoPaint {
        {x449d2000 x4390cccd 1}}}
      {tx 1 x449d859a x4394fccd}
      {a ro 0 go 0 bo 0 ao 0 bu 1 src 1 stx x422199a0 str 1 spx x4480b000 spy x43814000 sb 1 tt x41900000}}}}}}
- toolbox {clone {
+toolbox {clone {
   { selectAll src 1 str 1 ssx 1 ssy 1 sf 1 }
   { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -4957,44 +4898,47 @@ RotoPaint {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_lifetime_type single
- toolbar_paint_source fg
- toolbar_source_transform_translate {76.20007324 -3.051757813e-005}
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {1029.5 258.5}
- colorOverlay {0 0 0 0}
- paint_source foreground
- lifetime_type "all frames"
- motionblur_on true
- brush_spacing 0.05000000075
- brush_hardness 0.200000003
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name RotoPaint6
- xpos 604
- ypos 559
+toolbar_brush_hardness 0.200000003
+toolbar_lifetime_type single
+toolbar_paint_source fg
+toolbar_source_transform_translate {76.20007324 -3.051757813e-005}
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {1029.5 258.5}
+colorOverlay {0 0 0 0}
+paint_source foreground
+lifetime_type "all frames"
+motionblur_on true
+brush_spacing 0.05000000075
+brush_hardness 0.200000003
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name RotoPaint6
+selected true
+xpos 1560
+ypos -4562
 }
-set N4416c880 [stack 0]
+set N2d3d9a10 [stack 0]
 Shuffle {
- alpha white
- name Shuffle18
- xpos 604
- ypos 583
+alpha white
+name Shuffle18
+selected true
+xpos 1560
+ypos -4538
 }
-push $N4416c880
+push $N2d3d9a10
 Shuffle {
- red black
- green black
- blue black
- alpha black
- name Shuffle19
- xpos 714
- ypos 578
+red black
+green black
+blue black
+alpha black
+name Shuffle19
+selected true
+xpos 1670
+ypos -4543
 }
 Roto {
- output alpha
- curves {{{v x3f99999a}
+output alpha
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -5122,7 +5066,7 @@ Roto {
 	 {{x3fb94800 -}}}}}     idem}
      {tx 1 x46684078 x45692969}
      {a str 1 spx x44700000 spy x44070000 sb 1 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -5140,1434 +5084,190 @@ Roto {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- view {}
- motionblur_on true
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name Roto11
- xpos 714
- ypos 602
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+view {}
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto11
+selected true
+xpos 1670
+ypos -4519
 }
 Merge2 {
- inputs 2
- operation out
- name Merge31
- xpos 604
- ypos 608
+inputs 2
+operation out
+name Merge31
+selected true
+xpos 1560
+ypos -4513
 }
 Blur {
- channels alpha
- size 3
- name Blur13
- xpos 604
- ypos 632
+channels alpha
+size 3
+name Blur13
+selected true
+xpos 1560
+ypos -4489
 }
-set N4416ee50 [stack 0]
+set N2d3dbfe0 [stack 0]
 HueKeyer {
- lut {amount {curve 0 x0.08823531866 0 x0.2356617451 0 x1.235661745 1 x1.811029196 1 x2.811029196 0 x6 0}
-   sat_thrsh {curve 0.1 x0.2356617451 0.1 x0.2356617451 0.1 x1.235661745 0.1 x1.811029196 0.1 x2.811029196 0.1 x6 0.1}}
- invert false
- name HueKeyer7
- xpos 500
- ypos 675
+lut {amount {curve 0 x0.08823531866 0 x0.2356617451 0 x1.235661745 1 x1.811029196 1 x2.811029196 0 x6 0}
+  sat_thrsh {curve 0.1 x0.2356617451 0.1 x0.2356617451 0.1 x1.235661745 0.1 x1.811029196 0.1 x2.811029196 0.1 x6 0.1}}
+invert false
+name HueKeyer7
+selected true
+xpos 1456
+ypos -4446
 }
-push $N4416ee50
+push $N2d3dbfe0
 ColorLookup {
- inputs 1+1
- lut {master {}
-   red {curve C 0 x0.3921763897 0.6821606159 x1 1}
-   green {curve C 0 x0.266220659 0.5315234661 x1 1}
-   blue {curve C 0 x0.1442995965 0.490642041 x1 1}
-   alpha {}}
- name ColorLookup7
- xpos 604
- ypos 702
+inputs 1+1
+lut {master {}
+  red {curve C 0 x0.3921763897 0.6821606159 x1 1}
+  green {curve C 0 x0.266220659 0.5315234661 x1 1}
+  blue {curve C 0 x0.1442995965 0.490642041 x1 1}
+  alpha {}}
+name ColorLookup7
+selected true
+xpos 1560
+ypos -4419
 }
 Premult {
- name Premult16
- xpos 604
- ypos 726
+name Premult16
+selected true
+xpos 1560
+ypos -4395
 }
 UVTile2 {
- translate {0 0.33}
- scale {0.73 0.73}
- name UVTile6
- xpos 604
- ypos 768
+translate {0 0.33}
+scale {0.73 0.73}
+name UVTile6
+selected true
+xpos 1560
+ypos -4353
 }
 Camera2 {
- inputs 0
- translate {0 1 0}
- rotate {-7 0 0}
- focal 25
- haperture 32
- vaperture 18
- name Camera4
- xpos 836
- ypos 657
+inputs 0
+translate {0 1 0}
+rotate {-7 0 0}
+focal 25
+haperture 32
+vaperture 18
+name Camera4
+selected true
+xpos 1792
+ypos -4464
 }
 ReadGeo2 {
- inputs 0
- file M:/00719_grandpa/assets/Environments/Beach/work/cylinder.obj
- version 3
- cast_shadow false
- receive_shadow false
- uniform_scale 0.01
- name ReadGeo6
- xpos 933
- ypos 722
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/work/cylinder.obj
+version 3
+cast_shadow false
+receive_shadow false
+uniform_scale 0.01
+name ReadGeo6
+selected true
+xpos 1889
+ypos -4399
 }
 UVProject {
- inputs 2
- name UVProject3
- xpos 834
- ypos 720
+inputs 2
+name UVProject3
+selected true
+xpos 1790
+ypos -4401
 }
 ApplyMaterial {
- inputs 2
- name ApplyMaterial12
- xpos 826
- ypos 768
+inputs 2
+name ApplyMaterial12
+selected true
+xpos 1782
+ypos -4353
 }
 TransformGeo {
- display textured
- render_mode textured
- translate {0 -0.26 0.1}
- rotate {0 -59 0}
- scaling {0.55 0.3 0.55}
- uniform_scale 0.56
- name TransformGeo9
- xpos 752
- ypos 841
+display textured
+render_mode textured
+translate {0 -0.26 0.1}
+rotate {0 -59 0}
+scaling {0.55 0.3 0.55}
+uniform_scale 0.56
+name TransformGeo9
+selected true
+xpos 1708
+ypos -4280
 }
 Camera {
- inputs 0
- translate {{CameraTracker4.camTranslate} {CameraTracker4.camTranslate} {CameraTracker4.camTranslate}}
- rotate {{CameraTracker4.camRotate} {CameraTracker4.camRotate} {CameraTracker4.camRotate}}
- focal {{CameraTracker4.focalLength}}
- haperture {{CameraTracker4.aperture.x}}
- vaperture {{CameraTracker4.aperture.y}}
- win_translate {{CameraTracker4.windowTranslate} {CameraTracker4.windowTranslate}}
- win_scale {{CameraTracker4.windowScale} {CameraTracker4.windowScale}}
- name Camera5
- xpos 919
- ypos 2425
+inputs 0
+translate {{CameraTracker4.camTranslate} {CameraTracker4.camTranslate} {CameraTracker4.camTranslate}}
+rotate {{CameraTracker4.camRotate} {CameraTracker4.camRotate} {CameraTracker4.camRotate}}
+focal {{CameraTracker4.focalLength}}
+haperture {{CameraTracker4.aperture.x}}
+vaperture {{CameraTracker4.aperture.y}}
+win_translate {{CameraTracker4.windowTranslate} {CameraTracker4.windowTranslate}}
+win_scale {{CameraTracker4.windowScale} {CameraTracker4.windowScale}}
+name Camera10
+selected true
+xpos 1947
+ypos -2806
 }
-Camera {
- inputs 0
- translate {{CameraTracker4.camTranslate} {CameraTracker4.camTranslate} {CameraTracker4.camTranslate}}
- rotate {{CameraTracker4.camRotate} {CameraTracker4.camRotate} {CameraTracker4.camRotate}}
- focal {{CameraTracker4.focalLength}}
- haperture {{CameraTracker4.aperture.x}}
- vaperture {{CameraTracker4.aperture.y}}
- win_translate {{CameraTracker4.windowTranslate} {CameraTracker4.windowTranslate}}
- win_scale {{CameraTracker4.windowScale} {CameraTracker4.windowScale}}
- name Camera10
- xpos 991
- ypos 2315
-}
-set N46a8c570 [stack 0]
-push $N43cf6fe0
-Card2 {
- cast_shadow false
- receive_shadow false
- translate {0 -0.1 0}
- scaling {0.8 1 1}
- uniform_scale 0.75
- control_points {3 3 3 6 
-
-1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
-1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
-1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
-1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
-1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
-1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
-1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
-1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
-1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
- name Card4
- xpos 2795
- ypos 1548
-}
-TransformGeo {
- translate {-6.3 1.23 -8.430000305}
- rotate {0 43 0}
- uniform_scale 2
- name TransformGeo19
- xpos 2795
- ypos 1630
-}
-set N48720c50 [stack 0]
+set N2e46eb00 [stack 0]
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_030/work/Sand_dunes_030_lores.png
- format "2506 542 0 0 2506 542 1 "
- origset true
- version 2
- name Read10
- xpos 1842
- ypos 810
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_213/work/Sand_dunes_213_lores.tga
+format "24383 5429 0 0 24383 5429 1 "
+origset true
+name Read18
+selected true
+xpos 1151
+ypos -4132
 }
-set N4887ac30 [stack 0]
+set N2ebc7e10 [stack 0]
 Shuffle {
- red white
- green white
- blue white
- alpha white
- name Shuffle52
- xpos 1732
- ypos 840
+red white
+green white
+blue white
+alpha white
+name Shuffle2
+selected true
+xpos 1049
+ypos -4120
 }
 Transform {
- scale 0.95
- center {1621 412.5}
- name Transform40
- xpos 1732
- ypos 864
+scale 0.95
+center {1621 412.5}
+name Transform42
+selected true
+xpos 1049
+ypos -4096
 }
 Blur {
- size 50
- name Blur31
- xpos 1732
- ypos 888
+size 50
+name Blur14
+selected true
+xpos 1049
+ypos -4072
 }
-push $N4887ac30
-Merge2 {
- inputs 2
- operation multiply
- name Merge104
- xpos 1842
- ypos 894
-}
-Blur {
- channels alpha
- size 3
- name Blur24
- xpos 1842
- ypos 929
- disable true
-}
-set N4887bd60 [stack 0]
-HueKeyer {
- lut {amount {curve x0.388235271 0 x0.706985414 0 x1.247794151 1 x1.507720709 1 x1.665441275 0 x6 0 s0}
-   sat_thrsh {}}
- invert false
- name HueKeyer11
- xpos 1726
- ypos 952
- disable true
-}
-push $N4887bd60
-ColorCorrect {
- inputs 1+1
- saturation 0.42
- gain 1.24
- name ColorCorrect12
- xpos 1842
- ypos 990
- disable true
-}
-Premult {
- name Premult30
- xpos 1842
- ypos 1014
-}
-UVTile2 {
- translate {0 0.487}
- scale {0.26 0.26}
- name UVTile15
- xpos 1842
- ypos 1068
-}
-ReadGeo2 {
- inputs 0
- file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
- version 4
- read_texture_w_coord true
- cast_shadow false
- receive_shadow false
- uniform_scale 0.01
- name ReadGeo14
- xpos 1725
- ypos 1086
-}
-ApplyMaterial {
- inputs 2
- name ApplyMaterial17
- xpos 1842
- ypos 1092
-}
-TransformGeo {
- display textured
- render_mode textured
- translate {0 -0.55 0}
- rotate {0 -87 0}
- scaling {0.55 0.48 0.55}
- uniform_scale 0.94
- name TransformGeo18
- xpos 1842
- ypos 1152
-}
-push $N43df8c70
-Group {
- name B_EdgeExpander
- tile_color 0xff3f00ff
- xpos 2535
- ypos 1428
- addUserKnob {20 B_EdgeExpander l "Bait Edge Expander"}
- addUserKnob {4 outputMode l "Output Modes" M {"Final Result" "Erode Preview" "Extend Preview" "Edge Preview"}}
- addUserKnob {26 ""}
- addUserKnob {41 size l "Erode size" T Erode1.size}
- addUserKnob {41 blur l "Erode blur" T Erode1.blur}
- addUserKnob {26 ""}
- addUserKnob {41 which l "Extend steps" T Switch1.which}
- addUserKnob {26 ""}
- addUserKnob {41 softinneregde l "Soften Inner Edge" T BlurIE.size}
- addUserKnob {41 threshold l Threshold T EdgeDetect1.threshold}
- addUserKnob {41 size_1 l "Blur inner edge" T BlurEdgeDetect.size}
- addUserKnob {7 grainmix l "Add Grain"}
- grainmix 1
- addUserKnob {26 ""}
- addUserKnob {7 mixamount l "Overall Mix"}
- mixamount 1
-}
- BackdropNode {
-  inputs 0
-  name BackdropNode11
-  tile_color 0x999999ff
-  label "Edge Expand"
-  note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
-  note_font_size 20
-  xpos -654
-  ypos -433
-  bdwidth 324
-  bdheight 2335
- }
- Input {
-  inputs 0
-  name ALPHA
-  xpos -830
-  ypos -296
-  number 1
- }
- Input {
-  inputs 0
-  name FG
-  xpos -634
-  ypos -526
- }
- PostageStamp {
-  name PostageStamp1
-  xpos -634
-  ypos -374
-  postage_stamp true
- }
- Copy {
-  inputs 2
-  from0 rgba.alpha
-  to0 rgba.alpha
-  name Copy1
-  xpos -634
-  ypos -302
- }
-set N24249bb0 [stack 0]
- Erode {
-  channels alpha
-  size 3.5
-  blur 0.365
-  name Erode1
-  tile_color 0xffffff
-  xpos -634
-  ypos -229
- }
-set N24249f20 [stack 0]
- Dot {
-  name Dot15
-  xpos -490
-  ypos -220
- }
-set N2424a290 [stack 0]
- Dot {
-  name Dot1
-  xpos 246
-  ypos -220
- }
- EdgeDetectWrapper {
-  channels alpha
-  threshold 0.78
-  blursize 1
-  name EdgeDetect1
-  xpos 212
-  ypos 666
- }
- Blur {
-  channels alpha
-  size 6.4
-  name BlurEdgeDetect
-  xpos 212
-  ypos 712
- }
-set N2424ace0 [stack 0]
- Shuffle {
-  red alpha
-  green alpha
-  blue alpha
-  name Shuffle1
-  xpos 84
-  ypos 718
- }
-push $N24249f20
- Premult {
-  name Premult38
-  xpos -634
-  ypos -169
- }
-set N2424b3c0 [stack 0]
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur4
-  xpos -634
-  ypos -122
- }
- Unpremult {
-  channels rgba
-  name Unpremult2
-  xpos -634
-  ypos -86
- }
-push $N2424a290
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge4
-  xpos -524
-  ypos -86
- }
-set N2424be10 [stack 0]
- Premult {
-  name Premult46
-  xpos -636
-  ypos -53
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur6
-  xpos -636
-  ypos -29
- }
- Unpremult {
-  name Unpremult3
-  xpos -636
-  ypos 15
- }
-push $N2424be10
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge6
-  xpos -524
-  ypos 15
- }
-set N2424cbd0 [stack 0]
- Premult {
-  name Premult57
-  xpos -634
-  ypos 43
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur7
-  xpos -634
-  ypos 67
- }
- Unpremult {
-  name Unpremult4
-  xpos -634
-  ypos 108
- }
-push $N2424cbd0
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge7
-  xpos -524
-  ypos 108
- }
-set N2424d990 [stack 0]
- Premult {
-  name Premult58
-  xpos -633
-  ypos 143
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur5
-  xpos -633
-  ypos 167
- }
- Unpremult {
-  name Unpremult5
-  xpos -633
-  ypos 208
- }
-push $N2424d990
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge8
-  xpos -524
-  ypos 208
- }
-set N2424e750 [stack 0]
- Premult {
-  name Premult1
-  xpos -636
-  ypos 247
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur1
-  xpos -636
-  ypos 271
- }
- Unpremult {
-  name Unpremult1
-  xpos -636
-  ypos 315
- }
-push $N2424e750
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge1
-  xpos -523
-  ypos 315
- }
-set N2424f510 [stack 0]
- Premult {
-  name Premult2
-  xpos -634
-  ypos 343
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur2
-  xpos -634
-  ypos 367
- }
- Unpremult {
-  name Unpremult6
-  xpos -634
-  ypos 408
- }
-push $N2424f510
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge2
-  xpos -524
-  ypos 408
- }
-set N242502d0 [stack 0]
- Premult {
-  name Premult3
-  xpos -633
-  ypos 443
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur3
-  xpos -633
-  ypos 467
- }
- Unpremult {
-  name Unpremult7
-  xpos -633
-  ypos 508
- }
-push $N242502d0
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge3
-  xpos -522
-  ypos 508
- }
-set N24251090 [stack 0]
- Premult {
-  name Premult4
-  xpos -635
-  ypos 548
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur8
-  xpos -635
-  ypos 572
- }
- Unpremult {
-  name Unpremult8
-  xpos -635
-  ypos 616
- }
-push $N24251090
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge5
-  xpos -522
-  ypos 616
- }
-set N49c9cb00 [stack 0]
- Premult {
-  name Premult5
-  xpos -633
-  ypos 644
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur9
-  xpos -633
-  ypos 668
- }
- Unpremult {
-  name Unpremult9
-  xpos -633
-  ypos 709
- }
-push $N49c9cb00
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge9
-  xpos -523
-  ypos 709
- }
-set N49c9d8c0 [stack 0]
- Premult {
-  name Premult6
-  xpos -632
-  ypos 744
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur10
-  xpos -632
-  ypos 768
- }
- Unpremult {
-  name Unpremult10
-  xpos -632
-  ypos 809
- }
-push $N49c9d8c0
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge10
-  xpos -522
-  ypos 809
- }
-set N49c9e680 [stack 0]
- Premult {
-  name Premult8
-  xpos -635
-  ypos 857
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur12
-  xpos -635
-  ypos 881
- }
- Unpremult {
-  name Unpremult12
-  xpos -635
-  ypos 925
- }
-push $N49c9e680
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge12
-  xpos -522
-  ypos 925
- }
-set N49c9f0d0 [stack 0]
- Premult {
-  name Premult9
-  xpos -633
-  ypos 953
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur13
-  xpos -633
-  ypos 977
- }
- Unpremult {
-  name Unpremult13
-  xpos -633
-  ypos 1018
- }
-push $N49c9f0d0
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge13
-  xpos -522
-  ypos 1018
- }
-set N49ca0200 [stack 0]
- Premult {
-  name Premult10
-  xpos -632
-  ypos 1053
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur14
-  xpos -632
-  ypos 1077
- }
- Unpremult {
-  name Unpremult14
-  xpos -632
-  ypos 1118
- }
-push $N49ca0200
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge14
-  xpos -522
-  ypos 1118
- }
-set N49ca0fc0 [stack 0]
- Premult {
-  name Premult11
-  xpos -635
-  ypos 1157
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur15
-  xpos -635
-  ypos 1181
- }
- Unpremult {
-  name Unpremult15
-  xpos -635
-  ypos 1225
- }
-push $N49ca0fc0
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge15
-  xpos -522
-  ypos 1225
- }
-set N49ca1d80 [stack 0]
- Premult {
-  name Premult12
-  xpos -633
-  ypos 1253
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur16
-  xpos -633
-  ypos 1277
- }
- Unpremult {
-  name Unpremult16
-  xpos -633
-  ypos 1318
- }
-push $N49ca1d80
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge16
-  xpos -522
-  ypos 1318
- }
-set N49ca2b40 [stack 0]
- Premult {
-  name Premult13
-  xpos -632
-  ypos 1353
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur17
-  xpos -632
-  ypos 1377
- }
- Unpremult {
-  name Unpremult17
-  xpos -632
-  ypos 1418
- }
-push $N49ca2b40
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge17
-  xpos -522
-  ypos 1418
- }
-set N49ca3900 [stack 0]
- Premult {
-  name Premult14
-  xpos -634
-  ypos 1458
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur18
-  xpos -634
-  ypos 1482
- }
- Unpremult {
-  name Unpremult18
-  xpos -634
-  ypos 1526
- }
-push $N49ca3900
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge18
-  xpos -521
-  ypos 1526
- }
-set N49e7c790 [stack 0]
- Premult {
-  name Premult15
-  xpos -632
-  ypos 1554
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur19
-  xpos -632
-  ypos 1578
- }
- Unpremult {
-  name Unpremult19
-  xpos -632
-  ypos 1619
- }
-push $N49e7c790
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge19
-  xpos -521
-  ypos 1619
- }
-set N49e7d550 [stack 0]
- Premult {
-  name Premult16
-  xpos -631
-  ypos 1654
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur20
-  xpos -631
-  ypos 1678
- }
- Unpremult {
-  name Unpremult20
-  xpos -631
-  ypos 1719
- }
-push $N49e7d550
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge20
-  xpos -521
-  ypos 1719
- }
-set N49e7e310 [stack 0]
- Premult {
-  name Premult7
-  xpos -631
-  ypos 1777
- }
- Blur {
-  size 1
-  maskChannelInput rgba.alpha
-  invert_mask true
-  name Blur11
-  xpos -631
-  ypos 1801
- }
- Unpremult {
-  name Unpremult11
-  xpos -631
-  ypos 1842
- }
-push $N49e7e310
- Merge2 {
-  inputs 2
-  operation copy
-  name Merge11
-  xpos -521
-  ypos 1842
- }
-push $N49e7e310
-push $N49e7d550
-push $N49e7c790
-push $N49ca3900
-push $N49ca2b40
-push $N49ca1d80
-push $N49ca0fc0
-push $N49ca0200
-push $N49c9f0d0
-push $N49c9e680
-push $N49c9d8c0
-push $N49c9cb00
-push $N24251090
-push $N242502d0
-push $N2424f510
-push $N2424e750
-push $N2424d990
-push $N2424cbd0
-push $N2424be10
-push $N24249bb0
- Premult {
-  name Premult17
-  xpos -505
-  ypos -296
- }
-set N49e7f440 [stack 0]
- Switch {
-  inputs 21
-  which 12.5
-  name Switch1
-  tile_color 0xffffff
-  xpos -91
-  ypos 806
- }
-set N23b7a5f0 [stack 0]
-push $N2424b3c0
- Dot {
-  name Dot5
-  xpos -838
-  ypos -166
- }
- Dot {
-  name Dot6
-  xpos -838
-  ypos 2002
- }
-push $N49e7f440
- Dot {
-  name Dot3
-  xpos 497
-  ypos -293
- }
-set N49e7fe90 [stack 0]
- Dot {
-  name Dot4
-  xpos 620
-  ypos -293
- }
-set N49e80200 [stack 0]
- Dot {
-  name Dot2
-  xpos 730
-  ypos -293
- }
-push $N49e80200
- Input {
-  inputs 0
-  name MASK
-  xpos 411
-  ypos 717
-  number 2
- }
- Input {
-  inputs 0
-  name GRAIN
-  xpos 302
-  ypos 718
-  number 3
- }
-push $N2424ace0
-push $N23b7a5f0
- Blur {
-  inputs 1+1
-  size 21
-  name BlurIE
-  xpos 212
-  ypos 800
- }
- Merge2 {
-  inputs 2
-  operation plus
-  maskChannelInput rgba.alpha
-  invert_mask true
-  mix {{parent.grainmix}}
-  name grainMix
-  xpos 344
-  ypos 800
- }
-push $N49e7fe90
- Merge2 {
-  inputs 2+1
-  operation copy
-  invert_mask true
-  name Merge21
-  xpos 463
-  ypos 806
- }
- Copy {
-  inputs 2
-  from0 rgba.alpha
-  to0 rgba.alpha
-  name Copy2
-  xpos 573
-  ypos 800
- }
- Keymix {
-  inputs 2
-  maskChannel none
-  invertMask true
-  mix {{1-parent.mixamount}}
-  name Keymix1
-  xpos 696
-  ypos 800
- }
- Switch {
-  inputs 4
-  which {{parent.outputMode}}
-  name Switch2
-  xpos 696
-  ypos 1999
- }
- Output {
-  name Output1
-  xpos 696
-  ypos 2597
- }
-end_group
-EdgeBlur {
- channels alpha
- size 4
- name EdgeBlur2
- xpos 2383
- ypos 1452
-}
-Transform {
- scale {-1 1}
- center {464 651}
- name Transform1
- xpos 2383
- ypos 1488
-}
-Grade {
- blackpoint -0.1
- maskChannelInput rgba.alpha
- name hazer
- xpos 2383
- ypos 1512
-}
-Premult {
- name Premult31
- xpos 2383
- ypos 1548
-}
-UVTile2 {
- translate {0.1 0.62}
- scale {0.04 0.15}
- name UVTile14
- xpos 2383
- ypos 1572
-}
-ReadGeo2 {
- inputs 0
- file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
- version 4
- read_texture_w_coord true
- cast_shadow false
- receive_shadow false
- uniform_scale 0.01
- name ReadGeo13
- xpos 2266
- ypos 1590
-}
-ApplyMaterial {
- inputs 2
- name ApplyMaterial16
- xpos 2383
- ypos 1596
-}
-TransformGeo {
- display textured
- render_mode textured
- translate {0 -1.5 0}
- rotate {0 -90 0}
- scaling {0.55 0.48 0.55}
- uniform_scale 1.9
- name TransformGeo16
- xpos 2383
- ypos 1641
-}
-Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_060/work/Sand_dunes_060_lores.tga
- format "2506 542 0 0 2506 542 1 "
- origset true
- version 2
- name Read11
- xpos 2017
- ypos 1185
-}
-set N4a062e70 [stack 0]
+push $N2ebc7e10
 Shuffle {
- red white
- green white
- blue white
- alpha white
- name Shuffle51
- xpos 1924
- ypos 1226
+red black
+green black
+blue black
+alpha black
+name Shuffle3
+selected true
+xpos 1255
+ypos -4026
 }
-Transform {
- scale 0.95
- center {1621 412.5}
- name Transform39
- xpos 1924
- ypos 1250
-}
-Blur {
- size 50
- name Blur30
- xpos 1924
- ypos 1274
-}
-push $N4a062e70
-Merge2 {
- inputs 2
- operation multiply
- name Merge103
- xpos 2026
- ypos 1280
-}
-Blur {
- channels alpha
- size 3
- name Blur23
- xpos 2017
- ypos 1380
-}
-set N4a063fa0 [stack 0]
-HueKeyer {
- lut {amount {curve x0.388235271 0 x0.706985414 0 x1.247794151 1 x1.507720709 1 x1.665441275 0 x6 0 s0}
-   sat_thrsh {}}
- invert false
- name HueKeyer10
- xpos 2127
- ypos 1380
-}
-push $N4a063fa0
-ColorCorrect {
- inputs 1+1
- saturation 0.42
- gain 1.24
- name ColorCorrect11
- xpos 2017
- ypos 1427
-}
-Premult {
- name Premult28
- xpos 2017
- ypos 1451
-}
-UVTile2 {
- translate {0 0.49}
- scale {0.2 0.2}
- name UVTile13
- xpos 2009
- ypos 1481
-}
-ReadGeo2 {
- inputs 0
- file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
- version 4
- read_texture_w_coord true
- cast_shadow false
- receive_shadow false
- uniform_scale 0.01
- name ReadGeo12
- xpos 1892
- ypos 1499
-}
-ApplyMaterial {
- inputs 2
- name ApplyMaterial15
- xpos 2009
- ypos 1505
-}
-TransformGeo {
- display textured
- render_mode textured
- translate {0 -0.49 0}
- rotate {0 -14 0}
- scaling {0.55 0.48 0.55}
- uniform_scale 0.8
- name TransformGeo17
- xpos 2009
- ypos 1563
-}
-Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_140/work/Sand_dunes_140_lores.tga
- format "2705 558 0 0 2705 558 1 "
- origset true
- version 2
- name Read12
- xpos -277
- ypos 1594
-}
-set N4a065b20 [stack 0]
-Shuffle {
- red white
- green white
- blue white
- alpha white
- name Shuffle48
- xpos -400
- ypos 1636
-}
-Transform {
- scale 0.95
- center {1621 412.5}
- name Transform35
- xpos -400
- ypos 1660
-}
-Blur {
- size 50
- name Blur28
- xpos -400
- ypos 1684
-}
-push $N4a065b20
-Unpremult {
- name Unpremult1
- xpos -281
- ypos 1684
-}
-Merge2 {
- inputs 2
- operation multiply
- name Merge100
- xpos -277
- ypos 1715
-}
-Blur {
- channels alpha
- size 3
- name Blur22
- xpos -277
- ypos 1762
- disable true
-}
-set N4a066fc0 [stack 0]
-HueKeyer {
- lut {amount {curve x0.388235271 0 x0.706985414 0 x1.247794151 1 x1.507720709 1 x1.665441275 0 x6 0 s0}
-   sat_thrsh {}}
- invert false
- name HueKeyer9
- xpos -161
- ypos 1788
- disable true
-}
-push $N4a066fc0
-ColorCorrect {
- inputs 1+1
- saturation 0.42
- gain 1.24
- name ColorCorrect10
- xpos -277
- ypos 1823
- disable true
-}
-Grade {
- blackpoint -0.06
- maskChannelInput rgba.alpha
- name hazer3
- xpos -277
- ypos 1847
-}
-Premult {
- name Premult27
- xpos -271
- ypos 1890
-}
-UVTile2 {
- translate {0.05 0.52}
- scale {0.2 0.2}
- name UVTile12
- xpos -271
- ypos 1914
-}
-ReadGeo2 {
- inputs 0
- file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
- version 4
- read_texture_w_coord true
- cast_shadow false
- receive_shadow false
- uniform_scale 0.01
- name ReadGeo11
- xpos -395
- ypos 1932
-}
-ApplyMaterial {
- inputs 2
- name ApplyMaterial14
- xpos -271
- ypos 1938
-}
-TransformGeo {
- display textured
- render_mode textured
- translate {0 -0.55 0}
- rotate {0 -99 0}
- scaling {0.55 0.48 0.55}
- uniform_scale 0.72
- name TransformGeo15
- xpos -277
- ypos 1980
-}
-push $N4416b3e0
-Card2 {
- translate {-0.1 1.74 -9}
- uniform_scale 6
- control_points {3 3 3 6 
-
-1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
-1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
-1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
-1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
-1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
-1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
-1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
-1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
-1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
- name Card2
- xpos -500
- ypos 1897
-}
-TransformGeo {
- display textured
- render_mode textured
- translate {0 -0.55 0}
- rotate {0 -5 0}
- scaling {0.55 0.55 0.55}
- uniform_scale 0.69
- name TransformGeo10
- xpos -495
- ypos 1966
-}
-Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_213/work/Sand_dunes_213_lores.tga
- format "24383 5429 0 0 24383 5429 1 "
- origset true
- name Read18
- xpos 195
- ypos 989
-}
-set N46a8c8e0 [stack 0]
-Shuffle {
- red white
- green white
- blue white
- alpha white
- name Shuffle2
- xpos 93
- ypos 1001
-}
-Transform {
- scale 0.95
- center {1621 412.5}
- name Transform42
- xpos 93
- ypos 1025
-}
-Blur {
- size 50
- name Blur14
- xpos 93
- ypos 1049
-}
-push $N46a8c8e0
-Shuffle {
- red black
- green black
- blue black
- alpha black
- name Shuffle3
- xpos 299
- ypos 1095
-}
-set N46a8d6a0 [stack 0]
+set N2ebc8bd0 [stack 0]
 Roto {
- output alpha
- curves {{{v x3f99999a}
+output alpha
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -6607,7 +5307,7 @@ Roto {
         {xc2f00000 xc1f00000}}}}
      {t x433ac000 x42f78000}
      {a str 1 spx x44700000 spy x44070000 sb 1 ltn x40c00000 ltm x40c00000 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -6625,40 +5325,43 @@ Roto {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- lifetime_start 6
- lifetime_end 6
- view {}
- motionblur_on true
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name Roto12
- xpos 299
- ypos 1331
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 6
+lifetime_end 6
+view {}
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto12
+selected true
+xpos 1255
+ypos -3790
 }
 Read {
- inputs 0
- file L:/00719_grandpa/footage/episodes/gnp_497_title/gnp497sh100/plates/gnp497sh100.#####.exr
- format "1920 1080 0 0 1920 1080 1 HD"
- origset true
- name Read22
- xpos -56
- ypos 1145
+inputs 0
+file L:/00719_grandpa/footage/episodes/gnp_497_title/gnp497sh100/plates/gnp497sh100.#####.exr
+format "1920 1080 0 0 1920 1080 1 HD"
+origset true
+name Read22
+selected true
+xpos 900
+ypos -3976
 }
-push $N46a8d6a0
+push $N2ebc8bd0
 Dot {
- name Dot6
- xpos -41
- ypos 1042
+name Dot6
+selected true
+xpos 915
+ypos -4079
 }
 Roto {
- output alpha
- curves {{{v x3f99999a}
+output alpha
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -6716,7 +5419,7 @@ Roto {
         {xc0800000 x40c00000}}}}
      {tx xc0800000 x449d9249 x42ec9249}
      {a str 1 spx x44700000 spy x44070000 sb 1 ltn xc0800000 ltm xc0800000 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -6734,62 +5437,68 @@ Roto {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- lifetime_start -4
- lifetime_end -4
- view {}
- motionblur_on true
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name Roto16
- xpos -171
- ypos 1225
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start -4
+lifetime_end -4
+view {}
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto16
+selected true
+xpos 785
+ypos -3896
 }
 Merge2 {
- inputs 2
- operation in
- name Merge11
- xpos -56
- ypos 1236
+inputs 2
+operation in
+name Merge11
+selected true
+xpos 900
+ypos -3885
 }
 Transform {
- translate {-978 190}
- scale {2.48 1.6}
- center {960 540}
- name Transform3
- xpos -56
- ypos 1267
+translate {-978 190}
+scale {2.48 1.6}
+center {960 540}
+name Transform3
+selected true
+xpos 900
+ypos -3854
 }
 Blur {
- channels alpha
- size 15
- name Blur21
- xpos -56
- ypos 1291
+channels alpha
+size 15
+name Blur21
+selected true
+xpos 900
+ypos -3830
 }
 Saturation {
- saturation 0.61
- name Saturation1
- xpos -56
- ypos 1327
+saturation 0.61
+name Saturation1
+selected true
+xpos 900
+ypos -3794
 }
-push $N46a8c8e0
+push $N2ebc7e10
 HueKeyer {
- lut {amount {curve 0 x0.08823531866 0 x0.2356617451 0 x1.235661745 1 x1.811029196 1 x2.811029196 0 x6 0}
-   sat_thrsh {curve 0.1 x0.2356617451 0.1 x0.2356617451 0.1 x1.235661745 0.1 x1.811029196 0.1 x2.811029196 0.1 x6 0.1}}
- invert false
- name HueKeyer12
- xpos 102
- ypos 1294
+lut {amount {curve 0 x0.08823531866 0 x0.2356617451 0 x1.235661745 1 x1.811029196 1 x2.811029196 0 x6 0}
+  sat_thrsh {curve 0.1 x0.2356617451 0.1 x0.2356617451 0.1 x1.235661745 0.1 x1.811029196 0.1 x2.811029196 0.1 x6 0.1}}
+invert false
+name HueKeyer12
+selected true
+xpos 1058
+ypos -3827
 }
-push $N46a8c8e0
+push $N2ebc7e10
 RotoPaint {
- curves {{{v x3f99999a}
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -8782,7 +7491,7 @@ RotoPaint {
        {x44d50000 x43850000 1}}}
      {tx x41100000 x44d66666 x437c3e94}
      {a ro 0 go 0 bo 0 ao 0 bs x42c80000 bu 1 src 1 stx x43180000 str 1 spx x44700000 spy x44070000 sb 1 ltn x41100000 ltm x41100000 tt x41900000}}}}}}
- toolbox {clone {
+toolbox {clone {
   { selectAll src 1 str 1 ssx 1 ssy 1 sf 1 }
   { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -8800,31 +7509,32 @@ RotoPaint {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_lifetime_type single
- toolbar_lifetime_start 9
- toolbar_lifetime_end 9
- toolbar_paint_source fg
- toolbar_source_transform_translate {-47.09989929 21.20000076}
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- paint_source foreground
- lifetime_type "all frames"
- lifetime_start 9
- lifetime_end 9
- view {}
- motionblur_on true
- brush_spacing 0.05000000075
- brush_hardness 0.200000003
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name RotoPaint3
- xpos 206
- ypos 1143
+toolbar_brush_hardness 0.200000003
+toolbar_lifetime_type single
+toolbar_lifetime_start 9
+toolbar_lifetime_end 9
+toolbar_paint_source fg
+toolbar_source_transform_translate {-47.09989929 21.20000076}
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+paint_source foreground
+lifetime_type "all frames"
+lifetime_start 9
+lifetime_end 9
+view {}
+motionblur_on true
+brush_spacing 0.05000000075
+brush_hardness 0.200000003
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name RotoPaint3
+selected true
+xpos 1162
+ypos -3978
 }
 RotoPaint {
- curves {{{v x3f99999a}
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -11431,7 +10141,7 @@ RotoPaint {
        {x4455c000 x43a00000 1}}}
      {tx 1 x44598909 x43a85212}
      {a ro 0 go 0 bo 0 ao 0 bu 1 src 1 stx xc2180000 sty xbfc00000 str 1 spx x44700000 spy x44070000 sb 1 tt x41900000}}}}}}
- toolbox {clone {
+toolbox {clone {
   { selectAll src 1 str 1 ssx 1 ssy 1 sf 1 }
   { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -11449,30 +10159,31 @@ RotoPaint {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_lifetime_type single
- toolbar_paint_source fg
- toolbar_source_transform_translate {-228 155}
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- paint_source foreground
- lifetime_type "all frames"
- view {}
- motionblur_on true
- brush_spacing 0.05000000075
- brush_hardness 0.200000003
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name RotoPaint4
- xpos 206
- ypos 1167
+toolbar_brush_hardness 0.200000003
+toolbar_lifetime_type single
+toolbar_paint_source fg
+toolbar_source_transform_translate {-228 155}
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+paint_source foreground
+lifetime_type "all frames"
+view {}
+motionblur_on true
+brush_spacing 0.05000000075
+brush_hardness 0.200000003
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name RotoPaint4
+selected true
+xpos 1162
+ypos -3954
 }
-set N46c060b0 [stack 0]
-push $N46a8d6a0
+set N2edeabd0 [stack 0]
+push $N2ebc8bd0
 Roto {
- output alpha
- curves {{{v x3f99999a}
+output alpha
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -11722,7 +10433,7 @@ Roto {
       {xc0c00000}}}}     idem}
      {tx 1 x449e3c22 x43c506ef}
      {a str 1 spx x44700000 spy x44070000 sb 1 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -11740,30 +10451,32 @@ Roto {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- view {}
- motionblur_on true
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name Roto15
- xpos 103
- ypos 1126
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+view {}
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto15
+selected true
+xpos 1059
+ypos -3995
 }
 Merge2 {
- inputs 2
- operation in
- name Merge6
- xpos 103
- ypos 1162
+inputs 2
+operation in
+name Merge6
+selected true
+xpos 1059
+ypos -3959
 }
 GridWarp3 {
- toolbar_visibility_src false
- source_grid_col   {
+toolbar_visibility_src false
+source_grid_col   {
     1 5 5 4 1 0
     {default }
     {
@@ -11794,7 +10507,7 @@ GridWarp3 {
       { {2 2583 548} { {2 0 45.6667}  {2 0 -45.6667}  {2 215.25 0}  {2 -215.25 0} } } 
     }
   }
- destination_grid_col   {
+destination_grid_col   {
     1 5 5 4 1 0
     {default }
     {
@@ -11825,25 +10538,27 @@ GridWarp3 {
       { {2 2583 548} { {2 0 45.6667}  {2 0 -45.6667}  {2 215.25 0}  {2 -215.25 0} } } 
     }
   }
- grids_manually_moved true
- source_grid_transform_center {1291.5 274}
- destination_grid_transform_center {1291.5 274}
- name GridWarp3_1
- xpos 99
- ypos 1198
+grids_manually_moved true
+source_grid_transform_center {1291.5 274}
+destination_grid_transform_center {1291.5 274}
+name GridWarp3_1
+selected true
+xpos 1055
+ypos -3923
 }
 Blur {
- channels alpha
- size 3
- name Blur15
- xpos 99
- ypos 1234
+channels alpha
+size 3
+name Blur15
+selected true
+xpos 1055
+ypos -3887
 }
-push $N46c060b0
-push $N46a8d6a0
+push $N2edeabd0
+push $N2ebc8bd0
 Roto {
- output alpha
- curves {{{v x3f99999a}
+output alpha
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -11901,7 +10616,7 @@ Roto {
         {xc0c00000 x41d00000}}}     idem}
      {t x44a4e222 x43b2cccd}
      {a str 1 spx x44700000 spy x44070000 sb 1 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -11919,155 +10634,172 @@ Roto {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- view {}
- motionblur_on true
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name Roto20
- xpos 361
- ypos 1148
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+view {}
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto20
+selected true
+xpos 1317
+ypos -3973
 }
 Merge2 {
- inputs 2
- operation out
- name Merge98
- xpos 254
- ypos 1196
+inputs 2
+operation out
+name Merge98
+selected true
+xpos 1210
+ypos -3925
 }
 Merge2 {
- inputs 2
- name Merge7
- xpos 209
- ypos 1240
+inputs 2
+name Merge7
+selected true
+xpos 1165
+ypos -3881
 }
 ColorLookup {
- inputs 1+1
- lut {master {}
-   red {curve C 0 x0.3921763897 0.6821606159 x1 1}
-   green {curve C 0 x0.266220659 0.5315234661 x1 1}
-   blue {curve C 0 x0.1442995965 0.490642041 x1 1}
-   alpha {}}
- name ColorLookup1
- xpos 206
- ypos 1300
+inputs 1+1
+lut {master {}
+  red {curve C 0 x0.3921763897 0.6821606159 x1 1}
+  green {curve C 0 x0.266220659 0.5315234661 x1 1}
+  blue {curve C 0 x0.1442995965 0.490642041 x1 1}
+  alpha {}}
+name ColorLookup1
+selected true
+xpos 1162
+ypos -3821
 }
 Merge2 {
- inputs 2
- name Merge12
- xpos -33
- ypos 1358
+inputs 2
+name Merge12
+selected true
+xpos 923
+ypos -3763
 }
 Grade {
- inputs 1+1
- blackpoint -0.23
- multiply 0.6
- name Grade8
- xpos 206
- ypos 1337
+inputs 1+1
+blackpoint -0.23
+multiply 0.6
+name Grade8
+selected true
+xpos 1162
+ypos -3784
 }
 Grade {
- blackpoint -0.034
- maskChannelInput rgba.alpha
- name Grade11
- xpos 206
- ypos 1361
+blackpoint -0.034
+maskChannelInput rgba.alpha
+name Grade11
+selected true
+xpos 1162
+ypos -3760
 }
 Merge2 {
- inputs 2
- operation multiply
- name Merge8
- xpos 93
- ypos 1399
+inputs 2
+operation multiply
+name Merge8
+selected true
+xpos 1049
+ypos -3722
 }
 UVTile2 {
- translate {0 0.38}
- scale {0.9 0.8}
- name UVTile20
- xpos 206
- ypos 1434
+translate {0 0.38}
+scale {0.9 0.8}
+name UVTile20
+selected true
+xpos 1162
+ypos -3687
 }
 Camera2 {
- inputs 0
- translate {0 1 0}
- rotate {-7 0 0}
- focal 25
- haperture 32
- vaperture 18
- name Camera7
- xpos 438
- ypos 1308
+inputs 0
+translate {0 1 0}
+rotate {-7 0 0}
+focal 25
+haperture 32
+vaperture 18
+name Camera7
+selected true
+xpos 1394
+ypos -3813
 }
 ReadGeo2 {
- inputs 0
- file M:/00719_grandpa/assets/Environments/Beach/work/cylinder.obj
- version 3
- cast_shadow false
- receive_shadow false
- uniform_scale 0.01
- name ReadGeo7
- xpos 535
- ypos 1373
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/work/cylinder.obj
+version 3
+cast_shadow false
+receive_shadow false
+uniform_scale 0.01
+name ReadGeo7
+selected true
+xpos 1491
+ypos -3748
 }
 UVProject {
- inputs 2
- name UVProject4
- xpos 428
- ypos 1386
+inputs 2
+name UVProject4
+selected true
+xpos 1384
+ypos -3735
 }
 ApplyMaterial {
- inputs 2
- name ApplyMaterial6
- xpos 428
- ypos 1419
+inputs 2
+name ApplyMaterial6
+selected true
+xpos 1384
+ypos -3702
 }
-set N484f48c0 [stack 0]
+set N2edef770 [stack 0]
 TransformGeo {
- display textured
- render_mode textured
- translate {0 -0.5 0.1}
- rotate {0 -60 0}
- scaling {0.55 0.35 0.55}
- uniform_scale 0.56
- name TransformGeo2
- xpos 869
- ypos 879
+display textured
+render_mode textured
+translate {0 -0.5 0.1}
+rotate {0 -60 0}
+scaling {0.55 0.35 0.55}
+uniform_scale 0.56
+name TransformGeo2
+selected true
+xpos 1825
+ypos -4242
 }
-set N484f4c30 [stack 0]
+set N2edefae0 [stack 0]
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_214/work/Sand_dunes_214_lores.png
- format "3657 814 0 0 3657 814 1 "
- origset true
- name Read46
- xpos 360
- ypos 674
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_214/work/Sand_dunes_214_lores.png
+format "3657 814 0 0 3657 814 1 "
+origset true
+name Read46
+selected true
+xpos 1316
+ypos -4447
 }
-set N484f4fa0 [stack 0]
+set N2edefe50 [stack 0]
 Shuffle {
- alpha white
- name Shuffle43
- xpos 360
- ypos 758
+alpha white
+name Shuffle43
+selected true
+xpos 1316
+ypos -4363
 }
-push $N484f4fa0
+push $N2edefe50
 Shuffle {
- red black
- green black
- blue black
- alpha black
- name Shuffle42
- xpos 470
- ypos 727
+red black
+green black
+blue black
+alpha black
+name Shuffle42
+selected true
+xpos 1426
+ypos -4394
 }
 Roto {
- output alpha
- curves {{{v x3f99999a}
+output alpha
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -12477,7 +11209,7 @@ Roto {
       {{x40200000 -}}}}}}
      {tx 1 x46684078 x45692969}
      {a str 1 spx x44700000 spy x44070000 sb 1 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -12495,126 +11227,155 @@ Roto {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- view {}
- motionblur_on true
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name Roto24
- xpos 470
- ypos 751
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+view {}
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto24
+selected true
+xpos 1426
+ypos -4370
 }
 Merge2 {
- inputs 2
- operation out
- name Merge97
- xpos 360
- ypos 793
+inputs 2
+operation out
+name Merge97
+selected true
+xpos 1316
+ypos -4328
 }
-set N4871d1e0 [stack 0]
+set N30892ce0 [stack 0]
 HueKeyer {
- lut {amount {curve 0 x0.08823531866 0 x0.2356617451 0 x1.235661745 1 x1.811029196 1 x2.811029196 0 x6 0}
-   sat_thrsh {curve 0.1 x0.2356617451 0.1 x0.2356617451 0.1 x1.235661745 0.1 x1.811029196 0.1 x2.811029196 0.1 x6 0.1}}
- invert false
- name HueKeyer6
- xpos 242
- ypos 787
+lut {amount {curve 0 x0.08823531866 0 x0.2356617451 0 x1.235661745 1 x1.811029196 1 x2.811029196 0 x6 0}
+  sat_thrsh {curve 0.1 x0.2356617451 0.1 x0.2356617451 0.1 x1.235661745 0.1 x1.811029196 0.1 x2.811029196 0.1 x6 0.1}}
+invert false
+name HueKeyer6
+selected true
+xpos 1198
+ypos -4334
 }
-push $N4871d1e0
+push $N30892ce0
 ColorLookup {
- inputs 1+1
- lut {master {}
-   red {curve C 0 x0.3921763897 0.6821606159 x1 1}
-   green {curve C 0 x0.266220659 0.5315234661 x1 1}
-   blue {curve C 0 x0.1442995965 0.490642041 x1 1}
-   alpha {}}
- name ColorLookup6
- xpos 360
- ypos 817
+inputs 1+1
+lut {master {}
+  red {curve C 0 x0.3921763897 0.6821606159 x1 1}
+  green {curve C 0 x0.266220659 0.5315234661 x1 1}
+  blue {curve C 0 x0.1442995965 0.490642041 x1 1}
+  alpha {}}
+name ColorLookup6
+selected true
+xpos 1316
+ypos -4304
 }
 Grade {
- blackpoint -0.038
- white {0.9200000167 1 1 1}
- maskChannelInput rgba.alpha
- name Grade19
- xpos 360
- ypos 841
+blackpoint -0.038
+white {0.9200000167 1 1 1}
+maskChannelInput rgba.alpha
+name Grade19
+selected true
+xpos 1316
+ypos -4280
 }
 EdgeBlur {
- size 5
- name EdgeBlur1
- xpos 360
- ypos 989
+size 5
+name EdgeBlur1
+selected true
+xpos 1316
+ypos -4132
 }
 Premult {
- name Premult2
- xpos 360
- ypos 1025
+name Premult2
+selected true
+xpos 1316
+ypos -4096
 }
 UVTile2 {
- translate {0 0.42}
- scale {0.7 0.7}
- name UVTile8
- xpos 360
- ypos 1049
+translate {0 0.42}
+scale {0.7 0.7}
+name UVTile8
+selected true
+xpos 1316
+ypos -4072
 }
 Camera2 {
- inputs 0
- translate {0 1 0}
- rotate {-7 0 0}
- focal 25
- haperture 32
- vaperture 18
- name Camera6
- xpos 592
- ypos 938
+inputs 0
+translate {0 1 0}
+rotate {-7 0 0}
+focal 25
+haperture 32
+vaperture 18
+name Camera6
+selected true
+xpos 1548
+ypos -4183
 }
 ReadGeo2 {
- inputs 0
- file M:/00719_grandpa/assets/Environments/Beach/work/cylinder.obj
- version 3
- cast_shadow false
- receive_shadow false
- uniform_scale 0.01
- name ReadGeo4
- xpos 689
- ypos 1003
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/work/cylinder.obj
+version 3
+cast_shadow false
+receive_shadow false
+uniform_scale 0.01
+name ReadGeo4
+selected true
+xpos 1645
+ypos -4118
 }
 UVProject {
- inputs 2
- name UVProject2
- xpos 582
- ypos 1016
+inputs 2
+name UVProject2
+selected true
+xpos 1538
+ypos -4105
 }
 ApplyMaterial {
- inputs 2
- name ApplyMaterial11
- xpos 582
- ypos 1049
+inputs 2
+name ApplyMaterial11
+selected true
+xpos 1538
+ypos -4072
 }
 TransformGeo {
- display textured
- render_mode textured
- translate {0 -0.26 0.1}
- rotate {0 -27 0}
- scaling {0.55 0.25 0.55}
- uniform_scale 0.41
- name TransformGeo5
- xpos 582
- ypos 1097
+display textured
+render_mode textured
+translate {0 -0.26 0.1}
+rotate {0 -27 0}
+scaling {0.55 0.25 0.55}
+uniform_scale 0.41
+name TransformGeo5
+selected true
+xpos 1538
+ypos -4024
 }
-set N4871f7b0 [stack 0]
-push $N43c38720
+set N30894f40 [stack 0]
+push $N2edef770
+TransformGeo {
+display textured
+render_mode textured
+translate {0 -0.22 0.1}
+rotate {0 12 0}
+scaling {0.55 0.3 0.55}
+uniform_scale 0.53
+name TransformGeo8
+selected true
+xpos 1384
+ypos -3654
+}
+set N30899090 [stack 0]
+push $N2a61c1a0
 Card2 {
- translate {-0.1 0.1 -0.5}
- rotate {0 9 0}
- uniform_scale 0.5
- control_points {3 3 3 6 
+cast_shadow false
+receive_shadow false
+translate {0 -0.1 0}
+scaling {0.8 1 1}
+uniform_scale 0.75
+control_points {3 3 3 6 
 
 1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
 1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
@@ -12625,64 +11386,1406 @@ Card2 {
 1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
 1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
- name Card3
- xpos -862
- ypos 1917
+name Card4
+selected true
+xpos 3751
+ypos -3573
 }
 TransformGeo {
- display textured
- render_mode textured
- translate {0 -0.66 0}
- rotate {0 18 0}
- uniform_scale 7
- name TransformGeo12
- xpos -862
- ypos 1976
+translate {-6.3 1.23 -8.430000305}
+rotate {0 43 0}
+uniform_scale 2
+name TransformGeo19
+selected true
+xpos 3751
+ypos -3491
 }
-push $N43aced20
+set N2e46fc30 [stack 0]
+Scene {
+inputs 4
+name Scene3
+selected true
+xpos 2177
+ypos -2756
+}
+push 0
+ScanlineRender {
+inputs 3
+motion_vectors_type distance
+name ScanlineRender3
+selected true
+xpos 1983
+ypos -2662
+}
+Camera {
+inputs 0
+translate {{CameraTracker4.camTranslate} {CameraTracker4.camTranslate} {CameraTracker4.camTranslate}}
+rotate {{CameraTracker4.camRotate} {CameraTracker4.camRotate} {CameraTracker4.camRotate}}
+focal {{CameraTracker4.focalLength}}
+haperture {{CameraTracker4.aperture.x}}
+vaperture {{CameraTracker4.aperture.y}}
+win_translate {{CameraTracker4.windowTranslate} {CameraTracker4.windowTranslate}}
+win_scale {{CameraTracker4.windowScale} {CameraTracker4.windowScale}}
+name Camera5
+selected true
+xpos 1875
+ypos -2696
+}
+push $N2e46eb00
+push $N2e46fc30
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_030/work/Sand_dunes_030_lores.png
+format "2506 542 0 0 2506 542 1 "
+origset true
+version 2
+name Read10
+selected true
+xpos 2798
+ypos -4311
+}
+set N2e46ffa0 [stack 0]
 Shuffle {
- red white
- green white
- blue white
- alpha white
- name Shuffle49
- xpos 1419
- ypos 1226
+red white
+green white
+blue white
+alpha white
+name Shuffle52
+selected true
+xpos 2688
+ypos -4281
 }
 Transform {
- scale 0.95
- center {1621 412.5}
- name Transform38
- xpos 1419
- ypos 1250
+scale 0.95
+center {1621 412.5}
+name Transform40
+selected true
+xpos 2688
+ypos -4257
 }
 Blur {
- size 50
- name Blur29
- xpos 1419
- ypos 1274
+size 50
+name Blur31
+selected true
+xpos 2688
+ypos -4233
 }
-push $N43aced20
+push $N2e46ffa0
 Merge2 {
- inputs 2
- operation multiply
- name Merge101
- xpos 1546
- ypos 1280
+inputs 2
+operation multiply
+name Merge104
+selected true
+xpos 2798
+ypos -4227
 }
-push $N43aced20
+Blur {
+channels alpha
+size 3
+name Blur24
+selected true
+xpos 2798
+ypos -4192
+disable true
+}
+set N2e4710d0 [stack 0]
+HueKeyer {
+lut {amount {curve x0.388235271 0 x0.706985414 0 x1.247794151 1 x1.507720709 1 x1.665441275 0 x6 0 s0}
+  sat_thrsh {}}
+invert false
+name HueKeyer11
+selected true
+xpos 2682
+ypos -4169
+disable true
+}
+push $N2e4710d0
+ColorCorrect {
+inputs 1+1
+saturation 0.42
+gain 1.24
+name ColorCorrect12
+selected true
+xpos 2798
+ypos -4131
+disable true
+}
+Premult {
+name Premult30
+selected true
+xpos 2798
+ypos -4107
+}
+UVTile2 {
+translate {0 0.487}
+scale {0.26 0.26}
+name UVTile15
+selected true
+xpos 2798
+ypos -4053
+}
+ReadGeo2 {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
+version 4
+read_texture_w_coord true
+cast_shadow false
+receive_shadow false
+uniform_scale 0.01
+name ReadGeo14
+selected true
+xpos 2681
+ypos -4035
+}
+ApplyMaterial {
+inputs 2
+name ApplyMaterial17
+selected true
+xpos 2798
+ypos -4029
+}
+TransformGeo {
+display textured
+render_mode textured
+translate {0 -0.55 0}
+rotate {0 -87 0}
+scaling {0.55 0.48 0.55}
+uniform_scale 0.94
+name TransformGeo18
+selected true
+xpos 2798
+ypos -3969
+}
+push $N2c456600
+Group {
+name B_EdgeExpander
+tile_color 0xff3f00ff
+selected true
+xpos 3491
+ypos -3693
+addUserKnob {20 B_EdgeExpander l "Bait Edge Expander"}
+addUserKnob {4 outputMode l "Output Modes" M {"Final Result" "Erode Preview" "Extend Preview" "Edge Preview"}}
+addUserKnob {26 ""}
+addUserKnob {41 size l "Erode size" T Erode1.size}
+addUserKnob {41 blur l "Erode blur" T Erode1.blur}
+addUserKnob {26 ""}
+addUserKnob {41 which l "Extend steps" T Switch1.which}
+addUserKnob {26 ""}
+addUserKnob {41 softinneregde l "Soften Inner Edge" T BlurIE.size}
+addUserKnob {41 threshold l Threshold T EdgeDetect1.threshold}
+addUserKnob {41 size_1 l "Blur inner edge" T BlurEdgeDetect.size}
+addUserKnob {7 grainmix l "Add Grain"}
+grainmix 1
+addUserKnob {26 ""}
+addUserKnob {7 mixamount l "Overall Mix"}
+mixamount 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode11
+tile_color 0x999999ff
+label "Edge Expand"
+note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+note_font_size 20
+xpos -654
+ypos -433
+bdwidth 324
+bdheight 2335
+}
+Input {
+inputs 0
+name ALPHA
+xpos -830
+ypos -296
+number 1
+}
+Input {
+inputs 0
+name FG
+xpos -634
+ypos -526
+}
+PostageStamp {
+name PostageStamp1
+xpos -634
+ypos -374
+postage_stamp true
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy1
+xpos -634
+ypos -302
+}
+set N2e6d3ae0 [stack 0]
+Erode {
+channels alpha
+size 3.5
+blur 0.365
+name Erode1
+tile_color 0xffffff
+xpos -634
+ypos -229
+}
+set N2e6d3e50 [stack 0]
+Dot {
+name Dot15
+xpos -490
+ypos -220
+}
+set N2e6d41c0 [stack 0]
+Dot {
+name Dot1
+xpos 246
+ypos -220
+}
+EdgeDetectWrapper {
+channels alpha
+threshold 0.78
+blursize 1
+name EdgeDetect1
+xpos 212
+ypos 666
+}
+Blur {
+channels alpha
+size 6.4
+name BlurEdgeDetect
+xpos 212
+ypos 712
+}
+set N2e6d4c10 [stack 0]
 Shuffle {
- red black
- green black
- blue black
- alpha black
- name Shuffle50
- xpos 1674
- ypos 1232
+red alpha
+green alpha
+blue alpha
+name Shuffle1
+xpos 84
+ypos 718
+}
+push $N2e6d3e50
+Premult {
+name Premult38
+xpos -634
+ypos -169
+}
+set N2e6d52f0 [stack 0]
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur4
+xpos -634
+ypos -122
+}
+Unpremult {
+channels rgba
+name Unpremult2
+xpos -634
+ypos -86
+}
+push $N2e6d41c0
+Merge2 {
+inputs 2
+operation copy
+name Merge4
+xpos -524
+ypos -86
+}
+set N2e6d5d40 [stack 0]
+Premult {
+name Premult46
+xpos -636
+ypos -53
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur6
+xpos -636
+ypos -29
+}
+Unpremult {
+name Unpremult3
+xpos -636
+ypos 15
+}
+push $N2e6d5d40
+Merge2 {
+inputs 2
+operation copy
+name Merge6
+xpos -524
+ypos 15
+}
+set N2e6d6b00 [stack 0]
+Premult {
+name Premult57
+xpos -634
+ypos 43
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur7
+xpos -634
+ypos 67
+}
+Unpremult {
+name Unpremult4
+xpos -634
+ypos 108
+}
+push $N2e6d6b00
+Merge2 {
+inputs 2
+operation copy
+name Merge7
+xpos -524
+ypos 108
+}
+set N2e6d78c0 [stack 0]
+Premult {
+name Premult58
+xpos -633
+ypos 143
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur5
+xpos -633
+ypos 167
+}
+Unpremult {
+name Unpremult5
+xpos -633
+ypos 208
+}
+push $N2e6d78c0
+Merge2 {
+inputs 2
+operation copy
+name Merge8
+xpos -524
+ypos 208
+}
+set N2e6d8680 [stack 0]
+Premult {
+name Premult1
+xpos -636
+ypos 247
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur1
+xpos -636
+ypos 271
+}
+Unpremult {
+name Unpremult1
+xpos -636
+ypos 315
+}
+push $N2e6d8680
+Merge2 {
+inputs 2
+operation copy
+name Merge1
+xpos -523
+ypos 315
+}
+set N2e6d9440 [stack 0]
+Premult {
+name Premult2
+xpos -634
+ypos 343
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur2
+xpos -634
+ypos 367
+}
+Unpremult {
+name Unpremult6
+xpos -634
+ypos 408
+}
+push $N2e6d9440
+Merge2 {
+inputs 2
+operation copy
+name Merge2
+xpos -524
+ypos 408
+}
+set N2e6da200 [stack 0]
+Premult {
+name Premult3
+xpos -633
+ypos 443
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur3
+xpos -633
+ypos 467
+}
+Unpremult {
+name Unpremult7
+xpos -633
+ypos 508
+}
+push $N2e6da200
+Merge2 {
+inputs 2
+operation copy
+name Merge3
+xpos -522
+ypos 508
+}
+set N2e6dafc0 [stack 0]
+Premult {
+name Premult4
+xpos -635
+ypos 548
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur8
+xpos -635
+ypos 572
+}
+Unpremult {
+name Unpremult8
+xpos -635
+ypos 616
+}
+push $N2e6dafc0
+Merge2 {
+inputs 2
+operation copy
+name Merge5
+xpos -522
+ypos 616
+}
+set N2e81fe50 [stack 0]
+Premult {
+name Premult5
+xpos -633
+ypos 644
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur9
+xpos -633
+ypos 668
+}
+Unpremult {
+name Unpremult9
+xpos -633
+ypos 709
+}
+push $N2e81fe50
+Merge2 {
+inputs 2
+operation copy
+name Merge9
+xpos -523
+ypos 709
+}
+set N2e820c10 [stack 0]
+Premult {
+name Premult6
+xpos -632
+ypos 744
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur10
+xpos -632
+ypos 768
+}
+Unpremult {
+name Unpremult10
+xpos -632
+ypos 809
+}
+push $N2e820c10
+Merge2 {
+inputs 2
+operation copy
+name Merge10
+xpos -522
+ypos 809
+}
+set N2e8219d0 [stack 0]
+Premult {
+name Premult8
+xpos -635
+ypos 857
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur12
+xpos -635
+ypos 881
+}
+Unpremult {
+name Unpremult12
+xpos -635
+ypos 925
+}
+push $N2e8219d0
+Merge2 {
+inputs 2
+operation copy
+name Merge12
+xpos -522
+ypos 925
+}
+set N2e822420 [stack 0]
+Premult {
+name Premult9
+xpos -633
+ypos 953
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur13
+xpos -633
+ypos 977
+}
+Unpremult {
+name Unpremult13
+xpos -633
+ypos 1018
+}
+push $N2e822420
+Merge2 {
+inputs 2
+operation copy
+name Merge13
+xpos -522
+ypos 1018
+}
+set N2e823550 [stack 0]
+Premult {
+name Premult10
+xpos -632
+ypos 1053
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur14
+xpos -632
+ypos 1077
+}
+Unpremult {
+name Unpremult14
+xpos -632
+ypos 1118
+}
+push $N2e823550
+Merge2 {
+inputs 2
+operation copy
+name Merge14
+xpos -522
+ypos 1118
+}
+set N2e920530 [stack 0]
+Premult {
+name Premult11
+xpos -635
+ypos 1157
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur15
+xpos -635
+ypos 1181
+}
+Unpremult {
+name Unpremult15
+xpos -635
+ypos 1225
+}
+push $N2e920530
+Merge2 {
+inputs 2
+operation copy
+name Merge15
+xpos -522
+ypos 1225
+}
+set N2e9212f0 [stack 0]
+Premult {
+name Premult12
+xpos -633
+ypos 1253
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur16
+xpos -633
+ypos 1277
+}
+Unpremult {
+name Unpremult16
+xpos -633
+ypos 1318
+}
+push $N2e9212f0
+Merge2 {
+inputs 2
+operation copy
+name Merge16
+xpos -522
+ypos 1318
+}
+set N2e9220b0 [stack 0]
+Premult {
+name Premult13
+xpos -632
+ypos 1353
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur17
+xpos -632
+ypos 1377
+}
+Unpremult {
+name Unpremult17
+xpos -632
+ypos 1418
+}
+push $N2e9220b0
+Merge2 {
+inputs 2
+operation copy
+name Merge17
+xpos -522
+ypos 1418
+}
+set N2e922e70 [stack 0]
+Premult {
+name Premult14
+xpos -634
+ypos 1458
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur18
+xpos -634
+ypos 1482
+}
+Unpremult {
+name Unpremult18
+xpos -634
+ypos 1526
+}
+push $N2e922e70
+Merge2 {
+inputs 2
+operation copy
+name Merge18
+xpos -521
+ypos 1526
+}
+set N2e9d3e50 [stack 0]
+Premult {
+name Premult15
+xpos -632
+ypos 1554
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur19
+xpos -632
+ypos 1578
+}
+Unpremult {
+name Unpremult19
+xpos -632
+ypos 1619
+}
+push $N2e9d3e50
+Merge2 {
+inputs 2
+operation copy
+name Merge19
+xpos -521
+ypos 1619
+}
+set N2e9d4c10 [stack 0]
+Premult {
+name Premult16
+xpos -631
+ypos 1654
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur20
+xpos -631
+ypos 1678
+}
+Unpremult {
+name Unpremult20
+xpos -631
+ypos 1719
+}
+push $N2e9d4c10
+Merge2 {
+inputs 2
+operation copy
+name Merge20
+xpos -521
+ypos 1719
+}
+set N2e9d59d0 [stack 0]
+Premult {
+name Premult7
+xpos -631
+ypos 1777
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur11
+xpos -631
+ypos 1801
+}
+Unpremult {
+name Unpremult11
+xpos -631
+ypos 1842
+}
+push $N2e9d59d0
+Merge2 {
+inputs 2
+operation copy
+name Merge11
+xpos -521
+ypos 1842
+}
+push $N2e9d59d0
+push $N2e9d4c10
+push $N2e9d3e50
+push $N2e922e70
+push $N2e9220b0
+push $N2e9212f0
+push $N2e920530
+push $N2e823550
+push $N2e822420
+push $N2e8219d0
+push $N2e820c10
+push $N2e81fe50
+push $N2e6dafc0
+push $N2e6da200
+push $N2e6d9440
+push $N2e6d8680
+push $N2e6d78c0
+push $N2e6d6b00
+push $N2e6d5d40
+push $N2e6d3ae0
+Premult {
+name Premult17
+xpos -505
+ypos -296
+}
+set N2e9d6b00 [stack 0]
+Switch {
+inputs 21
+which 12.5
+name Switch1
+tile_color 0xffffff
+xpos -91
+ypos 806
+}
+set N2c4b4440 [stack 0]
+push $N2e6d52f0
+Dot {
+name Dot5
+xpos -838
+ypos -166
+}
+Dot {
+name Dot6
+xpos -838
+ypos 2002
+}
+push $N2e9d6b00
+Dot {
+name Dot3
+xpos 497
+ypos -293
+}
+set N2e9d7550 [stack 0]
+Dot {
+name Dot4
+xpos 620
+ypos -293
+}
+set N2e9d78c0 [stack 0]
+Dot {
+name Dot2
+xpos 730
+ypos -293
+}
+push $N2e9d78c0
+Input {
+inputs 0
+name MASK
+xpos 411
+ypos 717
+number 2
+}
+Input {
+inputs 0
+name GRAIN
+xpos 302
+ypos 718
+number 3
+}
+push $N2e6d4c10
+push $N2c4b4440
+Blur {
+inputs 1+1
+size 21
+name BlurIE
+xpos 212
+ypos 800
+}
+Merge2 {
+inputs 2
+operation plus
+maskChannelInput rgba.alpha
+invert_mask true
+mix {{parent.grainmix}}
+name grainMix
+xpos 344
+ypos 800
+}
+push $N2e9d7550
+Merge2 {
+inputs 2+1
+operation copy
+invert_mask true
+name Merge21
+xpos 463
+ypos 806
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy2
+xpos 573
+ypos 800
+}
+Keymix {
+inputs 2
+maskChannel none
+invertMask true
+mix {{1-parent.mixamount}}
+name Keymix1
+xpos 696
+ypos 800
+}
+Switch {
+inputs 4
+which {{parent.outputMode}}
+name Switch2
+xpos 696
+ypos 1999
+}
+Output {
+name Output1
+xpos 696
+ypos 2597
+}
+end_group
+EdgeBlur {
+channels alpha
+size 4
+name EdgeBlur2
+selected true
+xpos 3339
+ypos -3669
+}
+Transform {
+scale {-1 1}
+center {464 651}
+name Transform1
+selected true
+xpos 3339
+ypos -3633
+}
+Grade {
+blackpoint -0.1
+maskChannelInput rgba.alpha
+name hazer
+selected true
+xpos 3339
+ypos -3609
+}
+Premult {
+name Premult31
+selected true
+xpos 3339
+ypos -3573
+}
+UVTile2 {
+translate {0.1 0.62}
+scale {0.04 0.15}
+name UVTile14
+selected true
+xpos 3339
+ypos -3549
+}
+ReadGeo2 {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
+version 4
+read_texture_w_coord true
+cast_shadow false
+receive_shadow false
+uniform_scale 0.01
+name ReadGeo13
+selected true
+xpos 3222
+ypos -3531
+}
+ApplyMaterial {
+inputs 2
+name ApplyMaterial16
+selected true
+xpos 3339
+ypos -3525
+}
+TransformGeo {
+display textured
+render_mode textured
+translate {0 -1.5 0}
+rotate {0 -90 0}
+scaling {0.55 0.48 0.55}
+uniform_scale 1.9
+name TransformGeo16
+selected true
+xpos 3339
+ypos -3480
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_060/work/Sand_dunes_060_lores.tga
+format "2506 542 0 0 2506 542 1 "
+origset true
+version 2
+name Read11
+selected true
+xpos 2973
+ypos -3936
+}
+set N2e9db6a0 [stack 0]
+Shuffle {
+red white
+green white
+blue white
+alpha white
+name Shuffle51
+selected true
+xpos 2880
+ypos -3895
+}
+Transform {
+scale 0.95
+center {1621 412.5}
+name Transform39
+selected true
+xpos 2880
+ypos -3871
+}
+Blur {
+size 50
+name Blur30
+selected true
+xpos 2880
+ypos -3847
+}
+push $N2e9db6a0
+Merge2 {
+inputs 2
+operation multiply
+name Merge103
+selected true
+xpos 2982
+ypos -3841
+}
+Blur {
+channels alpha
+size 3
+name Blur23
+selected true
+xpos 2973
+ypos -3741
+}
+set N2ebc1dd0 [stack 0]
+HueKeyer {
+lut {amount {curve x0.388235271 0 x0.706985414 0 x1.247794151 1 x1.507720709 1 x1.665441275 0 x6 0 s0}
+  sat_thrsh {}}
+invert false
+name HueKeyer10
+selected true
+xpos 3083
+ypos -3741
+}
+push $N2ebc1dd0
+ColorCorrect {
+inputs 1+1
+saturation 0.42
+gain 1.24
+name ColorCorrect11
+selected true
+xpos 2973
+ypos -3694
+}
+Premult {
+name Premult28
+selected true
+xpos 2973
+ypos -3670
+}
+UVTile2 {
+translate {0 0.49}
+scale {0.2 0.2}
+name UVTile13
+selected true
+xpos 2965
+ypos -3640
+}
+ReadGeo2 {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
+version 4
+read_texture_w_coord true
+cast_shadow false
+receive_shadow false
+uniform_scale 0.01
+name ReadGeo12
+selected true
+xpos 2848
+ypos -3622
+}
+ApplyMaterial {
+inputs 2
+name ApplyMaterial15
+selected true
+xpos 2965
+ypos -3616
+}
+TransformGeo {
+display textured
+render_mode textured
+translate {0 -0.49 0}
+rotate {0 -14 0}
+scaling {0.55 0.48 0.55}
+uniform_scale 0.8
+name TransformGeo17
+selected true
+xpos 2965
+ypos -3558
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Matte_Painting/Sand_dunes_140/work/Sand_dunes_140_lores.tga
+format "2705 558 0 0 2705 558 1 "
+origset true
+version 2
+name Read12
+selected true
+xpos 679
+ypos -3527
+}
+set N2ebc3950 [stack 0]
+Shuffle {
+red white
+green white
+blue white
+alpha white
+name Shuffle48
+selected true
+xpos 556
+ypos -3485
+}
+Transform {
+scale 0.95
+center {1621 412.5}
+name Transform35
+selected true
+xpos 556
+ypos -3461
+}
+Blur {
+size 50
+name Blur28
+selected true
+xpos 556
+ypos -3437
+}
+push $N2ebc3950
+Unpremult {
+name Unpremult1
+selected true
+xpos 675
+ypos -3437
+}
+Merge2 {
+inputs 2
+operation multiply
+name Merge100
+selected true
+xpos 679
+ypos -3406
+}
+Blur {
+channels alpha
+size 3
+name Blur22
+selected true
+xpos 679
+ypos -3359
+disable true
+}
+set N2ebc4df0 [stack 0]
+HueKeyer {
+lut {amount {curve x0.388235271 0 x0.706985414 0 x1.247794151 1 x1.507720709 1 x1.665441275 0 x6 0 s0}
+  sat_thrsh {}}
+invert false
+name HueKeyer9
+selected true
+xpos 795
+ypos -3333
+disable true
+}
+push $N2ebc4df0
+ColorCorrect {
+inputs 1+1
+saturation 0.42
+gain 1.24
+name ColorCorrect10
+selected true
+xpos 679
+ypos -3298
+disable true
+}
+Grade {
+blackpoint -0.06
+maskChannelInput rgba.alpha
+name hazer3
+selected true
+xpos 679
+ypos -3274
+}
+Premult {
+name Premult27
+selected true
+xpos 685
+ypos -3231
+}
+UVTile2 {
+translate {0.05 0.52}
+scale {0.2 0.2}
+name UVTile12
+selected true
+xpos 685
+ypos -3207
+}
+ReadGeo2 {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/work/cylinder2.obj
+version 4
+read_texture_w_coord true
+cast_shadow false
+receive_shadow false
+uniform_scale 0.01
+name ReadGeo11
+selected true
+xpos 561
+ypos -3189
+}
+ApplyMaterial {
+inputs 2
+name ApplyMaterial14
+selected true
+xpos 685
+ypos -3183
+}
+TransformGeo {
+display textured
+render_mode textured
+translate {0 -0.55 0}
+rotate {0 -99 0}
+scaling {0.55 0.48 0.55}
+uniform_scale 0.72
+name TransformGeo15
+selected true
+xpos 679
+ypos -3141
+}
+push $N2c415d90
+Card2 {
+translate {-0.1 1.74 -9}
+uniform_scale 6
+control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+name Card2
+selected true
+xpos 456
+ypos -3224
+}
+TransformGeo {
+display textured
+render_mode textured
+translate {0 -0.55 0}
+rotate {0 -5 0}
+scaling {0.55 0.55 0.55}
+uniform_scale 0.69
+name TransformGeo10
+selected true
+xpos 461
+ypos -3155
+}
+push $N2edefae0
+push $N30894f40
+push $N2a618e10
+Card2 {
+translate {-0.1 0.1 -0.5}
+rotate {0 9 0}
+uniform_scale 0.5
+control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+name Card3
+selected true
+xpos 94
+ypos -3204
+}
+TransformGeo {
+display textured
+render_mode textured
+translate {0 -0.66 0}
+rotate {0 18 0}
+uniform_scale 7
+name TransformGeo12
+selected true
+xpos 94
+ypos -3145
+}
+push $N2a506300
+Shuffle {
+red white
+green white
+blue white
+alpha white
+name Shuffle49
+selected true
+xpos 2375
+ypos -3895
+}
+Transform {
+scale 0.95
+center {1621 412.5}
+name Transform38
+selected true
+xpos 2375
+ypos -3871
+}
+Blur {
+size 50
+name Blur29
+selected true
+xpos 2375
+ypos -3847
+}
+push $N2a506300
+Merge2 {
+inputs 2
+operation multiply
+name Merge101
+selected true
+xpos 2502
+ypos -3841
+}
+push $N2a506300
+Shuffle {
+red black
+green black
+blue black
+alpha black
+name Shuffle50
+selected true
+xpos 2630
+ypos -3889
 }
 Roto {
- output alpha
- curves {{{v x3f99999a}
+output alpha
+curves {{{v x3f99999a}
   {f 0}
   {n
    {layer Root
@@ -12740,7 +12843,7 @@ Roto {
         {xc1980000 0}}}     idem}
      {tx x41100000 x4479b777 x438c1111}
      {a str 1 spx x44700000 spy x44070000 sb 1 ltn x41100000 ltm x41100000 tt x40800000}}}}}}
- toolbox {selectAll {
+toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
   { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
@@ -12758,152 +12861,123 @@ Roto {
   { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
   { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
 } }
- toolbar_brush_hardness 0.200000003
- toolbar_source_transform_scale {1 1}
- toolbar_source_transform_center {960 540}
- colorOverlay {0 0 0 0}
- lifetime_type "all frames"
- lifetime_start 9
- lifetime_end 9
- motionblur_shutter_offset_type centred
- source_black_outside true
- createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
- name Roto26
- xpos 1674
- ypos 1294
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 9
+lifetime_end 9
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto26
+selected true
+xpos 2630
+ypos -3827
 }
 Merge2 {
- inputs 2
- operation out
- name Merge102
- xpos 1546
- ypos 1310
+inputs 2
+operation out
+name Merge102
+selected true
+xpos 2502
+ypos -3811
 }
 UVTile2 {
- translate {0 0.53}
- scale {0.26 0.26}
- name UVTile4
- xpos 1546
- ypos 1398
+translate {0 0.53}
+scale {0.26 0.26}
+name UVTile4
+selected true
+xpos 2502
+ypos -3723
 }
-push $N43acf770
+push $N2a5069e0
 ApplyMaterial {
- inputs 2
- name ApplyMaterial5
- xpos 1546
- ypos 1485
+inputs 2
+name ApplyMaterial5
+selected true
+xpos 2502
+ypos -3636
 }
 TransformGeo {
- display textured
- render_mode textured
- translate {0 -1 0}
- rotate {0 -15 0}
- scaling {1 0.6 1}
- uniform_scale 0.85
- name TransformGeo7
- xpos 1546
- ypos 1543
+display textured
+render_mode textured
+translate {0 -1 0}
+rotate {0 -15 0}
+scaling {1 0.6 1}
+uniform_scale 0.85
+name TransformGeo7
+selected true
+xpos 2502
+ypos -3578
 }
 Read {
- inputs 0
- file M:/00719_grandpa/assets/Environments/Meadow/publish/sky5.tif
- format "14000 2500 0 0 14000 2500 1 SKYPLATE"
- origset true
- version 4
- name Read16
- xpos 983
- ypos 1666
+inputs 0
+file M:/00719_grandpa/assets/Environments/Meadow/publish/sky5.tif
+format "14000 2500 0 0 14000 2500 1 SKYPLATE"
+origset true
+version 4
+name Read16
+selected true
+xpos 1939
+ypos -3455
 }
 Transform {
- translate {0 -200}
- rotate -2
- center {7000 1250}
- name Transform2
- xpos 983
- ypos 1750
+translate {0 -200}
+rotate -2
+center {7000 1250}
+name Transform2
+selected true
+xpos 1939
+ypos -3371
 }
 Sphere {
- cast_shadow false
- receive_shadow false
- rows 60
- columns 70
- radius 50
- u_extent 300
- v_extent 100
- close_top false
- close_bottom false
- rot_order YXZ
- translate {0 -2 0}
- rotate {54 0 -4}
- name Sphere1
- xpos 983
- ypos 1789
+cast_shadow false
+receive_shadow false
+rows 60
+columns 70
+radius 50
+u_extent 300
+v_extent 100
+close_top false
+close_bottom false
+rot_order YXZ
+translate {0 -2 0}
+rotate {54 0 -4}
+name Sphere1
+selected true
+xpos 1939
+ypos -3332
 }
-push $N484f48c0
-TransformGeo {
- display textured
- render_mode textured
- translate {0 -0.22 0.1}
- rotate {0 12 0}
- scaling {0.55 0.3 0.55}
- uniform_scale 0.53
- name TransformGeo8
- xpos 428
- ypos 1467
-}
-set N4871fb20 [stack 0]
+push $N30899090
 push 0
 push 0
 Scene {
- inputs 14
- name Scene1
- xpos 752
- ypos 2265
+inputs 14
+name Scene1
+selected true
+xpos 1708
+ypos -2856
 }
 push 0
 ScanlineRender {
- inputs 3
- overscan 1000
- motion_vectors_type distance
- name ScanlineRender1
- xpos 790
- ypos 2372
+inputs 3
+overscan 1000
+motion_vectors_type distance
+name ScanlineRender1
+selected true
+xpos 1746
+ypos -2749
 }
-set N4a25b320 [stack 0]
 Write {
- channels rgba
- file M:/00719_grandpa/episodes/gnp_497_title/gnp497sh101/Comp/reference/bg_v004b.exr
- file_type exr
- version 2
- name Write1
- xpos 574
- ypos 2448
- disable true
-}
-push $N4a25b320
-Viewer {
- input_process false
- name Viewer1
- xpos -50
- ypos -98
-}
-push $N46a8c570
-push $N484f4c30
-push $N4871f7b0
-push $N4871fb20
-push $N48720c50
-Scene {
- inputs 4
- name Scene3
- xpos 1221
- ypos 2365
-}
-push 0
-ScanlineRender {
- inputs 3
- motion_vectors_type distance
- name ScanlineRender3
- selected true
- xpos 1027
- ypos 2459
+channels rgba
+file M:/00719_grandpa/episodes/gnp_497_title/gnp497sh101/Comp/reference/bg_v004b.exr
+file_type exr
+version 2
+name Write1
+selected true
+xpos 1530
+ypos -2673
+disable true
 }

@@ -47,11 +47,7 @@ define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
 Root {
  inputs 0
  name K:/CodeRepo/Nuke/plugins/ToolSets/Comp_Templates/Key_Grandpa.nk
- frame 57
- last_frame 152
- lock_range true
- fps 25
- format "1920 1080 0 0 1920 1080 1 HD"
+ format "2048 1556 0 0 2048 1556 1 2K_Super_35(full-ap)"
  proxy_type scale
  proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
 }
@@ -61,8 +57,8 @@ BackdropNode {
  tile_color 0x374c37ff
  label "BLUSCREEN PLATE"
  note_font_size 26
- xpos -1288
- ypos 510
+ xpos 118
+ ypos 91
  bdwidth 256
  bdheight 200
 }
@@ -72,8 +68,8 @@ BackdropNode {
  tile_color 0x374c37ff
  label KEY
  note_font_size 42
- xpos -2286
- ypos 1710
+ xpos -880
+ ypos 1291
  bdwidth 981
  bdheight 602
 }
@@ -83,8 +79,8 @@ BackdropNode {
  tile_color 0x2d414cff
  label BACKGROUND
  note_font_size 42
- xpos 302
- ypos -205
+ xpos 1708
+ ypos -624
  bdwidth 360
  bdheight 380
 }
@@ -94,8 +90,8 @@ BackdropNode {
  tile_color 0xc63e3bff
  label "Object matte"
  note_font_size 42
- xpos 408
- ypos 273
+ xpos 1814
+ ypos -146
  bdwidth 227
  bdheight 214
 }
@@ -105,8 +101,8 @@ BackdropNode {
  tile_color 0x8e4283ff
  label "LIGHT WRAP"
  note_font_size 42
- xpos 392
- ypos 3300
+ xpos 1798
+ ypos 2881
  bdwidth 580
  bdheight 210
 }
@@ -116,8 +112,8 @@ BackdropNode {
  tile_color 0xaaaaaa00
  label RE-LIGHT
  note_font_size 42
- xpos -1090
- ypos 2140
+ xpos 316
+ ypos 1721
  bdwidth 346
  bdheight 517
 }
@@ -127,8 +123,8 @@ BackdropNode {
  tile_color 0x7171c600
  label "Grandpa Colour Ref"
  note_font_size 42
- xpos 971
- ypos 227
+ xpos 2377
+ ypos -192
  bdwidth 785
  bdheight 298
 }
@@ -138,8 +134,8 @@ BackdropNode {
  tile_color 0x7171c600
  label "Grandpa Position"
  note_font_size 42
- xpos -202
- ypos 3099
+ xpos 1204
+ ypos 2680
  bdwidth 347
  bdheight 178
 }
@@ -149,8 +145,8 @@ BackdropNode {
  tile_color 0xaaaaaa00
  label "Clean Plate"
  note_font_size 42
- xpos -933
- ypos 1015
+ xpos 473
+ ypos 596
  bdwidth 693
  bdheight 789
 }
@@ -160,8 +156,8 @@ BackdropNode {
  tile_color 0x374c37ff
  label "BLUE SURPRESS"
  note_font_size 42
- xpos -597
- ypos 2339
+ xpos 809
+ ypos 1920
  bdwidth 352
  bdheight 719
 }
@@ -171,8 +167,8 @@ BackdropNode {
  tile_color 0x374c37ff
  label "ADDITIVE KEY (ONLY USE IF NEEDED)"
  note_font_size 42
- xpos -162
- ypos 1015
+ xpos 1244
+ ypos 596
  bdwidth 764
  bdheight 794
 }
@@ -184,8 +180,8 @@ Read {
  origlast 152
  origset true
  name Read3
- xpos 990
- ypos 314
+ xpos 2396
+ ypos -105
 }
 Read {
  inputs 0
@@ -195,8 +191,8 @@ Read {
  origlast 114
  origset true
  name Read6
- xpos 1312
- ypos 314
+ xpos 2718
+ ypos -105
 }
 Read {
  inputs 0
@@ -204,8 +200,8 @@ Read {
  format "1920 1080 0 0 1920 1080 1 HD"
  origset true
  name Read7
- xpos 1408
- ypos 307
+ xpos 2814
+ ypos -112
 }
 Read {
  inputs 0
@@ -215,8 +211,8 @@ Read {
  origlast 69
  origset true
  name Read5
- xpos 1198
- ypos 311
+ xpos 2604
+ ypos -108
 }
 Read {
  inputs 0
@@ -226,22 +222,22 @@ Read {
  origlast 138
  origset true
  name Read4
- xpos 1093
- ypos 308
+ xpos 2499
+ ypos -111
 }
 Transform {
  translate {-437 35}
  center {930 530}
  name Transform4
- xpos 1093
- ypos 392
+ xpos 2499
+ ypos -27
 }
 Constant {
  inputs 0
  color {0.01464808546 0.0911783725 0.6125484109 1}
  name Constant1
- xpos -744
- ypos 1411
+ xpos 662
+ ypos 992
 }
 Read {
  inputs 0
@@ -251,15 +247,15 @@ Read {
  origlast 80
  origset true
  name Read2
- xpos -1237
- ypos 574
+ xpos 169
+ ypos 155
 }
 Gizmo {
  name Gizmo2
  help "ChromaBlur is designed to get rid of keying artifacts with chroma subsampled footage. In contrast to other blur nodes, it only affects the color difference channels of the image, not its luminance."
  note_font Verdana
- xpos -1237
- ypos 658
+ xpos 169
+ ypos 239
 }
  Input {
   inputs 0
@@ -294,52 +290,52 @@ Gizmo {
 end_group
 Dot {
  name Dot6
- xpos -1203
- ypos 1132
+ xpos 203
+ ypos 713
 }
-set N1631bda0 [stack 0]
+set N2516e400 [stack 0]
 Dot {
  name Dot10
- xpos -430
- ypos 1132
+ xpos 976
+ ypos 713
 }
-set N265c0070 [stack 0]
+set N2516e770 [stack 0]
 Merge2 {
  inputs 2
  name Merge5
- xpos -464
- ypos 1435
+ xpos 942
+ ypos 1016
 }
-set N265c03e0 [stack 0]
+set N2516eae0 [stack 0]
 Dot {
  name Dot47
- xpos -430
- ypos 1608
+ xpos 976
+ ypos 1189
 }
-push $N265c0070
+push $N2516e770
 Dot {
  name Dot48
- xpos -17
- ypos 1132
+ xpos 1389
+ ypos 713
 }
-set N26687960 [stack 0]
+set N2516f1c0 [stack 0]
 Merge2 {
  inputs 2
  operation from
  name Merge29
- xpos -51
- ypos 1605
+ xpos 1355
+ ypos 1186
 }
 Clamp {
  name Clamp5
- xpos -51
- ypos 1629
+ xpos 1355
+ ypos 1210
 }
 Saturation {
  saturation 0.57
  name Saturation8
- xpos -51
- ypos 1676
+ xpos 1355
+ ypos 1257
 }
 HueCorrect {
  hue {sat {}
@@ -352,59 +348,59 @@ HueCorrect {
    b_sup {curve 0.01713824272 s0 1 1 1 -0.00696516037 -0.00696516037 0.01713824272 s0}
    sat_thrsh {}}
  name HueCorrect2
- xpos -51
- ypos 1700
+ xpos 1355
+ ypos 1281
 }
 Grade {
  blackpoint 0.04
  whitepoint 0.56
  white_clamp true
  name Grade3
- xpos 78
- ypos 1700
+ xpos 1484
+ ypos 1281
 }
 Transform {
  center {960 540}
  name Transform1
- xpos 284
- ypos 1700
+ xpos 1690
+ ypos 1281
 }
-set C265be180 [stack 0]
-push $N265c03e0
-push $N26687960
+set C2522e590 [stack 0]
+push $N2516eae0
+push $N2516f1c0
 Dot {
  name Dot49
- xpos 162
- ypos 1132
+ xpos 1568
+ ypos 713
 }
 Merge2 {
  inputs 2
  operation minus
  name Merge30
- xpos 128
- ypos 1435
+ xpos 1534
+ ypos 1016
 }
 Clamp {
  name Clamp6
- xpos 128
- ypos 1459
+ xpos 1534
+ ypos 1040
 }
 Saturation {
  saturation 0
  name Saturation9
- xpos 128
- ypos 1495
+ xpos 1534
+ ypos 1076
 }
 Grade {
  blackpoint 0.07
  whitepoint 0.26
  name Grade5
- xpos 128
- ypos 1517
+ xpos 1534
+ ypos 1098
 }
-clone $C265be180 {
- xpos 284
- ypos 1517
+clone $C2522e590 {
+ xpos 1690
+ ypos 1098
  selected false
 }
 Read {
@@ -415,8 +411,8 @@ Read {
  origlast 80
  origset true
  name Read1
- xpos 444
- ypos -18
+ xpos 1850
+ ypos -437
 }
 add_layer {Object Object.alpha}
 RotoPaint {
@@ -428,40 +424,7 @@ RotoPaint {
    {layer Root
     {f 512}
     {t x44700000 x44070000}
-    {a fx x3f000000 fy x3f000000}
-    {curvegroup Bezier1 512 bezier
-     {{cc
-       {f 8192}
-       {p
-        {0 1}
-        {xc1708ce0 x42e9dccc}
-        {0 xbf800000}
-        {}
-        {x44ff8000 x42ee0000}
-        {}
-        {}
-        {x4505e800 xc2fffff8}
-        {}
-        {x3fc00000 xbfc00000}
-        {xc1880000 xc1bc0000}
-        {xbfc00000 x3fc00000}}}
-      {cc
-       {f 8192}
-       {p
-        {0 1}
-        {}
-        {0 xbf800000}
-        {}
-        {}
-        {}
-        {}
-        {}
-        {}
-        {x3fc00000 xbfc00000}
-        {}
-        {xbfc00000 x3fc00000}}}}
-     {t x43cb6000 x41460000}
-     {a fx x3f000000 fy x3f000000 str 1 spx x44700000 spy x44070000 sb 1 ltn x42a00000 ltm x42a00000 tt x40800000}}}}}}
+    {a fx x3f000000 fy x3f000000}}}}}
  toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
@@ -496,23 +459,23 @@ RotoPaint {
  source_black_outside true
  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
  name RotoPaint7
- xpos 444
- ypos 358
+ xpos 1850
+ ypos -61
 }
 add_layer {ObjectMatte ObjectMatte.red ObjectMatte.green ChairMatte.blue ChairMatte.alpha}
 Shuffle {
  in Object
  out ObjectMatte
  name Shuffle13
- xpos 444
- ypos 394
+ xpos 1850
+ ypos -25
 }
 Blur {
  channels ObjectMatte
  size 3.8
  name Blur6
- xpos 444
- ypos 418
+ xpos 1850
+ ypos -1
 }
 Merge2 {
  inputs 2
@@ -520,8 +483,8 @@ Merge2 {
  maskChannelInput Object.alpha
  invert_mask true
  name Merge31
- xpos 444
- ypos 1511
+ xpos 1850
+ ypos 1092
  disable true
 }
 Merge2 {
@@ -530,56 +493,56 @@ Merge2 {
  maskChannelInput Object.alpha
  invert_mask true
  name Merge32
- xpos 444
- ypos 1694
+ xpos 1850
+ ypos 1275
  disable true
 }
 Dot {
  name Dot9
- xpos 478
- ypos 3139
+ xpos 1884
+ ypos 2720
 }
-set N267c0140 [stack 0]
+set N25231240 [stack 0]
 Dot {
  name Dot7
- xpos 824
- ypos 3139
+ xpos 2230
+ ypos 2720
 }
-push $N1631bda0
+push $N2516e400
 Dot {
  name Dot3
- xpos -1203
- ypos 1799
+ xpos 203
+ ypos 1380
 }
-set N1631c110 [stack 0]
+set N25231920 [stack 0]
 Dot {
  name Dot22
- xpos -1203
- ypos 2066
+ xpos 203
+ ypos 1647
 }
-set N1631c480 [stack 0]
+set N253382f0 [stack 0]
 Dot {
  name Dot5
- xpos -399
- ypos 2066
+ xpos 1007
+ ypos 1647
 }
 Dot {
  name Dot16
- xpos -399
- ypos 2672
+ xpos 1007
+ ypos 2253
 }
-set N1631cb60 [stack 0]
+set N253389d0 [stack 0]
 Dot {
  name Dot17
- xpos -302
- ypos 2672
+ xpos 1104
+ ypos 2253
 }
 Dot {
  name Dot18
- xpos -302
- ypos 2866
+ xpos 1104
+ ypos 2447
 }
-push $N1631cb60
+push $N253389d0
 HueCorrect {
  hue {sat {}
    lum {}
@@ -593,23 +556,23 @@ HueCorrect {
  invert_mask true
  mix 0.95
  name HueCorrect4
- xpos -433
- ypos 2744
+ xpos 973
+ ypos 2325
 }
-set N1631d5b0 [stack 0]
+set N25339420 [stack 0]
 Merge2 {
  inputs 2
  operation minus
  name Merge13
- xpos -433
- ypos 2863
+ xpos 973
+ ypos 2444
 }
 Saturation {
  saturation 0
  mode Maximum
  name Saturation1
- xpos -433
- ypos 2919
+ xpos 973
+ ypos 2500
 }
 RotoPaint {
  inputs 0
@@ -620,373 +583,7 @@ RotoPaint {
    {layer Root
     {f 512}
     {t x44700000 x44070000}
-    {a}
-    {curvegroup Bezier1 512 bezier
-     {{cc
-       {f 8192}
-       {px
-        {1 x41400000 x41a80000 x41b00000 x42000000 x42140000 x42280000 x425c0000 x42820000 x42960000 x42a00000}
-        {{{x 4
-	   {xc248f89c -}}
-	  {xc1da448e x402e5ccf 1 x402e5ccf 1}
-	  {xc1160667 x403b6a0b 1 x403b6a0b 1}
-	  {x 5
-	   {x40000000 -}}}
-	 {{x 4
-	   {x42cbd0f6 -}}
-	  {x4229d2dd xc0b74e31 1 xc0b74e31 1}
-	  {x417fbd3f xc081757e 1 xc081757e 1}
-	  {x 5
-	   {x40000000 -}}}}
-        {{{xc36cb338 0 1 x41837aab 1}
-	  {xc1cf3340 x41c4f812 1 x41c4f812 1}
-	  {x437fb8f5 x41f78513 1 x41f78513 1}
-	  {x438dbff8 x41b274d1 1 x41b274d1 1}
-	  {x43fa8cca x419462af 1 x419462af 1}
-	  {x440c6e3e x411b0a46 1 x411b0a46 1}
-	  {x44158000 x408906c7 1 x408906c7 1}
-	  {x 2
-	   {x441fb332 -}}
-	  {x 2
-	   {x44201fff -}}}
-	 {{x43806668 0 1 xc04fb580 1}
-	  {x43690004 -}
-	  {x4373cf38 x3f9851b3 1 x3f9851b3 1}
-	  {x4374e666 x3f37a22f 1 x3f37a22f 1}
-	  {x437bb330 -}
-	  {x4369d998 xc0647acd 1 xc0647acd 1}
-	  {x43580000 -}
-	  {x4359b334 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x43623330 -}}}}
-        {{{x 4
-	   {x420d3380 -}}
-	  {x41da4490 xbfd53f1a 1 xbfd53f1a 1}
-	  {x4124f7b0 xc03b6a0d 1 xc03b6a0d 1}
-	  {x 5
-	   {xc0000000 -}}}
-	 {{x 4
-	   {xc28f3332 -}}
-	  {xc229d2dd x406536c9 1 x406536c9 1}
-	  {xc18f0610 x4081757e 1 x4081757e 1}
-	  {x 5
-	   {xc0000000 -}}}}
-        {{{xc2820000 -}}
-	 {{xc1300000 -}}}
-        {{{xc21c6660 0 1 x4186d3d8 1}
-	  {x432bb338 x41be45b9 1 x41be45b9 1}
-	  {x43da4a5b x41e88f5a 1 x41e88f5a 1}
-	  {x43e73334 x41a36e9f 1 x41a36e9f 1}
-	  {x44255334 x4187063c 1 x4187063c 1}
-	  {x4432e486 x410ab84d 1 x410ab84d 1}
-	  {x443b0000 x40822f72 1 x40822f72 1}
-	  {x 2
-	   {x44453332 -}}
-	  {x 2
-	   {x44459fff -}}}
-	 {{x433d3334 0 1 xc04fb580 1}
-	  {x43256668 -}
-	  {x43417da4 x401b5e00 1 x401b5e00 1}
-	  {x43424ccc -}
-	  {x43314cca -}
-	  {x4331f717 x3e2e159a 1 x3e2e159a 1}
-	  {x43330000 x3e1b94ab 1 x3e1b94ab 1}
-	  {x4334b334 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x433d3330 -}}}}
-        {{{x42820000 -}}
-	 {{x41300000 -}}}
-        {{{x41000000 -}}
-	 {{xc2640000 -}}}
-        {{{x42c16668 0 1 x418624f0 1}
-	  {x4399c002 x41bfa388 1 x41bfa388 1}
-	  {x440ff302 x41e1c286 1 x41e1c286 1}
-	  {x44136ccb x4185bf63 1 x4185bf63 1}
-	  {x443deccc x41acc32d 1 x41acc32d 1}
-	  {x44646848 -}
-	  {x4463c000 -}
-	  {x 2
-	   {x446df332 -}}
-	  {x 2
-	   {x446e5fff -}}}
-	 {{x4384c001 0 1 xc04fb580 1}
-	  {x4371b336 -}
-	  {x437b605a x3fef5be6 1 x3fef5be6 1}
-	  {x43823332 -}
-	  {x43751998 xc035ec73 1 xc035ec73 1}
-	  {x4359c2f9 -}
-	  {x435f0000 x3ec55be4 1 x3ec55be4 1}
-	  {x4360b334 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x43693330 -}}}}
-        {{{xc1000000 -}}
-	 {{x42640000 -}}}
-        {{{x40000000 -}}
-	 {{xc0000000 -}}}
-        {{{x42d93340 0 1 x4188e52b 1}
-	  {x439fb338 x41ba2313 1 x41ba2313 1}
-	  {x440f7c54 x41ddae0d 1 x41ddae0d 1}
-	  {x44152000 x4194b243 1 x4194b243 1}
-	  {x4442999b x418786e9 1 x418786e9 1}
-	  {x4454a73d x41468f5a 1 x41468f5a 1}
-	  {x4461a001 x40a4c6d5 1 x40a4c6d5 1}
-	  {x 2
-	   {x446bd333 -}}
-	  {x 2
-	   {x446c4000 -}}}
-	 {{x43ac8cd0 0 1 xc04fb580 1}
-	  {x43a0a66a -}
-	  {x43ae7fdd x404eb826 1 x404eb826 1}
-	  {x43b0cccd x3ffb5ba3 1 x3ffb5ba3 1}
-	  {x43b94ccd -}
-	  {x43af8666 xc07a3d73 1 xc07a3d73 1}
-	  {x43a5c000 -}
-	  {x43a6999a x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x43aad998 -}}}}
-        {{{xc0000000 -}}
-	 {{x40000000 -}}}
-        {{{0 -}}
-	 {{xc2080000 -}}}
-        {{{x42b43340 0 1 x41884ba8 1}
-	  {x43967338 x41bb5618 1 x41bb5618 1}
-	  {x440b9c37 x40f5ad80 1 x40f5ad80 1}
-	  {x440c4000 x40f5ad80 1 x40f5ad80 1}
-	  {x44387334 x4188c895 1 x4188c895 1}
-	  {x444c5e06 x415f0a40 1 x415f0a40 1}
-	  {x445b4cce x40b2b8b9 1 x40b2b8b9 1}
-	  {x 2
-	   {x44658000 -}}
-	  {x 2
-	   {x4465eccd -}}}
-	 {{x43e4999d 0 1 xc04fb580 1}
-	  {x43d8b337 -}
-	  {x43e8cda5 x409dc286 1 x409dc286 1}
-	  {x43f1599c x3f028e66 1 x3f028e66 1}
-	  {x43f23334 -}
-	  {x43e2799a xc0c947ad 1 xc0c947ad 1}
-	  {x43d2c001 -}
-	  {x43d3999b x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x43d7d999 -}}}}
-        {{{0 -}}
-	 {{x42080000 -}}}
-        {{{xc1d80000 -}}
-	 {{xc1980000 -}}}
-        {{{x431fe668 0 1 x418d359e 1}
-	  {x43b9599c x41b1822d 1 x41b1822d 1}
-	  {x4416eaf6 x41c7eb80 1 x41c7eb80 1}
-	  {x441b2666 x4187f2c0 1 x4187f2c0 1}
-	  {x4445a668 x41864ffa 1 x41864ffa 1}
-	  {x445a1be3 x41673333 1 x41673333 1}
-	  {x4469c668 x40b7efc0 1 x40b7efc0 1}
-	  {x 2
-	   {x4473f99a -}}
-	  {x44746667 x3f028f9a 1 x3f028f9a 1}
-	  {x447ac667 x40eca3d3 1 0 1}}
-	 {{x4405e001 0 1 xc04fb580 1}
-	  {x43ffd99c -}
-	  {x4407c006 x40647acd 1 x40647acd 1}
-	  {x4408d99a -}
-	  {x44072667 xbfafe4ab 1 xbfafe4ab 1}
-	  {x4403b267 xc0185200 1 xc0185200 1}
-	  {x44013333 -}
-	  {x4401a000 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 2
-	   {x4403bfff -}}
-	  {x4402e666 xbf828f00 1 0 1}}}
-        {{{x41d80000 -}}
-	 {{x41980000 -}}}
-        {{{x 5
-	   {x420a0000 -}}
-	  {x41b60000 xc0166666 1 xc0166666 1}
-	  {x 5
-	   {x41300000 -}}}
-	 {{x 5
-	   {xc1c66660 -}}
-	  {xc18f3330 x3fb0a3cd 1 x3fb0a3cd 1}
-	  {x 5
-	   {xc1300000 -}}}}
-        {{{x42da3330 0 1 x418e6183 1}
-	  {x439ff334 x41af2a62 1 x41af2a62 1}
-	  {x4408c0e3 x41c7eb80 1 x41c7eb80 1}
-	  {x440e7332 x4199cee0 1 x4199cee0 1}
-	  {x443da000 x4196e600 1 x4196e600 1}
-	  {x44552f02 x418547ad 1 x418547ad 1}
-	  {x44674666 x40c92ed5 1 x40c92ed5 1}
-	  {x 2
-	   {x44717998 -}}
-	  {x4471e665 x3f028f9a 1 x3f028f9a 1}
-	  {x447d5ffe x41583d63 1 0 1}}
-	 {{x44348001 0 1 xc04fb580 1}
-	  {x442e8cce -}
-	  {x442ef68e x3e124000 1 x3e124000 1}
-	  {x442ef99a -}
-	  {x442db333 xbf7fae22 1 xbf7fae22 1}
-	  {x442b3acd xbfd9999a 1 xbfd9999a 1}
-	  {x44297333 -}
-	  {x4429e000 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 2
-	   {x442bffff -}}
-	  {x44260ccc xc0e47ada 1 0 1}}}
-        {{{x 5
-	   {xc14a1ac0 -}}
-	  {xc13d0d60 x3e27119a 1 x3e27119a 1}
-	  {x 5
-	   {xc1300000 -}}}
-	 {{x 5
-	   {x41114780 -}}
-	  {x4120a3c0 x3e449ccd 1 x3e449ccd 1}
-	  {x 5
-	   {x41300000 -}}}}
-        {{{x42a60000 -}}
-	 {{x41600000 -}}}
-        {{{xc0b33280 0 1 x418ff8c6 1}
-	  {x434d333c x41abfbdd 1 x41abfbdd 1}
-	  {x43d42e0a x41c11ead 1 x41c11ead 1}
-	  {x43df4cca x41996940 1 x41996940 1}
-	  {x441ed333 x4192c080 1 x4192c080 1}
-	  {x443470a1 x41721480 1 x41721480 1}
-	  {x4444a667 x40bbce00 1 x40bbce00 1}
-	  {x 2
-	   {x444ed999 -}}
-	  {x 2
-	   {x444f4666 -}}}
-	 {{x44550665 0 1 xc04fb580 1}
-	  {x 3
-	   {x444f1332 -}}
-	  {x444dcccb xbf3e6666 1 xbf3e6666 1}
-	  {x444c4932 xbf828f33 1 xbf828f33 1}
-	  {x444b3fff -}
-	  {x444baccc x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x444dcccb -}}}}
-        {{{xc2a60000 -}}
-	 {{xc1600000 -}}}
-        {{{x41a33300 -}}
-	 {{x42013350 -}}}
-        {{{xc2eaffe8 0 1 x419232ee 1}
-	  {x42ba99b8 x41a7878d 1 x41a7878d 1}
-	  {x4396a976 x41b7998d 1 x41b7998d 1}
-	  {x43a16666 x4198dafa 1 x4198dafa 1}
-	  {x43ffc002 x418ffcd3 1 x418ffcd3 1}
-	  {x441431b6 x4161c293 1 x4161c293 1}
-	  {x44232668 x40b2e2c7 1 x40b2e2c7 1}
-	  {x 2
-	   {x442d599a -}}
-	  {x 2
-	   {x442dc667 -}}}
-	 {{x4444c665 0 1 xc0222906 1}
-	  {x443ed332 xbfb631e6 1 xbfb631e6 1}
-	  {x443da872 xbf028f9a 1 xbf028f9a 1}
-	  {x443d8ccb xbf00bf46 1 xbf00bf46 1}
-	  {x443c4664 xbf9028ef 1 xbf9028ef 1}
-	  {x44395398 xc0028f4d 1 xc0028f4d 1}
-	  {x44372ccb -}
-	  {x44379998 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x4439b997 -}}}}
-        {{{xc15e23c0 -}}
-	 {{xc1afdca0 -}}}
-        {{{x 2
-	   {xc25d3340 -}}
-	  {xc172809f x405e0774 1 x405e0774 1}
-	  {x 2
-	   {xc1600000 -}}
-	  {xc1d46670 xc020a3e6 1 xc020a3e6 1}
-	  {x 5
-	   {xc21c6670 -}}}
-	 {{x 2
-	   {x433a1990 -}}
-	  {x42f00201 xc0b6c8b0 1 xc0b6c8b0 1}
-	  {x 2
-	   {x42ec3328 -}}
-	  {x42d0b32c xc02fffe6 1 xc02fffe6 1}
-	  {x 5
-	   {x42b53330 -}}}}
-        {{{xc36c8000 0 1 x418d6d29 1}
-	  {xc1cd9980 x41b11316 1 x41b11316 1}
-	  {x434e2fb6 x41cbfffa 1 x41cbfffa 1}
-	  {x43654cc8 x419a0bd9 1 x419a0bd9 1}
-	  {x43d10000 x419933bc 1 x419933bc 1}
-	  {x44012372 x418c147d 1 x418c147d 1}
-	  {x44144667 x40d09d87 1 x40d09d87 1}
-	  {x 2
-	   {x441e7999 -}}
-	  {x 2
-	   {x441ee666 -}}}
-	 {{x440caccf 0 1 xc04fb580 1}
-	  {x4406b99c -}
-	  {x440c1868 x3fed9c00 1 x3fed9c00 1}
-	  {x440c4002 -}
-	  {x440af99b xbf2e14cd 1 xbf2e14cd 1}
-	  {x4409b334 xbf599a00 1 xbf599a00 1}
-	  {x4408d99a -}
-	  {x44094667 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x440b6666 -}}}}
-        {{{x 2
-	   {x4171972a -}}
-	  {x40cfa091 xbf3e8198 1 xbf3e8198 1}
-	  {x 2
-	   {x40c7b080 -}}
-	  {x4159f5a0 x3fbcfbcd 1 x3fbcfbcd 1}
-	  {x 5
-	   {x41a80980 -}}}
-	 {{x 2
-	   {xc24b4110 -}}
-	  {xc2525be3 xbe1d2f00 1 xbe1d2f00 1}
-	  {x 2
-	   {xc2529048 -}}
-	  {xc24a9f64 x3ecb4a00 1 x3ecb4a00 1}
-	  {x 5
-	   {xc242ae80 -}}}}}}     idem}
-     {t
-      {{x42000000 x44bc4000 0 1 xc28fe872 1}
-       {x42280000 x44449d71 xc28fe872 1 0 1}}
-      {{x42000000 x442f4000 0 1 xc1bd3126 1}
-       {x42280000 x43e84148 xc1bd3126 1 0 1}}
-      {{x42280000 0}}
-      {{x42000000 0 -}
-       {x42280000}}
-      {{x42000000 0 -}
-       {x42280000}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42000000 0 -}
-       {x42280000}}
-      {{x42000000 1 -}
-       {x42280000}}
-      {{x42000000 1 -}
-       {x42280000}}
-      {{x42280000 1}}
-      {{x42000000 0 -}
-       {x42280000}}
-      {{x42000000 0 -}
-       {x42280000}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 1}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 1}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 1}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42280000 1}}}
-     {a str 1 spx x44700000 spy x44070000 sb 1 ltn x42280000 ltm x42280000 tt x40800000}}}}}}
+    {a}}}}}
  toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
@@ -1019,59 +616,59 @@ RotoPaint {
  source_black_outside true
  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
  name RotoPaint1
- xpos -1684
- ypos 2148
+ xpos -278
+ ypos 1729
 }
-push $N1631c110
+push $N25231920
 PostageStamp {
  name PostageStamp4
- xpos -1514
- ypos 1772
+ xpos -108
+ ypos 1353
  postage_stamp true
 }
-set N1631e370 [stack 0]
+set N2533a1e0 [stack 0]
 Dot {
  name Dot1
- xpos -1672
- ypos 1799
+ xpos -266
+ ypos 1380
 }
-set N1631e6e0 [stack 0]
+set N2533a550 [stack 0]
 Dot {
  name Dot4
- xpos -1835
- ypos 1799
+ xpos -429
+ ypos 1380
 }
-set N1631ea50 [stack 0]
+set N2533a8c0 [stack 0]
 Dot {
  name Dot2
- xpos -2034
- ypos 1799
+ xpos -628
+ ypos 1380
 }
 Shuffle {
  alpha green
  name Shuffle2
- xpos -2068
- ypos 1911
+ xpos -662
+ ypos 1492
 }
 Invert {
  channels alpha
  name Invert3
- xpos -2068
- ypos 1935
+ xpos -662
+ ypos 1516
 }
-push $N1631ea50
+push $N2533a8c0
 Shuffle {
  alpha red
  name Shuffle3
- xpos -1869
- ypos 1869
+ xpos -463
+ ypos 1450
 }
 Merge2 {
  inputs 2
  operation overlay
  name Merge2
- xpos -1869
- ypos 1941
+ xpos -463
+ ypos 1522
 }
 Grade {
  channels alpha
@@ -1079,21 +676,21 @@ Grade {
  whitepoint 0.64
  white_clamp true
  name Grade2
- xpos -1869
- ypos 1994
+ xpos -463
+ ypos 1575
 }
-push $N1631e6e0
+push $N2533a550
 Shuffle {
  alpha blue
  name Shuffle1
- xpos -1706
- ypos 1868
+ xpos -300
+ ypos 1449
 }
 Invert {
  channels alpha
  name Invert1
- xpos -1706
- ypos 1892
+ xpos -300
+ ypos 1473
 }
 Grade {
  channels alpha
@@ -1101,10 +698,10 @@ Grade {
  whitepoint 0.91
  white_clamp true
  name Grade1
- xpos -1706
- ypos 1928
+ xpos -300
+ ypos 1509
 }
-push $N1631e370
+push $N2533a1e0
 OFXuk.co.thefoundry.keylight.keylight_v201 {
  show "Intermediate Result"
  unPreMultiply false
@@ -1147,50 +744,52 @@ OFXuk.co.thefoundry.keylight.keylight_v201 {
  outsideComponent None
  cacheBreaker true
  name Keylight1
- xpos -1514
- ypos 1883
+ xpos -108
+ ypos 1464
 }
 Merge2 {
  inputs 2
  name Merge1
- xpos -1514
- ypos 1934
+ xpos -108
+ ypos 1515
 }
 Merge2 {
  inputs 2
  name Merge3
- xpos -1514
- ypos 2000
+ xpos -108
+ ypos 1581
 }
 Merge2 {
  inputs 2
  operation mask
  name Merge7
- xpos -1514
- ypos 2154
+ selected true
+ xpos -108
+ ypos 1735
+ disable true
 }
-push $N1631c480
+push $N253382f0
 Merge2 {
  inputs 2
  operation in
  name Merge4
- xpos -1237
- ypos 2154
+ xpos 169
+ ypos 1735
 }
-set N1647a090 [stack 0]
+set N2543a6d0 [stack 0]
 Dot {
  name Dot8
- xpos -1203
- ypos 2274
+ xpos 203
+ ypos 1855
 }
-set N1647a400 [stack 0]
+set N2543aa40 [stack 0]
 Dot {
  name Dot43
- xpos -1203
- ypos 2687
+ xpos 203
+ ypos 2268
 }
-set N1647a770 [stack 0]
-push $N1647a400
+set N2543adb0 [stack 0]
+push $N2543aa40
 Emboss {
  channels alpha
  Angle 320
@@ -1200,63 +799,63 @@ Emboss {
  erodesize 0.385
  blursize 16
  name Emboss1
- xpos -1060
- ypos 2265
+ xpos 346
+ ypos 1846
 }
 Shuffle {
  red alpha
  green alpha
  blue alpha
  name Shuffle4
- xpos -1060
- ypos 2301
+ xpos 346
+ ypos 1882
 }
 Blur {
  channels rgba
  size 31
  name Blur3
- xpos -888
- ypos 2301
+ xpos 518
+ ypos 1882
 }
-push $N1647a090
+push $N2543a6d0
 Dot {
  name Dot13
- xpos -680
- ypos 2157
+ xpos 726
+ ypos 1738
 }
 FilterErode {
  size 2.5
  name FilterErode1
- xpos -714
- ypos 2416
+ xpos 692
+ ypos 1997
 }
-push $N1631d5b0
+push $N25339420
 Copy {
  inputs 2
  from0 rgba.alpha
  to0 rgba.alpha
  name Copy1
- xpos -714
- ypos 2536
+ xpos 692
+ ypos 2117
 }
 Premult {
  name Premult1
- xpos -714
- ypos 2572
+ xpos 692
+ ypos 2153
 }
-push $N1647a770
+push $N2543adb0
 Dot {
  name Dot42
- xpos -535
- ypos 2687
+ xpos 871
+ ypos 2268
 }
-push $N1631d5b0
+push $N25339420
 Group {
  inputs 2
  name B_EdgeExpander1
  tile_color 0xff3f00ff
- xpos -569
- ypos 2744
+ xpos 837
+ ypos 2325
  addUserKnob {20 B_EdgeExpander l "Bait Edge Expander"}
  addUserKnob {4 outputMode l "Output Modes" M {"Final Result" "Erode Preview" "Extend Preview" "Edge Preview"}}
  addUserKnob {26 ""}
@@ -1279,7 +878,7 @@ Group {
   name BackdropNode11
   tile_color 0x999999ff
   label "Edge Expand"
-  note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_size 20
   xpos -654
   ypos -433
@@ -1313,7 +912,7 @@ Group {
   xpos -634
   ypos -302
  }
-set N260b18c0 [stack 0]
+set N25689c80 [stack 0]
  Erode {
   channels alpha
   size 4
@@ -1323,13 +922,13 @@ set N260b18c0 [stack 0]
   xpos -634
   ypos -229
  }
-set N260b1c30 [stack 0]
+set N25689ff0 [stack 0]
  Dot {
   name Dot15
   xpos -490
   ypos -220
  }
-set N260b1fa0 [stack 0]
+set N2568a360 [stack 0]
  Dot {
   name Dot1
   xpos 246
@@ -1350,7 +949,7 @@ set N260b1fa0 [stack 0]
   xpos 212
   ypos 712
  }
-set N260b29f0 [stack 0]
+set N2568adb0 [stack 0]
  Shuffle {
   red alpha
   green alpha
@@ -1359,13 +958,13 @@ set N260b29f0 [stack 0]
   xpos 84
   ypos 718
  }
-push $N260b1c30
+push $N25689ff0
  Premult {
   name Premult38
   xpos -634
   ypos -169
  }
-set N260b30d0 [stack 0]
+set N2568b490 [stack 0]
  Blur {
   size 1
   maskChannelInput rgba.alpha
@@ -1380,7 +979,7 @@ set N260b30d0 [stack 0]
   xpos -634
   ypos -86
  }
-push $N260b1fa0
+push $N2568a360
  Merge2 {
   inputs 2
   operation copy
@@ -1388,7 +987,7 @@ push $N260b1fa0
   xpos -524
   ypos -86
  }
-set N260b3b20 [stack 0]
+set N2568bee0 [stack 0]
  Premult {
   name Premult46
   xpos -636
@@ -1407,7 +1006,7 @@ set N260b3b20 [stack 0]
   xpos -636
   ypos 15
  }
-push $N260b3b20
+push $N2568bee0
  Merge2 {
   inputs 2
   operation copy
@@ -1415,7 +1014,7 @@ push $N260b3b20
   xpos -524
   ypos 15
  }
-set N26183730 [stack 0]
+set N2571c520 [stack 0]
  Premult {
   name Premult57
   xpos -634
@@ -1434,7 +1033,7 @@ set N26183730 [stack 0]
   xpos -634
   ypos 108
  }
-push $N26183730
+push $N2571c520
  Merge2 {
   inputs 2
   operation copy
@@ -1442,7 +1041,7 @@ push $N26183730
   xpos -524
   ypos 108
  }
-set N261844f0 [stack 0]
+set N2571d2e0 [stack 0]
  Premult {
   name Premult58
   xpos -633
@@ -1461,7 +1060,7 @@ set N261844f0 [stack 0]
   xpos -633
   ypos 208
  }
-push $N261844f0
+push $N2571d2e0
  Merge2 {
   inputs 2
   operation copy
@@ -1469,7 +1068,7 @@ push $N261844f0
   xpos -524
   ypos 208
  }
-set N261852b0 [stack 0]
+set N2571e0a0 [stack 0]
  Premult {
   name Premult1
   xpos -636
@@ -1488,7 +1087,7 @@ set N261852b0 [stack 0]
   xpos -636
   ypos 315
  }
-push $N261852b0
+push $N2571e0a0
  Merge2 {
   inputs 2
   operation copy
@@ -1496,7 +1095,7 @@ push $N261852b0
   xpos -523
   ypos 315
  }
-set N26186070 [stack 0]
+set N2571ee60 [stack 0]
  Premult {
   name Premult2
   xpos -634
@@ -1515,7 +1114,7 @@ set N26186070 [stack 0]
   xpos -634
   ypos 408
  }
-push $N26186070
+push $N2571ee60
  Merge2 {
   inputs 2
   operation copy
@@ -1523,7 +1122,7 @@ push $N26186070
   xpos -524
   ypos 408
  }
-set N26271050 [stack 0]
+set N2571fc20 [stack 0]
  Premult {
   name Premult3
   xpos -633
@@ -1542,7 +1141,7 @@ set N26271050 [stack 0]
   xpos -633
   ypos 508
  }
-push $N26271050
+push $N2571fc20
  Merge2 {
   inputs 2
   operation copy
@@ -1550,7 +1149,7 @@ push $N26271050
   xpos -522
   ypos 508
  }
-set N26271e10 [stack 0]
+set N257d7000 [stack 0]
  Premult {
   name Premult4
   xpos -635
@@ -1569,7 +1168,7 @@ set N26271e10 [stack 0]
   xpos -635
   ypos 616
  }
-push $N26271e10
+push $N257d7000
  Merge2 {
   inputs 2
   operation copy
@@ -1577,7 +1176,7 @@ push $N26271e10
   xpos -522
   ypos 616
  }
-set N26272bd0 [stack 0]
+set N257d7dc0 [stack 0]
  Premult {
   name Premult5
   xpos -633
@@ -1596,7 +1195,7 @@ set N26272bd0 [stack 0]
   xpos -633
   ypos 709
  }
-push $N26272bd0
+push $N257d7dc0
  Merge2 {
   inputs 2
   operation copy
@@ -1604,7 +1203,7 @@ push $N26272bd0
   xpos -523
   ypos 709
  }
-set N26273990 [stack 0]
+set N257d8b80 [stack 0]
  Premult {
   name Premult6
   xpos -632
@@ -1623,7 +1222,7 @@ set N26273990 [stack 0]
   xpos -632
   ypos 809
  }
-push $N26273990
+push $N257d8b80
  Merge2 {
   inputs 2
   operation copy
@@ -1631,7 +1230,7 @@ push $N26273990
   xpos -522
   ypos 809
  }
-set N26274750 [stack 0]
+set N257d9940 [stack 0]
  Premult {
   name Premult8
   xpos -635
@@ -1650,7 +1249,7 @@ set N26274750 [stack 0]
   xpos -635
   ypos 925
  }
-push $N26274750
+push $N257d9940
  Merge2 {
   inputs 2
   operation copy
@@ -1658,7 +1257,7 @@ push $N26274750
   xpos -522
   ypos 925
  }
-set N2633b3c0 [stack 0]
+set N257da390 [stack 0]
  Premult {
   name Premult9
   xpos -633
@@ -1677,7 +1276,7 @@ set N2633b3c0 [stack 0]
   xpos -633
   ypos 1018
  }
-push $N2633b3c0
+push $N257da390
  Merge2 {
   inputs 2
   operation copy
@@ -1685,7 +1284,7 @@ push $N2633b3c0
   xpos -522
   ypos 1018
  }
-set N2633c4f0 [stack 0]
+set N258adae0 [stack 0]
  Premult {
   name Premult10
   xpos -632
@@ -1704,7 +1303,7 @@ set N2633c4f0 [stack 0]
   xpos -632
   ypos 1118
  }
-push $N2633c4f0
+push $N258adae0
  Merge2 {
   inputs 2
   operation copy
@@ -1712,7 +1311,7 @@ push $N2633c4f0
   xpos -522
   ypos 1118
  }
-set N2633d2b0 [stack 0]
+set N258ae8a0 [stack 0]
  Premult {
   name Premult11
   xpos -635
@@ -1731,7 +1330,7 @@ set N2633d2b0 [stack 0]
   xpos -635
   ypos 1225
  }
-push $N2633d2b0
+push $N258ae8a0
  Merge2 {
   inputs 2
   operation copy
@@ -1739,7 +1338,7 @@ push $N2633d2b0
   xpos -522
   ypos 1225
  }
-set N2633e070 [stack 0]
+set N258af660 [stack 0]
  Premult {
   name Premult12
   xpos -633
@@ -1758,7 +1357,7 @@ set N2633e070 [stack 0]
   xpos -633
   ypos 1318
  }
-push $N2633e070
+push $N258af660
  Merge2 {
   inputs 2
   operation copy
@@ -1766,7 +1365,7 @@ push $N2633e070
   xpos -522
   ypos 1318
  }
-set N26407050 [stack 0]
+set N258b0420 [stack 0]
  Premult {
   name Premult13
   xpos -632
@@ -1785,7 +1384,7 @@ set N26407050 [stack 0]
   xpos -632
   ypos 1418
  }
-push $N26407050
+push $N258b0420
  Merge2 {
   inputs 2
   operation copy
@@ -1793,7 +1392,7 @@ push $N26407050
   xpos -522
   ypos 1418
  }
-set N26407e10 [stack 0]
+set N2599f400 [stack 0]
  Premult {
   name Premult14
   xpos -634
@@ -1812,7 +1411,7 @@ set N26407e10 [stack 0]
   xpos -634
   ypos 1526
  }
-push $N26407e10
+push $N2599f400
  Merge2 {
   inputs 2
   operation copy
@@ -1820,7 +1419,7 @@ push $N26407e10
   xpos -521
   ypos 1526
  }
-set N26408bd0 [stack 0]
+set N259a01c0 [stack 0]
  Premult {
   name Premult15
   xpos -632
@@ -1839,7 +1438,7 @@ set N26408bd0 [stack 0]
   xpos -632
   ypos 1619
  }
-push $N26408bd0
+push $N259a01c0
  Merge2 {
   inputs 2
   operation copy
@@ -1847,7 +1446,7 @@ push $N26408bd0
   xpos -521
   ypos 1619
  }
-set N26409990 [stack 0]
+set N259a0f80 [stack 0]
  Premult {
   name Premult16
   xpos -631
@@ -1866,7 +1465,7 @@ set N26409990 [stack 0]
   xpos -631
   ypos 1719
  }
-push $N26409990
+push $N259a0f80
  Merge2 {
   inputs 2
   operation copy
@@ -1874,7 +1473,7 @@ push $N26409990
   xpos -521
   ypos 1719
  }
-set N2640a750 [stack 0]
+set N259a1d40 [stack 0]
  Premult {
   name Premult7
   xpos -631
@@ -1893,7 +1492,7 @@ set N2640a750 [stack 0]
   xpos -631
   ypos 1842
  }
-push $N2640a750
+push $N259a1d40
  Merge2 {
   inputs 2
   operation copy
@@ -1901,32 +1500,32 @@ push $N2640a750
   xpos -521
   ypos 1842
  }
-push $N2640a750
-push $N26409990
-push $N26408bd0
-push $N26407e10
-push $N26407050
-push $N2633e070
-push $N2633d2b0
-push $N2633c4f0
-push $N2633b3c0
-push $N26274750
-push $N26273990
-push $N26272bd0
-push $N26271e10
-push $N26271050
-push $N26186070
-push $N261852b0
-push $N261844f0
-push $N26183730
-push $N260b3b20
-push $N260b18c0
+push $N259a1d40
+push $N259a0f80
+push $N259a01c0
+push $N2599f400
+push $N258b0420
+push $N258af660
+push $N258ae8a0
+push $N258adae0
+push $N257da390
+push $N257d9940
+push $N257d8b80
+push $N257d7dc0
+push $N257d7000
+push $N2571fc20
+push $N2571ee60
+push $N2571e0a0
+push $N2571d2e0
+push $N2571c520
+push $N2568bee0
+push $N25689c80
  Premult {
   name Premult17
   xpos -505
   ypos -296
  }
-set N2651faa0 [stack 0]
+set N25a19090 [stack 0]
  Switch {
   inputs 21
   which 12.5
@@ -1935,8 +1534,8 @@ set N2651faa0 [stack 0]
   xpos -91
   ypos 806
  }
-set N19e71f60 [stack 0]
-push $N260b30d0
+set N1c9d60c0 [stack 0]
+push $N2568b490
  Dot {
   name Dot5
   xpos -838
@@ -1947,25 +1546,25 @@ push $N260b30d0
   xpos -838
   ypos 2002
  }
-push $N2651faa0
+push $N25a19090
  Dot {
   name Dot3
   xpos 497
   ypos -293
  }
-set N265204f0 [stack 0]
+set N25a19ae0 [stack 0]
  Dot {
   name Dot4
   xpos 620
   ypos -293
  }
-set N26520860 [stack 0]
+set N25a19e50 [stack 0]
  Dot {
   name Dot2
   xpos 730
   ypos -293
  }
-push $N26520860
+push $N25a19e50
  Input {
   inputs 0
   name MASK
@@ -1980,8 +1579,8 @@ push $N26520860
   ypos 718
   number 3
  }
-push $N260b29f0
-push $N19e71f60
+push $N2568adb0
+push $N1c9d60c0
  Blur {
   inputs 1+1
   size 2.6
@@ -1999,7 +1598,7 @@ push $N19e71f60
   xpos 344
   ypos 800
  }
-push $N265204f0
+push $N25a19ae0
  Merge2 {
   inputs 2+1
   operation copy
@@ -2041,16 +1640,17 @@ end_group
 Merge2 {
  inputs 2
  name Merge11
- xpos -717
- ypos 2744
+ xpos 692
+ ypos 2325
 }
 Merge2 {
  inputs 2
  operation overlay
  also_merge all
  name Merge6
- xpos -888
- ypos 2744
+ xpos 518
+ ypos 2325
+ disable true
 }
 add_layer {Matte Matte.red Matte.green Matte.blue Matte.alpha}
 Copy {
@@ -2060,8 +1660,8 @@ Copy {
  from1 rgba.alpha
  to1 Matte.red
  name Copy4
- xpos -1237
- ypos 2732
+ xpos 169
+ ypos 2313
 }
 add_layer {spill spill.luma}
 Copy {
@@ -2069,57 +1669,353 @@ Copy {
  from0 rgba.red
  to0 spill.luma
  name Copy3
- xpos -1237
- ypos 2913
+ xpos 169
+ ypos 2494
+}
+Group {
+ name Group4
+ xpos 169
+ ypos 2586
+ disable true
+ addUserKnob {20 User}
+ addUserKnob {41 amount l red T DitherRed.amount}
+ addUserKnob {41 amount_1 l green T DitherGreen.amount}
+ addUserKnob {41 amount_2 l blue T DitherBlue.amount}
+ addUserKnob {26 ""}
+ addUserKnob {6 Csample l "422 sampling?" +STARTLINE}
+ addUserKnob {6 HDCamCorrection l "Source HDCam 1440?" t "use this if the source is HDCam which is 1440 pixels wide not 1920 (then stretched)\n\nnaughty sony!" -STARTLINE}
+ HDCamCorrection true
+ addUserKnob {3 redAspect l "red noise aspect" t "use this to create non-square pixel noise\n"}
+ redAspect 1
+ addUserKnob {7 blurRedSize l blur -STARTLINE R 0 5}
+ addUserKnob {3 greenAspect l "green noise aspect" t "use this to create non-square pixel noise\nprobably should be 1"}
+ greenAspect 1
+ addUserKnob {7 blurGreenSize l blur -STARTLINE R 0 5}
+ addUserKnob {3 blueAspect l "blue noise aspect" t "use this to create non-square pixel noise\n"}
+ blueAspect 1
+ addUserKnob {7 blurBlueSize l blur -STARTLINE R 0 5}
+ blurBlueSize 0.45
+ addUserKnob {6 usePremult l (un)premult +STARTLINE}
+ addUserKnob {6 useMask l "use mask" +STARTLINE}
+ addUserKnob {6 invertMask l invert -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {41 from0_1 l (un)premult T CopyPreMult.from0}
+ addUserKnob {41 from0 l mask T CopyMask.from0}
+ addUserKnob {26 ""}
+ addUserKnob {6 croptoFormat l "crop output" t "crops the dither to the incoming image size" +STARTLINE}
+ croptoFormat true
+}
+ Input {
+  inputs 0
+  name RGB
+  xpos 190
+  ypos 13
+ }
+set N25b03090 [stack 0]
+push $N25b03090
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name CopyPreMult
+  xpos 190
+  ypos 65
+  disable {{!usePremult i}}
+ }
+ Unpremult {
+  name Unpremult1
+  xpos 190
+  ypos 134
+  disable {{!usePremult i}}
+ }
+set N25b03770 [stack 0]
+ Multiply {
+  channels rgb
+  value 0
+  name Multiply1
+  xpos -37
+  ypos 134
+ }
+set N25b03ae0 [stack 0]
+ Dither {
+  channels {-rgba.red rgba.green -rgba.blue}
+  amount 0.0185
+  maskChannelInput -depth.Z
+  invert_mask {{invertMask i}}
+  unpremult -rgba.alpha
+  name DitherGreen
+  xpos 68
+  ypos 169
+ }
+ Transform {
+  scale {{greenAspect i} 1}
+  center {1024 778}
+  filter Impulse
+  name transformGreen
+  xpos 68
+  ypos 207
+ }
+ Transform {
+  scale {{1920/1440 i} 1}
+  center {960 540}
+  name HDCamAspectCorrect2
+  xpos 68
+  ypos 233
+  disable {{!HDCamCorrection i}}
+ }
+ Blur {
+  channels {-rgba.red rgba.green -rgba.blue}
+  size {{parent.blurGreenSize i}}
+  name BlurGreen
+  xpos 68
+  ypos 273
+  disable {{parent.blurGreenSize==0?1:0 i}}
+ }
+push $N25b03770
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels rgb
+  also_merge all
+  name Merge3
+  xpos 190
+  ypos 310
+ }
+set N25b04c10 [stack 0]
+ Input {
+  inputs 0
+  name mask
+  xpos 415
+  ypos 7
+  number 1
+ }
+push $N25b03090
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 depth.Z
+  name CopyMask
+  xpos 308
+  ypos 102
+  disable {{!useMask i}}
+ }
+set N25b052f0 [stack 0]
+ Invert {
+  name Invert1
+  xpos 399
+  ypos 184
+  disable {{!invertMask i x1 0}}
+ }
+push $N25b04c10
+push $N25b03ae0
+ Dither {
+  channels {rgba.red -rgba.green -rgba.blue}
+  amount 0.011
+  maskChannelInput -depth.Z
+  invert_mask {{invertMask i}}
+  unpremult -rgba.alpha
+  name DitherRed
+  xpos -167
+  ypos 177
+ }
+ Transform {
+  scale {{redAspect i} 1}
+  center {1024 778}
+  filter Impulse
+  name transformRed
+  xpos -167
+  ypos 220
+ }
+ Transform {
+  scale {{1920/1440 i} 1}
+  center {960 540}
+  name HDCamAspectCorrect
+  xpos -167
+  ypos 261
+  disable {{!HDCamCorrection i}}
+ }
+ Blur {
+  channels {rgba.red -rgba.green -rgba.blue}
+  size {{parent.blurRedSize i}}
+  name BlurRed
+  xpos -167
+  ypos 287
+  disable {{parent.blurRedSize==0?1:0 i}}
+ }
+push $N25b03770
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels rgb
+  also_merge all
+  name Merge1
+  xpos -98
+  ypos 338
+ }
+ ShuffleCopy {
+  inputs 2
+  green green
+  blue blue
+  name ShuffleRed
+  xpos 190
+  ypos 368
+ }
+push $N25b03ae0
+ Dither {
+  channels {-rgba.red -rgba.green rgba.blue}
+  amount 0.03
+  maskChannelInput -depth.Z
+  invert_mask {{invertMask i}}
+  unpremult -rgba.alpha
+  name DitherBlue
+  xpos -37
+  ypos 168
+ }
+ Transform {
+  scale {{blueAspect i} 1}
+  center {1024 778}
+  filter Impulse
+  name transformBlue
+  xpos -37
+  ypos 216
+ }
+ Transform {
+  scale {{1920/1440 i} 1}
+  center {960 540}
+  name HDCamAspectCorrect1
+  xpos -32
+  ypos 246
+  disable {{!HDCamCorrection i}}
+ }
+ Blur {
+  channels {-rgba.red -rgba.green rgba.blue}
+  size {{parent.blurBlueSize i}}
+  name BlurBlue
+  xpos -37
+  ypos 286
+  disable {{parent.blurBlueSize==0?1:0 i}}
+ }
+push $N25b03770
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels rgb
+  also_merge all
+  name Merge2
+  xpos 107
+  ypos 329
+ }
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  name ShuffleBlue
+  xpos 190
+  ypos 438
+ }
+ Premult {
+  name Premult1
+  xpos 190
+  ypos 596
+  disable {{!usePremult i}}
+ }
+set N25bfbe30 [stack 0]
+push $N25b052f0
+ Keymix {
+  inputs 3
+  maskChannel depth.Z
+  name Keymix1
+  xpos 308
+  ypos 620
+ }
+push $N25bfbe30
+ Switch {
+  inputs 2
+  which {{useMask i}}
+  name Switch1
+  xpos 190
+  ypos 673
+ }
+push $N25b03090
+ Copy {
+  inputs 2
+  channels rgba
+  name Copy1
+  xpos 257
+  ypos 740
+ }
+set N25c74060 [stack 0]
+ Viewer {
+  inputs 2
+  name Viewer1
+  xpos 31
+  ypos 438
+ }
+push $N25c74060
+ Crop {
+  box {0 0 {RGB.width i} {RGB.height i}}
+  reformat true
+  crop false
+  name Crop1
+  selected true
+  xpos 257
+  ypos 828
+  disable {{!croptoFormat i}}
+ }
+ Output {
+  name Output1
+  xpos 257
+  ypos 910
+ }
+end_group
+Dot {
+ name Dot12
+ xpos 203
+ ypos 2774
+}
+clone $C2522e590 {
+ xpos 1347
+ ypos 2771
+ selected false
 }
 Premult {
  channels all
  name Premult11
- xpos -1237
- ypos 3072
+ xpos 1740
+ ypos 2765
 }
-Dot {
- name Dot12
- xpos -1203
- ypos 3193
-}
-clone $C265be180 {
- xpos -59
- ypos 3190
- selected false
-}
-push $N267c0140
+push $N25231240
 Merge2 {
  inputs 2
  also_merge all
  maskChannelInput Object.alpha
  invert_mask true
  name Merge8
- xpos 444
- ypos 3184
+ xpos 1850
+ ypos 2765
 }
 Dot {
  name Dot41
- xpos 478
- ypos 3369
+ xpos 1884
+ ypos 2950
 }
-set N267c0f00 [stack 0]
+set N25c75870 [stack 0]
 Shuffle {
  in Matte
  green red
  blue red
  alpha red
  name Shuffle14
- xpos 659
- ypos 3366
+ xpos 2065
+ ypos 2947
 }
 Group {
  inputs 2
  name B_Lightwrap1
  help "qp Gangsta Wrap v1.0beta\n\nBy Christian Lett\n\nLike Light Wrap, only more GANGSTA! Screens the hilights and multiplies the darks from a baclground over the edges of a keyed foreground element. Simples!"
  tile_color 0xff3f00ff
- xpos 790
- ypos 3458
+ xpos 2196
+ ypos 3039
  addUserKnob {20 B_Lightwrap l "Bait Lightwrap"}
  addUserKnob {41 format l Format T Constant1.format}
  addUserKnob {7 hilight_threshold l "Hilight Threshold" t "Only values above this slider will be included in light wrap"}
@@ -2172,13 +2068,13 @@ Group {
   xpos 321
   ypos -583
  }
-set N267c2030 [stack 0]
+set N25c769a0 [stack 0]
  Dot {
   name Dot1
   xpos 506
   ypos -531
  }
-set N267c23a0 [stack 0]
+set N25c76d10 [stack 0]
  Dot {
   name Dot10
   xpos 703
@@ -2189,7 +2085,7 @@ set N267c23a0 [stack 0]
   xpos 709
   ypos 498
  }
-push $N267c2030
+push $N25c769a0
  Shuffle {
   red black
   green black
@@ -2198,8 +2094,8 @@ push $N267c2030
   xpos 321
   ypos -416
  }
-set N267c2df0 [stack 0]
-push $N267c2df0
+set N25c77760 [stack 0]
+push $N25c77760
  Invert {
   channels alpha
   name Invert1
@@ -2228,7 +2124,7 @@ push $N267c2df0
   xpos 355
   ypos -119
  }
-set N268c61d0 [stack 0]
+set N25db7d60 [stack 0]
  Input {
   inputs 0
   name BG
@@ -2243,7 +2139,7 @@ set N268c61d0 [stack 0]
   ypos -579
   disable true
  }
-set N268c68b0 [stack 0]
+set N25db8440 [stack 0]
  Dot {
   name Dot8
   xpos 251
@@ -2254,7 +2150,7 @@ set N268c68b0 [stack 0]
   xpos 251
   ypos -253
  }
-set N268c6f90 [stack 0]
+set N25db8b20 [stack 0]
  Grade {
   black {{-parent.hilight_threshold}}
   add {{-parent.hilight_threshold}}
@@ -2271,7 +2167,7 @@ set N268c6f90 [stack 0]
   xpos 394
   ypos -124
  }
- set C268c7670 [stack 0]
+ set C25db9200 [stack 0]
  Constant {
   inputs 0
   format {{{parent.Constant1.format}}}
@@ -2302,13 +2198,13 @@ set N268c6f90 [stack 0]
   xpos 428
   ypos 352
  }
-push $N268c61d0
+push $N25db7d60
  Dot {
   name Dot5
   xpos 355
   ypos 64
  }
-push $N268c6f90
+push $N25db8b20
  Grade {
   whitepoint {{parent.darks_threshold}}
   white_clamp true
@@ -2317,7 +2213,7 @@ push $N268c6f90
   xpos 217
   ypos 9
  }
-clone $C268c7670 {
+clone $C25db9200 {
   xpos 217
   ypos 71
   selected false
@@ -2336,7 +2232,7 @@ clone $C268c7670 {
   xpos 217
   ypos 138
  }
-push $N267c23a0
+push $N25c76d10
  Dot {
   name Dot2
   xpos 506
@@ -2351,7 +2247,7 @@ push $N267c23a0
   xpos 30
   ypos 68
  }
-push $N268c68b0
+push $N25db8440
  Switch {
   inputs 2
   which {{parent.wrap_only}}
@@ -2396,13 +2292,13 @@ push $N268c68b0
   xpos 217
   ypos 493
  }
-set N26975300 [stack 0]
+set N25e8ee90 [stack 0]
  Output {
   name Output1
   xpos 217
   ypos 529
  }
-push $N26975300
+push $N25e8ee90
  Viewer {
   input_process false
   name Viewer1
@@ -2410,57 +2306,33 @@ push $N26975300
   ypos -245
  }
 end_group
-push $N267c0f00
+push $N25c75870
 Merge2 {
  inputs 2
  operation overlay
  also_merge all
  maskChannelInput Matte.red
  name Merge21
- xpos 444
- ypos 3452
-}
-Dot {
- name Dot68
- xpos 478
- ypos 3675
-}
-set N26975d50 [stack 0]
-Keyer {
- operation "red keyer"
- range {0.1824448878 0.9115931416 1 1}
- name Keyer8
- xpos 551
- ypos 3666
-}
-set N269760c0 [stack 0]
-push $N269760c0
-push $N26975d50
-HueShift {
- inputs 1+1
- hue_rotation -8
- name HueShift2
- xpos 444
- ypos 3799
-}
-Saturation {
- inputs 1+1
- saturation 0.93
- mode Average
- name Saturation3
- xpos 444
- ypos 3858
+ xpos 1850
+ ypos 3033
 }
 Crop {
  box {0 0 1920 1080}
  name Crop1
- xpos 444
- ypos 3949
+ xpos 1850
+ ypos 3530
 }
 Remove {
  operation keep
  channels rgb
  name Remove1
- xpos 444
- ypos 3973
+ xpos 1850
+ ypos 3554
+}
+Viewer {
+ frame 1
+ input_process false
+ name Viewer1
+ xpos 1850
+ ypos 3865
 }

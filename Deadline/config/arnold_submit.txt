@@ -1,5 +1,5 @@
 Plugin=Arnold
-Pool=arnold
+Group=maya
 Priority=50
 OnJobComplete=Nothing
 Group=none

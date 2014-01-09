@@ -1,0 +1,6090 @@
+#! C:/Program Files/Nuke7.0v8/Nuke7.0.exe -nx
+version 7.0 v8
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="1920" y="0" w="1952" h="1200" screen="1">
+        <splitter orientation="1">
+            <split size="45"/>
+            <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                <page id="Toolbar.1"/>
+            </dock>
+            <split size="1887"/>
+            <splitter orientation="2">
+                <split size="1139"/>
+                <dock id="" activePageId="DAG.1">
+                    <page id="DAG.1"/>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+    <window x="0" y="0" w="1920" h="1192" screen="0">
+        <splitter orientation="2">
+            <split size="1026"/>
+            <dock id="" activePageId="Viewer.1">
+                <page id="Viewer.1"/>
+            </dock>
+            <split size="128"/>
+            <dock id="" activePageId="DopeSheet.1">
+                <page id="DopeSheet.1"/>
+                <page id="Curve Editor.1"/>
+                <page id="Script Editor.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+inputs 0
+name K:/CodeRepo/Nuke/plugins/ToolSets/Comp_Templates/Key_Beach_v002.nk
+fps 25
+format "1920 1080 0 0 1920 1080 1 HD"
+}
+BackdropNode {
+inputs 0
+name BackdropNode19
+tile_color 0xaaaaaa00
+label "Clean Plate"
+note_font_size 42
+xpos 783
+ypos 1104
+bdwidth 595
+bdheight 631
+}
+BackdropNode {
+inputs 0
+name BackdropNode9
+tile_color 0x388e8e00
+label "WILL REQUIRE ATTENTION BETWEEN SHOTS - \nAS WILL EVERYTHING BUT THESE IN PARTICULAR"
+note_font_size 42
+xpos -3069
+ypos 1009
+bdwidth 1035
+bdheight 870
+}
+BackdropNode {
+inputs 0
+name BackdropNode1
+tile_color 0x6565ffff
+label SPILL_SUPRESS
+note_font_size 55
+xpos -165
+ypos 826
+bdwidth 412
+bdheight 270
+}
+BackdropNode {
+inputs 0
+name BackdropNode10
+tile_color 0x8e8e3800
+label "Sony Color Spike removal"
+note_font_size 42
+xpos -264
+ypos 1284
+bdwidth 618
+bdheight 630
+}
+BackdropNode {
+inputs 0
+name BackdropNode11
+tile_color 0xc63e3bff
+label "Object matte"
+note_font_size 42
+xpos 2360
+ypos 677
+bdwidth 227
+bdheight 214
+}
+BackdropNode {
+inputs 0
+name BackdropNode8
+tile_color 0x8e388e00
+label "\nBeach 2D BACKPLATE"
+note_font_size 42
+xpos 2370
+ypos -1444
+bdwidth 1726
+bdheight 1874
+}
+CheckerBoard2 {
+inputs 0
+name CheckerBoard1
+xpos 723
+ypos 2511
+}
+Roto {
+inputs 0
+output alpha
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Bezier2 576 bezier
+     {{cc
+       {f 8192}
+       {px
+        {x41e00000 x41e80000 x41f00000 x42000000 x42040000 x42080000 x42100000 x42180000 x42200000 x42280000 x42300000 x42380000 x42400000 x42480000}
+        {{{xbf176000 -}      xbf176000
+       {x 4
+        {xbf176000 -}}
+       {x 8
+        {xbf000000 -}}}
+      {{xbec67800 -}      xbec67800
+       {x 4
+        {xbec67800 -}}
+       {x 8
+        {xbf000000 -}}}}
+        {{{x44e5717f 0 1 xc1c61870 1}      x44e2685a
+       {x44dfbaa3 xc19861a0 1 xc19861a0 1}
+       {x44dbeb65 -}
+       {x44dc1aad x408dd800 1 x408dd800 1}
+       {x44de41a8 x41738580 1 x41738580 1}
+       {x44e1cfce x41830080 1 x41830080 1}
+       {x44e671b0 x41590160 1 x41590160 1}
+       {x44e897d9 x41101040 1 x41101040 1}
+       {x44eaf232 x40ca5a00 1 x40ca5a00 1}
+       {x44ebc141 x403c3b80 1 x403c3b80 1}
+       {x44ec6aa9 x40fe1c00 1 x40fe1c00 1}
+       {x44eff554 x4112aae0 1 x4112aae0 1}
+       {x44f10000 x3fd55880 1 0 1}}
+      {{x4405a463 0 1 x41c524a0 1}      x440b4a1a
+       {x440ddb3f -}
+       {x440d7fd1 -}
+       {x44132eb7 x41ffa6e0 1 x41ffa6e0 1}
+       {x441d7a3f x422c5e40 1 x422c5e40 1}
+       {x44338063 x422654cc 1 x422654cc 1}
+       {x44470f72 x41fbd168 1 x41fbd168 1}
+       {x4452fa90 x4061e100 1 x4061e100 1}
+       {x44539126 x3fbc3b00 1 x3fbc3b00 1}
+       {x44547306 -}
+       {x4453dc6f xc061e280 1 xc061e280 1}
+       {x444d5554 -}
+       {x444dc000 x3fa00200 1 0 1}}}
+        {{{x3f177000 -}      x3f177000
+       {x 4
+        {x3f177000 -}}
+       {x 8
+        {x3f000000 -}}}
+      {{x3ec67800 -}      x3ec67800
+       {x 4
+        {x3ec67800 -}}
+       {x 8
+        {x3f000000 -}}}}
+        {{{x40ae3300 -}      x40ae3300
+       {x 4
+        {x40ae3300 -}}
+       {x 8
+        {x40800000 -}}}
+      {{x40d0e600 -}      x40d0e600
+       {x 4
+        {x40d0e600 -}}
+       {x 8
+        {x40f00000 -}}}}
+        {{{x44d9ab36 -}      x44d9ab36
+       {x44d9ab36 -}
+       {x44d898ec -}
+       {x44d98211 x415e9bc0 1 x415e9bc0 1}
+       {x44dc135b x416f382b 1 x416f382b 1}
+       {x44df1d62 x41757d20 1 x41757d20 1}
+       {x44e3bf44 x4148a440 1 x4148a440 1}
+       {x44e56284 x40ff6640 1 x40ff6640 1}
+       {x44e7bcdd x40ca5a00 1 x40ca5a00 1}
+       {x44e88bec x403c3b80 1 x403c3b80 1}
+       {x44e93554 x4024b400 1 x4024b400 1}
+       {x44e9d554 x40555600 1 x40555600 1}
+       {x44eae000 x4092ab80 1 0 1}}
+      {{x44029d8d -}      x44029d8d
+       {x44029d8d -}
+       {x44035468 x40892440 1 x40892440 1}
+       {x4408e328 x41f6f4c0 1 x41f6f4c0 1}
+       {x4412c3b4 x421eeceb 1 x421eeceb 1}
+       {x4426af94 x421debbc 1 x421debbc 1}
+       {x443a3ea3 x41e17450 1 x41e17450 1}
+       {x4442de1e x4061e100 1 x4061e100 1}
+       {x444374b4 x3fbc3b00 1 x3fbc3b00 1}
+       {x44445694 -}
+       {x4443bffe xc0105000 1 xc0105000 1}
+       {x44421554 -}
+       {x44428000 x3fa00200 1 0 1}}}
+        {{{xc0ae3500 -}      xc0ae3500
+       {x 4
+        {xc0ae3500 -}}
+       {x 8
+        {xc0800000 -}}}
+      {{xc0d0e580 -}      xc0d0e580
+       {x 4
+        {xc0d0e580 -}}
+       {x 8
+        {xc0f00000 -}}}}
+        {{{x3fff3c00 -}      x3fff3c00
+       {x 4
+        {x3fff3c00 -}}
+       {x 8
+        {xbfc00000 -}}}
+      {{x418797c0 -}      x418797c0
+       {x 4
+        {x418797c0 -}}
+       {x 8
+        {x41880000 -}}}}
+        {{{x44d6f282 -}      x44d6f282
+       {x44d6f282 -}
+       {x44d5e038 -}
+       {x44d6a195 x415e9c00 1 x415e9c00 1}
+       {x44d95aa8 x419e4a15 1 x419e4a15 1}
+       {x44de0d0e x41954480 1 x41954480 1}
+       {x44e2aef0 x413675e0 1 x413675e0 1}
+       {x44e3c0bd x40db0980 1 x40db0980 1}
+       {x44e61b16 x40ca5a00 1 x40ca5a00 1}
+       {x44e6ea25 x403c3b80 1 x403c3b80 1}
+       {x44e7938d x4024b400 1 x4024b400 1}
+       {x44e8338d x40bf1cc0 1 x40bf1cc0 1}
+       {x44ea9000 x4132e3f0 1 0 1}}
+      {{x43e5cbf4 -}      x43e5cbf4
+       {x43e5cbf4 -}
+       {x43e739aa x40892440 1 x40892440 1}
+       {x43f27c92 x41f6f4d0 1 x41f6f4d0 1}
+       {x44030c22 x421a6165 1 x421a6165 1}
+       {x4416308c x421acde4 1 x421acde4 1}
+       {x4429bf9b x41177160 1 x41177160 1}
+       {x442b5374 x400a9bc0 1 x400a9bc0 1}
+       {x442bea0a x3fbc3b00 1 x3fbc3b00 1}
+       {x442ccbea -}
+       {x442c3554 xc0105000 1 xc0105000 1}
+       {x442a8aaa xc0055500 1 xc0055500 1}
+       {x442a2000 xbe555000 1 0 1}}}
+        {{{xbfff4000 -}      xbfff4000
+       {x 4
+        {xbfff4000 -}}
+       {x 8
+        {x3fc00000 -}}}
+      {{xc18797e0 -}      xc18797e0
+       {x 4
+        {xc18797e0 -}}
+       {x 8
+        {xc1880000 -}}}}
+        {{{x40fe6900 -}      x40fe6900
+       {x 4
+        {x40fe6900 -}}
+       {x 8
+        {x40a00000 -}}}
+      {{x415aac80 -}      x415aac80
+       {x 4
+        {x415aac80 -}}
+       {x 8
+        {x41700000 -}}}}
+        {{{x44d297e2 -}      x44d297e2
+       {x44d297e2 -}
+       {x44d18598 -}
+       {x44d208d7 x4144de80 1 x4144de80 1}
+       {x44d50008 x41daae6b 1 x41daae6b 1}
+       {x44dc4904 x41beade0 1 x41beade0 1}
+       {x44e0eae6 x41573000 1 x41573000 1}
+       {x44e30284 x410e3ee0 1 x410e3ee0 1}
+       {x44e55cdd x40ca5a00 1 x40ca5a00 1}
+       {x44e62bec x403c3b80 1 x403c3b80 1}
+       {x44e6d554 x4024b400 1 x4024b400 1}
+       {x44e77554 x40555600 1 x40555600 1}
+       {x44e88000 x4092ab80 1 0 1}}
+      {{x43da9e0f -}      x43da9e0f
+       {x43da9e0f -}
+       {x43dc0bc5 x40892440 1 x40892440 1}
+       {x43e8ca8e x41f6f4d0 1 x41f6f4d0 1}
+       {x43faea5f x41d86dd5 1 x41d86dd5 1}
+       {x4408af93 x41f64b94 1 x41f64b94 1}
+       {x441c3ea2 x41ade740 1 x41ade740 1}
+       {x441fde1e x4061e100 1 x4061e100 1}
+       {x442074b4 x3fbc3b00 1 x3fbc3b00 1}
+       {x44215694 -}
+       {x4420bffe xc0105000 1 xc0105000 1}
+       {x441f1554 -}
+       {x441f8000 x3fa00200 1 0 1}}}
+        {{{xc0fe6b00 -}      xc0fe6b00
+       {x 4
+        {xc0fe6b00 -}}
+       {x 8
+        {xc0a00000 -}}}
+      {{xc15aacc0 -}      xc15aacc0
+       {x 4
+        {xc15aacc0 -}}
+       {x 8
+        {xc1700000 -}}}}
+        {{{x403bc200 -}      x403bc200
+       {x 4
+        {x403bc200 -}}
+       {x 8
+        {x3f000000 -}}}
+      {{x413a5880 -}      x413a5880
+       {x 4
+        {x413a5880 -}}
+       {x 8
+        {x41400000 -}}}}
+        {{{x44d151e3 -}      x44d151e3
+       {x44d151e3 -}
+       {x44d03f99 -}
+       {x44d0e182 x415e9c00 1 x415e9c00 1}
+       {x44d3ba09 x41bcde40 1 x41bcde40 1}
+       {x44d9bbed x41aa3c60 1 x41aa3c60 1}
+       {x44de5dcf x41956970 1 x41956970 1}
+       {x44e31284 x4161e1c0 1 x4161e1c0 1}
+       {x44e56cdd x40ca5a00 1 x40ca5a00 1}
+       {x44e63bec x403c3b80 1 x403c3b80 1}
+       {x44e6e554 x4024b400 1 x4024b400 1}
+       {x44e78554 x40555600 1 x40555600 1}
+       {x44e89000 x4092ab80 1 0 1}}
+      {{x43cd7479 -}      x43cd7479
+       {x43cd7479 -}
+       {x43cee22f x40892440 1 x40892440 1}
+       {x43dd2657 x41f6f4d0 1 x41f6f4d0 1}
+       {x43edc0c9 x4173944b 1 x4173944b 1}
+       {x43f3fc3e x419592f8 1 x419592f8 1}
+       {x440d8d2e x418d2d00 1 x418d2d00 1}
+       {x44107e1e x4061e100 1 x4061e100 1}
+       {x441114b4 x3fbc3b00 1 x3fbc3b00 1}
+       {x4411f694 -}
+       {x44115ffe xc0105000 1 xc0105000 1}
+       {x440fb554 -}
+       {x44102000 x3fa00200 1 0 1}}}
+        {{{xc03bc200 -}      xc03bc200
+       {x 4
+        {xc03bc200 -}}
+       {x 8
+        {xbf000000 -}}}
+      {{xc13a5880 -}      xc13a5880
+       {x 4
+        {xc13a5880 -}}
+       {x 8
+        {xc1400000 -}}}}
+        {{{x3e10a000 -}      x3e10a000
+       {x 4
+        {x3e10a000 -}}
+       {x 8
+        {xbf800000 -}}}
+      {{x40b2d400 -}      x40b2d400
+       {x 4
+        {x40b2d400 -}}
+       {x 8
+        {x40b00000 -}}}}
+        {{{x44cfb169 -}      x44cfb169
+       {x44cfb169 -}
+       {x44ce9f1f -}
+       {x44cf1ffd x41414d00 1 x41414d00 1}
+       {x44d2198f x41dcfeab 1 x41dcfeab 1}
+       {x44d97bed x41c04400 1 x41c04400 1}
+       {x44de1dcf x41956970 1 x41956970 1}
+       {x44e2d284 x4161e1c0 1 x4161e1c0 1}
+       {x44e52cdd x40ca5a00 1 x40ca5a00 1}
+       {x44e5fbec x403c3b80 1 x403c3b80 1}
+       {x44e6a554 x4024b400 1 x4024b400 1}
+       {x44e74554 x40555600 1 x40555600 1}
+       {x44e85000 x4092ab80 1 0 1}}
+      {{x43bd3086 -}      x43bd3086
+       {x43bd3086 -}
+       {x43be9e3c x40892440 1 x40892440 1}
+       {x43d05cd6 x41f6f4d0 1 x41f6f4d0 1}
+       {x43dd7cd6 -}
+       {x43cebc3e -}
+       {x43f5da5c x418d2d18 1 x418d2d18 1}
+       {x43fbbc3d x4061e1c0 1 x4061e1c0 1}
+       {x43fce96a x3fbc3b80 1 x3fbc3b80 1}
+       {x43fead2b -}
+       {x43fd7ffe xc0105040 1 xc0105040 1}
+       {x43fa2aa9 -}
+       {x43fb0000 x3fa00140 1 0 1}}}
+        {{{xbe10a000 -}      xbe10a000
+       {x 4
+        {xbe10a000 -}}
+       {x 8
+        {1 -}}}
+      {{xc0b2d440 -}      xc0b2d440
+       {x 4
+        {xc0b2d440 -}}
+       {x 8
+        {xc0b00000 -}}}}
+        {{{xbfabc000 -}      xbfabc000
+       {x 4
+        {xbfabc000 -}}
+       {x 8
+        {xc0a00000 -}}}
+      {{x40a16f80 -}      x40a16f80
+       {x 4
+        {x40a16f80 -}}
+       {x 8
+        {xbfc00000 -}}}}
+        {{{x44cf4c17 -}      x44cf4c17
+       {x44cf4c17 -}
+       {x44ce39cd -}
+       {x44ceb594 x4139aa80 1 x4139aa80 1}
+       {x44d1b43d x41e1f0d5 1 x41e1f0d5 1}
+       {x44d94cde x41e49920 1 x41e49920 1}
+       {x44dffdcf x41b65a60 1 x41b65a60 1}
+       {x44e4b284 x4161e1c0 1 x4161e1c0 1}
+       {x44e70cdd x40ca5a00 1 x40ca5a00 1}
+       {x44e7dbec x403c3b80 1 x403c3b80 1}
+       {x44e88554 x4024b400 1 x4024b400 1}
+       {x44e92554 x40555600 1 x40555600 1}
+       {x44ea3000 x4092ab80 1 0 1}}
+      {{x43b12e7e -}      x43b12e7e
+       {x43b12e7e -}
+       {x43b29c34 x40892440 1 x40892440 1}
+       {x43c45ace x41f6f4d0 1 x41f6f4d0 1}
+       {x43d17ace -}
+       {x43c4b87a -}
+       {x43ed9a5c x418d2d18 1 x418d2d18 1}
+       {x43f37c3d x4061e1c0 1 x4061e1c0 1}
+       {x43f4a96a x3fbc3b80 1 x3fbc3b80 1}
+       {x43f66d2b -}
+       {x43f53ffe xc0105040 1 xc0105040 1}
+       {x43f1eaa9 -}
+       {x43f2c000 x3fa00140 1 0 1}}}
+        {{{x400ffe00 -}      x400ffe00
+       {x 4
+        {x400ffe00 -}}
+       {x 8
+        {x40a00000 -}}}
+      {{xc10759c0 -}      xc10759c0
+       {x 4
+        {xc10759c0 -}}
+       {x 8
+        {x3fc00000 -}}}}
+        {{{xc0df6100 -}      xc0df6100
+       {x 4
+        {xc0df6100 -}}
+       {x 8
+        {xc0900000 -}}}
+      {{x410750a0 -}      x410750a0
+       {x 4
+        {x410750a0 -}}
+       {x 8
+        {xc1200000 -}}}}
+        {{{x44d0553d -}      x44d0553d
+       {x44d0553d -}
+       {x44cf42f3 -}
+       {x44cfb2d2 x4127ce80 1 x4127ce80 1}
+       {x44d2bd63 x41ed846b 1 x41ed846b 1}
+       {x44dad507 x41eb5c20 1 x41eb5c20 1}
+       {x44e17325 x41c5d7d0 1 x41c5d7d0 1}
+       {x44e73284 x41819b80 1 x41819b80 1}
+       {x44e98cdd x40ca5a00 1 x40ca5a00 1}
+       {x44ea5bec x403c3b80 1 x403c3b80 1}
+       {x44eb0554 x4024b400 1 x4024b400 1}
+       {x44eba554 x40555600 1 x40555600 1}
+       {x44ecb000 x4092ab80 1 0 1}}
+      {{x43a2b4f4 -}      x43a2b4f4
+       {x43a2b4f4 -}
+       {x43a422aa x40892440 1 x40892440 1}
+       {x43b06e29 x41f6f4d0 1 x41f6f4d0 1}
+       {x43c30144 x41f47340 1 x41f47340 1}
+       {x43de43c5 x41bf6460 1 x41bf6460 1}
+       {x43f2da5c x4149c3c0 1 x4149c3c0 1}
+       {x43f77c3d x4039e1c0 1 x4039e1c0 1}
+       {x43f8a96a x3fbc3b80 1 x3fbc3b80 1}
+       {x43fa6d2b -}
+       {x43f93ffe xc0105040 1 xc0105040 1}
+       {x43f5eaa9 -}
+       {x43f6c000 x3fa00140 1 0 1}}}
+        {{{x40b47f00 -}      x40b47f00
+       {x 4
+        {x40b47f00 -}}
+       {x 8
+        {x40900000 -}}}
+      {{xc0daab80 -}      xc0daab80
+       {x 4
+        {xc0daab80 -}}
+       {x 8
+        {x41200000 -}}}}
+        {{{xbed90000 -}      xbed90000
+       {x 4
+        {xbed90000 -}}
+       {x 8
+        {x40400000 -}}}
+      {{xc1861f10 -}      xc1861f10
+       {x 4
+        {xc1861f10 -}}
+       {x 8
+        {xc1840000 -}}}}
+        {{{x44d3b246 0 1 x40564880 1}
+       {x44d4f521 x40092500 1 x40092500 1}
+       {x44d43b6b -}
+       {x44d3848f -}
+       {x44d38868 x3eb8b000 1 x3eb8b000 1}
+       {x44d63c37 x41df8255 1 x41df8255 1}
+       {x44de0284 x41d11980 1 x41d11980 1}
+       {x44e34dcf x41a00000 1 x41a00000 1}
+       {x44e80284 x4161e1c0 1 x4161e1c0 1}
+       {x44ea5cdd x40ca5a00 1 x40ca5a00 1}
+       {x44eb2bec x403c3b80 1 x403c3b80 1}
+       {x44ebd554 x4024b400 1 x4024b400 1}
+       {x44ec7554 x40555600 1 x40555600 1}
+       {x44ed8000 x4092ab80 1 0 1}}
+      {{x43a4086e 0 1 xbfee1840 1}
+       {x43acf9f5 xbf986180 1 xbf986180 1}
+       {x43a2d7ab -}
+       {x43a44561 x40892440 1 x40892440 1}
+       {x43b19247 x42088588 1 x42088588 1}
+       {x43c666c3 x421ab62d 1 x421ab62d 1}
+       {x43eb9698 x4213e732 1 x4213e732 1}
+       {x44082d2e x418d2d00 1 x418d2d00 1}
+       {x440b1e1e x4061e100 1 x4061e100 1}
+       {x440bb4b4 x3fbc3b00 1 x3fbc3b00 1}
+       {x440c9694 -}
+       {x440bfffe xc0105000 1 xc0105000 1}
+       {x440a5554 -}
+       {x440ac000 x3fa00200 1 0 1}}}
+        {{{x3ed8e000 -}      x3ed8e000
+       {x 4
+        {x3ed8e000 -}}
+       {x 8
+        {xc0400000 -}}}
+      {{x41861f10 -}      x41861f10
+       {x 4
+        {x41861f10 -}}
+       {x 8
+        {x41840000 -}}}}
+        {{{xc1ce2580 -}      xc1ce2580
+       {x 4
+        {xc1ce2580 -}}
+       {x 2
+        {xc1b11900 -}}
+       {x 6
+        {xc1280000 -}}}
+      {{xc172ca80 -}      xc172ca80
+       {x 4
+        {xc172ca80 -}}
+       {x 2
+        {xc1a0d6c0 -}}
+       {x 6
+        {xc1e00000 -}}}}
+        {{{x44da22bc 0 1 xc15cf390 1}      x44d85998
+       {x44d728d5 xc1018620 1 xc1018620 1}
+       {x44d6168b -}
+       {x44d6e290 x4176f540 1 x4176f540 1}
+       {x44d9f260 x41cf726b 1 x41cf726b 1}
+       {x44e09bed x41b4b6f0 1 x41b4b6f0 1}
+       {x44e53dcf x4178d2e0 1 x4178d2e0 1}
+       {x44e86284 x412fe1c0 1 x412fe1c0 1}
+       {x44eabcdd x40ca5a00 1 x40ca5a00 1}
+       {x44eb8bec x403c3b80 1 x403c3b80 1}
+       {x44ec3554 x4024b400 1 x4024b400 1}
+       {x44ecd554 x40555600 1 x40555600 1}
+       {x44ede000 x4092ab80 1 0 1}}
+      {{x43ad844d 0 1 x4211b6de 1}      x43c17caf
+       {x43c73b28 x40892440 1 x40892440 1}
+       {x43c8a8de x40892440 1 x40892440 1}
+       {x43d2d690 x41e90b10 1 x41e90b10 1}
+       {x43e5ca40 x421a0f25 1 x421a0f25 1}
+       {x44064e1f x421be038 1 x421be038 1}
+       {x4419dd2e x419c2d00 1 x419c2d00 1}
+       {x441d1e1e x4061e100 1 x4061e100 1}
+       {x441db4b4 x3fbc3b00 1 x3fbc3b00 1}
+       {x441e9694 -}
+       {x441dfffe xc0105000 1 xc0105000 1}
+       {x441c5554 -}
+       {x441cc000 x3fa00200 1 0 1}}}
+        {{{x41de4480 -}      x41de4480
+       {x 4
+        {x41de4480 -}}
+       {x 2
+        {x41bef2c0 -}}
+       {x 6
+        {x41280000 -}}}
+      {{x4182e420 -}      x4182e420
+       {x 4
+        {x4182e420 -}}
+       {x 2
+        {x41ad6b40 -}}
+       {x 6
+        {x41e00000 -}}}}
+        {{{xc0b0b900 -}      xc0b0b900
+       {x 4
+        {xc0b0b900 -}}
+       {x 8
+        {xc0000000 -}}}
+      {{xc185ce60 -}      xc185ce60
+       {x 4
+        {xc185ce60 -}}
+       {x 8
+        {xc18c0000 -}}}}
+        {{{x44de59e8 0 1 xc07f3d80 1}      x44dddbb7
+       {x44dd6618 xc05cf500 1 xc05cf500 1}
+       {x44dc9ffe -}
+       {x44dd4c71 x415e9c00 1 x415e9c00 1}
+       {x44e01a6e x41b29fab 1 x41b29fab 1}
+       {x44e5abed x41a33610 1 x41a33610 1}
+       {x44ea4dcf x415ad2e0 1 x415ad2e0 1}
+       {x44ec8284 x4111e1c0 1 x4111e1c0 1}
+       {x44eedcdd x40ca5a00 1 x40ca5a00 1}
+       {x44efabec x403c3b80 1 x403c3b80 1}
+       {x44f05554 x4024b400 1 x4024b400 1}
+       {x44f0f554 x40555600 1 x40555600 1}
+       {x44f20000 x4092ab80 1 0 1}}
+      {{x43bf9204 0 1 x41a8924c 1}      x43c995d3
+       {x43d079a2 x41092470 1 x41092470 1}
+       {x43d3550f x41092470 1 x41092470 1}
+       {x43de09fd x41f6f4d0 1 x41f6f4d0 1}
+       {x43f233a9 x422ba273 1 x422ba273 1}
+       {x440f3374 x4226a2ba 1 x4226a2ba 1}
+       {x4422c283 x41da5550 1 x41da5550 1}
+       {x442a7e1e x4061e100 1 x4061e100 1}
+       {x442b14b4 x3fbc3b00 1 x3fbc3b00 1}
+       {x442bf694 -}
+       {x442b5ffe xc0105000 1 xc0105000 1}
+       {x4429b554 -}
+       {x442a2000 x3fa00200 1 0 1}}}
+        {{{x40b0b700 -}      x40b0b700
+       {x 4
+        {x40b0b700 -}}
+       {x 8
+        {x40000000 -}}}
+      {{x4185ce60 -}      x4185ce60
+       {x 4
+        {x4185ce60 -}}
+       {x 8
+        {x418c0000 -}}}}
+        {{{x3fd61000 -}      x3fd61000
+       {x 4
+        {x3fd61000 -}}
+       {x 8
+        {x3fc00000 -}}}
+      {{x3f2c6c00 -}      x3f2c6c00
+       {x 4
+        {x3f2c6c00 -}}
+       {x 8
+        {1 -}}}}
+        {{{x44e00184 0 1 xc1b124c0 1}      x44dd77fd
+       {x44dc50c0 -}
+       {x44dccaa7 x40a1dd00 1 x40a1dd00 1}
+       {x44de3657 x41905940 1 x41905940 1}
+       {x44e14d71 x419a3e40 1 x419a3e40 1}
+       {x44e57142 x418c5b30 1 x418c5b30 1}
+       {x44ea1324 x41831420 1 x41831420 1}
+       {x44eda284 x413d3720 1 x413d3720 1}
+       {x44effcdd x40ca5a00 1 x40ca5a00 1}
+       {x44f0cbec x403c3b80 1 x403c3b80 1}
+       {x44f17554 x4024b400 1 x4024b400 1}
+       {x44f21554 x40555600 1 x40555600 1}
+       {x44f32000 x4092ab80 1 0 1}}
+      {{x43d584bf 0 1 x41dedb78 1}      x43e2a4c0
+       {x43eaf276 x41092470 1 x41092470 1}
+       {x43edcde3 x41092470 1 x41092470 1}
+       {x43f91e72 x41ffa6e8 1 x41ffa6e8 1}
+       {x4406e160 x422dfa20 1 x422dfa20 1}
+       {x441d2e1f x42276f38 1 x42276f38 1}
+       {x4430bd2e x41ba2d00 1 x41ba2d00 1}
+       {x44349e1e x4061e100 1 x4061e100 1}
+       {x443534b4 x3fbc3b00 1 x3fbc3b00 1}
+       {x44361694 -}
+       {x44357ffe xc0105000 1 xc0105000 1}
+       {x4433d554 -}
+       {x44344000 x3fa00200 1 0 1}}}
+        {{{xbfd60800 -}      xbfd60800
+       {x 4
+        {xbfd60800 -}}
+       {x 8
+        {xbfc00000 -}}}
+      {{xbf2c6800 -}      xbf2c6800
+       {x 4
+        {xbf2c6800 -}}
+       {x 8
+        {xbf800000 -}}}}}}     idem}
+     {tx x42480000 x44ec9955 x441d82ab}
+     {a opc
+   {{x41d80000 0 0 1 x3ea147ae 1}
+    {x41e00000 x3e570a3d -}
+    {x42080000 x3e428f5c -}
+    {x42480000 x3ebae148 x3c866667 1 0 1}}     str 1 spx x44700000 spy x44070000 sb 1 ltn x42480000 ltm x42480000 tt x40800000}}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px
+        {x41a80000 x41b00000 x41b80000 x41c00000 x41c80000 x41d00000 x41d80000 x41e00000 x41e80000 x41f00000 x41f80000 x42000000 x42040000 x42080000 x420c0000 x42140000 x421c0000 x42240000 x422c0000 x42340000 x423c0000 x42440000 x42480000}
+        {{{x 5
+        {x3f150000 -}}
+       {x3ebfc000 xbe9e3000 1 xbe9e3000 1}
+       {xbd130000 xbeada800 1 xbeada800 1}
+       {xbe9b9000 xbe6da000 1 xbe6da000 1}
+       {x 14
+        {xbf000000 -}}      xbf000000}
+      {{x 5
+        {x3fbb9600 -}}
+       {x3fc4a200 x3d6c0000 1 x3d6c0000 1}
+       {x3fca5600 -}
+       {x3fc69e00 xbd256000 1 xbd256000 1}
+       {x 14
+        {x3fc00000 -}}      x3fc00000}}
+        {{{x44bf5174 0 1 x40649300 1}
+       {x44bf9da5 -}
+       {x44bb8ce8 -}
+       {x44bc67da x41332e40 1 x41332e40 1}
+       {x44be59a1 x413a0400 1 x413a0400 1}
+       {x44bf4fea -}
+       {x44becdfc xc0d25c80 1 xc0d25c80 1}
+       {x44bdab31 xc10d4d00 1 xc10d4d00 1}
+       {x 4
+        {x44bc98c8 -}}
+       {x44be0e1e x4115ce00 1 x4115ce00 1}
+       {x 2
+        {x44bef000 -}}
+       {x44c9b800 x41d12ab0 1 x41d12ab0 1}
+       {x 2
+        {x44cc02ab -}}
+       {x44ccfd1a -}
+       {x44ccfd19 -}
+       {x44cdb1f7 x4057a780 1 x4057a780 1}
+       {x44ceac68 x4085eae0 1 0 1}      x44cf8b03}
+      {{x43f00022 0 1 x40e49240 1}
+       {x43f261a8 -}
+       {x43df7751 -}
+       {x43e369d9 x4129d310 1 x4129d310 1}
+       {x43ea1482 x4174e3a0 1 x4174e3a0 1}
+       {x43f2b813 x41a8aa60 1 x41a8aa60 1}
+       {x43ff29ce x41aa8188 1 x41aa8188 1}
+       {x44040422 x414ed340 1 x414ed340 1}
+       {x 4
+        {x44060b81 -}}
+       {x440b2f0e x4224a3f8 1 x4224a3f8 1}
+       {x 2
+        {x441aa000 -}}
+       {x44260800 x41c05c78 1 x41c05c78 1}
+       {x 2
+        {x4432ab8f -}}
+       {x4435ee57 x407a6f40 1 x407a6f40 1}
+       {x4436954c x3fc2c780 1 x3fc2c780 1}
+       {x443773e6 -}
+       {x4433f977 xc126f4d0 1 0 1}      x44335283}}
+        {{{x 5
+        {xbf150000 -}}
+       {xbebfb000 x3e9e3000 1 x3e9e3000 1}
+       {x3d130000 x3ead9800 1 x3ead9800 1}
+       {x3e9b8000 x3e6da000 1 x3e6da000 1}
+       {x 14
+        {x3f000000 -}}      x3f000000}
+      {{x 5
+        {xbfbb9000 -}}
+       {xbfc49d00 xbd6c2000 1 xbd6c2000 1}
+       {xbfca5200 -}
+       {xbfc69c00 x3d252000 1 x3d252000 1}
+       {x 14
+        {xbfc00000 -}}      xbfc00000}}
+        {{{x 5
+        {xc1a32380 -}}
+       {xc1a2d740 x3de4c000 1 x3de4c000 1}
+       {xc19a6c00 x3f9d1200 1 x3f9d1200 1}
+       {xc18f3500 x3fb36000 1 x3fb36000 1}
+       {x 14
+        {xc1840000 -}}      xc1840000}
+      {{x 5
+        {x3fb77200 -}}
+       {xbfb16500 xc080a440 1 xc080a440 1}
+       {xc0d36c00 xc0866fe0 1 xc0866fe0 1}
+       {xc11c9c80 xc02c9400 1 xc02c9400 1}
+       {x 14
+        {xc1400000 -}}      xc1400000}}
+        {{{x44c5cc46 -}
+       {x44c61877 x40e49300 1 x40e49300 1}
+       {x44c7ee20 x412c26c0 1 x412c26c0 1}
+       {x44c8c912 x41332e40 1 x41332e40 1}
+       {x44cabad9 x415b3a00 1 x415b3a00 1}
+       {x44cc35fa -}
+       {x44cc0fc8 xc0652c00 1 xc0652c00 1}
+       {x44caac0a xc139c000 1 xc139c000 1}
+       {x 4
+        {x44c928c8 -}}
+       {x44ca9e1e x4115ce00 1 x4115ce00 1}
+       {x 2
+        {x44cb8000 -}}
+       {x44cf5400 x4143d560 1 x4143d560 1}
+       {x 2
+        {x44d19eab -}}
+       {x44d2991a -}
+       {x44d29919 -}
+       {x44d34df7 x4057a780 1 x4057a780 1}
+       {x44d44868 x4085eae0 1 0 1}      x44d52703}
+      {{x43d21f1c 0 1 x40e492a0 1}
+       {x43d480a3 -}
+       {x43cc2fe5 -}
+       {x43d0226d x4129d310 1 x4129d310 1}
+       {x43d6cd16 x41b207d0 1 x41b207d0 1}
+       {x43e66367 x42273898 1 x42273898 1}
+       {x44004d9e x423046bc 1 x423046bc 1}
+       {x44093a8b x41e3de30 1 x41e3de30 1}
+       {x 4
+        {x440e8b81 -}}
+       {x4413af0e x4224a3f8 1 x4224a3f8 1}
+       {x 2
+        {x44232000 -}}
+       {x44363000 x41fd9c78 1 x41fd9c78 1}
+       {x 2
+        {x4442d38f -}}
+       {x44461657 x407a6f40 1 x407a6f40 1}
+       {x4446bd4c x3fc2c780 1 x3fc2c780 1}
+       {x44479be6 -}
+       {x44442177 xc126f4d0 1 0 1}      x44437a83}}
+        {{{x 5
+        {x41a32280 -}}
+       {x41a2d6c0 xbde34000 1 xbde34000 1}
+       {x419a6c00 xbf9d1000 1 xbf9d1000 1}
+       {x418f34c0 xbfb36000 1 xbfb36000 1}
+       {x 14
+        {x41840000 -}}      x41840000}
+      {{x 5
+        {xbfb76e00 -}}
+       {x3fb16700 x4080a400 1 x4080a400 1}
+       {x40d36c80 x40866fa0 1 x40866fa0 1}
+       {x411c9c80 x402c9380 1 x402c9380 1}
+       {x 14
+        {x41400000 -}}      x41400000}}
+        {{{x 3
+        {xc11cb680 -}}
+       {xc12bfa80 xbf167c00 1 xbf167c00 1}
+       {xc12f8600 -}
+       {xc12c3880 x3f0ed400 1 x3f0ed400 1}
+       {xc11dab80 x3f6f4400 1 x3f6f4400 1}
+       {xc10e5000 x3f6d5c00 1 x3f6d5c00 1}
+       {x 14
+        {xc1000000 -}}      xc1000000}
+      {{x 3
+        {x409f3740 -}}
+       {x40115700 xc0320bc0 1 xc0320bc0 1}
+       {xbf16a400 xc00bbf00 1 xc00bbf00 1}
+       {xc0062700 xc0071b80 1 xc0071b80 1}
+       {xc099f000 xc00a2a00 1 xc00a2a00 1}
+       {xc0cd3d80 xbfac2000 1 xbfac2000 1}
+       {x 14
+        {xc0f00000 -}}      xc0f00000}}
+        {{{x44d235f8 0 1 x40649300 1}
+       {x44d28229 -}
+       {x44d1ebbb -}
+       {x44d86a80 x426bf2f0 1 x426bf2f0 1}
+       {x44e0aaea x423136d0 1 x423136d0 1}
+       {x44e37ded x4182e400 1 x4182e400 1}
+       {x44e4c20a -}
+       {x44e362dc xc1561740 1 xc1561740 1}
+       {x44e169ad xc1f63960 1 xc1f63960 1}
+       {x44dbb111 xc2134bb0 1 xc2134bb0 1}
+       {x 2
+        {x44d834f2 -}}
+       {x44d6432c -}
+       {x 2
+        {x44d7250e -}}
+       {x44daf90e x4143d560 1 x4143d560 1}
+       {x 2
+        {x44dd43b9 -}}
+       {x44de3e28 -}
+       {x44de3e27 -}
+       {x44def305 x4057a780 1 x4057a780 1}
+       {x44dfed76 x4085eae0 1 0 1}      x44e0cc11}
+      {{x4360825d 0 1 x3fba2e00 1}
+       {x4365456a x413606f0 1 x413606f0 1}
+       {x4377433b x41ea9970 1 x41ea9970 1}
+       {x438ff5e3 x4232937a 1 x4232937a 1}
+       {x43a8467c x42512e34 1 x42512e34 1}
+       {x43c44170 x429eed72 1 x429eed72 1}
+       {x43f7bd35 x42ac7824 1 x42ac7824 1}
+       {x440d3ec1 x4267e874 1 x4267e874 1}
+       {x4418dba9 x41a627e0 1 x41a627e0 1}
+       {x441a96be x40e7fb80 1 x40e7fb80 1}
+       {x 2
+        {x441c7b97 -}}
+       {x4420ed5e x421f15c8 1 x421f15c8 1}
+       {x 2
+        {x44305e50 -}}
+       {x44436e50 x41fd9c78 1 x41fd9c78 1}
+       {x 2
+        {x445011df -}}
+       {x445354a7 x407a6f40 1 x407a6f40 1}
+       {x4453fb9c x3fc2c780 1 x3fc2c780 1}
+       {x4454da36 -}
+       {x44515fc7 xc126f4d0 1 0 1}      x4450b8d3}}
+        {{{x 3
+        {x411cb780 -}}
+       {x412bfa80 x3f167000 1 x3f167000 1}
+       {x412f8580 -}
+       {x412c3800 xbf0ed000 1 xbf0ed000 1}
+       {x411dab80 xbf6f3c00 1 xbf6f3c00 1}
+       {x410e5080 xbf6d5c00 1 xbf6d5c00 1}
+       {x 14
+        {x41000000 -}}      x41000000}
+      {{x 3
+        {xc09f36c0 -}}
+       {xc0115580 x40320b80 1 x40320b80 1}
+       {x3f16a600 x400bbe80 1 x400bbe80 1}
+       {x40062780 x40071b40 1 x40071b40 1}
+       {x4099f000 x400a29c0 1 x400a29c0 1}
+       {x40cd3d80 x3fac2000 1 x3fac2000 1}
+       {x 14
+        {x40f00000 -}}      x40f00000}}
+        {{{x 3
+        {xc11bc380 -}}
+       {xc10c5080 x3fa1d800 1 x3fa1d800 1}
+       {xc0e69b00 x3fa6a800 1 x3fa6a800 1}
+       {xc0c54d00 x3fd38400 1 x3fd38400 1}
+       {xc079b200 x3ff92a00 1 x3ff92a00 1}
+       {xc0117000 x3fb9b200 1 x3fb9b200 1}
+       {x 14
+        {xbf800000 -}}      xbf800000}
+      {{x 3
+        {xc01cc200 -}}
+       {xc09c5680 xc0114400 1 xc0114400 1}
+       {xc0dfa500 xbfc34080 1 xbfc34080 1}
+       {xc0fdf6c0 xbf917600 1 xbf917600 1}
+       {xc1143000 xbf6d3700 1 xbf6d3700 1}
+       {xc11ca240 xbebd0000 1 xbebd0000 1}
+       {x 14
+        {xc1200000 -}}      xc1200000}}
+        {{{x44d433ab 0 1 x40649300 1}
+       {x44d47fdc -}
+       {x44d40cfc -}
+       {x44dae1e3 x427406d0 1 x427406d0 1}
+       {x44e34d69 x423e1d20 1 x423e1d20 1}
+       {x44e6c3b5 x41874be0 1 x41874be0 1}
+       {x44e787c8 -}
+       {x44e5ba72 xc184a3a0 1 xc184a3a0 1}
+       {x44e362ab xc21bf270 1 xc21bf270 1}
+       {x44dbfb4b xc22e37f0 1 xc22e37f0 1}
+       {x44d87f2c -}
+       {x44d95e35 -}
+       {x44d76c6f -}
+       {x 2
+        {x44d84e51 -}}
+       {x44dc2251 x4143d560 1 x4143d560 1}
+       {x 2
+        {x44de6cfc -}}
+       {x44df676b -}
+       {x44df676a -}
+       {x44e01c48 x4057a780 1 x4057a780 1}
+       {x44e116b9 x4085eae0 1 0 1}      x44e1f554}
+      {{x4358085c 0 1 x401fc1b0 1}
+       {x435ccb69 x4114b198 1 x4114b198 1}
+       {x436a9e8f x41ed4bd4 1 x41ed4bd4 1}
+       {x438c0f2f x424700c6 1 x424700c6 1}
+       {x43a70f79 x4278cfbc 1 x4278cfbc 1}
+       {x43ca431e x42b3bcb6 1 x42b3bcb6 1}
+       {x440076ea x42b655b4 1 x42b655b4 1}
+       {x4412b6fc x42735818 1 x42735818 1}
+       {x441ee1ed -}
+       {x441e7f78 -}
+       {x44206451 x40df07c0 1 x40df07c0 1}
+       {x4421fb97 x414121a0 1 x414121a0 1}
+       {x44266d5e x421f15c8 1 x421f15c8 1}
+       {x 2
+        {x4435de50 -}}
+       {x4448ee50 x41fd9c78 1 x41fd9c78 1}
+       {x 2
+        {x445591df -}}
+       {x4458d4a7 x407a6f40 1 x407a6f40 1}
+       {x44597b9c x3fc2c780 1 x3fc2c780 1}
+       {x445a5a36 -}
+       {x4456dfc7 xc126f4d0 1 0 1}      x445638d3}}
+        {{{x 3
+        {x411bc400 -}}
+       {x410c5080 xbfa1dc00 1 xbfa1dc00 1}
+       {x40e69a00 xbfa6aa00 1 xbfa6aa00 1}
+       {x40c54c00 xbfd38400 1 xbfd38400 1}
+       {x4079b000 xbff92a00 1 xbff92a00 1}
+       {x40116e00 xbfb9b000 1 xbfb9b000 1}
+       {x 14
+        {1 -}}      1}
+      {{x 3
+        {x401cc200 -}}
+       {x409c5680 x40114340 1 x40114340 1}
+       {x40dfa440 x3fc33f00 1 x3fc33f00 1}
+       {x40fdf600 x3f917580 1 x3f917580 1}
+       {x41142f80 x3f6d3800 1 x3f6d3800 1}
+       {x411ca200 x3ebd0800 1 x3ebd0800 1}
+       {x 14
+        {x41200000 -}}      x41200000}}
+        {{{x 2
+        {x41386e00 -}}
+       {x4162c300 x40396f00 1 x40396f00 1}
+       {x418a92c0 x4023c400 1 x4023c400 1}
+       {x419a5280 x3f9c4c00 1 x3f9c4c00 1}
+       {x419e1c40 -}
+       {x419da440 xbe340000 1 xbe340000 1}
+       {x419785c0 xbf5a4400 1 xbf5a4400 1}
+       {x 14
+        {x41900000 -}}      x41900000}
+      {{x 2
+        {xc1823630 -}}
+       {xc1608720 x404c7900 1 x404c7900 1}
+       {xc11e2fe0 x408f7640 1 x408f7640 1}
+       {xc0a221c0 x40705940 1 x40705940 1}
+       {xc0180d00 x407c62c0 1 x407c62c0 1}
+       {x40348200 x40880300 1 x40880300 1}
+       {x40c3ff80 x4035bf00 1 x4035bf00 1}
+       {x 14
+        {x41080000 -}}      x41080000}}
+        {{{x44d8b04c 0 1 x40731280 1}
+       {x44d93359 x40961480 1 x40961480 1}
+       {x44d9dc75 x417daa00 1 x417daa00 1}
+       {x44deba5a x422eb810 1 x422eb810 1}
+       {x44e4c7f6 x421ab050 1 x421ab050 1}
+       {x44e8655f -}
+       {x44e5e68c xc1b0cec0 1 xc1b0cec0 1}
+       {x44e2dee9 xc1c69fc0 1 xc1c69fc0 1}
+       {x44dfb18e xc1e248c0 1 xc1e248c0 1}
+       {x44dbcca3 xc1ec2140 1 xc1ec2140 1}
+       {x44d85084 -}
+       {x44d92f8d -}
+       {x44d73dc7 xbfe1e400 1 xbfe1e400 1}
+       {x44d72af4 -}
+       {x44d752f4 x40700000 1 x40700000 1}
+       {x44db26f4 x413ce080 1 x413ce080 1}
+       {x44dd39f8 x40bfe200 1 x40bfe200 1}
+       {x44de267c x40737980 1 x40737980 1}
+       {x44df20eb -}
+       {x44df20ea -}
+       {x44dfd5c8 x4057a780 1 x4057a780 1}
+       {x44e0d039 x4085eae0 1 0 1}      x44e1aed4}
+      {{x43748e4b 0 1 x41066e9c 1}
+       {x4380cd3e x41b2b5fc 1 x41b2b5fc 1}
+       {x43909de5 x422e9934 1 x422e9934 1}
+       {x43ac738b x42718c00 1 x42718c00 1}
+       {x43cd00e5 x429091a8 1 x429091a8 1}
+       {x43f4bc5f x42a2d146 1 x42a2d146 1}
+       {x440f34c4 x429948c2 1 x429948c2 1}
+       {x4420b060 x4261da18 1 x4261da18 1}
+       {x442b7007 x41dd35a0 1 x41dd35a0 1}
+       {x442e83ba x411f1180 1 x411f1180 1}
+       {x44306893 x40df07c0 1 x40df07c0 1}
+       {x4431ffd9 x414121a0 1 x414121a0 1}
+       {x443671a0 x42135208 1 x42135208 1}
+       {x44446a1a x422aee70 1 x422aee70 1}
+       {x444bcf6e x420d1c6b 1 x420d1c6b 1}
+       {x445edf6e x4204e480 1 x4204e480 1}
+       {x446d088e x419b0630 1 x419b0630 1}
+       {x44724034 x4107a6e0 1 x4107a6e0 1}
+       {x447582fc x407a6f40 1 x407a6f40 1}
+       {x447629f1 x3fc2c780 1 x3fc2c780 1}
+       {x4477088b -}
+       {x44738e1c xc126f4d0 1 0 1}      x4472e728}}
+        {{{x 2
+        {xbff66800 -}}
+       {xc0178000 xbef7e000 1 xbef7e000 1}
+       {xc0392c00 xbedae000 1 xbedae000 1}
+       {xc04e3800 xbe50f000 1 xbe50f000 1}
+       {xc0534a00 -}
+       {xc052aa00 x3cf00000 1 x3cf00000 1}
+       {xc04a7e00 x3e11e000 1 x3e11e000 1}
+       {xc0406e00 -}
+       {x 2
+        {xc0407000 -}}
+       {x 11
+        {xc0406e00 -}}      xc0406e00}
+      {{x 2
+        {x402e0080 -}}
+       {x40160480 xbf089e00 1 xbf089e00 1}
+       {x3fd36300 xbf3fb400 1 xbf3fb400 1}
+       {x3f58aa00 xbf209600 1 xbf209600 1}
+       {x3ecb3400 xbf28a100 1 xbf28a100 1}
+       {xbef13000 xbf35c300 1 xbf35c300 1}
+       {xbf82f600 xbef2e400 1 xbef2e400 1}
+       {x 14
+        {xbfb5be00 -}}      xbfb5be00}}
+        {{{x 2
+        {x40633400 -}}
+       {x40949400 x3f9d9800 1 x3f9d9800 1}
+       {x40c06600 x3f950e00 1 x3f950e00 1}
+       {x40df1b00 x3f219000 1 x3f219000 1}
+       {x40e8ca00 x3e9dc800 1 x3e9dc800 1}
+       {x40f2d400 x3eaea000 1 x3eaea000 1}
+       {x40fe9e00 x3e874800 1 x3e874800 1}
+       {x4101de80 -}
+       {x408dfd00 xc0113d00 1 xc0113d00 1}
+       {x40650000 -}
+       {x 2
+        {x408cd900 -}}
+       {x 9
+        {x403d2800 -}}      x403d2800}
+      {{x 2
+        {xc0d3c100 -}}
+       {xc0bcdd80 x3f878f00 1 x3f878f00 1}
+       {xc08ff980 x3fc72f00 1 x3fc72f00 1}
+       {xc0328c00 x3fac0b00 1 x3fac0b00 1}
+       {xbfe7d000 -}
+       {xc0345900 -}
+       {xbfbe8e00 x3f85c400 1 x3f85c400 1}
+       {xbf3a5400 x3f8dbb00 1 x3f8dbb00 1}
+       {x3f39d000 x3f75a200 1 x3f75a200 1}
+       {x3f987800 x3f1bc600 1 x3f1bc600 1}
+       {x3ff8ae00 -}
+       {x3ff8ac00 -}
+       {x 9
+        {x4021b400 -}}      x4021b400}}
+        {{{x44d68a99 0 1 x40a49580 1}
+       {x44d75fee x411b6a00 1 x411b6a00 1}
+       {x44d8f841 x41b79bc0 1 x41b79bc0 1}
+       {x44dd1ccc x421e7f10 1 x421e7f10 1}
+       {x44e2e032 x41ded540 1 x41ded540 1}
+       {x44e41376 -}
+       {x44e3c4b2 xc0ec4c00 1 xc0ec4c00 1}
+       {x44e0ad8e xc1c8ea20 1 xc1c8ea20 1}
+       {x44dd7d61 xc1c99500 1 xc1c99500 1}
+       {x44da60e6 xc1cd39e0 1 xc1cd39e0 1}
+       {x44d71392 -}
+       {x44d7c5c2 -}
+       {x44d5d3fc -}
+       {x44d60ec4 x3fc59000 1 x3fc59000 1}
+       {x44d636c4 x40700000 1 x40700000 1}
+       {x44da0ac4 x413ce080 1 x413ce080 1}
+       {x44dc1dc8 x40bfe200 1 x40bfe200 1}
+       {x44dd0a4c x40737980 1 x40737980 1}
+       {x44de04bb -}
+       {x44de04ba -}
+       {x44deb998 x4057a780 1 x4057a780 1}
+       {x44dfb409 x4085eae0 1 0 1}      x44e092a4}
+      {{x438dabba 0 1 x40bae470 1}
+       {x43920d40 x4169add0 1 x4169add0 1}
+       {x439c4697 x4212f420 1 x4212f420 1}
+       {x43b6ca48 x426a9384 1 x426a9384 1}
+       {x43d6eb78 x4274184c 1 x4274184c 1}
+       {x43f3d05b x42934bd4 1 x42934bd4 1}
+       {x441048b1 x429c7b16 1 x429c7b16 1}
+       {x442106f3 x425856f8 1 x425856f8 1}
+       {x442b5390 x41cc1f10 1 x41cc1f10 1}
+       {x442dc8e4 x4104ef80 1 x4104ef80 1}
+       {x442f7b0c x40bde300 1 x40bde300 1}
+       {x4430c070 x4136e580 1 x4136e580 1}
+       {x44353238 x421146f0 1 x421146f0 1}
+       {x4442e94e x4228e350 1 x4228e350 1}
+       {x444a4ea2 x420d1c6b 1 x420d1c6b 1}
+       {x445d5ea2 x4204e480 1 x4204e480 1}
+       {x446b87c2 x419b0630 1 x419b0630 1}
+       {x4470bf68 x4107a6e0 1 x4107a6e0 1}
+       {x44740230 x407a6f40 1 x407a6f40 1}
+       {x4474a925 x3fc2c780 1 x3fc2c780 1}
+       {x447587bf -}
+       {x44720d50 xc126f4d0 1 0 1}      x4471665c}}
+        {{{x 2
+        {xc0762800 -}}
+       {xc0a0f600 xbfaab600 1 xbfaab600 1}
+       {xc0d06f00 xbfa17a00 1 xbfa17a00 1}
+       {xc0f1b300 xbf2f0400 1 xbf2f0400 1}
+       {xc0fc3000 xbeaae800 1 xbeaae800 1}
+       {xc1038800 xbebd2000 1 xbebd2000 1}
+       {xc109ea00 xbe928800 1 xbe928800 1}
+       {xc10cb080 -}
+       {xc099d200 x401d5700 1 x401d5700 1}
+       {xc0781400 -}
+       {x 2
+        {xc0989400 -}}
+       {x 9
+        {xc04cea00 -}}      xc04cea00}
+      {{x 2
+        {x40e56700 -}}
+       {x40cc9b80 xbf92da80 1 xbf92da80 1}
+       {x409bf9c0 xbfd7c900 1 xbfd7c900 1}
+       {x40416e00 xbfba6280 1 xbfba6280 1}
+       {x3ffb2200 -}
+       {x40436100 -}
+       {x3fce7000 xbf90e900 1 xbf90e900 1}
+       {x3f49e000 xbf998b00 1 xbf998b00 1}
+       {xbf494c00 xbf850d00 1 xbf850d00 1}
+       {xbfa52a00 xbf28be00 1 xbf28be00 1}
+       {xc006b200 xb9400000 1 xb9400000 1}
+       {xc006b300 xb9400000 1 xb9400000 1}
+       {x 9
+        {xc02f2d00 -}}      xc02f2d00}}
+        {{{x 2
+        {x40918200 -}}
+       {x40bfcc00 x3fd12600 1 x3fd12600 1}
+       {x40fa1500 x3fc71000 1 x3fc71000 1}
+       {x4111aa00 x3f5a0000 1 x3f5a0000 1}
+       {x41184a80 x3e8d5000 1 x3e8d5000 1}
+       {x411a7f00 x3e83b000 1 x3e83b000 1}
+       {x41208580 x3e834000 1 x3e834000 1}
+       {x4122b300 -}
+       {x40b01900 xc0382700 1 xc0382700 1}
+       {x408d3f00 -}
+       {x 2
+        {x40aea600 -}}
+       {x 9
+        {x405ca000 -}}      x405ca000}
+      {{x 2
+        {xc10bf380 -}}
+       {xc0fa7500 x3faf3d00 1 x3faf3d00 1}
+       {xc0c04880 x400173c0 1 x400173c0 1}
+       {xc0720280 x3fe06900 1 x3fe06900 1}
+       {xc0202800 -}
+       {xc042dc00 -}
+       {xbfae3800 x3fa8c200 1 x3fa8c200 1}
+       {xbed0d000 x3fb2f900 1 x3fb2f900 1}
+       {x3fb7ba00 x3f9bb900 1 x3f9bb900 1}
+       {x40019f00 x3f458200 1 x3f458200 1}
+       {x403e9e00 -}
+       {x403e9d00 -}
+       {x 9
+        {x40654400 -}}      x40654400}}
+        {{{x44d5b80a 0 1 x40c95200 1}
+       {x44d68d5f x40ed5b00 1 x40ed5b00 1}
+       {x44d792c0 x419a1f80 1 x419a1f80 1}
+       {x44db5e5b x421d1700 1 x421d1700 1}
+       {x44e16430 x41f367e0 1 x41f367e0 1}
+       {x44e2f99a -}
+       {x44e04c98 xc1bdcce0 1 xc1bdcce0 1}
+       {x44dd0b33 xc1d07a80 1 xc1d07a80 1}
+       {x44d9c8c4 xc1942b20 1 xc1942b20 1}
+       {x44d869da xc1888760 1 xc1888760 1}
+       {x44d58489 -}
+       {x44d5d30a -}
+       {x44d3e144 -}
+       {x44d4d228 x40700000 1 x40700000 1}
+       {x44d4fa28 x40700000 1 x40700000 1}
+       {x44d8ce28 x413ce080 1 x413ce080 1}
+       {x44dae12c x40bfe200 1 x40bfe200 1}
+       {x44dbcdb0 x40737980 1 x40737980 1}
+       {x44dcc81f -}
+       {x44dcc81e -}
+       {x44dd7cfc x4057a780 1 x4057a780 1}
+       {x44de776d x4085eae0 1 0 1}      x44df5608}
+      {{x4396a80f 0 1 x403fb200 1}
+       {x43999bdf x413b9500 1 x413b9500 1}
+       {x43a2615f x4206874c 1 x4206874c 1}
+       {x43bb3db2 x425b1684 1 x425b1684 1}
+       {x43d92700 x427b0938 1 x427b0938 1}
+       {x43fa0000 x4298fba8 1 x4298fba8 1}
+       {x4412d26a x429566bc 1 x429566bc 1}
+       {x442259af x42492240 1 x42492240 1}
+       {x442bf6b2 x414ff3c0 1 x414ff3c0 1}
+       {x442d0bf7 x4095af80 1 x4095af80 1}
+       {x442e4d70 x40686a80 1 x40686a80 1}
+       {x442edccc x40d70a00 1 x40d70a00 1}
+       {x44334e93 x420d3260 1 x420d3260 1}
+       {x44408318 x4224cec8 1 x4224cec8 1}
+       {x4447e86c x420d1c6b 1 x420d1c6b 1}
+       {x445af86c x4204e480 1 x4204e480 1}
+       {x4469218c x419b0630 1 x419b0630 1}
+       {x446e5932 x4107a6e0 1 x4107a6e0 1}
+       {x44719bfa x407a6f40 1 x407a6f40 1}
+       {x447242ef x3fc2c780 1 x3fc2c780 1}
+       {x44732189 -}
+       {x446fa71a xc126f4d0 1 0 1}      x446f0026}}
+        {{{x 2
+        {xc0ba8800 -}}
+       {xc0f5e500 xc0061800 1 xc0061800 1}
+       {xc1205000 xbfff3600 1 xbfff3600 1}
+       {xc13ac000 xbf8bba00 1 xbf8bba00 1}
+       {xc1433e80 xbeb52000 1 xbeb52000 1}
+       {xc1461200 xbea8e000 1 xbea8e000 1}
+       {xc14dcc80 xbea84800 1 xbea84800 1}
+       {xc1509680 -}
+       {xc0e1c400 x406c1700 1 x406c1700 1}
+       {xc0b51600 -}
+       {x 2
+        {xc0dfe800 -}}
+       {x 9
+        {xc08d6c00 -}}      xc08d6c00}
+      {{x 2
+        {x41336cc0 -}}
+       {x41208cc0 xbfe0aa80 1 xbfe0aa80 1}
+       {x40f68440 xc025f740 1 xc025f740 1}
+       {x409b2240 xc00fda80 1 xc00fda80 1}
+       {x404d5380 -}
+       {x4079d000 -}
+       {x3fdf5a00 xbfd85a00 1 xbfd85a00 1}
+       {x3f05d800 xbfe57400 1 xbfe57400 1}
+       {xbfeb8e00 xbfc7a400 1 xbfc7a400 1}
+       {xc0262e00 xbf7d3200 1 xbf7d3200 1}
+       {xc0746000 xb9400000 1 xb9400000 1}
+       {xc0746100 xb9400000 1 xb9400000 1}
+       {x 9
+        {xc092f700 -}}      xc092f700}}
+        {{{x 2
+        {x40d8b800 -}}
+       {x40f24c00 x3f483000 1 x3f483000 1}
+       {x41056200 x3ef61800 1 x3ef61800 1}
+       {x41088780 -}
+       {x41062b00 xbed4c000 1 xbed4c000 1}
+       {x40f67700 xbf353c00 1 xbf353c00 1}
+       {x40df0700 xbf359400 1 xbf359400 1}
+       {x 2
+        {x40c91200 -}}
+       {x 3
+        {x40c91100 -}}
+       {x 9
+        {x40ad6800 -}}      x40ad6800}
+      {{x 2
+        {xc0a68500 -}}
+       {xc07ce500 x3fd62e80 1 x3fd62e80 1}
+       {xbfedb700 x400a1680 1 x400a1680 1}
+       {x3eba4000 x3fd93c00 1 x3fd93c00 1}
+       {x3fc4c100 x3fd2a500 1 x3fd2a500 1}
+       {x4069ed00 x3fd7d780 1 x3fd7d780 1}
+       {x409d1c00 x3f86d300 1 x3f86d300 1}
+       {x 5
+        {x40b86000 -}}
+       {x 9
+        {x40a31900 -}}      x40a31900}}
+        {{{x44d387a8 0 1 x414e15e0 1}
+       {x44d4e622 x40e31680 1 x40e31680 1}
+       {x44d54dd5 x411b8c80 1 x411b8c80 1}
+       {x44d8c9cf x4207a370 1 x4207a370 1}
+       {x44ddc80c x41c1b000 1 x41c1b000 1}
+       {x44ded74f -}
+       {x44dc496f xc1b9bca0 1 xc1b9bca0 1}
+       {x44d9096a xc1ce2220 1 xc1ce2220 1}
+       {x 2
+        {x44d5d85e -}}
+       {x 2
+        {x44d344f9 -}}
+       {x44d15333 -}
+       {x44d2ff44 x40700000 1 x40700000 1}
+       {x44d32744 x40700000 1 x40700000 1}
+       {x44d6fb44 x413ce080 1 x413ce080 1}
+       {x44d90e48 x40bfe200 1 x40bfe200 1}
+       {x44d9facc x40737980 1 x40737980 1}
+       {x44daf53b -}
+       {x44daf53a -}
+       {x44dbaa18 x4057a780 1 x4057a780 1}
+       {x44dca489 x4085eae0 1 0 1}      x44dd8324}
+      {{x43a1e497 0 1 x40356920 1}
+       {x43a46ab0 x411794d0 1 x411794d0 1}
+       {x43ab5de4 x41eda870 1 x41eda870 1}
+       {x43c21fbe x4236fe2c 1 x4236fe2c 1}
+       {x43d91d6f x426bc850 1 x426bc850 1}
+       {x43fd11d2 x429b8cae 1 x429b8cae 1}
+       {x441371e3 x428c449c 1 x428c449c 1}
+       {x44219a10 x42379ce0 1 x42379ce0 1}
+       {x 2
+        {x442a657f -}}
+       {x 2
+        {x442b4e39 -}}
+       {x442fc000 x420c1628 1 x420c1628 1}
+       {x443cd0fe x4223b290 1 x4223b290 1}
+       {x44443652 x420d1c6b 1 x420d1c6b 1}
+       {x44574652 x4204e480 1 x4204e480 1}
+       {x44656f72 x419b0630 1 x419b0630 1}
+       {x446aa718 x4107a6e0 1 x4107a6e0 1}
+       {x446de9e0 x407a6f40 1 x407a6f40 1}
+       {x446e90d5 x3fc2c780 1 x3fc2c780 1}
+       {x446f6f6f -}
+       {x446bf500 xc126f4d0 1 0 1}      x446b4e0c}}
+        {{{x 2
+        {xc0951600 -}}
+       {xc0a6ae00 xbf09b800 1 xbf09b800 1}
+       {xc0b78400 xbea95000 1 xbea95000 1}
+       {xc0bbd800 -}
+       {xc0b89700 x3e926800 1 x3e926800 1}
+       {xc0a98b00 x3ef95800 1 x3ef95800 1}
+       {xc0996c00 x3ef9c800 1 x3ef9c800 1}
+       {x 5
+        {xc08a5200 -}}
+       {x 9
+        {xc06e9600 -}}      xc06e9600}
+      {{x 2
+        {x40651880 -}}
+       {x402df780 xbf935680 1 xbf935680 1}
+       {x3fa38400 xbfbdfd00 1 xbfbdfd00 1}
+       {xbe802c00 xbf957000 1 xbf957000 1}
+       {xbf875c00 xbf90e780 1 xbf90e780 1}
+       {xc020ed00 xbf947a00 1 xbf947a00 1}
+       {xc0582800 xbf398000 1 xbf398000 1}
+       {x 4
+        {xc07dad00 -}}
+       {xc07dac00 x39400000 1 x39400000 1}
+       {x 9
+        {xc0606700 -}}      xc0606700}}
+        {{{x 2
+        {x405d0c00 -}}
+       {x40a43a00 x3ff93800 1 x3ff93800 1}
+       {x40eb2200 x3ffb9400 1 x3ffb9400 1}
+       {x41110200 x3f96ca00 1 x3f96ca00 1}
+       {x411b4380 x3fe7ce00 1 x3fe7ce00 1}
+       {x414af580 -}
+       {x4145fa80 xbed5e800 1 xbed5e800 1}
+       {x 2
+        {x413d9700 -}}
+       {x 2
+        {x41028e00 -}}
+       {x40524400 -}
+       {x 9
+        {x408efe00 -}}      x408efe00}
+      {{x 2
+        {xc11fc7c0 -}}
+       {xc113c9c0 x3f991f00 1 x3f991f00 1}
+       {xc0f30000 x3ff36d00 1 x3ff36d00 1}
+       {xc0addd00 x3fdc7380 1 x3fdc7380 1}
+       {xc084c640 x403ecd80 1 x403ecd80 1}
+       {x3f078400 x406e4dc0 1 x406e4dc0 1}
+       {x40530f00 x400a6d00 1 x400a6d00 1}
+       {x 2
+        {x409b5d80 -}}
+       {x 2
+        {x40b03380 -}}
+       {x40a04900 xbf8a2500 1 xbf8a2500 1}
+       {x 9
+        {x40564200 -}}      x40564200}}
+        {{{x44d2b3fb 0 1 x418a4920 1}
+       {x44d424be -}
+       {x44d3e9b9 -}
+       {x44d65565 x41e5c6c0 1 x41e5c6c0 1}
+       {x44db17ef x419ad940 1 x419ad940 1}
+       {x44dbe666 -}
+       {x44d8a691 xc1cb2c80 1 xc1cb2c80 1}
+       {x44d58d02 xc1c32f20 1 xc1c32f20 1}
+       {x 2
+        {x44d28d18 -}}
+       {x 2
+        {x44d0cefe -}}
+       {x44cff6fa -}
+       {x44d17796 x40700000 1 x40700000 1}
+       {x44d19f96 x40700000 1 x40700000 1}
+       {x44d57396 x4143d560 1 x4143d560 1}
+       {x44d7be41 x40cdcbc0 1 x40cdcbc0 1}
+       {x44d8aac5 x40737980 1 x40737980 1}
+       {x44d9a534 -}
+       {x44d9a533 -}
+       {x44da5a11 x4057a780 1 x4057a780 1}
+       {x44db5482 x4085eae0 1 0 1}      x44dc331d}
+      {{x43b066b7 0 1 x4088fb70 1}
+       {x43b35a86 x41127230 1 x41127230 1}
+       {x43b98dda x41d3db68 1 x41d3db68 1}
+       {x43cdd5f3 x422a1f04 1 x422a1f04 1}
+       {x43e4159b x424ddb64 1 x424ddb64 1}
+       {x4400a666 x42816a8a 1 x42816a8a 1}
+       {x44126570 x42733880 1 x42733880 1}
+       {x441f0d76 x4224a228 1 x4224a228 1}
+       {x 2
+        {x4426f9b5 -}}
+       {x 2
+        {x44279728 -}}
+       {x442c4270 x42151560 1 x42151560 1}
+       {x443a39d4 x422ae5c0 1 x422ae5c0 1}
+       {x44419f28 x420d1c6b 1 x420d1c6b 1}
+       {x4454af28 x41fd9c78 1 x41fd9c78 1}
+       {x446152b7 x418ed9a8 1 x418ed9a8 1}
+       {x44668a5d x4107a6e0 1 x4107a6e0 1}
+       {x4469cd25 x407a6f40 1 x407a6f40 1}
+       {x446a741a x3fc2c780 1 x3fc2c780 1}
+       {x446b52b4 -}
+       {x4467d845 xc126f4d0 1 0 1}      x44673151}}
+        {{{x 2
+        {xc03b8c00 -}}
+       {xc08b5400 xbfd36c00 1 xbfd36c00 1}
+       {xc0c77c00 xbfd57000 1 xbfd57000 1}
+       {xc0f60c00 xbf7fe000 1 xbf7fe000 1}
+       {xc103ba00 xbfc4b000 1 xbfc4b000 1}
+       {xc12c3200 -}
+       {xc127f800 x3eb58000 1 x3eb58000 1}
+       {x 2
+        {xc120da00 -}}
+       {x 2
+        {xc0dd8a00 -}}
+       {xc0326800 -}
+       {x 9
+        {xc072a000 -}}      xc072a000}
+      {{x 2
+        {x41078f60 -}}
+       {x40fac540 xbf81e900 1 xbf81e900 1}
+       {x40ce2a40 xbfce8580 1 xbfce8580 1}
+       {x40938280 xbfbb0880 1 xbfbb0880 1}
+       {x40614c00 xc021e180 1 xc021e180 1}
+       {xbee5f000 xc04a2e00 1 xc04a2e00 1}
+       {xc0331000 xbfeae300 1 xbfeae300 1}
+       {x 2
+        {xc083d080 -}}
+       {x 2
+        {xc0957e00 -}}
+       {xc087fd80 x3f6a6a00 1 x3f6a6a00 1}
+       {x 9
+        {xc035c700 -}}      xc035c700}}
+        {{{x 4
+        {x40ce6500 -}}
+       {x40f99700 x3f6ad800 1 x3f6ad800 1}
+       {x41048d80 x3fa9be00 1 x3fa9be00 1}
+       {x41273b00 -}
+       {x41245480 xbe8dd000 1 xbe8dd000 1}
+       {x 2
+        {x411e5e00 -}}
+       {x 2
+        {x40e3db00 -}}
+       {x405ce000 -}
+       {x 9
+        {x408f0300 -}}      x408f0300}
+      {{x 4
+        {xc0c21080 -}}
+       {xc0860880 x3fbe9500 1 x3fbe9500 1}
+       {xc0458c00 x40064900 1 x40064900 1}
+       {x3c010000 x402acd00 1 x402acd00 1}
+       {x40100e00 x3fe28b00 1 x3fe28b00 1}
+       {x 2
+        {x40630c00 -}}
+       {x 2
+        {x40813480 -}}
+       {x406a7200 xbf437200 1 xbf437200 1}
+       {x 9
+        {x4020b000 -}}      x4020b000}}
+        {{{x44d007d0 0 1 x411fe940 1}
+       {x44d1264a x40dbc900 1 x40dbc900 1}
+       {x44d1bf62 x411e9c40 1 x411e9c40 1}
+       {x44d3a0bb x41bf6340 1 x41bf6340 1}
+       {x44d7ba7c x413a3f00 1 x413a3f00 1}
+       {x44d836a6 -}
+       {x44d482f6 xc1d708a0 1 xc1d708a0 1}
+       {x44d17e61 xc1bb8e80 1 xc1bb8e80 1}
+       {x 2
+        {x44cea682 -}}
+       {x 2
+        {x44ce1a12 -}}
+       {x44ced5e0 x40e90c00 1 x40e90c00 1}
+       {x44cfec2a x40700000 1 x40700000 1}
+       {x44d0142a x40700000 1 x40700000 1}
+       {x44d3e82a x4143d560 1 x4143d560 1}
+       {x44d632d5 x40cdcbc0 1 x40cdcbc0 1}
+       {x44d71f59 x40737980 1 x40737980 1}
+       {x44d819c8 -}
+       {x44d819c7 -}
+       {x44d8cea5 x4057a780 1 x4057a780 1}
+       {x44d9c916 x4085eae0 1 0 1}      x44daa7b1}
+      {{x43c30800 0 1 x40bbcec0 1}
+       {x43c62062 x40daac00 1 x40daac00 1}
+       {x43c9dd60 x418315c0 1 x418315c0 1}
+       {x43d6831a x41f8ffd0 1 x41f8ffd0 1}
+       {x43e8fd5a x422a3a78 1 x422a3a78 1}
+       {x440088dc x426e4b38 1 x426e4b38 1}
+       {x44124814 x4264c5e0 1 x4264c5e0 1}
+       {x441d2198 x420dfe60 1 x420dfe60 1}
+       {x 2
+        {x442407e0 -}}
+       {x 2
+        {x44243972 -}}
+       {x44293722 x421fdc30 1 x421fdc30 1}
+       {x443834f8 x42331950 1 x42331950 1}
+       {x443f9a4c x420d1c6b 1 x420d1c6b 1}
+       {x4452aa4c x41fd9c78 1 x41fd9c78 1}
+       {x445f4ddb x418ed9a8 1 x418ed9a8 1}
+       {x44648581 x4107a6e0 1 x4107a6e0 1}
+       {x4467c849 x407a6f40 1 x407a6f40 1}
+       {x44686f3e x3fc2c780 1 x3fc2c780 1}
+       {x44694dd8 -}
+       {x4465d369 xc126f4d0 1 0 1}      x44652c75}}
+        {{{x 4
+        {xc0be8500 -}}
+       {xc0e66400 xbf58c400 1 xbf58c400 1}
+       {xc0f4b600 xbf9cac00 1 xbf9cac00 1}
+       {xc11a5d00 -}
+       {xc117b080 x3e82e000 1 x3e82e000 1}
+       {x 2
+        {xc1122f00 -}}
+       {x 2
+        {xc0d25400 -}}
+       {xc04be400 -}
+       {x 9
+        {xc0840300 -}}      xc0840300}
+      {{x 4
+        {x40b32300 -}}
+       {x40777200 xbfafed00 1 xbfafed00 1}
+       {x40365900 xbff7e800 1 xbff7e800 1}
+       {xbbec0000 xc01da880 1 xc01da880 1}
+       {xc004f800 xbfd11e00 1 xbfd11e00 1}
+       {x 2
+        {xc0519400 -}}
+       {x 2
+        {xc06e8900 -}}
+       {xc0586a00 x3f346a00 1 x3f346a00 1}
+       {x 9
+        {xc0145400 -}}      xc0145400}}
+        {{{x 4
+        {x4089c400 -}}
+       {x409cd700 x3ec46800 1 x3ec46800 1}
+       {x40a25100 x3dffc000 1 x3dffc000 1}
+       {x40a4d500 -}
+       {x40a06800 xbe2d8000 1 xbe2d8000 1}
+       {x 14
+        {x4099fd00 -}}      x4099fd00}
+      {{x 4
+        {xc037ac00 -}}
+       {xbfd43400 x3f72f600 1 x3f72f600 1}
+       {xbf78c400 x3f820c00 1 x3f820c00 1}
+       {x3ebf9000 x3f8dc100 1 x3f8dc100 1}
+       {x3f9f2000 x3f401800 1 x3f401800 1}
+       {x 14
+        {x3feffc00 -}}      x3feffc00}}
+        {{{x44ce8351 0 1 x40d31cc0 1}
+       {x44cf4f82 x40be5980 1 x40be5980 1}
+       {x44d00004 x4102dd00 1 x4102dd00 1}
+       {x44d15af6 x41a0c900 1 x41a0c900 1}
+       {x44d5064c x419c4bc0 1 x419c4bc0 1}
+       {x44d63d54 -}
+       {x44d19c1e xc1f2ee80 1 xc1f2ee80 1}
+       {x44cea5e0 xc1b66ac0 1 xc1b66ac0 1}
+       {x 4
+        {x44cbe8c8 -}}
+       {x44cd5e1e x4115ce00 1 x4115ce00 1}
+       {x44ce4000 x40700000 1 x40700000 1}
+       {x44ce6800 x40700000 1 x40700000 1}
+       {x44d23c00 x4143d560 1 x4143d560 1}
+       {x44d486ab x40cdcbc0 1 x40cdcbc0 1}
+       {x44d5732f x40737980 1 x40737980 1}
+       {x44d66d9e -}
+       {x44d66d9d -}
+       {x44d7227b x4057a780 1 x4057a780 1}
+       {x44d81cec x4085eae0 1 0 1}      x44d8fb87}
+      {{x43d110bc 0 1 x40799f80 1}
+       {x43d37243 x40cf85c0 1 x40cf85c0 1}
+       {x43d78cea x41459fb0 1 x41459fb0 1}
+       {x43dfcc3e x41d18ca8 1 x41d18ca8 1}
+       {x43f1be7f x4226efb0 1 x4226efb0 1}
+       {x4404c415 x424a7d04 1 x424a7d04 1}
+       {x44122ee0 x4238c868 1 x4238c868 1}
+       {x441bdd22 x41fdca10 1 x41fdca10 1}
+       {x 4
+        {x44220b81 -}}
+       {x44272f0e x4224a3f8 1 x4224a3f8 1}
+       {x4436a000 x4236b230 1 x4236b230 1}
+       {x443e0554 x420d1c6b 1 x420d1c6b 1}
+       {x44511554 x41fd9c78 1 x41fd9c78 1}
+       {x445db8e3 x418ed9a8 1 x418ed9a8 1}
+       {x4462f089 x4107a6e0 1 x4107a6e0 1}
+       {x44663351 x407a6f40 1 x407a6f40 1}
+       {x4466da46 x3fc2c780 1 x3fc2c780 1}
+       {x4467b8e0 -}
+       {x44643e71 xc126f4d0 1 0 1}      x4463977d}}
+        {{{x 4
+        {xc0c1f900 -}}
+       {xc0dcd500 xbf0a4c00 1 xbf0a4c00 1}
+       {xc0e48c00 xbe343000 1 xbe343000 1}
+       {xc0e81800 -}
+       {xc0e1dc00 x3e744000 1 x3e744000 1}
+       {x 14
+        {xc0d8d400 -}}      xc0d8d400}
+      {{x 4
+        {x40815000 -}}
+       {x40156780 xbfab0c00 1 xbfab0c00 1}
+       {x3faf2800 xbfb71d80 1 xbfb71d80 1}
+       {xbf06d800 xbfc79d00 1 xbfc79d00 1}
+       {xbfe01200 xbf873f00 1 xbf873f00 1}
+       {x 4
+        {xc028f500 -}}
+       {xc028f600 -}
+       {x 9
+        {xc028f500 -}}      xc028f500}}
+        {{{x 4
+        {x40ede000 -}}
+       {x411afd00 x3fca4e00 1 x3fca4e00 1}
+       {x41298380 x3f068800 1 x3f068800 1}
+       {x412c5100 -}
+       {x412ab100 xbe9c0000 1 xbe9c0000 1}
+       {x40dcfa00 -}
+       {x4111ef80 x3eb2b000 1 x3eb2b000 1}
+       {x4113cc00 -}
+       {x4100e400 -}
+       {x4100e480 -}
+       {x 9
+        {x40f49600 -}}      x40f49600}
+      {{x 4
+        {xc11af240 -}}
+       {xc0edc440 x3fe8c300 1 x3fe8c300 1}
+       {xc0c18300 -}
+       {xc0d90000 -}
+       {xc0849c00 x4053e500 1 x4053e500 1}
+       {xbe236000 x405e0780 1 x405e0780 1}
+       {x4032d700 x4012a800 1 x4012a800 1}
+       {x408d8d00 -}
+       {x 2
+        {x4055c800 -}}
+       {x 9
+        {x4088fd80 -}}      x4088fd80}}
+        {{{x44cca5ab 0 1 x3fcc7300 1}
+       {x44ccf1dc x407cb300 1 x407cb300 1}
+       {x44cda25e x41014380 1 x41014380 1}
+       {x44cef6ea x41821aa0 1 x41821aa0 1}
+       {x44d1b333 x4175fcc0 1 x4175fcc0 1}
+       {x44d2cedd -}
+       {x44ce1c66 xc1f3a5a0 1 xc1f3a5a0 1}
+       {x44cb31b0 xc1983d00 1 xc1983d00 1}
+       {x44c95a7e xc1164ac0 1 xc1164ac0 1}
+       {x44c8d885 xbf23e000 1 xbf23e000 1}
+       {x44c8d1b1 -}
+       {x44c91704 x40cff900 1 x40cff900 1}
+       {x44ca8c59 x411bda40 1 x411bda40 1}
+       {x 2
+        {x44cb866d -}}
+       {x44cf5a6d x4143d560 1 x4143d560 1}
+       {x 2
+        {x44d1a518 -}}
+       {x44d29f87 -}
+       {x44d29f86 -}
+       {x44d35464 x4057a780 1 x4057a780 1}
+       {x44d44ed5 x4085eae0 1 0 1}      x44d52d70}
+      {{x43e03ff4 0 1 x408e5f10 1}
+       {x43e2a17a x40ac6660 1 x40ac6660 1}
+       {x43e5a327 x41141010 1 x41141010 1}
+       {x43ebe27b x418e19f8 1 x418e19f8 1}
+       {x43f76666 x420fe304 1 x420fe304 1}
+       {x4407ed9e x424c1720 1 x424c1720 1}
+       {x44153617 x422b3fe0 1 x422b3fe0 1}
+       {x441d559a x41c391d0 1 x41c391d0 1}
+       {x44216f34 -}
+       {x4420149d xc0866f40 1 xc0866f40 1}
+       {x441f5577 -}
+       {x441fd48d x40bea100 1 x40bea100 1}
+       {x4424f819 x42213108 1 x42213108 1}
+       {x 2
+        {x4433faae -}}
+       {x44470aae x41fd9c78 1 x41fd9c78 1}
+       {x 2
+        {x4453ae3d -}}
+       {x4456f105 x407a6f40 1 x407a6f40 1}
+       {x445797fa x3fc2c780 1 x3fc2c780 1}
+       {x44587694 -}
+       {x4454fc25 xc126f4d0 1 0 1}      x44545531}}
+        {{{x 4
+        {xc1326980 -}}
+       {xc1687c80 xc017b800 1 xc017b800 1}
+       {xc17e4580 xbf49d800 1 xbf49d800 1}
+       {xc1813d00 -}
+       {xc1800500 x3eea0000 1 x3eea0000 1}
+       {xc125bc00 -}
+       {xc15ae780 xbf061000 1 xbf061000 1}
+       {xc15db280 -}
+       {x 2
+        {xc1415700 -}}
+       {x 9
+        {xc1377180 -}}      xc1377180}
+      {{x 4
+        {x41686be0 -}}
+       {x41325320 xc02e93c0 1 xc02e93c0 1}
+       {x41112200 -}
+       {x4122c000 -}
+       {x40c6ea00 xc09eec80 1 xc09eec80 1}
+       {x3e74e000 xc0a685c0 1 xc0a685c0 1}
+       {xc0862180 xc05bfa80 1 xc05bfa80 1}
+       {xc0d45380 -}
+       {xc0a05700 x39400000 1 x39400000 1}
+       {xc0a05680 -}
+       {x 9
+        {xc0cd7d00 -}}      xc0cd7d00}}
+        {{{x 3
+        {x4121b400 -}}
+       {x 2
+        {x415b0f00 -}}
+       {x41621700 -}
+       {x4154ce00 xbf5c4800 1 xbf5c4800 1}
+       {x41468e00 xbf667400 1 xbf667400 1}
+       {x 14
+        {x4137ff80 -}}      x4137ff80}
+      {{x 3
+        {xc1135340 -}}
+       {x 2
+        {xc08b3900 -}}
+       {xc01be800 x40875980 1 x40875980 1}
+       {x40837a00 x408be400 1 x408be400 1}
+       {x40c9d400 x3fef1600 1 x3fef1600 1}
+       {x40fb0500 x39400000 1 x39400000 1}
+       {x 13
+        {x40fb0580 -}}      x40fb0580}}
+        {{{x44c9678c 0 1 x400d4000 1}
+       {x44c9b3bd x402ea600 1 x402ea600 1}
+       {x44ca1632 x40984d80 1 x40984d80 1}
+       {x44cae458 x41436000 1 x41436000 1}
+       {x44cd23b2 -}
+       {x44ccd24e xc0f42c00 1 xc0f42c00 1}
+       {x44c82f31 xc1ec9bc0 1 xc1ec9bc0 1}
+       {x44c56d70 xc057e800 1 xc057e800 1}
+       {x44c54974 xc057e800 1 xc057e800 1}
+       {x44c3d838 xbfe8bc00 1 xbfe8bc00 1}
+       {x44c3c4d3 -}
+       {x44c489c0 x410e90c0 1 x410e90c0 1}
+       {x44c5ff16 x4126fd40 1 x4126fd40 1}
+       {x 2
+        {x44c725b5 -}}
+       {x44caf9b5 x4143d560 1 x4143d560 1}
+       {x 2
+        {x44cd4460 -}}
+       {x44ce3ecf -}
+       {x44ce3ece -}
+       {x44cef3ac x4057a780 1 x4057a780 1}
+       {x44cfee1d x4085eae0 1 0 1}      x44d0ccb8}
+      {{x43f7569e 0 1 x409052e0 1}
+       {x43f9b825 x40a87f80 1 x40a87f80 1}
+       {x43fc9a9a x410bb650 1 x410bb650 1}
+       {x440139c5 x415e0ae0 1 x415e0ae0 1}
+       {x44053da4 x41c4e030 1 x41c4e030 1}
+       {x440d87c8 x42246348 1 x42246348 1}
+       {x4419ca0d x420da158 1 x420da158 1}
+       {x441f3bf3 x40a3f080 1 x40a3f080 1}
+       {x441fa93e -}
+       {x441bd0a0 xc13ef4c0 1 xc13ef4c0 1}
+       {x4419b198 -}
+       {x441b1a9f x41519280 1 x41519280 1}
+       {x44203e2c x421ad7b0 1 x421ad7b0 1}
+       {x 2
+        {x442e7595 -}}
+       {x44418595 x41fd9c78 1 x41fd9c78 1}
+       {x 2
+        {x444e2924 -}}
+       {x44516bec x407a6f40 1 x407a6f40 1}
+       {x445212e1 x3fc2c780 1 x3fc2c780 1}
+       {x4452f17b -}
+       {x444f770c xc126f4d0 1 0 1}      x444ed018}}
+        {{{x 3
+        {xc03c1e00 -}}
+       {x 2
+        {xc0728600 -}}
+       {xc07a4e00 -}
+       {xc072aa00 x3e3f1000 1 x3e3f1000 1}
+       {xc0626c00 x3e836000 1 x3e836000 1}
+       {x 14
+        {xc051d200 -}}      xc051d200}
+      {{x 3
+        {x402b5f00 -}}
+       {x 2
+        {x3f9a1c00 -}}
+       {x3f2c9000 xbf980600 1 xbf980600 1}
+       {xbf95f000 xbf9e3800 1 xbf9e3800 1}
+       {xbfe62800 xbf085000 1 xbf085000 1}
+       {x 5
+        {xc00f2000 -}}
+       {x 9
+        {xc00f2100 -}}      xc00f2100}}
+        {{{x 5
+        {x40784800 -}}
+       {x40845c00 x3e8af000 1 x3e8af000 1}
+       {x408d8200 x3d96c000 1 x3d96c000 1}
+       {x408e4b00 -}
+       {x 5
+        {x408c2800 -}}
+       {x 9
+        {x404a5400 -}}      x404a5400}
+      {{x 5
+        {xc00ca900 -}}
+       {xbfd31100 x3f567a00 1 x3f567a00 1}
+       {xbf05b000 x3f714900 1 x3f714900 1}
+       {x3e71c000 x3f29b400 1 x3f29b400 1}
+       {x 5
+        {x3f4db800 -}}
+       {x 9
+        {x400d6d00 -}}      x400d6d00}}
+        {{{x44c8058b 0 1 x3fbcd800 1}
+       {x44c851bc x40862700 1 x40862700 1}
+       {x44c911d9 x41052a00 1 x41052a00 1}
+       {x44ca6664 x41519480 1 x41519480 1}
+       {x44cc582b -}
+       {x44cc005a xc103b980 1 xc103b980 1}
+       {x44c657fc xc2095060 1 xc2095060 1}
+       {x44c36b54 xc16c3240 1 xc16c3240 1}
+       {x44c2a733 xc0abe900 1 xc0abe900 1}
+       {x44c21382 -}
+       {x44c2f28a x40d1fa80 1 x40d1fa80 1}
+       {x44c3b777 x40cd2180 1 x40cd2180 1}
+       {x44c48ccd x410e2d40 1 x410e2d40 1}
+       {x 2
+        {x44c5f02c -}}
+       {x44c9c42c x4143d560 1 x4143d560 1}
+       {x 2
+        {x44cc0ed7 -}}
+       {x44cd0946 -}
+       {x44cd0945 -}
+       {x44cdbe23 x4057a780 1 x4057a780 1}
+       {x44ceb894 x4085eae0 1 0 1}      x44cf972f}
+      {{x44016cb9 0 1 x40905280 1}
+       {x44029d7c x40a87f80 1 x40a87f80 1}
+       {x44040eb7 x40f76c80 1 x40f76c80 1}
+       {x44067b2e x41383980 1 x41383980 1}
+       {x4409d083 x41b1a530 1 x41b1a530 1}
+       {x44119581 x41f34010 1 x41f34010 1}
+       {x44190484 x41be1ef0 1 x41be1ef0 1}
+       {x441d7770 x414a0be0 1 x414a0be0 1}
+       {x441f54e3 -}
+       {x441bc61e xc16d7ba0 1 xc16d7ba0 1}
+       {x4417e906 -}
+       {x4419520d x415e1280 1 x415e1280 1}
+       {x441ed99a x421bbd88 1 x421bbd88 1}
+       {x 2
+        {x442cc9be -}}
+       {x443fd9be x41fd9c78 1 x41fd9c78 1}
+       {x 2
+        {x444c7d4d -}}
+       {x444fc015 x407a6f40 1 x407a6f40 1}
+       {x4450670a x3fc2c780 1 x3fc2c780 1}
+       {x445145a4 -}
+       {x444dcb35 xc126f4d0 1 0 1}      x444d2441}}
+        {{{x 5
+        {xc0431800 -}}
+       {xc0500400 xbe5a6000 1 xbe5a6000 1}
+       {xc05e6400 xbd6a0000 1 xbd6a0000 1}
+       {xc05f9c00 -}
+       {x 5
+        {xc05c4000 -}}
+       {x 9
+        {xc01ef800 -}}      xc01ef800}
+      {{x 5
+        {x3fdd0c00 -}}
+       {x3fa5d900 xbf288600 1 xbf288600 1}
+       {x3ed21800 xbf3d9b00 1 xbf3d9b00 1}
+       {xbe3e1000 xbf055a00 1 xbf055a00 1}
+       {x 5
+        {xbf21a800 -}}
+       {x 9
+        {xbfde4000 -}}      xbfde4000}}
+        {{{x 2
+        {x3ffa1c00 -}}
+       {x 3
+        {x40343c00 -}}
+       {x40394c00 x3cf30000 1 x3cf30000 1}
+       {x4039ee00 -}
+       {x40337c00 xbe8d0000 1 xbe8d0000 1}
+       {x 5
+        {x4016ae00 -}}
+       {x 9
+        {x40187200 -}}      x40187200}
+      {{x 2
+        {xc00bda00 -}}
+       {x 3
+        {xbf501000 -}}
+       {xbed6bc00 x3f141800 1 x3f141800 1}
+       {x3eb04000 x3f203b00 1 x3f203b00 1}
+       {x3f551800 x3f322e00 1 x3f322e00 1}
+       {x 5
+        {x3fde3e00 -}}
+       {x 9
+        {x3fd7b000 -}}      x3fd7b000}}
+        {{{x44c6a5bc 0 1 xc0524800 1}
+       {x44c65fa4 -}
+       {x44c6c219 x40d5e000 1 x40d5e000 1}
+       {x44c80b64 x414ec480 1 x414ec480 1}
+       {x44c9fd2b -}
+       {x44c87ba5 xc1b9b6c0 1 xc1b9b6c0 1}
+       {x44c42f75 xc1e32d20 1 xc1e32d20 1}
+       {x44c1623c xc1a69240 1 xc1a69240 1}
+       {x44befae3 -}
+       {x44bf8245 x410c8340 1 x410c8340 1}
+       {x44c12cf0 x411be600 1 x411be600 1}
+       {x44c1f1dd x410990c0 1 x410990c0 1}
+       {x44c35333 x41452280 1 x41452280 1}
+       {x 2
+        {x44c50667 -}}
+       {x44c8da67 x4143d560 1 x4143d560 1}
+       {x 2
+        {x44cb2512 -}}
+       {x44cc1f81 -}
+       {x44cc1f80 -}
+       {x44ccd45e x4057a780 1 x4057a780 1}
+       {x44cdcecf x4085eae0 1 0 1}      x44cead6a}
+      {{x4406b4ab 0 1 x3e65b800 1}
+       {x44070a00 x40634800 1 x40634800 1}
+       {x44087b3b x40c48e00 1 x40c48e00 1}
+       {x440a1c38 x411eca40 1 x411eca40 1}
+       {x440d718d x41855aa0 1 x41855aa0 1}
+       {x441271e2 x41d7faa0 1 x41d7faa0 1}
+       {x441af137 x41b7e240 1 x41b7e240 1}
+       {x441df006 -}
+       {x441d6759 xc03f6a80 1 xc03f6a80 1}
+       {x441c7131 xc1389e00 1 xc1389e00 1}
+       {x44171039 -}
+       {x44187940 x416f9280 1 x416f9280 1}
+       {x441e8ccd x42183c60 1 x42183c60 1}
+       {x 2
+        {x442b80cc -}}
+       {x443e90cc x41fd9c78 1 x41fd9c78 1}
+       {x 2
+        {x444b345b -}}
+       {x444e7723 x407a6f40 1 x407a6f40 1}
+       {x444f1e18 x3fc2c780 1 x3fc2c780 1}
+       {x444ffcb2 -}
+       {x444c8243 xc126f4d0 1 0 1}      x444bdb4f}}
+        {{{x 2
+        {xc1296b80 -}}
+       {x 3
+        {xc19774c0 -}}
+       {xc19bb6c0 xbe4c6000 1 xbe4c6000 1}
+       {xc19c3f00 -}
+       {xc196d600 x3fa58c00 1 x3fa58c00 1}
+       {x 5
+        {xc1878d80 -}}
+       {x 9
+        {xc18925c0 -}}      xc18925c0}
+      {{x 2
+        {x413d8000 -}}
+       {x 3
+        {x40aed680 -}}
+       {x40347500 xc078e400 1 xc078e400 1}
+       {xc0141b00 xc086a880 1 xc086a880 1}
+       {xc0b31680 xc0a2e740 1 xc0a2e740 1}
+       {x 5
+        {xc147ee00 -}}
+       {x 9
+        {xc1420a40 -}}      xc1420a40}}
+        {{{x 5
+        {x40da3300 -}}
+       {x40dfb400 -}
+       {x40df4e00 xbd190000 1 xbd190000 1}
+       {x40d6d000 xbe982000 1 xbe982000 1}
+       {x 14
+        {x40cc4a00 -}}      x40cc4a00}
+      {{x 5
+        {xbfe97600 -}}
+       {xbf5f6200 x3fb29500 1 x3fb29500 1}
+       {x3f776800 x3fc0a080 1 x3fc0a080 1}
+       {x4008c800 x3f80d200 1 x3f80d200 1}
+       {x 5
+        {x403eac00 -}}
+       {x 9
+        {x403eaa00 -}}      x403eaa00}}
+        {{{x44c1b16d 0 1 x40035f00 1}
+       {x44c1f47a x400b9000 1 x400b9000 1}
+       {x44c23cfd x40d98900 1 x40d98900 1}
+       {x44c52997 x419bcc20 1 x419bcc20 1}
+       {x44c71b5e -}
+       {x44c5e4dd xc1af34a0 1 xc1af34a0 1}
+       {x44c1a1b9 xc207f320 1 xc207f320 1}
+       {x44bd65ab xc1b224a0 1 xc1b224a0 1}
+       {x 2
+        {x44bc1094 -}}
+       {x 2
+        {x44bdbb3e -}}
+       {x44bf3094 x41253080 1 x41253080 1}
+       {x44c05000 x40cbb600 1 x40cbb600 1}
+       {x44c0c800 x41340000 1 x41340000 1}
+       {x44c5bc00 x4183c000 1 x4183c000 1}
+       {x44c90400 x41081c80 1 x41081c80 1}
+       {x44c9fce4 x40262f00 1 x40262f00 1}
+       {x44ca505e -}
+       {x44ca505d -}
+       {x44cb053b x40042d80 1 x40042d80 1}
+       {x44cb58b8 x3f6c9300 1 0 1}      x44cc3753}
+      {{x440c2dc5 -}
+       {x440c4c3f x3fb6dc00 1 x3fb6dc00 1}
+       {x440d3319 x4080db40 1 x4080db40 1}
+       {x440e4fac x410e3ce0 1 x410e3ce0 1}
+       {x4411a500 x417819c0 1 x417819c0 1}
+       {x4416107a x41a94d70 1 x41a94d70 1}
+       {x441c39d7 -}
+       {x441c0342 xc023bf00 1 xc023bf00 1}
+       {x 2
+        {x44190fd4 -}}
+       {x 2
+        {x4416690a -}}
+       {x441b8c97 x41eb6f60 1 x41eb6f60 1}
+       {x44252000 x41d1e130 1 x41d1e130 1}
+       {x4428aaaa x41c0c715 1 x41c0c715 1}
+       {x443732aa x41cb31d0 1 x41cb31d0 1}
+       {x444210e4 x3ed55400 1 x3ed55400 1}
+       {x444222ab x3ed55400 1 x3ed55400 1}
+       {x4444da51 x4057a6c0 1 x4057a6c0 1}
+       {x44458146 x3fc2c780 1 x3fc2c780 1}
+       {x44465fe0 -}
+       {x44408144 xc18cdea0 1 0 1}      x443fda50}}
+        {{{x 5
+        {xc1002c00 -}}
+       {xc1036700 -}
+       {xc1032c00 x3d310000 1 x3d310000 1}
+       {xc0fc5e00 x3eb2c000 1 x3eb2c000 1}
+       {x 14
+        {xc0f00000 -}}      xc0f00000}
+      {{x 5
+        {x40092300 -}}
+       {x3f833900 xbfd1cd00 1 xbfd1cd00 1}
+       {xbf915400 xbfe24c80 1 xbfe24c80 1}
+       {xc020b000 xbf975600 1 xbf975600 1}
+       {x 14
+        {xc0600000 -}}      xc0600000}}
+        {{{x 5
+        {x41d94a80 -}}
+       {x41ccd780 xc0376e00 1 xc0376e00 1}
+       {x41ab6f00 xc0769300 1 xc0769300 1}
+       {x418f32c0 xc0511f00 1 xc0511f00 1}
+       {x 5
+        {x416e4e80 -}}
+       {x 9
+        {x41760000 -}}      x41760000}
+      {{x 5
+        {x41114b80 -}}
+       {x414c3a80 x409e0240 1 x409e0240 1}
+       {x4197a6e0 x4098e200 1 x4098e200 1}
+       {x41b28e40 x402f1580 1 x402f1580 1}
+       {x 5
+        {x41c36c40 -}}
+       {x 9
+        {x41948000 -}}      x41948000}}
+        {{{x44b69143 0 1 x400d3f80 1}
+       {x44b6dd74 x402ea700 1 x402ea700 1}
+       {x44b73fea x409eb400 1 x409eb400 1}
+       {x44b81adc x41332e40 1 x41332e40 1}
+       {x44ba0ca3 -}
+       {x44b918c4 xc196b240 1 xc196b240 1}
+       {x44b55711 xc1b85560 1 xc1b85560 1}
+       {x44b35619 -}
+       {x44b51e4a x4132a980 1 x4132a980 1}
+       {x44b620bf x41021180 1 x41021180 1}
+       {x44b72690 x40d4f580 1 x40d4f580 1}
+       {x44b7caaa x41065c00 1 x41065c00 1}
+       {x44b94000 x41685580 1 x41685580 1}
+       {x44bb6c00 -}
+       {x44ba7c00 -}
+       {x44c13e00 x41ca2000 1 x41ca2000 1}
+       {x44c71e00 x4126aac0 1 x4126aac0 1}
+       {x44c7fc39 x4018d980 1 x4018d980 1}
+       {x44c84fb3 -}
+       {x44c84fb2 -}
+       {x44c90490 -}
+       {x44c8dad5 xbf7a6200 1 0 1}      x44c9b970}
+      {{x440de4af 0 1 x409052a0 1}
+       {x440f1572 x40a87f40 1 x40a87f40 1}
+       {x441086ac x40da9f80 1 x40da9f80 1}
+       {x44127ff0 x4129d300 1 x4129d300 1}
+       {x4415d544 x412927c0 1 x412927c0 1}
+       {x4417c92e x40a9bc00 1 x40a9bc00 1}
+       {x44187c34 x41064480 1 x41064480 1}
+       {x441c22aa -}
+       {x4414947d xc1ca6cb0 1 xc1ca6cb0 1}
+       {x440f7bdf xc16bce00 1 xc16bce00 1}
+       {x 2
+        {x440d360d -}}
+       {x4412599a x41dd5f30 1 x41dd5f30 1}
+       {x441b0c00 x409fff00 1 x409fff00 1}
+       {x441b76aa x409fff00 1 x409fff00 1}
+       {x442b7aaa x41d7e720 1 x41d7e720 1}
+       {x4436738e x401fff00 1 x401fff00 1}
+       {x4436de38 x401fff00 1 x401fff00 1}
+       {x44392691 x403bd380 1 x403bd380 1}
+       {x4439cd86 x3fc2c780 1 x3fc2c780 1}
+       {x443aac20 -}
+       {x4435ac21 xc16fffd0 1 0 1}      x4435052d}}
+        {{{x 5
+        {xc1d94a80 -}}
+       {xc1ccd780 x40376f00 1 x40376f00 1}
+       {xc1ab6ec0 x40769400 1 x40769400 1}
+       {xc18f3280 x40511e00 1 x40511e00 1}
+       {x 5
+        {xc16e4e80 -}}
+       {x 9
+        {xc1760000 -}}      xc1760000}
+      {{x 5
+        {xc1114ac0 -}}
+       {xc14c3a20 xc09e0280 1 xc09e0280 1}
+       {xc197a6a0 xc098e1e0 1 xc098e1e0 1}
+       {xc1b28e00 xc02f1680 1 xc02f1680 1}
+       {x 5
+        {xc1c36c40 -}}
+       {x 9
+        {xc1948000 -}}      xc1948000}}
+        {{{x 5
+        {x41a96780 -}}
+       {x41a25080 xbfe28e00 1 xbfe28e00 1}
+       {x418d15c0 xc0216d00 1 xc0216d00 1}
+       {x 3
+        {x4173ea80 -}}
+       {x 12
+        {x40800000 -}}      x40800000}
+      {{x 5
+        {x40963800 -}}
+       {x40f29bc0 x407c2980 1 x407c2980 1}
+       {x414930c0 x4079be40 1 x4079be40 1}
+       {x 3
+        {x41762d00 -}}
+       {x 12
+        {x40980000 -}}      x40980000}}
+        {{{x44b1d1f6 0 1 x400d3f80 1}
+       {x44b21e27 x402ea700 1 x402ea700 1}
+       {x44b2809d x409eb400 1 x409eb400 1}
+       {x44b35b8f x41332e40 1 x41332e40 1}
+       {x44b54d56 -}
+       {x44b2ccbf xc1ddb8a0 1 xc1ddb8a0 1}
+       {x44ae5f91 xc1ebfcc0 1 xc1ebfcc0 1}
+       {x 2
+        {x44ab6cd9 -}}
+       {x44ae11c5 x41804060 1 x41804060 1}
+       {x44af6edc x414e0f80 1 x414e0f80 1}
+       {x44b14a03 x41541f40 1 x41541f40 1}
+       {x44b2bf59 x41bcbfa0 1 x41bcbfa0 1}
+       {x 2
+        {x44b73000 -}}
+       {x44beba00 x41e2a000 1 x41e2a000 1}
+       {x 2
+        {x44c55a00 -}}
+       {x44c6546f -}
+       {x44c6546e -}
+       {x44c7094c x4057a780 1 x4057a780 1}
+       {x44c803bd x4085eae0 1 0 1}      x44c8e258}
+      {{x440b1719 0 1 x409052a0 1}
+       {x440c47dc x40a87f40 1 x40a87f40 1}
+       {x440db916 x40da9f80 1 x40da9f80 1}
+       {x440fb25a x4129d320 1 x4129d320 1}
+       {x441307af -}
+       {x441123b2 -}
+       {x44112fc2 -}
+       {x 2
+        {x4410e4a5 -}}
+       {x440c471b xc19635c0 1 xc19635c0 1}
+       {x44078149 -}
+       {x4408090b x40cba300 1 x40cba300 1}
+       {x440d2c98 x41876f50 1 x41876f50 1}
+       {x 2
+        {x44108000 -}}
+       {x44257000 x41f74720 1 x41f74720 1}
+       {x 2
+        {x442f68e4 -}}
+       {x4432abac x407a6f40 1 x407a6f40 1}
+       {x443352a1 x3fc2c780 1 x3fc2c780 1}
+       {x4434313b -}
+       {x4430b6cc xc126f4d0 1 0 1}      x44300fd8}}
+        {{{x 5
+        {xc1424600 -}}
+       {xc13a2480 x3f81e600 1 x3f81e600 1}
+       {xc121cc80 x3fb91e00 1 x3fb91e00 1}
+       {x 3
+        {xc10bdd00 -}}
+       {x 12
+        {xc1000000 -}}      xc1000000}
+      {{x 5
+        {xc02c4800 -}}
+       {xc08b1d80 xc0109700 1 xc0109700 1}
+       {xc0e6bb00 xc00f3480 1 xc00f3480 1}
+       {x 3
+        {xc10d2900 -}}
+       {x 12
+        {xc1180000 -}}      xc1180000}}
+        {{{x 5
+        {xc0c02700 -}}
+       {xc0df6500 xbf9f0400 1 xbf9f0400 1}
+       {xc107d480 xbf8bd000 1 xbf8bd000 1}
+       {xc112a680 xbf015c00 1 xbf015c00 1}
+       {x 14
+        {xc1180000 -}}      xc1180000}
+      {{x 5
+        {x40f3f300 -}}
+       {x40d7e340 xbfba7900 1 xbfba7900 1}
+       {x4096b680 xbfe2f880 1 xbfe2f880 1}
+       {x404cce00 xbfad6d00 1 xbfad6d00 1}
+       {x 14
+        {x40000000 -}}      x40000000}}
+        {{{x44b3ca02 0 1 x400d3f80 1}
+       {x44b41633 x402ea700 1 x402ea700 1}
+       {x44b478a9 x409eb400 1 x409eb400 1}
+       {x44b5539b x41332e40 1 x41332e40 1}
+       {x44b74562 -}
+       {x44b1b154 xc1f5b4e0 1 xc1f5b4e0 1}
+       {x44af97bb xc16e0f00 1 xc16e0f00 1}
+       {x44adf918 xc13057c0 1 xc13057c0 1}
+       {x 2
+        {x44acd65c -}}
+       {x 2
+        {x44b7c8c8 -}}
+       {x44b93e1e x4115ce00 1 x4115ce00 1}
+       {x 2
+        {x44ba2000 -}}
+       {x44c13c00 x4203e000 1 x4203e000 1}
+       {x 2
+        {x44ca9c00 -}}
+       {x44cb966f -}
+       {x44cb966e -}
+       {x44cc4b4c x4057a780 1 x4057a780 1}
+       {x44cd45bd x4085eae0 1 0 1}      x44ce2458}
+      {{x43f57c9e 0 1 x40905290 1}
+       {x43f7de24 x40a87f60 1 x40a87f60 1}
+       {x43fac099 x40da9fa0 1 x40da9fa0 1}
+       {x43feb321 x4129d310 1 x4129d310 1}
+       {x4402aee5 x419e6be8 1 x419e6be8 1}
+       {x4409404f -}
+       {x4407e1c2 xc08e1e80 1 xc08e1e80 1}
+       {x440707d5 xc0b780c0 1 xc0b780c0 1}
+       {x 2
+        {x440503bf -}}
+       {x 2
+        {x43f71701 -}}
+       {x4400af0e x4224a3fc 1 x4224a3fc 1}
+       {x 2
+        {x44102000 -}}
+       {x44215000 x41e09c78 1 x41e09c78 1}
+       {x 2
+        {x442c338f -}}
+       {x442f7657 x407a6f40 1 x407a6f40 1}
+       {x44301d4c x3fc2c780 1 x3fc2c780 1}
+       {x4430fbe6 -}
+       {x442d8177 xc126f4d0 1 0 1}      x442cda83}}
+        {{{x 5
+        {x40c02700 -}}
+       {x40df6600 x3f9f0400 1 x3f9f0400 1}
+       {x4107d480 x3f8bd000 1 x3f8bd000 1}
+       {x4112a700 x3f015c00 1 x3f015c00 1}
+       {x 14
+        {x41180000 -}}      x41180000}
+      {{x 5
+        {xc0f3f200 -}}
+       {xc0d7e280 x3fba7900 1 x3fba7900 1}
+       {xc096b580 x3fe2f700 1 x3fe2f700 1}
+       {xc04cce00 x3fad6b00 1 x3fad6b00 1}
+       {x 14
+        {xc0000000 -}}      xc0000000}}}}
+      {cc
+       {f 8192}
+       {px
+        {x41a80000 x41b00000 x41b80000 x41c00000 x41c80000 x41d00000 x41d80000 x41e00000 x41e80000 x41f00000 x41f80000 x42000000 x42040000 x42080000 x420c0000 x42140000 x421c0000 x42240000 x422c0000 x42340000 x423c0000 x42440000 x42480000}
+        {{{x 5
+        {x3f150000 -}}
+       {x3ebfc000 xbe9e3000 1 xbe9e3000 1}
+       {xbd130000 xbeada800 1 xbeada800 1}
+       {xbe9b9000 xbe6da000 1 xbe6da000 1}
+       {x 14
+        {xbf000000 -}}      xbf000000}
+      {{x 5
+        {x3fbb9600 -}}
+       {x3fc4a200 x3d6c0000 1 x3d6c0000 1}
+       {x3fca5600 -}
+       {x3fc69e00 xbd256000 1 xbd256000 1}
+       {x 14
+        {x3fc00000 -}}      x3fc00000}}
+        {{{x 22
+        {0 -}}      0}
+      {{x 22
+        {0 -}}      0}}
+        {{{x 5
+        {xbf150000 -}}
+       {xbebfb000 x3e9e3000 1 x3e9e3000 1}
+       {x3d130000 x3ead9800 1 x3ead9800 1}
+       {x3e9b8000 x3e6da000 1 x3e6da000 1}
+       {x 14
+        {x3f000000 -}}      x3f000000}
+      {{x 5
+        {xbfbb9000 -}}
+       {xbfc49d00 xbd6c2000 1 xbd6c2000 1}
+       {xbfca5200 -}
+       {xbfc69c00 x3d252000 1 x3d252000 1}
+       {x 14
+        {xbfc00000 -}}      xbfc00000}}
+        {{{x 5
+        {xc1a32380 -}}
+       {xc1a2d740 x3de4c000 1 x3de4c000 1}
+       {xc19a6c00 x3f9d1200 1 x3f9d1200 1}
+       {xc18f3500 x3fb36000 1 x3fb36000 1}
+       {x 14
+        {xc1840000 -}}      xc1840000}
+      {{x 5
+        {x3fb77200 -}}
+       {xbfb16500 xc080a440 1 xc080a440 1}
+       {xc0d36c00 xc0866fe0 1 xc0866fe0 1}
+       {xc11c9c80 xc02c9400 1 xc02c9400 1}
+       {x 14
+        {xc1400000 -}}      xc1400000}}
+        {{{x 22
+        {0 -}}      0}
+      {{x 22
+        {0 -}}      0}}
+        {{{x 5
+        {x41a32280 -}}
+       {x41a2d6c0 xbde34000 1 xbde34000 1}
+       {x419a6c00 xbf9d1000 1 xbf9d1000 1}
+       {x418f34c0 xbfb36000 1 xbfb36000 1}
+       {x 14
+        {x41840000 -}}      x41840000}
+      {{x 5
+        {xbfb76e00 -}}
+       {x3fb16700 x4080a400 1 x4080a400 1}
+       {x40d36c80 x40866fa0 1 x40866fa0 1}
+       {x411c9c80 x402c9380 1 x402c9380 1}
+       {x 14
+        {x41400000 -}}      x41400000}}
+        {{{x 3
+        {xc11cb680 -}}
+       {xc12bfa80 xbf167c00 1 xbf167c00 1}
+       {xc12f8600 -}
+       {xc12c3880 x3f0ed400 1 x3f0ed400 1}
+       {xc11dab80 x3f6f4400 1 x3f6f4400 1}
+       {xc10e5000 x3f6d5c00 1 x3f6d5c00 1}
+       {x 14
+        {xc1000000 -}}      xc1000000}
+      {{x 3
+        {x409f3740 -}}
+       {x40115700 xc0320bc0 1 xc0320bc0 1}
+       {xbf16a400 xc00bbf00 1 xc00bbf00 1}
+       {xc0062700 xc0071b80 1 xc0071b80 1}
+       {xc099f000 xc00a2a00 1 xc00a2a00 1}
+       {xc0cd3d80 xbfac2000 1 xbfac2000 1}
+       {x 14
+        {xc0f00000 -}}      xc0f00000}}
+        {{{x 22
+        {0 -}}      0}
+      {{x 22
+        {0 -}}      0}}
+        {{{x 3
+        {x411cb780 -}}
+       {x412bfa80 x3f167000 1 x3f167000 1}
+       {x412f8580 -}
+       {x412c3800 xbf0ed000 1 xbf0ed000 1}
+       {x411dab80 xbf6f3c00 1 xbf6f3c00 1}
+       {x410e5080 xbf6d5c00 1 xbf6d5c00 1}
+       {x 14
+        {x41000000 -}}      x41000000}
+      {{x 3
+        {xc09f36c0 -}}
+       {xc0115580 x40320b80 1 x40320b80 1}
+       {x3f16a600 x400bbe80 1 x400bbe80 1}
+       {x40062780 x40071b40 1 x40071b40 1}
+       {x4099f000 x400a29c0 1 x400a29c0 1}
+       {x40cd3d80 x3fac2000 1 x3fac2000 1}
+       {x 14
+        {x40f00000 -}}      x40f00000}}
+        {{{x 3
+        {xc11bc380 -}}
+       {xc10c5080 x3fa1d800 1 x3fa1d800 1}
+       {xc0e69b00 x3fa6a800 1 x3fa6a800 1}
+       {xc0c54d00 x3fd38400 1 x3fd38400 1}
+       {xc079b200 x3ff92a00 1 x3ff92a00 1}
+       {xc0117000 x3fb9b200 1 x3fb9b200 1}
+       {x 14
+        {xbf800000 -}}      xbf800000}
+      {{x 3
+        {xc01cc200 -}}
+       {xc09c5680 xc0114400 1 xc0114400 1}
+       {xc0dfa500 xbfc34080 1 xbfc34080 1}
+       {xc0fdf6c0 xbf917600 1 xbf917600 1}
+       {xc1143000 xbf6d3700 1 xbf6d3700 1}
+       {xc11ca240 xbebd0000 1 xbebd0000 1}
+       {x 14
+        {xc1200000 -}}      xc1200000}}
+        {{{x 22
+        {0 -}}      0}
+      {{x 22
+        {0 -}}      0}}
+        {{{x 3
+        {x411bc400 -}}
+       {x410c5080 xbfa1dc00 1 xbfa1dc00 1}
+       {x40e69a00 xbfa6aa00 1 xbfa6aa00 1}
+       {x40c54c00 xbfd38400 1 xbfd38400 1}
+       {x4079b000 xbff92a00 1 xbff92a00 1}
+       {x40116e00 xbfb9b000 1 xbfb9b000 1}
+       {x 14
+        {1 -}}      1}
+      {{x 3
+        {x401cc200 -}}
+       {x409c5680 x40114340 1 x40114340 1}
+       {x40dfa440 x3fc33f00 1 x3fc33f00 1}
+       {x40fdf600 x3f917580 1 x3f917580 1}
+       {x41142f80 x3f6d3800 1 x3f6d3800 1}
+       {x411ca200 x3ebd0800 1 x3ebd0800 1}
+       {x 14
+        {x41200000 -}}      x41200000}}
+        {{{x 2
+        {x41386e00 -}}
+       {x4162c380 x40397000 1 x40397000 1}
+       {x418a9300 x4023c300 1 x4023c300 1}
+       {x419a5280 x3f9c4a00 1 x3f9c4a00 1}
+       {x419e1c40 -}
+       {x419da440 xbe340000 1 xbe340000 1}
+       {x419785c0 xbf5a4400 1 xbf5a4400 1}
+       {x 14
+        {x41900000 -}}      x41900000}
+      {{x 2
+        {xc1823658 -}}
+       {xc1608740 x404c79a0 1 x404c79a0 1}
+       {xc11e2fe0 x408f7660 1 x408f7660 1}
+       {xc0a221c0 x40705940 1 x40705940 1}
+       {xc0180d00 x407c62c0 1 x407c62c0 1}
+       {x40348200 x40880300 1 x40880300 1}
+       {x40c3ff80 x4035bf00 1 x4035bf00 1}
+       {x 14
+        {x41080000 -}}      x41080000}}
+        {{{x 2
+        {xc17d2b00 -}}
+       {xc15a4600 x4046c600 1 x4046c600 1}
+       {xc119c800 x408b7780 1 x408b7780 1}
+       {xc09d9d00 x4099c800 1 x4099c800 1}
+       {x 17
+        {0 -}}      0}
+      {{x 2
+        {xc1334aa0 -}}
+       {xc15c72a0 xc03446c0 1 xc03446c0 1}
+       {xc186b700 xc01f3480 1 xc01f3480 1}
+       {xc1960670 -}
+       {x 17
+        {0 -}}      0}}
+        {{{x 2
+        {xbff67000 -}}
+       {xc0178000 xbef7c800 1 xbef7c800 1}
+       {xc0392a00 xbedae000 1 xbedae000 1}
+       {xc04e3800 xbe510000 1 xbe510000 1}
+       {xc0534a00 -}
+       {xc052aa00 x3cf00000 1 x3cf00000 1}
+       {xc04a7e00 x3e11e000 1 x3e11e000 1}
+       {xc0406e00 -}
+       {x 2
+        {xc0407000 -}}
+       {x 11
+        {xc0406e00 -}}      xc0406e00}
+      {{x 2
+        {x402dff80 -}}
+       {x40160400 xbf089c00 1 xbf089c00 1}
+       {x3fd36300 xbf3fb300 1 xbf3fb300 1}
+       {x3f58aa00 xbf209600 1 xbf209600 1}
+       {x3ecb3400 xbf28a100 1 xbf28a100 1}
+       {xbef13000 xbf35c300 1 xbf35c300 1}
+       {xbf82f600 xbef2e400 1 xbef2e400 1}
+       {x 14
+        {xbfb5be00 -}}      xbfb5be00}}
+        {{{x 2
+        {x40633400 -}}
+       {x40949400 x3f9d9600 1 x3f9d9600 1}
+       {x40c06500 x3f950e00 1 x3f950e00 1}
+       {x40df1b00 x3f219400 1 x3f219400 1}
+       {x40e8ca00 x3e9dc800 1 x3e9dc800 1}
+       {x40f2d400 x3eaea000 1 x3eaea000 1}
+       {x40fe9e00 x3e874800 1 x3e874800 1}
+       {x4101de80 -}
+       {x408dfd00 xc0113d00 1 xc0113d00 1}
+       {x40650000 -}
+       {x 2
+        {x408cd900 -}}
+       {x 9
+        {x403d2800 -}}      x403d2800}
+      {{x 2
+        {xc0d3c100 -}}
+       {xc0bcdd80 x3f878e00 1 x3f878e00 1}
+       {xc08ffa00 x3fc72e80 1 x3fc72e80 1}
+       {xc0328c80 x3fac0c00 1 x3fac0c00 1}
+       {xbfe7d000 -}
+       {xc0345900 -}
+       {xbfbe8e00 x3f85c400 1 x3f85c400 1}
+       {xbf3a5400 x3f8dbb00 1 x3f8dbb00 1}
+       {x3f39d000 x3f75a200 1 x3f75a200 1}
+       {x3f987800 x3f1bc600 1 x3f1bc600 1}
+       {x3ff8ae00 -}
+       {x3ff8ac00 -}
+       {x 9
+        {x4021b400 -}}      x4021b400}}
+        {{{x 2
+        {xc1af3d80 -}}
+       {xc19a3d80 x40746f00 1 x40746f00 1}
+       {xc1644380 x40b22980 1 x40b22980 1}
+       {xc1025180 x410bd8c0 1 x410bd8c0 1}
+       {x404db800 -}
+       {x 16
+        {0 -}}      0}
+      {{x 2
+        {xc153cb80 -}}
+       {xc186a900 xc0803060 1 xc0803060 1}
+       {xc1a9fdf0 xc0571300 1 xc0571300 1}
+       {xc1bc6dc0 -}
+       {x414e9620 -}
+       {x 16
+        {0 -}}      0}}
+        {{{x 2
+        {xc0762400 -}}
+       {xc0a0f500 xbfaab800 1 xbfaab800 1}
+       {xc0d06e00 xbfa17a00 1 xbfa17a00 1}
+       {xc0f1b200 xbf2f0800 1 xbf2f0800 1}
+       {xc0fc3000 xbeaaf000 1 xbeaaf000 1}
+       {xc1038800 xbebd2000 1 xbebd2000 1}
+       {xc109ea00 xbe928800 1 xbe928800 1}
+       {xc10cb080 -}
+       {xc099d200 x401d5700 1 x401d5700 1}
+       {xc0781400 -}
+       {x 2
+        {xc0989400 -}}
+       {x 9
+        {xc04cea00 -}}      xc04cea00}
+      {{x 2
+        {x40e56640 -}}
+       {x40cc9ac0 xbf92da00 1 xbf92da00 1}
+       {x409bf940 xbfd7c800 1 xbfd7c800 1}
+       {x40416d80 xbfba6180 1 xbfba6180 1}
+       {x3ffb2200 -}
+       {x40436100 -}
+       {x3fce7000 xbf90e900 1 xbf90e900 1}
+       {x3f49e000 xbf998b00 1 xbf998b00 1}
+       {xbf494c00 xbf850d00 1 xbf850d00 1}
+       {xbfa52a00 xbf28be00 1 xbf28be00 1}
+       {xc006b200 xb9400000 1 xb9400000 1}
+       {xc006b300 xb9400000 1 xb9400000 1}
+       {x 9
+        {xc02f2d00 -}}      xc02f2d00}}
+        {{{x 2
+        {x40917e00 -}}
+       {x40bfcc00 x3fd12e00 1 x3fd12e00 1}
+       {x40fa1500 x3fc71000 1 x3fc71000 1}
+       {x4111aa00 x3f5a0000 1 x3f5a0000 1}
+       {x41184a80 x3e8d5000 1 x3e8d5000 1}
+       {x411a7f00 x3e83b000 1 x3e83b000 1}
+       {x41208580 x3e834000 1 x3e834000 1}
+       {x4122b300 -}
+       {x40b01900 xc0382700 1 xc0382700 1}
+       {x408d3f00 -}
+       {x 2
+        {x40aea600 -}}
+       {x 9
+        {x405ca000 -}}      x405ca000}
+      {{x 2
+        {xc10bf320 -}}
+       {xc0fa7480 x3faf3c80 1 x3faf3c80 1}
+       {xc0c04800 x40017340 1 x40017340 1}
+       {xc0720280 x3fe06800 1 x3fe06800 1}
+       {xc0202800 -}
+       {xc042dc00 -}
+       {xbfae3800 x3fa8c200 1 x3fa8c200 1}
+       {xbed0d000 x3fb2f900 1 x3fb2f900 1}
+       {x3fb7ba00 x3f9bb900 1 x3f9bb900 1}
+       {x40019f00 x3f458200 1 x3f458200 1}
+       {x403e9e00 -}
+       {x403e9d00 -}
+       {x 9
+        {x40654400 -}}      x40654400}}
+        {{{x 2
+        {xc1b70300 -}}
+       {xc1a49c80 x405cdd00 1 x405cdd00 1}
+       {xc17f9780 x40a54380 1 x40a54380 1}
+       {xc123f580 x40ff9780 1 x40ff9780 1}
+       {x 17
+        {0 -}}      0}
+      {{x 2
+        {xc1347400 -}}
+       {xc1712580 xc089af80 1 xc089af80 1}
+       {xc19f11c0 xc0420540 1 xc0420540 1}
+       {xc1a91410 -}
+       {x 17
+        {0 -}}      0}}
+        {{{x 2
+        {xc0ba8c00 -}}
+       {xc0f5e600 xc0061400 1 xc0061400 1}
+       {xc1205000 xbfff3400 1 xbfff3400 1}
+       {xc13ac000 xbf8bba00 1 xbf8bba00 1}
+       {xc1433e80 xbeb52000 1 xbeb52000 1}
+       {xc1461200 xbea8e000 1 xbea8e000 1}
+       {xc14dcc80 xbea84800 1 xbea84800 1}
+       {xc1509680 -}
+       {xc0e1c400 x406c1700 1 x406c1700 1}
+       {xc0b51600 -}
+       {x 2
+        {xc0dfe800 -}}
+       {x 9
+        {xc08d6c00 -}}      xc08d6c00}
+      {{x 2
+        {x41336d20 -}}
+       {x41208d00 xbfe0ab80 1 xbfe0ab80 1}
+       {x40f68480 xc025f7c0 1 xc025f7c0 1}
+       {x409b2240 xc00fdac0 1 xc00fdac0 1}
+       {x404d5380 -}
+       {x4079d000 -}
+       {x3fdf5a00 xbfd85a00 1 xbfd85a00 1}
+       {x3f05d800 xbfe57400 1 xbfe57400 1}
+       {xbfeb8e00 xbfc7a400 1 xbfc7a400 1}
+       {xc0262e00 xbf7d3200 1 xbf7d3200 1}
+       {xc0746000 xb9400000 1 xb9400000 1}
+       {xc0746100 xb9400000 1 xb9400000 1}
+       {x 9
+        {xc092f700 -}}      xc092f700}}
+        {{{x 2
+        {x40d8b800 -}}
+       {x40f24c00 x3f483400 1 x3f483400 1}
+       {x41056280 x3ef61800 1 x3ef61800 1}
+       {x41088780 -}
+       {x41062b00 xbed4c000 1 xbed4c000 1}
+       {x40f67700 xbf353c00 1 xbf353c00 1}
+       {x40df0700 xbf359400 1 xbf359400 1}
+       {x 2
+        {x40c91200 -}}
+       {x 3
+        {x40c91100 -}}
+       {x 9
+        {x40ad6800 -}}      x40ad6800}
+      {{x 2
+        {xc0a684c0 -}}
+       {xc07ce580 x3fd62e00 1 x3fd62e00 1}
+       {xbfedb700 x400a16c0 1 x400a16c0 1}
+       {x3eba4000 x3fd93c00 1 x3fd93c00 1}
+       {x3fc4c100 x3fd2a500 1 x3fd2a500 1}
+       {x4069ed00 x3fd7d780 1 x3fd7d780 1}
+       {x409d1c00 x3f86d300 1 x3f86d300 1}
+       {x 5
+        {x40b86000 -}}
+       {x 9
+        {x40a31900 -}}      x40a31900}}
+        {{{x 2
+        {xc13eb100 -}}
+       {xc1259800 x407dd700 1 x407dd700 1}
+       {xc07f1600 x40971a00 1 x40971a00 1}
+       {xbf67e000 x3fff1600 1 x3fff1600 1}
+       {x 17
+        {0 -}}      0}
+      {{x 2
+        {xc1003260 -}}
+       {xc11f4c80 xbfd73c80 1 xbfd73c80 1}
+       {xc1360180 xbf840b00 1 xbf840b00 1}
+       {xc1404f40 -}
+       {x 17
+        {0 -}}      0}}
+        {{{x 2
+        {xc0951800 -}}
+       {xc0a6b000 xbf09b400 1 xbf09b400 1}
+       {xc0b78500 xbea94000 1 xbea94000 1}
+       {xc0bbd800 -}
+       {xc0b89700 x3e926800 1 x3e926800 1}
+       {xc0a98b00 x3ef95800 1 x3ef95800 1}
+       {xc0996c00 x3ef9c800 1 x3ef9c800 1}
+       {x 5
+        {xc08a5200 -}}
+       {x 9
+        {xc06e9600 -}}      xc06e9600}
+      {{x 2
+        {x40651b00 -}}
+       {x402df880 xbf935880 1 xbf935880 1}
+       {x3fa38500 xbfbdfe00 1 xbfbdfe00 1}
+       {xbe802c00 xbf957080 1 xbf957080 1}
+       {xbf875c00 xbf90e780 1 xbf90e780 1}
+       {xc020ed00 xbf947a00 1 xbf947a00 1}
+       {xc0582800 xbf398000 1 xbf398000 1}
+       {x 4
+        {xc07dad00 -}}
+       {xc07dac00 x39400000 1 x39400000 1}
+       {x 9
+        {xc0606700 -}}      xc0606700}}
+        {{{x 2
+        {x405d1000 -}}
+       {x40a43a00 x3ff93600 1 x3ff93600 1}
+       {x40eb2300 x3ffb9400 1 x3ffb9400 1}
+       {x41110200 x3f96c800 1 x3f96c800 1}
+       {x411b4380 x3fe7ce00 1 x3fe7ce00 1}
+       {x414af580 -}
+       {x4145fa80 xbed5e800 1 xbed5e800 1}
+       {x 2
+        {x413d9700 -}}
+       {x 2
+        {x41028e00 -}}
+       {x40524400 -}
+       {x 9
+        {x408efe00 -}}      x408efe00}
+      {{x 2
+        {xc11fc840 -}}
+       {xc113ca20 x3f992080 1 x3f992080 1}
+       {xc0f30040 x3ff36e80 1 x3ff36e80 1}
+       {xc0addd00 x3fdc7400 1 x3fdc7400 1}
+       {xc084c640 x403ecd80 1 x403ecd80 1}
+       {x3f078400 x406e4dc0 1 x406e4dc0 1}
+       {x40530f00 x400a6d00 1 x400a6d00 1}
+       {x 2
+        {x409b5d80 -}}
+       {x 2
+        {x40b03380 -}}
+       {x40a04900 xbf8a2500 1 xbf8a2500 1}
+       {x 9
+        {x40564200 -}}      x40564200}}
+        {{{x 2
+        {xc1737a00 -}}
+       {xc1613300 x3fe95800 1 x3fe95800 1}
+       {xc1392400 x40397900 1 x40397900 1}
+       {xc1047680 x40b92400 1 x40b92400 1}
+       {x 17
+        {0 -}}      0}
+      {{x 2
+        {xc0a86c80 -}}
+       {xc0fa40c0 xc03ddfc0 1 xc03ddfc0 1}
+       {xc1332620 xc03fabc0 1 xc03fabc0 1}
+       {xc15cf640 -}
+       {x 17
+        {0 -}}      0}}
+        {{{x 2
+        {xc03b8400 -}}
+       {xc08b5300 xbfd37200 1 xbfd37200 1}
+       {xc0c77b00 xbfd57200 1 xbfd57200 1}
+       {xc0f60c00 xbf7fe400 1 xbf7fe400 1}
+       {xc103ba00 xbfc4b000 1 xbfc4b000 1}
+       {xc12c3200 -}
+       {xc127f800 x3eb58000 1 x3eb58000 1}
+       {x 2
+        {xc120da00 -}}
+       {x 2
+        {xc0dd8a00 -}}
+       {xc0326800 -}
+       {x 9
+        {xc072a000 -}}      xc072a000}
+      {{x 2
+        {x41078ec0 -}}
+       {x40fac4c0 xbf81e680 1 xbf81e680 1}
+       {x40ce2a40 xbfce8480 1 xbfce8480 1}
+       {x40938280 xbfbb0880 1 xbfbb0880 1}
+       {x40614c00 xc021e180 1 xc021e180 1}
+       {xbee5f000 xc04a2e00 1 xc04a2e00 1}
+       {xc0331000 xbfeae300 1 xbfeae300 1}
+       {x 2
+        {xc083d080 -}}
+       {x 2
+        {xc0957e00 -}}
+       {xc087fd80 x3f6a6a00 1 x3f6a6a00 1}
+       {x 9
+        {xc035c700 -}}      xc035c700}}
+        {{{x 4
+        {x40ce6400 -}}
+       {x40f99700 x3f6adc00 1 x3f6adc00 1}
+       {x41048d80 x3fa9be00 1 x3fa9be00 1}
+       {x41273b00 -}
+       {x41245480 xbe8dd000 1 xbe8dd000 1}
+       {x 2
+        {x411e5e00 -}}
+       {x 2
+        {x40e3db00 -}}
+       {x405ce000 -}
+       {x 9
+        {x408f0300 -}}      x408f0300}
+      {{x 4
+        {xc0c21080 -}}
+       {xc0860880 x3fbe9500 1 x3fbe9500 1}
+       {xc0458c00 x40064900 1 x40064900 1}
+       {x3c010000 x402acd00 1 x402acd00 1}
+       {x40100e00 x3fe28b00 1 x3fe28b00 1}
+       {x 2
+        {x40630c00 -}}
+       {x 2
+        {x40813480 -}}
+       {x406a7200 xbf437200 1 xbf437200 1}
+       {x 9
+        {x4020b000 -}}      x4020b000}}
+        {{{x 4
+        {xc0e90200 -}}
+       {xc0a98200 x40b7ff80 1 x40b7ff80 1}
+       {x4086fd00 -}
+       {x 16
+        {0 -}}      0}
+      {{x 4
+        {xc0d6ad00 -}}
+       {xc105d5a0 -}
+       {x41352900 -}
+       {x 16
+        {0 -}}      0}}
+        {{{x 4
+        {xc0be8500 -}}
+       {xc0e66300 xbf58c400 1 xbf58c400 1}
+       {xc0f4b600 xbf9cae00 1 xbf9cae00 1}
+       {xc11a5d00 -}
+       {xc117b080 x3e82e000 1 x3e82e000 1}
+       {x 2
+        {xc1122f00 -}}
+       {x 2
+        {xc0d25400 -}}
+       {xc04be400 -}
+       {x 9
+        {xc0840300 -}}      xc0840300}
+      {{x 4
+        {x40b322c0 -}}
+       {x40777200 xbfafec80 1 xbfafec80 1}
+       {x40365900 xbff7e800 1 xbff7e800 1}
+       {xbbec0000 xc01da880 1 xc01da880 1}
+       {xc004f800 xbfd11e00 1 xbfd11e00 1}
+       {x 2
+        {xc0519400 -}}
+       {x 2
+        {xc06e8900 -}}
+       {xc0586a00 x3f346a00 1 x3f346a00 1}
+       {x 9
+        {xc0145400 -}}      xc0145400}}
+        {{{x 4
+        {x4089c400 -}}
+       {x409cd700 x3ec46800 1 x3ec46800 1}
+       {x40a25100 x3dffc000 1 x3dffc000 1}
+       {x40a4d500 -}
+       {x40a06800 xbe2d8000 1 xbe2d8000 1}
+       {x 14
+        {x4099fd00 -}}      x4099fd00}
+      {{x 4
+        {xc037ac00 -}}
+       {xbfd43400 x3f72f600 1 x3f72f600 1}
+       {xbf78c400 x3f820c00 1 x3f820c00 1}
+       {x3ebf9000 x3f8dc100 1 x3f8dc100 1}
+       {x3f9f2000 x3f401800 1 x3f401800 1}
+       {x 14
+        {x3feffc00 -}}      x3feffc00}}
+        {{{x 4
+        {xc0a38f00 -}}
+       {x 18
+        {0 -}}      0}
+      {{x 4
+        {xc0f55840 -}}
+       {x 18
+        {0 -}}      0}}
+        {{{x 4
+        {xc0c1f900 -}}
+       {xc0dcd500 xbf0a4c00 1 xbf0a4c00 1}
+       {xc0e48c00 xbe343000 1 xbe343000 1}
+       {xc0e81800 -}
+       {xc0e1dc00 x3e744000 1 x3e744000 1}
+       {x 14
+        {xc0d8d400 -}}      xc0d8d400}
+      {{x 4
+        {x40815000 -}}
+       {x40156780 xbfab0c00 1 xbfab0c00 1}
+       {x3faf2800 xbfb71d80 1 xbfb71d80 1}
+       {xbf06d800 xbfc79d00 1 xbfc79d00 1}
+       {xbfe01200 xbf873f00 1 xbf873f00 1}
+       {x 4
+        {xc028f500 -}}
+       {xc028f600 -}
+       {x 9
+        {xc028f500 -}}      xc028f500}}
+        {{{x 4
+        {x40ede000 -}}
+       {x411afd00 x3fca4e00 1 x3fca4e00 1}
+       {x41298380 x3f068800 1 x3f068800 1}
+       {x412c5100 -}
+       {x412ab100 xbe9c0000 1 xbe9c0000 1}
+       {x40dcfa00 -}
+       {x4111ef80 x3eb2b000 1 x3eb2b000 1}
+       {x4113cc00 -}
+       {x4100e400 -}
+       {x4100e480 -}
+       {x 9
+        {x40f49600 -}}      x40f49600}
+      {{x 4
+        {xc11af240 -}}
+       {xc0edc440 x3fe8c300 1 x3fe8c300 1}
+       {xc0c18300 -}
+       {xc0d90000 -}
+       {xc0849c00 x4053e500 1 x4053e500 1}
+       {xbe236000 x405e0780 1 x405e0780 1}
+       {x4032d700 x4012a800 1 x4012a800 1}
+       {x408d8d00 -}
+       {x 2
+        {x4055c800 -}}
+       {x 9
+        {x4088fd80 -}}      x4088fd80}}
+        {{{x 4
+        {xc030a800 -}}
+       {xbfb08c00 x3fb0a800 1 x3fb0a800 1}
+       {x 17
+        {0 -}}      0}
+      {{x 4
+        {xc09f1cc0 -}}
+       {xc0b08d40 -}
+       {x 17
+        {0 -}}      0}}
+        {{{x 4
+        {xc1326980 -}}
+       {xc1687c80 xc017b800 1 xc017b800 1}
+       {xc17e4580 xbf49d800 1 xbf49d800 1}
+       {xc1813d00 -}
+       {xc1800500 x3eea0000 1 x3eea0000 1}
+       {xc125bc00 -}
+       {xc15ae780 xbf061000 1 xbf061000 1}
+       {xc15db280 -}
+       {x 2
+        {xc1415700 -}}
+       {x 9
+        {xc1377180 -}}      xc1377180}
+      {{x 4
+        {x41686ba0 -}}
+       {x41325320 xc02e9340 1 xc02e9340 1}
+       {x41112200 -}
+       {x4122c000 -}
+       {x40c6ea00 xc09eec80 1 xc09eec80 1}
+       {x3e74e000 xc0a685c0 1 xc0a685c0 1}
+       {xc0862180 xc05bfa80 1 xc05bfa80 1}
+       {xc0d45380 -}
+       {xc0a05700 x39400000 1 x39400000 1}
+       {xc0a05680 -}
+       {x 9
+        {xc0cd7d00 -}}      xc0cd7d00}}
+        {{{x 3
+        {x4121b200 -}}
+       {x 2
+        {x415b0f00 -}}
+       {x41621700 -}
+       {x4154ce00 xbf5c4800 1 xbf5c4800 1}
+       {x41468e00 xbf667400 1 xbf667400 1}
+       {x 14
+        {x4137ff80 -}}      x4137ff80}
+      {{x 3
+        {xc11352a0 -}}
+       {x 2
+        {xc08b3900 -}}
+       {xc01be800 x40875980 1 x40875980 1}
+       {x40837a00 x408be400 1 x408be400 1}
+       {x40c9d400 x3fef1600 1 x3fef1600 1}
+       {x40fb0500 x39400000 1 x39400000 1}
+       {x 13
+        {x40fb0580 -}}      x40fb0580}}
+        {{{x 3
+        {xc090a500 -}}
+       {xc0021800 x4010a500 1 x4010a500 1}
+       {x 18
+        {0 -}}      0}
+      {{x 3
+        {xc09ec5c0 -}}
+       {xc0ccb300 -}
+       {x 18
+        {0 -}}      0}}
+        {{{x 3
+        {xc03c2000 -}}
+       {x 2
+        {xc0728600 -}}
+       {xc07a4e00 -}
+       {xc072aa00 x3e3f1000 1 x3e3f1000 1}
+       {xc0626c00 x3e836000 1 x3e836000 1}
+       {x 14
+        {xc051d200 -}}      xc051d200}
+      {{x 3
+        {x402b5e80 -}}
+       {x 2
+        {x3f9a1c00 -}}
+       {x3f2c9000 xbf980600 1 xbf980600 1}
+       {xbf95f000 xbf9e3800 1 xbf9e3800 1}
+       {xbfe62800 xbf085000 1 xbf085000 1}
+       {x 5
+        {xc00f2000 -}}
+       {x 9
+        {xc00f2100 -}}      xc00f2100}}
+        {{{x 5
+        {x40784800 -}}
+       {x40845c00 x3e8af000 1 x3e8af000 1}
+       {x408d8200 x3d96c000 1 x3d96c000 1}
+       {x408e4b00 -}
+       {x 5
+        {x408c2800 -}}
+       {x 9
+        {x404a5400 -}}      x404a5400}
+      {{x 5
+        {xc00ca900 -}}
+       {xbfd31100 x3f567a00 1 x3f567a00 1}
+       {xbf05b000 x3f714900 1 x3f714900 1}
+       {x3e71c000 x3f29b400 1 x3f29b400 1}
+       {x 5
+        {x3f4db800 -}}
+       {x 9
+        {x400d6d00 -}}      x400d6d00}}
+        {{{x 5
+        {xc0e54200 -}}
+       {x 17
+        {0 -}}      0}
+      {{x 5
+        {xc14a5540 -}}
+       {x 17
+        {0 -}}      0}}
+        {{{x 5
+        {xc0431800 -}}
+       {xc0500400 xbe5a6000 1 xbe5a6000 1}
+       {xc05e6400 xbd6a0000 1 xbd6a0000 1}
+       {xc05f9c00 -}
+       {x 5
+        {xc05c4000 -}}
+       {x 9
+        {xc01ef800 -}}      xc01ef800}
+      {{x 5
+        {x3fdd0c00 -}}
+       {x3fa5d900 xbf288600 1 xbf288600 1}
+       {x3ed21800 xbf3d9b00 1 xbf3d9b00 1}
+       {xbe3e1000 xbf055a00 1 xbf055a00 1}
+       {x 5
+        {xbf21a800 -}}
+       {x 9
+        {xbfde4000 -}}      xbfde4000}}
+        {{{x 2
+        {x3ffa1c00 -}}
+       {x 3
+        {x40343c00 -}}
+       {x40394c00 x3cf30000 1 x3cf30000 1}
+       {x4039ee00 -}
+       {x40337c00 xbe8d0000 1 xbe8d0000 1}
+       {x 5
+        {x4016ae00 -}}
+       {x 9
+        {x40187200 -}}      x40187200}
+      {{x 2
+        {xc00bda00 -}}
+       {x 3
+        {xbf501000 -}}
+       {xbed6bc00 x3f141800 1 x3f141800 1}
+       {x3eb04000 x3f203b00 1 x3f203b00 1}
+       {x3f551800 x3f322e00 1 x3f322e00 1}
+       {x 5
+        {x3fde3e00 -}}
+       {x 9
+        {x3fd7b000 -}}      x3fd7b000}}
+        {{{x 22
+        {0 -}}      0}
+      {{x 22
+        {0 -}}      0}}
+        {{{x 2
+        {xc1296b80 -}}
+       {x 3
+        {xc19774c0 -}}
+       {xc19bb6c0 xbe4c6000 1 xbe4c6000 1}
+       {xc19c3f00 -}
+       {xc196d600 x3fa58c00 1 x3fa58c00 1}
+       {x 5
+        {xc1878d80 -}}
+       {x 9
+        {xc18925c0 -}}      xc18925c0}
+      {{x 2
+        {x413d8000 -}}
+       {x 3
+        {x40aed680 -}}
+       {x40347500 xc078e400 1 xc078e400 1}
+       {xc0141b00 xc086a880 1 xc086a880 1}
+       {xc0b31680 xc0a2e740 1 xc0a2e740 1}
+       {x 5
+        {xc147ee00 -}}
+       {x 9
+        {xc1420a40 -}}      xc1420a40}}
+        {{{x 5
+        {x40da3300 -}}
+       {x40dfb400 -}
+       {x40df4e00 xbd190000 1 xbd190000 1}
+       {x40d6d000 xbe982000 1 xbe982000 1}
+       {x 14
+        {x40cc4a00 -}}      x40cc4a00}
+      {{x 5
+        {xbfe97600 -}}
+       {xbf5f6200 x3fb29500 1 x3fb29500 1}
+       {x3f776800 x3fc0a080 1 x3fc0a080 1}
+       {x4008c800 x3f80d200 1 x3f80d200 1}
+       {x 5
+        {x403eac00 -}}
+       {x 9
+        {x403eaa00 -}}      x403eaa00}}
+        {{{xc00c6a00 0 1 x40529f00 1}
+       {x 21
+        {0 -}}      0}
+      {{xc1033a00 0 1 x4144d700 1}
+       {x 21
+        {0 -}}      0}}
+        {{{x 5
+        {xc1002c00 -}}
+       {xc1036700 -}
+       {xc1032c00 x3d310000 1 x3d310000 1}
+       {xc0fc5e00 x3eb2c000 1 x3eb2c000 1}
+       {x 14
+        {xc0f00000 -}}      xc0f00000}
+      {{x 5
+        {x40092300 -}}
+       {x3f833900 xbfd1cd00 1 xbfd1cd00 1}
+       {xbf915400 xbfe24c80 1 xbfe24c80 1}
+       {xc020b000 xbf975600 1 xbf975600 1}
+       {x 14
+        {xc0600000 -}}      xc0600000}}
+        {{{x 5
+        {x41d94a80 -}}
+       {x41ccd780 xc0376e00 1 xc0376e00 1}
+       {x41ab6f00 xc0769300 1 xc0769300 1}
+       {x418f32c0 xc0511f00 1 xc0511f00 1}
+       {x 5
+        {x416e4e80 -}}
+       {x 9
+        {x41760000 -}}      x41760000}
+      {{x 5
+        {x41114b80 -}}
+       {x414c3a80 x409e0240 1 x409e0240 1}
+       {x4197a6e0 x4098e200 1 x4098e200 1}
+       {x41b28e40 x402f1580 1 x402f1580 1}
+       {x 5
+        {x41c36c40 -}}
+       {x 9
+        {x41948000 -}}      x41948000}}
+        {{{x 22
+        {0 -}}      0}
+      {{x 22
+        {0 -}}      0}}
+        {{{x 5
+        {xc1d94a80 -}}
+       {xc1ccd780 x40376f00 1 x40376f00 1}
+       {xc1ab6ec0 x40769400 1 x40769400 1}
+       {xc18f3280 x40511e00 1 x40511e00 1}
+       {x 5
+        {xc16e4e80 -}}
+       {x 9
+        {xc1760000 -}}      xc1760000}
+      {{x 5
+        {xc1114ac0 -}}
+       {xc14c3a20 xc09e0280 1 xc09e0280 1}
+       {xc197a6a0 xc098e1e0 1 xc098e1e0 1}
+       {xc1b28e00 xc02f1680 1 xc02f1680 1}
+       {x 5
+        {xc1c36c40 -}}
+       {x 9
+        {xc1948000 -}}      xc1948000}}
+        {{{x 5
+        {x41a96780 -}}
+       {x41a25080 xbfe28e00 1 xbfe28e00 1}
+       {x418d15c0 xc0216d00 1 xc0216d00 1}
+       {x 3
+        {x4173ea80 -}}
+       {x 12
+        {x40800000 -}}      x40800000}
+      {{x 5
+        {x40963800 -}}
+       {x40f29bc0 x407c2980 1 x407c2980 1}
+       {x414930c0 x4079be40 1 x4079be40 1}
+       {x 3
+        {x41762d00 -}}
+       {x 12
+        {x40980000 -}}      x40980000}}
+        {{{x 22
+        {0 -}}      0}
+      {{x 22
+        {0 -}}      0}}
+        {{{x 5
+        {xc1424600 -}}
+       {xc13a2480 x3f81e600 1 x3f81e600 1}
+       {xc121cc80 x3fb91e00 1 x3fb91e00 1}
+       {x 3
+        {xc10bdd00 -}}
+       {x 12
+        {xc1000000 -}}      xc1000000}
+      {{x 5
+        {xc02c4800 -}}
+       {xc08b1d80 xc0109700 1 xc0109700 1}
+       {xc0e6bb00 xc00f3480 1 xc00f3480 1}
+       {x 3
+        {xc10d2900 -}}
+       {x 12
+        {xc1180000 -}}      xc1180000}}
+        {{{x 5
+        {xc0c02700 -}}
+       {xc0df6500 xbf9f0400 1 xbf9f0400 1}
+       {xc107d480 xbf8bd000 1 xbf8bd000 1}
+       {xc112a680 xbf015c00 1 xbf015c00 1}
+       {x 14
+        {xc1180000 -}}      xc1180000}
+      {{x 5
+        {x40f3f300 -}}
+       {x40d7e340 xbfba7900 1 xbfba7900 1}
+       {x4096b680 xbfe2f880 1 xbfe2f880 1}
+       {x404cce00 xbfad6d00 1 xbfad6d00 1}
+       {x 14
+        {x40000000 -}}      x40000000}}
+        {{{x 22
+        {0 -}}      0}
+      {{x 22
+        {0 -}}      0}}
+        {{{x 5
+        {x40c02700 -}}
+       {x40df6600 x3f9f0400 1 x3f9f0400 1}
+       {x4107d480 x3f8bd000 1 x3f8bd000 1}
+       {x4112a700 x3f015c00 1 x3f015c00 1}
+       {x 14
+        {x41180000 -}}      x41180000}
+      {{x 5
+        {xc0f3f200 -}}
+       {xc0d7e280 x3fba7900 1 x3fba7900 1}
+       {xc096b580 x3fe2f700 1 x3fe2f700 1}
+       {xc04cce00 x3fad6b00 1 x3fad6b00 1}
+       {x 14
+        {xc0000000 -}}      xc0000000}}}}}
+     {tx x42080000 x44ca1555 x442a871c}
+     {a opc
+   {{x41a80000 0 0 1 x3e6eeeef 1}
+    {x41c00000 x3f333333 x3e6eeeef 1 0 1}}     str 1 spx x44700000 spy x44070000 sb 1 ltn x42080000 ltm x42080000 tt x40800000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+opacity {{curve x27 0 0.21 x34 0.1899999976 x50 0.3650000095}}
+lifetime_type "all frames"
+lifetime_start 50
+lifetime_end 50
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto5
+xpos 125
+ypos 914
+}
+Group {
+inputs 0
+name extractEpisodeShot1
+xpos 2945
+ypos -1103
+addUserKnob {20 User}
+addUserKnob {3 episode l Episode}
+episode {{"\[python -execlocal import\\ os\\nimport\\ nuke\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[0\\])]"}}
+addUserKnob {3 shot l Shot}
+shot {{"\[python -execlocal import\\ nuke\\nimport\\ os\\n\\nshotString=nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\]\\nintConvert=\\\[ord(char)\\ -\\ 96\\ for\\ char\\ in\\ shotString.lower()\\]\\nshotInt=None\\nfor\\ index\\ in\\ intConvert:\\n\\ \\ \\ \\ if\\ index>0:\\n\\ \\ \\ \\ \\ \\ \\ \\ shotInt=int(shotString\\\[0:intConvert.index(index)\\])+index\\n\\nret=None\\nif\\ shotInt:\\n\\ \\ \\ \\ ret=shotInt\\nelse:\\n\\ \\ \\ \\ ret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\])]"}}
+}
+Input {
+ inputs 0
+ name Input1
+ xpos 0
+}
+Output {
+ name Output1
+ xpos 0
+ ypos 300
+}
+end_group
+NoOp {
+name Control2
+xpos 2945
+ypos -1026
+addUserKnob {20 User}
+addUserKnob {12 Scroll}
+Scroll {{"parent.extractEpisodeShot1.episode + (100 * parent.extractEpisodeShot1.shot)"} 50}
+addUserKnob {6 crop +STARTLINE}
+crop true
+addUserKnob {7 LXScroll}
+LXScroll {{"(Scroll.x <0)? -(-Scroll.x)%width : Scroll.x%width"}}
+addUserKnob {7 LYScroll}
+LYScroll {{"(Scroll.y <0)? -(-Scroll.y)%height : Scroll.y%height"}}
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/grassClump1.tif
+format "1920 1080 0 0 1920 1080 1 HD"
+origset true
+name Read33
+xpos 3979
+ypos -851
+}
+Read {
+inputs 0
+file L:/00719_grandpa/footage/episodes/gnp_419_greator/gnp419sh004/plates_denoised/gnp419sh004_denoised.#####.exr
+format "1920 1080 0 0 1920 1080 1 HD"
+last 70
+origlast 70
+origset true
+name Read2
+xpos 38
+ypos 11
+}
+set N1d0eb450 [stack 0]
+Tracker4 {
+show_error_on_track true
+tracks { { 1 31 1 } 
+{ { 5 1 20 enable e } 
+{ 3 1 75 name name } 
+{ 2 1 58 track_x track_x } 
+{ 2 1 58 track_y track_y } 
+{ 2 1 63 offset_x offset_x } 
+{ 2 1 63 offset_y offset_y } 
+{ 4 1 27 T T } 
+{ 4 1 27 R R } 
+{ 4 1 27 S S } 
+{ 2 0 45 error error } 
+{ 1 1 0 error_min error_min } 
+{ 1 1 0 error_max error_max } 
+{ 1 1 0 pattern_x pattern_x } 
+{ 1 1 0 pattern_y pattern_y } 
+{ 1 1 0 pattern_r pattern_r } 
+{ 1 1 0 pattern_t pattern_t } 
+{ 1 1 0 search_x search_x } 
+{ 1 1 0 search_y search_y } 
+{ 1 1 0 search_r search_r } 
+{ 1 1 0 search_t search_t } 
+{ 2 1 0 key_track key_track } 
+{ 2 1 0 key_search_x key_search_x } 
+{ 2 1 0 key_search_y key_search_y } 
+{ 2 1 0 key_search_r key_search_r } 
+{ 2 1 0 key_search_t key_search_t } 
+{ 2 1 0 key_track_x key_track_x } 
+{ 2 1 0 key_track_y key_track_y } 
+{ 2 1 0 key_track_r key_track_r } 
+{ 2 1 0 key_track_t key_track_t } 
+{ 2 1 0 key_centre_offset_x key_centre_offset_x } 
+{ 2 1 0 key_centre_offset_y key_centre_offset_y } 
+} 
+{ 
+ { {curve K x1 1} "track 1" {curve x1 1633 1633.01709 1633.07666 1633.108154 1633.117676 1633.126221 1633.169922 1633.29126 1633.389893 1633.443237 1633.491943 1633.484497 1633.777832 1633.659668 1633.771362 1633.976807 1633.935059 1634.091187 1634.008179 1634.072876 1634.128784 1634.216675 1634.252563 1634.21814 1634.253906 1634.390869 1634.476196 1634.58313 1634.529175 1634.508667 1634.478394 1634.452637 1634.469849 1634.459473 1634.460571 1634.490356 1634.474609 1634.463379 1634.482544 1634.4823 1634.505981 1634.434937 1634.408813 1634.383911 1634.41394 1634.424927 1634.383423 1634.388306 1634.380737 1634.388184 1634.387085 1634.413086 1634.428833 1634.425049 1634.397217 1634.259155 1634.371338 1634.428101 1634.456299 1634.491577 1634.44104 1634.405762 1634.255859 1634.557251 1634.389282 1634.39856 1634.371338 1634.354492 1634.331421 1634.405518} {curve x1 845.5 845.6245117 845.8892822 846.1900024 846.4224854 846.78125 847.1528931 847.2449951 848.1673584 848.5155029 848.593689 849.7557983 849.723938 850.7833252 850.9666748 851.8097534 852.3833618 852.984436 853.8640747 854.076416 855.0239258 855.7335205 856.1038208 856.9944458 857.7667236 858.2417603 859.2510376 859.37677 860.007019 860.1465454 860.3220215 860.4182129 860.4443359 860.6395264 860.4222412 860.7600708 860.5430298 860.5325317 860.5206909 860.5305786 860.3104248 860.3058472 860.1393433 860.1199341 860.0681152 860.1091309 860.0272217 859.9483643 859.8681641 859.8117676 859.7940063 859.6451416 859.8063354 859.8375854 859.8713989 859.8027954 859.8827515 859.8236084 859.8684692 859.9798584 859.9838257 860.0546875 859.8268433 859.9332275 859.9230957 860.0044556 859.9984131 859.9990845 860.3128052 860.0766602} {curve K x1 0} {curve K x1 0} 1 0 0 {curve x1 0 3.212824475e-006 5.038568468e-006 6.618840529e-006 6.632677644e-006 5.34927111e-006 6.065351345e-006 5.35107393e-006 5.406625742e-006 6.47599716e-006 7.032387844e-006 7.748969508e-006 7.938913534e-006 6.523076806e-006 7.591559734e-006 8.080663055e-006 8.109385535e-006 7.820377625e-006 8.873016454e-006 7.911116527e-006 7.139133816e-006 7.836176983e-006 7.782505095e-006 7.256332148e-006 7.289763425e-006 7.612709911e-006 6.0601268e-006 8.438689634e-006 5.649511963e-006 6.42686162e-006 6.429962321e-006 6.695455892e-006 6.629338786e-006 6.936356045e-006 6.773304397e-006 5.784262345e-006 7.442410008e-006 6.017190718e-006 7.053175193e-006 8.606577583e-006 7.924748827e-006 7.796160173e-006 7.399876086e-006 7.702264403e-006 7.612002889e-006 8.979004193e-006 8.884254352e-006 7.270479399e-006 6.360915489e-006 6.429147437e-006 6.176161038e-006 5.925344671e-006 6.121141034e-006 5.851666462e-006 6.021691797e-006 7.193638067e-006 6.960504588e-006 6.175727056e-006 5.41668146e-006 5.538285889e-006 5.83722051e-006 6.9687066e-006 6.217704172e-006 7.105843927e-006 7.048312898e-006 6.729427205e-006 6.616738107e-006 6.761233502e-006 7.072130059e-006 7.657824098e-006} 0 8.979e-006 -30 -30 30 30 -120 -137 120 137 {curve} {curve x1 1483} {curve x1 679} {curve x1 1782} {curve x1 1012} {curve x1 1603} {curve x1 816} {curve x1 1662} {curve x1 875} {curve x1 29.5} {curve x1 29}  } 
+} 
+}
+
+cornerPinOptions "Transform (match-move)"
+pretrack_filter median
+show_error_on_track_link true
+Auto-Tracking 1
+predict_track true
+auto_regrab_pattern true
+translate {{curve x1 0 0.01708984375 0.07666015625 0.1081542969 0.1176757813 0.1262207031 0.169921875 0.2912597656 0.3898925781 0.4432373047 0.4919433594 0.4844970703 0.7778320313 0.6596679688 0.7713623047 0.9768066406 0.9350585938 1.091186523 1.008178711 1.072875977 1.12878418 1.216674805 1.252563477 1.218139648 1.25390625 1.390869141 1.476196289 1.583129883 1.529174805 1.508666992 1.478393555 1.452636719 1.469848633 1.459472656 1.460571289 1.490356445 1.474609375 1.463378906 1.482543945 1.482299805 1.505981445 1.434936523 1.408813477 1.383911133 1.41394043 1.424926758 1.383422852 1.388305664 1.380737305 1.388183594 1.387084961 1.413085938 1.428833008 1.425048828 1.397216797 1.259155273 1.371337891 1.428100586 1.456298828 1.491577148 1.441040039 1.405761719 1.255859375 1.557250977 1.389282227 1.39855957 1.371337891 1.354492188 1.331420898 1.405517578} {curve x1 0 0.1245117188 0.3892822266 0.6900024414 0.9224853516 1.28125 1.652893066 1.744995117 2.667358398 3.01550293 3.093688965 4.25579834 4.223937988 5.283325195 5.466674805 6.309753418 6.883361816 7.484436035 8.364074707 8.576416016 9.523925781 10.23352051 10.6038208 11.4944458 12.26672363 12.74176025 13.7510376 13.87677002 14.50701904 14.64654541 14.82202148 14.91821289 14.94433594 15.13952637 14.92224121 15.2600708 15.04302979 15.03253174 15.02069092 15.03057861 14.8104248 14.80584717 14.63934326 14.61993408 14.56811523 14.60913086 14.52722168 14.44836426 14.36816406 14.31176758 14.29400635 14.1451416 14.30633545 14.33758545 14.37139893 14.30279541 14.38275146 14.3236084 14.36846924 14.4798584 14.48382568 14.5546875 14.32684326 14.43322754 14.4230957 14.50445557 14.49841309 14.49908447 14.81280518 14.57666016}}
+center {{curve x1 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633 1633} {curve x1 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5 845.5}}
+selected_tracks 0
+name Tracker2
+xpos 2504
+ypos 124
+}
+Shuffle {
+inputs 0
+alpha black
+name Shuffle2
+xpos -1672
+ypos 2355
+}
+Roto {
+output alpha
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {xc0000000 0}
+        {xc3030000 x4496e000}
+        {x40000000 0}
+        {0 0}
+        {x45035000 x44904000}
+        {0 0}
+        {x41200000 x40800000}
+        {x45040ccd x440c599a}
+        {xc1200000 xc0800000}
+        {x40400000 0}
+        {xc2d00000 x44108000}
+        {xc0400000 0}}}
+      {cc
+       {f 8192}
+       {px 1
+        {xc0000000 0}
+        {0 0}
+        {x40000000 0}
+        {0 0}
+        {0 0}
+        {0 0}
+        {x41200000 x40800000}
+        {x42065540 xc2a7f058}
+        {xc1200000 xc0800000}
+        {x40400000 0}
+        {0 xc27c0000}
+        {xc0400000 0}}}}
+     {tx 1 x44792000 x445fe000}
+     {a str 1 spx x44700000 spy x44070000 sb 1 tt x40800000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+view {}
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto8
+xpos -1668
+ypos 2386
+}
+Roto {
+inputs 0
+output alpha
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 576}
+    {t x44700000 x44070000}
+    {a}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 8 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+view {}
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto1
+xpos -1207
+ypos 2175
+}
+push $N1d0eb450
+Dot {
+name Dot12
+label "DENOISED PLATE\n"
+note_font_size 45
+xpos 72
+ypos 142
+}
+Dot {
+name Dot1
+xpos 72
+ypos 349
+}
+set N25691ee0 [stack 0]
+Dot {
+name Dot3
+label "\n<ALPHA_WORK"
+xpos -914
+ypos 349
+}
+Dot {
+name Dot16
+xpos -2090
+ypos 349
+}
+set N256925c0 [stack 0]
+Dot {
+name Dot8
+xpos -2090
+ypos 1843
+}
+set N25692930 [stack 0]
+HueKeyer {
+lut {amount {curve 0 s0 t-0 x4.35675621 0 x4.607764721 0 x4.858773232 1.004166603 1.004166603 x5.360791206 0 x5.611798286 0}
+  sat_thrsh {curve 0.888235271 0.888235271 0.888235271 0.888235271 0.888235271 0.888235271 0.888235271 s0}}
+name HueKeyer1
+xpos -1755
+ypos 1834
+}
+FilterErode {
+size -5
+name FilterErode5
+xpos -1524
+ypos 1834
+}
+Blur {
+size 10
+name Blur3
+xpos -1524
+ypos 1870
+}
+Invert {
+name Invert3
+xpos -1524
+ypos 1921
+}
+Switch {
+inputs 2
+name Switch1
+label "USE HUE KEYER, ROTO OR BOTH TO REMOVE MARKERS"
+note_font_size 22
+note_font_color 0xff0000ff
+xpos -1524
+ypos 2162
+}
+Roto {
+inputs 0
+output alpha
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {0 0}
+        {x43bb9696 x43abda59}
+        {0 0}
+        {0 0}
+        {x43b234b5 x445ce1e2}
+        {0 0}
+        {xbf800000 0}
+        {x43a492d3 x4459cd2d}
+        {1 0}
+        {0 0}
+        {x438ad697 x445a8f0f}
+        {0 0}
+        {0 0}
+        {x438a4000 x4466e000}
+        {0 0}
+        {xbf800000 0}
+        {x441474b5 x448753c3}
+        {1 0}
+        {0 0}
+        {x4493f000 x44890000}
+        {0 0}
+        {0 0}
+        {x44a93000 x446c4000}
+        {0 0}
+        {0 0}
+        {x44a85000 x445ec000}
+        {0 0}
+        {0 0}
+        {x4493d000 x4459e000}
+        {0 0}
+        {0 0}
+        {x4468e000 x44534000}
+        {0 0}
+        {0 0}
+        {x44648000 x4412c000}
+        {0 0}
+        {0 0}
+        {x44920000 x44008000}
+        {0 0}
+        {0 0}
+        {x4490e000 x43b48000}
+        {0 0}
+        {0 0}
+        {x44f6c000 x43520000}
+        {0 0}
+        {0 0}
+        {x44fc6000 xc2bc0000}
+        {0 0}
+        {0 0}
+        {xc26c0000 xc2640000}
+        {0 0}
+        {0 0}
+        {xc2240000 x43910000}
+        {0 0}}}     idem}
+     {tx 1 x4455038e x441d8aab}
+     {a str 1 spx x44700000 spy x44070000 sb 1 tt x40800000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+view {}
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto3
+xpos -3019
+ypos 1457
+}
+push $N256925c0
+Dot {
+name Dot2
+xpos -2842
+ypos 349
+}
+Dot {
+name Dot7
+xpos -2842
+ypos 1402
+}
+set N25ba8630 [stack 0]
+OFXuk.co.thefoundry.keylight.keylight_v201 {
+show "Final Result"
+unPreMultiply false
+screenColour {0.005149841309 0.03228759766 0.4196777344}
+screenGain 1.1
+screenBalance 0.4
+alphaBias {0.5 0.5 0.5}
+despillBias {0.5 0.5 0.5}
+gangBiases true
+preBlur 0
+"Screen Matte" 0
+screenClipMin 0
+screenClipMax 1
+screenClipRollback 0
+screenGrowShrink 0
+screenSoftness 0
+screenDespotBlack 0
+screenDespotWhite 0
+screenReplaceMethod "Soft Colour"
+screenReplaceColour {0.5 0.5 0.5}
+Tuning 1
+midPoint 0.53
+lowGain 0.91
+midGain 1
+highGain 0.87
+"Inside Mask" 0
+sourceAlphaHandling Ignore
+insideReplaceMethod "Soft Colour"
+insideReplaceColour {0.5 0.5 0.5}
+Crops 0
+SourceXMethod Colour
+SourceYMethod Colour
+SourceEdgeColour 0
+SourceCropL 0
+SourceCropR 1
+SourceCropB 0
+SourceCropT 1
+balanceSet true
+insideComponent None
+outsideComponent None
+cacheBreaker true
+name Keylight2
+xpos -2876
+ypos 1435
+}
+Merge2 {
+inputs 2
+name Merge6
+xpos -2883
+ypos 1478
+disable true
+}
+Dot {
+name Dot6
+xpos -2840
+ypos 1524
+}
+set N25ba9080 [stack 0]
+Dot {
+name Dot9
+xpos -3025
+ypos 1524
+}
+Multiply {
+channels alpha
+value 4
+name Multiply1
+xpos -3059
+ypos 1712
+}
+FilterErode {
+size 4.5
+filter gaussian
+name FilterErode1
+xpos -3059
+ypos 1768
+}
+push $N25ba9080
+Dot {
+name Dot17
+xpos -2701
+ypos 1524
+}
+Merge2 {
+inputs 2
+operation max
+name Merge1
+xpos -2735
+ypos 1774
+}
+set N25dd1970 [stack 0]
+push $N25ba9080
+Merge2 {
+inputs 2
+name Merge5
+xpos -2874
+ypos 1892
+}
+Dot {
+name Dot4
+xpos -2842
+ypos 2470
+}
+push $N25dd1970
+FilterErode {
+size -4.5
+filter gaussian
+name FilterErode2
+xpos -2735
+ypos 1839
+}
+Invert {
+name Invert1
+xpos -2735
+ypos 2366
+}
+push $N25ba8630
+IBKColourV3 {
+name IBKColourV3_2
+xpos -2417
+ypos 1399
+Size 11.5
+erode 1.04
+multi 2.38
+}
+push $N25692930
+IBKGizmoV3 {
+inputs 2
+name IBKGizmoV3_1
+selected false
+xpos -2417
+ypos 1840
+colour {0.002026246162 0.02786380239 0.6845481396}
+red_weight 0.785
+}
+Grade {
+channels rgba
+blackpoint 0.02
+name Grade2
+xpos -2417
+ypos 1864
+}
+Merge2 {
+inputs 2
+operation stencil
+name Merge2
+xpos -2417
+ypos 2372
+}
+Merge2 {
+inputs 2
+operation max
+name Merge3
+xpos -2417
+ypos 2467
+}
+Merge2 {
+inputs 2+1
+operation stencil
+name Merge4
+xpos -1524
+ypos 2467
+}
+Clamp {
+name Clamp1
+xpos -544
+ypos 2461
+}
+EdgeBlur {
+size 2
+name EdgeBlur3
+xpos -449
+ypos 2461
+}
+Crop {
+box {0 0 1920 1080}
+name Crop1
+xpos -351
+ypos 2467
+}
+Dot {
+name Dot14
+xpos -254
+ypos 2470
+}
+set N25f7f430 [stack 0]
+push $N25f7f430
+Dot {
+name Dot15
+xpos -254
+ypos 2284
+}
+set N2605e550 [stack 0]
+Read {
+inputs 0
+file L:/00719_grandpa/footage/episodes/gnp_419_greator/gnp419sh004/plates/gnp419sh004.#####.exr
+format "1920 1080 0 0 1920 1080 1 HD"
+last 70
+origlast 70
+origset true
+name Read1
+xpos 3
+ypos 500
+}
+Dot {
+name Dot5
+label "ORIGINAL PLATE\n"
+note_font_size 45
+xpos 37
+ypos 658
+}
+set N2605ec30 [stack 0]
+Dot {
+name Dot20
+xpos -254
+ypos 658
+}
+Shuffle {
+red black
+green black
+blue black
+alpha black
+name Shuffle1
+xpos -288
+ypos 923
+}
+Roto {
+output alpha
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Bezier2 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {xc2140000 xc0c00000}
+        {xc2640000 x4400c000}
+        {x42140000 x40c00000}
+        {xc1c80000 x42820000}
+        {x43a48000 x43f30000}
+        {x41c80000 xc2820000}
+        {x41300000 x41b00000}
+        {x43a48000 x43918000}
+        {xc1300000 xc1b00000}
+        {x41e00000 x41000000}
+        {x43170000 x43750000}
+        {xc1e00000 xc1000000}
+        {0 0}
+        {xc2920000 x436b0000}
+        {0 0}}}     idem}
+     {tx 1 x4307cccd x43b13333}
+     {a str 1 sb 1 tt x40800000}}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {x41900000 xc0c00000}
+        {x44ef8000 x43f9ffff}
+        {xc1900000 x40c00000}
+        {x42380000 xc0000000}
+        {x44aa0000 x4413ffff}
+        {xc2380000 x40000000}
+        {x41600000 x42400000}
+        {x4491c000 x4413ffff}
+        {xc1600000 xc2400000}
+        {xc1900000 x41600000}
+        {x44974000 x43b30000}
+        {x41900000 xc1600000}
+        {xc3080000 x42100000}
+        {x44b08000 x43900000}
+        {x43080000 xc2100000}
+        {xc1f00000 0}
+        {x44f18000 x43520000}
+        {x41f00000 0}
+        {0 0}
+        {x44fec000 x43990000}
+        {0 0}}}     idem}
+     {tx 1 x44c82492 x43c5b6db}
+     {a str 1 spx x44700000 spy x44070000 sb 1 tt x40800000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_ripple true
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {320 240}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+view {}
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name Roto2
+xpos -288
+ypos 947
+}
+Blur {
+size 10
+name Blur20
+xpos -288
+ypos 983
+}
+push $N2605e550
+Dot {
+name Dot18
+xpos -254
+ypos 1363
+}
+Group {
+name edge_from_alpha1
+xpos -288
+ypos 1054
+addUserKnob {20 "" l Settings}
+addUserKnob {41 from0 l "control channel" T Copy2.from0}
+addUserKnob {41 output T ChannelMerge4.output}
+addUserKnob {41 blackpoint T Grade1.blackpoint}
+addUserKnob {41 whitepoint T Grade1.whitepoint}
+addUserKnob {26 "" l "edge size"}
+addUserKnob {41 size l inside T ErodeInside.size}
+addUserKnob {14 ErodeOutside_size l outside R 0 100}
+ErodeOutside_size 36.5
+addUserKnob {26 "" l "edge blur"}
+addUserKnob {41 size_3 l inside T BlurInside.size}
+addUserKnob {41 size_1 l outside T BlurOutside.size}
+}
+Input {
+inputs 0
+name Input1
+xpos -448
+ypos 6
+}
+AddChannels {
+channels {rgba.red -rgba.green -rgba.blue rgba.alpha}
+name AddChannels1
+xpos -448
+ypos 30
+}
+set N26060440 [stack 0]
+Dot {
+name Dot3
+xpos -414
+ypos 416
+}
+push $N26060440
+push $N26060440
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.red
+name Copy2
+xpos -193
+ypos 30
+}
+Clamp {
+channels {rgba.red -rgba.green -rgba.blue}
+name Clamp1
+xpos -193
+ypos 94
+}
+Grade {
+channels {rgba.red -rgba.green -rgba.blue}
+black_clamp false
+name Grade1
+xpos -193
+ypos 146
+}
+set N26061200 [stack 0]
+Erode {
+channels {none none none rgba.red}
+size 33
+name ErodeInside
+xpos -126
+ypos 198
+}
+Blur {
+channels {rgba.red -rgba.green -rgba.blue}
+size 59
+name BlurInside
+xpos -126
+ypos 250
+}
+push $N26061200
+Erode {
+channels {none none none rgba.red}
+size {{-parent.ErodeOutside_size.w} {-parent.ErodeOutside_size.h}}
+name ErodeOutside
+xpos -264
+ypos 199
+}
+Blur {
+channels {rgba.red -rgba.green -rgba.blue}
+size 10
+name BlurOutside
+xpos -264
+ypos 251
+}
+ChannelMerge {
+inputs 2
+A rgba.red
+operation stencil
+B rgba.red
+name ChannelMerge4
+selected true
+xpos -191
+ypos 308
+}
+Copy {
+inputs 2
+from0 rgba.red
+to0 rgba.red
+name Copy1
+xpos -191
+ypos 407
+}
+Output {
+name Output1
+xpos -191
+ypos 526
+}
+end_group
+Merge2 {
+inputs 2
+name Merge37
+xpos -288
+ypos 1030
+}
+push $N2605ec30
+HueCorrect {
+inputs 1+1
+hue {sat {}
+  lum {}
+  red {}
+  green {}
+  blue {}
+  r_sup {}
+  g_sup {}
+  b_sup {curve 1 1 1 1 0.1102942228 0.1102942228 1}
+  sat_thrsh {}}
+invert_mask true
+name HueCorrect2
+xpos 3
+ypos 1030
+}
+Dot {
+name Dot22
+xpos 33
+ypos 1427
+}
+set N261f9f10 [stack 0]
+Group {
+inputs 2
+name B_EdgeExpander1
+tile_color 0xff3f00ff
+xpos -1
+ypos 1880
+addUserKnob {20 B_EdgeExpander l "Bait Edge Expander"}
+addUserKnob {4 outputMode l "Output Modes" M {"Final Result" "Erode Preview" "Extend Preview" "Edge Preview"}}
+addUserKnob {26 ""}
+addUserKnob {41 size l "Erode size" T Erode1.size}
+addUserKnob {41 blur l "Erode blur" T Erode1.blur}
+addUserKnob {26 ""}
+addUserKnob {41 which l "Extend steps" T Switch1.which}
+addUserKnob {26 ""}
+addUserKnob {41 softinneregde l "Soften Inner Edge" T BlurIE.size}
+addUserKnob {41 threshold l Threshold T EdgeDetect1.threshold}
+addUserKnob {41 size_1 l "Blur inner edge" T BlurEdgeDetect.size}
+addUserKnob {7 grainmix l "Add Grain"}
+grainmix 1
+addUserKnob {26 ""}
+addUserKnob {7 mixamount l "Overall Mix"}
+mixamount 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode11
+tile_color 0x999999ff
+label "Edge Expand"
+note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+note_font_size 20
+xpos -654
+ypos -433
+bdwidth 324
+bdheight 2335
+}
+Input {
+inputs 0
+name ALPHA
+xpos -830
+ypos -296
+number 1
+}
+Input {
+inputs 0
+name FG
+xpos -634
+ypos -526
+}
+PostageStamp {
+name PostageStamp1
+xpos -634
+ypos -374
+postage_stamp true
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy1
+xpos -634
+ypos -302
+}
+set N261fb040 [stack 0]
+Erode {
+channels alpha
+size 0.1
+blur 0.39
+name Erode1
+tile_color 0xffffff
+xpos -634
+ypos -229
+}
+set N261fb3b0 [stack 0]
+Dot {
+name Dot15
+xpos -490
+ypos -220
+}
+set N261fb720 [stack 0]
+Dot {
+name Dot1
+xpos 246
+ypos -220
+}
+EdgeDetectWrapper {
+channels alpha
+threshold 0.78
+blursize 1
+name EdgeDetect1
+xpos 212
+ypos 666
+}
+Blur {
+channels alpha
+size 6
+name BlurEdgeDetect
+xpos 212
+ypos 712
+}
+set N261fc170 [stack 0]
+Shuffle {
+red alpha
+green alpha
+blue alpha
+name Shuffle1
+xpos 84
+ypos 718
+}
+push $N261fb3b0
+Premult {
+name Premult38
+xpos -634
+ypos -169
+}
+set N261fc850 [stack 0]
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur4
+xpos -634
+ypos -122
+}
+Unpremult {
+channels rgba
+name Unpremult2
+xpos -634
+ypos -86
+}
+push $N261fb720
+Merge2 {
+inputs 2
+operation copy
+name Merge4
+xpos -524
+ypos -86
+}
+set N262a1a60 [stack 0]
+Premult {
+name Premult46
+xpos -636
+ypos -53
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur6
+xpos -636
+ypos -29
+}
+Unpremult {
+name Unpremult3
+xpos -636
+ypos 15
+}
+push $N262a1a60
+Merge2 {
+inputs 2
+operation copy
+name Merge6
+xpos -524
+ypos 15
+}
+set N262a2820 [stack 0]
+Premult {
+name Premult57
+xpos -634
+ypos 43
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur7
+xpos -634
+ypos 67
+}
+Unpremult {
+name Unpremult4
+xpos -634
+ypos 108
+}
+push $N262a2820
+Merge2 {
+inputs 2
+operation copy
+name Merge7
+xpos -524
+ypos 108
+}
+set N262a35e0 [stack 0]
+Premult {
+name Premult58
+xpos -633
+ypos 143
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur5
+xpos -633
+ypos 167
+}
+Unpremult {
+name Unpremult5
+xpos -633
+ypos 208
+}
+push $N262a35e0
+Merge2 {
+inputs 2
+operation copy
+name Merge8
+xpos -524
+ypos 208
+}
+set N262a43a0 [stack 0]
+Premult {
+name Premult1
+xpos -636
+ypos 247
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur1
+xpos -636
+ypos 271
+}
+Unpremult {
+name Unpremult1
+xpos -636
+ypos 315
+}
+push $N262a43a0
+Merge2 {
+inputs 2
+operation copy
+name Merge1
+xpos -523
+ypos 315
+}
+set N2638f380 [stack 0]
+Premult {
+name Premult2
+xpos -634
+ypos 343
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur2
+xpos -634
+ypos 367
+}
+Unpremult {
+name Unpremult6
+xpos -634
+ypos 408
+}
+push $N2638f380
+Merge2 {
+inputs 2
+operation copy
+name Merge2
+xpos -524
+ypos 408
+}
+set N26390140 [stack 0]
+Premult {
+name Premult3
+xpos -633
+ypos 443
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur3
+xpos -633
+ypos 467
+}
+Unpremult {
+name Unpremult7
+xpos -633
+ypos 508
+}
+push $N26390140
+Merge2 {
+inputs 2
+operation copy
+name Merge3
+xpos -522
+ypos 508
+}
+set N26390f00 [stack 0]
+Premult {
+name Premult4
+xpos -635
+ypos 548
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur8
+xpos -635
+ypos 572
+}
+Unpremult {
+name Unpremult8
+xpos -635
+ypos 616
+}
+push $N26390f00
+Merge2 {
+inputs 2
+operation copy
+name Merge5
+xpos -522
+ypos 616
+}
+set N26391cc0 [stack 0]
+Premult {
+name Premult5
+xpos -633
+ypos 644
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur9
+xpos -633
+ypos 668
+}
+Unpremult {
+name Unpremult9
+xpos -633
+ypos 709
+}
+push $N26391cc0
+Merge2 {
+inputs 2
+operation copy
+name Merge9
+xpos -523
+ypos 709
+}
+set N26392a80 [stack 0]
+Premult {
+name Premult6
+xpos -632
+ypos 744
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur10
+xpos -632
+ypos 768
+}
+Unpremult {
+name Unpremult10
+xpos -632
+ypos 809
+}
+push $N26392a80
+Merge2 {
+inputs 2
+operation copy
+name Merge10
+xpos -522
+ypos 809
+}
+set N2643ba60 [stack 0]
+Premult {
+name Premult8
+xpos -635
+ypos 857
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur12
+xpos -635
+ypos 881
+}
+Unpremult {
+name Unpremult12
+xpos -635
+ypos 925
+}
+push $N2643ba60
+Merge2 {
+inputs 2
+operation copy
+name Merge12
+xpos -522
+ypos 925
+}
+set N2643c4b0 [stack 0]
+Premult {
+name Premult9
+xpos -633
+ypos 953
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur13
+xpos -633
+ypos 977
+}
+Unpremult {
+name Unpremult13
+xpos -633
+ypos 1018
+}
+push $N2643c4b0
+Merge2 {
+inputs 2
+operation copy
+name Merge13
+xpos -522
+ypos 1018
+}
+set N2643d5e0 [stack 0]
+Premult {
+name Premult10
+xpos -632
+ypos 1053
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur14
+xpos -632
+ypos 1077
+}
+Unpremult {
+name Unpremult14
+xpos -632
+ypos 1118
+}
+push $N2643d5e0
+Merge2 {
+inputs 2
+operation copy
+name Merge14
+xpos -522
+ypos 1118
+}
+set N2643e3a0 [stack 0]
+Premult {
+name Premult11
+xpos -635
+ypos 1157
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur15
+xpos -635
+ypos 1181
+}
+Unpremult {
+name Unpremult15
+xpos -635
+ypos 1225
+}
+push $N2643e3a0
+Merge2 {
+inputs 2
+operation copy
+name Merge15
+xpos -522
+ypos 1225
+}
+set N26533780 [stack 0]
+Premult {
+name Premult12
+xpos -633
+ypos 1253
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur16
+xpos -633
+ypos 1277
+}
+Unpremult {
+name Unpremult16
+xpos -633
+ypos 1318
+}
+push $N26533780
+Merge2 {
+inputs 2
+operation copy
+name Merge16
+xpos -522
+ypos 1318
+}
+set N26534540 [stack 0]
+Premult {
+name Premult13
+xpos -632
+ypos 1353
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur17
+xpos -632
+ypos 1377
+}
+Unpremult {
+name Unpremult17
+xpos -632
+ypos 1418
+}
+push $N26534540
+Merge2 {
+inputs 2
+operation copy
+name Merge17
+xpos -522
+ypos 1418
+}
+set N26535300 [stack 0]
+Premult {
+name Premult14
+xpos -634
+ypos 1458
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur18
+xpos -634
+ypos 1482
+}
+Unpremult {
+name Unpremult18
+xpos -634
+ypos 1526
+}
+push $N26535300
+Merge2 {
+inputs 2
+operation copy
+name Merge18
+xpos -521
+ypos 1526
+}
+set N265360c0 [stack 0]
+Premult {
+name Premult15
+xpos -632
+ypos 1554
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur19
+xpos -632
+ypos 1578
+}
+Unpremult {
+name Unpremult19
+xpos -632
+ypos 1619
+}
+push $N265360c0
+Merge2 {
+inputs 2
+operation copy
+name Merge19
+xpos -521
+ypos 1619
+}
+set N26536e80 [stack 0]
+Premult {
+name Premult16
+xpos -631
+ypos 1654
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur20
+xpos -631
+ypos 1678
+}
+Unpremult {
+name Unpremult20
+xpos -631
+ypos 1719
+}
+push $N26536e80
+Merge2 {
+inputs 2
+operation copy
+name Merge20
+xpos -521
+ypos 1719
+}
+set N265a9e60 [stack 0]
+Premult {
+name Premult7
+xpos -631
+ypos 1777
+}
+Blur {
+size 1
+maskChannelInput rgba.alpha
+invert_mask true
+name Blur11
+xpos -631
+ypos 1801
+}
+Unpremult {
+name Unpremult11
+xpos -631
+ypos 1842
+}
+push $N265a9e60
+Merge2 {
+inputs 2
+operation copy
+name Merge11
+xpos -521
+ypos 1842
+}
+push $N265a9e60
+push $N26536e80
+push $N265360c0
+push $N26535300
+push $N26534540
+push $N26533780
+push $N2643e3a0
+push $N2643d5e0
+push $N2643c4b0
+push $N2643ba60
+push $N26392a80
+push $N26391cc0
+push $N26390f00
+push $N26390140
+push $N2638f380
+push $N262a43a0
+push $N262a35e0
+push $N262a2820
+push $N262a1a60
+push $N261fb040
+Premult {
+name Premult17
+xpos -505
+ypos -296
+}
+set N265aaf90 [stack 0]
+Switch {
+inputs 21
+which 4
+name Switch1
+tile_color 0xffffff
+xpos -91
+ypos 806
+}
+set N1a7c0120 [stack 0]
+push $N261fc850
+Dot {
+name Dot5
+xpos -838
+ypos -166
+}
+Dot {
+name Dot6
+xpos -838
+ypos 2002
+}
+push $N265aaf90
+Dot {
+name Dot3
+xpos 497
+ypos -293
+}
+set N265ab9e0 [stack 0]
+Dot {
+name Dot4
+xpos 620
+ypos -293
+}
+set N265abd50 [stack 0]
+Dot {
+name Dot2
+xpos 730
+ypos -293
+}
+push $N265abd50
+Input {
+inputs 0
+name MASK
+xpos 411
+ypos 717
+number 2
+}
+Input {
+inputs 0
+name GRAIN
+xpos 302
+ypos 718
+number 3
+}
+push $N261fc170
+push $N1a7c0120
+Blur {
+inputs 1+1
+size 8
+name BlurIE
+xpos 212
+ypos 800
+}
+Merge2 {
+inputs 2
+operation plus
+maskChannelInput rgba.alpha
+invert_mask true
+mix {{parent.grainmix}}
+name grainMix
+xpos 344
+ypos 800
+}
+push $N265ab9e0
+Merge2 {
+inputs 2+1
+operation copy
+invert_mask true
+name Merge21
+xpos 463
+ypos 806
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy2
+xpos 573
+ypos 800
+}
+Keymix {
+inputs 2
+maskChannel none
+invertMask true
+mix {{1-parent.mixamount}}
+name Keymix1
+xpos 696
+ypos 800
+}
+Switch {
+inputs 4
+which {{parent.outputMode}}
+name Switch2
+xpos 696
+ypos 1999
+}
+Output {
+name Output1
+xpos 696
+ypos 2597
+}
+end_group
+set N1c920540 [stack 0]
+push $N261f9f10
+Merge2 {
+inputs 2
+name Merge9
+xpos 130
+ypos 1880
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy1
+xpos -11
+ypos 2461
+}
+push $N1c920540
+Grade {
+multiply 1.5
+name Grade7
+xpos 31
+ypos 2024
+disable true
+}
+Merge2 {
+inputs 2
+name Merge20
+xpos 139
+ypos 2489
+disable true
+}
+Premult {
+name Premult3
+xpos 139
+ypos 2598
+}
+push $N2605e550
+Invert {
+name Invert2
+xpos 1223
+ypos 2275
+}
+FilterErode {
+size 23
+filter gaussian
+mix 0.405
+name FilterErode4
+xpos 1384
+ypos 2275
+}
+Dot {
+name Dot13
+xpos 2122
+ypos 2284
+}
+Dot {
+name Dot10
+xpos 2122
+ypos 1608
+}
+set N272c2a80 [stack 0]
+Constant {
+inputs 0
+channels rgb
+color {0.002193871653 0.03598822653 0.8404622674 1}
+name Constant1
+xpos 849
+ypos 1328
+}
+AddChannels {
+channels alpha
+color 1
+name AddChannels1
+xpos 849
+ypos 1442
+}
+push $N25691ee0
+Dot {
+name Dot11
+xpos 1122
+ypos 349
+}
+Dot {
+name Dot21
+xpos 1122
+ypos 1179
+}
+set N272c3840 [stack 0]
+Merge2 {
+inputs 2
+name Merge10
+xpos 1088
+ypos 1448
+}
+set N272c3bb0 [stack 0]
+Dot {
+name Dot47
+xpos 1122
+ypos 1621
+}
+push $N272c3840
+Dot {
+name Dot48
+xpos 1675
+ypos 1179
+}
+set N273704b0 [stack 0]
+Merge2 {
+inputs 2
+operation from
+name Merge29
+xpos 1641
+ypos 1618
+}
+Clamp {
+name Clamp5
+xpos 1641
+ypos 1642
+}
+Saturation {
+saturation 0.57
+name Saturation8
+xpos 1641
+ypos 1689
+}
+Grade {
+blackpoint 0.002
+whitepoint 0.56
+white_clamp true
+name Grade3
+xpos 1773
+ypos 1689
+}
+Merge2 {
+inputs 2
+operation stencil
+name Merge13
+xpos 2256
+ypos 1689
+}
+push $N272c2a80
+push $N272c3bb0
+push $N273704b0
+Dot {
+name Dot49
+xpos 1854
+ypos 1179
+}
+Merge2 {
+inputs 2
+operation minus
+name Merge30
+xpos 1820
+ypos 1448
+}
+Clamp {
+name Clamp6
+xpos 1820
+ypos 1472
+}
+Saturation {
+saturation 0
+name Saturation9
+xpos 1820
+ypos 1530
+}
+Merge2 {
+inputs 2
+operation stencil
+name Merge14
+xpos 2251
+ypos 1530
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/grassClump4.tif
+format "1920 1080 0 0 1920 1080 1 HD"
+origset true
+name Read34
+xpos 3907
+ypos -512
+}
+Unpremult {
+name Unpremult8
+xpos 3907
+ypos -428
+}
+Grade {
+blackpoint -0.035
+whitepoint 0.86
+white {2.099999905 0.6000000238 1 1}
+gamma 0.84
+name Grade20
+xpos 3907
+ypos -404
+}
+Saturation {
+saturation 0.6
+name Saturation6
+xpos 3907
+ypos -380
+}
+Premult {
+name Premult10
+xpos 3907
+ypos -356
+}
+Blur {
+size 7
+name Blur19
+xpos 3907
+ypos -332
+}
+set N27373bb0 [stack 0]
+Transform {
+translate {-503 144}
+scale {0.25 0.2}
+center {2048 256}
+name Transform15
+xpos 3812
+ypos -210
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/grassClump2.tif
+format "1920 1080 0 0 1920 1080 1 HD"
+origset true
+name Read38
+xpos 3723
+ypos -561
+}
+Unpremult {
+name Unpremult7
+xpos 3723
+ypos -477
+}
+Grade {
+blackpoint -0.02
+whitepoint 0.89
+white {1 0.6000000238 1 1}
+multiply 2.85
+gamma 0.84
+name Grade18
+xpos 3723
+ypos -453
+}
+Saturation {
+name Saturation5
+xpos 3723
+ypos -429
+}
+Premult {
+name Premult9
+xpos 3723
+ypos -405
+}
+Blur {
+size 15
+name Blur18
+xpos 3723
+ypos -381
+}
+set N2744b6d0 [stack 0]
+Transform {
+translate {-830 111}
+rotate -6.581934374
+scale {-0.2 0.2}
+center {2048 256}
+name Transform14
+xpos 3757
+ypos -138
+}
+push 0
+push $N2744b6d0
+Transform {
+translate {-2107 37}
+rotate 15.45893386
+scale {-0.1 0.1}
+center {2048 256}
+name Transform16
+xpos 3688
+ypos -225
+}
+push $N27373bb0
+Transform {
+translate {-1628 122}
+rotate 7.41562054
+scale 0.25
+center {2048 256}
+name Transform17
+xpos 3916
+ypos -286
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/BG_left_noClouds_v005.exr
+format "3180 1674 0 0 3180 1674 1 "
+origset true
+offset_negative_display_window false
+name Read37
+xpos 3652
+ypos -717
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Meadow/publish/meadowStill_cloudsB_v005.tif
+format "5498 3010 0 0 5498 3010 1 "
+origset true
+version 1
+name Read35
+xpos 3073
+ypos -1334
+}
+Reformat {
+format "3145 1674 0 0 3145 1674 1 "
+name Reformat1
+xpos 3073
+ypos -1224
+}
+NoOp {
+name In2
+xpos 3072
+ypos -1163
+addUserKnob {20 User}
+}
+Crop {
+box {0 0 {width} {height}}
+name Crop10
+xpos 3072
+ypos -1139
+disable true
+}
+Position {
+translate {{parent.Control2.LXScroll} {parent.Control2.LYScroll}}
+name Position5
+xpos 3072
+ypos -1113
+}
+set N2744d5c0 [stack 0]
+push $N2744d5c0
+Dot {
+name Dot26
+xpos 3401
+ypos -1109
+}
+Position {
+translate {{"(parent.Control2.LXScroll <= 0)? width : -width"} {"(parent.Control2.LYScroll <= 0)? height : - height"}}
+name Position6
+xpos 3367
+ypos -1055
+}
+push 0
+push $N2744d5c0
+Dot {
+name Dot28
+xpos 3201
+ypos -1109
+}
+Position {
+translate {{"(parent.Control2.LXScroll <= 0)? width : -width"} 0}
+name Position7
+xpos 3167
+ypos -1055
+}
+push $N2744d5c0
+Dot {
+name Dot29
+xpos 3301
+ypos -1109
+}
+Position {
+translate {0 {"(parent.Control2.LYScroll <= 0)? height : - height"}}
+name Position8
+xpos 3267
+ypos -1055
+}
+Merge2 {
+inputs 4+1
+operation screen
+name Merge24
+xpos 3077
+ypos -998
+}
+Crop {
+box {0 0 {width} {height}}
+reformat true
+crop false
+name Crop11
+xpos 3077
+ypos -958
+disable {{1-parent.Control2.crop x1 0}}
+}
+Output {
+name Output2
+xpos 3077
+ypos -934
+}
+Group {
+inputs 0
+name Grad2
+xpos 2910
+ypos -910
+addUserKnob {20 User}
+addUserKnob {41 format T Constant2.format}
+addUserKnob {41 LLColor T Expression2.LLColor}
+addUserKnob {41 LRColor T Expression2.LRColor}
+addUserKnob {41 URColor T Expression2.URColor}
+addUserKnob {41 ULColor T Expression2.ULColor}
+}
+Constant {
+inputs 0
+channels rgb
+format "3145 1674 0 0 3145 1674 1 "
+name Constant2
+xpos -469
+ypos -253
+}
+Expression {
+temp_name0 LLCorner
+temp_expr0 (1-x/width)*(1-y/height)
+temp_name1 LRCorner
+temp_expr1 (x/width)*(1-y/height)
+temp_name2 URCorner
+temp_expr2 (x/width)*(y/height)
+temp_name3 ULCorner
+temp_expr3 (1-x/width)*(y/height)
+expr0 LLColor.r*LLCorner+LRColor.r*LRCorner+URColor.r*URCorner+ULColor.r*ULCorner
+expr1 LLColor.g*LLCorner+LRColor.g*LRCorner+URColor.g*URCorner+ULColor.g*ULCorner
+expr2 LLColor.b*LLCorner+LRColor.b*LRCorner+URColor.b*URCorner+ULColor.b*ULCorner
+name Expression2
+xpos -469
+ypos -174
+addUserKnob {20 User}
+addUserKnob {18 LLColor}
+LLColor {0.2349999994 0.4702807665 1}
+addUserKnob {18 LRColor}
+LRColor {0.2300000042 0.5376220345 0.6675982475}
+addUserKnob {18 URColor}
+URColor {0.02769457176 0.1257930845 0.9996898174}
+addUserKnob {18 ULColor}
+ULColor {0.02788343281 0.1260046065 0.9996906519}
+}
+Output {
+name Output1
+xpos -469
+ypos -74
+}
+end_group
+Merge2 {
+inputs 2
+name Merge25
+xpos 3077
+ypos -910
+}
+Shuffle {
+alpha white
+name Shuffle8
+xpos 3077
+ypos -886
+}
+Dot {
+name Dot30
+xpos 3111
+ypos -821
+}
+set N27540e40 [stack 0]
+Dot {
+name Dot31
+xpos 3546
+ypos -821
+}
+Merge2 {
+inputs 2
+name Merge28
+xpos 3512
+ypos -687
+}
+Merge2 {
+inputs 2
+name Merge22
+xpos 3512
+ypos -286
+}
+Merge2 {
+inputs 4+1
+name Merge33
+xpos 3512
+ypos -138
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/BG_mid_noClouds_v005.exr
+format "3180 1674 0 0 3180 1674 1 "
+origset true
+offset_negative_display_window false
+name Read32
+xpos 3220
+ypos -764
+}
+push $N27540e40
+Merge2 {
+inputs 2
+name Merge27
+xpos 3077
+ypos -695
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/grassClump2.tif
+format "1920 1080 0 0 1920 1080 1 HD"
+origset true
+name Read29
+xpos 2589
+ypos -498
+}
+Unpremult {
+name Unpremult2
+xpos 2589
+ypos -414
+}
+Grade {
+blackpoint -0.02
+whitepoint 0.89
+white {1 0.6000000238 1 1}
+multiply 2.85
+gamma 0.84
+name Grade15
+xpos 2589
+ypos -390
+}
+Saturation {
+name Saturation2
+xpos 2589
+ypos -366
+}
+Premult {
+name Premult4
+xpos 2589
+ypos -342
+}
+Blur {
+size 15
+name Blur2
+xpos 2589
+ypos -318
+}
+Transform {
+translate {-2095 14}
+rotate 15.45893386
+scale {-0.1 0.1}
+center {2048 256}
+name Transform5
+xpos 2589
+ypos -282
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/grassClump4.tif
+format "1920 1080 0 0 1920 1080 1 HD"
+origset true
+name Read30
+xpos 2835
+ypos -664
+}
+Unpremult {
+name Unpremult4
+xpos 2835
+ypos -580
+}
+Grade {
+blackpoint -0.035
+whitepoint 0.86
+white {2.099999905 0.6000000238 1 1}
+gamma 0.84
+name Grade16
+xpos 2835
+ypos -556
+}
+Saturation {
+saturation 0.6
+name Saturation3
+xpos 2835
+ypos -532
+}
+Premult {
+name Premult6
+xpos 2835
+ypos -508
+}
+Blur {
+size 7
+name Blur16
+xpos 2835
+ypos -484
+}
+set N276356a0 [stack 0]
+Transform {
+translate {-503 144}
+scale {0.25 0.2}
+center {2048 256}
+name Transform10
+xpos 2828
+ypos -335
+}
+push $N276356a0
+Transform {
+translate {-568 50}
+rotate -6.581934374
+scale {-0.35 0.35}
+center {2048 256}
+name Transform12
+xpos 2893
+ypos -370
+}
+push $N276356a0
+Transform {
+translate {-175 33}
+rotate -6.581934374
+scale {0.3 0.3}
+center {2048 256}
+name Transform4
+xpos 2777
+ypos -420
+}
+push 0
+push $N276356a0
+Transform {
+translate {-1612 63}
+rotate 7.41562054
+scale 0.25
+center {2048 256}
+name Transform7
+xpos 2916
+ypos -425
+}
+Read {
+inputs 0
+file M:/00719_grandpa/assets/Environments/Beach/publish/BG_right_noClouds_v005.exr
+format "3145 1674 0 0 3145 1674 1 "
+origset true
+offset_negative_display_window false
+name Read36
+xpos 2579
+ypos -727
+}
+push $N27540e40
+Dot {
+name Dot32
+xpos 2744
+ypos -821
+}
+Merge2 {
+inputs 2
+name Merge26
+xpos 2710
+ypos -697
+}
+Transform {
+translate {-1072 0}
+center {960 540}
+name Transform13
+xpos 2710
+ypos -624
+}
+Merge2 {
+inputs 5+1
+name Merge16
+xpos 2710
+ypos -349
+}
+Merge2 {
+inputs 2
+name Merge17
+xpos 2710
+ypos -282
+}
+Switch {
+inputs 3
+name Switch2
+xpos 3114
+ypos 56
+}
+Transform {
+translate {{"(!invert) ? Tracker2.translate.x : -Tracker2.translate.x"} {"(!invert) ? Tracker2.translate.y : -Tracker2.translate.y"}}
+rotate {{"(!invert) ? Tracker2.rotate : -Tracker2.rotate"}}
+scale {{"(!invert) ? Tracker2.scale.w : 1/Tracker2.scale.w"}}
+center {{"(!invert) ? Tracker2.center.x : Tracker2.center.x + Tracker2.translate.x"} {"(!invert) ? Tracker2.center.y : Tracker2.center.y + Tracker2.translate.y"}}
+filter {{Tracker2.filter}}
+name Transform_MatchMove2
+xpos 3114
+ypos 136
+addUserKnob {20 User}
+addUserKnob {4 transform M {stabilize match-move}}
+transform match-move
+addUserKnob {4 src_transform l "src transform" M {none stabilize "stabilize 1-pt" match-move "match-move 1-pt" "remove jitter"}}
+src_transform {{Tracker2.transform}}
+addUserKnob {6 invert -STARTLINE}
+invert {{"\[python -execlocal srcTransformKnob\\ =\\ nuke.thisNode()\\\['src\\_transform'\\]\\nsrcTransformName\\ =\\ srcTransformKnob.enumName(int(srcTransformKnob.getValue()))\\ndestTransform\\ =\\ nuke.thisNode()\\\['transform'\\].getValue()\\nsrcTransformIsStabilize\\ =\\ (srcTransformName.find('stabilize')==0\\ or\\ srcTransformName.find('remove\\ jitter')==0)\\ninvertDueToDestStabilize\\ =\\ (destTransform\\ ==\\ 0\\ and\\ not\\ srcTransformIsStabilize)\\ninvertDueToSrcStabilize\\ =\\ (destTransform\\ ==\\ 1\\ and\\ srcTransformIsStabilize)\\nret\\ =\\ (invertDueToDestStabilize\\ or\\ invertDueToSrcStabilize)]"}}
+}
+Crop {
+box {0 0 1920 1080}
+reformat true
+crop false
+name Crop2
+xpos 3114
+ypos 202
+}
+add_layer {Object Object.alpha}
+RotoPaint {
+output {rgba.alpha none none Object.alpha}
+cliptype none
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a fx x3f000000 fy x3f000000}}}}}
+toolbox {addPoints {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { addPoints str 1 ssx 1 ssy 1 sf 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_autokey false
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 7
+lifetime_end 7
+view {}
+feather 0.5
+motionblur_on true
+motionblur_shutter_offset_type centred
+source_black_outside true
+createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+name RotoPaint2
+xpos 2396
+ypos 762
+}
+add_layer {ObjectMatte ObjectMatte.red ObjectMatte.green ChairMatte.blue ChairMatte.alpha}
+Shuffle {
+in Object
+out ObjectMatte
+name Shuffle5
+xpos 2396
+ypos 798
+}
+Blur {
+channels ObjectMatte
+size 3.8
+name Blur7
+xpos 2396
+ypos 822
+disable true
+}
+Group {
+name Group4
+xpos 2690
+ypos 879
+addUserKnob {20 User}
+addUserKnob {41 amount l red T DitherRed.amount}
+addUserKnob {41 amount_1 l green T DitherGreen.amount}
+addUserKnob {41 amount_2 l blue T DitherBlue.amount}
+addUserKnob {26 ""}
+addUserKnob {6 Csample l "422 sampling?" +STARTLINE}
+addUserKnob {6 HDCamCorrection l "Source HDCam 1440?" t "use this if the source is HDCam which is 1440 pixels wide not 1920 (then stretched)\n\nnaughty sony!" -STARTLINE}
+HDCamCorrection true
+addUserKnob {3 redAspect l "red noise aspect" t "use this to create non-square pixel noise\n"}
+redAspect 1
+addUserKnob {7 blurRedSize l blur -STARTLINE R 0 5}
+addUserKnob {3 greenAspect l "green noise aspect" t "use this to create non-square pixel noise\nprobably should be 1"}
+greenAspect 1
+addUserKnob {7 blurGreenSize l blur -STARTLINE R 0 5}
+addUserKnob {3 blueAspect l "blue noise aspect" t "use this to create non-square pixel noise\n"}
+blueAspect 1
+addUserKnob {7 blurBlueSize l blur -STARTLINE R 0 5}
+blurBlueSize 0.45
+addUserKnob {6 usePremult l (un)premult +STARTLINE}
+addUserKnob {6 useMask l "use mask" +STARTLINE}
+addUserKnob {6 invertMask l invert -STARTLINE}
+addUserKnob {26 ""}
+addUserKnob {41 from0_1 l (un)premult T CopyPreMult.from0}
+addUserKnob {41 from0 l mask T CopyMask.from0}
+addUserKnob {26 ""}
+addUserKnob {6 croptoFormat l "crop output" t "crops the dither to the incoming image size" +STARTLINE}
+croptoFormat true
+}
+Input {
+inputs 0
+name RGB
+xpos 190
+ypos 13
+}
+set N27638da0 [stack 0]
+push $N27638da0
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name CopyPreMult
+xpos 190
+ypos 65
+disable {{!usePremult i}}
+}
+Unpremult {
+name Unpremult1
+xpos 190
+ypos 134
+disable {{!usePremult i}}
+}
+set N27639480 [stack 0]
+Multiply {
+channels rgb
+value 0
+name Multiply1
+xpos -37
+ypos 134
+}
+set N276397f0 [stack 0]
+Dither {
+channels {-rgba.red rgba.green -rgba.blue}
+amount 0.032
+maskChannelInput -depth.Z
+invert_mask {{invertMask i}}
+unpremult -rgba.alpha
+name DitherGreen
+xpos 68
+ypos 169
+}
+Transform {
+scale {{greenAspect i} 1}
+center {1024 778}
+filter Impulse
+name transformGreen
+xpos 68
+ypos 207
+}
+Transform {
+scale {{1920/1440 i} 1}
+center {960 540}
+name HDCamAspectCorrect2
+xpos 68
+ypos 233
+disable {{!HDCamCorrection i}}
+}
+Blur {
+channels {-rgba.red rgba.green -rgba.blue}
+size {{parent.blurGreenSize i}}
+name BlurGreen
+xpos 68
+ypos 273
+disable {{parent.blurGreenSize==0?1:0 i}}
+}
+push $N27639480
+Merge2 {
+inputs 2
+operation plus
+Achannels rgb
+also_merge all
+name Merge3
+xpos 190
+ypos 310
+}
+set N2763a920 [stack 0]
+Input {
+inputs 0
+name mask
+xpos 415
+ypos 7
+number 1
+}
+push $N27638da0
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 depth.Z
+name CopyMask
+xpos 308
+ypos 102
+disable {{!useMask i}}
+}
+set N278b7350 [stack 0]
+Invert {
+name Invert1
+xpos 399
+ypos 184
+disable {{!invertMask i x1 0}}
+}
+push $N2763a920
+push $N276397f0
+Dither {
+channels {rgba.red -rgba.green -rgba.blue}
+amount 0.017
+maskChannelInput -depth.Z
+invert_mask {{invertMask i}}
+unpremult -rgba.alpha
+name DitherRed
+xpos -167
+ypos 177
+}
+Transform {
+scale {{redAspect i} 1}
+center {1024 778}
+filter Impulse
+name transformRed
+xpos -167
+ypos 220
+}
+Transform {
+scale {{1920/1440 i} 1}
+center {960 540}
+name HDCamAspectCorrect
+xpos -167
+ypos 261
+disable {{!HDCamCorrection i}}
+}
+Blur {
+channels {rgba.red -rgba.green -rgba.blue}
+size {{parent.blurRedSize i}}
+name BlurRed
+xpos -167
+ypos 287
+disable {{parent.blurRedSize==0?1:0 i}}
+}
+push $N27639480
+Merge2 {
+inputs 2
+operation plus
+Achannels rgb
+also_merge all
+name Merge1
+xpos -98
+ypos 338
+}
+ShuffleCopy {
+inputs 2
+green green
+blue blue
+name ShuffleRed
+xpos 190
+ypos 368
+}
+push $N276397f0
+Dither {
+channels {-rgba.red -rgba.green rgba.blue}
+amount 0.06
+maskChannelInput -depth.Z
+invert_mask {{invertMask i}}
+unpremult -rgba.alpha
+name DitherBlue
+xpos -37
+ypos 168
+}
+Transform {
+scale {{blueAspect i} 1}
+center {1024 778}
+filter Impulse
+name transformBlue
+xpos -37
+ypos 216
+}
+Transform {
+scale {{1920/1440 i} 1}
+center {960 540}
+name HDCamAspectCorrect1
+xpos -32
+ypos 246
+disable {{!HDCamCorrection i}}
+}
+Blur {
+channels {-rgba.red -rgba.green rgba.blue}
+size {{parent.blurBlueSize i}}
+name BlurBlue
+xpos -37
+ypos 286
+disable {{parent.blurBlueSize==0?1:0 i}}
+}
+push $N27639480
+Merge2 {
+inputs 2
+operation plus
+Achannels rgb
+also_merge all
+name Merge2
+xpos 107
+ypos 329
+}
+ShuffleCopy {
+inputs 2
+red red
+green green
+name ShuffleBlue
+xpos 190
+ypos 438
+}
+Premult {
+name Premult1
+xpos 190
+ypos 596
+disable {{!usePremult i}}
+}
+set N278ba370 [stack 0]
+push $N278b7350
+Keymix {
+inputs 3
+maskChannel depth.Z
+name Keymix1
+xpos 308
+ypos 620
+}
+push $N278ba370
+Switch {
+inputs 2
+which {{useMask i}}
+name Switch1
+xpos 190
+ypos 673
+}
+push $N27638da0
+Copy {
+inputs 2
+channels rgba
+name Copy1
+xpos 257
+ypos 740
+}
+set N278baa50 [stack 0]
+Viewer {
+inputs 2
+name Viewer1
+xpos 31
+ypos 438
+}
+push $N278baa50
+Crop {
+box {0 0 {RGB.width i} {RGB.height i}}
+reformat true
+crop false
+name Crop1
+selected true
+xpos 257
+ypos 828
+disable {{!croptoFormat i}}
+}
+Output {
+name Output1
+xpos 257
+ypos 910
+}
+end_group
+Merge2 {
+inputs 2
+operation from
+maskChannelInput Object.alpha
+invert_mask true
+name Merge18
+xpos 2712
+ypos 1524
+}
+Merge2 {
+inputs 2
+operation screen
+maskChannelInput Object.alpha
+invert_mask true
+name Merge32
+xpos 2712
+ypos 1683
+}
+Dot {
+name Dot27
+xpos 2746
+ypos 2671
+}
+Merge2 {
+inputs 2
+name Merge19
+xpos 139
+ypos 2668
+}
+Crop {
+box {0 0 1920 1080}
+reformat true
+crop false
+name Crop4
+xpos 139
+ypos 2746
+}
+Remove {
+operation keep
+channels rgb
+name Remove1
+xpos 139
+ypos 2811
+}
+HueCorrect {
+inputs 0
+hue {sat {}
+  lum {}
+  red {curve 1 1 1 1.016176462 1.016176462 1.204901934 1}
+  green {}
+  blue {}
+  r_sup {}
+  g_sup {}
+  b_sup {curve -0.369607687 s0 1.105887771 0.1696079969 0.5254901648 0.9962266684 -0.5421566963 -0.369607687 s0}
+  sat_thrsh {}}
+mix 0.95
+name red_bias_hue_correct
+xpos 110
+ypos 1030
+}

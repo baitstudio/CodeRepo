@@ -131,17 +131,6 @@ BackdropNode {
 }
 BackdropNode {
  inputs 0
- name BackdropNode4
- tile_color 0x388e8e00
- label REF
- note_font_size 42
- xpos 173
- ypos -2711
- bdwidth 1542
- bdheight 387
-}
-BackdropNode {
- inputs 0
  name BackdropNode9
  tile_color 0x595b5aff
  label RELight
@@ -151,19 +140,30 @@ BackdropNode {
  bdwidth 805
  bdheight 294
 }
+BackdropNode {
+ inputs 0
+ name BackdropNode4
+ tile_color 0x388e8e00
+ label REF
+ note_font_size 42
+ xpos 320
+ ypos -2700
+ bdwidth 1542
+ bdheight 387
+}
 Read {
  inputs 0
  file L:/00719_grandpa/footage/episodes/499_generics/sh014/scale_refs/14_scale_ref.PNG
  format "988 557 0 0 988 557 1 "
  origset true
  name Read3
- xpos 183
- ypos -2633
+ xpos 330
+ ypos -2622
 }
 Reformat {
  name Reformat2
- xpos 183
- ypos -2549
+ xpos 330
+ ypos -2538
 }
 Read {
  inputs 0
@@ -171,13 +171,13 @@ Read {
  format "988 559 0 0 988 559 1 "
  origset true
  name Read6
- xpos 275
- ypos -2632
+ xpos 422
+ ypos -2621
 }
 Reformat {
  name Reformat4
- xpos 275
- ypos -2548
+ xpos 422
+ ypos -2537
 }
 Read {
  inputs 0
@@ -185,13 +185,13 @@ Read {
  format "991 558 0 0 991 558 1 "
  origset true
  name Read4
- xpos 371
- ypos -2632
+ xpos 518
+ ypos -2621
 }
 Reformat {
  name Reformat6
- xpos 371
- ypos -2548
+ xpos 518
+ ypos -2537
 }
 Read {
  inputs 0
@@ -199,13 +199,13 @@ Read {
  format "989 560 0 0 989 560 1 "
  origset true
  name Read5
- xpos 467
- ypos -2632
+ xpos 614
+ ypos -2621
 }
 Reformat {
  name Reformat7
- xpos 467
- ypos -2548
+ xpos 614
+ ypos -2537
 }
 Read {
  inputs 0
@@ -213,13 +213,13 @@ Read {
  format "986 554 0 0 986 554 1 "
  origset true
  name Read7
- xpos 563
- ypos -2632
+ xpos 710
+ ypos -2621
 }
 Reformat {
  name Reformat8
- xpos 563
- ypos -2548
+ xpos 710
+ ypos -2537
 }
 Read {
  inputs 0
@@ -227,13 +227,13 @@ Read {
  format "993 557 0 0 993 557 1 "
  origset true
  name Read9
- xpos 658
- ypos -2631
+ xpos 805
+ ypos -2620
 }
 Reformat {
  name Reformat9
- xpos 658
- ypos -2547
+ xpos 805
+ ypos -2536
 }
 Read {
  inputs 0
@@ -241,13 +241,13 @@ Read {
  format "988 559 0 0 988 559 1 "
  origset true
  name Read11
- xpos 751
- ypos -2631
+ xpos 898
+ ypos -2620
 }
 Reformat {
  name Reformat10
- xpos 751
- ypos -2547
+ xpos 898
+ ypos -2536
 }
 Read {
  inputs 0
@@ -255,13 +255,13 @@ Read {
  format "988 559 0 0 988 559 1 "
  origset true
  name Read12
- xpos 845
- ypos -2630
+ xpos 992
+ ypos -2619
 }
 Reformat {
  name Reformat11
- xpos 845
- ypos -2546
+ xpos 992
+ ypos -2535
 }
 Read {
  inputs 0
@@ -271,8 +271,8 @@ Read {
  origlast 152
  origset true
  name Read20
- xpos 989
- ypos -2608
+ xpos 1335
+ ypos -2594
 }
 Read {
  inputs 0
@@ -282,8 +282,8 @@ Read {
  origlast 114
  origset true
  name Read21
- xpos 1311
- ypos -2608
+ xpos 1657
+ ypos -2594
 }
 Read {
  inputs 0
@@ -291,8 +291,8 @@ Read {
  format "1920 1080 0 0 1920 1080 1 HD"
  origset true
  name Read22
- xpos 1407
- ypos -2615
+ xpos 1753
+ ypos -2601
 }
 Read {
  inputs 0
@@ -302,8 +302,8 @@ Read {
  origlast 69
  origset true
  name Read23
- xpos 1197
- ypos -2611
+ xpos 1543
+ ypos -2597
 }
 Read {
  inputs 0
@@ -313,15 +313,15 @@ Read {
  origlast 138
  origset true
  name Read24
- xpos 1092
- ypos -2614
+ xpos 1438
+ ypos -2600
 }
 Transform {
  translate {-289 -396}
  center {930 530}
  name Transform6
- xpos 1092
- ypos -2530
+ xpos 1438
+ ypos -2516
 }
 Read {
  inputs 0
@@ -454,7 +454,7 @@ Dot {
  xpos -310
  ypos -1894
 }
-set N1d4d46a0 [stack 0]
+set N16431f60 [stack 0]
 Dot {
  name Dot3
  xpos -111
@@ -476,7 +476,7 @@ Reformat {
  xpos 126
  ypos -1977
 }
-set N1d4d50f0 [stack 0]
+set N164329b0 [stack 0]
 Shuffle {
  red alpha
  green alpha
@@ -496,15 +496,15 @@ Invert {
  xpos 378
  ypos -1838
 }
-set N1d4d5b40 [stack 0]
-push $N1d4d50f0
+set N16433400 [stack 0]
+push $N164329b0
 Merge2 {
  inputs 2
  name Merge5
  xpos 126
  ypos -1832
 }
-set N1d4d5eb0 [stack 0]
+set N165eb2f0 [stack 0]
 Shuffle {
  green red
  blue red
@@ -521,7 +521,7 @@ Merge2 {
  xpos -145
  ypos -1832
 }
-push $N1d4d46a0
+push $N16431f60
 Grade {
  inputs 1+1
  blackpoint {0.0457142815 0.0457142815 0.07999999821 -0.03799999878}
@@ -539,19 +539,19 @@ Dot {
  xpos -310
  ypos -1325
 }
-set N1d4d6c70 [stack 0]
+set N165ec0b0 [stack 0]
 Dot {
  name Dot8
  xpos -79
  ypos -1325
 }
-push $N1d4d5b40
+push $N16433400
 Dot {
  name Dot6
  xpos 412
  ypos -1356
 }
-push $N1d4d5eb0
+push $N165eb2f0
 add_layer {shdw_ao_raw shdw_ao_raw.red shdw_ao_raw.green shdw_ao_raw.blue shdw_ao_raw.alpha}
 Shuffle {
  in shdw_ao_raw
@@ -588,7 +588,7 @@ Merge2 {
  xpos -113
  ypos -1266
 }
-push $N1d4d6c70
+push $N165ec0b0
 Grade {
  inputs 1+1
  white 1.1
@@ -604,7 +604,7 @@ Dot {
  xpos -310
  ypos -920
 }
-set N255aaf60 [stack 0]
+set N165edfa0 [stack 0]
 Blur {
  channels Object
  size 70
@@ -659,13 +659,13 @@ Dot {
  xpos -926
  ypos -1552
 }
-set N255ac770 [stack 0]
+set N25132880 [stack 0]
 Dot {
  name Dot9
  xpos -1122
  ypos -1552
 }
-set N255acae0 [stack 0]
+set N25132bf0 [stack 0]
 Camera2 {
  inputs 0
  name Camera2
@@ -687,7 +687,7 @@ Scene {
  xpos -1450
  ypos -1511
 }
-push $N255acae0
+push $N25132bf0
 add_layer {N N.X N.Y N.Z}
 ReLight {
  inputs 4
@@ -696,7 +696,7 @@ ReLight {
  xpos -1156
  ypos -1490
 }
-push $N255ac770
+push $N25132880
 Merge2 {
  inputs 2
  operation screen
@@ -711,7 +711,7 @@ Dot {
  xpos -926
  ypos -1226
 }
-set N256e2a60 [stack 0]
+set N25134090 [stack 0]
 add_layer {AO AO.red AO.green AO.blue AO.alpha}
 Shuffle {
  in AO
@@ -724,7 +724,7 @@ Unpremult {
  xpos -1125
  ypos -1171
 }
-push $N256e2a60
+push $N25134090
 Merge2 {
  inputs 2
  operation multiply
@@ -780,8 +780,8 @@ Group {
   xpos 190
   ypos 13
  }
-set N256e3b90 [stack 0]
-push $N256e3b90
+set N251351c0 [stack 0]
+push $N251351c0
  Copy {
   inputs 2
   from0 rgba.alpha
@@ -797,7 +797,7 @@ push $N256e3b90
   ypos 134
   disable {{!usePremult i}}
  }
-set N256e4270 [stack 0]
+set N251358a0 [stack 0]
  Multiply {
   channels rgb
   value 0
@@ -805,7 +805,7 @@ set N256e4270 [stack 0]
   xpos -37
   ypos 134
  }
-set N256e45e0 [stack 0]
+set N25135c10 [stack 0]
  Dither {
   channels {-rgba.red rgba.green -rgba.blue}
   amount 0.0052
@@ -840,7 +840,7 @@ set N256e45e0 [stack 0]
   ypos 273
   disable {{parent.blurGreenSize==0?1:0 i}}
  }
-push $N256e4270
+push $N251358a0
  Merge2 {
   inputs 2
   operation plus
@@ -850,7 +850,7 @@ push $N256e4270
   xpos 190
   ypos 310
  }
-set N256e5710 [stack 0]
+set N25244bb0 [stack 0]
  Input {
   inputs 0
   name mask
@@ -858,7 +858,7 @@ set N256e5710 [stack 0]
   ypos 7
   number 1
  }
-push $N256e3b90
+push $N251351c0
  Copy {
   inputs 2
   from0 rgba.alpha
@@ -868,15 +868,15 @@ push $N256e3b90
   ypos 102
   disable {{!useMask i}}
  }
-set N256e5df0 [stack 0]
+set N25245290 [stack 0]
  Invert {
   name Invert1
   xpos 399
   ypos 184
   disable {{!invertMask i x1 0}}
  }
-push $N256e5710
-push $N256e45e0
+push $N25244bb0
+push $N25135c10
  Dither {
   channels {rgba.red -rgba.green -rgba.blue}
   amount 0.0029
@@ -911,7 +911,7 @@ push $N256e45e0
   ypos 287
   disable {{parent.blurRedSize==0?1:0 i}}
  }
-push $N256e4270
+push $N251358a0
  Merge2 {
   inputs 2
   operation plus
@@ -929,7 +929,7 @@ push $N256e4270
   xpos 190
   ypos 368
  }
-push $N256e45e0
+push $N25135c10
  Dither {
   channels {-rgba.red -rgba.green rgba.blue}
   amount 0.0078
@@ -964,7 +964,7 @@ push $N256e45e0
   ypos 286
   disable {{parent.blurBlueSize==0?1:0 i}}
  }
-push $N256e4270
+push $N251358a0
  Merge2 {
   inputs 2
   operation plus
@@ -988,8 +988,8 @@ push $N256e4270
   ypos 596
   disable {{!usePremult i}}
  }
-set N2579fcb0 [stack 0]
-push $N256e5df0
+set N2533ca50 [stack 0]
+push $N25245290
  Keymix {
   inputs 3
   maskChannel depth.Z
@@ -997,7 +997,7 @@ push $N256e5df0
   xpos 308
   ypos 620
  }
-push $N2579fcb0
+push $N2533ca50
  Switch {
   inputs 2
   which {{useMask i}}
@@ -1005,7 +1005,7 @@ push $N2579fcb0
   xpos 190
   ypos 673
  }
-push $N256e3b90
+push $N251351c0
  Copy {
   inputs 2
   channels rgba
@@ -1013,14 +1013,14 @@ push $N256e3b90
   xpos 257
   ypos 740
  }
-set N257a0390 [stack 0]
+set N2533d130 [stack 0]
  Viewer {
   inputs 2
   name Viewer1
   xpos 31
   ypos 438
  }
-push $N257a0390
+push $N2533d130
  Crop {
   box {0 0 {RGB.width i} {RGB.height i}}
   reformat true
@@ -1042,7 +1042,7 @@ Premult {
  xpos -730
  ypos -771
 }
-push $N255aaf60
+push $N165edfa0
 Merge2 {
  inputs 2
  also_merge all
@@ -1067,6 +1067,19 @@ Remove {
 }
 Read {
  inputs 0
+ file L:/00719_grandpa/footage/episodes/gnp_406_bump/gnp406sh004/scale_refs/gnp406sh004_scale_ref.#####.jpg
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 63
+ frame_mode offset
+ frame 21.000000
+ origlast 63
+ origset true
+ name Read10
+ xpos 1087
+ ypos -2617
+}
+Read {
+ inputs 0
  file L:/00719_grandpa/footage/episodes/gnp_404_dancing/gnp404sh007/scale_refs/gnp404sh007_scale_ref.#####.jpg
  format "1920 1080 0 0 1920 1080 1 HD"
  last 110
@@ -1076,7 +1089,6 @@ Read {
  origset true
  colorspace linear
  name Read8
- selected true
- xpos 1530
- ypos -2617
+ xpos 1186
+ ypos -2616
 }

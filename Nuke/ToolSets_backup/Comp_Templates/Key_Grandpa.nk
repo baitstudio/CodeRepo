@@ -46,7 +46,7 @@ define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
 }
 Root {
  inputs 0
- name K:/CodeRepo/Nuke/plugins/ToolSets/Comp_Templates/Key_Grandpa.nk
+ name K:/CodeRepo/Nuke/ToolSets_backup/Comp_Templates/Key_Grandpa.nk
  frame 57
  last_frame 152
  lock_range true
@@ -297,32 +297,32 @@ Dot {
  xpos -1203
  ypos 1132
 }
-set N1631bda0 [stack 0]
+set N254485f0 [stack 0]
 Dot {
  name Dot10
  xpos -430
  ypos 1132
 }
-set N265c0070 [stack 0]
+set N25448960 [stack 0]
 Merge2 {
  inputs 2
  name Merge5
  xpos -464
  ypos 1435
 }
-set N265c03e0 [stack 0]
+set N25448cd0 [stack 0]
 Dot {
  name Dot47
  xpos -430
  ypos 1608
 }
-push $N265c0070
+push $N25448960
 Dot {
  name Dot48
  xpos -17
  ypos 1132
 }
-set N26687960 [stack 0]
+set N254493b0 [stack 0]
 Merge2 {
  inputs 2
  operation from
@@ -369,9 +369,9 @@ Transform {
  xpos 284
  ypos 1700
 }
-set C265be180 [stack 0]
-push $N265c03e0
-push $N26687960
+set C2550e380 [stack 0]
+push $N25448cd0
+push $N254493b0
 Dot {
  name Dot49
  xpos 162
@@ -402,7 +402,7 @@ Grade {
  xpos 128
  ypos 1517
 }
-clone $C265be180 {
+clone $C2550e380 {
  xpos 284
  ypos 1517
  selected false
@@ -426,42 +426,9 @@ RotoPaint {
   {f 0}
   {n
    {layer Root
-    {f 512}
+    {f 576}
     {t x44700000 x44070000}
-    {a fx x3f000000 fy x3f000000}
-    {curvegroup Bezier1 512 bezier
-     {{cc
-       {f 8192}
-       {p
-        {0 1}
-        {xc1708ce0 x42e9dccc}
-        {0 xbf800000}
-        {}
-        {x44ff8000 x42ee0000}
-        {}
-        {}
-        {x4505e800 xc2fffff8}
-        {}
-        {x3fc00000 xbfc00000}
-        {xc1880000 xc1bc0000}
-        {xbfc00000 x3fc00000}}}
-      {cc
-       {f 8192}
-       {p
-        {0 1}
-        {}
-        {0 xbf800000}
-        {}
-        {}
-        {}
-        {}
-        {}
-        {}
-        {x3fc00000 xbfc00000}
-        {}
-        {xbfc00000 x3fc00000}}}}
-     {t x43cb6000 x41460000}
-     {a fx x3f000000 fy x3f000000 str 1 spx x44700000 spy x44070000 sb 1 ltn x42a00000 ltm x42a00000 tt x40800000}}}}}}
+    {a fx x3f000000 fy x3f000000}}}}}
  toolbox {selectAll {
   { selectAll str 1 ssx 1 ssy 1 sf 1 }
   { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
@@ -539,25 +506,25 @@ Dot {
  xpos 478
  ypos 3139
 }
-set N267c0140 [stack 0]
+set N25511030 [stack 0]
 Dot {
  name Dot7
  xpos 824
  ypos 3139
 }
-push $N1631bda0
+push $N254485f0
 Dot {
  name Dot3
  xpos -1203
  ypos 1799
 }
-set N1631c110 [stack 0]
+set N25511710 [stack 0]
 Dot {
  name Dot22
  xpos -1203
  ypos 2066
 }
-set N1631c480 [stack 0]
+set N2563f850 [stack 0]
 Dot {
  name Dot5
  xpos -399
@@ -568,7 +535,7 @@ Dot {
  xpos -399
  ypos 2672
 }
-set N1631cb60 [stack 0]
+set N2563ff30 [stack 0]
 Dot {
  name Dot17
  xpos -302
@@ -579,7 +546,7 @@ Dot {
  xpos -302
  ypos 2866
 }
-push $N1631cb60
+push $N2563ff30
 HueCorrect {
  hue {sat {}
    lum {}
@@ -596,7 +563,7 @@ HueCorrect {
  xpos -433
  ypos 2744
 }
-set N1631d5b0 [stack 0]
+set N25640980 [stack 0]
 Merge2 {
  inputs 2
  operation minus
@@ -624,347 +591,73 @@ RotoPaint {
     {curvegroup Bezier1 512 bezier
      {{cc
        {f 8192}
-       {px
-        {1 x41400000 x41a80000 x41b00000 x42000000 x42140000 x42280000 x425c0000 x42820000 x42960000 x42a00000}
-        {{{x 4
-	   {xc248f89c -}}
-	  {xc1da448e x402e5ccf 1 x402e5ccf 1}
-	  {xc1160667 x403b6a0b 1 x403b6a0b 1}
-	  {x 5
-	   {x40000000 -}}}
-	 {{x 4
-	   {x42cbd0f6 -}}
-	  {x4229d2dd xc0b74e31 1 xc0b74e31 1}
-	  {x417fbd3f xc081757e 1 xc081757e 1}
-	  {x 5
-	   {x40000000 -}}}}
-        {{{xc36cb338 0 1 x41837aab 1}
-	  {xc1cf3340 x41c4f812 1 x41c4f812 1}
-	  {x437fb8f5 x41f78513 1 x41f78513 1}
-	  {x438dbff8 x41b274d1 1 x41b274d1 1}
-	  {x43fa8cca x419462af 1 x419462af 1}
-	  {x440c6e3e x411b0a46 1 x411b0a46 1}
-	  {x44158000 x408906c7 1 x408906c7 1}
-	  {x 2
-	   {x441fb332 -}}
-	  {x 2
-	   {x44201fff -}}}
-	 {{x43806668 0 1 xc04fb580 1}
-	  {x43690004 -}
-	  {x4373cf38 x3f9851b3 1 x3f9851b3 1}
-	  {x4374e666 x3f37a22f 1 x3f37a22f 1}
-	  {x437bb330 -}
-	  {x4369d998 xc0647acd 1 xc0647acd 1}
-	  {x43580000 -}
-	  {x4359b334 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x43623330 -}}}}
-        {{{x 4
-	   {x420d3380 -}}
-	  {x41da4490 xbfd53f1a 1 xbfd53f1a 1}
-	  {x4124f7b0 xc03b6a0d 1 xc03b6a0d 1}
-	  {x 5
-	   {xc0000000 -}}}
-	 {{x 4
-	   {xc28f3332 -}}
-	  {xc229d2dd x406536c9 1 x406536c9 1}
-	  {xc18f0610 x4081757e 1 x4081757e 1}
-	  {x 5
-	   {xc0000000 -}}}}
+       {px x425c0000
+        {{{x40000000 -}}
+	 {{x40000000 -}}}
+        {{{x441fb332 0 1 x3e028f9a 1}}
+	 {{x4359b334 0 1 x3f2332e6 1}}}
+        {{{xc0000000 -}}
+	 {{xc0000000 -}}}
         {{{xc2820000 -}}
 	 {{xc1300000 -}}}
-        {{{xc21c6660 0 1 x4186d3d8 1}
-	  {x432bb338 x41be45b9 1 x41be45b9 1}
-	  {x43da4a5b x41e88f5a 1 x41e88f5a 1}
-	  {x43e73334 x41a36e9f 1 x41a36e9f 1}
-	  {x44255334 x4187063c 1 x4187063c 1}
-	  {x4432e486 x410ab84d 1 x410ab84d 1}
-	  {x443b0000 x40822f72 1 x40822f72 1}
-	  {x 2
-	   {x44453332 -}}
-	  {x 2
-	   {x44459fff -}}}
-	 {{x433d3334 0 1 xc04fb580 1}
-	  {x43256668 -}
-	  {x43417da4 x401b5e00 1 x401b5e00 1}
-	  {x43424ccc -}
-	  {x43314cca -}
-	  {x4331f717 x3e2e159a 1 x3e2e159a 1}
-	  {x43330000 x3e1b94ab 1 x3e1b94ab 1}
-	  {x4334b334 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x433d3330 -}}}}
+        {{{x44453332 0 1 x3e028f9a 1}}
+	 {{x4334b334 0 1 x3f2332e6 1}}}
         {{{x42820000 -}}
 	 {{x41300000 -}}}
         {{{x41000000 -}}
 	 {{xc2640000 -}}}
-        {{{x42c16668 0 1 x418624f0 1}
-	  {x4399c002 x41bfa388 1 x41bfa388 1}
-	  {x440ff302 x41e1c286 1 x41e1c286 1}
-	  {x44136ccb x4185bf63 1 x4185bf63 1}
-	  {x443deccc x41acc32d 1 x41acc32d 1}
-	  {x44646848 -}
-	  {x4463c000 -}
-	  {x 2
-	   {x446df332 -}}
-	  {x 2
-	   {x446e5fff -}}}
-	 {{x4384c001 0 1 xc04fb580 1}
-	  {x4371b336 -}
-	  {x437b605a x3fef5be6 1 x3fef5be6 1}
-	  {x43823332 -}
-	  {x43751998 xc035ec73 1 xc035ec73 1}
-	  {x4359c2f9 -}
-	  {x435f0000 x3ec55be4 1 x3ec55be4 1}
-	  {x4360b334 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x43693330 -}}}}
+        {{{x446df332 0 1 x3e028f9a 1}}
+	 {{x4360b334 0 1 x3f2332e6 1}}}
         {{{xc1000000 -}}
 	 {{x42640000 -}}}
         {{{x40000000 -}}
 	 {{xc0000000 -}}}
-        {{{x42d93340 0 1 x4188e52b 1}
-	  {x439fb338 x41ba2313 1 x41ba2313 1}
-	  {x440f7c54 x41ddae0d 1 x41ddae0d 1}
-	  {x44152000 x4194b243 1 x4194b243 1}
-	  {x4442999b x418786e9 1 x418786e9 1}
-	  {x4454a73d x41468f5a 1 x41468f5a 1}
-	  {x4461a001 x40a4c6d5 1 x40a4c6d5 1}
-	  {x 2
-	   {x446bd333 -}}
-	  {x 2
-	   {x446c4000 -}}}
-	 {{x43ac8cd0 0 1 xc04fb580 1}
-	  {x43a0a66a -}
-	  {x43ae7fdd x404eb826 1 x404eb826 1}
-	  {x43b0cccd x3ffb5ba3 1 x3ffb5ba3 1}
-	  {x43b94ccd -}
-	  {x43af8666 xc07a3d73 1 xc07a3d73 1}
-	  {x43a5c000 -}
-	  {x43a6999a x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x43aad998 -}}}}
+        {{{x446bd333 0 1 x3e028f9a 1}}
+	 {{x43a6999a 0 1 x3f2332e6 1}}}
         {{{xc0000000 -}}
 	 {{x40000000 -}}}
         {{{0 -}}
 	 {{xc2080000 -}}}
-        {{{x42b43340 0 1 x41884ba8 1}
-	  {x43967338 x41bb5618 1 x41bb5618 1}
-	  {x440b9c37 x40f5ad80 1 x40f5ad80 1}
-	  {x440c4000 x40f5ad80 1 x40f5ad80 1}
-	  {x44387334 x4188c895 1 x4188c895 1}
-	  {x444c5e06 x415f0a40 1 x415f0a40 1}
-	  {x445b4cce x40b2b8b9 1 x40b2b8b9 1}
-	  {x 2
-	   {x44658000 -}}
-	  {x 2
-	   {x4465eccd -}}}
-	 {{x43e4999d 0 1 xc04fb580 1}
-	  {x43d8b337 -}
-	  {x43e8cda5 x409dc286 1 x409dc286 1}
-	  {x43f1599c x3f028e66 1 x3f028e66 1}
-	  {x43f23334 -}
-	  {x43e2799a xc0c947ad 1 xc0c947ad 1}
-	  {x43d2c001 -}
-	  {x43d3999b x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x43d7d999 -}}}}
+        {{{x44658000 0 1 x3e028f9a 1}}
+	 {{x43d3999b 0 1 x3f2332e6 1}}}
         {{{0 -}}
 	 {{x42080000 -}}}
         {{{xc1d80000 -}}
 	 {{xc1980000 -}}}
-        {{{x431fe668 0 1 x418d359e 1}
-	  {x43b9599c x41b1822d 1 x41b1822d 1}
-	  {x4416eaf6 x41c7eb80 1 x41c7eb80 1}
-	  {x441b2666 x4187f2c0 1 x4187f2c0 1}
-	  {x4445a668 x41864ffa 1 x41864ffa 1}
-	  {x445a1be3 x41673333 1 x41673333 1}
-	  {x4469c668 x40b7efc0 1 x40b7efc0 1}
-	  {x 2
-	   {x4473f99a -}}
-	  {x44746667 x3f028f9a 1 x3f028f9a 1}
-	  {x447ac667 x40eca3d3 1 0 1}}
-	 {{x4405e001 0 1 xc04fb580 1}
-	  {x43ffd99c -}
-	  {x4407c006 x40647acd 1 x40647acd 1}
-	  {x4408d99a -}
-	  {x44072667 xbfafe4ab 1 xbfafe4ab 1}
-	  {x4403b267 xc0185200 1 xc0185200 1}
-	  {x44013333 -}
-	  {x4401a000 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 2
-	   {x4403bfff -}}
-	  {x4402e666 xbf828f00 1 0 1}}}
+        {{{x4473f99a 0 1 xb1cccccd 1}}
+	 {{x4401a000 0 1 x3f2332e6 1}}}
         {{{x41d80000 -}}
 	 {{x41980000 -}}}
-        {{{x 5
-	   {x420a0000 -}}
-	  {x41b60000 xc0166666 1 xc0166666 1}
-	  {x 5
-	   {x41300000 -}}}
-	 {{x 5
-	   {xc1c66660 -}}
-	  {xc18f3330 x3fb0a3cd 1 x3fb0a3cd 1}
-	  {x 5
-	   {xc1300000 -}}}}
-        {{{x42da3330 0 1 x418e6183 1}
-	  {x439ff334 x41af2a62 1 x41af2a62 1}
-	  {x4408c0e3 x41c7eb80 1 x41c7eb80 1}
-	  {x440e7332 x4199cee0 1 x4199cee0 1}
-	  {x443da000 x4196e600 1 x4196e600 1}
-	  {x44552f02 x418547ad 1 x418547ad 1}
-	  {x44674666 x40c92ed5 1 x40c92ed5 1}
-	  {x 2
-	   {x44717998 -}}
-	  {x4471e665 x3f028f9a 1 x3f028f9a 1}
-	  {x447d5ffe x41583d63 1 0 1}}
-	 {{x44348001 0 1 xc04fb580 1}
-	  {x442e8cce -}
-	  {x442ef68e x3e124000 1 x3e124000 1}
-	  {x442ef99a -}
-	  {x442db333 xbf7fae22 1 xbf7fae22 1}
-	  {x442b3acd xbfd9999a 1 xbfd9999a 1}
-	  {x44297333 -}
-	  {x4429e000 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 2
-	   {x442bffff -}}
-	  {x44260ccc xc0e47ada 1 0 1}}}
-        {{{x 5
-	   {xc14a1ac0 -}}
-	  {xc13d0d60 x3e27119a 1 x3e27119a 1}
-	  {x 5
-	   {xc1300000 -}}}
-	 {{x 5
-	   {x41114780 -}}
-	  {x4120a3c0 x3e449ccd 1 x3e449ccd 1}
-	  {x 5
-	   {x41300000 -}}}}
+        {{{x41300000 -}}
+	 {{xc1300000 -}}}
+        {{{x44717998 0 1 xb1cccccd 1}}
+	 {{x4429e000 0 1 x3f2332e6 1}}}
+        {{{xc1300000 -}}
+	 {{x41300000 -}}}
         {{{x42a60000 -}}
 	 {{x41600000 -}}}
-        {{{xc0b33280 0 1 x418ff8c6 1}
-	  {x434d333c x41abfbdd 1 x41abfbdd 1}
-	  {x43d42e0a x41c11ead 1 x41c11ead 1}
-	  {x43df4cca x41996940 1 x41996940 1}
-	  {x441ed333 x4192c080 1 x4192c080 1}
-	  {x443470a1 x41721480 1 x41721480 1}
-	  {x4444a667 x40bbce00 1 x40bbce00 1}
-	  {x 2
-	   {x444ed999 -}}
-	  {x 2
-	   {x444f4666 -}}}
-	 {{x44550665 0 1 xc04fb580 1}
-	  {x 3
-	   {x444f1332 -}}
-	  {x444dcccb xbf3e6666 1 xbf3e6666 1}
-	  {x444c4932 xbf828f33 1 xbf828f33 1}
-	  {x444b3fff -}
-	  {x444baccc x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x444dcccb -}}}}
+        {{{x444ed999 0 1 x3e028f9a 1}}
+	 {{x444baccc 0 1 x3f2332e6 1}}}
         {{{xc2a60000 -}}
 	 {{xc1600000 -}}}
         {{{x41a33300 -}}
 	 {{x42013350 -}}}
-        {{{xc2eaffe8 0 1 x419232ee 1}
-	  {x42ba99b8 x41a7878d 1 x41a7878d 1}
-	  {x4396a976 x41b7998d 1 x41b7998d 1}
-	  {x43a16666 x4198dafa 1 x4198dafa 1}
-	  {x43ffc002 x418ffcd3 1 x418ffcd3 1}
-	  {x441431b6 x4161c293 1 x4161c293 1}
-	  {x44232668 x40b2e2c7 1 x40b2e2c7 1}
-	  {x 2
-	   {x442d599a -}}
-	  {x 2
-	   {x442dc667 -}}}
-	 {{x4444c665 0 1 xc0222906 1}
-	  {x443ed332 xbfb631e6 1 xbfb631e6 1}
-	  {x443da872 xbf028f9a 1 xbf028f9a 1}
-	  {x443d8ccb xbf00bf46 1 xbf00bf46 1}
-	  {x443c4664 xbf9028ef 1 xbf9028ef 1}
-	  {x44395398 xc0028f4d 1 xc0028f4d 1}
-	  {x44372ccb -}
-	  {x44379998 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x4439b997 -}}}}
+        {{{x442d599a 0 1 x3e028f9a 1}}
+	 {{x44379998 0 1 x3f2332e6 1}}}
         {{{xc15e23c0 -}}
 	 {{xc1afdca0 -}}}
-        {{{x 2
-	   {xc25d3340 -}}
-	  {xc172809f x405e0774 1 x405e0774 1}
-	  {x 2
-	   {xc1600000 -}}
-	  {xc1d46670 xc020a3e6 1 xc020a3e6 1}
-	  {x 5
-	   {xc21c6670 -}}}
-	 {{x 2
-	   {x433a1990 -}}
-	  {x42f00201 xc0b6c8b0 1 xc0b6c8b0 1}
-	  {x 2
-	   {x42ec3328 -}}
-	  {x42d0b32c xc02fffe6 1 xc02fffe6 1}
-	  {x 5
-	   {x42b53330 -}}}}
-        {{{xc36c8000 0 1 x418d6d29 1}
-	  {xc1cd9980 x41b11316 1 x41b11316 1}
-	  {x434e2fb6 x41cbfffa 1 x41cbfffa 1}
-	  {x43654cc8 x419a0bd9 1 x419a0bd9 1}
-	  {x43d10000 x419933bc 1 x419933bc 1}
-	  {x44012372 x418c147d 1 x418c147d 1}
-	  {x44144667 x40d09d87 1 x40d09d87 1}
-	  {x 2
-	   {x441e7999 -}}
-	  {x 2
-	   {x441ee666 -}}}
-	 {{x440caccf 0 1 xc04fb580 1}
-	  {x4406b99c -}
-	  {x440c1868 x3fed9c00 1 x3fed9c00 1}
-	  {x440c4002 -}
-	  {x440af99b xbf2e14cd 1 xbf2e14cd 1}
-	  {x4409b334 xbf599a00 1 xbf599a00 1}
-	  {x4408d99a -}
-	  {x44094667 x3ec8dcec 1 x3ec8dcec 1}
-	  {x 3
-	   {x440b6666 -}}}}
-        {{{x 2
-	   {x4171972a -}}
-	  {x40cfa091 xbf3e8198 1 xbf3e8198 1}
-	  {x 2
-	   {x40c7b080 -}}
-	  {x4159f5a0 x3fbcfbcd 1 x3fbcfbcd 1}
-	  {x 5
-	   {x41a80980 -}}}
-	 {{x 2
-	   {xc24b4110 -}}
-	  {xc2525be3 xbe1d2f00 1 xbe1d2f00 1}
-	  {x 2
-	   {xc2529048 -}}
-	  {xc24a9f64 x3ecb4a00 1 x3ecb4a00 1}
-	  {x 5
-	   {xc242ae80 -}}}}}}     idem}
-     {t
-      {{x42000000 x44bc4000 0 1 xc28fe872 1}
-       {x42280000 x44449d71 xc28fe872 1 0 1}}
-      {{x42000000 x442f4000 0 1 xc1bd3126 1}
-       {x42280000 x43e84148 xc1bd3126 1 0 1}}
-      {{x42280000 0}}
-      {{x42000000 0 -}
-       {x42280000}}
-      {{x42000000 0 -}
-       {x42280000}}
+        {{{xc21c6670 -}}
+	 {{x42b53330 -}}}
+        {{{x441e7999 0 1 x3e028f9a 1}}
+	 {{x44094667 0 1 x3f2332e6 1}}}
+        {{{x41a80980 -}}
+	 {{xc242ae80 -}}}}}     idem}
+     {t 0 0
+      {{x42280000 0}}     0 0
       {{x42280000 0}}
       {{x42280000 0}}
-      {{x42280000 0}}
-      {{x42000000 0 -}
-       {x42280000}}
-      {{x42000000 1 -}
-       {x42280000}}
-      {{x42000000 1 -}
-       {x42280000}}
-      {{x42280000 1}}
-      {{x42000000 0 -}
-       {x42280000}}
-      {{x42000000 0 -}
-       {x42280000}}
+      {{x42280000 0}}     0 1 1
+      {{x42280000 1}}     0 0
       {{x42280000 0}}
       {{x42280000 0}}
       {{x42280000 0}}
@@ -1019,29 +712,30 @@ RotoPaint {
  source_black_outside true
  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
  name RotoPaint1
+ selected true
  xpos -1684
  ypos 2148
 }
-push $N1631c110
+push $N25511710
 PostageStamp {
  name PostageStamp4
  xpos -1514
  ypos 1772
  postage_stamp true
 }
-set N1631e370 [stack 0]
+set N25641740 [stack 0]
 Dot {
  name Dot1
  xpos -1672
  ypos 1799
 }
-set N1631e6e0 [stack 0]
+set N25641ab0 [stack 0]
 Dot {
  name Dot4
  xpos -1835
  ypos 1799
 }
-set N1631ea50 [stack 0]
+set N25641e20 [stack 0]
 Dot {
  name Dot2
  xpos -2034
@@ -1059,7 +753,7 @@ Invert {
  xpos -2068
  ypos 1935
 }
-push $N1631ea50
+push $N25641e20
 Shuffle {
  alpha red
  name Shuffle3
@@ -1082,7 +776,7 @@ Grade {
  xpos -1869
  ypos 1994
 }
-push $N1631e6e0
+push $N25641ab0
 Shuffle {
  alpha blue
  name Shuffle1
@@ -1104,7 +798,7 @@ Grade {
  xpos -1706
  ypos 1928
 }
-push $N1631e370
+push $N25641740
 OFXuk.co.thefoundry.keylight.keylight_v201 {
  show "Intermediate Result"
  unPreMultiply false
@@ -1169,7 +863,7 @@ Merge2 {
  xpos -1514
  ypos 2154
 }
-push $N1631c480
+push $N2563f850
 Merge2 {
  inputs 2
  operation in
@@ -1177,20 +871,20 @@ Merge2 {
  xpos -1237
  ypos 2154
 }
-set N1647a090 [stack 0]
+set N25799050 [stack 0]
 Dot {
  name Dot8
  xpos -1203
  ypos 2274
 }
-set N1647a400 [stack 0]
+set N257993c0 [stack 0]
 Dot {
  name Dot43
  xpos -1203
  ypos 2687
 }
-set N1647a770 [stack 0]
-push $N1647a400
+set N25799730 [stack 0]
+push $N257993c0
 Emboss {
  channels alpha
  Angle 320
@@ -1218,7 +912,7 @@ Blur {
  xpos -888
  ypos 2301
 }
-push $N1647a090
+push $N25799050
 Dot {
  name Dot13
  xpos -680
@@ -1230,7 +924,7 @@ FilterErode {
  xpos -714
  ypos 2416
 }
-push $N1631d5b0
+push $N25640980
 Copy {
  inputs 2
  from0 rgba.alpha
@@ -1244,13 +938,13 @@ Premult {
  xpos -714
  ypos 2572
 }
-push $N1647a770
+push $N25799730
 Dot {
  name Dot42
  xpos -535
  ypos 2687
 }
-push $N1631d5b0
+push $N25640980
 Group {
  inputs 2
  name B_EdgeExpander1
@@ -1279,7 +973,7 @@ Group {
   name BackdropNode11
   tile_color 0x999999ff
   label "Edge Expand"
-  note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_size 20
   xpos -654
   ypos -433
@@ -1313,7 +1007,7 @@ Group {
   xpos -634
   ypos -302
  }
-set N260b18c0 [stack 0]
+set N25a1ca00 [stack 0]
  Erode {
   channels alpha
   size 4
@@ -1323,13 +1017,13 @@ set N260b18c0 [stack 0]
   xpos -634
   ypos -229
  }
-set N260b1c30 [stack 0]
+set N25a1cd70 [stack 0]
  Dot {
   name Dot15
   xpos -490
   ypos -220
  }
-set N260b1fa0 [stack 0]
+set N25a1d0e0 [stack 0]
  Dot {
   name Dot1
   xpos 246
@@ -1350,7 +1044,7 @@ set N260b1fa0 [stack 0]
   xpos 212
   ypos 712
  }
-set N260b29f0 [stack 0]
+set N25a1db30 [stack 0]
  Shuffle {
   red alpha
   green alpha
@@ -1359,13 +1053,13 @@ set N260b29f0 [stack 0]
   xpos 84
   ypos 718
  }
-push $N260b1c30
+push $N25a1cd70
  Premult {
   name Premult38
   xpos -634
   ypos -169
  }
-set N260b30d0 [stack 0]
+set N25a1e210 [stack 0]
  Blur {
   size 1
   maskChannelInput rgba.alpha
@@ -1380,7 +1074,7 @@ set N260b30d0 [stack 0]
   xpos -634
   ypos -86
  }
-push $N260b1fa0
+push $N25a1d0e0
  Merge2 {
   inputs 2
   operation copy
@@ -1388,7 +1082,7 @@ push $N260b1fa0
   xpos -524
   ypos -86
  }
-set N260b3b20 [stack 0]
+set N25a1ec60 [stack 0]
  Premult {
   name Premult46
   xpos -636
@@ -1407,7 +1101,7 @@ set N260b3b20 [stack 0]
   xpos -636
   ypos 15
  }
-push $N260b3b20
+push $N25a1ec60
  Merge2 {
   inputs 2
   operation copy
@@ -1415,7 +1109,7 @@ push $N260b3b20
   xpos -524
   ypos 15
  }
-set N26183730 [stack 0]
+set N25aaee80 [stack 0]
  Premult {
   name Premult57
   xpos -634
@@ -1434,7 +1128,7 @@ set N26183730 [stack 0]
   xpos -634
   ypos 108
  }
-push $N26183730
+push $N25aaee80
  Merge2 {
   inputs 2
   operation copy
@@ -1442,7 +1136,7 @@ push $N26183730
   xpos -524
   ypos 108
  }
-set N261844f0 [stack 0]
+set N25aafc40 [stack 0]
  Premult {
   name Premult58
   xpos -633
@@ -1461,7 +1155,7 @@ set N261844f0 [stack 0]
   xpos -633
   ypos 208
  }
-push $N261844f0
+push $N25aafc40
  Merge2 {
   inputs 2
   operation copy
@@ -1469,7 +1163,7 @@ push $N261844f0
   xpos -524
   ypos 208
  }
-set N261852b0 [stack 0]
+set N25ab0a00 [stack 0]
  Premult {
   name Premult1
   xpos -636
@@ -1488,7 +1182,7 @@ set N261852b0 [stack 0]
   xpos -636
   ypos 315
  }
-push $N261852b0
+push $N25ab0a00
  Merge2 {
   inputs 2
   operation copy
@@ -1496,7 +1190,7 @@ push $N261852b0
   xpos -523
   ypos 315
  }
-set N26186070 [stack 0]
+set N25ab17c0 [stack 0]
  Premult {
   name Premult2
   xpos -634
@@ -1515,7 +1209,7 @@ set N26186070 [stack 0]
   xpos -634
   ypos 408
  }
-push $N26186070
+push $N25ab17c0
  Merge2 {
   inputs 2
   operation copy
@@ -1523,7 +1217,7 @@ push $N26186070
   xpos -524
   ypos 408
  }
-set N26271050 [stack 0]
+set N25ab2580 [stack 0]
  Premult {
   name Premult3
   xpos -633
@@ -1542,7 +1236,7 @@ set N26271050 [stack 0]
   xpos -633
   ypos 508
  }
-push $N26271050
+push $N25ab2580
  Merge2 {
   inputs 2
   operation copy
@@ -1550,7 +1244,7 @@ push $N26271050
   xpos -522
   ypos 508
  }
-set N26271e10 [stack 0]
+set N25b63960 [stack 0]
  Premult {
   name Premult4
   xpos -635
@@ -1569,7 +1263,7 @@ set N26271e10 [stack 0]
   xpos -635
   ypos 616
  }
-push $N26271e10
+push $N25b63960
  Merge2 {
   inputs 2
   operation copy
@@ -1577,7 +1271,7 @@ push $N26271e10
   xpos -522
   ypos 616
  }
-set N26272bd0 [stack 0]
+set N25b64720 [stack 0]
  Premult {
   name Premult5
   xpos -633
@@ -1596,7 +1290,7 @@ set N26272bd0 [stack 0]
   xpos -633
   ypos 709
  }
-push $N26272bd0
+push $N25b64720
  Merge2 {
   inputs 2
   operation copy
@@ -1604,7 +1298,7 @@ push $N26272bd0
   xpos -523
   ypos 709
  }
-set N26273990 [stack 0]
+set N25b654e0 [stack 0]
  Premult {
   name Premult6
   xpos -632
@@ -1623,7 +1317,7 @@ set N26273990 [stack 0]
   xpos -632
   ypos 809
  }
-push $N26273990
+push $N25b654e0
  Merge2 {
   inputs 2
   operation copy
@@ -1631,7 +1325,7 @@ push $N26273990
   xpos -522
   ypos 809
  }
-set N26274750 [stack 0]
+set N25b662a0 [stack 0]
  Premult {
   name Premult8
   xpos -635
@@ -1650,7 +1344,7 @@ set N26274750 [stack 0]
   xpos -635
   ypos 925
  }
-push $N26274750
+push $N25b662a0
  Merge2 {
   inputs 2
   operation copy
@@ -1658,7 +1352,7 @@ push $N26274750
   xpos -522
   ypos 925
  }
-set N2633b3c0 [stack 0]
+set N25b66cf0 [stack 0]
  Premult {
   name Premult9
   xpos -633
@@ -1677,7 +1371,7 @@ set N2633b3c0 [stack 0]
   xpos -633
   ypos 1018
  }
-push $N2633b3c0
+push $N25b66cf0
  Merge2 {
   inputs 2
   operation copy
@@ -1685,7 +1379,7 @@ push $N2633b3c0
   xpos -522
   ypos 1018
  }
-set N2633c4f0 [stack 0]
+set N25c38440 [stack 0]
  Premult {
   name Premult10
   xpos -632
@@ -1704,7 +1398,7 @@ set N2633c4f0 [stack 0]
   xpos -632
   ypos 1118
  }
-push $N2633c4f0
+push $N25c38440
  Merge2 {
   inputs 2
   operation copy
@@ -1712,7 +1406,7 @@ push $N2633c4f0
   xpos -522
   ypos 1118
  }
-set N2633d2b0 [stack 0]
+set N25c39200 [stack 0]
  Premult {
   name Premult11
   xpos -635
@@ -1731,7 +1425,7 @@ set N2633d2b0 [stack 0]
   xpos -635
   ypos 1225
  }
-push $N2633d2b0
+push $N25c39200
  Merge2 {
   inputs 2
   operation copy
@@ -1739,7 +1433,7 @@ push $N2633d2b0
   xpos -522
   ypos 1225
  }
-set N2633e070 [stack 0]
+set N25cca0d0 [stack 0]
  Premult {
   name Premult12
   xpos -633
@@ -1758,7 +1452,7 @@ set N2633e070 [stack 0]
   xpos -633
   ypos 1318
  }
-push $N2633e070
+push $N25cca0d0
  Merge2 {
   inputs 2
   operation copy
@@ -1766,7 +1460,7 @@ push $N2633e070
   xpos -522
   ypos 1318
  }
-set N26407050 [stack 0]
+set N25ccae90 [stack 0]
  Premult {
   name Premult13
   xpos -632
@@ -1785,7 +1479,7 @@ set N26407050 [stack 0]
   xpos -632
   ypos 1418
  }
-push $N26407050
+push $N25ccae90
  Merge2 {
   inputs 2
   operation copy
@@ -1793,7 +1487,7 @@ push $N26407050
   xpos -522
   ypos 1418
  }
-set N26407e10 [stack 0]
+set N25ccbc50 [stack 0]
  Premult {
   name Premult14
   xpos -634
@@ -1812,7 +1506,7 @@ set N26407e10 [stack 0]
   xpos -634
   ypos 1526
  }
-push $N26407e10
+push $N25ccbc50
  Merge2 {
   inputs 2
   operation copy
@@ -1820,7 +1514,7 @@ push $N26407e10
   xpos -521
   ypos 1526
  }
-set N26408bd0 [stack 0]
+set N25ccca10 [stack 0]
  Premult {
   name Premult15
   xpos -632
@@ -1839,7 +1533,7 @@ set N26408bd0 [stack 0]
   xpos -632
   ypos 1619
  }
-push $N26408bd0
+push $N25ccca10
  Merge2 {
   inputs 2
   operation copy
@@ -1847,7 +1541,7 @@ push $N26408bd0
   xpos -521
   ypos 1619
  }
-set N26409990 [stack 0]
+set N25d65df0 [stack 0]
  Premult {
   name Premult16
   xpos -631
@@ -1866,7 +1560,7 @@ set N26409990 [stack 0]
   xpos -631
   ypos 1719
  }
-push $N26409990
+push $N25d65df0
  Merge2 {
   inputs 2
   operation copy
@@ -1874,7 +1568,7 @@ push $N26409990
   xpos -521
   ypos 1719
  }
-set N2640a750 [stack 0]
+set N25d66bb0 [stack 0]
  Premult {
   name Premult7
   xpos -631
@@ -1893,7 +1587,7 @@ set N2640a750 [stack 0]
   xpos -631
   ypos 1842
  }
-push $N2640a750
+push $N25d66bb0
  Merge2 {
   inputs 2
   operation copy
@@ -1901,32 +1595,32 @@ push $N2640a750
   xpos -521
   ypos 1842
  }
-push $N2640a750
-push $N26409990
-push $N26408bd0
-push $N26407e10
-push $N26407050
-push $N2633e070
-push $N2633d2b0
-push $N2633c4f0
-push $N2633b3c0
-push $N26274750
-push $N26273990
-push $N26272bd0
-push $N26271e10
-push $N26271050
-push $N26186070
-push $N261852b0
-push $N261844f0
-push $N26183730
-push $N260b3b20
-push $N260b18c0
+push $N25d66bb0
+push $N25d65df0
+push $N25ccca10
+push $N25ccbc50
+push $N25ccae90
+push $N25cca0d0
+push $N25c39200
+push $N25c38440
+push $N25b66cf0
+push $N25b662a0
+push $N25b654e0
+push $N25b64720
+push $N25b63960
+push $N25ab2580
+push $N25ab17c0
+push $N25ab0a00
+push $N25aafc40
+push $N25aaee80
+push $N25a1ec60
+push $N25a1ca00
  Premult {
   name Premult17
   xpos -505
   ypos -296
  }
-set N2651faa0 [stack 0]
+set N25d67ce0 [stack 0]
  Switch {
   inputs 21
   which 12.5
@@ -1935,8 +1629,8 @@ set N2651faa0 [stack 0]
   xpos -91
   ypos 806
  }
-set N19e71f60 [stack 0]
-push $N260b30d0
+set N1a3dfbe0 [stack 0]
+push $N25a1e210
  Dot {
   name Dot5
   xpos -838
@@ -1947,25 +1641,25 @@ push $N260b30d0
   xpos -838
   ypos 2002
  }
-push $N2651faa0
+push $N25d67ce0
  Dot {
   name Dot3
   xpos 497
   ypos -293
  }
-set N265204f0 [stack 0]
+set N25d68730 [stack 0]
  Dot {
   name Dot4
   xpos 620
   ypos -293
  }
-set N26520860 [stack 0]
+set N25d68aa0 [stack 0]
  Dot {
   name Dot2
   xpos 730
   ypos -293
  }
-push $N26520860
+push $N25d68aa0
  Input {
   inputs 0
   name MASK
@@ -1980,8 +1674,8 @@ push $N26520860
   ypos 718
   number 3
  }
-push $N260b29f0
-push $N19e71f60
+push $N25a1db30
+push $N1a3dfbe0
  Blur {
   inputs 1+1
   size 2.6
@@ -1999,7 +1693,7 @@ push $N19e71f60
   xpos 344
   ypos 800
  }
-push $N265204f0
+push $N25d68730
  Merge2 {
   inputs 2+1
   operation copy
@@ -2083,12 +1777,12 @@ Dot {
  xpos -1203
  ypos 3193
 }
-clone $C265be180 {
+clone $C2550e380 {
  xpos -59
  ypos 3190
  selected false
 }
-push $N267c0140
+push $N25511030
 Merge2 {
  inputs 2
  also_merge all
@@ -2103,7 +1797,7 @@ Dot {
  xpos 478
  ypos 3369
 }
-set N267c0f00 [stack 0]
+set N25dd2ea0 [stack 0]
 Shuffle {
  in Matte
  green red
@@ -2172,13 +1866,13 @@ Group {
   xpos 321
   ypos -583
  }
-set N267c2030 [stack 0]
+set N25ead830 [stack 0]
  Dot {
   name Dot1
   xpos 506
   ypos -531
  }
-set N267c23a0 [stack 0]
+set N25eadba0 [stack 0]
  Dot {
   name Dot10
   xpos 703
@@ -2189,7 +1883,7 @@ set N267c23a0 [stack 0]
   xpos 709
   ypos 498
  }
-push $N267c2030
+push $N25ead830
  Shuffle {
   red black
   green black
@@ -2198,8 +1892,8 @@ push $N267c2030
   xpos 321
   ypos -416
  }
-set N267c2df0 [stack 0]
-push $N267c2df0
+set N25eae5f0 [stack 0]
+push $N25eae5f0
  Invert {
   channels alpha
   name Invert1
@@ -2228,7 +1922,7 @@ push $N267c2df0
   xpos 355
   ypos -119
  }
-set N268c61d0 [stack 0]
+set N25eaf3b0 [stack 0]
  Input {
   inputs 0
   name BG
@@ -2243,7 +1937,7 @@ set N268c61d0 [stack 0]
   ypos -579
   disable true
  }
-set N268c68b0 [stack 0]
+set N25eafa90 [stack 0]
  Dot {
   name Dot8
   xpos 251
@@ -2254,7 +1948,7 @@ set N268c68b0 [stack 0]
   xpos 251
   ypos -253
  }
-set N268c6f90 [stack 0]
+set N25eb0170 [stack 0]
  Grade {
   black {{-parent.hilight_threshold}}
   add {{-parent.hilight_threshold}}
@@ -2271,7 +1965,7 @@ set N268c6f90 [stack 0]
   xpos 394
   ypos -124
  }
- set C268c7670 [stack 0]
+ set C25eb0850 [stack 0]
  Constant {
   inputs 0
   format {{{parent.Constant1.format}}}
@@ -2302,13 +1996,13 @@ set N268c6f90 [stack 0]
   xpos 428
   ypos 352
  }
-push $N268c61d0
+push $N25eaf3b0
  Dot {
   name Dot5
   xpos 355
   ypos 64
  }
-push $N268c6f90
+push $N25eb0170
  Grade {
   whitepoint {{parent.darks_threshold}}
   white_clamp true
@@ -2317,7 +2011,7 @@ push $N268c6f90
   xpos 217
   ypos 9
  }
-clone $C268c7670 {
+clone $C25eb0850 {
   xpos 217
   ypos 71
   selected false
@@ -2336,7 +2030,7 @@ clone $C268c7670 {
   xpos 217
   ypos 138
  }
-push $N267c23a0
+push $N25eadba0
  Dot {
   name Dot2
   xpos 506
@@ -2351,7 +2045,7 @@ push $N267c23a0
   xpos 30
   ypos 68
  }
-push $N268c68b0
+push $N25eafa90
  Switch {
   inputs 2
   which {{parent.wrap_only}}
@@ -2396,13 +2090,13 @@ push $N268c68b0
   xpos 217
   ypos 493
  }
-set N26975300 [stack 0]
+set N25fba8e0 [stack 0]
  Output {
   name Output1
   xpos 217
   ypos 529
  }
-push $N26975300
+push $N25fba8e0
  Viewer {
   input_process false
   name Viewer1
@@ -2410,7 +2104,7 @@ push $N26975300
   ypos -245
  }
 end_group
-push $N267c0f00
+push $N25dd2ea0
 Merge2 {
  inputs 2
  operation overlay
@@ -2420,47 +2114,16 @@ Merge2 {
  xpos 444
  ypos 3452
 }
-Dot {
- name Dot68
- xpos 478
- ypos 3675
-}
-set N26975d50 [stack 0]
-Keyer {
- operation "red keyer"
- range {0.1824448878 0.9115931416 1 1}
- name Keyer8
- xpos 551
- ypos 3666
-}
-set N269760c0 [stack 0]
-push $N269760c0
-push $N26975d50
-HueShift {
- inputs 1+1
- hue_rotation -8
- name HueShift2
- xpos 444
- ypos 3799
-}
-Saturation {
- inputs 1+1
- saturation 0.93
- mode Average
- name Saturation3
- xpos 444
- ypos 3858
-}
 Crop {
  box {0 0 1920 1080}
  name Crop1
  xpos 444
- ypos 3949
+ ypos 3634
 }
 Remove {
  operation keep
  channels rgb
  name Remove1
  xpos 444
- ypos 3973
+ ypos 3658
 }

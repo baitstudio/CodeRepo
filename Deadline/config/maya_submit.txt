@@ -1,5 +1,5 @@
 Plugin=MayaCmd
-Pool=maya
+Group=maya
 MachineLimit=0
 Priority=50
 OnJobComplete=Nothing

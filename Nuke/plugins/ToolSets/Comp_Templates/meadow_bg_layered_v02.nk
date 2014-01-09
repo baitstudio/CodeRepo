@@ -2,21 +2,19 @@
 version 7.0 v8
 define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
 <layout version="1.0">
-    <window x="2028" y="32" w="1680" h="1024" screen="1">
+    <window x="1920" y="0" w="1936" h="1080" screen="1">
         <splitter orientation="1">
-            <split size="1052"/>
+            <split size="1214"/>
             <splitter orientation="1">
-                <split size="40"/>
+                <split size="46"/>
                 <dock id="" hideTitles="1" activePageId="Toolbar.1">
                     <page id="Toolbar.1"/>
                 </dock>
-                <split size="1008"/>
+                <split size="1164"/>
                 <splitter orientation="2">
-                    <split size="563"/>
-                    <dock id="" activePageId="Viewer.1">
-                        <page id="Viewer.1"/>
-                    </dock>
-                    <split size="396"/>
+                    <split size="81"/>
+                    <dock id=""/>
+                    <split size="934"/>
                     <dock id="" activePageId="DAG.1">
                         <page id="DAG.1"/>
                         <page id="Curve Editor.1"/>
@@ -24,9 +22,17 @@ define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
                     </dock>
                 </splitter>
             </splitter>
-            <split size="608"/>
+            <split size="702"/>
             <dock id="" activePageId="Properties.1">
                 <page id="Properties.1"/>
+            </dock>
+        </splitter>
+    </window>
+    <window x="73" y="0" w="1813" h="1156" screen="0">
+        <splitter orientation="2">
+            <split size="1122"/>
+            <dock id="" activePageId="Viewer.1">
+                <page id="Viewer.1"/>
             </dock>
         </splitter>
     </window>
@@ -97,7 +103,7 @@ Camera2 {
  ypos 2558
  icon node_camera.xpm
 }
-set N19b648a0 [stack 0]
+set N197081c0 [stack 0]
 Viewer {
  name Camera01Viewer2
  xpos 1443
@@ -124,7 +130,53 @@ Premult {
  xpos 1292
  ypos 55
 }
-push $N19b648a0
+Group {
+ inputs 0
+ name extractEpisodeShot2
+ xpos -36
+ ypos -536
+ addUserKnob {20 User}
+ addUserKnob {3 episode l Episode}
+ episode {{"\[python -execlocal import\\ os\\nimport\\ nuke\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[0\\])]"}}
+ addUserKnob {3 shot l Shot}
+ shot {{"\[python -execlocal import\\ nuke\\nimport\\ os\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\])]"}}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 0
+ }
+ Output {
+  name Output1
+  xpos 0
+  ypos 300
+ }
+end_group
+NoOp {
+ name Control2
+ xpos -36
+ ypos -445
+ addUserKnob {20 User}
+ addUserKnob {12 Scroll}
+ Scroll {{"parent.extractEpisodeShot2.episode + (100 * parent.extractEpisodeShot2.shot)"} 0}
+ addUserKnob {6 crop +STARTLINE}
+ crop true
+ addUserKnob {7 LXScroll}
+ LXScroll {{"(Scroll.x <0)? -(-Scroll.x)%width : Scroll.x%width"}}
+ addUserKnob {7 LYScroll}
+ LYScroll {{"(Scroll.y <0)? -(-Scroll.y)%height : Scroll.y%height"}}
+}
+Read {
+ inputs 0
+ file M:/00719_grandpa/assets/Environments/Meadow/publish/sky5.tif
+ format "14000 2500 0 0 14000 2500 1 SKYPLATE"
+ origset true
+ version 4
+ name Read10
+ xpos -164
+ ypos -349
+}
+push $N197081c0
 Read {
  inputs 0
  file M:/00719_grandpa/assets/Props/Reeds/publish/fieldGrass_v010/fieldGrass_v007_river_Grass/fieldGrass_v007_river_Grass.0003.tif
@@ -179,7 +231,7 @@ Blur {
  xpos 619
  ypos 2333
 }
-set N19b66b00 [stack 0]
+set N231827e0 [stack 0]
 Card2 {
  translate {248.7167358 49.49985886 364.4762268}
  rotate {0 -89 0}
@@ -199,7 +251,7 @@ Card2 {
  xpos 857
  ypos 2339
 }
-push $N19b66b00
+push $N231827e0
 Card2 {
  translate {-180.6635895 49.49937057 839.338623}
  rotate {0 -179 0}
@@ -219,7 +271,7 @@ Card2 {
  xpos 619
  ypos 2420
 }
-push $N19b648a0
+push $N197081c0
 Group {
  inputs 0
  name Camera01Trackers2
@@ -235,7 +287,7 @@ Group {
   color {1 0 1 0}
   name TrackerConstant
  }
-set N236c67e0 [stack 0]
+set N231846d0 [stack 0]
  Sphere {
   rows 2
   columns 4
@@ -243,7 +295,7 @@ set N236c67e0 [stack 0]
   uniform_scale {{tracker_size}}
   name Tracker1
  }
-push $N236c67e0
+push $N231846d0
  Sphere {
   rows 2
   columns 4
@@ -251,7 +303,7 @@ push $N236c67e0
   uniform_scale {{tracker_size}}
   name Tracker2
  }
-push $N236c67e0
+push $N231846d0
  Sphere {
   rows 2
   columns 4
@@ -259,7 +311,7 @@ push $N236c67e0
   uniform_scale {{tracker_size}}
   name Tracker3
  }
-push $N236c67e0
+push $N231846d0
  Sphere {
   rows 2
   columns 4
@@ -267,7 +319,7 @@ push $N236c67e0
   uniform_scale {{tracker_size}}
   name Tracker4
  }
-push $N236c67e0
+push $N231846d0
  Sphere {
   rows 2
   columns 4
@@ -275,7 +327,7 @@ push $N236c67e0
   uniform_scale {{tracker_size}}
   name Tracker5
  }
-push $N236c67e0
+push $N231846d0
  Sphere {
   rows 2
   columns 4
@@ -283,7 +335,7 @@ push $N236c67e0
   uniform_scale {{tracker_size}}
   name Tracker6
  }
-push $N236c67e0
+push $N231846d0
  Sphere {
   rows 2
   columns 4
@@ -291,7 +343,7 @@ push $N236c67e0
   uniform_scale {{tracker_size}}
   name Tracker7
  }
-push $N236c67e0
+push $N231846d0
  Sphere {
   rows 2
   columns 4
@@ -299,7 +351,7 @@ push $N236c67e0
   uniform_scale {{tracker_size}}
   name Tracker8
  }
-push $N236c67e0
+push $N231846d0
  Sphere {
   rows 2
   columns 4
@@ -307,7 +359,7 @@ push $N236c67e0
   uniform_scale {{tracker_size}}
   name Tracker9
  }
-push $N236c67e0
+push $N231846d0
  Sphere {
   rows 2
   columns 4
@@ -315,7 +367,7 @@ push $N236c67e0
   uniform_scale {{tracker_size}}
   name Tracker10
  }
-push $N236c67e0
+push $N231846d0
  Sphere {
   rows 2
   columns 4
@@ -370,7 +422,7 @@ Roto {
     {f 512}
     {t x44700000 x44070000}
     {a}
-    {curvegroup Rectangle1 576 bezier
+    {curvegroup Rectangle1 512 bezier
      {{cc
        {f 8192}
        {px x42000000
@@ -428,8 +480,8 @@ Roto {
  lifetime_type "all frames"
  lifetime_start 32
  lifetime_end 32
- feather -100
- feather_type smooth
+ view {}
+ motionblur_on true
  motionblur_shutter_offset_type centred
  source_black_outside true
  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
@@ -456,7 +508,7 @@ Camera2 {
  ypos 682
  icon node_camera.xpm
 }
-set N2380a570 [stack 0]
+set N2341a750 [stack 0]
 Camera2 {
  inputs 0
  translate {-435.8709988 161.7579421 -37.73814414}
@@ -596,7 +648,7 @@ Read {
  xpos -202
  ypos 260
 }
-set N23a53490 [stack 0]
+set N2341c640 [stack 0]
 Mirror {
  Horizontal true
  name Mirror2
@@ -618,7 +670,7 @@ Merge2 {
  ypos 387
 }
 push 0
-push $N23a53490
+push $N2341c640
 Mirror {
  Horizontal true
  name Mirror1
@@ -632,7 +684,7 @@ Transform {
  xpos -311
  ypos 391
 }
-push $N23a53490
+push $N2341c640
 Merge2 {
  inputs 3+1
  name Merge8
@@ -677,7 +729,7 @@ ReadGeo2 {
 }
 Read {
  inputs 0
- file M:/00719_grandpa/assets/Environments/Meadow/publish/sky7.tif
+ file M:/00719_grandpa/assets/Environments/Meadow/publish/sky8.tif
  format "14000 2500 0 0 14000 2500 1 SKYPLATE"
  origset true
  version 1
@@ -704,8 +756,8 @@ Position {
  xpos 91
  ypos -533
 }
-set N24320790 [stack 0]
-push $N24320790
+set N235d1160 [stack 0]
+push $N235d1160
 Dot {
  name Dot4
  xpos 420
@@ -718,7 +770,7 @@ Position {
  ypos -475
 }
 push 0
-push $N24320790
+push $N235d1160
 Dot {
  name Dot5
  xpos 220
@@ -730,7 +782,7 @@ Position {
  xpos 186
  ypos -475
 }
-push $N24320790
+push $N235d1160
 Dot {
  name Dot6
  xpos 320
@@ -852,13 +904,13 @@ Read {
  xpos -505
  ypos -262
 }
-set N23b285e0 [stack 0]
+set N23692b70 [stack 0]
 Dot {
  name Dot21
  xpos -672
  ypos -223
 }
-set N23b28950 [stack 0]
+set N23692ee0 [stack 0]
 Dot {
  name Dot3
  xpos -824
@@ -880,7 +932,7 @@ Ramp {
  xpos -858
  ypos -27
 }
-push $N23b28950
+push $N23692ee0
 Transform {
  translate {1769 0}
  scale {-1 1}
@@ -910,7 +962,7 @@ Premult {
  xpos -706
  ypos 3
 }
-push $N23b285e0
+push $N23692b70
 Shuffle {
  alpha white
  name Shuffle37
@@ -933,7 +985,7 @@ ColorLookup {
  xpos -505
  ypos 111
 }
-set N23be2ec0 [stack 0]
+set N23695140 [stack 0]
 Transform {
  translate {0 1536}
  center {960 540}
@@ -955,7 +1007,7 @@ Crop {
  xpos -686
  ypos 171
 }
-push $N23be2ec0
+push $N23695140
 Merge2 {
  inputs 2
  operation stencil
@@ -997,7 +1049,7 @@ Dot {
  xpos -471
  ypos 706
 }
-push $N2380a570
+push $N2341a750
 Group {
  inputs 0
  name Camera01Trackers3
@@ -1014,7 +1066,7 @@ Group {
   color {1 0 1 0}
   name TrackerConstant
  }
-set N23be4db0 [stack 0]
+set N237923c0 [stack 0]
  Sphere {
   rows 2
   columns 4
@@ -1022,7 +1074,7 @@ set N23be4db0 [stack 0]
   uniform_scale {{tracker_size}}
   name Tracker1
  }
-push $N23be4db0
+push $N237923c0
  Sphere {
   rows 2
   columns 4
@@ -1030,7 +1082,7 @@ push $N23be4db0
   uniform_scale {{tracker_size}}
   name Tracker2
  }
-push $N23be4db0
+push $N237923c0
  Sphere {
   rows 2
   columns 4
@@ -1038,7 +1090,7 @@ push $N23be4db0
   uniform_scale {{tracker_size}}
   name Tracker3
  }
-push $N23be4db0
+push $N237923c0
  Sphere {
   rows 2
   columns 4
@@ -1046,7 +1098,7 @@ push $N23be4db0
   uniform_scale {{tracker_size}}
   name Tracker4
  }
-push $N23be4db0
+push $N237923c0
  Sphere {
   rows 2
   columns 4
@@ -1054,7 +1106,7 @@ push $N23be4db0
   uniform_scale {{tracker_size}}
   name Tracker5
  }
-push $N23be4db0
+push $N237923c0
  Sphere {
   rows 2
   columns 4
@@ -1062,7 +1114,7 @@ push $N23be4db0
   uniform_scale {{tracker_size}}
   name Tracker6
  }
-push $N23be4db0
+push $N237923c0
  Sphere {
   rows 2
   columns 4
@@ -1070,7 +1122,7 @@ push $N23be4db0
   uniform_scale {{tracker_size}}
   name Tracker7
  }
-push $N23be4db0
+push $N237923c0
  Sphere {
   rows 2
   columns 4
@@ -1078,7 +1130,7 @@ push $N23be4db0
   uniform_scale {{tracker_size}}
   name Tracker8
  }
-push $N23be4db0
+push $N237923c0
  Sphere {
   rows 2
   columns 4
@@ -1086,7 +1138,7 @@ push $N23be4db0
   uniform_scale {{tracker_size}}
   name Tracker9
  }
-push $N23be4db0
+push $N237923c0
  Sphere {
   rows 2
   columns 4
@@ -1094,7 +1146,7 @@ push $N23be4db0
   uniform_scale {{tracker_size}}
   name Tracker10
  }
-push $N23be4db0
+push $N237923c0
  Sphere {
   rows 2
   columns 4
@@ -1139,7 +1191,6 @@ ScanlineRender {
  xpos 110
  ypos 836
 }
-set N23ced6c0 [stack 0]
 Reformat {
  name Reformat9
  xpos 110
@@ -1158,58 +1209,11 @@ Merge2 {
  xpos 110
  ypos 2758
 }
-push $N23ced6c0
 Viewer {
  frame 1
  input_process false
  name Viewer1
+ selected true
  xpos 99
  ypos 2993
-}
-Group {
- inputs 0
- name extractEpisodeShot2
- xpos -36
- ypos -536
- addUserKnob {20 User}
- addUserKnob {3 episode l Episode}
- episode {{"\[python -execlocal import\\ os\\nimport\\ nuke\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[0\\])]"}}
- addUserKnob {3 shot l Shot}
- shot {{"\[python -execlocal import\\ nuke\\nimport\\ os\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\])]"}}
-}
- Input {
-  inputs 0
-  name Input1
-  xpos 0
- }
- Output {
-  name Output1
-  xpos 0
-  ypos 300
- }
-end_group
-NoOp {
- name Control2
- xpos -36
- ypos -445
- addUserKnob {20 User}
- addUserKnob {12 Scroll}
- Scroll {{"parent.extractEpisodeShot2.episode + (100 * parent.extractEpisodeShot2.shot)"} 0}
- addUserKnob {6 crop +STARTLINE}
- crop true
- addUserKnob {7 LXScroll}
- LXScroll {{"(Scroll.x <0)? -(-Scroll.x)%width : Scroll.x%width"}}
- addUserKnob {7 LYScroll}
- LYScroll {{"(Scroll.y <0)? -(-Scroll.y)%height : Scroll.y%height"}}
-}
-Read {
- inputs 0
- file M:/00719_grandpa/assets/Environments/Meadow/publish/sky5.tif
- format "14000 2500 0 0 14000 2500 1 SKYPLATE"
- origset true
- version 4
- name Read10
- selected true
- xpos -164
- ypos -349
 }

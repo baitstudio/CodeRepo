@@ -1,0 +1,683 @@
+#! C:/Program Files/Nuke7.0v8/Nuke7.0.exe -nx
+version 7.0 v8
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="22" w="1680" h="1024" screen="0">
+        <splitter orientation="1">
+            <split size="1052"/>
+            <splitter orientation="1">
+                <split size="40"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="1008"/>
+                <splitter orientation="2">
+                    <split size="563"/>
+                    <dock id="" activePageId="Viewer.1">
+                        <page id="Viewer.1"/>
+                    </dock>
+                    <split size="396"/>
+                    <dock id="" activePageId="DAG.1">
+                        <page id="DAG.1"/>
+                        <page id="Curve Editor.1"/>
+                        <page id="DopeSheet.1"/>
+                    </dock>
+                </splitter>
+            </splitter>
+            <split size="608"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name "K:/CodeRepo/Nuke/plugins/ToolSets/Comp_Templates/beach 2D BG_v005.nk"
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode8
+ tile_color 0x8e388e00
+ label "\nBeach 2D BACKPLATE"
+ note_font_size 42
+ xpos 2370
+ ypos -1444
+ bdwidth 1726
+ bdheight 1874
+}
+Group {
+ inputs 0
+ name extractEpisodeShot1
+ xpos 2945
+ ypos -1103
+ addUserKnob {20 User}
+ addUserKnob {3 episode l Episode}
+ episode {{"\[python -execlocal import\\ os\\nimport\\ nuke\\n\\nret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[0\\])]"}}
+ addUserKnob {3 shot l Shot}
+ shot {{"\[python -execlocal import\\ nuke\\nimport\\ os\\n\\nshotString=nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\]\\nintConvert=\\\[ord(char)\\ -\\ 96\\ for\\ char\\ in\\ shotString.lower()\\]\\nshotInt=None\\nfor\\ index\\ in\\ intConvert:\\n\\ \\ \\ \\ if\\ index>0:\\n\\ \\ \\ \\ \\ \\ \\ \\ shotInt=int(shotString\\\[0:intConvert.index(index)\\])+index\\n\\nret=None\\nif\\ shotInt:\\n\\ \\ \\ \\ ret=shotInt\\nelse:\\n\\ \\ \\ \\ ret=int(nuke.root()\\\['name'\\].value().split('/')\\\[-4\\].split('gnp')\\\[-1\\].split('sh')\\\[1\\])]"}}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 0
+ }
+ Output {
+  name Output1
+  xpos 0
+  ypos 300
+ }
+end_group
+NoOp {
+ name Control2
+ xpos 2945
+ ypos -1026
+ addUserKnob {20 User}
+ addUserKnob {12 Scroll}
+ Scroll {{"parent.extractEpisodeShot1.episode + (100 * parent.extractEpisodeShot1.shot)"} 50}
+ addUserKnob {6 crop +STARTLINE}
+ crop true
+ addUserKnob {7 LXScroll}
+ LXScroll {{"(Scroll.x <0)? -(-Scroll.x)%width : Scroll.x%width"}}
+ addUserKnob {7 LYScroll}
+ LYScroll {{"(Scroll.y <0)? -(-Scroll.y)%height : Scroll.y%height"}}
+}
+Read {
+ inputs 0
+ file M:/00719_grandpa/assets/Environments/Beach/publish/grassClump1.tif
+ format "1920 1080 0 0 1920 1080 1 HD"
+ origset true
+ name Read33
+ xpos 3979
+ ypos -851
+}
+Read {
+ inputs 0
+ file M:/00719_grandpa/assets/Environments/Beach/publish/grassClump4.tif
+ format "1920 1080 0 0 1920 1080 1 HD"
+ origset true
+ name Read34
+ xpos 3907
+ ypos -512
+}
+Unpremult {
+ name Unpremult8
+ xpos 3907
+ ypos -428
+}
+Grade {
+ blackpoint -0.035
+ whitepoint 0.86
+ white {2.099999905 0.6000000238 1 1}
+ gamma 0.84
+ name Grade20
+ xpos 3907
+ ypos -404
+}
+Saturation {
+ saturation 0.6
+ name Saturation6
+ xpos 3907
+ ypos -380
+}
+Premult {
+ name Premult10
+ xpos 3907
+ ypos -356
+}
+Blur {
+ size 7
+ name Blur19
+ xpos 3907
+ ypos -332
+}
+set N236d5e30 [stack 0]
+Transform {
+ translate {-503 144}
+ scale {0.25 0.2}
+ center {2048 256}
+ name Transform15
+ xpos 3812
+ ypos -210
+}
+Read {
+ inputs 0
+ file M:/00719_grandpa/assets/Environments/Beach/publish/grassClump2.tif
+ format "1920 1080 0 0 1920 1080 1 HD"
+ origset true
+ name Read38
+ xpos 3723
+ ypos -561
+}
+Unpremult {
+ name Unpremult7
+ xpos 3723
+ ypos -477
+}
+Grade {
+ blackpoint -0.02
+ whitepoint 0.89
+ white {1 0.6000000238 1 1}
+ multiply 2.85
+ gamma 0.84
+ name Grade18
+ xpos 3723
+ ypos -453
+}
+Saturation {
+ name Saturation5
+ xpos 3723
+ ypos -429
+}
+Premult {
+ name Premult9
+ xpos 3723
+ ypos -405
+}
+Blur {
+ size 15
+ name Blur18
+ xpos 3723
+ ypos -381
+}
+set N236d7640 [stack 0]
+Transform {
+ translate {-830 111}
+ rotate -6.581934374
+ scale {-0.2 0.2}
+ center {2048 256}
+ name Transform14
+ xpos 3757
+ ypos -138
+}
+push 0
+push $N236d7640
+Transform {
+ translate {-2107 37}
+ rotate 15.45893386
+ scale {-0.1 0.1}
+ center {2048 256}
+ name Transform16
+ xpos 3688
+ ypos -225
+}
+push $N236d5e30
+Transform {
+ translate {-1628 122}
+ rotate 7.41562054
+ scale 0.25
+ center {2048 256}
+ name Transform17
+ xpos 3916
+ ypos -286
+}
+Read {
+ inputs 0
+ file M:/00719_grandpa/assets/Environments/Beach/publish/BG_left_noClouds_v005.exr
+ format "3180 1674 0 0 3180 1674 1 "
+ origset true
+ offset_negative_display_window false
+ name Read37
+ xpos 3651
+ ypos -717
+}
+Read {
+ inputs 0
+ file M:/00719_grandpa/assets/Environments/Meadow/publish/meadowStill_cloudsB_v005.tif
+ format "5498 3010 0 0 5498 3010 1 "
+ origset true
+ version 1
+ name Read35
+ xpos 3073
+ ypos -1334
+}
+Reformat {
+ format "3145 1674 0 0 3145 1674 1 "
+ name Reformat1
+ xpos 3073
+ ypos -1224
+}
+NoOp {
+ name In2
+ xpos 3072
+ ypos -1163
+ addUserKnob {20 User}
+}
+Crop {
+ box {0 0 {width} {height}}
+ name Crop10
+ xpos 3072
+ ypos -1139
+ disable true
+}
+Position {
+ translate {{parent.Control2.LXScroll} {parent.Control2.LYScroll}}
+ name Position5
+ xpos 3072
+ ypos -1113
+}
+set N237a9410 [stack 0]
+push $N237a9410
+Dot {
+ name Dot26
+ xpos 3401
+ ypos -1109
+}
+Position {
+ translate {{"(parent.Control2.LXScroll <= 0)? width : -width"} {"(parent.Control2.LYScroll <= 0)? height : - height"}}
+ name Position6
+ xpos 3367
+ ypos -1055
+}
+push 0
+push $N237a9410
+Dot {
+ name Dot28
+ xpos 3201
+ ypos -1109
+}
+Position {
+ translate {{"(parent.Control2.LXScroll <= 0)? width : -width"} 0}
+ name Position7
+ xpos 3167
+ ypos -1055
+}
+push $N237a9410
+Dot {
+ name Dot29
+ xpos 3301
+ ypos -1109
+}
+Position {
+ translate {0 {"(parent.Control2.LYScroll <= 0)? height : - height"}}
+ name Position8
+ xpos 3267
+ ypos -1055
+}
+Merge2 {
+ inputs 4+1
+ operation screen
+ name Merge24
+ xpos 3077
+ ypos -998
+}
+Crop {
+ box {0 0 {width} {height}}
+ reformat true
+ crop false
+ name Crop11
+ xpos 3077
+ ypos -958
+ disable {{1-parent.Control2.crop x1 0}}
+}
+Output {
+ name Output2
+ xpos 3077
+ ypos -934
+}
+Group {
+ inputs 0
+ name Grad2
+ xpos 2910
+ ypos -910
+ addUserKnob {20 User}
+ addUserKnob {41 format T Constant2.format}
+ addUserKnob {41 LLColor T Expression2.LLColor}
+ addUserKnob {41 LRColor T Expression2.LRColor}
+ addUserKnob {41 URColor T Expression2.URColor}
+ addUserKnob {41 ULColor T Expression2.ULColor}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  format "3145 1674 0 0 3145 1674 1 "
+  name Constant2
+  xpos -469
+  ypos -253
+ }
+ Expression {
+  temp_name0 LLCorner
+  temp_expr0 (1-x/width)*(1-y/height)
+  temp_name1 LRCorner
+  temp_expr1 (x/width)*(1-y/height)
+  temp_name2 URCorner
+  temp_expr2 (x/width)*(y/height)
+  temp_name3 ULCorner
+  temp_expr3 (1-x/width)*(y/height)
+  expr0 LLColor.r*LLCorner+LRColor.r*LRCorner+URColor.r*URCorner+ULColor.r*ULCorner
+  expr1 LLColor.g*LLCorner+LRColor.g*LRCorner+URColor.g*URCorner+ULColor.g*ULCorner
+  expr2 LLColor.b*LLCorner+LRColor.b*LRCorner+URColor.b*URCorner+ULColor.b*ULCorner
+  name Expression2
+  xpos -469
+  ypos -174
+  addUserKnob {20 User}
+  addUserKnob {18 LLColor}
+  LLColor {0.2349999994 0.4702807665 1}
+  addUserKnob {18 LRColor}
+  LRColor {0.2300000042 0.5376220345 0.6675982475}
+  addUserKnob {18 URColor}
+  URColor {0.02769457176 0.1257930845 0.9996898174}
+  addUserKnob {18 ULColor}
+  ULColor {0.02788343281 0.1260046065 0.9996906519}
+ }
+ Output {
+  name Output1
+  xpos -469
+  ypos -74
+ }
+end_group
+Merge2 {
+ inputs 2
+ name Merge25
+ xpos 3077
+ ypos -910
+}
+Shuffle {
+ alpha white
+ name Shuffle8
+ xpos 3077
+ ypos -886
+}
+Dot {
+ name Dot30
+ xpos 3111
+ ypos -821
+}
+set N23854dc0 [stack 0]
+Dot {
+ name Dot31
+ xpos 3546
+ ypos -821
+}
+Merge2 {
+ inputs 2
+ name Merge28
+ xpos 3512
+ ypos -687
+}
+Merge2 {
+ inputs 2
+ name Merge22
+ xpos 3512
+ ypos -286
+}
+Merge2 {
+ inputs 4+1
+ name Merge33
+ xpos 3512
+ ypos -138
+}
+Read {
+ inputs 0
+ file M:/00719_grandpa/assets/Environments/Beach/publish/BG_mid_noClouds_v005.exr
+ format "3180 1674 0 0 3180 1674 1 "
+ origset true
+ offset_negative_display_window false
+ name Read32
+ xpos 3220
+ ypos -764
+}
+push $N23854dc0
+Merge2 {
+ inputs 2
+ name Merge27
+ xpos 3077
+ ypos -695
+}
+Read {
+ inputs 0
+ file M:/00719_grandpa/assets/Environments/Beach/publish/grassClump2.tif
+ format "1920 1080 0 0 1920 1080 1 HD"
+ origset true
+ name Read29
+ xpos 2589
+ ypos -498
+}
+Unpremult {
+ name Unpremult2
+ xpos 2589
+ ypos -414
+}
+Grade {
+ blackpoint -0.02
+ whitepoint 0.89
+ white {1 0.6000000238 1 1}
+ multiply 2.85
+ gamma 0.84
+ name Grade15
+ xpos 2589
+ ypos -390
+}
+Saturation {
+ name Saturation2
+ xpos 2589
+ ypos -366
+}
+Premult {
+ name Premult4
+ xpos 2589
+ ypos -342
+}
+Blur {
+ size 15
+ name Blur2
+ xpos 2589
+ ypos -318
+}
+Transform {
+ translate {-2095 14}
+ rotate 15.45893386
+ scale {-0.1 0.1}
+ center {2048 256}
+ name Transform5
+ xpos 2589
+ ypos -282
+}
+Read {
+ inputs 0
+ file M:/00719_grandpa/assets/Environments/Beach/publish/grassClump4.tif
+ format "1920 1080 0 0 1920 1080 1 HD"
+ origset true
+ name Read30
+ xpos 2835
+ ypos -664
+}
+Unpremult {
+ name Unpremult4
+ xpos 2835
+ ypos -580
+}
+Grade {
+ blackpoint -0.035
+ whitepoint 0.86
+ white {2.099999905 0.6000000238 1 1}
+ gamma 0.84
+ name Grade16
+ xpos 2835
+ ypos -556
+}
+Saturation {
+ saturation 0.6
+ name Saturation3
+ xpos 2835
+ ypos -532
+}
+Premult {
+ name Premult6
+ xpos 2835
+ ypos -508
+}
+Blur {
+ size 7
+ name Blur16
+ xpos 2835
+ ypos -484
+}
+set N2396ca40 [stack 0]
+Transform {
+ translate {-503 144}
+ scale {0.25 0.2}
+ center {2048 256}
+ name Transform10
+ xpos 2828
+ ypos -335
+}
+push $N2396ca40
+Transform {
+ translate {-568 50}
+ rotate -6.581934374
+ scale {-0.35 0.35}
+ center {2048 256}
+ name Transform12
+ xpos 2893
+ ypos -370
+}
+push $N2396ca40
+Transform {
+ translate {-175 33}
+ rotate -6.581934374
+ scale {0.3 0.3}
+ center {2048 256}
+ name Transform4
+ xpos 2777
+ ypos -420
+}
+push 0
+push $N2396ca40
+Transform {
+ translate {-1612 63}
+ rotate 7.41562054
+ scale 0.25
+ center {2048 256}
+ name Transform7
+ xpos 2916
+ ypos -425
+}
+Read {
+ inputs 0
+ file M:/00719_grandpa/assets/Environments/Beach/publish/BG_right_noClouds_v006.exr
+ format "3145 1674 0 0 3145 1674 1 "
+ origset true
+ offset_negative_display_window false
+ name Read36
+ selected true
+ xpos 2579
+ ypos -727
+}
+push $N23854dc0
+Dot {
+ name Dot32
+ xpos 2744
+ ypos -821
+}
+Merge2 {
+ inputs 2
+ name Merge26
+ xpos 2710
+ ypos -697
+}
+Transform {
+ translate {-1072 0}
+ center {960 540}
+ name Transform13
+ xpos 2710
+ ypos -624
+}
+Merge2 {
+ inputs 5+1
+ name Merge16
+ xpos 2710
+ ypos -349
+}
+Merge2 {
+ inputs 2
+ name Merge17
+ xpos 2710
+ ypos -282
+}
+Switch {
+ inputs 3
+ name Switch2
+ xpos 3114
+ ypos 56
+}
+Transform {
+ translate {{"(!invert) ? Tracker2.translate.x : -Tracker2.translate.x"} {"(!invert) ? Tracker2.translate.y : -Tracker2.translate.y"}}
+ rotate {{"(!invert) ? Tracker2.rotate : -Tracker2.rotate"}}
+ scale {{"(!invert) ? Tracker2.scale.w : 1/Tracker2.scale.w"}}
+ center {{"(!invert) ? Tracker2.center.x : Tracker2.center.x + Tracker2.translate.x"} {"(!invert) ? Tracker2.center.y : Tracker2.center.y + Tracker2.translate.y"}}
+ filter {{Tracker2.filter}}
+ name Transform_MatchMove2
+ xpos 3114
+ ypos 136
+ disable true
+ addUserKnob {20 User}
+ addUserKnob {4 transform M {stabilize match-move}}
+ transform match-move
+ addUserKnob {4 src_transform l "src transform" M {none stabilize "stabilize 1-pt" match-move "match-move 1-pt" "remove jitter"}}
+ src_transform {{Tracker2.transform}}
+ addUserKnob {6 invert -STARTLINE}
+ invert {{"\[python -execlocal srcTransformKnob\\ =\\ nuke.thisNode()\\\['src\\_transform'\\]\\nsrcTransformName\\ =\\ srcTransformKnob.enumName(int(srcTransformKnob.getValue()))\\ndestTransform\\ =\\ nuke.thisNode()\\\['transform'\\].getValue()\\nsrcTransformIsStabilize\\ =\\ (srcTransformName.find('stabilize')==0\\ or\\ srcTransformName.find('remove\\ jitter')==0)\\ninvertDueToDestStabilize\\ =\\ (destTransform\\ ==\\ 0\\ and\\ not\\ srcTransformIsStabilize)\\ninvertDueToSrcStabilize\\ =\\ (destTransform\\ ==\\ 1\\ and\\ srcTransformIsStabilize)\\nret\\ =\\ (invertDueToDestStabilize\\ or\\ invertDueToSrcStabilize)]"}}
+}
+Crop {
+ box {0 0 1920 1080}
+ reformat true
+ crop false
+ name Crop2
+ xpos 3124
+ ypos 202
+}
+Tracker4 {
+ inputs 0
+ show_error_on_track true
+ tracks { { 1 31 1 } 
+{ { 5 1 20 enable e } 
+{ 3 1 75 name name } 
+{ 2 1 58 track_x track_x } 
+{ 2 1 58 track_y track_y } 
+{ 2 1 63 offset_x offset_x } 
+{ 2 1 63 offset_y offset_y } 
+{ 4 1 27 T T } 
+{ 4 1 27 R R } 
+{ 4 1 27 S S } 
+{ 2 0 45 error error } 
+{ 1 1 0 error_min error_min } 
+{ 1 1 0 error_max error_max } 
+{ 1 1 0 pattern_x pattern_x } 
+{ 1 1 0 pattern_y pattern_y } 
+{ 1 1 0 pattern_r pattern_r } 
+{ 1 1 0 pattern_t pattern_t } 
+{ 1 1 0 search_x search_x } 
+{ 1 1 0 search_y search_y } 
+{ 1 1 0 search_r search_r } 
+{ 1 1 0 search_t search_t } 
+{ 2 1 0 key_track key_track } 
+{ 2 1 0 key_search_x key_search_x } 
+{ 2 1 0 key_search_y key_search_y } 
+{ 2 1 0 key_search_r key_search_r } 
+{ 2 1 0 key_search_t key_search_t } 
+{ 2 1 0 key_track_x key_track_x } 
+{ 2 1 0 key_track_y key_track_y } 
+{ 2 1 0 key_track_r key_track_r } 
+{ 2 1 0 key_track_t key_track_t } 
+{ 2 1 0 key_centre_offset_x key_centre_offset_x } 
+{ 2 1 0 key_centre_offset_y key_centre_offset_y } 
+} 
+{ 
+ { {curve K x1 1} "track 1" {curve x1 1574} {curve x1 909} {curve K x1 0} {curve K x1 0} 1 0 0 {curve x1 0} 0 0 -30 -30 30 30 -21 -21 21 21 {curve} {curve x1 1523} {curve x1 858} {curve x1 1624} {curve x1 959} {curve x1 1544} {curve x1 879} {curve x1 1603} {curve x1 938} {curve x1 29.5} {curve x1 29.5}  } 
+} 
+}
+
+cornerPinOptions "Transform (match-move)"
+pretrack_filter median
+show_error_on_track_link true
+Auto-Tracking 1
+predict_track true
+auto_regrab_pattern true
+center {320 240}
+selected_tracks 0
+name Tracker2
+xpos 2504
+ypos 124
+}
