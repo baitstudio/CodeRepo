@@ -1,0 +1,60 @@
+<root presetname="DNX_EXPORT_FOR_ONLINE_EDIT" tasktype="hiero.exporters.FnShotProcessor.ShotProcessor">
+    <startFrameIndex valuetype="int">1001</startFrameIndex>
+    <exportRoot valuetype="str">Q:/Toot/</exportRoot>
+    <versionIndex valuetype="int">1</versionIndex>
+    <cutUseHandles valuetype="bool">False</cutUseHandles>
+    <versionPadding valuetype="int">2</versionPadding>
+    <exportTemplate valuetype="list">
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">delivery/{project}/dnx_movs/{shot}{version}.mov</SequenceItem>
+            <SequenceItem valuetype="hiero.exporters.FnTranscodeExporter.TranscodePreset">
+                <root presetname="hiero.exporters.FnTranscodeExporter.TranscodeExporter" tasktype="hiero.exporters.FnTranscodeExporter.TranscodeExporter">
+                    <colourspace valuetype="unicode">sRGB</colourspace>
+                    <file_type valuetype="unicode">mov</file_type>
+                    <mov valuetype="dict">
+                        <settings valuetype="str">000000000000000000000000000001d27365616e000000010000000100000000000001be76696465000000010000000f00000000000000227370746c0000000100000000000000004156646e00000000002000000200000000207470726c000000010000000000000000000000000019000000000000000000246472617400000001000000000000000000000000000000530000010000000100000000156d70736f00000001000000000000000000000000186d66726100000001000000000000000000000000000000187073667200000001000000000000000000000000000000156266726100000001000000000000000000000000166d70657300000001000000000000000000000000002868617264000000010000000000000000000000000000000000000000000000000000000000000016656e647300000001000000000000000000000000001663666c67000000010000000000000000004400000018636d66720000000100000000000000004156494400000014636c75740000000100000000000000000000003863646563000000010000000000000000415649440000000100000002000000000000000a000000030000000000000000000000000000001c766572730000000100000000000000000003001c00010000</settings>
+                        <keyframerate valuetype="int">0</keyframerate>
+                        <color_matrix_type valuetype="unicode">default</color_matrix_type>
+                        <codec valuetype="str">AVdn&#x09;Avid DNxHD Codec</codec>
+                        <settingsString valuetype="str">AVID DNxHD Codec, Normal Quality</settingsString>
+                        <quality valuetype="int">2</quality>
+                    </mov>
+                    <channels valuetype="unicode">all</channels>
+                    <burninDataEnabled valuetype="bool">False</burninDataEnabled>
+                    <additionalNodesEnabled valuetype="bool">False</additionalNodesEnabled>
+                    <additionalNodesData valuetype="list" />
+                    <dpx valuetype="dict" />
+                    <burninData valuetype="dict">
+                        <burnIn_bottomRight valuetype="unicode" />
+                        <burnIn_topLeft valuetype="NoneType">None</burnIn_topLeft>
+                        <burnIn_topMiddle valuetype="unicode" />
+                        <burnIn_padding valuetype="int">7</burnIn_padding>
+                        <burnIn_topRight valuetype="unicode" />
+                        <burnIn_textSize valuetype="float">15.0</burnIn_textSize>
+                        <burnIn_bottomLeft valuetype="unicode" />
+                        <burnIn_bottomMiddle valuetype="unicode" />
+                        <burnIn_font valuetype="NoneType">None</burnIn_font>
+                    </burninData>
+                    <reformat valuetype="dict">
+                        <pixelAspect valuetype="float">1.0</pixelAspect>
+                        <name valuetype="str">HD 1080</name>
+                        <to_type valuetype="unicode">to format</to_type>
+                        <height valuetype="int">1080</height>
+                        <width valuetype="int">1920</width>
+                        <resize valuetype="unicode">width</resize>
+                    </reformat>
+                    <keepNukeScript valuetype="bool">False</keepNukeScript>
+                    <method valuetype="unicode">None</method>
+                </root>
+            </SequenceItem>
+        </SequenceItem>
+    </exportTemplate>
+    <excludeTags valuetype="list" />
+    <includeTags valuetype="list">
+        <SequenceItem valuetype="str">updated</SequenceItem>
+    </includeTags>
+    <includeRetimes valuetype="bool">False</includeRetimes>
+    <startFrameSource valuetype="str">Source</startFrameSource>
+    <cutLength valuetype="bool">False</cutLength>
+    <cutHandles valuetype="int">12</cutHandles>
+</root>

@@ -1,0 +1,80 @@
+set cut_paste_input [stack 0]
+version 7.0 v10
+push $cut_paste_input
+Dot {
+name Dot72
+selected true
+xpos -2321
+ypos 5762
+}
+set N19993b60 [stack 0]
+Dilate {
+channels alpha
+size -15
+name Dilate1
+selected true
+xpos -2539
+ypos 5872
+}
+push $N19993b60
+Merge2 {
+inputs 2
+operation stencil
+name Merge96
+selected true
+xpos -2455
+ypos 5921
+}
+push $N19993b60
+FilterErode {
+size -5
+name FilterErode9
+selected true
+xpos -2337
+ypos 5900
+}
+Invert {
+name Invert11
+selected true
+xpos -2337
+ypos 5936
+}
+Grade {
+channels alpha
+whitepoint 0
+white_clamp true
+name Grade36
+selected true
+xpos -2337
+ypos 5972
+}
+Merge2 {
+inputs 2
+operation mask
+name Merge97
+selected true
+xpos -2418
+ypos 6061
+}
+Grade {
+channels alpha
+gamma 5
+white_clamp true
+name Grade37
+selected true
+xpos -2371
+ypos 6116
+}
+Dilate {
+size 1
+name Dilate2
+selected true
+xpos -2371
+ypos 6180
+}
+Dot {
+name Dot73
+selected true
+xpos -2294
+ypos 6265
+}

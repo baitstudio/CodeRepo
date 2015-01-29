@@ -1,0 +1,256 @@
+#! C:/Program Files/Nuke7.0v8/Nuke7.0.exe -nx
+version 7.0 v8
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="-8" y="-8" w="1936" h="1176" screen="0">
+        <splitter orientation="1">
+            <split size="1214"/>
+            <splitter orientation="1">
+                <split size="46"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="1164"/>
+                <splitter orientation="2">
+                    <split size="191"/>
+                    <dock id="" activePageId="Viewer.1">
+                        <page id="Viewer.1"/>
+                    </dock>
+                    <split size="920"/>
+                    <dock id="" activePageId="DAG.1">
+                        <page id="DAG.1"/>
+                        <page id="Curve Editor.1"/>
+                        <page id="DopeSheet.1"/>
+                    </dock>
+                </splitter>
+            </splitter>
+            <split size="702"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+                <page id="Error Console.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name K:/CodeRepo/Nuke/plugins/ToolSets/Custom_gizmos/dFielder3.nk
+ label "\[value this.op_label]"
+ addUserKnob {20 dfielder l "dFielder v1"}
+ addUserKnob {1 op_label l INVISIBLE +INVISIBLE}
+ op_label "\[ if \{ \[numvalue this.op] == 2 \} \{ return \"Invert Dom.\" \} else \{ return \[knob this.op] \} ]"
+ addUserKnob {4 dominance l Dominance M {"Upper  (Field 1 - Odd)" "Lower (Field 2 - Even)  " "" "" "" "" "" "" "" "" "" "" "" ""}}
+ addUserKnob {4 op l Operation M {Deinterlace Interlace "Invert Dominance          " "" "" "" "" "" "" "" "" ""}}
+ addUserKnob {4 method l " " -STARTLINE M {"Fill with Black" "Discard Field" "Duplicate Field" "Interpolate Field" "Blend Fields" "Motion Estimated" "Fields to Frames (2x - Duplicate)" "Fields to Frames (2x - Interpolate)  " ""}}
+ addUserKnob {26 ""}
+ addUserKnob {7 blend l "Blend Mix"}
+ blend 0.5
+ addUserKnob {7 shutter l Shutter}
+ shutter 0.5
+ addUserKnob {20 options l Options}
+ addUserKnob {26 moest l "@b;Motion Estimated"}
+ addUserKnob {6 show_vectors l "Show Vectors" +DISABLED +STARTLINE}
+ addUserKnob {6 correct_luma l "Correct Luminance" -STARTLINE +DISABLED}
+ addUserKnob {7 vector_detail l "Vector Detail" +DISABLED}
+ vector_detail 0.2
+ addUserKnob {7 smoothness l Smoothness +DISABLED}
+ smoothness 0.5
+ addUserKnob {7 blocksize l "Block Size" +DISABLED R 0 100}
+ blocksize 6
+ addUserKnob {7 r_weight l "Weight R" +DISABLED}
+ r_weight 0.3
+ addUserKnob {7 g_weight l "Weight G" +DISABLED}
+ g_weight 0.6
+ addUserKnob {7 b_weight l "Weight B" +DISABLED}
+ b_weight 0.1
+}
+Dot {
+ inputs 0
+ name Dot20
+ xpos 318
+ ypos 1120
+}
+add_layer {fields fields.dom fields.upper fields.lower}
+Expression {
+ channel0 {fields.dom -fields.upper -fields.lower}
+ expr0 parent.dominance==0?!fmod(y,2):fmod(y,2)
+ channel1 {-fields.dom fields.upper -fields.lower}
+ expr1 !fmod(y,2)
+ channel2 {-fields.dom -fields.upper fields.lower}
+ expr2 fmod(y,2)
+ channel3 none
+ name Fields1
+ tile_color 0xff005fff
+ xpos 290
+ ypos 1191
+}
+Dot {
+ name Dot29
+ xpos 324
+ ypos 1215
+}
+set N242dd130 [stack 0]
+TimeWarp {
+ lookup {{int((frame-input.first_frame)*2)+input.first_frame+1 i}}
+ length 0
+ filter nearest
+ name GetNonDom1
+ xpos 400
+ ypos 1233
+}
+Premult {
+ channels all
+ alpha fields.dom
+ name Premult8
+ xpos 400
+ ypos 1257
+}
+push $N242dd130
+TimeWarp {
+ lookup {{int((frame-input.first_frame)*2)+input.first_frame i}}
+ length 0
+ filter nearest
+ name GetDom1
+ xpos 290
+ ypos 1233
+}
+Premult {
+ channels all
+ alpha fields.dom
+ invert true
+ name Premult9
+ xpos 290
+ ypos 1287
+}
+Merge2 {
+ inputs 2
+ also_merge all
+ name Merge3
+ xpos 400
+ ypos 1293
+}
+FrameRange {
+ first_frame {{input.first_frame i}}
+ last_frame {{"int(input.first_frame+(\[python len(range(nuke.thisNode().input(0).firstFrame(), nuke.thisNode().input(0).lastFrame()))]/2))" i}}
+ name FrameRange4
+ xpos 400
+ ypos 1317
+}
+Dot {
+ name Dot35
+ label Interlace
+ xpos 434
+ ypos 1341
+}
+Remove {
+ channels fields
+ name Remove2
+ xpos 400
+ ypos 1439
+}
+Dot {
+ name Dot1
+ xpos 431
+ ypos 1522
+}
+Dot {
+ inputs 0
+ name Dot7
+ label "Fields to Frames\nDuplicate"
+ xpos 319
+ ypos 434
+}
+Expression {
+ channel0 {fields.dom -fields.upper -fields.lower}
+ expr0 parent.dominance==0?!fmod(y,2):fmod(y,2)
+ channel1 {-fields.dom fields.upper -fields.lower}
+ expr1 !fmod(y,2)
+ channel2 {-fields.dom -fields.upper fields.lower}
+ expr2 fmod(y,2)
+ channel3 none
+ name Fields
+ tile_color 0xff005fff
+ xpos 285
+ ypos 452
+}
+Dot {
+ name Dot12
+ xpos 319
+ ypos 476
+}
+TimeWarp {
+ lookup {{int((frame-input.first_frame)/2)+input.first_frame}}
+ filter none
+ name TimeWarp1
+ xpos 285
+ ypos 494
+}
+FrameRange {
+ first_frame {{input.first_frame i}}
+ last_frame {{"input.first_frame+(\[python len(range(nuke.thisNode().input(0).firstFrame(), nuke.thisNode().input(0).lastFrame()))]*2+1)" i}}
+ name FrameRange1
+ xpos 285
+ ypos 518
+}
+Reformat {
+ type "to box"
+ box_width {{input.format.w i}}
+ box_height {{input.format.h/2 i}}
+ box_fixed true
+ box_pixel_aspect {{input.format.pixel_aspect i}}
+ scale 0.5
+ resize distort
+ filter Impulse
+ name Odd2
+ tile_color 0xaaaaaaff
+ xpos 285
+ ypos 542
+ disable {{abs(parent.dominance==0?floor(fmod((frame-input.first_frame),2)):!floor(fmod((frame-input.first_frame),2))) i}}
+}
+FieldSelect {
+ field Even
+ name Even2
+ tile_color 0xaaaaaaff
+ xpos 285
+ ypos 566
+ disable {{abs(parent.dominance==1?floor(fmod((frame-input.first_frame),2)):!floor(fmod((frame-input.first_frame),2))) i}}
+}
+Crop {
+ box {0 0 {input.format.w i} {input.format.h i}}
+ reformat true
+ crop false
+ name Crop2
+ xpos 285
+ ypos 590
+}
+Reformat {
+ type "to box"
+ box_width {{input.format.w i}}
+ box_height {{input.format.h*2 i}}
+ box_fixed true
+ box_pixel_aspect {{input.format.pixel_aspect i}}
+ scale 0.5
+ resize distort
+ filter Impulse
+ name Reformat4
+ xpos 285
+ ypos 614
+}
+Dot {
+ name Dot14
+ label Deinterlace
+ xpos 319
+ ypos 638
+}
+Remove {
+ channels fields
+ name Remove1
+ xpos 285
+ ypos 656
+}
+Dot {
+ name Dot2
+ xpos 319
+ ypos 692
+}

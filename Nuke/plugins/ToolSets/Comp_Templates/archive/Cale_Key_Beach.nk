@@ -192,7 +192,7 @@ Dot {
  xpos -1265
  ypos -500
 }
-set N26d76e90 [stack 0]
+set N1d13beb0 [stack 0]
 Dot {
  name Dot2
  xpos -4196
@@ -203,7 +203,7 @@ Dot {
  xpos -4196
  ypos 275
 }
-set N26d77570 [stack 0]
+set N1d13c590 [stack 0]
 IBKColourV3 {
  name IBKColourV3_2
  xpos -3771
@@ -258,13 +258,13 @@ Dot {
  xpos -1300
  ypos -191
 }
-set N26f03620 [stack 0]
+set N25304320 [stack 0]
 Dot {
  name Dot14
  xpos -2328
  ypos -191
 }
-set N26f03990 [stack 0]
+set N25304690 [stack 0]
 Dot {
  name Dot16
  xpos -3444
@@ -275,7 +275,7 @@ Dot {
  xpos -3444
  ypos 716
 }
-set N26f04070 [stack 0]
+set N25304d70 [stack 0]
 IBKGizmoV3 {
  inputs 2
  name IBKGizmoV3_1
@@ -292,7 +292,7 @@ Grade {
  xpos -3771
  ypos 737
 }
-push $N26f03990
+push $N25304690
 HueCorrect {
  hue {sat {}
    lum {}
@@ -320,13 +320,13 @@ Grade {
  xpos -2362
  ypos 1153
 }
-push $N26f04070
+push $N25304d70
 Dot {
  name Dot3
  xpos -3444
  ypos 1133
 }
-set N27080520 [stack 0]
+set N253c9ec0 [stack 0]
 Dot {
  name Dot6
  xpos -3321
@@ -347,7 +347,7 @@ Grade {
  xpos -3355
  ypos 1222
 }
-push $N27080520
+push $N253c9ec0
 Shuffle {
  green red
  blue red
@@ -479,7 +479,7 @@ Transform {
  xpos -3771
  ypos 1242
 }
-set N27081d30 [stack 0]
+set N253cb6d0 [stack 0]
 Roto {
  inputs 0
  output alpha
@@ -522,7 +522,7 @@ Roto {
  xpos -2561
  ypos 1048
 }
-push $N26f04070
+push $N25304d70
 HueKeyer {
  lut {amount {curve 0 s0 t-0 x4.35675621 0 x4.607764721 0 x4.858773232 1.004166603 1.004166603 x5.360791206 0 x5.611798286 0}
    sat_thrsh {curve 0.888235271 0.888235271 0.888235271 0.888235271 0.888235271 0.888235271 0.888235271 s0}}
@@ -556,7 +556,7 @@ Switch {
  xpos -2878
  ypos 1035
 }
-push $N26d77570
+push $N1d13c590
 OFXuk.co.thefoundry.keylight.keylight_v201 {
  show "Intermediate Result"
  unPreMultiply false
@@ -646,20 +646,20 @@ Dot {
  xpos -1767
  ypos 1343
 }
-set N273d8600 [stack 0]
+set N2557ffd0 [stack 0]
 Dot {
  name Dot9
  xpos -1451
  ypos 1343
 }
-set N273d8970 [stack 0]
-push $N273d8970
+set N25580340 [stack 0]
+push $N25580340
 Dot {
  name Dot10
  xpos -1451
  ypos 1245
 }
-push $N27081d30
+push $N253cb6d0
 Dot {
  name Dot17
  xpos -3737
@@ -767,7 +767,7 @@ Blur {
  xpos -1911
  ypos 1022
 }
-push $N273d8600
+push $N2557ffd0
 Merge2 {
  inputs 2
  name Merge37
@@ -804,14 +804,14 @@ Group {
   xpos -448
   ypos 30
  }
-set N273da4f0 [stack 0]
+set N258a6240 [stack 0]
  Dot {
   name Dot3
   xpos -414
   ypos 416
  }
-push $N273da4f0
-push $N273da4f0
+push $N258a6240
+push $N258a6240
  Copy {
   inputs 2
   from0 rgba.alpha
@@ -833,7 +833,7 @@ push $N273da4f0
   xpos -193
   ypos 146
  }
-set N273db2b0 [stack 0]
+set N258a7000 [stack 0]
  Erode {
   channels {none none none rgba.red}
   size 33
@@ -848,7 +848,7 @@ set N273db2b0 [stack 0]
   xpos -126
   ypos 250
  }
-push $N273db2b0
+push $N258a7000
  Erode {
   channels {none none none rgba.red}
   size {{-parent.ErodeOutside_size.w} {-parent.ErodeOutside_size.h}}
@@ -894,13 +894,13 @@ Merge2 {
  xpos -1505
  ypos 1028
 }
-push $N26f03620
+push $N25304320
 Dot {
  name Dot11
  xpos -1307
  ypos 241
 }
-set N2759f730 [stack 0]
+set N25581b50 [stack 0]
 HueCorrect {
  inputs 1+1
  hue {sat {}
@@ -910,10 +910,11 @@ HueCorrect {
    blue {}
    r_sup {}
    g_sup {}
-   b_sup {curve -0.369607687 s0 1.105887771 0.1696079969 0.5254901648 0.9962266684 -0.5421566963 -0.369607687 s0}
+   b_sup {curve 0.9863103628 s0 0.9932664633 x1.968750238 1.000222445 x3 1.007178545 x4 0.9962266684 -0.001452207565 0.9863103628 s0}
    sat_thrsh {}}
  mix 0.95
  name HueCorrect1
+ selected true
  xpos -1341
  ypos 1028
 }
@@ -946,7 +947,7 @@ Group {
   name BackdropNode11
   tile_color 0x999999ff
   label "Edge Expand"
-  note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_size 20
   xpos -654
   ypos -433
@@ -980,7 +981,7 @@ Group {
   xpos -634
   ypos -302
  }
-set N275a0bd0 [stack 0]
+set N25930130 [stack 0]
  Erode {
   channels alpha
   size 5
@@ -990,13 +991,13 @@ set N275a0bd0 [stack 0]
   xpos -634
   ypos -229
  }
-set N275a0f40 [stack 0]
+set N259304a0 [stack 0]
  Dot {
   name Dot15
   xpos -490
   ypos -220
  }
-set N275a12b0 [stack 0]
+set N25930810 [stack 0]
  Dot {
   name Dot1
   xpos 246
@@ -1017,7 +1018,7 @@ set N275a12b0 [stack 0]
   xpos 212
   ypos 712
  }
-set N275a1d00 [stack 0]
+set N25931260 [stack 0]
  Shuffle {
   red alpha
   green alpha
@@ -1026,13 +1027,13 @@ set N275a1d00 [stack 0]
   xpos 84
   ypos 718
  }
-push $N275a0f40
+push $N259304a0
  Premult {
   name Premult38
   xpos -634
   ypos -169
  }
-set N27623040 [stack 0]
+set N25931940 [stack 0]
  Blur {
   size 1
   maskChannelInput rgba.alpha
@@ -1047,7 +1048,7 @@ set N27623040 [stack 0]
   xpos -634
   ypos -86
  }
-push $N275a12b0
+push $N25930810
  Merge2 {
   inputs 2
   operation copy
@@ -1055,7 +1056,7 @@ push $N275a12b0
   xpos -524
   ypos -86
  }
-set N27623a90 [stack 0]
+set N259ee630 [stack 0]
  Premult {
   name Premult46
   xpos -636
@@ -1074,7 +1075,7 @@ set N27623a90 [stack 0]
   xpos -636
   ypos 15
  }
-push $N27623a90
+push $N259ee630
  Merge2 {
   inputs 2
   operation copy
@@ -1082,7 +1083,7 @@ push $N27623a90
   xpos -524
   ypos 15
  }
-set N27624850 [stack 0]
+set N259ef3f0 [stack 0]
  Premult {
   name Premult57
   xpos -634
@@ -1101,7 +1102,7 @@ set N27624850 [stack 0]
   xpos -634
   ypos 108
  }
-push $N27624850
+push $N259ef3f0
  Merge2 {
   inputs 2
   operation copy
@@ -1109,7 +1110,7 @@ push $N27624850
   xpos -524
   ypos 108
  }
-set N27625610 [stack 0]
+set N259f01b0 [stack 0]
  Premult {
   name Premult58
   xpos -633
@@ -1128,7 +1129,7 @@ set N27625610 [stack 0]
   xpos -633
   ypos 208
  }
-push $N27625610
+push $N259f01b0
  Merge2 {
   inputs 2
   operation copy
@@ -1136,7 +1137,7 @@ push $N27625610
   xpos -524
   ypos 208
  }
-set N276263d0 [stack 0]
+set N259f0f70 [stack 0]
  Premult {
   name Premult1
   xpos -636
@@ -1155,7 +1156,7 @@ set N276263d0 [stack 0]
   xpos -636
   ypos 315
  }
-push $N276263d0
+push $N259f0f70
  Merge2 {
   inputs 2
   operation copy
@@ -1163,7 +1164,7 @@ push $N276263d0
   xpos -523
   ypos 315
  }
-set N276c73b0 [stack 0]
+set N25ac2350 [stack 0]
  Premult {
   name Premult2
   xpos -634
@@ -1182,7 +1183,7 @@ set N276c73b0 [stack 0]
   xpos -634
   ypos 408
  }
-push $N276c73b0
+push $N25ac2350
  Merge2 {
   inputs 2
   operation copy
@@ -1190,7 +1191,7 @@ push $N276c73b0
   xpos -524
   ypos 408
  }
-set N276c8170 [stack 0]
+set N25ac3110 [stack 0]
  Premult {
   name Premult3
   xpos -633
@@ -1209,7 +1210,7 @@ set N276c8170 [stack 0]
   xpos -633
   ypos 508
  }
-push $N276c8170
+push $N25ac3110
  Merge2 {
   inputs 2
   operation copy
@@ -1217,7 +1218,7 @@ push $N276c8170
   xpos -522
   ypos 508
  }
-set N276c8f30 [stack 0]
+set N25ac3ed0 [stack 0]
  Premult {
   name Premult4
   xpos -635
@@ -1236,7 +1237,7 @@ set N276c8f30 [stack 0]
   xpos -635
   ypos 616
  }
-push $N276c8f30
+push $N25ac3ed0
  Merge2 {
   inputs 2
   operation copy
@@ -1244,7 +1245,7 @@ push $N276c8f30
   xpos -522
   ypos 616
  }
-set N276c9cf0 [stack 0]
+set N25ac4c90 [stack 0]
  Premult {
   name Premult5
   xpos -633
@@ -1263,7 +1264,7 @@ set N276c9cf0 [stack 0]
   xpos -633
   ypos 709
  }
-push $N276c9cf0
+push $N25ac4c90
  Merge2 {
   inputs 2
   operation copy
@@ -1271,7 +1272,7 @@ push $N276c9cf0
   xpos -523
   ypos 709
  }
-set N277bccd0 [stack 0]
+set N25ac5a50 [stack 0]
  Premult {
   name Premult6
   xpos -632
@@ -1290,7 +1291,7 @@ set N277bccd0 [stack 0]
   xpos -632
   ypos 809
  }
-push $N277bccd0
+push $N25ac5a50
  Merge2 {
   inputs 2
   operation copy
@@ -1298,7 +1299,7 @@ push $N277bccd0
   xpos -522
   ypos 809
  }
-set N277bda90 [stack 0]
+set N25c0ce30 [stack 0]
  Premult {
   name Premult8
   xpos -635
@@ -1317,7 +1318,7 @@ set N277bda90 [stack 0]
   xpos -635
   ypos 925
  }
-push $N277bda90
+push $N25c0ce30
  Merge2 {
   inputs 2
   operation copy
@@ -1325,7 +1326,7 @@ push $N277bda90
   xpos -522
   ypos 925
  }
-set N277be4e0 [stack 0]
+set N25c0d880 [stack 0]
  Premult {
   name Premult9
   xpos -633
@@ -1344,7 +1345,7 @@ set N277be4e0 [stack 0]
   xpos -633
   ypos 1018
  }
-push $N277be4e0
+push $N25c0d880
  Merge2 {
   inputs 2
   operation copy
@@ -1352,7 +1353,7 @@ push $N277be4e0
   xpos -522
   ypos 1018
  }
-set N277bf610 [stack 0]
+set N25c0e9b0 [stack 0]
  Premult {
   name Premult10
   xpos -632
@@ -1371,7 +1372,7 @@ set N277bf610 [stack 0]
   xpos -632
   ypos 1118
  }
-push $N277bf610
+push $N25c0e9b0
  Merge2 {
   inputs 2
   operation copy
@@ -1379,7 +1380,7 @@ push $N277bf610
   xpos -522
   ypos 1118
  }
-set N277c03d0 [stack 0]
+set N25c0f770 [stack 0]
  Premult {
   name Premult11
   xpos -635
@@ -1398,7 +1399,7 @@ set N277c03d0 [stack 0]
   xpos -635
   ypos 1225
  }
-push $N277c03d0
+push $N25c0f770
  Merge2 {
   inputs 2
   operation copy
@@ -1406,7 +1407,7 @@ push $N277c03d0
   xpos -522
   ypos 1225
  }
-set N278a53b0 [stack 0]
+set N25c5ab50 [stack 0]
  Premult {
   name Premult12
   xpos -633
@@ -1425,7 +1426,7 @@ set N278a53b0 [stack 0]
   xpos -633
   ypos 1318
  }
-push $N278a53b0
+push $N25c5ab50
  Merge2 {
   inputs 2
   operation copy
@@ -1433,7 +1434,7 @@ push $N278a53b0
   xpos -522
   ypos 1318
  }
-set N278a6170 [stack 0]
+set N25c5b910 [stack 0]
  Premult {
   name Premult13
   xpos -632
@@ -1452,7 +1453,7 @@ set N278a6170 [stack 0]
   xpos -632
   ypos 1418
  }
-push $N278a6170
+push $N25c5b910
  Merge2 {
   inputs 2
   operation copy
@@ -1460,7 +1461,7 @@ push $N278a6170
   xpos -522
   ypos 1418
  }
-set N278a6f30 [stack 0]
+set N25c5c6d0 [stack 0]
  Premult {
   name Premult14
   xpos -634
@@ -1479,7 +1480,7 @@ set N278a6f30 [stack 0]
   xpos -634
   ypos 1526
  }
-push $N278a6f30
+push $N25c5c6d0
  Merge2 {
   inputs 2
   operation copy
@@ -1487,7 +1488,7 @@ push $N278a6f30
   xpos -521
   ypos 1526
  }
-set N278a7cf0 [stack 0]
+set N25c5d490 [stack 0]
  Premult {
   name Premult15
   xpos -632
@@ -1506,7 +1507,7 @@ set N278a7cf0 [stack 0]
   xpos -632
   ypos 1619
  }
-push $N278a7cf0
+push $N25c5d490
  Merge2 {
   inputs 2
   operation copy
@@ -1514,7 +1515,7 @@ push $N278a7cf0
   xpos -521
   ypos 1619
  }
-set N279a0cd0 [stack 0]
+set N25c5e250 [stack 0]
  Premult {
   name Premult16
   xpos -631
@@ -1533,7 +1534,7 @@ set N279a0cd0 [stack 0]
   xpos -631
   ypos 1719
  }
-push $N279a0cd0
+push $N25c5e250
  Merge2 {
   inputs 2
   operation copy
@@ -1541,7 +1542,7 @@ push $N279a0cd0
   xpos -521
   ypos 1719
  }
-set N279a1a90 [stack 0]
+set N25d79630 [stack 0]
  Premult {
   name Premult7
   xpos -631
@@ -1560,7 +1561,7 @@ set N279a1a90 [stack 0]
   xpos -631
   ypos 1842
  }
-push $N279a1a90
+push $N25d79630
  Merge2 {
   inputs 2
   operation copy
@@ -1568,32 +1569,32 @@ push $N279a1a90
   xpos -521
   ypos 1842
  }
-push $N279a1a90
-push $N279a0cd0
-push $N278a7cf0
-push $N278a6f30
-push $N278a6170
-push $N278a53b0
-push $N277c03d0
-push $N277bf610
-push $N277be4e0
-push $N277bda90
-push $N277bccd0
-push $N276c9cf0
-push $N276c8f30
-push $N276c8170
-push $N276c73b0
-push $N276263d0
-push $N27625610
-push $N27624850
-push $N27623a90
-push $N275a0bd0
+push $N25d79630
+push $N25c5e250
+push $N25c5d490
+push $N25c5c6d0
+push $N25c5b910
+push $N25c5ab50
+push $N25c0f770
+push $N25c0e9b0
+push $N25c0d880
+push $N25c0ce30
+push $N25ac5a50
+push $N25ac4c90
+push $N25ac3ed0
+push $N25ac3110
+push $N25ac2350
+push $N259f0f70
+push $N259f01b0
+push $N259ef3f0
+push $N259ee630
+push $N25930130
  Premult {
   name Premult17
   xpos -505
   ypos -296
  }
-set N279a2bc0 [stack 0]
+set N25d7a760 [stack 0]
  Switch {
   inputs 21
   which 18.25
@@ -1602,8 +1603,8 @@ set N279a2bc0 [stack 0]
   xpos -91
   ypos 806
  }
-set N279fecd0 [stack 0]
-push $N27623040
+set N1a4f9cf0 [stack 0]
+push $N25931940
  Dot {
   name Dot5
   xpos -838
@@ -1614,25 +1615,25 @@ push $N27623040
   xpos -838
   ypos 2002
  }
-push $N279a2bc0
+push $N25d7a760
  Dot {
   name Dot3
   xpos 497
   ypos -293
  }
-set N279a3610 [stack 0]
+set N25d7b1b0 [stack 0]
  Dot {
   name Dot4
   xpos 620
   ypos -293
  }
-set N279a3980 [stack 0]
+set N25d7b520 [stack 0]
  Dot {
   name Dot2
   xpos 730
   ypos -293
  }
-push $N279a3980
+push $N25d7b520
  Input {
   inputs 0
   name MASK
@@ -1647,8 +1648,8 @@ push $N279a3980
   ypos 718
   number 3
  }
-push $N275a1d00
-push $N279fecd0
+push $N25931260
+push $N1a4f9cf0
  Blur {
   inputs 1+1
   size 8
@@ -1666,7 +1667,7 @@ push $N279fecd0
   xpos 344
   ypos 800
  }
-push $N279a3610
+push $N25d7b1b0
  Merge2 {
   inputs 2+1
   operation copy
@@ -1718,13 +1719,13 @@ Premult {
  xpos -1097
  ypos 1340
 }
-push $N2759f730
+push $N25581b50
 Dot {
  name Dot13
  xpos 205
  ypos 241
 }
-set N27a1c4e0 [stack 0]
+set N25e3c080 [stack 0]
 HueCorrect {
  hue {sat {}
    lum {}
@@ -1739,7 +1740,7 @@ HueCorrect {
  xpos 676
  ypos 238
 }
-set N27a1c850 [stack 0]
+set N25e3c3f0 [stack 0]
 Keyer {
  operation "luminance key"
  name Keyer1
@@ -1753,7 +1754,7 @@ Grade {
  xpos 676
  ypos 352
 }
-push $N27a1c4e0
+push $N25e3c080
 Copy {
  inputs 2
  from0 rgba.alpha
@@ -1767,7 +1768,7 @@ Premult {
  xpos 676
  ypos 476
 }
-push $N27a1c850
+push $N25e3c3f0
 Grade {
  blackpoint 0.012
  whitepoint {0.8911100626 1.899999976 1.617150784 1}
@@ -1790,32 +1791,32 @@ AddChannels {
  xpos -439
  ypos -237
 }
-push $N26d76e90
+push $N1d13beb0
 Dot {
  name Dot21
  xpos -215
  ypos -500
 }
-set N27a1e3d0 [stack 0]
+set N25e3df70 [stack 0]
 Merge2 {
  inputs 2
  name Merge10
  xpos -249
  ypos -231
 }
-set N27a1e740 [stack 0]
+set N25e3e2e0 [stack 0]
 Dot {
  name Dot47
  xpos -215
  ypos -58
 }
-push $N27a1e3d0
+push $N25e3df70
 Dot {
  name Dot48
  xpos 338
  ypos -500
 }
-set N2ab20420 [stack 0]
+set N25e3e9c0 [stack 0]
 Merge2 {
  inputs 2
  operation from
@@ -1856,8 +1857,8 @@ HueCorrect {
  xpos 541
  ypos 10
 }
-push $N27a1e740
-push $N2ab20420
+push $N25e3e2e0
+push $N25e3e9c0
 Dot {
  name Dot49
  xpos 517
@@ -1927,7 +1928,7 @@ Blur {
  xpos 2168
  ypos -1639
 }
-set N2ab23b20 [stack 0]
+set N25efad20 [stack 0]
 Transform {
  translate {-503 144}
  scale {0.25 0.2}
@@ -1976,7 +1977,7 @@ Blur {
  xpos 1984
  ypos -1688
 }
-set N2abce080 [stack 0]
+set N2602f1b0 [stack 0]
 Transform {
  translate {-830 111}
  rotate -6.581934374
@@ -1987,7 +1988,7 @@ Transform {
  ypos -1445
 }
 push 0
-push $N2abce080
+push $N2602f1b0
 Transform {
  translate {-2107 37}
  rotate 15.45893386
@@ -1997,7 +1998,7 @@ Transform {
  xpos 1949
  ypos -1532
 }
-push $N2ab23b20
+push $N25efad20
 Transform {
  translate {-1628 122}
  rotate 7.41562054
@@ -2052,8 +2053,8 @@ Position {
  xpos 1333
  ypos -2420
 }
-set N2abcff70 [stack 0]
-push $N2abcff70
+set N260310a0 [stack 0]
+push $N260310a0
 Dot {
  name Dot26
  xpos 1662
@@ -2066,7 +2067,7 @@ Position {
  ypos -2362
 }
 push 0
-push $N2abcff70
+push $N260310a0
 Dot {
  name Dot28
  xpos 1462
@@ -2078,7 +2079,7 @@ Position {
  xpos 1428
  ypos -2362
 }
-push $N2abcff70
+push $N260310a0
 Dot {
  name Dot29
  xpos 1562
@@ -2179,7 +2180,7 @@ Dot {
  xpos 1372
  ypos -2128
 }
-set N2acd77f0 [stack 0]
+set N26102af0 [stack 0]
 Dot {
  name Dot31
  xpos 1807
@@ -2213,7 +2214,7 @@ Read {
  xpos 1481
  ypos -2071
 }
-push $N2acd77f0
+push $N26102af0
 Merge2 {
  inputs 2
  name Merge27
@@ -2309,7 +2310,7 @@ Blur {
  xpos 1096
  ypos -1791
 }
-set N2adebc50 [stack 0]
+set N26dc4680 [stack 0]
 Transform {
  translate {-503 144}
  scale {0.25 0.2}
@@ -2318,7 +2319,7 @@ Transform {
  xpos 1089
  ypos -1642
 }
-push $N2adebc50
+push $N26dc4680
 Transform {
  translate {-568 50}
  rotate -6.581934374
@@ -2328,7 +2329,7 @@ Transform {
  xpos 1154
  ypos -1677
 }
-push $N2adebc50
+push $N26dc4680
 Transform {
  translate {-175 33}
  rotate -6.581934374
@@ -2339,7 +2340,7 @@ Transform {
  ypos -1727
 }
 push 0
-push $N2adebc50
+push $N26dc4680
 Transform {
  translate {-1612 63}
  rotate 7.41562054
@@ -2360,7 +2361,7 @@ Read {
  xpos 834
  ypos -2023
 }
-push $N2acd77f0
+push $N26102af0
 Dot {
  name Dot32
  xpos 1005
@@ -2466,8 +2467,8 @@ Group {
   xpos 190
   ypos 13
  }
-set N2adeefe0 [stack 0]
-push $N2adeefe0
+set N26eaa210 [stack 0]
+push $N26eaa210
  Copy {
   inputs 2
   from0 rgba.alpha
@@ -2483,7 +2484,7 @@ push $N2adeefe0
   ypos 134
   disable {{!usePremult i}}
  }
-set N2adef6c0 [stack 0]
+set N26eaa8f0 [stack 0]
  Multiply {
   channels rgb
   value 0
@@ -2491,7 +2492,7 @@ set N2adef6c0 [stack 0]
   xpos -37
   ypos 134
  }
-set N2adefa30 [stack 0]
+set N26eaac60 [stack 0]
  Dither {
   channels {-rgba.red rgba.green -rgba.blue}
   amount 0.032
@@ -2526,7 +2527,7 @@ set N2adefa30 [stack 0]
   ypos 273
   disable {{parent.blurGreenSize==0?1:0 i}}
  }
-push $N2adef6c0
+push $N26eaa8f0
  Merge2 {
   inputs 2
   operation plus
@@ -2536,7 +2537,7 @@ push $N2adef6c0
   xpos 190
   ypos 310
  }
-set N2adf0b60 [stack 0]
+set N26eabd90 [stack 0]
  Input {
   inputs 0
   name mask
@@ -2544,7 +2545,7 @@ set N2adf0b60 [stack 0]
   ypos 7
   number 1
  }
-push $N2adeefe0
+push $N26eaa210
  Copy {
   inputs 2
   from0 rgba.alpha
@@ -2554,15 +2555,15 @@ push $N2adeefe0
   ypos 102
   disable {{!useMask i}}
  }
-set N2affafa0 [stack 0]
+set N26eac470 [stack 0]
  Invert {
   name Invert1
   xpos 399
   ypos 184
   disable {{!invertMask i x1 0}}
  }
-push $N2adf0b60
-push $N2adefa30
+push $N26eabd90
+push $N26eaac60
  Dither {
   channels {rgba.red -rgba.green -rgba.blue}
   amount 0.017
@@ -2597,7 +2598,7 @@ push $N2adefa30
   ypos 287
   disable {{parent.blurRedSize==0?1:0 i}}
  }
-push $N2adef6c0
+push $N26eaa8f0
  Merge2 {
   inputs 2
   operation plus
@@ -2615,7 +2616,7 @@ push $N2adef6c0
   xpos 190
   ypos 368
  }
-push $N2adefa30
+push $N26eaac60
  Dither {
   channels {-rgba.red -rgba.green rgba.blue}
   amount 0.06
@@ -2650,7 +2651,7 @@ push $N2adefa30
   ypos 286
   disable {{parent.blurBlueSize==0?1:0 i}}
  }
-push $N2adef6c0
+push $N26eaa8f0
  Merge2 {
   inputs 2
   operation plus
@@ -2674,8 +2675,8 @@ push $N2adef6c0
   ypos 596
   disable {{!usePremult i}}
  }
-set N2affdfc0 [stack 0]
-push $N2affafa0
+set N26eaf490 [stack 0]
+push $N26eac470
  Keymix {
   inputs 3
   maskChannel depth.Z
@@ -2683,7 +2684,7 @@ push $N2affafa0
   xpos 308
   ypos 620
  }
-push $N2affdfc0
+push $N26eaf490
  Switch {
   inputs 2
   which {{useMask i}}
@@ -2691,7 +2692,7 @@ push $N2affdfc0
   xpos 190
   ypos 673
  }
-push $N2adeefe0
+push $N26eaa210
  Copy {
   inputs 2
   channels rgba
@@ -2699,14 +2700,14 @@ push $N2adeefe0
   xpos 257
   ypos 740
  }
-set N2affe6a0 [stack 0]
+set N26eafb70 [stack 0]
  Viewer {
   inputs 2
   name Viewer1
   xpos 31
   ypos 438
  }
-push $N2affe6a0
+push $N26eafb70
  Crop {
   box {0 0 {RGB.width i} {RGB.height i}}
   reformat true

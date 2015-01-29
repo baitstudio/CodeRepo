@@ -46,7 +46,7 @@ for name in shotNames:
             cmd+=' '+read_path
             cmd+=' '+precomp_path
             
-            os.system(cmd)
+            #os.system(cmd)
             
             #getting shotgun data
             shotgunData=su.getDeadlineData(publishedFile['entity']['name'], 'toke.jepsen',
@@ -54,12 +54,19 @@ for name in shotNames:
                                            publishedFile['task']['name'],
                                            publishedFile['task']['id'])
             
+            print shotgunData
+            
             framerange=su.getFramerangeFromShotname(publishedFile['entity']['name'])
             
+            print framerange
+            
+            print renderFile
             dirSplit=list(os.path.split(os.path.dirname(renderFile['path']['local_path_windows'])))
+            print dirSplit
             dirSplit[-1]='v%03d' % (publishedFile['version_number']+1)
             outputPath=os.path.join(dirSplit[0],dirSplit[-1])
             
+            '''
             if not os.path.exists(outputPath):
                 os.makedirs(outputPath)
             
@@ -86,10 +93,11 @@ for name in shotNames:
             du.submitRaw('nuke', work_filename, framerange['cut_in'], framerange['cut_out'], work_file, outputPath,
                          outputFiles,pluginArgs=pluginArgs,submitArgs=submitArgs,shotgunData=shotgunData,limit=limit,
                          priority=40)
-        
+                         '''
+                                 
         print 'Successfull %s of %s: %s' % (nameIndex+1,len(shotNames),name)
-    except:
-        print 'Failed %s of %s: %s' % (nameIndex+1,len(shotNames),name)
+    except Exception as e:
+        print 'Failed %s of %s: %s\n%s' % (nameIndex+1,len(shotNames),name,e)
         
         f=open(r'C:\Users\toke.jepsen\Desktop/failedShots.txt','r')
         

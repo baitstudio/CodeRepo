@@ -9,3 +9,4 @@ ConcurrentTasks=1
 Group=none
 ChunkSize=5
 EnvironmentKeyValue0=PYTHONPATH=K:/CodeRepo/Maya
+Pool=medium

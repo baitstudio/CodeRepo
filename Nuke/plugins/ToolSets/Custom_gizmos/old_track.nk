@@ -1,0 +1,26 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+Tracker3 {
+ track1 {865 445}
+ offset1 {0 0}
+ pattern1 {-30 -30 30 30}
+ search1 {-21 -21 21 21}
+ track2 {1055 445}
+ offset2 {0 0}
+ pattern2 {-30 -30 30 30}
+ search2 {-21 -21 21 21}
+ track3 {1055 635}
+ offset3 {0 0}
+ pattern3 {-30 -30 30 30}
+ search3 {-21 -21 21 21}
+ track4 {865 635}
+ offset4 {0 0}
+ pattern4 {-30 -30 30 30}
+ search4 {-21 -21 21 21}
+ center {960 540}
+ name Tracker1
+ selected true
+ xpos -297
+ ypos 1291
+}

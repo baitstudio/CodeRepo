@@ -7,5 +7,6 @@ EnableAutoTimeout=False
 ConcurrentTasks=1
 LimitConcurrentTasksToNumberOfCpus=True
 OnJobComplete=Nothing
-ChunkSize=5
+ChunkSize=25
 LimitGroups=nuke_render
+Pool=medium

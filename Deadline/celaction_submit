@@ -1,0 +1,3 @@
+Application: C:\Program Files\Thinkbox\Deadline6\bin\deadlinecommand.exe
+
+Parameters: -SubmitCommandLineJob -executable "c:\program files (x86)\Celaction\CelAction2D.exe" -arguments "<QUOTE>*SCENE*<QUOTE> -s <STARTFRAME> -e <ENDFRAME> -b -d "Q:\devTest\renders\temp" -5 -f -x *X* -y *Y* -r .PNG -= AbsoluteFrameNumber=on " -frames *START*-*END* -chunksize *CHUNK* -pool medium -group celaction -priority 50 -name "*TITLE* - *SCENE*" -prop ExtraInfo0=qt -prop OutputDirectory0=Q:\devTest\renders\temp

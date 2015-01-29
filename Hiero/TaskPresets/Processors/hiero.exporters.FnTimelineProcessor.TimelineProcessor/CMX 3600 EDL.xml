@@ -1,0 +1,21 @@
+<root presetname="CMX 3600 EDL" tasktype="hiero.exporters.FnTimelineProcessor.TimelineProcessor">
+    <exportTemplate valuetype="list">
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">{project}.edl</SequenceItem>
+            <SequenceItem valuetype="hiero.exporters.FnEDLExportTask.EDLExportPreset">
+                <root presetname="hiero.exporters.FnEDLExportTask.EDLExportTask" tasktype="hiero.exporters.FnEDLExportTask.EDLExportTask">
+                    <truncate valuetype="bool">False</truncate>
+                    <abspath valuetype="bool">False</abspath>
+                    <reelName valuetype="str" />
+                    <fromClip valuetype="unicode">{clip}</fromClip>
+                </root>
+            </SequenceItem>
+        </SequenceItem>
+    </exportTemplate>
+    <startFrameIndex valuetype="int">1</startFrameIndex>
+    <exportRoot valuetype="str">Q:/Toot/resources/edls/</exportRoot>
+    <versionIndex valuetype="int">2</versionIndex>
+    <startFrameSource valuetype="str">Custom</startFrameSource>
+    <versionPadding valuetype="int">2</versionPadding>
+    <inOutTrim valuetype="bool">False</inOutTrim>
+</root>

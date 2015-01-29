@@ -1,5 +1,9 @@
 import nuke
 
+#setup default prefs
+nuke.knobDefault("Root.format", "HD")
+nuke.knobDefault("Root.fps", "25")
+
 #creating the Glapp menu
 menubar = nuke.menu("Nuke")
 m = menubar.addMenu("BAIT")

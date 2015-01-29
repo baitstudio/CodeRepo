@@ -1,54 +1,61 @@
 set cut_paste_input [stack 0]
 version 7.0 v8
+push $cut_paste_input
+Dot {
+ name Dot1
+ selected true
+ xpos -309
+ ypos 663
+}
+set N2a811340 [stack 0]
 Remove {
- inputs 0
  channels alpha
  name Remove1
  selected true
- xpos 182
- ypos 369
+ xpos -517
+ ypos 654
 }
 Blur {
  size 150
  name Blur1
  selected true
- xpos -236
- ypos 369
+ xpos -935
+ ypos 654
 }
-push $cut_paste_input
+push 0
 Crop {
  box {0 0 1920 1080}
  name Crop1
  selected true
- xpos -495
- ypos -136
+ xpos -1194
+ ypos 149
 }
 Unpremult {
  name Unpremult1
  selected true
- xpos -495
- ypos -112
+ xpos -1194
+ ypos 173
 }
-set N16f66dd0 [stack 0]
+set N1bc3b580 [stack 0]
 Dot {
  name Dot6
  selected true
- xpos -566
- ypos -109
+ xpos -1265
+ ypos 176
 }
-set N16f67140 [stack 0]
+set N1bc3b8f0 [stack 0]
 Dot {
  name Dot7
  selected true
- xpos -660
- ypos -109
+ xpos -1359
+ ypos 176
 }
-set N16f674b0 [stack 0]
+set N1bf987c0 [stack 0]
 Dot {
  name Dot9
  selected true
- xpos -735
- ypos -109
+ xpos -1434
+ ypos 176
 }
 add_layer {ID_grandpa ID_grandpa.red ID_grandpa.green ID_grandpa.blue ID_grandpa.alpha}
 Shuffle {
@@ -58,29 +65,29 @@ Shuffle {
  alpha blue
  name Shuffle10
  selected true
- xpos -769
- ypos 86
+ xpos -1468
+ ypos 371
 }
-push $N16f66dd0
+push $N1bc3b580
 Dot {
  name Dot3
  selected true
- xpos -342
- ypos -109
+ xpos -1041
+ ypos 176
 }
-set N16f67f00 [stack 0]
+set N1bf99210 [stack 0]
 Dot {
  name Dot4
  selected true
- xpos -262
- ypos -109
+ xpos -961
+ ypos 176
 }
-set N16f68270 [stack 0]
+set N1bf99580 [stack 0]
 Dot {
  name Dot8
  selected true
- xpos -188
- ypos -109
+ xpos -887
+ ypos 176
 }
 Shuffle {
  in ID_grandpa
@@ -89,10 +96,10 @@ Shuffle {
  alpha green
  name Shuffle9
  selected true
- xpos -222
- ypos 48
+ xpos -921
+ ypos 333
 }
-push $N16f674b0
+push $N1bf987c0
 add_layer {ID_outfit ID_outfit.red ID_outfit.green ID_outfit.blue ID_outfit.alpha}
 Shuffle {
  in ID_outfit
@@ -101,10 +108,10 @@ Shuffle {
  alpha blue
  name Shuffle8
  selected true
- xpos -694
- ypos 18
+ xpos -1393
+ ypos 303
 }
-push $N16f68270
+push $N1bf99580
 Shuffle {
  in ID_grandpa
  green red
@@ -112,10 +119,10 @@ Shuffle {
  alpha red
  name Shuffle7
  selected true
- xpos -296
- ypos -10
+ xpos -995
+ ypos 275
 }
-push $N16f67f00
+push $N1bf99210
 Shuffle {
  in ID_outfit
  red green
@@ -123,10 +130,10 @@ Shuffle {
  alpha green
  name Shuffle6
  selected true
- xpos -376
- ypos -38
+ xpos -1075
+ ypos 247
 }
-push $N16f67140
+push $N1bc3b8f0
 Shuffle {
  in ID_outfit
  green red
@@ -134,93 +141,100 @@ Shuffle {
  alpha red
  name Shuffle5
  selected true
- xpos -600
- ypos -68
+ xpos -1299
+ ypos 217
 }
-push $N16f66dd0
+push $N1bc3b580
 EXPTool {
  inputs 1+1
+ gang false
  red 0.02
  green -0.03
- blue 0.1
+ blue 0.01
  name cardigan
  selected true
- xpos -495
- ypos -68
+ xpos -1194
+ ypos 217
 }
 EXPTool {
  inputs 1+1
+ gang false
  red 0.12
  green 0.18
  blue 0.2
  name trousers
  selected true
- xpos -495
- ypos -38
+ xpos -1194
+ ypos 247
 }
 EXPTool {
  inputs 1+1
+ gang false
  red 0.12
  green 0.1
  blue 0.15
  name skin
  selected true
- xpos -495
- ypos -10
+ xpos -1194
+ ypos 275
 }
 EXPTool {
  inputs 1+1
+ gang false
  red 0.18
  green 0.17
  blue 0.23
  name shirt
  selected true
- xpos -495
- ypos 18
+ xpos -1194
+ ypos 303
 }
 EXPTool {
  inputs 1+1
+ gang false
  red 0.09
  green 0.28
  blue 0.28
  name shoes
  selected true
- xpos -495
- ypos 48
+ xpos -1194
+ ypos 333
+ disable true
 }
 EXPTool {
  inputs 1+1
+ gang false
  red 0.02
  green 0.02
  blue 0.14
  name hat
  selected true
- xpos -495
- ypos 86
+ xpos -1194
+ ypos 371
 }
 Merge2 {
  inputs 2
  mix 0.025
  name Merge2
  selected true
- xpos -495
- ypos 375
+ xpos -1194
+ ypos 660
 }
-set N179f9860 [stack 0]
+set N2aae37d0 [stack 0]
 Multiply {
  value 1.04
  name Multiply1
  selected true
- xpos -598
- ypos 424
+ xpos -1297
+ ypos 709
 }
-push $N179f9860
+push $N2aae37d0
 Group {
  inputs 2
  name Group4
  selected true
- xpos -495
- ypos 498
+ xpos -1194
+ ypos 783
  addUserKnob {20 User}
  addUserKnob {41 amount l red T DitherRed.amount}
  addUserKnob {41 amount_1 l green T DitherGreen.amount}
@@ -256,8 +270,8 @@ Group {
   xpos 190
   ypos 13
  }
-set N17abc370 [stack 0]
-push $N17abc370
+set N2aae3eb0 [stack 0]
+push $N2aae3eb0
  Copy {
   inputs 2
   from0 rgba.alpha
@@ -273,7 +287,7 @@ push $N17abc370
   ypos 134
   disable {{!usePremult i}}
  }
-set N17abca50 [stack 0]
+set N1c81cd30 [stack 0]
  Multiply {
   channels rgb
   value 0
@@ -281,7 +295,7 @@ set N17abca50 [stack 0]
   xpos -37
   ypos 134
  }
-set N17abcdc0 [stack 0]
+set N1c81d0a0 [stack 0]
  Dither {
   channels {-rgba.red rgba.green -rgba.blue}
   amount 0.007
@@ -316,7 +330,7 @@ set N17abcdc0 [stack 0]
   ypos 273
   disable {{parent.blurGreenSize==0?1:0 i}}
  }
-push $N17abca50
+push $N1c81cd30
  Merge2 {
   inputs 2
   operation plus
@@ -326,7 +340,7 @@ push $N17abca50
   xpos 190
   ypos 310
  }
-set N17b6a5b0 [stack 0]
+set N1c81e1d0 [stack 0]
  Input {
   inputs 0
   name mask
@@ -334,7 +348,7 @@ set N17b6a5b0 [stack 0]
   ypos 7
   number 1
  }
-push $N17abc370
+push $N2aae3eb0
  Copy {
   inputs 2
   from0 rgba.alpha
@@ -344,15 +358,15 @@ push $N17abc370
   ypos 102
   disable {{!useMask i}}
  }
-set N17b6ac90 [stack 0]
+set N1c81e8b0 [stack 0]
  Invert {
   name Invert1
   xpos 399
   ypos 184
   disable {{!invertMask i x1 0}}
  }
-push $N17b6a5b0
-push $N17abcdc0
+push $N1c81e1d0
+push $N1c81d0a0
  Dither {
   channels {rgba.red -rgba.green -rgba.blue}
   amount 0.011
@@ -387,7 +401,7 @@ push $N17abcdc0
   ypos 287
   disable {{parent.blurRedSize==0?1:0 i}}
  }
-push $N17abca50
+push $N1c81cd30
  Merge2 {
   inputs 2
   operation plus
@@ -405,7 +419,7 @@ push $N17abca50
   xpos 190
   ypos 368
  }
-push $N17abcdc0
+push $N1c81d0a0
  Dither {
   channels {-rgba.red -rgba.green rgba.blue}
   amount 0.016
@@ -440,7 +454,7 @@ push $N17abcdc0
   ypos 286
   disable {{parent.blurBlueSize==0?1:0 i}}
  }
-push $N17abca50
+push $N1c81cd30
  Merge2 {
   inputs 2
   operation plus
@@ -464,8 +478,8 @@ push $N17abca50
   ypos 596
   disable {{!usePremult i}}
  }
-set N149d90b0 [stack 0]
-push $N17b6ac90
+set N2aaf2db0 [stack 0]
+push $N1c81e8b0
  Keymix {
   inputs 3
   maskChannel depth.Z
@@ -473,7 +487,7 @@ push $N17b6ac90
   xpos 308
   ypos 620
  }
-push $N149d90b0
+push $N2aaf2db0
  Switch {
   inputs 2
   which {{useMask i}}
@@ -481,7 +495,7 @@ push $N149d90b0
   xpos 190
   ypos 673
  }
-push $N17abc370
+push $N2aae3eb0
  Copy {
   inputs 2
   channels rgba
@@ -489,14 +503,14 @@ push $N17abc370
   xpos 257
   ypos 740
  }
-set N149d9790 [stack 0]
+set N2aaf3490 [stack 0]
  Viewer {
   inputs 2
   name Viewer1
   xpos 31
   ypos 438
  }
-push $N149d9790
+push $N2aaf3490
  Crop {
   box {0 0 {RGB.width i} {RGB.height i}}
   reformat true
@@ -516,6 +530,65 @@ end_group
 Premult {
  name Premult1
  selected true
- xpos -495
- ypos 699
+ xpos -1194
+ ypos 984
+}
+push 0
+Reformat {
+ name Reformat1
+ selected true
+ xpos -998
+ ypos 821
+}
+Constant {
+ inputs 0
+ channels rgb
+ color 1
+ name Constant1
+ selected true
+ xpos -877
+ ypos 739
+}
+Merge2 {
+ inputs 2
+ name Merge1
+ selected true
+ xpos -877
+ ypos 821
+}
+Grade {
+ channels rgba
+ blackpoint 0.29
+ name Grade1
+ selected true
+ xpos -779
+ ypos 821
+}
+Shuffle {
+ green red
+ blue red
+ alpha red
+ name Shuffle1
+ selected true
+ xpos -681
+ ypos 821
+}
+push $N2a811340
+EXPTool {
+ inputs 1+1
+ red -0.43
+ green -0.43
+ blue -0.43
+ invert_mask true
+ name EXPTool1
+ selected true
+ xpos -343
+ ypos 821
+}
+Merge2 {
+ inputs 2
+ name Merge3
+ selected true
+ xpos -343
+ ypos 984
 }

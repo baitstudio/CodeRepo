@@ -1,0 +1,11 @@
+[Enabled]
+Type=boolean
+Label=Enabled
+Default=True
+Description=If this event plug-in should respond to events.
+
+[QTSettings]
+Type=filename
+Label=QT Settings XML File
+Default=
+Description=The QT settings xml flie.

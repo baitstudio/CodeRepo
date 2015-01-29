@@ -1,5 +1,4 @@
 Plugin=MayaBatch
-Pool=maya
 Group=maya
 MachineLimit=0
 Priority=50
@@ -10,3 +9,4 @@ ConcurrentTasks=1
 Group=none
 ChunkSize=10
 EnvironmentKeyValue0=PYTHONPATH=K:/CodeRepo/Maya
+Pool=medium

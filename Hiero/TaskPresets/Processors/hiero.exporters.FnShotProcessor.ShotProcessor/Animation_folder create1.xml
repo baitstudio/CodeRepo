@@ -1,0 +1,21 @@
+<root presetname="Animation_folder create1" tasktype="hiero.exporters.FnShotProcessor.ShotProcessor">
+    <startFrameIndex valuetype="int">1001</startFrameIndex>
+    <exportRoot valuetype="str">Q:/Toot/</exportRoot>
+    <versionIndex valuetype="int">1</versionIndex>
+    <cutUseHandles valuetype="bool">False</cutUseHandles>
+    <versionPadding valuetype="int">2</versionPadding>
+    <exportTemplate valuetype="list">
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">episodes/{project}/Animation/{shot}/toot_{sequence}_{shot}.wav</SequenceItem>
+            <SequenceItem valuetype="hiero.exporters.FnAudioExportTask.AudioExportPreset">
+                <root presetname="hiero.exporters.FnAudioExportTask.AudioExportTask" tasktype="hiero.exporters.FnAudioExportTask.AudioExportTask" />
+            </SequenceItem>
+        </SequenceItem>
+    </exportTemplate>
+    <excludeTags valuetype="list" />
+    <includeTags valuetype="list" />
+    <includeRetimes valuetype="bool">False</includeRetimes>
+    <startFrameSource valuetype="str">Source</startFrameSource>
+    <cutLength valuetype="bool">True</cutLength>
+    <cutHandles valuetype="int">0</cutHandles>
+</root>
